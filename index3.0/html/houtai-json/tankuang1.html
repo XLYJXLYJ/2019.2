@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+			body,html{font-family:"微软雅黑";font-size: 14px;color: #727689;}
+			a{color: #5c5869;text-decoration: none;}
+			.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+			/*导入数据*/
+			.import-template{background: #fff;border:1px solid #e9e9f4;width:400px;padding: 0 30px;height:270px;background: #fff;position:relative;border-radius: 3px;}
+			.close-fix{position:absolute;right:10px;top:10px;cursor: pointer;background: url(../../img/delete-line-ico4.png) no-repeat;width:20px;height:20px;}
+			.import-templatepage1{padding-top: 20px;}
+			.import-templatetit{text-align: center;line-height: 30px;font-size: 16px;color:#35313f;}
+			.error-tit{display:none;position:absolute;top:20px;left:50%;margin-left:-80px;width:160px;text-align:center;line-height: 30px;background-color: #fabc2d;color: #fff;padding: 0 20px;}
+			.import-template textarea{margin-top: 10px;box-sizing: border-box;padding: 10px;line-height: 20px;;width:100%;height:120px;box-shadow: none;resize: none;}
+			
+			.import-templatepage2{padding-top: 20px; display:none; }
+			.load-temp{padding: 5px 0 10px 0;margin-bottom: 10px;border-bottom: 1px solid #e9e9f4;text-align: center;}
+			.load-temp span{cursor: pointer;display:inline-block;padding: 5px 10px;background: #f8f8ff;border:1px solid #524ae7;border-radius: 3px;color:#524ae7;}
+			.load-temp span:hover{background: #524ae7;color:#fff;}
+			.upload{margin-top: 10px;}
+			.file_input{float:left;line-height: 36px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width:280px;padding:0 10px;height:36px;border:1px solid #e9e9f4;float:left;}
+			.input_file{position:relative;float:left;}
+			.file-none{opacity: 0;filter: alpha(opacity=0);width:80px;}
+			.fileword{position:absolute;top:0;left:0;cursor: pointer;width:80px;height:38px;line-height: 38px;text-align: center;color:#fff;background: #5c5869;font-size: 16px;margin-left: 18px;border-radius: 3px;}
+			
+			.import-templatepage3{padding-top: 20px;display:none;}
+			.shuju{text-align: center;margin-top: 10px;}
+			.jindutiao{width:400px;background:#e9e9f4;height:20px;margin-top: 50px;}
+			.now-jindu{width:1%;background: #524ae7;height:20px;}
+			.daoend{color:#727689;text-align: center;margin-top: 50px;display:none;}
+			.daoend span{color:red;}
+			.daoend .daorulook{text-decoration: underline;cursor: pointer;color:#35313f;}
+			
+			/*进度条*/
+			.upload_content_bottom{background: #e9e9f4;color:#35313f;display:none;}
+			.upload_content_bottom,.percentage{position:relative;margin:5px 0;height:20px;line-height: 20px;}
+			.speed{color:#fff;background: #524ae7;position:absolute;top:0;left:0;height:100%;overflow: hidden;}
+			.speed p{width:400px;height:36px;}
+
+			.next{cursor: pointer;margin:10px auto;width:80px;height:38px;line-height: 38px;text-align: center;background: #524ae7;color:#fff;border-radius: 3px;}
+			.next:hover{background: #4037ed;}
+		</style>
+	</head>
+	<body>
+		<button class="tank">弹框</button>
+		
+		<div class="import-template">
+			<div class="close-fix"></div>
+			<div class="error-tit">aaaa</div>
+			<div class="import-templatepage1">
+				<div class="import-templatetit">第<span class="p-nubs">1</span>批</div>
+				<textarea name="" rows="" cols="" maxlength="500" placeholder="请编辑本批次数据的备注信息">aaaa</textarea>
+				<div class="next">下一步</div>
+			</div>
+			<div class="import-templatepage2">
+				<div class="import-templatetit">企业数据导入模板.xlsx	</div>
+				<div class="load-temp"><span>下载模板</span></div>
+				<div class="import-templatetit">请选择导入数据文件</div>
+				<div class=" upload">
+                    <div class="clear table-all">
+						<span class="file_input" id="showPolicy5"></span>
+						<label class="input_file"><input type="file" class="file-none" readonly="readonly"/><span class="fileword">浏览</span></label>
+					</div>
+                    <div class="upload_content_bottom" id="policyProcessArea5">
+						<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+						<div class="speed">
+							<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="next">提交</div>
+			</div>
+			<div class="import-templatepage3">
+				<div class="import-templatetit">导入中···</div>
+				<div class="shuju"><span class="now-shuju">1123</span>/<span class="all-shuju">100000</span></div>
+				<div class="jindutiao">
+					<p class="now-jindu"></p>
+				</div> 
+				<div class="daoend"><span class="daoruerror">1233</span>条数据导入失败，<span class="daorudb">1235</span>条数据重复，<span class="daorulook">点击查看</span></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../layer/layer.js"></script>	
+	<script type="text/javascript">
+	
+		//选择文件
+		$('.file-none').change(function(e){
+			var name = e.currentTarget.files[0].name;
+		    $('.file_input').text(name);
+		});
+		//模板导入
+		$(document).on("click",".tank",function(){
+			layer.open({
+				title: false,
+				type: 1,
+			    closeBtn: 0, //不显示关闭按钮
+			    anim: -1,
+			    area:["462px",'272px'],
+			    scrollbar: false,
+			    shadeClose: true, //开启遮罩关闭
+			    content: '<div class="import-template">\
+						<div class="close-fix"></div>\
+						<div class="error-tit"></div>\
+						<div class="import-templatepage1">\
+							<div class="import-templatetit">第<span class="p-nubs">1</span>批</div>\
+							<textarea name="" rows="" cols="" maxlength="500" placeholder="请编辑本批次数据的备注信息"></textarea>\
+							<div class="next">下一步</div>\
+						</div>\
+						<div class="import-templatepage2">\
+							<div class="import-templatetit">企业数据导入模板.xlsx	</div>\
+							<div class="load-temp"><span>下载模板</span></div>\
+							<div class="import-templatetit">请选择导入数据文件</div>\
+							<form class="exclload">\
+								<div class=" upload">\
+				                    <div class="clear table-all">\
+										<span class="file_input" id="showPolicy5"></span>\
+					                    <label class="input_file"><input type="file" class="file-none" readonly="readonly"/><span class="fileword">浏览</span></label>\
+									</div>\
+				                    <div class="upload_content_bottom" id="policyProcessArea5">\
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>\
+										<div class="speed">\
+											<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>\
+										</div>\
+									</div>\
+								</div>\
+							</form>\
+							<div class="next">提交</div>\
+						</div>\
+						<div class="import-templatepage3">\
+							<div class="import-templatetit">导入中···</div>\
+							<div class="shuju"><span class="now-shuju">1123</span>/<span class="all-shuju">100000</span></div>\
+							<div class="jindutiao">\
+								<p class="now-jindu"></p>\
+							</div> \
+							<div class="daoend"><span class="daoruerror">1233</span>条数据导入失败，<span class="daorudb">1235</span>条数据重复，<span class="daorulook">点击查看</span></div>\
+						</div>\
+					</div>'
+			});
+			
+		});
+		//page1提交
+		$(document).on("click",".import-templatepage1 .next",function(){
+			var val=$(".import-templatepage1 textarea").val();
+			if(val){
+//				$.post("/employer/isLogin",'value:val',function (data) {
+//	            
+//	        	});
+				$(".import-templatepage1").hide();
+				$(".import-templatepage2").show();
+			}else{
+				$('.error-tit').html("文本框不能为空").show();
+				time();
+			};
+		});
+		//page2提交
+		$(document).on("click",".import-templatepage2 .next",function(){
+			var val=$("#policyUrl5").val();
+			if(val){
+//				$.post("/employer/isLogin",'$(".exclload").serialize()',function (data) {
+//	            
+//	        	},'json');
+				$(".import-templatepage2").hide();
+				$(".import-templatepage3").show();
+			}else{
+				$('.error-tit').html("请上传模板").show();
+				time();
+			}
+		});
+		
+		function time(){
+			var timer=setTimeout(function(){
+				$('.error-tit').hide();
+				clearTimeout(timer);
+			},2000);
+		}
+	</script>
+</html>

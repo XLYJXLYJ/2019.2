@@ -1,0 +1,33 @@
+.contents{width:100%;background:#e9e9f4 ;padding: 84px 0;color:#727689;}
+.content{margin:0 auto;width:1200px;}
+.all_content{padding:44px 74px 38px 68px;width:587px;margin:0 auto;background: #fff;border-radius: 4px;}
+.title_left{float:left;line-height: 36px;font-size: 36px;font-weight: bold;color:#524ae7;}
+.title{border-bottom: 1px solid #344dcc;padding-bottom: 10px;}
+.title_right{float:right;line-height: 55px;font-size: 18px;position:relative;}
+.title_right a{color:#35313f;}
+.title_right a:hover{text-decoration: underline;}
+.title_right span{font-size: 14px;}
+
+
+.cont_register{padding:40px 0 0 112px;}
+.cont_input {margin-bottom: 16px;position: relative;}
+.special{margin-bottom: 15px;}
+.cont_input input{font-size: 14px;width:100%;height:43px;line-height: 42px;border:1px solid #e9e9f4;padding-left: 8px;box-sizing: border-box;}
+.cont_input>span{position:absolute;left:-112px;top:0;line-height: 44px;}
+.cont_input .key{position: absolute;left:-124px;top:18px;}
+.cont_register .identifying_code input{width:325px;}
+.cont_register .identifying_code .code{cursor:pointer;float:right;height:42px;width:128px;text-align:center;line-height:42px;background:#e9e9f4;border:1px solid #e9e9f4;}
+.Strength span{width:155px;height:18px;line-height: 18px;text-align: center;background:#e9e9f4; display:inline-block;}
+.Strength{margin-top: 10px;}
+.Validform_checktip{color:red;display:block;}
+.agreement label{padding-left: 20px;position: relative;}
+.agreement label input{position: absolute;top:4px;left:2px;}
+.cont_register a:hover{text-decoration: underline;}
+.begin_register{cursor:pointer;text-align: center;line-height: 44px;height:44px;width:100%;background: #524ae7;color:#fff;font-size: 16px;border-radius: 4px;margin-top:35px;}
+.back{float:right;margin-top: 10px;}
+.Strength .checke{background: #fabc2d;color:#fff;}
+.agreement .Validform_checktip{display:none;}
+
+.company-ul{position:absolute;top:43px;left:0;border:1px solid #e9e9f4;width:100%;box-sizing: border-box;z-index: 9;background: #fff;}
+.company-ul li{line-height: 30px;padding: 0 10px;cursor: pointer;}
+.company-ul li:hover{background: #524ae7;color:#fff;}

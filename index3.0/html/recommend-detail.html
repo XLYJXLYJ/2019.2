@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招-特惠推荐</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    	<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+    	<link rel="stylesheet" type="text/css" href="../css/visitor-detail.css"/>
+	</head>
+	<body>
+		<!--顶部 -->
+		<div id="header"></div>
+		<div class="error-tishi-time hide"></div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="fabu_fix">
+				<div class="no"></div>
+				<div class="ok_fix_top">温馨提示：</div>
+				<p class="tuanyicont" >您已提交购买意向申请，客服人员会在1-2个工作日内与您联系。如有疑问，请致电 400-830-1985</p>
+				<span class="fabu_yes">确认</span>
+			</div>
+			<div class="addInsure">
+				<form action="/group/save" class="biaodanform">
+					<input type="hidden" name="insurance_id"/>
+					<img src="//static.qibaozz.com/index3.0/img/delete-line-ico2.png" alt="" class="no"/>
+					<div class="addInsure_titl">预约购买<span>（请您认真填写以下信息，企保团队竭诚为您服务！）</span></div>
+					<ul class="addUl">
+						<li class="clear">
+							<div class="addLi_left">
+								<span>公司名：</span>
+							</div>
+							<div class="addLi_right">
+								<input type="text" name="company_name" placeholder="请输入公司名" datatype="names" nullmsg="请输入公司名"  errormsg="姓名只能有汉字，字母，数字，空格，点号，-号" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>姓名：</span>
+							</div>
+							<div class="addLi_right">
+								<input type="text" name="name" class=""  placeholder="请输入您的姓名" datatype="names" nullmsg="请输入您的姓名"  errormsg="姓名只能有汉字，字母，数字，空格，点号，-号" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>手机号：</span>
+							</div>
+							<div class="addLi_right">
+								<input type="text" name="cellphone" class="phone"  placeholder="请输入您的手机号" datatype="phone" nullmsg="请输入您的手机号"  errormsg="手机号格式错误" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span class="beizhu">备注说明：</span>
+							</div>
+							<div class="addLi_right">
+								<textarea class="" name="remark" placeholder="请填写备注(选填500字)" maxlength='500'  onkeyup="this.value = this.value.slice(0, 500)" datatype="*" nullmsg="请填写备注"></textarea>
+							</div>
+						</li>
+						<div class="fix-type clear">
+							<div class="addLi_left">
+								<span>短信验证码：</span>
+							</div>
+							<div class="addLi_right duan-put yanzm">
+								<input type="text" placeholder="请输入短信验证码" class="inpt1" name="verify_code" datatype="*6-6" nullmsg="请输入短信验证码" errormsg="请正确输入短信验证码">
+								<div class="code codes" >获取验证码</div>
+							</div>
+						</div>
+					</ul>
+					<button class="addInsure_yes" data-id="">提交</button>
+				</div>
+			</form>
+		</div>
+		<div class="box" >
+			<!--<div class="sur_fix">
+				<div class="no"></div>
+				<div class="sur-title">货物运输保障（一切险）</div>
+				<div class="sur-cont huoyun-cont">
+					<div class="sur-cont-li clear " >
+						<span class="heidian">●</span>
+						<div class="jianjie" >简介：被保险货物在进行境内/境外运输的过程中，因保险合同约定的自然灾害或意外事故造成被保险财产损失，以及为抢救被保险财产而产生的合理费用，保险人按合同约定负责赔偿。（具体保险责任以保险条款为准，需特别注意保险条款中的除外责任）</div>
+					</div>
+					<div class="sur-cont-li clear" >
+						<span class="heidian">●</span>
+						<div class="sur-cont-tit">可投保货物：一般货品、易碎货品、冷冻货品。不含下列物品：</div>
+						<div class=" scroll fendian" >
+							<p>1、 武器弹药、现金、支票、票据、单证、有价证券、信用证、护照；</p><p>2、 艺术品、金银、珠宝、钻石、玉器、文物古玩等贵重物品；</p><p>3、 鱼粉、花生、菜籽饼、地瓜干、食品罐头等易自燃易腐易蛀易变质货物；</p><p>4、 爆竹、烟花等易燃易爆品及危险品；</p><p>5、 在中国大陆境内无法修复的精密仪器；</p><p>6、 水泥、粮食、饲料、食糖；</p><p>7、 军用品；</p><p>8、 海货、鲜活物品；</p><p>9、 动植物、红木家具、成品车；</p><p>10、 二手货物、旧货物；</p><p>11、 甲板货;</p>
+						</div>
+					</div>
+					<div class="sur-cont-li clear" >
+						<span class="heidian">●</span>
+						<div class="sur-cont-tit">承保运输范围：全国各地至全球，但受制裁及战争区域除外。可承保每车、每船最大货值为人民币700万或等值的其他货币金额。</div>
+					</div>
+					<div class="sur-cont-li clear" >
+						<span class="heidian">●</span>
+						<div class="sur-cont-tit">条款：海洋运输货物保险条款（2009版）一切险，及其他与保险公司已经约定的条款及条件。</div>
+					</div>
+					<div class="sur-cont-li clear" >
+						<span class="heidian">●</span>
+						<div class="sur-cont-tit">费率说明：货运投保的费率标准。</div>
+						<div class="fendian"><p>1、一般货物保费率为0.025%；</p><p>2、易碎货物保费率为0.035%；</p><p>3、冷冻货物保费率为0.04%；</p></div>
+					</div>
+					<div class="sur-cont-li clear">
+						<span class="heidian">●</span>
+						<div class="sur-cont-tit">免赔额：事故免赔的额度。</div>
+						<div class="fendian"><p>1、一般货物无免赔；</p><p>2、易碎货物每次事故绝对免赔额为保险金额的3%或损失金额的8%，两者以高者为准；</p><p>3、冷冻货物每次事故绝对免赔额为保险金额的3%或损失金额的8%，两者以高者为准；</p></div>
+					</div>
+				</div>
+				<div class="yunsucheck">
+					<label ><input class="transtype" type="radio" name="transtype" checked="checked" value="2"/>国内货运险</label>
+					<label ><input class="transtype" type="radio" name="transtype"  value="3"/>进出口货运险</label>
+				</div>
+				<div class="end clear"><div class="sur-ok">预约投保</div></div>
+			</div>-->
+		</div>
+		<div class="content">
+			<input type="hidden" name='login' value="1"/>
+			<div class="nav_pic1 nav-picss"></div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/insurance/huowuyunshu.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">货物运输保障</p>
+						<div class="figcaption">
+							<p>被保险货物在进行国际运输的过程中，因保险合同约定的自然灾害或意外事故造成被保险财产损失，以及为抢救被保险财产而产生的合理费用，保险人按合同约定负责赔偿。
+除包括“平安险”和“水渍险”的所有责任外，还包括货物在运输过程中，因各种外来原因所造成保险货物的损失。</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">
+							<span>国际物流 </span>
+							<span>货物运输</span>
+							<span>意外伤害</span>
+							<span>意外事故</span>
+							<span>财产安全</span>
+							<span>责任赔偿</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance spclayer" data-type = "2">查看详情</a>
+						<span class="detail_bottom detail_bottom-spe">
+							（企业必备，超高性价比）
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/insurance/wuchuan.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">无船承运责任保障（NVOCC）</p>
+						<div class="figcaption">
+							<p>无船承运业务经营者保证金责任保险，是供无船承运业务经营资格申请人选择的一种财务责任证明形式。当因无船承运业务经营者不履行承运人义务或者履行义务不当，根据司法机关已生效的判决或者司法机关裁定执行的仲裁机构裁决应当履行赔偿责任时，用以履行赔偿。</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">           
+							<span>无船承运 </span>
+							<span>货物运输</span>
+							<span>货运业务</span>
+							<span>物流运输</span>
+							<span>货运经营</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance spclayer" data-type = "9">查看详情</a>
+						<span class="detail_bottom detail_bottom-spe">
+							（企业必备，超高性价比）
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/tuanti.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">团体意外险</p>
+						<div class="figcaption">
+							<p>被保险人按销售合同约定出口货物后，或作为信用证受益人按照信用证条款规定提交单据后，因保险合同约定的风险引起的直接损失（贸
+								易应收账款无法收回），保险人按合同约定负责赔偿。（具体保险责任以保险条款为准，需特别注意保险条款中的除外责任）
+							</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance">查看详情</a>
+						<span class="detail_bottom detail_bottom-spe">
+							（企业必备，超高性价比）
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/guzhu.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">超级牛掰的雇主责任险</p>
+						<div class="figcaption">
+							<p>被保险人按销售合同约定出口货物后，或作为信用证受益人按照信用证条款规定提交单据后，因保险合同约定的风险引起的直接损失（贸
+								易应收账款无法收回），保险人按合同约定负责赔偿。（具体保险责任以保险条款为准，需特别注意保险条款中的除外责任）
+							</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance">查看详情</a>
+						<span class="detail_bottom detail_bottom-spe">
+							（出口企业免费送）
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/qiyexy.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">企业信用保障险-免费领取</p>
+						<div class="figcaption">
+							<p>由于火灾，爆炸，雷击，空中物体坠落等原因造成损失，以及为抢救被保险财产而产生的施救费用。由于火灾，爆炸，雷击，空中物体坠落等原因造成损失，以及为抢救被保险财产而产生的施救费用。
+								被保险人按销售合同约定出口货物后，或作为信用证受益人按照信用证条款规定提交单据后，因保险合同约定的风险引起的直接损失（贸
+								易应收账款无法收回），保险人按合同约定负责赔偿。（具体保险责任以保险条款为准，需特别注意保险条款中的除外责任）
+								被保险人按销售合同约定出口货物后，或作为信用证受益人按照信用证条款规定提交单据后，因保险合同约定的风险引起的直接损失
+								被保险人按销售合同约定出口货物后，或作为信用证受益人按照信用证条款规定提交单据后，因保险合同约定的风险引起的直接损失
+							</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance">查看详情</a>
+						<span class="detail_bottom">
+							<span class="span_m">￥</span>
+							<span>0</span>
+							<span>/</span>月起
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="insurance-detail-spec clear">
+				<div class="cont_left">
+					<img src="../img/anxin.png"/>
+				</div>
+				<div class="cont_right">
+					<div>
+						<p class="detail_titl">春节安心险</p>
+						<p class="detail_tips">险种说明：</p>
+						<div class="figcaption detail_anxin">
+							<p>
+								意外身故、伤残 10万元在保险期间内被保险人遭受意外伤害，并且意外伤害发生之日起180日内因意外伤害身故的，保 险人按保险金额
+								给付身故保险金，对该被保险人的保险责任终止。
+							</p>
+							<div class="diandiandian">...</div>
+						</div>
+						<p class="detail_tips">场景：</p>
+						<p class=" scene_cont">
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+							<span>意外伤害</span>
+							<span>企业破产</span>
+						</p>
+					</div>
+					<div>
+						<a href="#" class="toInsurance">查看详情</a>
+						<span class="detail_bottom">
+							<span class="span_m">￥</span>
+							<span>100</span>
+							<span>/</span>月起
+						</span>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<!--底部 -->
+		<div id="footer"></div>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript" src="../js/Validform_ncr_min.js"></script>
+		<script type="text/javascript" src="../js/common.js" ></script> 
+		<script type="text/javascript" src="../js/recommend-detail.js"></script>
+		<script>
+			$(function(){
+				$("#header").load("header.html",get);
+				$("#footer").load("footer.html"); 
+				
+				$('.figcaption').each(function(){
+					var divH = $(this).height();
+				    var $p = $(this).find("p");
+				    if ($p.height() > 88) {
+				        $(this).find(".diandiandian").show();
+				        $p.css({height:"88px",overflow:"hidden"});
+				    };
+				});
+				
+			})
+		</script>
+	</body>
+</html>

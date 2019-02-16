@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>货运险-选择类型</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="contentChoose">
+			<p class="all_tip1">请勾选投保说明</p>
+			<div class="content clear" >
+				<div class="cont-title">货运投保单</div>
+				<div class="trans_select clear">
+					<div class="trans_select1">
+						<img src="../img/domestic.png" class="img_big" />
+						<img src="../img/gou_pic.png" class="img_small" />
+						<span>国内货运</span>
+					</div>
+					<div class="trans_select2">
+						<img src="../img/export.png" class="img_big" />
+						<img src="../img/gou_pic.png" class="img_small" />
+						<span>进出口货运</span>
+					</div>
+				</div>
+				<div class="dealDiv">
+					<div class="dealTxt">
+						本产品仅适用普通货物的运输保险。用户投保的货物品名、种类、包装、数量、价值等信息必须如实填写，且必须符合系统所列明的货品种类明细。
+						企保招招或保险公司将不会对任何超出列明承保范围的运输风险承担任何责任，并不退回已缴交的相关保费。
+					</div>
+					<label>
+						<input type="checkbox" class="dealCheck" name="" value="" />
+						<span>我已阅读并同意上述投保说明</span>
+					</label>
+				</div>
+				<div class="div_btn">
+					<a class="btn_ok" href="javascript:;">下一步</a>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<script src="../js/common.js"></script>
+	<script>
+		$(function(){
+			$("#header").load("header.html",get); 
+			$("#footer").load("footer.html"); 
+			
+			$(document).on("click",".trans_select div",function(){
+				$(this).css({border: "1px solid #524ae7"});
+				$(this).find('.img_small').show();
+				$(this).siblings("div").css({border: "1px solid #e9e9f4"}).find('.img_small').hide();
+			})
+			
+			// 勾选投保说明
+			$(".btn_ok").click(function(){
+				if($(".dealCheck").prop("checked") ==false){
+					$(".all_tip1").show();
+					setTimeout(function(){
+						$(".all_tip1").hide();
+					},2000)
+				} else {
+					
+				}
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>企保招招-货物运输保障详情</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+    	<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+    	<link rel="stylesheet" type="text/css" href="../../css/freight.css"/>
+	</head>
+	<body>
+		<!-- 弹框 -->
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="toubao_fix">
+				<div class="no"></div>
+				<div class="fixCont">
+					<p class="fix_title">投保须知</p>	
+					<div class="toubao_cont">
+						<div class="toubaocont_type">
+							<p class="instructionTitle">保险介绍：</p>
+							<!--<p>1. 本保险承保公司为中国人民财产保险股份有限公司；</p>
+							<p>2. 本产品每次仅可投保货值在<span class="huozhi">100万美金</span>或等值其他币种金额以内的保单，若超过该金额，请与客服联系采用其他方式投保；</p>
+							<p>3. 保单查询：本保单投保完成后可通过企保招招平台保单管理板块查询或致电保险公司客服95518查询；</p>
+							<p>4. 投保中有任何问题请联系客服400-830-1985。</p>
+							<p class="last_p"></p>-->
+						</div>
+						<div class="toubaocont_type">
+							<p class="instructionTitle">承保声明：</p>
+							<div class="statrTxt"></div>
+						</div>
+					</div>
+					<div class="fixCont_bottom clear">
+						<div class="bottom_left1">
+							<div class="bottom_left">
+								<span>费率：</span>
+								<span class="redTxt"></span>
+							</div>
+							<div class="bottom_left">
+								<span>最低收费：</span>
+								<span class="redTxt"></span>
+							</div>
+						</div>
+						<div class="bottom_right" data-url="">确认上述信息并投保</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--顶部 -->
+		<div id="header"></div>
+		<div class="nav">
+			<div class="nav_banner"></div>
+			<!--<div class="nav_bottom clear">
+				<p class="nav_bottomTxt">
+					<span>货物运输保障（一切险）</span>
+					<img src="../../img/transport/picc.png" />
+				</p>
+				<p class="insure_now">充值享优惠</p>
+			</div>-->
+		</div>
+		<div class="contentDetail">
+			<input type="hidden" name="is_lading" value="{$is_lading}" />
+			<div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">普货保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万1</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<div class="place">进出口</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/zhongyi.png"/>
+			 					<div class="position1" data-id="2">立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/renshou.png"/>
+			 					<div class="position1" data-id="3">立即投保</div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<div class="place">国内</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/renshou.png"/>
+			 					<div class="position1" data-id="3">立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/renshou.png"/>
+			 					<div class="position1" data-id="3">立即投保</div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			</div>
+			<div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top1"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">易碎保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万3.5</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<div class="place">进出口</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<!--<div class="position">
+			 					<img />
+			 				</div>-->
+			 				
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<div class="place">国内</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<!--<div class="position">
+			 					<img />
+			 				</div>-->
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top2"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">冻品保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万4</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<div class="place">进出口</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/taipingyang.png"/>
+			 					<div class="position1" data-id="4">立即投保</div>
+			 				</div>	
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<div class=" place">国内</div>
+			 				<span class="online">产品上线中，敬请期待</span>
+			 				
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top3"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">化工保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万3</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<div class=" place">进出口</div>
+			 				<span class="online">产品上线中，敬请期待</span>
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<div class="place">国内</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div class="position1" data-id="1">立即投保</div>
+			 				</div>
+			 				<!--<div class="position">	
+			 					<img />
+			 				</div>-->
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			<div class="section1">
+				<p class="section_title">他们都在用</p>
+				<ul class="ul2 clear">
+					<li>
+						<img src="../../img/transport/robinson.png" />
+						<p class="li_hover">罗宾升物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/Worldwide.png" />
+						<p class="li_hover">环世物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/saicheng.png" />
+						<p class="li_hover">赛诚物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/AML.png" />
+						<p class="li_hover">AML</p>
+					</li>
+					<li>
+						<img src="../../img/transport/GoPlus.png" />
+						<p class="li_hover">GoPlus</p>
+					</li>
+					<li>
+						<img src="../../img/transport/easyocean.png" />
+						<p class="li_hover">EasyOcean</p>
+					</li>
+					<li>
+						<img src="../../img/transport/guanhaitong.png" />
+						<p class="li_hover">冠海通物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/TCI.png" />
+						<p class="li_hover">科荣微电子</p>
+					</li>
+				</ul>
+			</div>
+			<div class="section4">
+				<p class="section_title">常见问题</p>
+				<ul class="ul3">
+					<li>Q.什么时间投保最合适呢?有没有什么要求?</li>
+					<li>A.一般是在起运前将投保资料齐全后进行投保，起运的当天也可以进行投保，如果是起运后投保则需要提供未出险证明。</li>
+					<li>Q.投保时你们的货物种类与我这个产品不太相符，货物种类会在保单上显示吗?</li>
+					<li>A.您选择与您投保产品相近的货物种类就可以了，货运种类不会在保单上显示的，我们是按您填写的货物名称来出单。保单上只显示货物名称。</li>
+					<li>Q.同一被保险人，两种货物，同一运输方式，同一目的地，起运日期相同，可否出一张保单?</li>
+					<li>A.可以的，同一票货，同一运输路线，同一被保险人，同一运输工具只出一张保单即可。</li>
+					<li>Q.什么是免赔？</li>
+					<li>A.免赔额是保险公司的免责限度，是在保险合同中明确规定的不予赔付的承保损失部分，即保险期间发生保险事故并造成承保损失时，保险公司按照合同约定对其中一部分损失免于承担赔偿责任，由被保险人自己承担这部分损失。免赔额的实质是风险共担，其目的在于：一是减少道德风险，鼓励被保险人采取减损防损措施，避免由于风险转移使被保险人降低责任心；二是减少损失索赔次数，降低保险公司的承保损失成 本和理赔费用。</li>
+					<li>Q.什么是不足额投保，其后果是什么?</li>
+					<li>A.不足额投保是指保险合同约定的保险金额低于保险价值。例如一台价值12万元的设备，如果按照8万元确定保险金额，则属于不足额投保。不足额投保的后果是：发生保险事故后，保险公司按照保险金额与保险价值的比例承担赔偿责任，也就是比例赔付。</li>
+				</ul>
+			</div>
+		</div>
+		<!--底部 -->
+		<div id="footer"></div>
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../layer/layer.js"></script>
+		
+		<script>
+			$(".first-right-top-international img").mousemove(function(){
+				var this_=$(this);
+				$(".first-right-top-international img").show();
+				$(".first-right-top-international img").siblings("div").hide();
+				this_.hide();
+				this_.siblings("div").show();
+				
+			})
+			$(".first-right-top-international img").siblings("div").mouseleave(function(){
+				var this_=$(this);
+				this_.hide();
+				this_.siblings("img").show();
+				
+			})
+			$(function(){
+				// 投保弹框
+			    $(".position .position1").on("click", function(){
+			    	var this_=$(this);
+					var message={
+//						type:this_.attr("type"),
+//						data_id:this_.attr("data-id"),
+//						exit:this_.attr("exit")
+						data_id:this_.attr("data-id")
+					}
+//					console.log(message);
+					$.ajax({
+						type:'GET',
+						url:" ",
+						dataType:'json',
+						data:message,
+						success:function(data){
+							
+						}
+						
+					})
+			        $(".all_fix").show();
+//			        var goodsType = $(this).data('goods');
+//			    	var type = $(this).data('type');
+//			    	var inputVal = $("input[name='is_lading']").val();
+//					if(inputVal != 2) {                // 跳转页面
+////						$(".bottom_right").data("url","http://{$Think.config.website.www}/cargo/index?goodsType="+goodsType+"&insuranceId="+type);
+//					} else {
+//						$(".bottom_right").data("url","");
+//					}
+			    });
+			
+			    // 关闭投保弹框
+			    $(document).on("click", ".all_no,.no", function(){
+			    	$('.toubao_cont').scrollTop(0);
+			        $(".all_fix").hide();
+			    });
+				
+				// 点击确认投保
+				$(".bottom_right").on("click",function(){
+					$(".all_fix").hide();
+//					if($(this).data("url") != "") {
+//						window.open($(this).data("url"));
+//					} else {
+//						layer.open({
+//							title: false,
+//							type: 2,
+//							closeBtn: 0, //不显示关闭按钮
+//							anim: -1,
+//							area:["540px",'520px'],
+//							shade: [0.7, '#333'],
+//							shadeClose: true, //开启遮罩关闭
+////						content: ["http://127.0.0.1:8020/static/index3.0/html/insurance%20type/upload_policy.html","no"]
+//							content: ["http://172.16.3.140:8020/static/index3.0/html/insurance%20type/upload_policy.html","no"]
+//						});
+//					}
+					
+				});
+			})
+		</script>
+	</body>
+</html>

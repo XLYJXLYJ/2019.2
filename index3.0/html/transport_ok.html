@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>货运险-提交完成</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="contentPayOk">
+			<div class="content clear" >
+				<div class="cont-title">货运投保单</div>
+				<div class="trans_tip">
+					<img src="../img/gou_s.png" />
+					<p >提交成功！</p>
+				</div>
+				<div class="div_bottm">
+					<p class="mid_titl">我们会尽快为您出单，保障您的货运风险。</p>
+					<p class="tiaozhuan">页面自动跳转中<strong class="mid_num">5</strong></p>
+					<p class="tiaozhuan">点击<a href="../my.html" class="mid_back">返回</a>直接回到订单管理</p>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<script src="../js/common.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script>
+			$(function(){
+				$("#header").load("header.html",get); 
+				$("#footer").load("footer.html"); 
+			})
+			$(function(){
+				var numb = 5;
+				var goTime = setInterval(function(){
+					$('.mid_num').text(--numb);
+					if(numb==0) {
+						clearInterval(goTime);
+						window.location.href = '../my.html';
+					}
+				},1000);
+			})
+		</script>
+</html>

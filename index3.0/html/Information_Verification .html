@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/Information_Verification.css" >
+	</head>
+	<body>
+		<div class="title">
+			<img src="../img/qbzz.png" />
+		</div>
+		<div class="box">
+			<div class="verify">
+				信息验证
+			</div>
+			<div class="reg">
+				<form class="myform" action="">
+					<div class="phone">
+						<div class="text">手机号码:</div>
+						<div class="input-phone">
+							<input type="text" class="phone_number"  name="" placeholder="请输入手机号码" datatype="phone" errormsg="请填写正确的手机号"  nullmsg="请输入手机号"/>
+						</div>
+						<span class="Validform_checktip"></span>
+					</div>
+					<div class="phone">
+						<div class="text">验证码:</div>
+						<div class="input-verify">
+							<input type="text" name="" class="number"  placeholder="请输入验证码" datatype="*4-6" errormsg="验证码输入错误" nullmsg="请输入验证码"/>
+							<div class="btn">获取验证码</div>
+						</div>
+						<span class="Validform_checktip"></span>
+					</div>
+					<div class="sure">确认</div>
+				</form>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/Validform_ncr_min.js"></script>
+	<script>
+		//短信验证码
+	    $(document).on("click",".btn",function(){
+			var phone=$(".phone_number").val();
+			if(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone)) {
+				$.post("/external/sendMessage  ",{'cellphone':phone},function(data){
+					if(data.code==200){
+						var n=60;
+						$(".btn").removeClass("code").html(n+"s");
+						timeer=setInterval(function(){
+							n--;
+							if(n>0){
+								$(".btn").html(n+"s");
+							}else{
+								$(".btn").addClass("code").html("获取验证码");
+								clearInterval(timeer);
+							}
+						},1000)
+					}else{
+						$(".input-phone").focus();
+						$(".input-phone").siblings(".Validform_checktip").html(data.msg);
+					}
+				});
+				
+			}else{
+				$(".input-phone").focus();
+				$(".phone_number").siblings(".Validform_checktip").html("");
+				$(".input-phone").siblings(".Validform_checktip").html("请输入正确手机号");
+			}
+		});
+		
+		$(".myform").Validform({
+	        tiptype: 4,
+	        ignoreHidden:true,
+	        postonce: true,
+	        ajaxPost:true,
+	        btnSubmit:".sure",
+	        datatype:{
+            	'phone':/^1\d{10}$/
+	        },
+	        beforeCheck:function(curform){
+	        	$(".input-phone").siblings(".Validform_checktip").html("");
+	        },
+	        beforeSubmit:function(curform){
+	        	var code=$(".number").val();
+	        	var phone=$(".phone_number").val();
+	        	$.post("/ external/checkCode  ",{'cellphone':phone,'code':code},function(data){
+	        		if(data.code!==200){
+	        			$(".input-verify +.Validform_checktip").html(data.msg);
+	        			return false;
+	        		}
+	        	})
+	       	},
+	        callback:function(data){
+				
+	        }
+	   });
+	</script>
+</html>

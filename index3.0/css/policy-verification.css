@@ -1,0 +1,27 @@
+.banner {width: 100%;height: 520px;background: #f3f2f7 url(../img/verification_banner.png) center center no-repeat;}
+.content {width: 1200px;margin: 0 auto;color:#35313f;padding: 70px 0 300px 0;}
+.title {height: 60px;line-height: 60px;background: url(../img/choose.png) no-repeat;padding-left: 78px;font-size: 32px;}
+.companies {margin-top: 62px;}
+.companies li {float: left;width:25%;height: 100px;margin-bottom: 50px;}
+.clickPart {width: 240px;height: 102px;cursor: pointer;border: 1px solid #E9E9F4;text-align: center;line-height: 100px;margin-right: 38px;margin: 0 auto;}
+.clickPart img {width: 100%;height: 100%;}
+.moreTxt {line-height: 40px;font-size: 30px;text-align: center;cursor: pointer;}
+.moreTxt p {display: inline-block;}
+.moreImg {width: 38px;height: 34px;background: url(../img/index.png) -1122px -492px;}
+.moreImgMove {background-position-x: -1161px;}
+.hideCompany {margin-top: 0;}
+
+.fix_company{
+width: 500px;
+height: 340px;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -250px;
+margin-top: -170px;
+border-radius: 5px;
+background-color: #fff;}
+.fix_titl {width: 100%;height: 66px;line-height: 66px;border-bottom: 1px solid #E9E9F4;text-align: center;font-size: 24px;color: #524AE7;}
+.fix_conts {padding: 0 34px;font-size: 14px;color: #727689;line-height: 24px;}
+.conts_titl {color: #35313F;font-size: 16px;margin-top: 26px;font-weight: bold;}
+.redTxt {color: #e5423d;}

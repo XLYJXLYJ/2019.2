@@ -1,0 +1,41 @@
+{
+	"data":{
+		"qa_dict":{
+			"answer":"ssssss",
+			"id":91,
+			"is_standard_question":"",
+			"question":"wwwww",
+			"robot_code":"001",
+			"weight":999
+		},
+		"qas_similar_list":[
+			{
+				"answer":"ssssss",
+				"id":"92",
+				"is_standard_question":"91",
+				"question":"wwwww",
+				"robot_code":"001",
+				"weight":999
+			},
+			{
+				"answer":"ssssss",
+				"id":"93",
+				"is_standard_question":"91",
+				"question":"www",
+				"robot_code":"001",
+				"weight":999
+			},
+			{
+				"answer":"ssssss",
+				"id":"94",
+				"is_standard_question":"91",
+				"question":"ww",
+				"robot_code":"001",
+				"weight":999
+			}
+		
+		]
+	},
+	"errcode":"0",
+	"errmsg":"OK"
+}

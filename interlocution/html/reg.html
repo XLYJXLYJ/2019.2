@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css"  href="../css/common.css" />
+		<title>注册</title>
+	</head>
+	<body>
+		<div class="reg">
+			<img class="title" src="../img/InsurBot_AIMI.png">
+			<div class="shadow"></div>
+			<form class="myform" action="">
+				
+				<div>
+					<input type="text" name="name" placeholder="用户名"  datatype="*2-16" errormsg="用户名范围在2~16位之间" nullmsg="请输入用户名"/ >
+				</div>
+				<div>
+					<input type="password" name="password" placeholder="密码"  datatype="*6-16" errormsg="密码范围在6~16位之间" nullmsg="请输入密码" />
+				</div>
+				<div>
+					<input type="text" name="phone" class="phone" placeholder="电话" datatype="phone" errormsg="请填写验证码" nullmsg="请输入电话号码"/>
+					<span class="get-code code">获取验证码</span>
+				</div>
+				<div>
+					<input type="text" name="verfiy-code" class="verify_code" placeholder="验证码" datatype="*4-6" errormsg="验证码输入错误" nullmsg="请输入验证码"/>
+				</div>
+				<span class="existing-account"><a href="login.html">已有账号,登录</a></span>
+				<span class="reg-buttom"> 注册</span>
+			</form>
+			<img class="text" src="../img/text.png" />
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/Validform_ncr_min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".myform").Validform({
+			        tiptype: 4,
+			        ignoreHidden:true,
+			        postonce: true,
+			        ajaxPost:true,
+			        btnSubmit:".reg-buttom",
+			        datatype:{
+		            	'phone':/^1\d{10}$/
+			        },
+			        
+			        callback:function(data){
+						if(data.code==200){
+							
+						}else{
+							$(".verify_code .Validform_checktip").html("验证码错误");
+						}
+			        }
+			    });
+			    
+			    //短信验证码
+			    $(document).on("click",".get-code",function(){
+					var phone=$(".phone").val();
+					if(!$(".get-code").is(".code")){
+						return false;
+					}
+					if(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone)) {
+						$(".phone").siblings(".Validform_checktip").html("");
+						$.post(" /index/sendMessage",{'cellphone':phone},function(data){
+							var data=JSON.parse(data);
+							if(data.code==200){
+								var n=60;
+								$(".get-code").removeClass("code").html(n+"s");
+								timeer=setInterval(function(){
+									n--;
+									if(n>0){
+										$(".get-code").html(n+"s");
+									}else{
+										$(".get-code").addClass("code").html("获取验证码");
+										clearInterval(timeer);
+									}
+								},1000)
+			//					
+							}else{
+								$(".phone").focus();
+								$(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+							}
+						})	
+					}else{
+						$(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+				
+					}
+				});
+			})	
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+* {	margin: 0px;padding: 0px;outline: none;}
+a:hover,a:focus {outline: none;text-decoration: none;}
+img,button,input {outline: none;}
+em {font-style: normal;}
+a:hover {text-decoration: none;}
+.C_layout {width: 1200px;margin: 0 auto;}
+.C_layout .xian{width: 90px;margin: 0 auto;margin-left: 45.5%;border-bottom: 2px solid #35313f;}
+.C_layout .xianl{width: 260px;float: left;position: relative;top: 112px;border-bottom: 1px solid #e9e9f4;}
+.C_layout .xianr{width: 260px;float: right;position: relative;top: 112px;border-bottom: 1px solid #e9e9f4;}
+body {background: #fff;font: 14px "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;min-width: 1255px;}
+ul,li,dl,dd {list-style: none;}
+/***字体***/
+.fc6 {color: #35313f;}
+.fc9 {color: #727689;}
+.fcf {	color: #fff;}
+.fc3 {color: #35313f;}
+.f14 {font-size: 14px;color: #727689;}
+.f18 {font-size: 18px;font-weight: 500;}
+.f26 {font-size: 36px;letter-spacing: 20px;padding-bottom: 10px;padding-top: 20px;font-family: "microsoft yahei light";}
+.f16{font-size:16px;}
+/***间距***/
+.mt45 {margin-top: 45px;}
+.mt80 {margin-top: 40px;}
+.mt110 {margin-top: 110px;}
+.mt35 {margin-top: 35px;}
+.mt50 {margin-top: 50px;}
+.mb20 {margin-bottom: 20px;}
+.ml42 {margin-right: 25px;}
+.mr-42 {margin-right: -42px;}
+.ml35 {margin-left: 35px;}
+.partner-warp li p{width: 90px;height: 80px;position: relative;margin-left: 85px;padding-right: 15px;border-bottom: 1px solid #4c44e1;}
+.partner-warp li a{color: #4c44e1;display: inline-block;}
+.partner-warp li a span{width: 9px;height: 15px;background: url(../img/more.png) no-repeat;display: inline-block;position: absolute;top: 57px;right: 0;}
+

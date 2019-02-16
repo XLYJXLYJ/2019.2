@@ -1,0 +1,8 @@
+.input .question{background-position:0rem 0.1rem ;}
+.input .question.active{background-position:-2.8rem 0rem }
+.aimi .right .text div{max-width: 18rem;padding: 0.9rem 1rem;}
+.aimi .radius{max-width: 15rem;}
+.aimi .text1 .typing_loader{margin-top:0.36rem ;}
+.aimi .text1 #spinners{margin-top: 0.4rem;}
+.aimi .radius{padding: 0.9rem 1rem;}
+.aimi .choose div{padding:0.7rem 1rem ;min-width: 3rem;border-radius: 1.5rem;}

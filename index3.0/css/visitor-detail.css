@@ -1,0 +1,313 @@
+.nav_pic {
+	width: 100%;
+	height: 520px;
+	background:#f3f2f7 url(../img/nav_pic.png) center center no-repeat;
+}
+.nav_pic1{
+	width: 100%;
+	height: 520px;
+	background:#f3f2f7 url(../img/nav_pic1.png) center center no-repeat;
+}
+.insurance-detail {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 40px 0;
+	border-bottom:1px solid #e9e9f4;
+	
+}
+.insurance-detail-spec {
+	width: 1200px;
+	padding: 30px 0;
+	margin:20px auto;
+	border:1px solid #e9e9f4;
+}
+.insurance-detail-spec:hover {
+	border:1px solid #524ae7;
+}
+.cont_left {
+	width: 440px;
+	/*height: 308px;*/
+	/*padding-top: 40px;*/
+	float: left;
+	height:259px;
+	position:relative;
+	text-align: center;
+}
+.cont_left img{position:absolute;top:0;left:0;bottom: 0;right:0;margin:auto;}
+.cont_right {
+	color: #35313f;
+	width: 704px;
+	float: left;
+	font-size: 16px;
+}
+.detail_titl {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 12px;
+	font-family: "microsoft yahei light";
+}
+.detail_tips {
+	color: #524ae7;
+	line-height: 30px;
+	font-size: 14px;
+}
+.scene_cont {
+	color:#727689;
+	height: 28px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.scene_cont span {margin-right: 14px;font-size: 14px;}
+.figcaption {
+	width: 704px;
+	height: 90px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	position:relative;
+	/*overflow: hidden;*/
+}
+.diandiandian{display:none;width:60px;height:25px;text-align:right;position:absolute;top:62px;right:0;font-size: 16px;letter-spacing: 2px;background: url(../img/ellipsis_bg.png) no-repeat;}
+.figcaption p {
+	margin: 0;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.toInsurance {
+	cursor: pointer;
+	width: 150px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	display: inline-block;
+	background-color: #524ae7;
+}
+.detail_bottom {
+	color: #727689;
+	font-size: 14px;
+	margin-left: 10px;
+}
+.case_cont {
+	width: 1110px;
+	margin: 0 auto;
+	color: #727689;
+	font-size: 14px;
+	margin-top: 50px;
+	line-height: 30px;
+}
+.service-youshi .title {
+	text-align: center;
+	width: 1200px;
+	margin: 0 auto;
+}
+.title_txt {
+	color: #35313f;
+	font-size: 36px;
+	letter-spacing: 20px;
+	margin-top: 80px;
+	padding-bottom: 10px;
+	font-family: "microsoft yahei light";
+}
+.service-youshi .xian{
+	width: 100px;
+	margin: 14px auto;
+    margin-left: 45%;
+	border-bottom: 2px solid #35313f;
+}
+.service-youshi .xianl{
+	width: 280px;
+    float: left;
+    position: relative;
+    top: 30px;
+    border-bottom: 1px solid #35313f;
+}
+.service-youshi .xianr{
+	width: 280px;
+    float: right;
+    position: relative;
+    top: 30px;
+    border-bottom: 1px solid #35313f;
+}
+.service-youshi .title span {
+	color: #727689;
+	line-height: 30px;
+	font-size: 16px;
+}
+.service-list {
+	width: 1200px;
+	margin: 0 auto;
+}
+.youshi-cont {margin-top: 80px;}
+.youshi-cont>li{
+	width: 275px;
+	height: 275px;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    margin-right: 33px;
+    padding: 42px 0;
+    background: url(../img/circle.png) no-repeat center;
+}
+.youshi-cont>.service-jg {margin-right: 0;}
+.service-list li i {
+	width: 75px;
+	height: 68px;
+	display: block;
+	margin: 0px auto;
+}
+.service-list li.service-ls i {background: url(../img/ls.png) no-repeat center;}
+
+.service-list li.service-yzs i {background: url(../img/yzs.png) no-repeat center;}
+
+.service-list li.service-ygj i {background: url(../img/ygj.png) no-repeat center;}
+
+.service-list li.service-jg i {background: url(../img/jg.png) no-repeat center;}
+.li_titl {
+	color: #35313f;
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 20px;
+}
+
+.youshi-cont-ul{
+	margin-top: 20px;
+    margin-left: 70px;
+}
+.youshi-cont-ul li{
+	color: #727689;
+	border: none;
+	list-style-image: url(../img/heidian.png);
+	list-style-position: inside;
+	padding: 5px 0;
+    text-align: left;
+}
+.ul2{margin-left: 100px;}
+.div_pathl {
+	float: left;
+	margin-top: 80px;
+}
+.div_pathl>div {
+	width: 70px;
+	height: 75px;
+	font-size: 24px;
+	line-height: 75px;
+	text-align: left;
+	color: #35313f;
+	margin-bottom: 90px;
+	font-family: "microsoft yahei light";
+}
+.path_insure {background: url(../img/xuhao.png) no-repeat 0 0;}
+.path_endorsement {background: url(../img/xuhao.png) no-repeat 0 -168px;}
+.path_settlement {background: url(../img/xuhao.png) no-repeat 0 -348px;}
+.div_pathr {
+	float: left;
+	color: #8a8d9c;
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.path_contDiv {
+	float: left;
+	width: 224px;
+	text-align: center;
+	margin-bottom: 82px;
+}
+.path_cont .path_contDiv:first-child {margin-left: 100px;width: 140px;}
+.path_contDiv>div {
+	width: 42px;
+	height: 45px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+.pic_tb1 {background: url(../img/liucheng.png) no-repeat 0 0;}
+.pic_tb2 {background: url(../img/liucheng.png) no-repeat -300px 0;}
+.pic_tb3 {background: url(../img/liucheng.png) no-repeat -600px 0;}
+.pic_tb4 {background: url(../img/liucheng.png) no-repeat -868px 0;}
+.pic_pd1 {background: url(../img/liucheng.png) no-repeat 0 -162px;}
+.pic_pd2 {background: url(../img/liucheng.png) no-repeat -300px -168px;}
+.pic_pd3 {background: url(../img/liucheng.png) no-repeat -600px -165px;}
+.pic_pd4 {background: url(../img/liucheng.png) no-repeat -868px -162px;}
+.pic_lp1 {background: url(../img/liucheng.png) no-repeat 0 -330px;}
+.pic_lp2 {background: url(../img/liucheng.png) no-repeat -300px -330px;}
+.pic_lp3 {background: url(../img/liucheng.png) no-repeat -600px -330px;}
+.pic_lp4 {background: url(../img/liucheng.png) no-repeat -868px -330px;}
+.path_contPic {
+	float: left;
+	width: 40px;
+	height: 20px;
+	margin: 15px 16px 0 16px;
+	background: url(../img/jiantou.png) no-repeat;
+}
+
+
+.insurance-detail-spec .detail_titl{
+	color: #35313f;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.insurance-detail-spec .detail_tips{
+	font-size: 14px;
+    line-height: 22px;
+}
+.insurance-detail-spec .figcaption{
+	width: 725px;
+    /*height: 52px;*/
+     margin-bottom: 8px; 
+}
+.insurance-detail-spec .figcaption p{
+    color: #35313f;
+    line-height: 22px;
+    font-size: 14px;
+}
+.insurance-detail-spec .scene_cont{
+	color: #727689;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.insurance-detail-spec .scene_cont span {margin-right: 10px;font-size: 14px;}
+.insurance-detail-spec .detail_bottom{
+	font-size: 14px;
+	color:#727689;
+    margin-left: 5px;
+}
+.insurance-detail-spec .detail_bottom span{font-size: 20px;}
+.insurance-detail-spec .detail_bottom .span_m {font-size: 16px;}
+.insurance-detail-spec .diandiandian{top: 62px;}
+/*.insurance-detail-spec  .cont_left{padding-top: 50px;}*/
+
+
+/*货物运输保障弹框*/
+
+.no{position:absolute;right:-50px;top:0;cursor:pointer;background:url(../img/delete-line-ico2.png) no-repeat;width:30px;height:30px;}
+
+
+.sur_fix{z-index: 900;background: #fff;display:block;position:fixed;width:660px;border-radius:3px;}
+.sur_fix table{border-collapse: collapse;border:1px solid #e9e9f4}
+.sur_fix table td,.sur_fix table th{padding: 10px 30px;}
+.sur-title{font-size: 18px;line-height: 50px;color:#fff;background: #524ae7;padding:0 30px;border-radius: 3px 3px 0 0;}
+.sur-cont{padding:0 30px;overflow:auto;max-height: 495px;}
+.wuchuan-cont{min-height: 260px;}
+/*.huoyun-cont{min-height: 510px;}*/
+.sur-cont-li{margin-top: 13px;position:relative;}
+.sur-cont-left{float:left;line-height: 20px;width:100px;height:20px;margin-right: 10px;}
+.sur-cont-right{float:left;line-height: 20px;width:490px;color:#35313f;position:relative;}
+.over-tit{max-height:160px;overflow: auto;border:1px solid #e9e9f4;padding: 5px 10px;box-sizing: border-box;}
+.over-tit p{margin-bottom: 5px;}
+.red_money{color:#e5423d;}
+.blue-p{color:#727689;}
+.red{color:red;}
+.sur-cont-right input{margin-right: 5px;position:relative;top:1px;}
+.sur-ok{margin-right:30px;margin-top: 15px;cursor: pointer;height:40px;width:100px;float:right;line-height: 40px;font-size: 16px;color:#fff;background: #524ae7;text-align: center;border-radius: 3px;margin-bottom: 20px;}
+.yunsucheck label{color:#727689;margin-right: 20px;cursor: pointer;}
+.sur-cont-right .Validform_checktip{display:none;position:absolute;top:20px;}
+
+.jianjie{color:#000;}
+.sur-cont-tit{color:#555;}
+.heidian{position:absolute;left:-12px;}
+.fendian{color:#999;padding:5px 0 0 20px ;}
+.yunsucheck{padding: 10px 0 0 30px;}
+

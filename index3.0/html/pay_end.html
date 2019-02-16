@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>支付完成</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="content-end clear" >
+			<div class="cont-nav clear">
+				<span class="now-title">当前位置：</span>
+				<div class="now-area">
+					<a href="javascript:;">支付结果</a>
+					<span>></span>
+				</div>
+			</div>
+			<div class="pay_end_cont">
+				<img src="../img/gougou.png" alt="" />
+				<p>恭喜您，已支付成功！</p>
+				<div class="content-end-cont">
+					<span class="pay_left">您的支付方式：</span>
+					<span class="pay_right">个人网银在线支付</span>
+				</div>
+				<div class="content-end-cont">
+					<span class="pay_left">实付金额：</span>
+					<span class="pay_nuber">¥800.00</span>
+				</div>
+				<a href="../../qbzz/html/response.html">返回响应中</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script>
+	$(function(){
+		$("#header").load("header.html",get);
+		$("#footer").load("footer.html"); 
+	})
+</script>	
+	
+</html>

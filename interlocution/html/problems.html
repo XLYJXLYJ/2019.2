@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="back">
+			<p class="username">张三</p>
+			<a href="problems.html">内测问题数量统计</a>
+			<a href="sipc.html">奖励</a>
+			<a class="sign-up">退出</a>
+			<span>智能风险官Aimi<sup><img src="../img/r.png" /></sup></span>
+		</div>
+		<div class="problems">
+			<div class="head">
+				<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="aimi.html"><img class="backward" src="../img/backward.png"/></a>
+			</div>
+			<div class="statistics">
+				<p>问题数量统计</p>
+				<div class="shadow">
+					<div></div>
+					<span>20/30</span>
+				</div>
+				<div class="operation">
+					
+					<span><a href="aimi.html">继续提问</a></span>
+					<span class="submit">提交</span>
+				</div>
+			</div>
+			<div class="list">
+				<p>测试情况</p>
+				<div>
+					<span>用户名</span>
+					<span>参与测试轮数</span>
+					<span>排位</span>
+				</div>
+				<div>
+					<span>张三</span>
+					<span>190</span>
+					<span>第一名</span>
+				
+				</div>
+				<div>
+					<span>张三</span>
+					<span>190</span>
+					<span>第二名</span>
+				</div>
+				<div>
+					<span>张三</span>
+					<span>190</span>
+					<span>第三名</span>
+				</div>
+				<div>
+					<span>张三</span>
+					<span>190</span>
+					<span>第四名</span>
+				</div>
+				<div>
+					<span>张三</span>
+					<span>190</span>
+					<span>第五名</span>
+				</div>
+				
+			</div>
+			
+		</div>	
+		<div class="up">
+			<div>
+				<p class="prompt">提示</p>
+				<p>你是否确认退出?</p>
+				<span class="sure">是</span><span class="cancel">否</span>
+			</div>
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/common.js"></script>	
+		<script type="text/javascript">
+			//判断Android，iOS
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if (isiOS) {
+				document.write('<link rel="stylesheet" type="text/css" href="../css/ios.css" />')
+			}			
+		</script>
+	</body>
+</html>

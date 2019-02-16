@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="back">
+			<p class="username">张三</p>
+			<a href="problems.html">内测问题数量统计</a>
+			<a href="sipc.html">奖励</a>
+			<a class="sign-up">退出</a>
+			<span>智能风险官Aimi<sup><img src="../img/r.png" /></sup></span>
+		</div>
+		<div class="sipc">
+			<div class="head">
+				<!--<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="user.html"><img class="aside" src="../img/aside.png"/></a>
+				<span>说明</span>-->
+				<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="aimi.html"><img class="backward" src="../img/backward.png"/></a>
+				<span>说明</span>
+			</div>
+			<div class="problem">
+				<span class="income">本次获得收益</span>
+				<span class="number">50</span><span class="SIPC">SIPC</span>
+				<div>
+					<div class="left">
+						<p>已回答问题</p>
+						<p>10</p>
+					</div>
+					<div class="right">
+						<p>累计收益</p>
+						<p>120</p>
+					</div>
+				</div>
+			</div>
+			<div class="recharge"><span>充值</span><!--<img src="../img/right.png">--></div>
+			<div class="cash"><span>提现</span><!--<img src="../img/right.png">--></div>
+	
+			<div class="explain">
+				 SIPC是智保链项目发行的一种数字代币，在未来您可以通过SIPC购买保险产品，也可以在交易所将SIPC自由交换成为BTC（比特币），ETH（以太坊）等其他货币获取收益。
+
+			</div>
+			
+		</div>	
+		<div class="up">
+			<div>
+				<p class="prompt">提示</p>
+				<p>你是否确认退出?</p>
+				<span class="sure">是</span><span class="cancel">否</span>
+			</div>
+		</div>
+			<script src="../js/jquery.js"></script>
+			<script src="../js/common.js"></script>	
+			<script type="text/javascript">
+				//判断Android，iOS
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if (isiOS) {
+					document.write('<link rel="stylesheet" type="text/css" href="../css/ios.css" />')
+				}			
+		</script>
+	</body>
+</html>

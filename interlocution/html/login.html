@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		
+		<title></title>
+		<link rel="stylesheet" type="text/css"  href="../css/common.css" />
+	</head>
+	<body>
+		<div class="login">
+			<!--<img class="title" src="../img/InsurBot Aim11i.png">-->
+			
+			<div class="shadow"></div>
+			<form class="myform" action="">
+				
+				<div>
+					<input type="text" datatype="*2-16"  placeholder="用户名" errormsg="用户名范围在2~16位之间" nullmsg="请输入用户名" />
+				</div>
+				<div>
+					<input type="password" name="password" placeholder="密码"  datatype="*6-16" errormsg="密码范围在6~16位之间" nullmsg="请输入密码" />
+				</div>
+				<span class="existing-account"><a href="reg.html">没有账号</a></span>
+				<span class="forget_password"><a>忘记密码？</a></span>
+				<span class="login-buttom">登录</span>
+			</form>	
+			<img class="text" src="../img/text.png" />
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/Validform_ncr_min.js"></script>
+		<script type="text/javascript">
+            $(function () {
+                $(".myform").Validform({
+                    tiptype: 4,
+                    ignoreHidden: true,
+                    postonce: true,
+                    ajaxPost: true,
+                    btnSubmit: ".login-buttom",
+                    callback: function (data) {
+                        if (data.code == 10000) {
+                            layer_msg('登陆成功');
+                            setTimeout("window.location.href = '/test/chat'",2000);
+                        } else {
+                            layer_msg(data.msg);
+                        }
+                    }
+                });
+            });
+        
+			 
+			    
+		</script>
+	</body>
+</html>

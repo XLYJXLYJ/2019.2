@@ -1,0 +1,71 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+body,html{font-family:"微软雅黑";font-size: 14px;}
+a{color: #5c5869;text-decoration: none;}
+a:hover{text-decoration: none;}
+ol,ul,li{list-style: none;} 
+.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+textarea{resize: none}
+img{border-style: none;}
+textarea, input[type="text"], input[type="password"]{box-shadow: none;}
+button{border:0;}
+
+.mainCont textarea{color: #35313F;box-sizing: border-box;font-size: 14px;resize: none;padding-top: 5px;-webkit-box-shadow:none; -moz-box-shadow:none;box-shadow:none;}
+.mainCont {width: 496px;z-index: 100;}
+.mainDiv {width: 100%;position: relative;box-sizing: border-box;z-index: 300;}
+
+.closeBtn {position: absolute;top: 45px;right: 16px;cursor: pointer;z-index: 10;}
+
+.closeDiv {width: 458px;height: 664px;position:absolute;top:0;left:22px;z-index:600;display: none;z-index: 200;}
+.closeFix {width:100%;height:100%;background: rgba(0,0,0,.5);padding-bottom: 5px;visibility: hidden;background-color: black\9;filter:Alpha(Opacity=50)\9;}
+.closeCont {position: absolute;top: 30%;left: 20px;width: 420px;height: 260px;padding: 20px 10px;box-sizing: border-box;background-color: #fff;}
+.evaluateTxt {width: 100%;height: 172px;padding: 0 10px;border: 1px solid #E9E9F4;}
+.wrongTip {width: 100%;height: 20px;color: red;padding-left: 10px;}
+.closeCont input {cursor: pointer;float: right;display: inline-block;position: relative;top: 1px;width: 80px;height: 26px;line-height: 26px;text-align: center;box-sizing: border-box;margin-left: 20px;background-color: #fff;border: 1px solid #E9E9F4;}
+
+.mainTitle {width: 502px;height: 145px;/*margin-left: 5px;*/box-sizing: border-box;color: #fff;position: relative;background: url(../img/title.png) center no-repeat;z-index: 1;}
+.mainTitleCont {position: absolute;bottom: 12px;left: 222px;font-size: 14px;font-weight: bold;text-align: center;}
+.titleContTop {font-size: 20px;}
+
+.mainPart {width: 100%;height: 535px;background: url(../img/robotBc.png) no-repeat;position: relative;padding-left: 18px;box-sizing: border-box;}
+
+.toChat {display: inline-block;font-size: 14px;position: absolute;top: 10px;right: 40px;width: 90px;height: 25px;line-height: 25px;text-align: center;border: 1px solid #524ae7;color: #524ae7;background-color: #f8f8ff;}
+.tipTxt .toChat:hover,.tipTxt .toChat:not(.active) {color: #524ae7;}
+.tipTxt {padding-top: 15px;padding-bottom: 16px;}
+.tipTxtCont {margin-left: 18px;padding-left: 24px;background: url(../img/tip.png) left no-repeat;color: #727689;font-size: 12px;}
+.tipTxtCont .linkTxt,.tipTxtCont .linkTxt:hover {border-bottom: 1px solid #524ae7;display: inline-block;text-decoration: none;color: #524ae7;}
+
+.contPart1 {width: 455px;margin-left:6px;height: 360px;overflow: auto;border-top: 1px solid #E9E9F4;border-bottom: 1px solid #E9E9F4;box-sizing: border-box;}
+.contPart1>li {margin-top: 10px;margin-bottom: 10px;font-size: 14px;}
+.liLeft {margin-left: 12px;}
+.liRight {margin-right: 12px;text-align: right;}
+.liTxtTile {color: #323234;}
+.liDivTxt {word-wrap:break-word;max-width: 370px;line-height: 26px;box-sizing: border-box;margin-bottom: 10px;border-radius: 2px;}
+.liTxtCont {position: relative;margin: 8px 10px;}
+.liLeft .liDivTxt {float: left;min-width: 200px;left: -30px;background-color: #847fe9;color: #eeeeff;}
+.liLeft .liTxtTile {float: left;width: 100%;}
+.liRight .liDivTxt {float: right;color: #fff;text-align: left;background-color: #eeeeff;color: #847fe9;}
+.questionCont label {display: block;min-width: 120px;margin-left: 16px;cursor: pointer;}
+.questionCont label input {margin-top: 0;}
+.liDivTxt .linkTxt,.liDivTxt .linkTxt:hover {color: #fabc2d;text-decoration: underline;}
+.insuranceCont {margin-left: 14px;line-height: 20px;}
+.insurance_ul {border-bottom: 1px solid #E9E9F4;padding-bottom: 10px;margin-bottom: 10px;}
+.insuranceCont li {margin: 5px 0;}
+.containAsk {width: 100%;height: 38px;background-color: #7872ec;color: #aba7f3;}
+.askNo,.askYes {cursor: pointer;float: left;width: 50%;box-sizing: border-box;height: 28px;margin-top: 6px;text-align: center;}
+.askNo{border-right: 1px solid #524AE7;}
+.askPic{display: inline-block;vertical-align: middle;width: 26px;height: 26px;background: url(../img/fix_loging.png) no-repeat;}
+.askNo .askPic {background-position: -3px -32px;}
+.askYes .askPic {background-position: -32px -32px;}
+.containAsk .clickNo {background-position: -3px -3px;}
+.containAsk .clickYes {background-position: -32px -3px;}
+
+.contPart2 {width: 457px;margin-left:6px;height: 112px;box-sizing: border-box;position: relative}
+.contPart2 .divContain {/*height: 50px;*/padding: 4px 0;overflow: hidden;width: 100%;height: 100%;box-sizing: border-box;}
+.contPart2 .contPart2Txt {display: block;width: 455px;height: 100%;line-height: 20px;outline: none;border: none;padding: 0 10px;font-size: 12px;padding-right: 68px;}
+.contPart2Btn {font-size: 14px;/*margin-top: -12px;float: right;*/width: 72px;height: 72px;text-align: center;line-height: 72px;background:url(../img/fix_loging.png) no-repeat;/*margin-right: 16px;*/border-radius: 3px;position: absolute;top: 42px;right: 10px;}
+.unsendMsg{background-position: -148px -228px;color: #afafbb;cursor: not-allowed;}
+.sendMsg{background-position: -76px -228px;color: #fff;cursor:pointer}
+
+.layui-layer{opacity: 0;}
+
+

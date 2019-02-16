@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	</head>
+	<body class="submit_body">
+		<div class="back">
+			<p class="username">张三</p>
+			<a href="problems.html">内测问题数量统计</a>
+			<a href="sipc.html">奖励</a>
+			<a class="sign-up">退出</a>
+			<span>智能风险官Aimi<sup><img src="../img/r.png" /></sup></span>
+		</div>
+		<div class="submit">
+			<div class="head">
+				<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="aimi.html"><img class="backward" src="../img/backward.png"/></a>
+			</div>
+			<p class="about">期待你的打分</p>
+			<div class="stats">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			
+			<form action="">
+				<hr />
+				<textarea rows="6" cols="35" maxlength="300" name="text"  placeholder="关于机器人Aimi，请您描述出本次您在测试中的体验感受和想法，以便Aimi能够尽快成长，早日成为真正能够帮助到您的保险机器人，我们也将选择本次测试中对Aimi描述最为精准的朋友，送上我们精心准备的礼物。" errormsg="长度在2-300之间" nullmsg="输入不能为空"></textarea>
+				<span class="submit_bottom">提交</span>
+			</form>
+			<div class="alert">
+				<div>
+					<!--<img class="envelope" src="../img/envelope.png" />-->
+					<div class="text">
+						<span>感谢参与</span>
+						<div>我们会将测试结果在近期内公布在群内，同时将公布参与本次活动获奖的幸运用户，届时请密切关注群动态，并领取奖励<img src="../img/gift.png" /></div>
+					</div>
+				</div>	
+				
+				
+			</div>
+			
+		</div>
+		<div class="up">
+			<div>
+				<p class="prompt">提示</p>
+				<p>你是否确认退出?</p>
+				<span class="sure">是</span><span class="cancel">否</span>
+			</div>
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/Validform_ncr_min.js"></script>
+		<script src="../js/common.js"></script>	
+		<script type="text/javascript">
+			$(function(){
+                $("form").Validform({
+                    tiptype: 4,
+                    ignoreHidden: true,
+                    postonce: true,
+                    ajaxPost: true,
+                    btnSubmit: ".submit_bottom",
+                    callback: function (data) {
+                        if (data.code == 10000) {
+                            $("#content").val('');
+                            //layer_msg('提交成功');
+                            //setTimeout("window.location.href = '/test/thx'",2000);
+                            $(".alert").show();
+                            setTimeout(function(){
+								$('.alert').addClass('animation');
+							},400)
+                        } else {
+                            layer_msg(data.msg);
+                        }
+                    }
+                });
+			})
+			$(".stats span").click(function(){
+				var index=$(".stats span").index(this);
+				$(".stats span:lt("+(index+1)+")").addClass("active");
+				$(".stats span:gt("+index+")").removeClass("active");
+			})
+//			$('.submit_bottom').click(function(){
+//				$('.alert').show();
+//				setTimeout(function(){
+//					$('.alert').addClass('animation');
+//				},400)
+//				
+//			})
+//		
+			
+			//判断Android，iOS
+			var u = navigator.userAgent;
+//			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if(isiOS){
+				$("head").append('<link rel="stylesheet" type="text/css" href="../css/ios.css" />');
+			}
+			$(".alert").click(function(e){
+				$(".alert").hide();
+				setTimeout("window.location.href = ''",1000);
+			})    
+			
+//			$(".close").click(function(){
+//				$(".alert").hide();
+//				setTimeout("window.location.href = ''",2000);
+//			})
+//			
+						
+		</script>
+			    
+		</script>
+	</body>
+</html>

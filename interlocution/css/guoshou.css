@@ -1,0 +1,12 @@
+html,body,.aimi,.aside-wrapper,.aimi .input input[name="text"],.aimi .swiper-container .swiper-slide>div{
+	background-color: #f6f6f6;
+}
+.aimi .radius,.aimi .input,.case{
+	background-color: white;
+}
+.aimi .right .text>div,.aside-wrapper div{
+	background-color: rgba(204,204,255,.5);
+}
+.choice {background-color:white ;}
+.choice li{background-color: white;border-color: rgba(107,100,249,0.1)}
+.choice li:hover{border-color:rgba(107,100,249,0.5) ;}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单文件</title>
+		<!--<style type="text/css">
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+			body,html{font-family:"微软雅黑";font-size: 20px;color: #35313F;min-width: 1255px;}
+			a{color: #35313F;text-decoration: none;}
+			a:hover{text-decoration: none;}
+			ol,ul,li{list-style: none;} 
+			.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+			textarea{resize: none}
+			img{border-style: none;}
+			button{border:0;}
+			.contain {position: relative;background: #FFFFFF;width: 1200px;height: 1220px;margin: 0 auto;}
+			.orderCont {position: absolute;width: 1200px;margin: 0 auto;box-sizing: border-box;padding:0 50px 50px 50px;}
+			.logo {width: 600px;position: absolute;top: 50%;left: 50%;margin-top: -346px;margin-left:-300px ;}
+			.nav {width: 100%;height:100px ;border-bottom: 1px solid #35313F;}
+			.navLeft {float: left;margin-top: 20px;margin-left: 20px;}
+			.navRihgt {float: right;margin-right: 20px;margin-top: 30px;}
+			.titl1 {font-size: 36px;font-weight: bold;text-align: center;margin-top: 16px;margin-bottom: 40px;}
+			.titl2 {width: 100%;height: 50px;line-height: 50px;font-size: 24px;font-weight: bold;padding-left: 28px;box-sizing: border-box;background-color: #E9E9F4;} 
+			ul {padding: 30px;}
+			ul li {width: 500px;margin-bottom: 8px;line-height: 24px;float: left;margin-left: 20px;}
+			ul .li_long {width: 100%;}
+			ul .li_long .rightTxt {width: 880px;}
+			ul .rightTxt {width: 330px; word-break:break-all;}
+			ul .redTxt {color: red;font-weight: bold;}
+			.leftTxt {float: left;font-weight: bold;}
+			.rightTxt {float: left;}
+			.bottom_txt {border-top: 1px solid #35313F;line-height: 20px;font-size: 16px;font-weight: bold;padding: 14px 30px;}
+		</style>-->
+		<style type="text/css">
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+			body,html{font-family:"微软雅黑";font-size: 20px;color: #35313F;min-width: 1255px;}
+			body{padding: 0px 50px;}
+			.head{height: 70px;margin-top:50px;border-bottom:2px solid  #35313F;}
+			.pic,.title{float: left;}
+			.pic img{height: 50px;}
+			
+			.name{color: #000000;font-size: 22px;letter-spacing: 6px;font-weight: bold;}
+			.en{font-size: 12px;color: #000000;font-weight: bold;}
+			.list{font-size:25px;font-weight: bold;line-height: 50px;}
+			.line div {float: left;line-height: 40px;font-size:17px ;}
+			.line div:first-child{clear: left;}
+			.line div:last-child{border-bottom:1px solid #35313F;/*width: 80%;*/clear:right ;}
+			.and div:first-child{clear: left;}
+			.and div{width: 50%;float: left;}
+			.and {line-height: 50px;}
+			.line_and{margin:20px auto ;}
+			.line_and .half{float: left;width: 33%;margin :12px auto;}
+			.amount div{float: left;}
+			.amount div:last-child{border-bottom:1px solid #35313F;width: 50%;}
+			.commodities_en,.commodities{float: left;clear: left;}
+			.commodities_en{margin-bottom: 20px;}
+			table{float: left;clear: left;height:300px;width: 100%; border:3px solid #000; text-align: center;}
+			
+			.line1 .from{float:left;width: 27%;}
+			.line1 .from:first-child{clear: left;float:left;width: 45%;}
+			/*.line1 .from:first-child{}
+			.form{}*/
+			.from div{float: left;margin-top: 20px;}
+			.from div:last-child{border-bottom: 1px solid #35313F;}
+			.declares_en{margin-top: 20px;float: left;}
+			.declares_en1{float: left;border-bottom: 1px solid #35313F;width:100%;margin-top: 30px;height: 120px;}
+			.goods,.good1{float: left;width: 100%;clear: left;margin-top: 30px;}
+			.goods1 div{float: left;margin-top: 30px;}
+			.goods1 div:last-child{border-bottom: 1px solid #35313F;clear: left;width: 100%;}
+			.end{float:left ;width: 100%;height: 200px;margin-top:30px ;}
+			.left{float: left;width: 40%;}
+			.right{float: left;width: 50%;}
+			.left{border-bottom: 1px solid #35313F;height: 165px;}
+			.right .tel{float:left ;clear: both;height: 25%;margin-bottom: 13px;width: 100%;margin-left: 10%;}
+			.tel div{float: left;}
+			.tel div:first-child{width: 25%;}
+			.tel div:last-child{border-bottom: 1px solid #35313F;width: 75%;height: 23px;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<div class="pic">
+				<img src="../img/renbao.png" />
+			</div>
+			<div class="title">
+				<div class="name">中国人民财产保险股份有限公司</div>
+				<div class="en">PICC PROPERTY AND CASUALTY COMPANY LIMITED</div>
+			</div>
+		</div>
+		
+		<div class="list">
+			货物运输保险投保单 APPLICATION FORM FOR CARGO TRANSPORTATION INSURANCE
+		</div>
+		<div class="line">
+			<div>投保人(Applicant)：</div>
+			<div style="width:87.2%">前海企保科技(深圳)有限公司</div>
+		</div>
+		<div class="line">
+			<div>投保人组织机构代码/身份证号(Applicant's Organization Code/ID No)：</div>
+			<div style="width:55.2%">xxx</div>
+		</div>
+		<div class="line">
+			<div>被保险人(Insured)：</div>
+			<div style="width:87.2%">Nicolas Fernandez</div>
+		</div>
+		<div class="and">
+			<div>发票号(Invoice No.):<span></span></div>
+			<div>提单号(B/L NO.):<span></span></div>
+		</div>
+		<div class="and">
+			<div>合同号(Contract No.):<span></span></div>
+			<div>信用证号(L/C NO.):<span></span></div>
+		</div>
+		<div class="line_and">
+			<div class="half">
+				<div>发票金额</div>
+				<div class="amount">
+					<div>(Amount Invoice):</div>
+					<div>(USD)1,000.00</div>
+				</div>
+			</div>
+			<div class="half">
+				<div>价格条件</div>
+				<div class="amount">
+					<div>(Price term):</div>
+					<div>CIF</div>
+				</div>
+			</div>
+			<div class="half">
+				<div>投保加成</div>
+				<div class="amount">
+					<div>(Plus):</div>
+					<div>10.0%</div>
+				</div>
+			</div>
+		</div>
+		<div class="commodities">兹有下述货物向中国人民财产保险股份有限公司广州市分公司投保:</div>
+		<div class="commodities_en">Insurance is required on the following commodities</div>
+		<table cellspacing="0" cellpadding="0" border="1px">
+			<tr>
+				<th style="height: 80px;"> & NOS</th>
+				<th>包装及数量(QUANTITY)</th>
+				<th>保险货物项目(GOODS)</th>
+				<th>保险金额(AMOUNT INSURED)</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td>纸箱1SET</td>
+				<td>HUAWEI Mate 10 Pro</td>
+				<td>USD 1,000.00</td>
+			</tr>
+		</table>
+		<div class="line">
+			<div>总保险金额(Total Amount Insured)：</div>
+			<div style="width: 76.5%;">(USD) 1,000.00</div>
+		</div>
+		<div class="and">
+			<div>保险费(Premium):<span>AS ARRANGED</span></div>
+			<div>起运日期(Date of Commemcement):<span style="width:50% ;border-bottom: 1px solid #35313F;">2017-12-15</span></div>
+		</div>
+		<div class="line">
+			<div>装载运输工具名称(Per Conveyance)：</div>
+			<div style="width: 76.5%;">BY DHL</div>
+		</div>
+		<div class="line">
+			<div>自(From):</div>
+			<div style="width: 92%;">SHEN ZHEN</div>
+			
+		</div>
+		<div class="line">
+			<div>经(Via):</div>
+			<div style="width: 93%;">HONG KONG</div>
+		</div>
+		<div class="line">
+			<div>至(TO)</div>
+			<div style="width: 94%;">NEW YORK</div>
+		</div>
+		<div class="declares_en">
+			<p>投保险别：(如投保标的为旧物品,或装卸与舱面或有重复保险,必须在此栏中特别声明。)<p>
+			<p>Please Indicate the Conditions& or Special Coverages（Please issue a statement if the goods are secondhand or</p>
+			<P>loading on deck or double insurance.)</P>
+		</div>
+		<div class="declares_en1">
+			COVERING AIR TRANSPORTATION ALL RISK AS PER AIR TRANSPORTATION  CARGO INSURANCE CLAUSES(2009) OF THE PICC
+			PROPERTY AND CASUALTY COMPANY lIMITED. 1.DEDUCTIBLE:CNY1000(or equivalent in foreign currency) OR 5% OF THE
+			LOSS AMOUNT,WHICHEVER IS HIGHER.2.Fragile article and frozen product:8% OF THE LOSS AMOUNT,OR 3% OF THE SUM INSURED OF
+			THE WHOLE CONSIGNMENT ,WHICHEVER IS HIGHER.
+		</div>
+		<div class="goods">
+			1.货物(Goods):
+		</div>
+		<div class="goods">
+			2.运输方式(By Transit):BY DHL
+		</div>
+		<div class="goods1">
+			<div>3.船舶资料(Particular Of Ship):</div>
+			<div>.....</div>
+		</div>
+		<div class="declares_en">
+			投保人声明:本人已收到并阅读了本保险合同约定的保险条款;保险人已将条款内容(包括免除责任)向
+			本人作了明确说明,本人已充分理解;上述所填写的内容均属实,同意以此投保单作为订立保险合同的依据.
+		</div>
+		<div class="declares_en">
+			The applicant hereby declares:The applicant has received and read the terms and  clauses agreed by the insurance
+			contract. The insurer has completely explained the terms and clauses (including exclusions) to the applicant,and
+			the applicant has thoroughly understood all the terms and clauses.All the above contents filled are true and
+			correct,and the applicant agress to establish the application form as the basis
+			of the insurance contract.
+		</div>
+		<div class="end">
+			<div class="left">
+				投保人(签名盖章)Applicant's Signature
+			</div>
+			<div class="right">
+				<div class="tel">
+					<div>电话/传真(TEL/FAX):</div>
+					<div>(020) 95518</div>
+				</div>
+				<div class="tel">
+					<div>地址(ADD):</div>
+					<div>广州市越秀区广州大道中303号人保大厦</div>
+				</div>
+				<div class="tel">
+					<div>Email:</div>
+					<div></div>
+				</div>
+				<div class="tel">
+					<div>投保日期(DATE):</div>
+					<div>2017-12-12 15:31:48.0</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="contain">
+			<img class="logo" src="../img/bigLogo1.png" />
+			<div class="orderCont">
+				<div class="nav clear">
+					<div class="navLeft">
+						<img src="../img/head-icon.png"/>
+					</div>
+					<div class="navRihgt">
+						<img src="../img/renbaoLogo.png" />
+					</div>
+				</div>
+				<p class="titl1">货物运输保险（普货保）预订单</p>
+				<p class="titl2 clear">企业信息</p>
+				<ul class="section clear">
+					<li class="clear">
+						<div class="leftTxt">被保险人名称：</div>
+						<div class="rightTxt">前海企保科技（深圳）有限公司前海企保科技（深圳）有限公司</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">经办企业名称：</div>
+						<div class="rightTxt">泛森国际货运代理有限公司前海企保科技（深圳）有限公司</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">保险公司：</div>
+						<div class="rightTxt">中国人民财产保险股份有限公司</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">经办人电话：</div>
+						<div class="rightTxt">18888888888</div>
+					</li>
+				</ul>
+				<p class="titl2 clear">货物信息</p>
+				<ul class="section clear">
+					<li class="li_long clear">
+						<div class="leftTxt">货物类型：</div>
+						<div class="rightTxt">电器、机械、运输工具、设备类（大类）　灯泡、电珠、灯管、电子管、显像管、灯具（小类）</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">包装方式：</div>
+						<div class="rightTxt">木箱</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">包装数量：</div>
+						<div class="rightTxt">30</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">货物名称：</div>
+						<div class="rightTxt">货物名称货物名称货物名称货物名称货物名称称货物名称称货物名称称货物名称称货物名称称货物名称称货物名称称货物名称称货物名称称货物名称</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">货物标记：</div>
+						<div class="rightTxt">货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记货物标记</div>
+					</li>
+				</ul>
+				<p class="titl2 clear">运输信息</p>
+				<ul class="section clear">
+					<li class="clear">
+						<div class="leftTxt">运输方式：</div>
+						<div class="rightTxt">空运</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">运输工具：</div>
+						<div class="rightTxt">飞机</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">起运地：</div>
+						<div class="rightTxt">中华人民共和国（不含港、澳、台地区）　深圳</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">起运日期：</div>
+						<div class="rightTxt">2017-11-2</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">目的地：</div>
+						<div class="rightTxt">美国　纽约</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">中转地：</div>
+						<div class="rightTxt">中国　香港</div>
+					</li>
+					<li class="li_long clear">
+						<div class="leftTxt">单据号：</div>
+						<div class="rightTxt">运单号123456——发票号123456——合同号123456</div>
+					</li>
+					<li class="li_long clear">
+						<div class="leftTxt">L/C条款：</div>
+						<div class="rightTxt">L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款L/C条款</div>
+					</li>
+				</ul>
+				<p class="titl2 clear">产品费用信息</p>
+				<ul class="section clear">
+					<li class="clear">
+						<div class="leftTxt">投保币种：</div>
+						<div class="rightTxt">USD</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">保险金额：</div>
+						<div class="rightTxt">1,000,000.00</div>
+					</li>
+					<li class="clear">
+						<div class="leftTxt">保费金额：</div>
+						<div class="rightTxt redTxt">CNY 2,500.00</div>
+					</li>
+				</ul>
+				<p class="bottom_txt">特别说明：本保险预订单由企保招招平台提供，所载内容由平台用户自主填写，仅供平台用户在购买保险服务时核对信息使用，不作为保险承保或服务购买的凭证，具体的投保信息、保障范围等以实际购买后保险公司出具的保险单为准，敬请知悉。</p>
+			</div>
+		</div>-->
+	</body>
+</html>

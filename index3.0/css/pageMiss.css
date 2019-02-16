@@ -1,0 +1,53 @@
+.contents{width: 100%;background-color: #e9e9f4;}
+.content{
+   	width: 920px;
+    height: 320px;
+    padding: 116px 0;
+    margin: 4px 58% 0 33%;
+}
+.content_other{
+	width: 920px;
+    height: 320px;
+    margin: 15% 70% 15% 30%;
+}
+.left{
+	float: left;
+	margin-top: 20px;
+}
+.right{float: left;}
+.left-div1{
+	color:#35313f;
+	padding-left: 20px;
+	font-size:60px
+}
+.left-div2{
+	color:#35313f;
+	padding-left: 20px;
+	font-size:30px
+}
+.content-ul{
+	color: #5c5869;
+	font-size: 14px;
+	margin: 30px 160px 30px 40px;
+}
+.content-ul li{list-style-image: url(../img/heidian.png);}
+.content-a{
+	color: #524ae7;
+	font-size: 14px;
+	padding-left: 20px;
+	text-decoration: none;
+}
+
+
+.left>p{
+	font-size: 14px;
+	color: #5c5869;
+	margin: 65px 0 15px 21px;
+}
+.pic-500{margin-top: 40px;}
+
+
+/*激活成功*/
+.cont-act{width: 270px;text-align: center;margin-left: 42%;}
+.active-p1{color: #35313f;font-size: 28px;margin: 20px 0 40px 16px;}
+.active-p2{color: #727689;}

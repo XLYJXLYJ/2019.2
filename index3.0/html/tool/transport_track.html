@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>货运信息跟踪</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/tool.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="navPosition">
+			<span>当前位置：</span>
+			<a href="javascript:;">货运信息跟踪</a>
+		</div>
+		<div style="width:1200px;height:630px;margin:0 auto 30px auto;overflow:hidden;border:1px solid #fff;position:relative;">
+			<div class="jiazai" style="width:1200px;height:630px;font-size: 24px;text-align: center;line-height:630px;position:absolute;z-index: 8;">加载中...</div>
+			<iframe src="https://www.marinetraffic.com/" style="position:relative;z-index:9;top:-170px;border:0;width:1430px;height:800px;overflow:hidden;" scrolling="no"></iframe>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript" src="../../js/placeholder.js" ></script>
+<script type="text/javascript" src="../../js/common.js" ></script>
+<script>
+	$(function(){
+		$("#header").load("../header.html",get);
+		$("#footer").load("../footer.html"); 
+		
+		
+	})
+</script>

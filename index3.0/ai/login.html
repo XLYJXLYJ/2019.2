@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/ai/login.css" />
+	</head>
+	<body>
+		<div class="main">
+			<div class="logo">QBTech</div>
+			<div class="title">机器人AIMI云平台</div>
+			<div class="login">
+				<p>用户登录</p>
+				<form class="myform">
+					<div>
+						<input type="text" name="phone" placeholder="请输入手机号" datatype="phone" errormsg="请填写正确的手机号" nullmsg="请输入电话号码" / >
+					</div>
+					<div>
+						<input type="password" name="passwd"  placeholder="请输入密码" datatype="*6-16" errormsg="密码范围在6~16位之间" nullmsg="请输入密码"/>
+					</div>
+					
+					<span class="sure_btn">确定</span>
+				</form>
+			</div>
+			<div class="footer">
+				前海企保科技(深圳)有限公司
+			</div>
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/Validform_ncr_min.js"></script>
+		<script>
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden: true,
+		        postonce: true,
+		        ajaxPost: true,
+		        btnSubmit: ".sure_btn",
+		        datatype: {
+		            'phone': /^1\d{10}$/
+		        },
+		        callback: function (data) {
+		            setTimeout("window.location.href = '/insurbot/login'", 2000);
+		        }
+		    });
+		</script>
+	</body>
+</html>

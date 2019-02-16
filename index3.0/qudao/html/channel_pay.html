@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认并支付</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/channel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="navPosition">
+			<span>当前位置：</span>
+			<a href="javascript:;">订单确认</a>
+		</div>
+		
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="fabu_fix zhifu" >
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="ok_fix_top">支付提示：</div>
+				<div class="zhifu_cont">
+					<p>微信支付扫码</p>
+					<img src="../img/loading.gif" alt="" />
+					<span>（二维码2小时内有效，请尽快完成支付）</span>
+				</div>
+			</div>
+			<div class="paid_fix">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="ok_fix_top">温馨提示：</div>
+				<div class="all_top clear">
+					<img src="../img/gantan.png" alt="" />
+					<p>确认余额支付 <span>￥</span><span>800.00</span> 吗？</p>
+				</div>
+				<span class="fabu_yes">确认</span>
+			</div>
+			<div class="pay_fix">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="ok_fix_top">支付提示：</div>
+				<div class="pay-fix-cont">
+					<img src="../img/gantan.png" alt="" />
+                    <h3>请您在新打开的页面上完成付款</h3>
+                    <p>付款完成后请不要关闭此窗口。<br>
+                                          完成支付后请根据您的情况点击下面：
+                    </p>
+                </div>    
+				<div class="bottom_cont">
+					<button class="btn pay_finish_confirm" >已完成付款</button>
+                    <button class="btn pay_finish_problem" >付款遇到问题</button>
+                	<a href="javascript:;">返回选择其他支付方式</a>
+				</div>
+			</div>	
+			<div class="result">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="result-cont">
+					<img src="../img/error-pay.png" alt="" />
+					<span>支付尚未完成，请重新支付！</span>
+                </div>  
+			</div>
+			<div class="fail">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="result-cont">
+					<img src="../img/error-pay.png" alt="" />
+					<span>请选择支付方式！</span>
+                </div>  
+			</div>
+			<div class="exceed">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="result-cont">
+					<img src="../img/error-pay.png" alt="" />
+					<span>支付金额大于5000！请选择其他支付方式！</span>
+                </div>  
+			</div>
+		</div>
+		<div class="contents clear" id="pay">
+			<div class="error">
+				<img src="../../img/delete-line-ico4.png" alt="" class="delete-line" />
+				<div class="error-title">
+					<p>付款遇到问题了？先看看是不是由于下面的原因。</p>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>要求开通网上银行？</p>
+					<span>您可以联系对应银行开通网银。</span>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>所需支付金额超过了银行支付限额？</p>
+					<span>建议更换支付方式，或与我们客服联系。</span>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>收不到银行的短信验证码？</p>
+					<span>建议重新获取短信验证码，如果还是收不到短信，直接打各银行的客服电话获取短信验证码。</span>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>网银页面显示错误或者空白？</p>
+					<span>建议刷新页面或更换到IE浏览器进行支付。</span>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>什么是客户识别号？</p>
+					<span>银行客户识别号分个人和对公，理论上一个主体在银行只有一个客户识别号，具有唯一性。个人：一般是身份证号码、军官证、士兵证、护照号。对公：一般是统一社会信用代码号。上述情况不排除银行在证件号码前加部分前缀。如有疑问，可随时致电银行客服进行咨询。</span>
+				</div>
+				<div class="error-cont">
+					<img src="../../img/heidian.png" alt="" class="heidian" />
+					<p>网上银行扣款后，订单仍显示"未付款"怎么办？</p>
+					<span>可能是由于银行的数据没有即时传输，请您不要担心，稍后刷新页面查看。如较长时间仍显示未付款，可先向银行或支付平台获取支付凭证（扣款订单号/第三方交易号），联系企保客服(400-009-7855)为您解决。</span>
+				</div>
+				<div class="error-bottom">
+					<p>如果您有其他问题，请联系企保客服<span>(400-009-7855)</span>为您解决</p>
+				</div>
+			</div>
+			<span class="pay_title">订单信息</span>
+			<div class="padding">
+				<form class="myform" target="_blank">
+					<ul class="information_cont first_information">
+						<li class="clear">
+							<span>订单号：</span>
+							<p>17020215000314001</p>
+						</li>
+						<li class="clear">
+							<span>产品：</span>
+							<p>国内货运险</p>
+						</li>
+						<li class="clear">
+							<span>投保人：</span>
+							<p>前海企保科技（深圳）有限公司</p>
+						</li>
+						<li class="clear">
+							<span>被保险人：</span>
+							<p>深圳达达科技有限公司</p>
+						</li>
+						<li class="clear">
+							<span>下单时间：</span>
+							<p>2017-02-23 14:04:20</p>
+						</li>
+						<li class="clear">
+							<span>订单金额：</span>
+							<p class="red_money">
+								<strong>¥ </strong>
+								<span class="out-price">126.00</span>
+							</p>
+						</li>
+					</ul>	
+					<div class="pay_nav clear">
+						<span class="active_check">在线支付</span>
+						<span>转账付款</span>
+					</div>
+					<div class="pay_div">
+						<div class="pay_type">
+							<div class="pay_type_title">微信支付</div>
+							<ul class="clear">
+								<li><label><input type="radio" name="bank_code"  class="one"/><img src="../img/weixin (2).png" alt="" /></label></li>
+							</ul>
+							<div class="pay_type_title">企业网银支付</div>
+							<ul class="clear">
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+							</ul>
+							<div class="pay_type_title">个人网银支付</div>
+							<ul class="clear">
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+								<li><label><input type="radio" name="bank_code" class="tow"/><img src="../img/weixin (2).png" alt="" /></label></li>
+							</ul>
+						</div>	
+						<div class="end-balance">
+							<span class="end_ok">确认支付</span>
+							<span class="balance-money">金额：
+								<span class="red_money">
+									<strong>¥ </strong>
+									<span>126.00</span>
+								</span>
+							</span>
+						</div>
+					</div>
+					
+					<div class="other_type">
+						<div class="other_type_top">
+							<img src="../../img/gantan.png" alt="" />
+							<span>请向以下账户转账或汇款（请您认真核实以下的账户信息），确认支付后，在下方填写转账账户名并确认。</span>
+						</div>
+						<div class="other_type_cont">
+							<ul class="information_cont">
+								<li class="clear">
+									<span>开户名：</span>
+									<p>企保</p>
+								</li>
+								<li class="clear">
+									<span>账　号：</span>
+									<p>216765497</p>
+								</li>
+								<li class="clear">
+									<span>开户行：</span>
+									<p>建行</p>
+								</li>
+							</ul>	
+							<div class="other_type_bottom">
+								<img src="../../img/key.png" alt="" />
+								<span>请填写转账账户的账户名：</span>
+								<input type="text" placeholder="例如：前海企保科技（深圳）有限公司" datatype="*2-150" nullmsg="请输入转账账户的账户名" errormsg="项目名称在2-150个字符内"/>
+								<button class="nexs">完成支付</button>
+							</div>
+						</div>
+					</div>
+				</form>	
+			</div>
+		</div>
+			
+		<!--<div id="footer"></div>-->
+	</body>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/input-prices.js"></script>
+	<script type="text/javascript" src="../js/Validform_ncr_min.js"></script>
+	<script type="text/javascript" src="../js/channel_pay.js" ></script>
+	<script>
+		$(function(){
+			$("#header").load("header.html",get); 
+//			$("#footer").load("footer.html"); 
+		});
+	</script>
+</html>

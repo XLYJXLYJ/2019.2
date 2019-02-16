@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>国内货运险投保单</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="navPosition">
+			<span>当前位置：</span>
+			<a href="javascript:;">填写货运信息</a>
+		</div>
+		<div class="contents">
+			<div class="content clear" >
+				<div class="cont-title">普货保（国内）投保</div>
+				<form class="myform" action="http://www.qibaozz.com/cargo/foreign" method="post">
+					<ul class="ul_trans">
+						<li class="ul_transtitle">被保险人信息</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>企业名称：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<input type="text" class="input_long" placeholder="请输入被保险人企业名称"  datatype="*" nullmsg="请输入被保险人企业名称" />
+							</div>
+						</li>
+						<li class="ul_transtitle">货物信息</li>
+						<li class="clear">
+							<div class="li_div1">
+								<span>货物类型：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc style_selc">
+									<option>请选择一级货物种类</option>
+									<option>普通货物</option>
+									<option>冻品货物</option>
+									<option>易碎品货物</option>
+								</select>
+								<span class="selcSpan style_span">请选择一级货物种类</span>
+							</div>
+							<div class="li_div2 div_selc">
+								<!--<select class="selc style_selc2">
+								</select>-->
+								<span class="selcSpan style_span2">请选择二级货物种类</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left line">
+								<span class="">货物名称：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right ">
+								<textarea  maxlength="500" class="input_long" placeholder="请输入要投保的货物名称，例如：机床"  datatype="*" nullmsg="请输入被保险人企业名称"></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>包装方式：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 div_style">
+								<select  class="selc">
+									<option>请选择包装方式</option>
+								</select>
+								<span class="selcSpan">请选择包装方式</span>
+							</div>
+							<div  class="li_div1">
+								<span>货物数量：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input type="text" class="div_inpt" placeholder="如30箱，3000件" datatype="*1-50" nullmsg="请输入货物数量" errormsg="货物数量由1-50字符组成"/>
+							</div>
+						</li>
+						<li class="ul_transtitle">运输信息</li>
+						<li class="clear">
+							<div class="li_div1">
+								<span>运输方式：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc">
+									<option value="">海运</option>
+									<option value="">空运</option>
+									<option value="">铁路</option>
+									<option value="">汽运</option>
+									<option value="">快递</option>
+								</select>
+								<span class="selcSpan">海运</span>
+							</div>
+							<div  class="li_div1 li_divMidL">
+								<span>运输工具：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input class="" type="text"  placeholder="请输入运输工具" datatype="*" nullmsg="请输入运输工具" />
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>起运地：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<div class="city_3">
+									<div class="div_city">
+										<select  class="selc prov"></select>
+										<span class="selcSpan">广东</span>
+									</div>
+									<div  class="div_city">
+										<select  class="selc city"></select>
+										<span class="selcSpan">广州</span>
+									</div>
+								</div>
+								<!--<div class="detail_city"><input type="text"  name="" id="" value="" placeholder="请输入详细地址" datatype="*2-60" nullmsg="请输入详细地址" errormsg="详细地址由2-60字符组成"/></div>-->
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>目的地：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<div class="city_4">
+									<div class="div_city">
+										<select  class="selc prov"></select>
+										<span class="selcSpan">广东</span>
+									</div>
+									<div  class="div_city">
+										<select  class="selc city"></select>
+										<span class="selcSpan">广州</span>
+									</div>
+								</div>
+								<!--<div class="detail_city"><input type="text"  name="" id="" value="" placeholder="请输入详细地址" datatype="*2-60" nullmsg="请输入详细地址" errormsg="详细地址由2-60字符组成"/></div>-->
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>中转地：</span> 
+							</div>
+							<div class="li_right">
+								<input type="text" class="input_long" placeholder="选填，非必填"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>起运日期：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<input id="datetimepicker1" type="text" readonly="true" placeholder="请选择起运日期" datatype="*" nullmsg="请选择起运日期" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>单据号：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<div class="clear">
+									<div class="danhao">
+										<input type="text" data-type="1" data-number="" class="input_short" placeholder="请输入运单号" />
+										<span class="error">运单号错误</span>
+									</div>
+					
+								</div>
+								<div class="Validform_checktip danhao-error"></div>
+							</div>
+						</li>
+						<li class="ul_transtitle">费用信息</li>
+						<li class="clear type">
+							<div class="li_div1">
+								<span>投保币种：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc">
+									<option value="">CNY</option>
+									<option value="">HKD</option>
+									<option value="" selected="selected">USD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">JPY</option>
+								</select>
+								<span class="selcSpan">USD</span>
+							</div>
+							<div  class="li_div1 li_divMidL">
+								<span>发票金额：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<input type="text" class="inpt_money input-prices" placeholder="请输入金额"  datatype="price" nullmsg="请输入金额" errormsg="金额格式错误"/>
+							</div>
+						</li>
+						<li class="clear trans_text">
+							<div class="li_left divTextL">
+								<span>费率：</span>
+							</div>
+							<div class="li_right">0.025%</div>
+						</li>
+						<li class="clear trans_text1">
+							<div class="li_left divTextL red">
+								<span>保险费用：</span>
+							</div>
+							<div class="li_right red">CNY 165.00</div>
+						</li>
+						<li class="clear trans_text1">
+							<div class="li_left divTextL">
+								<span>出单类型：</span>
+							</div>
+							<div class="li_right">
+								<label><input checked="checked" type="radio" name="letter" /> 见费出单</label>
+								<label><input type="radio" name="letter"  datatype="*" nullmsg="请选择"/> 起保后付费，月结</label>
+							</div>
+						</li>
+					</ul>
+					<div class="xieyi clear">
+						<label><input type="checkbox" name="letter"  datatype="*" nullmsg="请选择"/> 我已认真阅读、理解并同意</label>
+						<span><a href="javascript:;">《保险协议》</a> 中的全部内容</span>
+					</div>
+					<div class="btn_div">
+						<a href="javascript:;" class="btn_ok">提交</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert">
+			<div>
+				<div class="alert_title">
+					<span>×</span>
+				</div>
+				<div class="alert_content">
+					<p>投保金额超过限制，请联系人工客服投保</p>
+					<span>确定</span>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+		</div>
+	</body>
+	<!--<script src="../js/common.js"></script>-->
+	<script type="text/javascript" src="../js/Validform_ncr_min.js"></script>
+	<script type="text/javascript" src="../js/placeholder.js"></script>
+	<script type="text/javascript" src="../js/input-prices.js"></script>
+	<script type="text/javascript" src="../js/domestic_transport.js"></script>
+	<script type="text/javascript" src="../js/jquery.cityselect.js"></script>
+	<script src="../js/gondStyle.js"></script>
+	<script>
+//	$(function(){
+//		$("#header").load("header.html",get); 
+//		$("#footer").load("footer.html"); 
+//	})
+		 function getchildcity(e) {
+	        $.post('/cargo/getchildcity',{id:$(e).val()},function (data) {
+	            var html = '<option value="">请选择城市</option>';
+	            $.each(data,function (key,value) {
+	                html += '<option value="'+value.id+'">'+value.name+'</option>';
+	            });
+	            $(e).parent('.div_city').next().eq(0).find('.city').empty().append(html);
+	            $(e).parent('.div_city').next().eq(0).find('.selcSpan').text('请选择城市');
+	        },'json');
+	    }
+	    function getSubGoodsType(e){
+	        var id = $(e).val();
+	        $.post('/cargo/getSubGoodsType',{id:id},function (data) {
+	            var html = '<option value="">请选择二级货物种类</option>';
+	            $.each(data,function (key,value) {
+	                html += '<option value="'+value.id+'">'+value.name+'</option>';
+	            });
+	            $(".style_span2").text("请选择二级货物种类");
+	            $("#goods_type_two").empty().append(html);
+	        },'json')
+	    }
+	    function getPremium(){
+	        var currencyId = $("select[name='currency_id']").val();
+	        var invoice_amount = $("input[name='invoice_amount']").val();
+	        var config_id = $("input[name='config_id']").val();
+	        if (currencyId=='') return false;
+	        if (invoice_amount=='' || invoice_amount=='.00') return false;
+	        if (config_id=='') return false;
+	        $.post('/cargo/getPremiumDomestic',{currencyId:currencyId,invoice_amount:invoice_amount,config_id:config_id},function (data) {
+	        	$("#premium").text(data);
+	        	var reg=new RegExp('CNY','g');
+	        	data=data.replace(reg,"");
+	        	data=data.substring(0,data.indexOf('.'));
+	        	reg = new RegExp(',','g');
+	        	data=data.replace(reg,'');
+	        	if(parseInt(data)>6800000){
+	        		$('.alert').show();
+	        		$("#premium").addClass('active');
+	        	}else{
+	        		$('.alert').hide();
+	        		$("#premium").removeClass('active');
+	        	}
+	           
+	        },'html');
+	    }
+	    $('.alert>div>.alert_content>span').click(function(){
+	    	$('.alert').hide();
+	    })
+	    $('.alert_title>span').click(function(){
+	    	$('.alert').hide();
+	    })
+	</script>
+</html>

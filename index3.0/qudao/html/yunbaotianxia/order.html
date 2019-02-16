@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单统计</title>
+		<link rel="stylesheet" type="text/css" href="../../css/channel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png/">
+		
+		<link rel="stylesheet" type="text/css" href="../../css/yunbaotianxia/bootstrap.min.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../../css/yunbaotianxia/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="../../css/yunbaotianxia/ybtx.css" />
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="header_common ">
+			<div class="header_common_logo">
+				<span class="order_title">运保天下</span>
+			</div>
+			<div class="header_common_mid">渠道统计后台</div>
+			<div class="header_common_right">
+				<a href="javascript:;" class="head_adm">minxin2019</a>
+				<span class="head_sp">|</span>
+				<a href="javascript:;" >退出登录</a>
+			</div>
+		</div>
+		<div class="main_common ">
+			<div class="nav">
+				<ul class="nav_ul1">
+					<li>
+						<div class="img user"></div>
+						<a href="index.html">客户统计</a>
+					</li>
+					<li class="active">
+						<div class="img order"></div>
+						<a href="order.html" class="orderManagement">订单统计</a>
+					</li>
+					<li>
+						<div class="img passwd"></div>
+						<a href="resetPasswd.html">修改密码</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content_common content_biao">
+				<div class="position_now">
+					<span class="position-title">当前位置：</span>
+					<a href="channel-biao.html" class="position_local">客户统计</a>
+				</div>
+				<div class="content">
+					<div class="content_top ">
+						<p>
+							<select>
+								<option value="">全部订单</option>
+								<option value="">已出单</option>
+								<option value="">待出单</option>
+								<option value="">暂存</option>
+							</select>
+						</p>
+						<div class="search number">
+							<input type="text" placeholder="按订单号搜索" />
+						</div>
+						<div class="search number">
+							<input type="text" placeholder="按保单号搜索" />
+						</div>
+						<div class="search_date">
+							<div class="dateDiv">
+								<input id="datetimepicker1" type="text" placeholder="开始时间" readonly="readonly"/>
+								<span class="Validform_checktip tell">请选择开始时间</span>
+								
+							</div>
+							<div class="date_txt"> 至</div>
+							<div class="dateDiv">
+								<input id="datetimepicker2" type="text" placeholder="结束时间" readonly="readonly"/>
+								<span class="Validform_checktip tell">请选择结束时间</span>
+							</div>
+							
+						</div>
+						<input type="submit"  class="input_submit" value="搜索"/>
+						<div class="export_btn">导出当前清单</div>
+					</div>
+					
+						
+					</div>
+					<div class="padding baodan_table">
+						<table>
+							<tr>
+								<th>订单号</th>
+								<th>保单号</th>
+								<th>用户名称</th>
+								<th>保险金额</th>
+								<th>保费</th>
+								<th>成交时间</th>
+								<th>当前状态</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+								
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+								
+							</tr>
+							<tr>
+								<td><a href="javascript:;">53d257ab356</a></td>
+								<td>53d257ab356</td>
+								<td>民信金融客户一</td>
+								<td>CNY 1,000,000,00</td>
+								<td>CNY 200.00</td>
+								<td>2017-11-3013:54:11</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">下载保单</a></td>
+							</tr>
+						</table>
+						<div class="list_none">
+							<img src="../../img/list-none.png" alt="" />
+						</div>
+					</div>
+					<div class="nubs">
+						<div class="nub">
+							<img src="../../img/left-go.png" alt="" class="img_left"/>
+							<span class="check">1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+							<img src="../../img/right-go.png" alt="" class="img_right"/>
+						</div>
+						<span>共 <span>112</span> 条记录</span>
+					</div>
+				</div>
+			</div>
+		
+		
+		
+	</body>
+	<script src="../../js/order.js"></script>
+</html>
+

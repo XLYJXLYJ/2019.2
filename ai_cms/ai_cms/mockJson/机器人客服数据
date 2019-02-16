@@ -1,0 +1,170 @@
+1. 登录接口customer_service_status来判断是否显示客服数据(只有为1才显示,其他情况都不显示)
+    1. 已通过此字段判断客服管理模块
+
+2. 机器人名称获取接口
+    1. url: /merchant/v2.0/robot/robot_number
+    2. 参数: 无
+    3. 请求方式: get
+    4. 返回值:
+    {
+    "status": "200",
+    "msg": "ok",
+    "data": {
+        "机器人名称1": "机器人编号1",
+        "机器人名称2": "机器人编号2",
+    }
+}
+
+**注意: 显示的时候显示名称,但是筛选的时候要传入名称对应的机器人编号**
+
+3. 机器人数据接口
+    1. url:/merchant/v1.0/record/dialogs
+    2. 请求方式: get
+    3. 参数
+        1. start_date, 开始时间
+        2. end_date, 结束时间
+        3. p, 页数
+        4. robot_code, 机器人编号
+    4. 返回值:
+    ```
+        {
+        "data": {
+            "current_page": 1,
+            "log_dict_list": [
+                {
+                    "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+                    "create": "2019-01-15 16:35:40",
+                    "customer_id": 1033,
+                    "customer_question":"核泄漏导致的车辆损失",
+                    "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+                    "is_solve": "无反馈",
+                    "name": "DCP-太平洋车险服务",
+                    "robot_code": "004",
+                    "robot_id": 871,
+                    "role": "robot",
+                    "user_solve": "0"
+
+                }
+            ],
+            "total_page": 5
+        },
+        "errcode": "0",
+        "errmsg": "OK"
+    }
+
+    对话组ID: id
+    机器人名称: name
+    时间: create
+    问题: customer_question
+    答案: content
+    用户反馈: is_solve
+
+    赞踩操作:user_solve('1'-已赞 '2'-已踩)
+    user_solve为字符串类型
+    user_solve = '0'用户才可以操作
+    ```
+
+
+
+4. 机器人数据excel导出接口
+    1. url:/merchant/v1.0/record/csv
+    2. 请求方式: get
+    3. 参数
+        1. start_date, 开始时间
+        2. end_date, 结束时间
+        3. robot_code, 机器人编号
+
+
+5. 客服历史数据
+    1. url:/merchant/v2.0/service/service_record
+    2. 请求方式: get
+    3. 参数
+        1. start_date, 开始时间
+        2. end_date, 结束时间
+        3. p, 页数
+        4. customer_satf, 满意度筛选(无反馈, 已解决, 未解决)
+    4. 返回值:
+    ```
+        {
+        "status": "200",
+        "msg": "ok",
+        "data": {
+            "log_dict_list": [
+                {
+                    "id": "",
+                    "create": "开始时间",
+                    "role": "",
+                    "name": "",
+                    "content": "",
+                    "is_solve": "客服评价",
+                    "robot_code": "",
+                    "customer_token": "会话ID",
+                    "end_reason": "结束原因",
+                    "service_name": "客服名",
+                    "robot_name": "机器人名称(Aimi0021)",
+                    "time_length": "时长"
+                }
+            ],
+            "total_page": 5,
+            "current_page": 1
+        }
+    }
+
+    ```
+
+6. 会话详情数据
+    1. url:/merchant/v2.0/service/service_record
+    2. 请求方式: post
+    3. 参数
+        1. customer_token,客服数据会话ID
+
+    4. 返回值:
+    ```
+        {
+        "status": "200",
+        "msg": "ok",
+        "data": {
+            "log_dict_list": [
+                {
+                    "id": "",
+                    "create": "时间",
+                    "role": "",
+                    "name": "名字",
+                    "content": "内容",
+                    "is_solve": "",
+                    "robot_code": "",
+                    "customer_token": "",
+                    "messageDirection": 1
+                }
+            ],
+            "robot_name": "机器人名称",
+            "start_time": "开始时间",
+            "time_length": "聊天时长",
+            "all_num": "会话总数量"
+        }
+    }
+
+    messageDirection参数为1客服数据放右边,为2客户数据放左边
+    测试是http://test.open.qb-tech.net/chat_image/开头,正式是以http://open.qb-tech.net/chat_image/开头的url直接替换成图片
+
+    ```
+
+7. 机器人问答操作赞踩
+    1. url:/merchant/v2.0/robot/solve_change
+    2. 请求方式: post
+    3. 参数
+        1. customer_id,
+        2. robot_id,
+        3. user_solve(赞传1, 踩传2)
+    customer_id,robot_id,机器人数据接口(/merchant/v1.0/record/dialogs)有
+
+    4. 返回值:
+    ```
+    {
+        "status": "200",
+        "msg": "ok",
+        "data": "保存成功"
+    }
+    ```
+
+

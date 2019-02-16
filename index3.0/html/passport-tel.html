@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>重置密码</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/passport-tel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="contents">
+			<div class="content">
+				<div class="cont-head">
+					<div class="head-div1">重置密码</div>
+					<div class="head-div2">登录/注册</div>
+				</div>
+				<div class="cont-nav">
+					<span class="nav-a1 choose">手机找回密码</span>
+					<span class="nav-a2">邮箱找回密码</span>
+				</div>
+				<form class="myform">
+					<!--手机-->
+					<div class="content-cont cont-tel">
+						<div class="cont-tex">
+							<input type="text" placeholder="请输入手机号码"/>
+							<p class="cont-tip Validform_checktip">
+								<img src="../img/key.png" />
+								<span>请输入有效的手机号码</span>
+							</p>
+						</div>
+						<div class="getCode" id="xinxi">
+							<p class="getCode1">
+								<input type="text" placeholder="验证码" datatype="*" nullmsg="请输入"/>
+							</p>
+							<p class="getCode2">
+								<img src="../img/identifying-code1.png" />
+							</p>
+						</div>
+						<div class="getCode">
+							<input type="text" placeholder="输入短信验证码" datatype="*" nullmsg="请输入"/>
+							<div class="cont-btn">获取验证码</div>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="请设置6位以上密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="请设置6位以上密码" class="hide-put"/>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="确认密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="确认密码" class="hide-put"/>
+						</div>
+						
+						<div class="but-ok cont-btn">确认</div>
+					</div>
+					
+					<!-- 邮箱-->
+					<div class="content-cont cont-mail hide">
+						<div class="cont-tex">
+							<input type="text" placeholder="请输入注册时填写的邮箱地址"/>
+							<p class="cont-tip Validform_checktip">
+								<img src="../img/key.png" />
+								<span>该邮箱未绑定</span>
+							</p>
+						</div>
+						
+						<div class="getCode" id="xinxi">
+							<p class="getCode1">
+								<input type="text" placeholder="验证码" datatype="*" nullmsg="请输入"/>
+							</p>
+							<p class="getCode2">
+								<img src="../img/identifying-code1.png" />
+							</p>
+						</div>
+						<div class="getCode">
+							<input type="text" placeholder="输入邮箱验证码" datatype="*" nullmsg="请输入"/>
+							<div class="cont-btn">获取验证码</div>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="请设置6位以上密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="请设置6位以上密码" class="hide-put"/>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="确认密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="确认密码" class="hide-put"/>
+						</div>
+						
+						<div class="but-ok cont-btn">确认</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script src="../js/placeholder.js"></script>
+<script type="text/javascript" src="../../qbzz/js/Validform_ncr_min.js" ></script>
+<script>
+	$(".myform").Validform({
+		tiptype: 4,
+	})
+</script>
+<script src="../js/passport.js"></script>
+<script>
+	$(function(){
+		$("#header").load("header.html",get);
+		$("#footer").load("footer.html"); 
+	})
+</script>

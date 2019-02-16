@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css" />
+		<style type="text/css">
+			.qb_sbbb {
+				position: absolute;
+				width: 600px;
+				height: auto;
+				display: block;
+				border: 1px solid #524ae7;
+				background: #ffffff;
+				left: 0px;
+				top: 22px;
+				z-index: 1000;
+				filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090, direction=120, strength=4);
+				-moz-box-shadow: 2px 2px 10px #909090;
+				-webkit-box-shadow: 2px 2px 10px #909090;
+				box-shadow: 2px 2px 10px #909090;
+			}
+			.qb_ties {height: 100%;width: 100%;}
+			.qb_sbab {
+				background: #524ae7;
+				height: 28px;
+				width: 100%;
+			}
+			.qb_sbab p {
+				color: #FFF;
+				line-height: 28px;
+				padding-left: 10px;
+				margin: 0;
+			}
+			b {font-weight: bold;}
+			.qb_sbab span {
+				float: right;
+				margin-top: 5px;
+				margin-right: 10px;
+			}
+			.qb_sbab span img {
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				overflow: hidden;
+				vertical-align: top;
+				cursor: pointer;
+			}
+			.qb_sbcc {padding: 10px 0;}
+			.qb_sbdd ul li {
+				float: left;
+				padding-left: 7px;
+				padding-right: 7px;
+				border-bottom: 1px solid #524ae7;
+				cursor: pointer;
+			}
+			.qb_sbdd ul li:hover {
+				border: 1px solid #524ae7;
+				border-bottom: none;
+				font-weight: bold;
+				color: #524ae7;
+			}
+			.qb_sbdd ul li.ac {
+				border: 1px solid #524ae7;
+				border-bottom: none;
+				font-weight: bold;
+				color: #524ae7;
+			}
+			.qb_sbee {max-height: 328px;overflow: auto;}
+			.qb_sbee ul li {
+				width: 266px;
+				line-height: 20px;
+				float: left;
+				padding: 5px 19px 5px 6px;
+				color: #323232;
+				cursor: pointer;
+			}
+			.qb_sbee ul li:hover {background-color: #524ae7;color: #fff;}
+		</style>
+	</head>
+
+	<body>
+		<div id="dCheckStartCountry" class="qb_sbbb" >
+			<div class="qb_ties">
+				<div class="qb_sbab clear">
+					<span>
+						<img src="../img/delete-line-ico2.png"/>
+					</span>
+					<p><b>常用国家</b>（可直接选择国家）</p>
+				</div>
+				<div class="qb_sbcc">
+					<div class="qb_sbdd">
+						<ul class="pr_nav clear">
+							<li id="lihotUse" class="ac">常用国家</li>
+							<li id="liA">A</li>
+							<li id="liB">B</li>
+							<li id="liC">C</li>
+							<li id="liD">D</li>
+							<li id="liE">E</li>
+							<li id="liF">F</li>
+							<li id="liG">G</li>
+							<li id="liH">H</li>
+							<li id="liI">I</li>
+							<li id="liJ">J</li>
+							<li id="liK">K</li>
+							<li id="liL">L</li>
+							<li id="liM">M</li>
+							<li id="liN">N</li>
+							<li id="liO">O</li>
+							<li id="liP">P</li>
+							<li id="liQ">Q</li>
+							<li id="liR">R</li>
+							<li id="liS" class="">S</li>
+							<li id="liT">T</li>
+							<li id="liU-Z">U-Z</li>
+						</ul>
+					</div>
+					<div class="qb_sbee clear">
+						<ul class="ulCountry_hotUse  ">
+							<li>United States 美国</li>
+							<li>South Korea (R.O.K) 韩国</li>
+							<li>Russia 俄罗斯</li>
+							<li>Japan 日本</li>
+							<li>Italy 意大利</li>
+							<li>India 印度</li>
+							<li>Germany 德国</li>
+							<li>France 法国</li>
+							<li>Canada 加拿大</li>
+							<li>Australia 澳大利亚</li>
+						</ul>
+						<ul class="ulCountry_S hide">
+							<li>Saint Barthélemy 圣巴托洛缪</li>
+							<li>Saint GEORGES 圣乔治</li>
+							<li>Saint Helena 圣赫勒拿岛</li>
+							<li>Saint Kitts-Nevis 圣其茨-尼维斯</li>
+							<li>Saint Lucia 圣卢西亚</li>
+							<li>Saint Martin (France) 圣马丁岛</li>
+							<li>Saint Pierre and Miquelon 圣皮埃尔和密克隆岛</li>
+							<li>Saint Vincent and the Grenadines 圣文森特和格林纳丁斯</li>
+							<li>Samoa 萨摩亚</li>
+							<li>San Marino 圣马力诺</li>
+							<li>Sao Tome and Principe 美和普林西比</li>
+							<li>Saudi Arabia 沙特阿拉伯</li>
+							<li>Senegal 塞内加尔</li>
+							<li>Seychelles 塞舌尔</li>
+							<li>Serbia 塞尔维亚</li>
+							<li>Singapore 新加坡</li>
+							<li>Slovakia 斯洛伐克</li>
+							<li>Slovenia 斯洛文尼亚</li>
+							<li>Society Islands 社会群岛</li>
+							<li>Solomon Islands 所罗门群岛</li>
+							<li>Somaliland 索马里兰</li>
+							<li>South Africa 南非</li>
+							<li>South Georgia and the South Sandwich Islands 南乔治亚和南桑德韦奇群岛</li>
+							<li>South Korea (R.O.K) 韩国</li>
+							<li>Spain 西班牙</li>
+							<li>Sri Lanka 斯里兰卡</li>
+							<li>Sudan 苏丹共和国 </li>
+							<li>Suriname 苏里南</li>
+							<li>Svalbard and Jan Mayen 斯瓦尔巴特群岛</li>
+							<li>Swaziland 斯威士兰</li>
+							<li>Sweden 瑞典</li>
+							<li>Switzerland 瑞士</li>						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<!--<script type="text/javascript" src="../js/domestic_transport.js"></script>-->
+	</body>
+
+</html>

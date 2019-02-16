@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+	    <link rel="stylesheet" type="text/css" href="../../css/freight.css"/>
+	    <style>
+	        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+	        body,html{font-family:"微软雅黑";font-size: 14px;color: #727689;width:100%;}
+	        a{color: #727689;text-decoration: none;}
+	        body a:focus {text-decoration: none;}
+	        ol,ul,li{list-style: none;}
+	        .clear:after{content:"";overflow:hidden;clear:both;display:block;}
+	        textarea,input{resize: none;font-family:"微软雅黑";padding: 0 10px;}
+	        textarea{padding-top: 5px;}
+	        
+	    </style>
+	</head>
+	<body>
+		<div class="load-Policy">
+		    <div class="contact-way-top">
+		        <span class="big-load-title">选择投保方式 </span>
+		        <img src="../../img/delete-line-ico2.png" alt="" class="close">
+		    </div>
+		    <form class="myform1" method="post" action="">
+		        <div class="load-show">
+		        	<div class="fixCont2">
+						<div class="choose_way" data-type="1" data-goods="">
+							<p class="choose_wayTitl">快速自主投保</p>
+							<p class="p-small">（实时出单）</p>
+						</div>
+						<div class="choose_way" data-type="2" data-goods="">
+							<p class="choose_wayTitl">上传提单投保</p>
+							<p class="p-small">（一个工作日内出单）</p>
+						</div>
+					</div>
+		        </div>
+		        <div class="load-content" >
+		            <div class="load-content-top">
+		                <ul class="clear">
+		                    <li>
+		                        <img src="../../img/load-surepic4.png" alt="">
+		                        <span>上传提单</span>
+		                    </li>
+		                    <li>
+		                        <img src="../../img/load-surepic5.png" alt="">
+		                        <span>通知付款</span>
+		                    </li>
+		                    <li>
+		                        <img src="../../img/load-surepic6.png" alt="">
+		                        <span>成功出单</span>
+		                    </li>
+		                </ul>
+		            </div>
+		            <ul class="load-cont">
+		                <li class="clear">
+		                    <div class="load-cont-left">
+		                        <span>提单上传：</span>
+		                    </div>
+		                    <div class="load-cont-right">
+		                        <div class="load-nub">
+		                            <span class="load-put short-put" id="showPolicy1">请上传提单照片1或扫描件</span>
+		                            <input type="hidden" name="policy_url[]" id="policyUrl1">
+		                            <input type="hidden" name="policy_name[]" id="policyName1">
+		                            <div class="containerPolicy" id="containerPolicy1">
+		                                <span class="browse" id="policyBrowser1">浏览</span>
+		                            </div>
+		                            <div class="reduce-pic"></div>
+		                            <div class="upload_content_bottom" id="policyProcessArea1"></div>
+		                            <div class="Validform_checktip tell_file">请上传提单照片或扫描件</div>
+		                        </div>
+		                        <div class="add-load">
+		                            <p>如需上传更多图片，请点击增加</p>
+		                            <div class="add-pic"></div>
+		                        </div>
+		                    </div>
+		                </li>
+		            </ul>
+		            <div class="sure-bt"><span class="btn-button">确认</span></div>
+		        </div>
+		        <div class="load-end">
+		            <img src="../../img/actived2.png" alt="" class="load-ok">
+		            <p class="load-ok-title">上传成功！</p>
+		            <p class="load-ok-prompt">企保招招正为您火速创建订单中，</p>
+		            <p class="all-ok-cont">请留意付款通知。</p>
+		            <div class="end-ok"><span class="my-sure">我知道了</span></div>
+		        </div>
+		    </form>
+		</div>
+
+		<script type="text/javascript" src="../../js/jquery.js"></script>
+		<script type="text/javascript" src="../../js/placeholder.js"></script>
+		<script type="text/javascript" src="../../js/Validform_ncr_min.js"></script>
+		<script type="text/javascript" src="../../layer/layer.js"></script>
+		
+		
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/moxie.js"></script>
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/plupload.min.js"></script>
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<script type="text/javascript" src="../../../upload/qiniu.js"></script>
+		<script type="text/javascript" src="../../../upload/qibao.js"></script>
+		<script>
+//			document.domain = 'qibaozz.com';
+		    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+		    parent.layer.iframeAuto(index);
+		    var formData = parent.layer.getChildFrame('body');
+		    
+		    // 选择投保方式
+		    $(".choose_way").on("click",function(){
+		    	var index = $(this).index(".choose_way");
+		    	if(index ===0) {
+					var goodsType = $(this).data('goods');
+		        	var type = $(this).data('type');
+					window.open("http://{$Think.config.website.www}/cargo/index?goodsType="+goodsType+"&insuranceId="+type)
+				} else {
+					$(".big-load-title").text("上传提单投保");
+					$(".load-show").css({display:"none"}).siblings(".load-content").css({display:"block"});
+			        parent.layer.iframeAuto(index);
+			        formData.find(".Validform_checktip").bind("DOMNodeInserted",function(e){
+			            parent.layer.iframeAuto(index);
+			        });
+				}
+		    });
+		    
+		    //上传提单投保
+		    formData.find(".load-put").bind("DOMNodeInserted",function(e){
+		        $(this).siblings(".Validform_checktip").css("display","none");
+		        parent.layer.iframeAuto(index);
+		    });
+		    
+		    $(document).on("click",".btn-button",function(){
+		        $(".load-content").css({display:"none"}).siblings(".load-end").css({display:"block"});
+		    });
+		    $(document).on("click",".my-sure,.close",function(){
+		    	$(".big-load-title").text("选择投保方式");
+		        parent.layer.closeAll();
+		    });
+		    var addnub=0;
+		    var addP = 1;
+		    $(document).on("click",".add-load .add-pic",function(){
+		        addP++;
+		        if(addnub<2){
+		            addnub++;
+		            var newload=$(this).parent().siblings(".load-nub").eq(0).clone();
+		            newload.find(".reduce-pic").css({display:"block"});
+		            newload.find('#policyName1').attr('id','policyName'+addP).val('');
+		            newload.find('#policyUrl1').attr('id','policyUrl'+addP).val('');
+		            newload.find('#showPolicy1').attr('id','showPolicy'+addP).html('请上传提单照片或扫描件');
+		            //newload.find('#policyBrowser1').attr('id','policyBrowser'+addPolicy).val('');
+		            newload.find('#policyProcessArea1').attr('id','policyProcessArea'+addP).val('');
+		            newload.find('#containerPolicy1').attr('id', 'containerPolicy'+addP);
+		            newload.find('#containerPolicy'+addP).html('').append("<span class='browse' id='policyBrowser"+addP+"'>浏览</span>");
+		            newload.find(".Validform_checktip").html("请上传提单照片或扫描件").css({display:"none"});
+		            $(newload).insertBefore(".add-load");
+		            Qibao.policyUpload('containerPolicy'+addP, 'policyBrowser'+addP, 'policyUrl'+addP, 'policyProcessArea'+addP, 'showPolicy'+addP, 'policyName'+addP);
+		        };
+		        parent.layer.iframeAuto(index);
+		        formData.find(".Validform_checktip").bind("DOMNodeInserted",function(e){
+		            parent.layer.iframeAuto(index);
+		        });
+		    });
+		    $(document).on("click",".load-nub .reduce-pic",function(){
+		        $(this).parent().remove();
+		        addnub--;
+		        parent.layer.iframeAuto(index);
+		    });
+		    $(".myform1").Validform({
+		        tiptype: 4,
+		        btnSubmit:".btn-button", //#btn_sub是该表单下要绑定点击提交表单事件的按钮;如果form内含有submit按钮该参数可省略;
+		        ajaxPost:true,
+		        ignoreHidden:true,
+		        beforeCheck:function(curform){
+		            var jieguo=1;
+		            $(".load-nub").each(function(){
+		                var str=$(this).find(".load-put").html();
+		                var placeholder="请上传提单照片或扫描件";
+		                if(str==placeholder){
+		                    $(this).find(".tell_file").css({display:"block"});
+		                    jieguo= 0;
+		                    return false;
+		                }else{
+		                    jieguo= 1;
+		                };
+		            });
+		            if(jieguo==0){
+		                return false
+		            }
+		        },callback:function(res) {
+		            $(".load-content").css({display:"none"}).siblings(".load-end").css({display:"block"});
+		            parent.layer.iframeAuto(index);
+		        }
+		    });
+		
+		    Qibao.policyUpload('containerPolicy1', 'policyBrowser1', 'policyUrl1', 'policyProcessArea1', 'showPolicy1', 'policyName1');
+		</script>
+	</body>
+</html>

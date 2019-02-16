@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>填写投保信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/employ.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div id="header">
+			<div class="header">
+				<div class="header_left">
+					<img src="../../img/head-icon.png" alt="" />
+				</div>
+				<div class="header_right">
+					<div class="header_right_top">
+						<ul class="clear">
+							<li>
+								<span>|</span><a href="javascript:;">帮助中心</a>
+							</li>
+							<li>
+								<span>|</span><a href="javascript:;">关注我们</a>
+								<img src="../../img/weixin.jpg" alt="" class="img"/>
+							</li>
+							<li>
+								<span>|</span><a href="javascript:;">我的企保</a>
+							</li>
+							<li>
+								<a href="register.html">免费注册</a>
+							</li>
+							<li>
+								<a href="login.html" class="last_login">您好！请登录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header_right_bottom clear">
+						<ul class="clear">
+							<li class="under_line">
+								<a href="javascript:;">产品</a>
+								<div class="product">
+									<div class="product_cont clear">
+										<ul>
+											<li class="hover"><a href="javascript:;">财产险</a></li>
+											<li><a href="javascript:;">责任险</a></li>
+											<li><a href="javascript:;">工程险</a></li>
+											<li><a href="javascript:;">意外健康险</a></li>
+											<li><a href="javascript:;">船舶货运险</a></li>
+											<li><a href="javascript:;">信用保证险</a></li>
+										</ul>
+										<div class="all_product_cont">
+											<div class="menu block">
+												<a href="javascript:;">财产基本险</a>
+												<a href="javascript:;">财产综合险</a>
+												<a href="javascript:;">产品一切险</a>
+												<a href="javascript:;">营业中断险</a>
+												<a href="javascript:;">现金险</a>
+											</div>
+											<div class="menu">
+												<a href="javascript:;">雇主责任险</a>
+												<a href="javascript:;">财产一切险</a>
+												<a href="javascript:;">产品责任险</a>
+												<a href="javascript:;">食品安全责任险</a>
+												<a href="javascript:;">旅行社责任险</a>
+												<a href="javascript:;">停车责任险</a>
+												<a href="javascript:;">物业管理责任险</a>
+												<a href="javascript:;">保安公司责任险</a>
+												<a href="javascript:;">道路客运承运人责任险</a>
+												<a href="javascript:;">保险经纪人职业责任险</a>
+												<a href="javascript:;">国内道路货物运输承运人责任险</a>
+											</div>
+											<div class="menu">
+												<a href="javascript:;">建筑工程一切险</a>
+												<a href="javascript:;">安装工程一切险</a>
+											</div>
+											<div class="menu">
+												<a href="javascript:;">困难意外险</a>
+												<a href="javascript:;">建筑施工人员意外险</a>
+											</div>
+											<div class="menu">
+												<a href="javascript:;">国际货物运输保险（预约）</a>
+												<a href="javascript:;">国内货物运输保险（预约）</a>
+											</div>
+											<div class="menu">
+												<a href="javascript:;">贷款保证保险</a>
+												<a href="javascript:;">雇员忠诚保证保险</a>
+												<a href="javascript:;">短期出口贸易信用险</a>
+											</div>
+										</div>
+									</div>
+									<div class="product_img"></div>
+								</div>
+							</li>
+							<li class="recommend_hot">
+								<a href="javascript:;">特惠推荐</a>
+								<div class="div_hot"></div>
+							</li>
+							<li>
+								<a href="javascript:;">企保招招</a>
+							</li>
+							<li>
+								<a href="javascript:;">企保问问</a>
+							</li>
+							<li>
+								<a href="javascript:;">关于我们</a>
+							</li>
+						</ul>
+						<div class="hotline">
+							<span>服务热线：</span>
+							<span class="red">400-830-1985</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fix">
+			<ul>
+				<li><a href="javascript:;">
+					<div class="right_img"></div>
+					<p>联系方式</p>
+				</a></li>
+				<li id="fix-li"><a href="javascript:;">
+					<div class="right_img"></div>
+					<p>在线客服</p>
+				</a></li>
+				<li><a href="javascript:;">
+					<div class="right_img"></div>
+					<p>返回顶部</p>
+				</a></li>
+			</ul>
+		</div>
+		
+		<div class="all_fix" >
+			<div class="all_no"></div>
+			<form class="form_fix">
+				<div class="zhizhao_pic">
+					<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+					<img src="" alt=""  class="mid_pic"/>
+				</div>
+				<div class="fabu_fix">
+					<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+					<div class="ok_fix_top">温馨提示：</div>
+					<div class="all_top clear">
+						<img src="../../img/gantan.png" alt="" />
+						<p>您所填写的投保人信息已存在，点击【确认】直接调用该投保人信息，点击【 X 】即可重新输入投保人信息。</p>
+					</div>
+					<span class="fabu_yes">确认</span>
+				</div>
+				
+				<!--添加或编辑 弹框-->
+				<div class="addInsure">
+					<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+					<div class="addInsure_titl">添加参保人</div>
+					<ul class="addUl">
+						<li class="clear">
+							<div class="addLi_left">
+								<span>姓名：</span>
+							</div>
+							<div class="addLi_right">
+								<input type="text" class="insureName" placeholder="请输入您的姓名" datatype="names" nullmsg="请输入您的姓名"  errormsg="姓名只能有汉字，字母，数字，空格，点号，-号" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>性别：</span>
+							</div>
+							<div class="addLi_right divOption">
+								<select class="selc insureSex" >
+									<option>男</option>
+									<option>女</option>
+								</select>
+								<span class="selcSpan">男</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>出生日期：</span>
+							</div>
+							<div class="addLi_right">
+								<input id="datetimepicker" class="insureTime" type="text" placeholder="请选择日期" datatype="*" nullmsg="请选择日期"  readonly  />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>证件类型：</span>
+							</div>
+							<div class="addLi_right divOption">
+								<select class="selc identifySelc" >
+									<option value="0">身份证</option>
+									<option>军官证</option>
+									<option>护照</option>
+									<option>港澳身份证</option>
+									<option>港澳通行证</option>
+									<option>赴台通行证</option>
+									<option>港澳居民往来内地通行证</option>
+									<option>台湾居民往来内地通行证</option>
+								</select>
+								<span class="selcSpan">身份证</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>证件号码：</span>
+							</div>
+							<div class="addLi_right">
+								<input type="text" class="identifyNums" />
+								<span class="Validform_checktip tell1"></span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="addLi_left">
+								<span>职业类别：</span>
+							</div>
+							<div class="addLi_right divOption">
+								<select class="selc insureKind" >
+									<option>1类</option>
+									<option>2类</option>
+									<option>3类</option>
+									<option>4类</option>
+								</select>
+								<span class="selcSpan">1类</span>
+							</div>
+						</li>
+					</ul>
+					<span class="addInsure_yes">确认</span>
+				</div>
+			</form>
+		</div>
+		
+		
+		<div class="position_title">
+			<span>当前位置：</span>
+			<a href="fillIn_employ.html" class="position_txt">填写投保资料</a>
+		</div>
+		<form class="myform">
+			<div class="content">
+				<div class="enterprise_title"><span>保险起止时间</span></div>
+				<div class="insuer_time">
+					<div class="clear">
+						<div class="div_left">
+							<span>已选方案：</span>
+						</div>
+						<div class="div_right">
+							<span class="plan_kind" data-price="68">A</span><span></span>方案</strong>
+						</div>
+					</div>
+					<div class="clear">
+						<div class="div_left">
+							<span>保险期限：</span>
+						</div>
+						<div class="div_right">
+							<span class="insuer_period">12</span>个月
+						</div>
+					</div>
+					<div class="insuer_timeContain clear">
+						<div class="div_left">
+							<span>起保日期：</span>
+						</div>
+						<div class="div_right start_date">
+							<input id="datetimepicker1" placeholder="请选择起保日期"  type="text" datatype="*" nullmsg="请选择起保日期" readonly  />
+							<a>（00时开始）</a>
+						</div>
+					</div>
+					<div class="insuer_timeContain clear">
+						<div class="div_left">
+							<span>终止日期：</span>
+						</div>
+						<div class="div_right">
+							<input id="datetimepicker2"  type="text"  readonly "/>
+							<a href="#">（24时结束）</a>
+						</div>
+					</div>
+				</div>
+				<div class="padding">
+					<div class="enterprise_title"><span>投保人信息</span></div>
+					<div class="used used1">
+	           			<span>常用企业：</span>
+	                    <!--<a data-id="96" data-user_company_id="" data-company_name="河西科技有限公司" data-license="user/17/05/06/1494034323543843.jpg"
+	                       data-license_image="http://img01.qibaozz.com/user/17/05/06/1494034323543843.jpg"
+	                       data-contact="1231399999323"
+	                       data-phone="18124066477"
+	                       data-policy_send_add="Lind-test_addr"
+	                       data-invoices_type="1"
+	                       data-tax_register_address="rrrr"
+	                       data-tax_register_tel="4431256"
+	                       data-tax_bank_name="fdsaf"
+	                       data-tax_bank_account="622231004328465852"
+	                    >
+	                                                   河西科技有限公司
+	                    </a>
+	                    <a data-id="95"
+	                       data-user_company_id=""
+	                       data-company_name="麓谷科技有限公司"
+	                       data-license="user/17/05/06/1494034329613260.jpg"
+	                       data-license_image="http://img01.qibaozz.com/user/17/05/06/1494034329613260.jpg"
+	                       data-contact="习大大"
+	                       data-phone="13049416910"
+	                       data-policy_send_add="前海路112号"
+	                       data-invoices_type="1"
+	                       data-tax_register_address="北京市中南海112路"
+	                       data-tax_register_tel="13049416910"
+	                       data-tax_bank_name="招商银行泰然支行"
+	                       data-tax_bank_account="233320099888331111"
+	                    >
+	                                                  麓谷科技有限公司
+	                    </a>-->
+               		</div>
+	            	<div class="toubao">
+	                	<ul class="clear enterprise_ul1">
+		                    <input type="hidden" name="applicant_id" value="13" />
+		                    <input type="hidden" name="applicant_user_company_id" value="96" />
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>投保人：</span>
+		                            <img src="../../img/key.png" />
+		                        </div>
+		                        <div class="enterprise_right">
+		                            <input type="text" name="company_name" value="" class="used1_find" placeholder="请输入与营业执照一致的企业名称" datatype="name" nullmsg="请输入企业名称" errormsg="企业名称只能由中文英文数字括号组成"/>
+		                            <span class="first_revise revise1">更改</span>
+		                        </div>
+		                    </li>
+		                    <li class="clear">
+								<div class="enterprise_left">
+									<span>信用代码：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  class=""  placeholder="统一社会信用代码（18位）/组织机构代码（9位）" datatype="credit" nullmsg="请输入信用代码" errormsg="信用代码只能由9位或者18位的大写英文、数字组成"/>
+								</div>
+							</li>
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>营业执照：</span>
+		                            <img src="../../img/key.png"/>
+		                        </div>
+		                        <div class="enterprise_right">
+		                        	<div class="clear">
+			                            <img name="license_image" src="../../img/upload.jpg" id="showImage" class="upload_pic"/>
+			                            <div class="upload_content_bottom" id="showProcess" style="display: none;"> 
+			                            </div>
+			                            <input type="hidden" name="license" id="uploadKey" value="" />
+			                            <div class="upload_right">
+			                                <p>上传投保人企业营业执照照片：</p>
+			                                <p>照片所有信息需清晰可见，内容真实有效，不得做任何修改。</p>
+			                                <p>照片支持 JPG ，JPEG，GIF，PNG格式，大小不得超过8M。</p>
+			                                <div id="container_add_company_1" style="overflow:hidden; float: left;">
+			                                <span class="choose_pic used1_find" id="upload"   >选择文件</span>
+			                                </div>
+			                            </div>
+		                            </div>
+		                            <div id="upload_show_process_area_1" class="upload_content_bottom">
+		                            	<p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            	<div class="speed" style="width: 100%;"><p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            		
+		                            	</div>
+		                            </div>
+		                        </div>
+		                    </li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>联系人：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" name="contact" placeholder="请填写联系人姓名" datatype="*2-150" nullmsg="请输入联系人姓名" errormsg="联系人在2-150个字符内"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>联系电话：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" name="phone" placeholder="请填写联系人电话" datatype="phone" nullmsg="请输入联系人电话" errormsg="联系人电话格式错误"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>邮寄地址：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" placeholder="选择城市" id="selt-city" readonly  />
+									<input type="hidden" name='area_id' value="" class="inpt-hide"/>
+									<div class="city hide">
+										<div class="city_top">
+											<img src="../../img/delete-line-ico4.png">
+											<ul>
+												<li>
+													<a href="javascript:;" class="choose">热门</a>
+												</li>
+												<li>
+													<a href="javascript:;">ABCD</a>
+												</li>
+												<li>
+													<a href="javascript:;">EFGH</a>
+												</li>
+												<li>
+													<a href="javascript:;">JKLM</a>
+												</li>
+												<li>
+													<a href="javascript:;">NOPQRS</a>
+												</li>
+												<li>
+													<a href="javascript:;">TUVWX</a>
+												</li>
+												<li>
+													<a href="javascript:;">YZ</a>
+												</li>
+											</ul>
+										</div>
+										<div class="city_cont">
+											<ul class="hot_city cities"></ul>
+											<ul class="city_a_d hide cities"></ul>
+											<ul class="city_e_h hide cities"></ul>
+											<ul class="city_j_m hide cities"></ul>
+											<ul class="city_n_s hide cities"></ul>
+											<ul class="city_t_x hide cities"></ul>
+											<ul class="city_y_z hide cities"></ul>
+										</div>
+									</div>	
+									<input type="text" placeholder="请提供详细的收件地址" class="check_city" datatype="*2-150" nullmsg="请输入保单邮寄地址" errormsg="详细收货地址在2-150个字符内" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>发票类型：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right divOption">
+									<select  class="selc selcNeed" >
+										<option value="1">增值税普通发票</option>
+										<option value="2">不需要发票</option>
+									</select>
+									<span class="selcSpan">增值税普通发票</span>
+								</div>
+							</li>
+						</ul>
+						<ul class="clear select_ul">
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记号：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="number" nullmsg="请输入税务登记号" errormsg="税务登记号格式错误"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记地址：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  datatype="*2-150" nullmsg="请输入税务登记地址" errormsg="限制在2-150个字符内"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记电话：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="phone" nullmsg="请输入税务登记电话" errormsg="税务登记电话格式错误"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务开户银行名称：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="name" nullmsg="请输入税务开户银行名称" errormsg="税务开户银行名称只能有中文、英文、数字、括号"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务开户银行账号：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  datatype="n" nullmsg="请输入税务开户银行账号" errormsg="税务开户银行账号格式错误"/>
+								</div>
+							</li>
+						</ul>
+						<div class="prompt">温馨提示：</div>
+						<p class="prompt_cont">我们将尽快完成纸质保单及发票的寄送，若您在成交后7个工作日内没有收到相关材料，请于我们的客服人员联系：400-830-1985（10:00-18:00）</p>
+					</div>
+					<div class="enterprise_title"><span>被保险人信息</span></div>
+					<div class="people-agreement">
+						<label><input type="radio" name="Agreement" checked="checked"/> 与投保人一致</label>
+						<label><input type="radio" name="Agreement" /> 与投保人不一致</label>
+					</div>
+					 <div class="used used2 hide">
+               			<span>常用企业：</span>
+                        <a data-id="96"
+                           data-user_company_id=""
+                           data-company_name="河西科技有限公司"
+                           data-insured_license="user/17/05/06/1494034323543843.jpg"
+                           data-insured_license_image="http://img01.qibaozz.com/user/17/05/06/1494034323543843.jpg"
+                        >
+                                                      河西科技有限公司
+                        </a>
+                        <a data-id="95"
+                           data-user_company_id=""
+                           data-company_name="麓谷科技有限公司"
+                           data-insured_license="user/17/05/06/1494034329613260.jpg"
+                           data-insured_license_image="http://img01.qibaozz.com/user/17/05/06/1494034329613260.jpg"
+                        >
+                                                      麓谷科技有限公司
+                        </a>
+                    </div>
+		            <div class="beibao hide">
+		            	<input type="hidden" name="insured_id" value="13" />
+		                <input type="hidden" name="insured_user_company_id" value="96" />
+		                <ul class="clear enterprise_ul2">
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>被保险人：</span>
+		                            <img src="../../img/key.png" />
+		                        </div>
+		                        <div class="enterprise_right">
+		                            <input type="text"
+		                                   name="insured_company_name"
+		                                   value=""
+		                                   class="used2_find" placeholder="请输入与营业执照一致的企业名称"
+		                                   datatype="name"
+		                                   nullmsg="请输入企业名称"
+		                                   errormsg="企业名称只能由中文英文数字括号组成"/>
+		                            <span class="first_revise revise2">更改</span>
+		                        </div>
+		                    </li>
+		                    <li class="clear">
+								<div class="enterprise_left">
+									<span>信用代码：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  class=""  placeholder="统一社会信用代码（18位）/组织机构代码（9位）" datatype="credit" nullmsg="请输入信用代码" errormsg="信用代码只能由9位或者18位的大写英文、数字组成"/>
+								</div>
+							</li>
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>营业执照：</span>
+		                            <img src="../../img/key.png" />
+		                        </div>
+		                        <div class="enterprise_right">
+		                        	<div class="clear">
+			                            <input type="hidden" name="insured_license" id="uploadLicenseKey" value="" />
+			                            <img name="insured_license_image" src="../../img/upload.jpg" alt="" class="upload_pic" id="showLicenseImage"/>
+			                                                        <div class="upload_content_bottom" id="showLicenseProcess" style="display: none;">
+			                            </div>
+			                            <div class="upload_right">
+			                                <p>上传投保人企业营业执照照片：</p>
+			                                <p>照片所有信息需清晰可见，内容真实有效，不得做任何修改。</p>
+			                                <p>照片支持 JPG ，JPEG，GIF，PNG格式，大小不得超过8M。</p>
+			                                <div id="container_add_company_2" style="overflow:hidden; float: left;">
+			                                <span class="choose_pic used2_find" id="uploadLicense">选择文件</span>
+			                                </div>
+			                            </div>
+			                        </div>
+		                            <div id="upload_show_process_area_2" class="upload_content_bottom">
+		                            	<p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            	<div class="speed" style="width: 100%;"><p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            		
+		                            	</div>
+		                            </div>
+		                        </div>
+		                    </li>
+		                </ul>
+		            </div>
+				</div>
+				<div class="staffList">
+					<div class="enterprise_title"><span>员工名单</span></div>
+					<div class="div_tip">
+						<span class="div_tipTitl">提醒注意：</span>
+						<span>可投保的人员职业类别为1-4类，未列明行业不得投保。4类职业最高投保30万。</span>
+					</div>
+					<div class="query_kind clear">
+						<div>职业类别查询：</div>
+						<div class="divOption bigKind">
+							<select class="selc selc-type1">
+								<option value="z">行业大类</option>
+							</select>
+							<span class="selcSpan">行业大类</span>
+						</div>
+						<div class="divOption midKind">
+							<select class="selc selc-type2">
+								<option value="z">行业中类</option>
+							</select>
+							<span class="selcSpan">行业中类</span>
+						</div>
+						<div class="divOption smallKind">
+							<select class="selc selc-type3">
+								<option value="z">行业小类</option>
+							</select>
+							<span class="selcSpan">行业小类</span>
+						</div>
+						<div class="kindName"><span></span></div>
+					</div>
+					<div class="table">
+						<div class="table_top clear">
+							<div class="addOne">逐个添加</div>
+							<div>上传表格</div>
+							<div>下载表格模板</div>
+							<div class="deleteAll click-sure" data-message="确认清空参保人信息？" data-url="empty">清空参保人</div>
+							<p>
+								<img src="../../img/gantan.png" />
+								有效参保人
+								<span class="right_nums">0</span>个，
+								<span class="wrong_nums">0</span>人信息有误
+							</p>
+						</div>
+						<table class="tableContain">
+							<tr>
+								<th></th>
+								<th>参保姓名</th>
+								<th>证件类型</th>
+								<th>证件号码</th>
+								<th>出生日期</th>
+								<th>性别</th>
+								<th>职业类型</th>
+								<th>操作</th>
+								<th></th>
+							</tr>
+							
+						</table>
+						<div class="nubs">
+							<div class="nub">
+								<img src="../../img/left-go.png" alt="" class="img_left"/>
+								<span class="check">1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<img src="../../img/right-go.png" alt="" class="img_right"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_bottom clear">
+				<div class="content_bottomCont clear">
+					<div >
+						<a class="payNow" href="javascript:;" data-message="雇主责任险，参保人数最低5人!" data-url = "close">立即支付</a>
+					</div>
+					<div class="totalPay">
+						<span>共<span class="totalNums">0</span>人投保</span>
+						金额：<span class="totalMoney">￥<span>0.00</span></span>
+					</div>
+				</div>
+			</div>
+			<p class="all_tip">参保人员信息有误，请完善人员信息或清除该条数据</p>
+		</form>	
+		<script type="text/javascript" src="//dev.qbzz.qibaozz.com/js/upload/plupload-2.1.2/js/moxie.js"></script>
+		<script type="text/javascript" src="//dev.qbzz.qibaozz.com/js/upload/plupload-2.1.2/js/plupload.min.js"></script>
+		<script type="text/javascript" src="//dev.qbzz.qibaozz.com/js/upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<!--<script type="text/javascript" src="//dev.qbzz.qibaozz.com/js/upload/qiniu.js"></script>
+		<script type="text/javascript" src="//dev.qbzz.qibaozz.com/js/upload/qibao.js"></script>-->
+		<script src="../../js/common.js"></script>
+		<script src="../../js/area2.0.js"></script>
+		<script src="../../js/placeholder.js"></script>
+		<script src="../../js/timeHelper.js"></script>
+		<script src="../../js/Validform_ncr_min.js"></script>
+		<script src="../../js/bounced.js"></script>
+		<script src="../../../generate/guzhulei.js"></script>  
+		<script src="../../js/employ.js"></script>
+	</body>
+	
+</html>

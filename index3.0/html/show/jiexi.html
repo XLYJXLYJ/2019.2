@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/shownew.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../../css/复制(2)show.css"/>-->
+	</head>
+	<body>
+		<div class="tc_contain">
+			<img class="tc_bc" src="../../img/tc/tc_big.jpg" />
+			<div class="audio_contain">
+				<!--<img src="../../img/tc/tc_round.png"/>-->
+				<video class="video" preload="auto" >
+				    <source src="../../img/tc/aimi1.mp4" type="video/mp4"></source>
+				</video>
+				
+				
+			</div>
+			<div class="tc_top clear">
+				<div class="tc_k tc_k1">
+					<img class="tc_k3Pic2" src="../../img/tc/tc_k2.png"/>
+					<img src="../../img/tc/tc_k1.png"/>
+					<p class="tc_txt">保单咨询</p>
+				</div>
+				<div class="tc_k tc_k4">
+					<img class="tc_k3Pic2" src="../../img/tc/tc_k2.png"/>
+					<img src="../../img/tc/tc_k1.png"/>
+					<p class="tc_txt">风险测评</p>
+				</div>
+			</div>
+			<div class="tc_bottom clear">
+				<div class="tc_k tc_k2">
+					<img class="tc_k3Pic2" src="../../img/tc/tc_k2.png"/>
+					<img src="../../img/tc/tc_k1.png"/>
+					<p class="tc_txt">核保估价</p>
+				</div>
+				<a href="javascript:;" class="tc_k tc_k3">
+					<img class="tc_k3Pic2" src="../../img/tc/tc_k2.png"/>
+					<img class="tc_k3Pic" src="../../img/tc/tc_k1.png"/>
+					<p class="tc_txt">阅读保单</p>
+				</a>
+			</div>
+			<p class="madeTxt">@企保科技</p>
+			<div class="alert">
+				<div class="alert_d1">
+					<img src="../../img/alert.png">
+					<div class="prompt">
+						<span class="prompt_d">提示</span>
+						<p class="prompt_g">该功能为后台定制功能，暂未开放免费体验，如需定制，请留下联系方式以便项目专员与您联络，谢谢！</p>
+						<span class="order">我要定制</span>
+					</div>
+				</div>
+				<div class="alert_d2">
+					<img src="../../img/alert.png">
+					<div class="message">
+						<p class="case">解决方案申请</p>
+						<form>
+							<div>
+								<label>企业名称：</label>
+								<input type="text" name="name" id="name" value="" placeholder="请输入企业名称" datatype="*2-10" errormsg="长度在2-10之间"  nullmsg="请输入企业名称"/>
+							</div>
+							<div>
+								<label>联系人：</label>
+								<input type="text" name="person" id="name" value="" placeholder="请输入联系人" datatype="*2-10" errormsg="长度在2-10之间"  nullmsg="请输入联系人"/>
+							</div>
+							<div>
+								<label>联系电话：</label>
+								<input type="text" name="phone" class="phone" id="name" value="" placeholder="请输入手机号码" datatype="phone" errormsg="手机号错误"  nullmsg="请输入手机号码"/>
+							</div>
+							<div>
+								<label>验证码：</label>
+								<input type="text" name="code" id="name" class="verifyCode" value="" placeholder="请输入验证码" datatype="*4-10" errormsg="验证码输入错误"  nullmsg="请输入验证码"/>
+								<span class="get code">获取验证码</span>
+							</div>
+							<span class="sure">确定</span>
+						</form>
+					</div>
+					
+				</div>
+				<div class="alert_d3">
+					<img src="../../img/alert1.png">
+					<div class="success">提交成功!</div>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../../js/jquery.js"></script>
+		<script src="../../js/Validform_ncr_min.js"></script>
+		<script>
+			$(document).on('click',".tc_k4,.tc_k3,.tc_k2",function(){
+				$(".alert").show();
+				$(".alert_d1").show();
+			})
+			$(document).on('click',".alert .prompt .order",function(){
+				$(".alert_d1").hide();
+				$(".alert_d2").show();
+			})
+			$("form").Validform({
+		        tiptype: 4,
+		        ignoreHidden: true,
+		        postonce: true,
+		        ajaxPost: true,
+		        btnSubmit: ".sure",
+		        datatype: {
+		            'phone': /^1[3|4|5|8|7][0-9]\d{8}$/
+		        },
+		        callback: function (data) {
+		            if (data.code == 10000) {
+		            	$('.alert_d2').hide();
+		                $('.alert_d3').show();
+		                setTimeout(function(){
+		                	$('.alert_d3').hide();
+		                	$('.alert').hide();
+		                },1000);
+		            } else {
+		                layer_msg(data.msg);
+		            }
+		        }
+		    });
+//		    //短信验证码
+		    $(document).on("click", ".get", function () {
+		        if (!$('.get').hasClass('code')) {
+		            return false;
+		        }
+		        var phone = $(".phone").val();
+		        if (/^1[3|4|5|8|7][0-9]\d{8}$/.test(phone)) {
+		            $.post('/verifycode/code', {'mobile': phone}, function (data) {
+		                if (data.code == 10000) {
+		                    var n = 60;
+		                    $(".get").removeClass("code").html(n + "s");
+		                    timeer = setInterval(function () {
+		                        n--;
+		                        if (n > 0) {
+		                            $(".get").html(n + "s");
+		                        } else {
+		                            $(".get").addClass("code").html("获取验证码");
+		                            clearInterval(timeer);
+		                        }
+		                    }, 1000);
+		                   
+		                }
+		            }, 'json');
+		        } else {
+		            $(".phone").focus();
+		            $(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+		        }
+		    });
+		    $(document).on("click",".alert",function(e){
+		    	var alert_d1=$('.alert_d1')[0];
+		    	var alert_d2=$('.alert_d2')[0];
+    			if (e.target!= alert_d1 &&!$.contains(alert_d1, e.target)&&e.target!= alert_d2 &&!$.contains(alert_d2, e.target)){
+    				$('.alert_d1').hide();
+    				$('.alert_d2').hide();
+    				$(".alert").hide();
+    				$('form')[0].reset();
+    				$(".Validform_checktip").html("");
+    			}
+		    })
+//		    $(function(){
+//		    	setTimeout(function(){
+//		                	$('.alert_d3').hide();
+//		                	$('.alert').hide();
+//		                },1000);
+//		    })
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保大师-重置密码</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/passport-tel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header">
+			<div class="header clear">
+				<div class="topDivL"></div>
+				<div class="hotline topDivR">
+					<span>服务热线：</span>
+					<span class="red">400-830-1985</span>
+				</div>
+			</div>
+		</div>
+		<div class="contents agentPassword">
+			<div class="content">
+				<div class="cont-head">
+					<div class="head-div1">重置密码</div>
+					<div class="head-div2">
+						<a href="javascript:;">登录</a> /
+						<a href="javascript:;">注册</a>
+					</div>
+				</div>
+				<div class="cont-nav">
+					<span class="nav-a1 choose">手机找回密码</span>
+					<span class="nav-a2">邮箱找回密码</span>
+				</div>
+				<form class="myform">
+					<!--手机-->
+					<div class="content-cont cont-tel">
+						<div class="cont-tex">
+							<input type="text" placeholder="请输入手机号码"/>
+							<p class="cont-tip Validform_checktip">
+								<img src="../../img/key.png" />
+								<span>请输入有效的手机号码</span>
+							</p>
+						</div>
+						<div class="getCode" id="xinxi">
+							<p class="getCode1">
+								<input type="text" placeholder="验证码" datatype="*" nullmsg="请输入"/>
+							</p>
+							<p class="getCode2">
+								<img src="../../img/identifying-code1.png" />
+							</p>
+						</div>
+						<div class="getCode">
+							<input type="text" placeholder="输入短信验证码" datatype="*" nullmsg="请输入"/>
+							<div class="cont-btn">获取验证码</div>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="请设置6位以上密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="请设置6位以上密码" class="hide-put"/>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="确认密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="确认密码" class="hide-put"/>
+						</div>
+						
+						<div class="but-ok cont-btn">确 认</div>
+					</div>
+					
+					<!-- 邮箱-->
+					<div class="content-cont cont-mail hide">
+						<div class="cont-tex">
+							<input type="text" placeholder="请输入注册时填写的邮箱地址"/>
+							<p class="cont-tip Validform_checktip">
+								<img src="../../img/key.png" />
+								<span>该邮箱未绑定</span>
+							</p>
+						</div>
+						
+						<div class="getCode" id="xinxi">
+							<p class="getCode1">
+								<input type="text" placeholder="验证码" datatype="*" nullmsg="请输入"/>
+							</p>
+							<p class="getCode2">
+								<img src="../../img/identifying-code1.png" />
+							</p>
+						</div>
+						<div class="getCode">
+							<input type="text" placeholder="输入邮箱验证码" datatype="*" nullmsg="请输入"/>
+							<div class="cont-btn">获取验证码</div>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="请设置6位以上密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="请设置6位以上密码" class="hide-put"/>
+						</div>
+						<div class="cont-tex">
+							<input type="password" placeholder="确认密码" datatype="*" nullmsg="请输入"/>
+							<input type="text" placeholder="确认密码" class="hide-put"/>
+						</div>
+						
+						<div class="but-ok cont-btn">确认</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<div class="versions">
+			<div class="version">
+				<span>Copyright 2017 企保科技 All Rights Reserved</span>
+				<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">粤ICP备16068246号</a>
+				<p>
+					<a class="version_pic" href="http://szcert.ebs.org.cn/bb199e7a-f4af-43b7-8f70-9df55a8d9a4e" target="_blank">
+						<img src="//static.qibaozz.com/index3.0/img/gswjIcon.gif">
+						工商网监电子标识
+					</a>
+					<a class="version_pic" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502000723" target="_blank">
+						<img src="//static.qibaozz.com/index3.0/img/beian.png" class="beian">
+						粤公网安备 44030502000723号
+					</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../../js/placeholder.js"></script>
+<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+<script>
+	$(".myform").Validform({
+		tiptype: 4,
+	})
+</script>
+<script src="../../js/passport.js"></script>
+

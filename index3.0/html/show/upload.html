@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/show.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../../css/复制(2)show.css"/>-->
+	</head>
+	<body>
+		<div class="tc_contain">
+			<img class="tc_bc" src="../../img/tc/tc_big.jpg" />
+			<div class="audio_contain">
+				<!--<img class="tc_bc" src="../../img/tc/tc_round.png" />-->
+				<video class="video" preload="auto" autoplay loop>
+				    <source src="../../img/tc/aimi1.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="load_bottom">
+				<p class="loadTxt">想我帮你看哪张保单，发给我吧~</p>
+				<div class="load-nub">
+	                <span class="load-put" id="showPolicy1"></span>
+	                <input type="hidden" name="policy_url[]" id="policyUrl1">
+	                <input type="hidden" name="policy_name[]" id="policyName1">
+	                <div class="containerPolicy" id="containerPolicy1">
+	                	<div id="policyBrowser1" class="browse tc_k">
+							<img class="tc_k3Pic2" src="../../img/tc/tc_k2.png" />
+							<img class="tc_k3Pic" src="../../img/tc/tc_k1.png" />
+							<p class="tc_txt">选择保单文件</p>
+						</div>
+	                </div>
+	                <div class="upload_content_bottom" id="policyProcessArea1"></div>
+	            </div>
+			</div>
+			<div class="load_link clear">
+				<a href="go(-1)" class="link_back">
+					<img src="../../img/tc/tc_back.png" />
+					<span>Back</span>
+				</a>
+				<a href="javascript:;" class="link_go hide">
+					<span>Go</span>
+					<img src="../../img/tc/tc_go.png" />
+				</a>
+			</div>
+			<p class="madeTxt">@企保科技</p>
+		</div>
+		<script src="../../js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/moxie.js"></script>
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/plupload.min.js"></script>
+		<script type="text/javascript" src="../../../upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<script type="text/javascript" src="../../../upload/qiniu.js"></script>
+		<script type="text/javascript" src="../../../upload/qibao.js"></script>
+		<script type="text/javascript">
+			Qibao.policyUpload('containerPolicy1', 'policyBrowser1', 'policyUrl1', 'policyProcessArea1', 'showPolicy1', 'policyName1');
+			$(".load-put").bind("DOMNodeInserted",function(e){
+		        $(".link_go").removeClass("hide");
+		    });
+		</script>
+	</body>
+</html>

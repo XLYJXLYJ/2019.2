@@ -1,0 +1,203 @@
+body {background-color: #e9e9f4;}
+a:hover{color: #727689;text-decoration: none;}
+select{font-family: "微软雅黑";padding:8px 0 9px 6px;height: 100%; background: transparent;border: none;color: #727689;margin-bottom: 0;}
+/*select::-ms-expand { display: none; }*/
+input::-webkit-input-placeholder {color:#999;}
+input::-moz-placeholder {color:#999;}
+input[type="text"]{color:#35313f;margin-bottom: 0;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#727689;}
+
+body img{vertical-align: baseline;}
+.hide {display: none;}
+
+.navPosition {width: 1200px;margin: 20px auto;color: #35313f;margin-top: 40px;}
+.navPosition a:hover {color: #524ae7;}
+
+.Validform_checktip {padding-left: 10px;color: red;display: block;line-height: 24px;position: absolute;}
+.load-null,.load-null1 {bottom: -24px;left: -10px;}
+.all_no{width:100%;height:100%;}
+.all_fix{position:fixed;top:0;left:0;display:none;width:100%;height:100%;z-index: 101;background: rgba(3,3,3,.7);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2030303,endColorstr=#b2030303);}
+.fabu_fix{border-radius: 4px;display:none;position:fixed;top:50%;left:50%;margin-top:-180px;background:#fff;margin-left: -285px;padding:0 55px;width:476px;height:365px;}
+.ok_fix_top{font-size: 18px;line-height: 96px;margin-bottom: 50px;color:#524ae7;}
+.all_top{line-height: 22px;padding-left:40px ;font-size: 16px;position: relative;color:#232324;}
+.all_top img{position: absolute;top:-3px;left:0;}
+.fabu_fix .fabu_yes{font-size:16px;position: absolute;bottom: 50px;right:55px;background: #524ae7;color:#fff;cursor: pointer;padding: 10px 60px;border-radius: 3px;}
+.no{position:absolute;right:-50px;top:0;cursor:pointer;background:url(../img/delete-line-ico2.png) no-repeat;width:30px;height:30px;}
+.fabu_yes:hover {background: #4037ed;}
+.content {width: 1200px;margin: 0 auto;background: #fff;border-radius: 3px;}
+.step{height:55px;line-height: 50px;color:#d9d9d9;border-bottom: 1px solid #e9e9f4;margin-bottom: 20px;}
+.step li{float:left;}
+.step li span{float:left;line-height: 50px;}
+.step .hei{color:#323234;}
+.step li .big-step{font-size: 24px;margin-right:5px;width:34px;height:34px;border-radius: 20px;text-align: center;margin-top: 7px;line-height: 34px;}
+.step li.hei .big-step{background: url(../img/runond-bg.png) no-repeat;color:#fff;font-size: 18px;}
+
+.enterprise_title{font-size: 24px;color:#35313f;border-bottom: 1px solid #ebebf5;padding: 30px 0 20px 30px;box-sizing: border-box;}
+.padding{padding-bottom:150px;}
+/*.toubao,.beibao,.deal{padding-left: 70px;}*/
+.used{margin-top: 20px;height:42px;line-height: 36px;padding-left:156px ;position:relative;overflow: hidden;}
+.used a{behavior: url(../../js/PIE.htc);text-overflow: ellipsis;overflow: hidden;white-space: nowrap;margin:5px 0;color:#35313f;;margin-right: 9px;border:1px solid #524ae7;width:185px;text-align:center;display:inline-block;line-height:30px;padding: 0 10px;border-radius: 20px;}
+
+.used a.checked{background: #fb6f00;color:#fff;border:1px solid #fb6f00;}
+.used span{position:absolute;top:0;left:77px;line-height: 42px;}
+/*.enterprise_top{margin-top: 60px;}*/
+/*.zhizhao_pic{display:none;width:672px;height:510px;background: #fff;position:absolute;top:50%;left:50%;margin-left: -336px;margin-top: -255px;}*/
+.zhizhao_pic {display: none;width: 502px;height: 710px;background: #fff;position: absolute;top: 50%;left: 50%;margin-left: -251px;margin-top: -355px;}
+.zhizhao_pic .mid_pic{width:100%;height:100%;}
+.enterprise_left{width:146px;float:left;height:38px;}
+.enterprise_left span{float:right;line-height: 38px;}
+.enterprise_right{float:left;margin-left: 10px;width:685px;position: relative;}
+.enterprise_right>input,.divCity input{border: 1px solid #e9e9f4;width:95%;height:36px;line-height: 36px;padding: 0 10px;box-sizing: border-box;}
+.first_revise{position:absolute;right:-10px;top:0;line-height: 38px;cursor: pointer;color:#524ae7;}
+.disabled { pointer-events: none; ime-mode: disabled;}
+.divOption {width: 200px;}
+ 
+
+.upload_content_bottom{width:650px;position:relative;margin:10px 0 0 0;display:none;background: #e9e9f4;color:#35313f;height:20px;line-height: 20px;}
+.speed{height: 100%;color:#fff;background: #524ae7;position:absolute;top:0;left:0;width:10%;overflow: hidden;}
+.speed p{width:500px;height:36px;}
+
+
+.content ul li{margin-top: 24px;} 
+.enterprise_left img{float:right;margin: 13px 3px 0 0;}
+.deal .enterprise_left img{float:right;margin: 9px 3px 0 0;}
+.select_ul{display: none;border: 1px dashed #c1c1ce;margin-top: 29px;padding-bottom: 20px;width:650px;margin-left: 155px;}
+.prompt{line-height:46px ;color:#e5423d;margin-top: 7px;margin-left: 156px;}
+.prompt_cont{line-height: 20px;width:700px;margin-bottom: 50px;margin-left: 156px;}
+.methods input{position: relative;top:-3px;margin-right: 5px;}
+.methods {margin:10px 0 20px 120px;}
+.methods label{margin-right: 20px;float:left;}
+
+.deal .enterprise_left span{line-height: 30px;}
+.deal .enterprise_left{height:30px;}
+.deal ul li{margin-top: 15px;}
+.deal .enterprise_right span{color:#35313f;line-height: 30px;}
+.deal .enterprise_right .Validform_checktip{color:red;line-height: 30px;}
+.enterprise_right .yongj{width:170px;height:30px;line-height: 30px;}
+#datetimepicker1,#datetimepicker2,.duan_input{background:#fff url(../img/data.png) no-repeat right center;width:170px;height:30px;line-height: 28px;}
+#datetimepicker2{width:122px;height:24px;}
+.deal_content_other .duan_input{background: #fff url(../img/data.png) no-repeat right center;}
+.deal .enterprise_right .tell{display:none;color: red;}
+#need{width:220px;}
+/*.selc {
+    width: 200px;
+    height: 38px;
+    line-height: 36px;
+    border: 1px solid #e9e9f4;
+    box-sizing: border-box;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    position: relative;
+    z-index: 9;
+}
+.selcSpan {
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/xiala.png) no-repeat right center;
+    border: 1px solid #e9e9f4;
+    margin-left: 0px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}*/
+
+
+.deal_content,.deal_content_other{width:650px;padding-left:10px;line-height:44px;border: 1px solid #e9e9f4;margin-left: 20px;color:#35313f;}
+.deal_content_other{display:none;position: relative;padding-bottom:15px;}
+.tell1{position: absolute;top:15px;left:90px;display:none;}
+.tell2{position: absolute;top:15px;left:300px;display:none;}
+.type,.percent,.data{background: #e9e9f4;display:inline-block;line-height: 30px;height:30px;margin-top: 7px;text-align: center;}
+.type{width:67px;margin:0 20px;}
+.percent{width:100px;margin-left: 20px;}
+/*.currency{background: #e9e9f4;display:inline-block;width:70px;height:30px;line-height: 30px;text-align: center;width: 170px;}*/
+/*.currency select{width: 190px;}*/
+.data{width:110px;background:#e9e9f4 url(../img/data.png) no-repeat right center;padding-right: 30px;margin-left:3px;}
+.time{margin:0 15px;}
+.deal_content_other input{width:122px;height:30px;line-height:30px;margin-top:7px;padding: 0 10px;border:1px solid #e9e9f4;}
+.other_span{margin:0;width:85px;float:left;}
+.add_img1{width:44px;height:44px;background: url(../img/type.png) no-repeat -556px 0;cursor: pointer;float:right;margin-right: 30px;}
+.add_img2{width:44px;height:44px;background: url(../img/type.png) no-repeat -512px 0;cursor: pointer;float:right;margin-right: 30px;}
+
+.upload_pic{width:224px;height:170px;border: 1px solid #e9e9f4;float:left;cursor: pointer;}
+.upload_right{margin-left: 20px;width:280px;float:left;}
+.upload_right p{line-height: 18px;margin:10px 0;}
+.upload_right .choose_pic{behavior: url(../../js/PIE.htc);cursor:pointer;width:120px;height:38px;color:#fff;background: #524ae7;line-height: 38px;text-align: center;border-radius: 3px;display:inline-block;font-size: 16px;}
+
+.end{margin: 100px 0 150px 0;}
+.end button,.end a{float:right;line-height: 38px;cursor: pointer;}
+.nexts,.up,.nextss{margin-left:50px;width:140px;height:38px;border-radius: 3px;text-align: center;color:#fff;background: #524ae7;}
+.up{background: #b1afbb;}
+.nextss:hover,.nexts:hover,.up:hover,.upload_right .choose_pic:hover{background: #4037ed;color:#fff;text-decoration: none;}
+.up:hover{background: #999;}
+.hold{background: #fff;color:#35313f;}
+.bizhong{width:80px;font-family: "微软雅黑";}
+
+.divOption {height: 36px;background: url(../img/xiala.png) no-repeat right center;border: 1px solid #ebebf5;overflow: hidden;}
+
+/*优化*/
+.select_ul .enterprise_right {width: 490px;}
+.select_ul .enterprise_left {width: 149px;}
+.people-agreement{height:40px;padding:20px  0 5px 0;margin-left: 125px;}
+.people-agreement label{margin-right: 50px;float:left;font-size: 16px;line-height: 40px;}
+.people-agreement input{position:relative;top:3px;}
+
+/*经纪人*/
+.gengduo{position:absolute;right:350px;top:5px;cursor: pointer;color: #524ae7;}
+.fix-people{display:none;width:520px;background: #fff;position:absolute;top:50%;left:50%;margin:-214px 0 0 -244px;border-radius: 3px;}
+.fix-title{line-height: 46px;padding:0 30px;background: #524ae7;font-size: 18px;color:#fff;border-radius: 3px 3px 0 0;}
+.error-tishi{display:none;position:absolute;bottom:25px;left:130px;line-height: 30px;font-size: 14px;width:200px;text-align: center;background: #fabc2d;color:#fff;}
+.fix-people ul{height:285px;line-height: 16px;overflow: auto;color:#35313f;font-size: 14px;}
+.fix-people ul li{border-bottom: 1px solid #e9e9f4;padding: 0 30px;}
+.fix-people ul li:hover,.fix-people ul .lan{color:#524ae7;}
+/*.fix-people ul li:first-child{border-top: 0;}*/
+.fix-people ul li label{line-height: 16px;margin-bottom: 0;cursor: pointer;width:100%;height:100%;display:inline-block;padding: 20px 0px;}
+.fix-people ul li label input{margin:0 5px 0 0;padding: 0;float:right;}
+.ywcompany{float:left;width:310px;margin-right: 20px;}
+.fix-people button{cursor: pointer;background: #524ae7;color:#fff;float:right;margin:20px 30px 20px 0;width:100px;border-radius: 3px;text-align: center;line-height: 38px;}
+.enterprise_right label {
+    margin-right: 20px;
+    float: left;
+    line-height: 30px;
+}
+.enterprise_right label input{position:relative;top:-3px;margin-right: 5px;}
+
+
+/* 立即支付 */
+.content_bottom {z-index: 100;position: fixed;bottom: 0px;width: 100%;border-top: 1px solid #e9e9f4;background-color: #fff;box-sizing: border-box;height: 72px;line-height: 72px;}
+.content_bottomCont {width: 1200px;margin: 0 auto;}
+.content_bottomCont div {float: right;box-sizing: border-box;}
+.totalPay {text-align: right;color: #35313f;}
+/*.totalPay span {color: #727689;}*/
+.totalPay .totalMoney {color: #e5423d;font-size: 20px;margin-left: 10px;margin-right: 0;}
+.totalPay .totalMoney span {color: #e5423d;}
+/*.qibaoDiv {line-height: 24px;padding-top: 10px;}
+.qibaoTxt {font-weight: bold;}*/
+.payNow {cursor: pointer;display: inline-block;width: 140px;height: 40px;line-height: 40px;border-radius: 5px;margin-right: 30px;margin-left: 20px;background-color: #524ae7;text-align: center;color: #fff;font-size: 16px;}
+.payNow:hover,.payNow:focus {color: #fff;}
+
+
+.divCity {display: inline-block;}
+#selt-city{width: 110px;height: 36px;border: 1px solid #e9e9f4;margin-right: 10px;padding: 0 0 0 10px;background: #fff;line-height: 36px;}
+.enterprise_right .check_city{width: 524px;margin-right: 36px;}
+.enterprise_right .city_top li {margin-top: 0;}
+/*所在城市弹框*/
+.city{display: none;width: 458px;position: absolute;border: 1px solid #524ae7;padding: 5px 10px 20px 10px;background-color: white;z-index: 13;}
+.city li{display: inline-block;padding: 13px 4px 1px 3px;color: black;text-align: center;}
+.city_top{width: 430px;border-bottom: 1px solid #ebebf5;}
+.city_top span{font-size: 12px;color: #cecdcd;}
+.city_top img{position: absolute;top: 7px;right: 10px;width: 12px;height: 12px;}
+.city_top ul li span{padding: 0 6px;color: #5c5869;font-size: 14px;cursor: pointer;}
+.city_cont span{padding: 2px 10px;cursor: pointer;}
+.city_cont span:hover{color: white;background: blue;}
+.city_cont li{padding-left: .5px;}
+.city_cont p{color: orange;padding: 5px 10px 0 8px;float: left;width: 8px;}
+
+.cities li{width: 100%;text-align:left;padding-top: 0;}
+.cities span{/*padding-right: 16px;*/display: inline-block;}
+.hot_city li {width:54px;}
+.choose{color: blue;border-bottom: 2px solid blue;}
+.city_cont div{float: left;width: 392px;position: relative;bottom: 0px;left:7px;line-height: 27px;}

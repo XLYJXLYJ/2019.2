@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>完善资料</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="navPosition">
+			<span>当前位置：</span>
+			<a href="javascript:;">填写货运信息</a>
+			<span>></span>
+			<a href="javascript:;">完善投保资料</a>
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="zhizhao_pic">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<img src="" alt=""  class="mid_pic"/>
+			</div>
+		</div>
+		<form class="myform">
+			<div class="content clear bottom-margin" >
+				<div class="padding">
+					<div class="enterprise_title"><span>投保人信息</span></div>
+	            	<div class="toubao">
+	                	<ul class="clear enterprise_ul1">
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>企业名称：</span>
+		                            <img src="../img/key.png" />
+		                        </div>
+		                        <div class="enterprise_right">
+		                            <input type="text" name="company_name" value="前海企保科技（深圳）有限公司" class="used1_find" placeholder="请输入与营业执照一致的企业名称" datatype="name" nullmsg="请输入企业名称" errormsg="企业名称只能由中文英文数字括号组成"/>
+		                        </div>
+		                    </li>
+		                    <li class="clear">
+								<div class="enterprise_left">
+									<span>信用代码：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  class=""  value="91440300MA5DBKQR9E" placeholder="统一社会信用代码（18位）/组织机构代码（9位）" datatype="credit" nullmsg="请输入信用代码" errormsg="信用代码只能由9位或者18位的大写英文、数字组成"/>
+								</div>
+							</li>
+		                    <li class="clear">
+		                        <div class="enterprise_left">
+		                            <span>营业执照：</span>
+		                            <img src="../img/key.png"/>
+		                        </div>
+		                        <div class="enterprise_right">
+		                        	<div class="clear">
+			                            <img name="license_image" src="../img/upload.jpg" id="showImage" class="upload_pic"/>
+			                            <div class="upload_content_bottom" id="showProcess" style="display: none;"> 
+			                            </div>
+			                            <input type="hidden" class="license" name="license" id="uploadKey" value="" />
+			                            <div class="upload_right">
+			                                <p>上传投保人企业营业执照照片：</p>
+			                                <p>照片所有信息需清晰可见，内容真实有效，不得做任何修改。</p>
+			                                <p>照片支持 JPG ，JPEG，GIF，PNG格式，大小不得超过8M。</p>
+			                                <div id="container_add_company_1" style="overflow:hidden; float: left;">
+			                                <span class="choose_pic used1_find" id="upload"   >选择文件</span>
+			                                <span class="Validform_checktip load-null"></span>
+			                                </div>
+			                            </div>
+		                            </div>
+		                            <div id="upload_show_process_area_1" class="upload_content_bottom">
+		                            	<p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            	<div class="speed" style="width: 100%;"><p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+		                            		
+		                            	</div>
+		                            </div>
+		                        </div>
+		                    </li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>发票类型：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right divOption">
+									<select  class="selc selcNeed" >
+										<option value="1">增值税普通发票</option>
+										<option value="2" selected="selected">不需要发票</option>
+									</select>
+									<span class="selcSpan">不需要发票</span>
+								</div>
+							</li>
+						</ul>
+						<ul class="clear select_ul">
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记号：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="*2-50" nullmsg="请输入税务登记号" errormsg="限制在2-50个字符内"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记地址：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  datatype="*2-150" nullmsg="请输入税务登记地址" errormsg="限制在2-150个字符内"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>税务登记电话：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="phone" nullmsg="请输入税务登记电话" errormsg="税务登记电话格式错误"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>开户银行名称：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text" datatype="name" nullmsg="请输入税务开户银行名称" errormsg="税务开户银行名称只能有中文、英文、数字、括号"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>开户银行账号：</span>
+									<img src="../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<input type="text"  datatype="n" nullmsg="请输入税务开户银行账号" errormsg="税务开户银行账号格式错误"/>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="enterprise_title"><span>被保险人信息</span></div>
+                    <div class="beibao clear">
+                        <div class="enterprise_left">
+                            <span>企业名称：</span>
+                            <img src="../img/key.png" />
+                        </div>
+                        <div class="enterprise_right">
+                            <input type="text" name="insured_company_name"
+                                   value="深圳达达科技有限公司"
+                                   class="used2_find" placeholder="请输入被保险企业名称"
+                                   datatype="name"
+                                   nullmsg="请输入被保险企业名称"
+                                   errormsg="企业名称只能由中文英文数字括号组成"/>
+                        </div>
+                    </div>
+                    <div class="div_jingban hide">
+                    	<div class="enterprise_title"><span>经办企业资质</span></div>
+	                    <div class="jingban">
+	                    	<ul class="clear enterprise_ul1">
+			                    <li class="clear">
+			                        <div class="enterprise_left">
+			                            <span>企业名称：</span>
+			                            <img src="../img/key.png" />
+			                        </div>
+			                        <div class="enterprise_right">
+			                            <input type="text" name="company_name" value="深圳市大锤科技有限公司" class="used1_find" placeholder="请输入经办企业的名称" datatype="name" nullmsg="请输入企业名称" errormsg="企业名称只能由中文英文数字括号组成"/>
+			                        </div>
+			                    </li>
+			                    <li class="clear">
+			                        <div class="enterprise_left">
+			                            <span>营业执照：</span>
+			                            <img src="../img/key.png"/>
+			                        </div>
+			                        <div class="enterprise_right">
+			                        	<div class="clear">
+				                            <img name="license_image" src="../img/upload.jpg" id="showImage2" class="upload_pic"/>
+				                            <div class="upload_content_bottom" id="showProcess2" style="display: none;"> 
+				                            </div>
+				                            <input type="hidden" class="license1" name="jb_license" id="uploadKey2" value="" />
+				                            <div class="upload_right">
+				                                <p>上传经办企业营业执照照片：</p>
+				                                <p>照片所有信息需清晰可见，内容真实有效，不得做任何修改。</p>
+				                                <p>照片支持 JPG ，JPEG，GIF，PNG格式，大小不得超过8M。</p>
+				                                <div id="container_add_company_2" style="overflow:hidden; float: left;">
+					                                <span class="choose_pic used1_find" id="upload2"   >选择文件</span>
+					                                <span class="Validform_checktip load-null1"></span>
+				                                </div>
+				                            </div>
+			                            </div>
+			                            <div id="upload_show_process_area_2" class="upload_content_bottom">
+			                            	<p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+			                            	<div class="speed" style="width: 100%;"><p>共：<span class="size">0.08M</span> 已上传：<span class="percentage">100% </span>上传速度：<span class="upload_speed">149.55KB/s</span></p>
+			                            		
+			                            	</div>
+			                            </div>
+			                        </div>
+			                    </li>
+			                </ul>
+	                    </div>
+                    </div>
+				</div>
+			</div>
+			<div class="content_bottom clear">
+				<div class="content_bottomCont clear">
+					<div >
+						<a class="payNow" href="javascript:;" >立即支付</a>
+					</div>
+					<div class="totalPay">
+						<span>按发票金额&费率&加成率计算，</span> 总计 
+						<span class="totalMoney">￥
+							<span>1,680.00</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!--<div id="footer"></div>-->
+	</body>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/Validform_ncr_min.js"></script>
+	<script type="text/javascript" src="../js/placeholder.js"></script>
+	<script type="text/javascript" src="../js/input-prices.js"></script>
+	<script type="text/javascript" src="../js/transport_perfect.js"></script>
+	<script>
+		$("#header").load("header.html",get); 
+	</script>
+</html>

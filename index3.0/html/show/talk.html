@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/shownew.css"/>
+		<link rel="stylesheet" type="text/css"  href="../../css/mop-lqs.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../../css/复制(2)show.css"/>-->
+	</head>
+	<body>
+		<div class="tc_contain clear">
+			<img class="tc_bc" src="../../img/tc/qbkj.jpg" />
+			<div class="talk_left">
+				<span class="logo">QBTech</span>
+				<!--<video class="video " preload="auto" autoplay loop>
+				    <source src="../../img/tc/aimi.mp4" type="video/mp4">
+				</video>-->
+				
+				<img src="../../img/tc/aimi.gif" />
+				<p class="madeTxt">@企保科技</p>
+			</div>
+			<div class="talk_right">
+				<div class="talk">
+					<!--<img class="protective_tube"  src="../../img/tc/protective_tube.png" />-->
+					<ul class="talkCont">
+						<li class="liLeft clear">
+							<div class="leftImg"></div>
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">请将您需要解析的保单传给AIMI吧~请将您需要解析的保单传给AIMI吧~请将您需要解析的保单传给AIMI吧~请将您需要解析的保单传给AIMI吧~</div>
+							</div>
+						</li>	
+						<li class="liRight clear">
+							<!--<div class="leftImg"></div>-->
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">好的</div>
+							</div>
+						</li>	
+						<li class="liLeft clear">
+							<div class="leftImg"></div>
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">请将您需要解析的保单传给AIMI吧~</div>
+							</div>
+						</li>	
+						<li class="liRight clear">
+							<!--<div class="leftImg"></div>-->
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">解析保单</div>
+							</div>
+						</li>	
+						<li class="liLeft clear">
+							<div class="leftImg"></div>
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+							</div>
+						</li>	
+						<li class="liRight clear">
+							<!--<div class="leftImg"></div>-->
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">解析保单</div>
+							</div>
+						</li>
+						<li class="liLeft clear">
+							<div class="leftImg"></div>
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+							</div>
+						</li>
+						<li class="liRight clear">
+							<!--<div class="leftImg"></div>-->
+							<div class="rightTxt">
+								<!--<div class="sanjiao"></div>-->
+								<div class="conts">解析保单</div>
+							</div>
+						</li>
+						<!--<li class="liLeft clear">
+							<div class="leftImg"></div>
+							<div class="rightTxt">
+								
+								<div class="conts">
+									<div id="spinners">
+										<div class="mop-load-div">
+											<div class="mop-css-6 three-bounce">
+	
+												<div class="bounce1"></div>
+												<div class="bounce2"></div>
+												<div class="bounce3"></div>
+											</div>
+										</div>
+										Aimi努力查找答案中
+									</div>
+								</div>
+								
+							</div>
+						</li>-->
+					</ul>
+				</div>	
+				<div class="input">
+					<input placeholder="请输入..."  onkeydown=KeyDown()></input>
+					<span class="send"><!--发送--></span>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var dialog_id='';
+			//监听input输入框
+			$('input').bind('input propertychange', function() {  
+			    if( $.trim($(this).val()).length >0){
+			    	$(".send").addClass("active");
+			    }else{
+			    	$(".send").removeClass("active");
+			    }
+			    
+			});
+			$(document).on("click",".send",function(){
+				send();
+			})
+			var str="";
+			str +='<li class="liLeft clear">';
+                        str += '<div class="leftImg"></div>';
+                        str += '<div class="rightTxt">';
+                        str += '<div class="conts"> <div id="spinners"><div class="mop-load-div"><div class="mop-css-6 three-bounce">';
+                        str += '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>让我思考一下哦</div></div>';
+                        str += '</div></li>';
+			
+			
+			String.prototype.endWith=function(endStr){
+		      var d=this.length-endStr.length;
+		      return (d>=0&&this.lastIndexOf(endStr)==d)
+		   }
+			function send(){
+				if($('.send').hasClass("active")){
+					var msg = $('input').val()
+					var html='<li class="liRight clear">'+
+								'<div class="rightTxt">'+
+									'<div class="conts">'+$('input').val()+'</div>'+
+								'</div>'+
+							'</li>'	
+					$("ul").append(html);
+					$(".talk")[0].scrollTop=$(".talkCont")[0].scrollHeight;
+					$('input').val("");
+					$(".send").removeClass("active");
+                    $("ul").append(str);
+					$(".talk")[0].scrollTop=$(".talkCont")[0].scrollHeight;
+					
+					$.post('', {'msg': msg,'dialog_id':dialog_id}, function (data) {
+                        if(!dialog_id){
+                            dialog_id = data.dialog_id;
+                        }
+//                      var data={"msg":{"data":{"data":["\u60a8\u63d0\u53ca\u533b\u7597\u673a\u6784\u540d\u79f0\u53ef\u80fd\u6709\u8bef\u6216\u4e0d\u5b8c\u6574\uff0c\u8bf7\u51c6\u786e\u9009\u62e9\u662f\u4ee5\u4e0b\u54ea\u5bb6\u533b\u7597\u673a\u6784\u6216\u6839\u636e\u5c31\u8bca\u6750\u6599\u6838\u5b9e\u518d\u6b21\u8f93\u5165\u6b63\u786e\u7684\u533b\u7597\u673a\u6784\u5168\u79f0"],"select":["\u6df1\u5733\u5e02\u4e2d\u533b\u9662","\u6df1\u5733\u5e02\u773c\u79d1\u533b\u9662","\u6df1\u5733\u5e02\u513f\u7ae5\u533b\u9662","\u6df1\u5733\u5e02\u5eb7\u5b81\u533b\u9662","\u6df1\u5733\u6d41\u82b1\u533b\u9662"]}},"dialog_id":"b71040b1b843dac746fdda6829dfa885"}
+//                     var data={"msg":{"data":["\u60a8\u6240\u63cf\u8ff0\u7684\uff08\u6df1\u5733\u5e02\u4e2d\u533b\u9662\uff09\u5728\u4fdd\u969c\u8303\u56f4\u5185\uff0c\u56e0\u4fdd\u5355\u8fd8\u6709\u5176\u4ed6\u7ea6\u5b9a\u4e8b\u9879\uff0c\u4e3a\u4e86\u66f4\u51c6\u786e\u5730\u5224\u65ad\u80fd\u5426\u83b7\u5f97\u8d54\u4ed8\uff0c\u60a8\u53ef\u4ee5\u8bd5\u7740\u63d0\u4f9b\u66f4\u591a\u7684\u4fe1\u606f\u3002","\u60a8\u597d\uff0c\u6839\u636e\u60a8\u7684\u9648\u8ff0\uff0c\u8be5\u8d39\u7528\u5728\u672c\u4fdd\u9669\u65b9\u6848\u7684\u4fdd\u969c\u8303\u56f4\u5185\uff0c\u53ef\u4ee5\u7406\u8d54\u3002\u8bf7\u95ee\u662f\u5426\u9700\u8981\u6d4b\u7b97\u53ef\u4ee5\u7406\u8d54\u7684\u91d1\u989d\uff1f\u8bf7\u76f4\u63a5\u56de\u590d\u201c\u662f\u201d\u6216\u201c\u5426\u201d"],"select":["\u662f","\u5426"]},"dialog_id":"699ff6a29a819e4895f9e203d4e5f140"}
+//                    
+//var data={"msg":{"data":["\u60a8\u597d\uff0c\u8bf7\u60a8\u6309\u7167\u201c\u8d39\u7528\u79d1\u76ee+\u91d1\u989d\u201d\u7684\u683c\u5f0f\u51c6\u786e\u5217\u51fa\u9700\u8981\u8ba1\u7b97\u7684\u5168\u90e8\u8d39\u7528\uff0c\u4ee5\u201c\u3001\u201d\u9694\u5f00\u3002\u5982\uff1a\u624b\u672f\u8d39+10000\u3001\u5e8a\u4f4d\u8d39+5000"]},"dialog_id":"4fe649a821ef1b59719dbfc8c0dd42b1"}
+// 
+//var  data={"msg":{"data":["\u60a8\u597d\uff0c\u6839\u636e\u60a8\u7684\u8d39\u7528\u660e\u7ec6\uff0c\u624b\u672f\u8d39\u5728\u4fdd\u969c\u8303\u56f4\u5185,\u5728\u4fdd\u969c\u8303\u56f4\u5185\u7684\u7d22\u8d54\u91d1\u989d\u4e3a2000.0\u5143\uff0c\u8003\u8651\u514d\u8d54\u989d\uff0c\u8d54\u507f\u9650\u989d\uff0c\u8d54\u4ed8\u6bd4\u4f8b\u7b49\u56e0\u7d20\u540e\uff0c\u6d4b\u7b97\u51fa\u672c\u6b21\u8d54\u507f\u91d1\u989d\u4e3a800.0\u5143\u3002\u82e5\u9700\u518d\u6b21\u8ba1\u7b97\uff0c\u8bf7\u8f93\u5165\"\u91cd\u65b0\u8ba1\u7b97\"\u6216\"\u7ed3\u675f\"\u6765\u7ed3\u675f\u672c\u8f6e\u5bf9\u8bdd\u3002"]},"dialog_id":"4fe649a821ef1b59719dbfc8c0dd42b1"}
+//var data={"msg":{"data":["\u6309\u60a8\u7684\u8981\u6c42\uff0c\u672c\u8f6e\u5bf9\u8bdd\u7ed3\u675f\u3002\u82e5\u6709\u65b0\u7684\u60c5\u51b5\u54a8\u8be2\uff0c\u8bf7\u91cd\u65b0\u5f00\u59cb\u63d0\u95ee \"XXX\u4fdd\u4e0d\u4fdd\""]},"dialog_id":"a1f64c3c935eb3916b9975e6f7d1b699"} 
+  						if(data.msg.data instanceof Array){
+                        	if(data.msg.select==undefined){
+                        		if(data.msg.data.length==2){
+									$(".liLeft .conts #spinners").eq(-1).text(data.msg.data[0]);
+									$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;
+									var msg='<li class="liLeft clear">';
+									msg +='<div class="leftImg"></div>';
+									msg +='<div class="rightTxt">';
+									msg +='<div class="conts">'+data.msg.data[1]+'</div>'
+									msg +='</div>';
+									msg +='</li>';
+									setTimeout(function(){
+										$("ul").append(msg);
+										$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+									},1000);						
+								}else if(data.msg.data.length==1){
+									$(".liLeft .conts #spinners").eq(-1).text(data.msg.data);
+									$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+								}
+	                        }else{
+	                    		if(data.msg.data.length==2){
+	                    			$(".liLeft .conts #spinners").eq(-1).text(data.msg.data[0]);
+									$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;
+									if(data.msg.data[1].endWith('请直接回复“是”或“否”')){
+										var msg='<li class="liLeft clear">';
+										msg +='<div class="leftImg"></div>';
+										msg +='<div class="rightTxt">';
+										msg +='<div class="conts">'+data.msg.data[1]+'</div>'
+										msg +='</div>';
+										msg +='</li>';
+										setTimeout(function(){
+											$("ul").append(msg);
+											$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+										},1000);	
+										
+									}else{
+										var msg_data=data.msg.data[1];
+										var message=data.msg.select;
+							        	if(message.length>0){
+							        		for(var i=0;i<message.length;i++){
+							        			msg_data=msg_data+"'"+message[i]+"'，";
+							        		}
+							        	}
+							        	msg_data=msg_data.substring(0,msg_data.length-1);
+							        	var msg='<li class="liLeft clear">';
+										msg +='<div class="leftImg"></div>';
+										msg +='<div class="rightTxt">';
+										msg +='<div class="conts">'+msg_data+'</div>'
+										msg +='</div>';
+										msg +='</li>';
+										setTimeout(function(){
+											$("ul").append(msg);
+											$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+										},1000);
+									}
+										
+	                    		}else if(data.msg.data.length==1){
+	                    			if(data.msg.data.endWith('请直接回复“是”或“否”')){
+										var msg='<li class="liLeft clear">';
+										msg +='<div class="leftImg"></div>';
+										msg +='<div class="rightTxt">';
+										msg +='<div class="conts">'+data.msg.data[1]+'</div>'
+										msg +='</div>';
+										msg +='</li>';
+										setTimeout(function(){
+											$("ul").append(msg);
+											$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+										},1000);	
+									}else{
+										var msg_data=data.msg.data[0];
+										var message=data.msg.select;
+							        	if(message.length>0){
+							        		for(var i=0;i<message.length;i++){
+							        			msg_data=msg_data+"'"+message[i]+"'，";
+							        		}
+							        	}
+							        	msg_data=msg_data.substring(0,msg_data.length-1);
+							        	$(".liLeft .conts #spinners").eq(-1).text(msg_data);
+							        	$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+									}
+	                    		}
+							}
+	                    }else{
+	                    	if(data.msg.data.select !=undefined){
+	                    		var msg_data=data.msg.data.data[0];
+	                    		if(msg_data.endWith('请直接回复“是”或“否”')){
+	                    			$(".liLeft .conts #spinners").eq(-1).text(msg_data);
+									$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;
+									
+	                    		}else{
+	                    			var message=data.msg.data.select;
+						        	if(message.length>0){
+						        		for(var i=0;i<message.length;i++){
+						        			msg_data=msg_data+"'"+message[i]+"'，";
+						        		}
+						        	}
+						        	msg_data=msg_data.substring(0,msg_data.length-1);
+						        	$(".liLeft .conts #spinners").eq(-1).text(msg_data);
+						        	$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;	
+	                    		}
+								
+	                    	}else{
+	                    		$(".liLeft .conts #spinners").eq(-1).text(data.msg.data.data[0]);
+	                    	}
+	                    }
+//                      if(data.msg.reply==undefined&&data.msg.data==undefined){
+//							$(".liLeft .conts #spinners").eq(-1).text(data.msg);
+//						} else{
+//							var msg = data.msg.reply ? data.msg.reply : data.msg;
+//							var  msg_data=msg.data;
+//							if(msg_data.endWith('请直接回复“是”或“否”')){
+//								$(".liLeft .conts #spinners").eq(-1).text(msg_data);
+//								$(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;
+//								return false;
+//							}
+//							var message=msg.select;
+//				        	if(message.length>0){
+//				        		for(var i=0;i<message.length;i++){
+//				        			msg_data=msg_data+"'"+message[i]+"'，";
+//				        		}
+//				        	}
+//				        	msg_data=msg_data.substring(0,msg_data.length-1);
+//				        	$(".liLeft .conts #spinners").eq(-1).text(msg_data+"。");
+//						}
+                        $(".talk")[0].scrollTop = $(".talkCont")[0].scrollHeight;
+                    }, 'json');
+				}	
+			}
+			
+			//enter键发送
+			function KeyDown(){
+			  if (event.keyCode == 13){
+			    send();	
+			  }
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单统计</title>
+		<link rel="stylesheet" type="text/css" href="../css/channel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="header_common ">
+			<div class="header_common_logo">
+				<img src="../img/pass_logo.png" />
+			</div>
+			<div class="header_common_mid">渠道统计后台</div>
+			<div class="header_common_right">
+				<a href="javascript:;" class="head_adm">王松阳</a>
+				<span class="head_sp">|</span>
+				<a href="javascript:;" >退出登录</a>
+				<span class="head_sp">|</span>
+				<a href="javascript:;">进入官网首页</a>
+			</div>
+		</div>
+		<div class="main_common ">
+			<div class="nav">
+				<ul class="nav_ul">
+					<li>
+						<div class="img customer"></div>
+						<a href="customer.html">客户统计</a>
+					</li>
+					<li>
+						<div class="img biao"></div>
+						<a href="channel-biao.html">标统计</a>
+					</li>
+					<li>
+						<div class="img baodan"></div>
+						<a href="channel-baodan.html">保单统计</a>
+					</li>
+					<li>
+						<div class="img passport"></div>
+						<a href="channel-passport.html">修改密码</a>
+					</li>
+					<li class="active">
+						
+						<div class="img order" style="top: 5px;" >
+							<img  src="../img/order1.png"/>
+							
+						</div>
+						<a href="channel-message.html" style="margin-left: -2px;vertical-align: middle;margin-top:30px ;">订单统计</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content_common content_biao">
+				<div class="position_now">
+					<span class="position-title">当前位置：</span>
+					<a href="channel-biao.html" class="position_local">订单统计</a>
+				</div>
+				<div class="content">
+					<div class="content_top ">
+						<p>
+							<select>
+								<option value="">全部时间</option>
+								<option value="">一周内</option>
+								<option value="">一个月内</option>
+								<option value="">三个月内</option>
+								<option value="">半年内</option>
+							</select>
+						</p>
+						<p>
+							<select>
+								<option value="">全部险种</option>
+								<option value="">财产基本险</option>
+								<option value="">财产综合险</option>
+								<option value="">产品一切险</option>
+								<option value="">营业中断险</option>
+								<option value="">现金险</option>
+								<option value="">雇主责任险</option>
+								<option value="">财产一切险</option>
+								<option value="">产品责任险</option>
+								<option value="">食品安全责任险</option>
+								<option value="">旅行社责任险</option>
+								<option value="">停车责任险</option>
+								<option value="">物业管理责任险</option>
+								<option value="">保安公司责任险</option>
+								<option value="">道路客运承运人责任险</option>
+								<option value="">保险经纪人职业责任险</option>
+								<option value="">国内道路货物运输承运人责任险</option>
+								<option value="">建筑工程一切险</option>
+								<option value="">安装工程一切险</option>
+								<option value="">困难意外险</option>
+								<option value="">建筑施工人员意外险</option>
+								<option value="">国际货物运输保险（预约）</option>
+								<option value="">国内货物运输保险（预约）</option>
+								<option value="">贷款保证保险</option>
+								<option value="">雇员忠诚保证保险</option>
+								<option value="">短期出口贸易信用险</option>
+							</select>
+						</p>
+						<p>
+							<select>
+								<option value="">全部状态</option>
+								<option value="">已报价</option>
+								<option value="">待报价</option>
+								<option value="">已支付</option>
+								<option value="">已选中报价</option>
+								<option value="">已生效</option>
+							</select>
+						</p>
+						<div class="search">
+							<input type="text" placeholder="按保单号搜索" />
+						</div>
+						<div class="search">
+							<input type="text" placeholder="按参保公司搜索" />
+						</div>
+						<div class="search" >
+							<input type="text" placeholder="按被保险人搜索" />
+						</div>
+						<input type="submit"  style="clear: left;" class="input_submit" value="搜索"/>
+						<div class="export_btn">导出表格</div>
+					</div>
+					<div class="padding">
+						<table>
+							<tr>
+								<th>订单号</th>
+								<th>保单号</th>
+								<th>险种名称</th>
+								<th>参保公司</th>
+								<th>所属渠道</th>
+								<th>保险金额</th>
+								<th>保险金额</th>
+								<th>保费</th>
+								<th>提交时间</th>
+								<th>当前状态</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>暂无</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>代出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>暂无</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>暂存</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>1316543216532E000001</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>1316543216532E000001</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>1316543216532E000001</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>1316543216532E000001</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+							<tr>
+								<td><a href="javascript:;">1316543216532E000001</a></td>
+								<td>1316543216532E000001</td>
+								<td>雇主责任险</td>
+								<td>运保天下.人保公路基本险</td>
+								<td>企保科技</td>
+								<td>2019</td>
+								
+								<td>￥100000.00</td>
+								<td>￥20.00</td>
+								<td>2017-03-10 14:56:10</td>
+								<td>已出单</td>
+								<td class="payBtn"><a href="javascript:;">查看详情</a></td>
+							</tr>
+						</table>
+						<div class="list_none">
+							<img src="../img/list-none.png" alt="" />
+						</div>
+					</div>
+					<div class="nubs">
+						<div class="nub">
+							<img src="../img/left-go.png" alt="" class="img_left"/>
+							<span class="check">1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+							<span>5</span>
+							<img src="../img/right-go.png" alt="" class="img_right"/>
+						</div>
+						<span>共 <span>112</span> 条记录</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/placeholder.js"></script>
+		<script src="../js/channel.js"></script>
+	</body>
+</html>
+

@@ -1,0 +1,58 @@
+
+.search_date {float: left;margin-bottom: 5px;margin-left: 21px;}
+.input_submit {margin-left: 50px !important;}
+.dateDiv {display: inline-block;}
+.dateDiv #datetimepicker1, .dateDiv #datetimepicker2 {margin-right: 0;padding-left:10px;width: 116px;height:27px;cursor: pointer; }
+.dateDiv #datetimepicker2 {margin-left: 0;}
+#datetimepicker1, #datetimepicker2 {width: 190px;height: 28px;line-height: 28px;background: #fff url(../../../img/data.png) no-repeat right center;}
+.dateDiv .tell {display: none;line-height: 0;margin-left: 10px;}
+/*.Validform_checktip{color:#e5423d;padding: 0 1rem;display:block;float:left;margin-top: .5rem;}*/
+.tell {display: none;line-height: 0;margin-left: 10px;}
+.date_txt {display: inline-block;margin: 8px;vertical-align: top;}
+.search input{width: 130px !important;}
+select{border: 1px solid #ccc};
+input[readonly]{cursor: pointer !important;}
+input[placeholder]{font-size: 14px;}
+.orderManagement{margin-left: -2px;vertical-align: middle;margin-top:28px ;}
+.img.order{margin-top: -8px;}
+.position_now1{margin-top: 17px;}
+.form{width: 275px;}
+.form input{display: block;margin-top: 20px;width: 290px;height: 35px;border:1px solid #ECECEC;padding-left:9px ;}
+.submit-btn{width: 120px;line-height: 38px;border: 1px solid #524ae7;float: right;background-color: #524ae7;text-align: center;color:white ;border-radius: 3px;margin-top: 30px;}
+.nav {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: 100%;
+	min-height: 850px;
+    float: left;
+    padding-left: 55px;
+    background-color: #fbfbfb;
+    border-right: 1px solid #e9e9f4;
+    z-index: 10;
+}
+.nav_ul1 {margin-top: 32px;}
+.nav_ul1 li{
+	width: 200px;
+	line-height: 44px;
+	position:relative;
+}
+.nav_ul1 li a {color: #8a8d9c;padding-left: 60px;border-left: 2px solid #fbfbfb;text-decoration:none;}
+.nav_ul1 li .img{position:absolute;left:13px;top:8px;width:29px;height:29px;color: burlywood;}
+.nav_ul1 .user{background:url(../../img/yunbaotianxia/ybtx.png) no-repeat -8px -8px;}
+.nav_ul1 .order{background:url(../../img/yunbaotianxia/ybtx.png) no-repeat -8px -160px;}
+.nav_ul1 .passwd{background:url(../../img/yunbaotianxia/ybtx.png) no-repeat -8px -127px;}
+.nav_ul1 li:hover a,.nav_ul1 .active a {color:#323234;border-left: 2px solid #524ae7;}
+.nav_ul1 .active .img {background-position-x:-48px;}
+.nav_ul1 li:not(.active):hover .img {background-position-x:-48px;}
+.title{height:55px ;border-right: 1px solid #F3F3F3;font-size: 30px;padding-right: 15px;color: #524ae7;font-weight: bold;}
+.order_title{line-height:76px ;font-size: 22px;color: #524ae7;font-weight: bold;text-align: center;padding-left:29px ;font-family: "微软雅黑";}
+.header-left span{padding-left: 18px;};
+.verify_div{width: 150px;float: left;margin-left: 10px;}
+.number input{height: 27px;}
+.login_content .last_input input{width: 172px;}
+.loging-cont .last_input img{width: 117px;}
+.loging-cont>img{margin-left: 55px;}
+.header_common_logo{width:205px;/*border-right: 1px solid #e9e9f4;*/height: 76px;margin-top:0px ;}
+.Validform_checktip{color: red;}

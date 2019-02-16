@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>进出口货运险投保单</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/domestic_transport.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="navPosition">
+			<span>当前位置：</span>
+			<a href="javascript:;">填写货运信息</a>
+		</div>
+		<div class="contents">
+			<div class="content clear" >
+				<div class="cont-title">普货（进出口）投保</div>
+				<form class="myform">
+					<ul class="ul_trans">
+						<li class="ul_transtitle">被保险人信息</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>企业名称：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<input type="text" class="input_long" placeholder="请输入被保险人企业名称"  datatype="*" nullmsg="请输入被保险人企业名称" />
+							</div>
+						</li>
+						<li class="ul_transtitle">货物信息</li>
+						<li class="clear">
+							<div class="li_div1">
+								<span>货物类型：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc style_selc">
+									<option>请选择一级货物种类</option>
+									<option>普通货物</option>
+									<option>冻品货物</option>
+									<option>易碎品货物</option>
+								</select>
+								<span class="selcSpan style_span">请选择一级货物种类</span>
+							</div>
+							<div class="li_div2 div_selc">
+								<!--<select class="selc style_selc2">
+								</select>-->
+								<span class="selcSpan style_span2">请选择二级货物种类</span>
+							</div>
+						</li>
+						<input type="hidden" name="config_id" value="3" />
+						<li class="clear">
+							<div  class="li_div1 line">
+								<span>货物名称：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR ">
+								<textarea type="text" maxlength="500" class="input_mingchen" placeholder="请输入要投保的货物名称，例如：机床(必填,最多输入500个字)"  datatype="*" nullmsg="请输入货物名称"></textarea>
+							</div>
+							<div  class="li_div1 over huowu-margin line1">
+								<span>货物标记：</span>
+							</div>
+							<div class="li_div2 li_divMidR huowu-margin">
+								<textarea type="text" maxlength="500" class="input_biaoji" placeholder="请输入货物标记或唛头（非必填,最多输入500个字）" ></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>包装方式：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 div_style">
+								<select  class="selc">
+									<option>请选择包装方式</option>
+								</select>
+								<span class="selcSpan">请选择包装方式</span>
+							</div>
+							<div  class="li_div1">
+								<span>货物数量：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input type="text" class="div_inpt" placeholder="如30箱，3000件" datatype="*1-50" nullmsg="请输入货物数量" errormsg="货物数量由1-50字符组成"/>
+							</div>
+						</li>
+						<li class="ul_transtitle">运输信息</li>
+						<li class="clear">
+							<div class="li_div1">
+								<span>运输方式：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc">
+									<option value="">海运</option>
+									<option value="">空运</option>
+									<option value="">铁路</option>
+									<option value="">汽运</option>
+									<option value="">快递</option>
+								</select>
+								<span class="selcSpan">海运</span>
+							</div>
+							<div  class="li_div1 li_divMidL">
+								<span>运输工具：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input class="" type="text"  placeholder="请输入运输工具" datatype="*" nullmsg="请输入运输工具" />
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>起运地：</span>
+								<img src="../img/key.png"/>
+							</div>
+							<div class="li_div2">
+								<div class="word_3">
+									<input class="world" type="text" placeholder="请选择国家" readonly="readonly"/>
+									<input class="worlds" type="hidden"/>
+									<div class="Validform_checktip"></div>
+									<div class="qb_sbbb hide" >
+										<div class="qb_ties">
+											<div class="qb_sbab clear">
+												<span>
+													<img src="../img/delete-line-ico2.png"  class="word-delete"/>
+												</span>
+												<p><b>常用国家</b>（可直接选择国家）</p>
+											</div>
+											<div class="qb_sbcc">
+												<div class="qb_sbdd">
+													<ul class="pr_nav clear">
+														<li data-id="hot" class="ac">常用国家</li>
+														<li data-id="A">A</li>
+														<li data-id="B">B</li>
+														<li data-id="C">C</li>
+														<li data-id="D">D</li>
+														<li data-id="E">E</li>
+														<li data-id="F">F</li>
+														<li data-id="G">G</li>
+														<li data-id="H">H</li>
+														<li data-id="I">I</li>
+														<li data-id="J">J</li>
+														<li data-id="K">K</li>
+														<li data-id="L">L</li>
+														<li data-id="M">M</li>
+														<li data-id="N">N</li>
+														<li data-id="O">O</li>
+														<li data-id="P">P</li>
+														<li data-id="Q">Q</li>
+														<li data-id="R">R</li>
+														<li data-id="S" class="">S</li>
+														<li data-id="T">T</li>
+														<li data-id="U-Z">U-Z</li>
+													</ul>
+												</div>
+												<div class="qb_sbee clear">
+													<ul class="ulCountry_type clear"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="detail_city"><input type="text"  name="" id="" value="" placeholder="请输入起运地城市名" datatype="*2-60" nullmsg="请输入详细地址" errormsg="详细地址由2-60字符组成"/></div>
+							</div>
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>目的地：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<div class="word_4">
+									<input class="world" type="text" placeholder="请选择国家" readonly="readonly"/>
+									<input class="worlds" type="hidden"/>
+									<div class="Validform_checktip"></div>
+									<div class="qb_sbbb hide" >
+										<div class="qb_ties">
+											<div class="qb_sbab clear">
+												<span>
+													<img src="../img/delete-line-ico2.png" class="word-delete"/>
+												</span>
+												<p><b>常用国家</b>（可直接选择国家）</p>
+											</div>
+											<div class="qb_sbcc">
+												<div class="qb_sbdd">
+													<ul class="pr_nav clear">
+														<li id="hot" class="ac">常用国家</li>
+														<li id="A">A</li>
+														<li id="B">B</li>
+														<li id="C">C</li>
+														<li id="D">D</li>
+														<li id="E">E</li>
+														<li id="F">F</li>
+														<li id="G">G</li>
+														<li id="H">H</li>
+														<li id="I">I</li>
+														<li id="J">J</li>
+														<li id="K">K</li>
+														<li id="L">L</li>
+														<li id="M">M</li>
+														<li id="N">N</li>
+														<li id="O">O</li>
+														<li id="P">P</li>
+														<li id="Q">Q</li>
+														<li id="R">R</li>
+														<li id="S" class="">S</li>
+														<li id="T">T</li>
+														<li id="U-Z">U-Z</li>
+													</ul>
+												</div>
+												<div class="qb_sbee clear">
+													<ul class="ulCountry_type clear"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="detail_city"><input type="text"  name="" id="" value="" placeholder="请输入目的地城市名" datatype="*2-60" nullmsg="请输入详细地址" errormsg="详细地址由2-60字符组成"/></div>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>中转地：</span> 
+							</div>
+							<div class="li_right">
+								<input type="text" class="input_long" placeholder="选填，非必填"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>起运日期：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<input id="datetimepicker1" type="text" readonly="true" placeholder="请选择起运日期" datatype="*" nullmsg="请选择起运日期" />
+							</div>
+						</li>
+						<!--<li class="clear">
+							<div class="li_left divTextL">
+								<span>货物描述：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<textarea class="div_textarea"  placeholder="请输入货物名称及描述" datatype="*" nullmsg="请输入货物描述" ></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left divTextL">
+								<span>货物标记：</span>
+							</div>
+							<div class="li_right">
+								<textarea class="div_textarea">AS PER INVOICE NO.</textarea>
+							</div>
+						</li>-->
+						<li class="clear">
+							<div class="li_left">
+								<span>单据号：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<div class="clear">
+									<div class="danhao">
+										<input type="text" data-type="1" data-number=""  class="input_short" placeholder="请输入运单号" />
+										<span class="error">运单号错误</span>
+									</div>
+									<div class="danhao">
+										<input type="text" data-type="2" data-number=""  class="input_short input_mid" placeholder="或输入发票号" />
+										<span class="error">发票号错误</span>
+									</div>
+									<div class="danhao danhaolast">
+										<input type="text" data-type="3" data-number=""  class="input_short" placeholder="或输入合同号" />
+										<span class="error">合同号错误</span>
+									</div>
+								</div>
+								
+								<div class="Validform_checktip danhao-error"></div>
+							</div>
+						</li>
+						<!--<li class="clear">
+							<div  class="li_div1">
+								<span>信用证要求：</span>
+								<img src="../img/key.png"/>
+							</div>
+							<div class="li_div2">
+								<div class="letter-of-credit">
+									<label><input checked="checked" type="radio" name="letter" class="yes"/> 是</label>
+									<label><input type="radio" name="letter" class="no"  datatype="*" nullmsg="请选择"/> 否</label>
+								</div>
+								<div class="detail_city letter">
+									<input type="text"  name="" id="" value="" placeholder="请输入信用证号"  datatype="*" nullmsg="请输入货物标记" errormsg="信用证不能为空"/>
+								</div>
+							</div>
+						</li>-->
+						<li class="ul_transtitle">费用信息</li>
+						<li class="clear type">
+							<div class="li_div1">
+								<span>投保币种：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc" name="currency_id"  onchange="getPremium()">
+									<option value="1">CNY</option>
+                                    <option value="2">HKD</option>
+                                    <option value="3" selected="selected">USD</option>
+                                    <option value="4">EUR</option>
+                                    <option value="5">GBP</option>
+                                    <option value="6">JPY</option>
+                                    <option value="7">AUD</option>
+								</select>
+								<span class="selcSpan">USD</span>
+							</div>
+							<div class="li_div1 li_divMidL">
+								<span>价格条件：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc">
+									<option value="" selected="selected">FOB</option>
+									<option value="">CIF</option>
+									<option value="">C&F</option>
+								</select>
+								<span class="selcSpan">FOB</span>
+							</div>
+							<!--<div  class="li_div1 li_divMidL">
+								<span>加成率：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input type="text" name="" id="" value="10"  datatype="rate1" nullmsg="请输入加成率" errormsg="加成率在0-30%范围内"/>　%
+							</div>
+							<div  class="li_div1">
+								<span>费率：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR">
+								<input type="text" name="" id="" value="0.025"  datatype="rate2" nullmsg="请输入费率" errormsg="费率不能低于0.025%"/>　%
+							</div>-->
+							
+						</li>
+						<li class="clear">
+							<div  class="li_div1">
+								<span>发票金额：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<input type="text" name="invoice_amount"   class="inpt_money input-prices" placeholder="请输入金额"  datatype="price" nullmsg="请输入金额" errormsg="金额格式错误"/>
+								<span class="Validform_checktip Validform_wrong"></span>
+							</div>
+							<!--<div  class="li_div1 li_divMidL">
+								<span>加成比例：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2 li_divMidR1">
+								<input type="text" name="" id="" value="10"  datatype="rate1" nullmsg="请输入加成率" errormsg="加成率在0-30%范围内"/>　%
+							</div>-->
+							<div class="li_div1 li_divMidL">
+								<span>加成比例：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_div2">
+								<select class="selc">
+									
+									<option value="">0%</option>
+									<option value="">10%</option>
+									<option value="">15%</option>
+									<option value="">20%</option>
+									<option value="">25%</option>
+									<option value="">30%</option>
+								</select>
+								<span class="selcSpan">0%</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left line">
+								<span>L/C条款：</span> 
+							</div>
+							<div class="li_right">
+								<textarea maxlength="500" class="textarea_long" placeholder="选填，非必填最多输入500字"></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>上传提单：</span> 
+							</div>
+							<div class="li_right upload">
+								<span class="tell">请上传提单或运单文件（非必填）</span> 
+								<span class="input_file">点击上传</span>
+								<div class="Validform_checktip"></div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="clear trans_text">
+							<div class="li_left divTextL">
+								<span>投保金额：</span>
+							</div>
+							<div class="li_right" id="premium1">USD 1,222,000.00</div>
+						</li>
+						<li class="clear trans_text1">
+							<div class="li_left divTextL">
+								<span>费率：</span>
+							</div>
+							<div class="li_right">0.025%</div>
+						</li>
+						<li class="clear trans_text1">
+							<div class="li_left divTextL red">
+								<span>保险费用：</span>
+							</div>
+							<div class="li_right red">CNY 165.00</div>
+						</li>
+						<li class="clear trans_text1">
+							<div class="li_left divTextL">
+								<span>出单类型：</span>
+							</div>
+							<div class="li_right">
+								<label><input checked="checked" type="radio" name="letter" /> 见费出单</label>
+								<label><input type="radio" name="letter"  datatype="*" nullmsg="请选择"/> 起保后付费，月结</label>
+							</div>
+						</li>
+						<!--<li class="clear">
+							<div class="li_left divTextL">
+								<span>绝对免赔率：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<p class="li_rightP">人民币1000元或损失金额的5%，两者以高为准</p>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left divTextL">
+								<span>特别约定：</span>
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<p class="li_rightP">INCLUDING SANCTION LIMITATION AND EXCLUSION CLAUSE.</p>
+							</div>
+						</li>
+						
+						<li class="clear">
+							<div class="li_left">
+								<span>信用证条款：</span> 
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right">
+								<input type="text" class="input_long" value="Covering All Risks as per ICC(A)" datatype="*" nullmsg="请输入信用证条款"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>上传提单：</span> 
+								<img src="../img/key.png" />
+							</div>
+							<div class="li_right upload">
+								<span class="tell">请上传提单附件</span> 
+								<span class="input_file">点击上传</span>
+								<div class="Validform_checktip"></div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="li_left">
+								<span>附件：</span>
+							</div>
+							<div class="li_right fujians">
+								<div class="fujian">
+									<span class="tell">请上传发票、LC等附件</span> 
+									<span class="input_file">点击上传</span>
+									<div class="reduce"></div>
+									<div class="upload_content_bottom">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+										<div class="speed">
+											<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>-->
+					</ul>
+					<!--<div class="attachment_tip">
+						<p class="span_tip">支持图片、PDF、DOC、Excel等格式，不大于3M。如需上传更多附件，请点击</p>
+						<span class="add_pic"></span>
+					</div>-->
+					<div class="xieyi clear">
+						<label><input type="checkbox" name="letter"  datatype="*" nullmsg="请选择"/> 我已认真阅读、理解并同意</label>
+						<span><a href="javascript:;">《保险协议》</a> 中的全部内容</span>
+						<!--<div class="li_left">
+							<span>出单方式：</span>
+							<img src="../img/key.png" />
+						</div>
+						<div class="li_right">
+							<label>
+								<input type="radio" class="inputKind" name="kind" checked="checked"/> 
+								<span>见费出单</span>
+							</label>
+							<label>
+								<input type="radio" class="inputKind" name="kind" disabled="disabled"/> 
+								<span class="kindNo">起保后付费，月结</span>
+								<span>（如需月结方式，请咨询客服：400-830-1985）</span>
+							</label>
+							
+							<label>
+								<input type="radio" class="inputKind" name="kind1" /> 
+								<span>见费出单</span>
+							</label>
+							<label>
+								<input type="radio" class="inputKind" name="kind1" checked="checked"/> 
+								<span>起保后付费，月结</span>
+							</label>
+						</div>-->
+					</div>
+					<div class="btn_div">
+						<a href="javascript:;" class="btn_ok">提交</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert">
+			<div>
+				<div class="alert_title">
+					<span>×</span>
+				</div>
+				<div class="alert_content">
+					<p>投保金额超过限制，请联系人工客服投保</p>
+					<span>确定</span>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<!--<script src="../js/common.js"></script>-->
+	<script type="text/javascript" src="../js/Validform_ncr_min.js"></script>
+	<script type="text/javascript" src="../js/placeholder.js"></script>
+	<script type="text/javascript" src="../../generate/country.js"></script>
+	<script type="text/javascript" src="../js/input-prices.js"></script>
+	<script type="text/javascript" src="../js/domestic_transport.js"></script>
+	<script type="text/javascript" src="../js/jquery.cityselect.js"></script>
+	<script src="../js/gondStyle.js"></script>
+	<script>
+	 document.domain = 'qibaozz.com';
+        Qibao.policyUpload('container_ti','lading_bill_upload','lading_bill_url','lading_bill_area','lading_bill_show','lading_bill_name');
+    $.each(countryList.hot,function(key,value){
+        var li=$('<li data-id="'+key+'">'+value+'</li>');
+        $(".ulCountry_type").append(li);
+    });
+    function getSubGoodsType(e){
+        var id = $(e).val();
+        $.post('/cargo/getSubGoodsType',{id:id},function (data) {
+            var html = '<option value="">请选择二级货物种类</option>';
+            $.each(data,function (key,value) {
+                html += '<option value="'+value.id+'">'+value.name+'</option>';
+            });
+            $(".style_span2").text("请选择二级货物种类");
+            $("#goods_type_two").empty().append(html);
+        },'json')
+    }
+    function getPremium(){
+            var currencyId = $("select[name='currency_id']").val();
+            var invoice_amount = $("input[name='invoice_amount']").val();
+            var config_id = $("input[name='config_id']").val();
+            var addition = $("select[name='addition']").val();
+            if (addition==1){
+                addition = 0;
+            }else if (addition==2){
+                addition = 5;
+            }else if (addition==3){
+                addition = 10;
+            }else if (addition==4){
+                addition = 15;
+            }else if (addition==5){
+                addition = 20;
+            }else if (addition==6){
+                addition = 25;
+            }else if (addition==7){
+                addition = 30;
+            }
+            var preminuns = invoice_amount.split(',').join('')-0;
+            var preminunss = preminuns*(1+addition/100);
+            var preminunsss = parseFloat(preminunss).toFixed(2);
+            if (currencyId=='') return false;
+            if (invoice_amount=='' || invoice_amount=='.00') return false;
+            if (config_id=='') return false;
+            var currency_id_text=$("select[name='currency_id']").find("option:selected").text();
+            $("#premium1").text(currency_id_text+' '+preminunsss);
+            if((currency_id_text=="CNY"&&Number(preminunsss)>6800000) || (currency_id_text=="USD"&&Number(preminunsss)>1000000)
+	            ||(currency_id_text=="HKD"&&Number(preminunsss)>7800000)||(currency_id_text=="AUD"&&Number(preminunsss)>1400000)
+	            ||(currency_id_text=="GBP"&&Number(preminunsss)>750000)||(currency_id_text=="JPY"&&Number(preminunsss)>115000000)
+	            ||(currency_id_text=="EUR"&&Number(preminunsss)>860000)){
+            	$('.alert').show();
+            	$("#premium1").addClass('active');
+            }else{
+            	$("#premium1").removeClass('active');
+            }
+
+            $.post('/cargo/getPremiumForeign',{currencyId:currencyId,invoice_amount:invoice_amount,config_id:config_id,addition:addition},function (data) {
+                $("#premium").text(data);
+            },'html');
+    }
+    $('.alert>div>.alert_content>span').click(function(){
+    	$('.alert').hide();
+    })
+    $('.alert_title>span'),click(function(){
+    	$('.alert').hide();
+    })
+	</script>
+</html>

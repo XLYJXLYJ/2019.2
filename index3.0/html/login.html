@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<!--<div id="header"></div>-->
+
+		<div class="contents">
+			<div class="content">
+				<form class="myform">
+				<div class="login">
+					<div class="content_top">
+						用户登录
+					</div>
+					<div class="login_contents">
+						<ul class="clear">
+							<li>
+								<div class="login_content clear">
+									<div class="login_content_left">
+										<img src="../img/middle-User icon.png" alt="" />
+									</div>
+									<div class="login_content_right">
+										<input type="text" placeholder="电子邮箱/手机号"/>
+									</div>
+									<span class="Validform_checktip">格式错误</span>
+								</div>
+								
+							</li>
+							<li>
+								<div class="login_content clear">
+									<div class="login_content_left">
+										<img src="../img/middle-password.png" alt="" />
+									</div>
+									<div class="login_content_right">
+										<input type="password" placeholder="密码" datatype="*" nullmsg="请输入金额" errormsg="只能由数字或小数点组成且大于零"/>
+										<input type="text" placeholder="密码" class="hide-put"/>
+									</div>
+									<span class="Validform_checktip">格式错误</span>
+								</div>
+								
+							</li>
+							<li class="last_li">
+								<div class="login_content clear">
+									<div class="login_content_left">
+										<img src="../img/middle-Verification.png" alt="" />
+									</div>
+									<div class="login_content_right last_input">
+										<input type="text" placeholder="验证码"/>
+										<img src="../img/identifying-code1.png" alt="" />
+									</div>
+									<span class="Validform_checktip">验证码错误</span>
+								</div>
+								
+							</li>
+						</ul>
+						<div class="forget_password">
+							<a href="javascript:;" class="first_forget">忘记密码</a>
+							<a href="register.html">免费注册</a>
+						</div>
+						<div class="start_login">立即登录</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<!--<div id="footer"></div>-->
+	</body>
+</html>
+<script>
+	$(function(){
+		$("#header").load("header.html",get);
+		$("#footer").load("footer.html"); 
+		
+		$(".myform").Validform({
+	        tiptype: 4,
+		});
+	})
+</script>
+<script type="text/javascript" src="../js/placeholder.js"></script>
+<script type="text/javascript" src="../layer/layer.js"></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/Validform_ncr_min.js" ></script>

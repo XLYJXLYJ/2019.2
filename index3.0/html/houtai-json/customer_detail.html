@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+			body,html{font-family:"微软雅黑";font-size: 14px;color: #727689;/*min-width: 1255px;*/}
+			a{color: #5c5869;text-decoration: none;}
+			a:hover{text-decoration: none;}
+			ol,ul,li{list-style: none;} 
+			.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+			textarea{resize: none}
+			img{border-style: none;}
+			textarea, input[type="text"], input[type="password"]{box-shadow: none;border: 1px solid #e9e9f4;}
+			button{border:0;}
+			.hide {display: none;}
+			
+			.customerDetail {padding: 0 10px;min-width: 1350px;position: relative;}
+			/*弱提示*/
+			.all_tip {display: none;position: absolute;left: 46%;top: 14%;background-color: #fabc2d;color: #fff;height: 38px;text-align: center;line-height: 38px;padding: 0 60px;z-index: 100;}
+			
+			.customerTop {border: 1px solid #E9E9F4;min-width: 1036px;}
+			.customerTitle {height: 44px;line-height: 44px;border-bottom: 4px solid #E9E9F4;box-sizing: border-box;}
+			.customerName {color: #35313F;font-size: 18px;margin-right: 40px;margin-left: 26px;}
+			.goBack {text-decoration: underline;color: #727689;}
+			.goBack:hover{color: #524AE7;}
+			
+			.basiclTop {min-height: 280px;padding: 0 46px;box-sizing: border-box;}
+			.basiclTitl {height: 50px;line-height: 50px;position: relative;border-bottom: 1px solid #E9E9F4;}
+			.topTxtCont {display: inline-block;color: #35313F;margin-right: 60px;}
+			/*.txtName {width: 110px;}
+			.txtTel {width: 160px;}*/
+			.basiclEdit {position: absolute;top:-8px;right: 0;color: #524AE7;}
+			.submitContain {position: absolute;top:-8px;right: 0;}
+			.basiclCancel {color: #524AE7;margin-right: 20px;}
+			.basiclSubmit {color: #524AE7;}
+			
+			.basiclCont,.basiclContEdit {padding: 10px 0;box-sizing: border-box;}
+			.basiclCont li {line-height: 30px;}
+			.spanLeft,.spanRight {display: inline-block;float: left;}
+			.spanLeft {width: 100px;text-align: right;margin-right: 5px;}
+			.spanRight {color: #35313F;max-width: 836px;}
+			.basiclContEdit .spanLeft {line-height: 30px;}
+			.basiclContEdit .spanRight {margin-bottom: 10px;line-height: 30px;}
+			.inptRight {width: 420px;height: 30px;line-height: 30px;padding-left: 5px;box-sizing: border-box;}
+			.textareaRight {width: 860px;height: 200px;line-height: 26px;padding: 2px 0 10px 5px;box-sizing: border-box;}
+		
+			.customerMid {margin-top: 10px;min-width: 1350px;margin-bottom: 100px;}
+			.midLeft,.midRight {height: 470px;border: 1px solid #E9E9F4;box-sizing: border-box;}
+			.midLeft {position: relative;width: 60%;float: left;padding: 15px 0 15px 46px;box-sizing: border-box;min-width: 800px;}
+			.midRight {width: 39%;float: right;min-width: 520px;}
+			.midLeft .spanLeft {line-height: 32px;}
+			.midLeft .spanRight {position: relative;margin-bottom: 10px;}
+			.liLeft,.liRight,.liMid {float: left;}
+			.liLeft {margin-right: 30px;}
+			.selc {width: 242px;height: 30px;line-height: 30px;filter: alpha(opacity:0);opacity: 0;position: relative;z-index: 9;border: 1px solid #e9e9f4;box-sizing: border-box;}
+			.selcSpan {width: 230px;height: 30px;line-height: 30px;display: inline-block;position: absolute;top: 0;left: 0;background: url(../../img/xiala.png) no-repeat right center;border: 1px solid #e9e9f4;margin-left: 0px;padding-left: 10px;}
+			.upDate {cursor: pointer;width: 80px;height: 30px;line-height: 30px;position: absolute;top: 12px;right: 12px;border: 1px solid #524AE7;color: #fff;background-color: #524AE7;}
+			
+			.midRight {padding: 15px;position: relative;}
+			.rightTxt {width: 100%;height: 126px;overflow: hidden;line-height: 20px;padding: 2px 0 10px 5px;box-sizing: border-box;}
+			.rightSave {cursor: pointer;width: 80px;height: 30px;line-height: 30px;position: absolute;top: 152px;right: 15px;border: 1px solid #524AE7;color: #fff;background-color: #524AE7;}
+			.rightCont {height: 250px;overflow-y: scroll;margin-top: 56px;}
+			.floorCont {border-bottom: 1px solid #E9E9F4;position: relative;margin-bottom: 10px;}
+			.floorCont:hover .foorDelet {display: inline-block;}
+			.floorTxt {margin: 8px 0;color: #35313F;}
+			.floorName {color: #35313F;margin-right: 10px;font-weight: bold;}
+			.foorDelet {position: absolute;top:0;right: 20px;color: #524AE7;display: none;}
+		</style>
+	</head>
+	<body>
+		<div class="customerDetail">
+			<p class="all_tip"></p>
+			<div class="customerTop">
+				<div class="customerTitle">
+					<span class="customerName">佛山市金得利有限公司</span>
+					<a href="javascrip:;" class="goBack">返回</a>
+				</div>
+				<div class="basiclTop">
+					<div class="basiclTitl">
+						<span>联系人：</span><span class="topTxtCont txtName">王大锤</span>
+						<span>手机号码：</span><span class="topTxtCont txtTel">18888888888</span>
+						<span>注册时间：</span><span class="topTxtCont txtTime">2017-07-04 14:46:25</span>
+						<a href="javascript:;" class="basiclEdit">编辑</a>
+						<div class="submitContain hide">
+							<a href="javascript:;" class="basiclCancel ">取消</a>
+							<a href="javascript:;" class="basiclSubmit">保存</a>
+						</div>
+					</div>
+					<ul class="basiclCont ">
+						<li class="clear">
+							<span class="spanLeft">网址：</span>
+							<span class="spanRight">- -</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">经营地址：</span>
+							<span class="spanRight">北京市海淀区学院路甲5号2幢平房B北-3042室</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">邮箱：</span>
+							<span class="spanRight">- -</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">经营范围：</span>
+							<span class="spanRight">- -</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">渠道号：</span>
+							<span class="spanRight">8008</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">最近活跃：</span>
+							<span class="spanRight spanTime"> 2017-07-04 14:46:25</span>
+						</li>
+					</ul>
+					<!-- 编辑页面 -->
+					<ul class="basiclContEdit hide">
+						<li class="clear">
+							<span class="spanLeft">网址：</span>
+							<span class="spanRight">
+								<input type="text" class="inptRight" value="" maxlength="100" onkeyup="this.value = this.value.slice(0, 100)">
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">经营地址：</span>
+							<span class="spanRight">
+								<input type="text" class="inptRight" value="北京市海淀区学院路甲5号2幢平房B北-3042室" maxlength="100" onkeyup="this.value = this.value.slice(0, 100)">
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">邮箱：</span>
+							<span class="spanRight">
+								<input type="text" class="inptRight" value="" maxlength="100" onkeyup="this.value = this.value.slice(0, 100)">
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">经营范围：</span>
+							<span class="spanRight">
+								<textarea class="inptRight textareaRight" name="" maxlength="500" cols="" onkeyup="this.value = this.value.slice(0, 500)">技术开发、技术推广、技术转让、技术咨询、技术服务；工程和技术研究与试验发展；销售电子产品；计算机系统服务；基础软件服务；应用软件服务；软件开发；软件咨询；产品设计；模型设计；经济贸易咨询；企业策划；文化咨询；会议服务；投资咨询；电脑动画设计；项目投资；投资管理；资产管理；设计、制作、代理、发布广告；机械设备租赁（不含汽车租赁）。（企业依法自主选择经营项目，开展经营活动；依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动；不得从事本市产业政策禁止和限制类项目的经营活动。）
+								</textarea>
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">渠道号：</span>
+							<span class="spanRight">8008</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">最近活跃：</span>
+							<span class="spanRight newTime"> 2017-07-04 14:46:25</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="customerMid clear">
+				<div class="midLeft">
+					<ul>
+						<li class="clear">
+							<span class="spanLeft">所属行业：</span>
+							<span class="spanRight">
+								<select class="selc">
+									<option>贸易</option>
+									<option>制造</option>
+									<option>物流</option>
+									<option>互联网</option>
+									<option selected="selected">其他</option>
+								</select>
+								<span class="selcSpan">其他</span>
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">成交偏好：</span>
+							<span class="spanRight">
+								<select class="selc">
+									<option>价格偏好</option>
+									<option>品牌偏好</option>
+									<option selected="selected">其他</option>
+								</select>
+								<span class="selcSpan">其他</span>
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">客户级别：</span>
+							<span class="spanRight">
+								<select class="selc">
+									<option>微型客户</option>
+									<option>小客户</option>
+									<option>中型客户</option>
+									<option>中大型客户</option>
+									<option>集团客户</option>
+									<option>大客户</option>
+									<option selected="selected">其他</option>
+								</select>
+								<span class="selcSpan">其他</span>
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">人员规模：</span>
+							<span class="spanRight">
+								<select class="selc">
+									<option selected="selected">20人以下</option>
+									<option>20-99人</option>
+									<option>100-499人</option>
+									<option>500-990人</option>
+									<option>1000-9999人</option>
+									<option>10000人以上</option>
+								</select>
+								<span class="selcSpan">20人以下</span>
+							</span>
+						</li>
+						<li class="clear">
+							<span class="spanLeft">年营业额：</span>
+							<span class="spanRight">
+								<select class="selc">
+									<option selected="selected">1000万以下</option>
+									<option>1000万-2000万</option>
+									<option>2000万-5000万</option>
+									<option>5000万-1亿</option>
+									<option>1亿-5亿</option>
+									<option>5亿-20亿</option>
+									<option>20亿以上</option>
+								</select>
+								<span class="selcSpan">1000万以下</span>
+							</span>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">财产险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">责任险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">工程险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">意外健康险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">货运险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="liLeft">
+								<span class="spanLeft">信用险：</span>
+								<span class="spanRight">
+									<select class="selc">
+										<option value="0">已购买</option>
+										<option value="1">暂未购买</option>
+										<option value="2" selected="selected">未定义</option>
+									</select>
+									<span class="selcSpan">未定义</span>
+								</span>
+							</div>
+						</li>
+					</ul>
+					<button class="upDate">提交更新</button>
+				</div>
+				<div class="midRight">
+					<textarea class="rightTxt" placeholder="输入即可添加备注信息..." maxlength="200" cols="" onkeyup="this.value = this.value.slice(0, 200)"></textarea>
+					<button class="rightSave">保存</button>
+					<div class="rightCont clear">
+						<div class="floorCont">
+							<p class="floorTitl">
+								<span class="floorName">admin</span>
+								<span>2017-07-02 14:46:25</span>
+							</p>
+							<div class="floorTxt">这个企业我已经跟进了，有希望成交。</div>
+							<a href="javascript:;" class="foorDelet">删除</a>
+						</div>
+						<div class="floorCont">
+							<p class="floorTitl">
+								<span class="floorName">admin</span>
+								<span>2017-07-04 14:46:25</span>
+							</p>
+							<div class="floorTxt">这个企业我已经跟进了，有希望成交。</div>
+							<a href="javascript:;" class="foorDelet">删除</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+				
+		</div>
+	</body>
+	<script src="../../js/jquery-1.12.3.js"></script>
+	<script>
+		$(function(){
+			// 兼容IE忽略空格
+			String.prototype.trim = function () {
+				return this .replace(/^\s\s*/, '' ).replace(/\s\s*$/, '' );
+			};
+			
+			// 错误信息提示2s
+		    function wrongTips(){
+		    	setTimeout(function(){
+					$(".all_tip").hide();
+				},2000);
+		    	
+		    };
+		    
+			// 点击编辑
+			$(document).on("click",".basiclEdit",function(){
+				$(".basiclCont .spanRight").each(function(index,item){
+					if($(item).text() == "- -"){
+						$(".inptRight").eq(index).val("");
+					} else {
+						$(".inptRight").eq(index).val($(item).text());
+					}
+				});
+				$(this).hide().siblings(".submitContain").show();
+				$(".basiclCont").hide().siblings(".basiclContEdit").show();
+			});
+			// 点击取消
+			$(document).on("click",".basiclCancel",function(){
+				$(this).parent().hide().siblings(".basiclEdit").show();
+				$(".basiclContEdit").hide().siblings(".basiclCont").show();
+			});
+			// 点击保存
+			$(document).on("click",".basiclSubmit",function(){
+				$(".basiclContEdit .inptRight").each(function(index,item){
+					if($(item).val().trim() == ""){
+						$(".basiclCont .spanRight").eq(index).text("- -");
+					} else {
+						$(".basiclCont .spanRight").eq(index).text($(item).val());
+					}
+				});
+				$(this).parent().hide().siblings(".basiclEdit").show();
+				$(".basiclContEdit").hide().siblings(".basiclCont").show();
+				$(".all_tip").text("保存成功！！").show();
+				wrongTips();
+			});
+			
+			// 提交更新
+			$(".upDate").on("click",function(){
+				$(".all_tip").text("保存成功！！").show();
+				wrongTips();
+			})
+			
+			// 下拉箭头
+		    $(document).on("change",".selc",function(){
+				var optionvalue=$(this).find("option:selected").text();
+				$(this).siblings(".selcSpan").text(optionvalue).css({"border-color":"#524ae7"});
+			});
+			$(".selc").blur(function(){
+				$(this).siblings(".selcSpan").css({"border-color":"#e9e9f4"});
+			});
+			
+			// 六大险种购买情况
+			$(".liLeft .selc").on("change",function(){
+				var spanRight = '<span class="spanRight">\
+									<select class="selc">\
+										<option selected="selected">0-100元</option>\
+										<option>100-500元</option>\
+										<option>500-1000元</option>\
+										<option>1000-5000元</option>\
+										<option>5000-2万元</option>\
+										<option>2万元以上</option>\
+									</select>\
+									<span class="selcSpan">0-100元</span>\
+								</span>';
+				var liRight  = '';
+				if($(this).val() == "0"){
+					liRight = '<div class="liRight"><span class="spanLeft">当前保费规模：</span>'+ spanRight +'</div>';
+					$(this).closest(".liLeft").siblings(".liRight").remove();
+					$(this).closest("li").append(liRight);
+				} else if($(this).val() == "1"){
+					liRight = '<div class="liRight"><span class="spanLeft">预估保费规模：</span>'+ spanRight +'</div>';
+					$(this).closest(".liLeft").siblings(".liRight").remove();
+					$(this).closest("li").append(liRight);
+				} else {
+					$(this).closest(".liLeft").siblings(".liRight").remove();
+				}
+			});
+			
+			// 获取当前时间
+			function getNowFormatDate() {
+			    var date = new Date();
+			    var seperator1 = "-";
+			    var seperator2 = ":";
+			    var month = date.getMonth() + 1;
+			    var strDate = date.getDate();
+			    if (month >= 1 && month <= 9) {
+			        month = "0" + month;
+			    }
+			    if (strDate >= 0 && strDate <= 9) {
+			        strDate = "0" + strDate;
+			    }
+			    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+			            + " " + date.getHours() + seperator2 + date.getMinutes()
+			            + seperator2 + date.getSeconds();
+			    return currentdate;
+			};
+			
+			// 保存备注信息
+			$(".rightSave").on("click",function(){
+				var rightTxt = $(".rightTxt").val();
+				var dateNow = getNowFormatDate();
+				if(rightTxt.trim()) {
+					var floorCont = '<div class="floorCont">\
+										<p class="floorTitl">\
+											<span class="floorName">admin</span>\
+											<span>'+ dateNow +'</span>\
+										</p>\
+										<div class="floorTxt">'+ rightTxt +'</div>\
+										<a href="javascript:;" class="foorDelet">删除</a>\
+									</div>';
+					$(".rightCont").prepend(floorCont);
+					$(".rightTxt").val("");
+				}
+			});
+			
+			// 删除备注信息
+			$(document).on("click",".foorDelet",function(){
+				$(this).closest(".floorCont").remove();
+			})
+		})
+	</script>
+</html>

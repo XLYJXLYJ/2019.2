@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css"/>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">管理中心</span><span>></span><span class="active">机器人管理</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+				
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				            <ul class="show">
+				                <li class="li_sub active">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub">
+			                		<a href="user.html">
+				                		<span class="icon icon8"></span>
+				        	  			<span>基本设置</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="manage.html">
+				                		<span class="icon icon9"></span>
+				        	  			<span>套餐&余额管理</span>
+				        	  			<sup></sup>
+				                	</a>
+				                </li>
+			                	<li class="li_sub">
+				                	<a href="order.html ">
+				                		<span class="icon icon10"></span>
+				        	  			<span>流量订单管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="balance_order_management.html">
+				                		<span class="icon icon15"></span>
+				        	  			<span>余额订单管理</span>
+				                	</a>
+				                </li>
+				               
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>机器人管理</span>
+				</p>
+				<table class="robot_manage">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>机器人名称</th>
+							<th>机器人类型</th>
+							<th>部署形式</th>
+							<th>备注</th>
+							<th>操作</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<!--<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span title="平安一年期综合意外险平安一年期">
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>
+						<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span>
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>	
+						<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span>
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>	
+						<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span>
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>	
+						<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span>
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>	
+						<tr>
+							<td>001</td>
+							<td>AIMI</td>
+							<td>销售咨询机器人</td>
+							<td>H5</td>
+							<td>
+								<p>
+									<span>
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险平安一年期综合意外险
+										平安一年期综合意外险平安一年期综合意外险
+									</span>	
+								</p>
+							</td>
+							<td>
+								<a href="detail.html"><span>详情</span></a>
+								<a href="Q&A.html"><span>Q&A配置</span></a>
+							</td>
+						</tr>	-->
+					</tbody>
+				</table>
+				<div class=footer>
+					<span class="start">首页</span>
+					<span class="pre"></span>
+					<span class="active page">1</span>
+					<span class="page">2</span>
+					<span class="page">3</span>
+					<span class="page">4</span>
+					<span class="page">5</span>
+					<span class="next"></span>
+					<span class="end">末页</span>
+					<span class="amount">共<span class="number">0</span>页</span>
+					<input type="text"/>
+					<span class="ship">跳转</span>
+				</div>
+			</div>	
+		</div>	
+		<script src="js/jquery.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			var cookie=getCookie('user');
+			if(cookie=="not find"){
+//				window.location.href="login.html";
+			}else{
+				cookie=cookie.split('&&');
+			}
+			$(function(){
+				paging(1).then(function(){
+					var number=$('.number').text();
+					number=parseInt(number);
+					$('.page').show();
+					$('.start').hide();
+					$.each($('.page'), function(i) {
+						if(1+i>number){
+							$(this).hide();
+							$('.end').hide();
+						}else{
+							$(this).text(1+i);
+						}
+					});
+					$('page').eq(0).show();
+				});
+			})
+			//首页
+			$('.start').click(function(){
+				paging(1);
+				var number=$('.number').text();
+				$('.page').show();
+				$.each($('.page'), function(i) {
+					if(1+i>number){
+						$(this).hide();
+						$('.end').hide();
+					}else{
+						$(this).text(1+i);
+					}
+				});
+				$('.end').show();
+				$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+			})
+			//末页
+			$('.end').click(function(){
+				var p=$('.number').text();
+				paging(p);
+				$('.page').show();
+				var index=Math.floor(p/5);
+				index=index*5;
+				var page= $('.number').text();
+				$.each($('.page'), function(i) {
+					if(index+1+i>page){
+						$(this).hide();
+						$('.end').hide();
+					}
+					$(this).text(index+1+i);
+					if(index+1+i==p){
+						$(this).addClass('active');
+						$('.page').not(this).removeClass('active');
+						$('.end').hide();
+					}
+					$('.start').show();
+				});
+				$('.end').hide();
+			})
+			//上一页
+			$('.pre').click(function(){
+				var value=$('.page').eq(0).text();
+				value=parseInt(value);
+				if(value==1){
+					return false;
+				}else{
+					$('.page').show();
+					$.each($('.page'), function(i) {
+						$(this).text(value-5+i);
+					});
+				}
+				var p=$('.page.active').text();
+				paging(value-1);
+				$('.end').show();
+			})	
+			//下一页
+			$('.next').click(function(){
+				var value=$('.page:visible').eq(-1).text();
+				value=parseInt(value);
+				var number=$('.number').text();
+				number=parseInt(number);
+				var p=$('.page.active').text();
+				if(value==number){
+					return false;
+				}else{
+					paging(value+1);
+					$(".page").show();
+					$.each($('.page'),function(i) {
+						if(value+1+i>number){
+							$(this).hide();
+							$('.end').hide();
+						}else{
+							$(this).text(value+1+i);
+						}
+					});
+					$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+				}
+			})
+			//分页
+			$('.page').click(function(){
+				var number=$('.number').text();
+				var this_=$(this);
+				var p=$(this).text();
+				paging(p);
+				var temp=false;;
+				$.each($('.page'),function(i) {
+					if(temp){
+						$(this).hide();
+						$('.end').hide();
+					}
+					if(parseInt($(this).text())==parseInt(number)){
+						temp=true;
+					}
+				});
+				$(this_).addClass('active');
+				$('.page').not(this_[0]).removeClass('active');
+			})
+			//跳转
+			$('.ship').click(function(){
+				if($(this).hasClass('active')){
+					var p=$(".footer input").val();
+					$(".footer input").val('');
+					paging(p);
+					$('.page').show();
+					var index=Math.floor(p/5);
+					index=index*5;
+					var page= $('.number').text();
+					if(page>5){
+						$('.end').show();
+					}else{
+						$('.end').hide();
+					}
+					$.each($('.page'), function(i) {
+						if(index+1+i>page){
+							$(this).hide();
+							$('.end').hide();
+						}
+						$(this).text(index+1+i);
+						if(index+1+i==p){
+							$(this).addClass('active');
+							$('.page').not(this).removeClass('active');
+						}
+					});
+					$('.ship').removeClass('active');
+				}
+			})
+			
+			//merchant/v2.0/robot/robot_manage
+			function paging(pageSize){
+				$('tbody').empty();
+				return  new  Promise(function(resolve,reject){
+					$.ajax({
+						type:"get",
+						url:"/merchant/v2.0/robot/robot_manage",
+						async:true,
+						data:{'product_id':cookie[2],'pageSize':pageSize},
+					}).done((data)=>{
+						if(data.status=='200'){
+							var size= data.total_num%5==0 ? data.total_num/5: parseInt(data.total_num/5)+1;
+							data=data.data;
+							$('.footer').show();
+							var temp
+							if(data.length>0){
+								var str='';
+								var temp="";
+								var title="";
+								for(var i=0;i<data.length;i++){
+									str+='<tr>';
+									str+='<td>'+data[i].robot_code+'</td>';
+									str+='<td>'+data[i].robot_name+'</td>';
+									str+='<td>'+data[i].robot_type+'</td>';
+									str+='<td>'+data[i].deployment_form+'</td>';
+									if(data[i].comment&&data[i].comment.length>20){
+										temp=data[i].comment.substring(0,20);
+										str+='<td><p><span title="'+data[i].comment+'">'+temp+'...</span></p></td>';
+									}else{
+										str+='<td><p><span>'+data[i].comment+'</span></p></td>';
+									}
+									
+									
+									str+='<td>';
+									str+='<a href="detail.html?robot_code='+data[i].robot_code+'&product_id='+data[i].product_id+'"><span>详情</span></a>';
+									str+='<a href="Q&A.html?robot_code='+data[i].robot_code+'&product_id='+data[i].product_id+'"><span>Q&A配置</span></a>';
+									str+='</td>';
+									str+='</tr>';
+								}
+								$('tbody').append(str);
+								$('.footer').show();
+								
+							}else{
+								$('.footer').hide();
+							}
+							$('.footer .number').text(size);
+							resolve();
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}
+					})
+					
+				})	
+			}
+		</script>
+	</body>
+</html>

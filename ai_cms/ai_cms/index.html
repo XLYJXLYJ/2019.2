@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			.conent{
+				width:calc(100vw - 170px);
+				min-width: 1110px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="active">概况统计</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<!--<img src="img/logo.png" />-->
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+					
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html" class="active">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  	
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				       <!-- <li class="li_father">
+				        	<a>
+				        		<span class="icon icon11"></span>
+				        	  	<span>训练中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="history.html">
+				                		<span class="icon icon6"></span>
+				        	  			<span>历史对话</span>
+				                	</a>
+				                	
+				                </li>
+				               
+				            </ul>
+				        </li>-->
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub">
+				                	<li class="li_sub">
+				                		<a href="user.html">
+					                		<span class="icon icon8"></span>
+					        	  			<span>基本设置</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="manage.html">
+					                		<span class="icon icon9"></span>
+					        	  			<span>套餐&余额管理</span>
+					        	  			<sup></sup>
+					                	</a>
+					                </li>
+				                	<li class="li_sub">
+					                	<a href="order.html">
+					                		<span class="icon icon10"></span>
+					        	  			<span>流量订单管理</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="balance_order_management.html">
+					                		<span class="icon icon15"></span>
+					        	  			<span>余额订单管理</span>
+					                	</a>
+					                </li>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<div class="conent_count">
+					<div class="count_left">
+						<div class="y_a">
+							<span></span>
+							<span class="yd_answer">
+								<span class="dot"></span>
+								<span>昨日回答次数</span>
+							</span>
+						</div>
+						
+						<div class="y_s">
+							<span></span>
+							<span class="yd_service">
+								<span class="dot"></span>
+								<span>昨日服务人次</span>
+							</span>
+						</div>
+						<div class="m_a">
+							<span></span>
+							<span class="month_answer">
+								<span class="dot"></span>
+								<span>本月回答次数</span>
+							</span>
+						</div>
+						
+						<div class="m_s">
+							<span></span>
+							<span class="month_service">
+								<span class="dot"></span>
+								<span>本月服务人次</span>
+							</span>
+						</div>
+						
+						
+						
+						
+					</div>
+					<div class="count_right">
+						<span>焦点词汇</span>
+						<div id="mountNode"></div>
+					</div>
+				</div>
+				<div class="table_from">
+					<p class="hot">
+						<span>热门问题</span>
+						<span class="hot_icon"></span>
+					</p>
+					<table class="table1">
+						<thead>
+							<tr>
+								<th>排名</th>
+								<th>问题</th>
+								<th>提问次数</th>
+								<th>提问人次</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>	
+					</table>
+					<table class="table2">
+						<thead>
+							<tr>
+								<th>排名</th>
+								<th>问题</th>
+								<th>提问次数</th>
+								<th>提问人次</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>	
+					</table>
+				</div>
+			</div>
+			
+			
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/laydate.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="js/echarts-wordcloud.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"/merchant/v1.0/record/times",
+					async:true,
+					success:function(data){
+						if(data.errmsg=='OK'){
+							var msg=data.data;
+							$('.yd_answer').prev().text(msg.yesterday_count);
+							$('.yd_service').prev().text(msg.yesterday_people_count);
+							$('.month_answer').prev().text(msg.month_count);
+							$('.month_service').prev().text(msg.month_people_count);
+							magic_number(msg.yesterday_count,$('.yd_answer').prev());
+							magic_number(msg.yesterday_people_count,$('.yd_service').prev());
+							magic_number(msg.month_count,$('.month_answer').prev());
+							magic_number(msg.month_people_count,$('.month_service').prev());
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}	
+					}
+				});
+				$.ajax({
+					type:"get",
+					url:"/merchant/v1.0/record/hot_answers",
+					async:true,
+					success:function(data){
+						if(data.errmsg=='OK'){
+							var msg=data.data.hot_answer_list;
+							if(msg.length>0){
+								if(msg.length>5){
+									var html="";
+									for(var i=0;i<5;i++){
+										html +="<tr>";
+										html +="<td>"+msg[i].rank+"</td>";
+										html +="<td>"+msg[i].content+"</td>";
+										html +="<td>"+msg[i].count+"</td>";
+										html +="<td>"+msg[i].people_count+"</td>";
+										html +="</tr>";
+									}
+									$('tbody').eq(0).empty();
+									$('tbody').eq(0).append(html);
+									var str="";
+									var length= msg.length>10 ? 10 :msg.length;
+									for(var j=5;j<length;j++){
+										str +="<tr>";
+										str +="<td>"+msg[j].rank+"</td>";
+										str +="<td>"+msg[j].content+"</td>";
+										str +="<td>"+msg[j].count+"</td>";
+										str +="<td>"+msg[j].people_count+"</td>";
+										str +="</tr>";
+									}
+									$('tbody').eq(1).empty();
+									$('tbody').eq(1).append(str);
+								}else{
+									var html="";
+									for(var i=0;i<msg.length;i++){
+										html +="<tr>";
+										html +="<td>"+msg[i].rank+"</td>";
+										html +="<td>"+msg[i].content+"</td>";
+										html +="<td>"+msg[i].count+"</td>";
+										html +="<td>"+msg[i].people_count+"</td>";
+										html +="</tr>";
+									}
+									$('tbody').eq(0).empty();
+									$('tbody').eq(0).append(html);
+								}
+							}
+							
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}	
+					}
+					
+				});
+				
+			})
+			var worldCloudcharts=echarts.init(document.getElementById('mountNode'));
+	 		var colors=['6edb8f','facc14','41d9c7','2fc25b','223273','81e4e4','a877ed','e6965c'];
+	 		var worldCloudoption = {
+			    title: {
+			        text: '焦点词汇',
+			        x: 'center',
+			        textStyle: {
+			            fontSize: 23,
+			            color:'#FFFFFF'
+			        }
+			    },
+			    tooltip: {
+			        show: true
+			    },
+			    series: [{
+			        name: '焦点词汇',
+			        type: 'wordCloud',
+			        sizeRange: [18, 35],
+			        rotationRange: [-45, 90],
+			        textPadding: 0,
+			        autoSize: {
+			            enable: true,
+			            minSize: 6
+			        },
+			        textStyle: {
+			            normal: {
+			                color: function() {
+								return  "#"+colors[Math.floor(Math.random()*colors.length)];
+			                }
+			            },
+			            emphasis: {
+			                shadowBlur: 10,
+			                shadowColor: '#333'
+			            }
+			        },
+			        data: []
+			    }]
+			};
+			$.getJSON('merchant/v1.0/record/hot_words', function(data) {
+				if(data.errmsg=='用户未登录'){
+					window.location.href="login.html";
+				}			
+				data=data.data.hot_words_list;
+				worldCloudoption.series[0].data = data;
+				worldCloudcharts.setOption(worldCloudoption);
+			})
+	</script>
+
+	</body>
+</html>

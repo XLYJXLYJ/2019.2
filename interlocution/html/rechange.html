@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="rechange">
+			<div class="head">
+				<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="user.html"><img class="aside" src="../img/aside.png"/></a>
+			</div>
+			<div class="input-money">
+				<p>充值金额</p>
+				<span>¥</span><!--<input placeholder="输入充值金额" />-->
+				<div contenteditable="true">44</div>
+			</div>
+			<span class="next">下一步</span>
+			<table>
+				<tr>
+					<td data-id = "1">1</td>
+					<td data-id = "2">2</td>
+					<td data-id = "3">3</td>
+					<td rowspan="2"><img src="../img/delete.png" /></td>
+				</tr>
+				<tr>
+					<td data-id = "4">4</td>
+					<td data-id = "5">5</td>
+					<td data-id = "6">6</td>
+				</tr>
+				<tr>
+					<td data-id = "7">7</td>
+					<td data-id = "8">8</td>
+					<td data-id = "9">9</td>
+					<td rowspan="2" class="sure">确定</td>
+				</tr>
+				<tr>
+					<td data-id = ".">.</td>
+					<td data-id = "0">0</td>
+					<td class="keyboard"><img src="../img/keyboard.png"></td>
+				</tr>
+			</table>
+		</div>	
+		<script src="../js/jquery.js"></script>
+		<script>
+			$(document).on("click","table td",function(){
+				if($(this).data('id')!=undefined){
+					var input=$(".input-money input").val();
+					input=input+$(this).data('id');
+					$(".input-money input").val(input);
+				}
+			})
+			
+			$(document).on("click",".next",function(){
+				var input=$(".input-money input").val();
+				var regex=/^[0]+/;
+ 				input=input.replace(regex,"");
+ 				
+			})
+			
+			$(document).on("click",'.keyboard',function(){
+				$("table").hide();
+			})
+			
+			$(document).on('click','.input-money input',function(){
+				$("table").show();
+			})
+			
+			$(document).on("click",'.sure',function(){
+				$("table").hide();
+			})
+		</script>
+	</body>
+</html>

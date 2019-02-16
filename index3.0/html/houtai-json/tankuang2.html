@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+			body,html{font-family:"微软雅黑";font-size: 14px;color: #727689;}
+			a{color: #5c5869;text-decoration: none;}
+			.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+			
+			.bianjiorlook{background: #fff;border:1px solid #e9e9f4;width:540px;padding:20px 30px;position:relative;border-radius: 3px;}
+			.close-fix{position:absolute;right:10px;top:10px;cursor: pointer;background: url(../../img/delete-line-ico4.png) no-repeat;width:20px;height:20px;}
+			.error-tit{display:none;position:absolute;top:20px;left:50%;margin-left:-80px;width:160px;text-align:center;line-height: 30px;background-color: #fabc2d;color: #fff;padding: 0 20px;}
+			.import-templatetit{text-align: center;line-height: 30px;font-size: 16px;color:#35313f;}
+			.bianji-type{margin-bottom: 16px;float:left;width:270px;}
+			.spc-type{margin-bottom: 10px;}
+			.bianji-typrleft{width:86px;float:left;text-align: right;margin-right: 5px;line-height: 28px;}
+			.zhanshi{line-height: 28px;}
+			.bianji-typrright{float:left;color:#35313f;}
+			.bianji-typrright input{float:left;width:100px;height:28px;line-height: 28px;padding: 0 10px;border:1px solid #e9e9f4;box-sizing: border-box;}
+			.bianji-typrright textarea{width:440px;height:120px;border: 1px solid #e9e9f4;box-sizing: border-box;resize: none;padding: 10px;}
+			.lang-type{width:540px;}
+			.lang-type input{width:440px;}
+			.lang-type2 input{width:170px;}
+			.scale{float:right;line-height: 28px;margin-left: 10px;}
+			.end-ok,.end-cancel{cursor: pointer;padding: 5px 20px;float:right;margin-left: 30px;border-radius: 3px;}
+			.end-ok{background: #524ae7;color:#fff;margin-right: 10px;}
+			.end-cancel{border:1px solid #e9e9f4;}
+		</style>
+	</head>
+	<body>
+		<div class="bianjiorlook">
+			<div class="close-fix"></div>
+			<div class="error-tit">aaaa</div>
+			<form class="form_fix">
+				<div class="import-templatetit">第<span class="p-nubs">1</span>批</div>
+				<div class="bianji-cont clear">
+					<div class="bianji-type clear spc-type">
+						<div class="bianji-typrleft"><span>总数据量：</span></div>
+						<div class="bianji-typrright clear"><div class="zhanshi">12334</div></div>
+					</div>
+					<div class="bianji-type clear spc-type">
+						<div class="bianji-typrleft"><span>有效导入量：</span></div>
+						<div class="bianji-typrright clear"><div class="zhanshi">10333</div></div>
+					</div>
+					<div class="bianji-type clear lang-type">
+						<div class="bianji-typrleft"><span>成本/金额：</span></div>
+						<div class="bianji-typrright clear"><input type="text" placeholder="请输入" /></div>
+					</div>
+					<div class="bianji-type clear lang-type2">
+						<div class="bianji-typrleft"><span>外呼量：</span></div>
+						<div class="bianji-typrright clear"><input class="waihu" type="text" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/></div>
+					</div>
+					<div class="bianji-type clear lang-type2">
+						<div class="bianji-typrleft"><span>邮件发送：</span></div>
+						<div class="bianji-typrright clear"><input class="youjian" type="text" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/></div>
+					</div>
+				  	<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>正常接通：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>未接/挂机：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>关机：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>占线/转移：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>空号/停机：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>错误号码：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="waihuend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>邮件送达：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="youjianend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear">
+						<div class="bianji-typrleft"><span>邮件点击：</span></div>
+						<div class="bianji-typrright clear">
+							<input type="text" class="youjianend" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/>
+							<div class="scale">(<span class="scale-nub">0.00</span>%)</div>
+						</div>
+					</div>
+					<div class="bianji-type clear lang-type2">
+						<div class="bianji-typrleft"><span>客户注册：</span></div>
+						<div class="bianji-typrright clear"><input type="text" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/></div>
+					</div>
+					<div class="bianji-type clear lang-type2">
+						<div class="bianji-typrleft"><span>有效发标：</span></div>
+						<div class="bianji-typrright clear"><input type="text" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/></div>
+					</div>
+					<div class="bianji-type clear lang-type">
+						<div class="bianji-typrleft"><span>有效成交：</span></div>
+						<div class="bianji-typrright clear"><input type="text" placeholder="请输入数量" onkeyup="keyup(this)" onafterpaste="paster(this)"/></div>
+					</div>
+					<div class="bianji-type clear lang-type">
+						<div class="bianji-typrleft"><span>数据备注：</span></div>
+						<div class="bianji-typrright clear"><textarea name="" rows="" cols="" maxlength="500" placeholder="请输入备注信息" ></textarea></div>
+					</div>
+				</div>
+				<div class="end clear">
+					<span class="end-ok">确定</span>
+					<span class="end-cancel">取消</span>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js"></script> 	
+	<script type="text/javascript">
+		function keyup(e){
+			if(e.value.length==1){e.value=e.value.replace(/[^1-9]/g,'')}else{e.value=e.value.replace(/\D/g,'')}
+		};
+		function paster(e){
+			if(e.value.length==1){e.value=e.value.replace(/[^1-9]/g,'')}else{e.value=e.value.replace(/\D/g,'')}
+		};
+		
+		//外呼
+		$(document).on("blur",".waihuend",function(){
+			var allval=$(".waihu").val();
+			var thisval=$(this).val();
+			if(thisval){
+				$(this).siblings(".scale").find(".scale-nub").html(((thisval/allval)*100).toFixed(2));
+			};
+		});
+		$(document).on("blur",".waihu",function(){
+			var allval=$(".waihu").val();
+			$(".waihuend").each(function(){
+				var thisval=$(this).val();
+				if(allval){	
+					$(this).siblings(".scale").find(".scale-nub").html(((thisval/allval)*100).toFixed(2));
+				};
+			});
+		});
+		//邮件
+		$(document).on("blur",".youjianend",function(){
+			var allval=$(".youjian").val();
+			var thisval=$(this).val();
+			if(thisval){
+				$(this).siblings(".scale").find(".scale-nub").html(((thisval/allval)*100).toFixed(2));
+			};
+		});
+		$(document).on("blur",".youjian",function(){
+			var allval=$(".youjian").val();
+			$(".youjianend").each(function(){
+				var thisval=$(this).val();
+				if(allval){	
+					$(this).siblings(".scale").find(".scale-nub").html(((thisval/allval)*100).toFixed(2));
+				}
+			});
+		});
+		
+	</script>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>渠道统计后台登录</title>
+		<link rel="stylesheet" type="text/css" href="../../css/channel.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/yunbaotianxia/ybtx.css" />
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		
+	</head>
+	<body>
+		<div id="header">
+			<div class="header">
+				<div class="header-left">
+					<span class="title">运保天下</span>
+					<span>运保天下统计后台</span>
+				</div>
+				<div class="header-right">
+					<span>服务热线：</span>
+					<span class="red">400-009-7855</span>
+				</div>
+			</div>
+		</div>	
+		
+		<div class="loging-cont clear">
+			<img src="../../img/yunbaotianxia/login.png" alt="" />
+			<div class="contents clear">
+				<div class="login">
+					<div class="content_top">
+						用户登录
+					</div>
+					<div class="login_contents">
+						<form class="myform_" action="">
+							<ul class="clear">
+								<li>
+									<div class="login_content clear">
+										<div class="login_content_left">
+											<img src="../../img/middle-User-icon2.png" alt="" />
+										</div>
+										<div class="login_content_right clear">
+											<input type="text" placeholder="电子邮箱/手机号" datatype="userName" errormsg="请填写正确的手机号/身份证号"  nullmsg="请输入手机号/身份证号"/>
+											
+										</div>
+										
+									</div>
+									
+								</li>
+								<li>
+									<div class="login_content clear">
+										<div class="login_content_left">
+											<img src="../../img/middle-password2.png" alt="" />
+										</div>
+										<div class="login_content_right clear">
+											<input type="password" placeholder="请输入密码" datatype="*6-16" errormsg="密码范围在6~16位之间" nullmsg="请输入密码" />
+											
+											
+										</div>
+										
+									</div>
+									
+								</li>
+								<li class="last_li">
+									<div class="login_content clear">
+										<div class="login_content_left">
+											<img src="../../img/middle-Verification2.png" alt="" />
+										</div>
+										<div class="login_content_right last_input clear">
+											<input type="text" placeholder="验证码"/>
+											<img src="../../img/identifying-code2.png" alt="" />
+											<span class="Validform_checktip">格式错误</span>
+										</div>
+									</div>
+									
+								</li>
+							</ul>
+							<div class="forget_password">
+								<label><input type="checkbox" checked="checked"/>记住密码</label>
+							</div>
+							<div class="start_login">立即登录</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div id="footer">
+			<div class="footer">
+				<p>Copyright 2017 企保科技 All Rights Reserved 　粤ICP备16068246号</p>
+			</div>
+		</div>
+		<script src="../../js/jquery.js"></script>
+		<script src="../../js/placeholder.js"></script>
+		<script src="../../js/Validform_ncr_min.js"></script>
+		<script>
+			$(function(){
+
+				$("form").Validform({
+			        tiptype: 4,
+			        ignoreHidden:true,
+			        postonce: true,
+			        ajaxPost:true,
+			        btnSubmit:".start_login",
+			        datatype:{
+		            	'userName':/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/
+			        },
+			        callback:function(data){
+						if(data.code==200){
+							
+						}
+			        }
+			    });
+			})
+		</script>
+	</body>
+</html>

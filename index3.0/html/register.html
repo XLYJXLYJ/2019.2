@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="contents">
+			<div class="content">
+				<div class="all_content">
+					<div class="title clear">
+						<div class="title_left">参保用户注册</div>
+						<div class="title_right"><span>切换至</span>　<a href="company-register.html">保险公司用户注册</a></div>
+					</div>
+					<div class="cont_register clear">
+						<div class="cont_input">
+							<input type="text" placeholder="请输入手机号"/>
+							<span>手机号：</span>
+							<img src="../img/key.png" alt="" class="key"/>
+							<div class="Validform_checktip">格式错误</div>
+						</div>
+						<div class="cont_input identifying_code clear">
+							<input type="text" placeholder="请输入验证码"/>
+							<span>验证码：</span>
+							<img src="../img/identifying-code1.png" alt="" class="code"/>
+							<div class="Validform_checktip">格式错误</div>
+						</div>
+						<div class="cont_input identifying_code clear">
+							<input type="text" placeholder="请输入短信验证码"/>
+							<span>短信验证码：</span>
+							<div class="code codes">短信验证码</div>
+							<div class="Validform_checktip">格式错误</div>
+						</div>
+						<div class="cont_input special">
+							<input type="password" placeholder="密码长度为6-16位，由字母或数字组成"/>
+							<input type="text" placeholder="密码长度为6-16位，由字母或数字组成" class="hide-put"/>
+							<span>密码：</span>
+							<img src="../img/key.png" alt=""  class="key"/>
+							<div class="Validform_checktip">格式错误</div>
+							<div class="Strength clear">
+								<span class="checke">弱</span>
+								<span>中</span>
+								<span>强</span>
+							</div>
+						</div>
+						<div class="cont_input">
+							<input type="password" placeholder="请再次输入密码"/>
+							<input type="text" placeholder="请再次输入密码" class="hide-put"/>
+							<span>密码确认：</span>
+							<img src="../img/key.png" alt=""  class="key"/>
+							<div class="Validform_checktip">格式错误</div>
+						</div>
+						<div class="cont_input">
+							<input type="text" placeholder="请输入公司名称"/>
+							<span>公司名：</span>
+							<img src="../img/key.png" alt=""  class="key"/>
+							<ul>
+								<li>啊啊啊</li>
+								<li>百度</li>
+							</ul>
+							<div class="Validform_checktip">格式错误</div>
+						</div>
+						<div class="agreement">
+							<label>
+								<input type="checkbox" />
+								<span>我已经阅读并同意</span>
+							</label>
+							<a href="javascript:;">《前海企保科技（深圳）有限公司服务条款》</a>
+							<div class="Validform_checktip">请勾选</div>
+						</div>
+						<div class="begin_register">立即注册</div>
+						<a href="login.html" class="back">返回登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script src="../js/placeholder.js"></script>
+<script type="text/javascript" src="../layer/layer.js"></script>
+<script type="text/javascript" src="../js/common.js" ></script> 
+<script>
+	$(function(){
+		$("#header").load("header.html",get); 
+		$("#footer").load("footer.html"); 
+		
+		
+		$(document).on("click",".codes",function(){
+			$(this).html("倒计时5").removeClass("codes");
+			var that=$(this);
+			var i=5;
+			var time=setInterval(function(){
+				i--;
+				if(i==0){
+					that.html("短信验证码").addClass("codes");
+					clearInterval(time);
+				}else{
+					console.log(i)
+					that.html("倒计时"+i);
+				}
+			},1000);
+		});
+	})
+</script>

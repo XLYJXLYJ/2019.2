@@ -1,0 +1,18 @@
+.problems .statistics .operation{margin-top: 3rem;}
+.problems .statistics .operation span{margin-top: 2rem;width:100% ;height:3rem ;line-height: 3rem;}
+.problems .statistics .shadow{width: 80%;height:3rem ;line-height: 3rem;margin-top: 2rem;}
+.problems .statistics .shadow div{height: 3rem;}
+.problems .statistics .operation span:last-child{margin-top: 2rem;}
+.problems .statistics .operation{width: 18rem;}
+.aimi .aimi-message{margin-bottom: 2rem;}
+.aimi .aimi-message.active {opacity: 1;margin-top: 30vh; transition-delay:opacity  2.7s ease-out;transform:translateZ(0); visibility: visible;transform:translate3d(0,0,0);}
+.sipc .problem{height: 12rem;}
+.sipc .problem>div{margin-top: 1.75rem;}
+.sipc .problem .income{margin-bottom: 1.75rem;}
+.sipc .problem .number{font-size:3.5rem ;}
+/*.submit textarea{border-top:1px solid rgba(178,178,178,0.2);}*/
+.back>span>sup>img{width: 0.9rem;height: 0.9rem;}
+.submit .animation>div{top:18rem ;height: 30rem;}
+.submit .animation .text{margin-top: 6.5rem;height:17rem ;transition:all 1s ease-in-out .3s}
+.submit .alert>div:before{bottom: 7rem;}
+.submit .alert>div:after{height: 14.3rem;}

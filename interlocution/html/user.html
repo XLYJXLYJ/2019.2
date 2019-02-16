@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	</head>
+	<body>
+		<div class="user">
+			<div class="head">
+				<img class="title" src="../img/InsurBot_AIMI.png">
+				<a href="user.html"><img class="aside" src="../img/aside.png"/></a>
+				<a href="aimi.html"><img class="back" src="../img/back.png"></a>
+			</div>
+			<div class="message">
+				<p class="name">用户名：张三</p>
+				<div class="amount">
+					<a href=""><span>内测问题数量统计</span></a>
+					<img src="../img/right.png" />
+				</div>
+				<div class="reward">
+					<a href=""><span>奖励</span></a>
+					<img src="../img/right.png" />
+				</div>
+			</div>
+			<!--<img class="quit" src="../img/quit.png" />-->
+			<div class="alert">
+				<div>
+					<p class="prompt">提示</p>
+					<p>你是否确认退出?</p>
+					<span class="sure">是</span><span class="cancel">否</span>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="quit"><img src="../img/quit.png"/><span>登出</span></div>
+				<div>智能保险官Aimi<sup><img src="../img/r.png"></sup></div>
+			</div>
+		</div>	
+		<script src="../js/jquery.js"></script>
+		<script type="text/javascript">
+			$(".quit").click(function(){
+				$(".user .alert").show();
+			})
+			//取消
+			$(".cancel").click(function(){
+				$(".user .alert").hide();
+			})
+			//确认
+			$(".sure").click(function(){
+				$(".user .alert").hide();
+			})
+			$(".alert").click(function (e) {
+		        var prop=$('.alert>div')[0];
+		        
+		        if (e.target!= prop &&!$.contains(prop, e.target)){
+		        	$(".user .alert").hide();
+		        }
+			      
+		    })    
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改密码</title>
+		<link rel="stylesheet" type="text/css" href="../css/channel.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="header_common ">
+			<div class="header_common_logo">
+				<span class="order_title">运保天下</span>
+			</div>
+			<div class="header_common_mid">渠道统计后台</div>
+			<div class="header_common_right">
+				<a href="javascript:;" class="head_adm">王松阳</a>
+				<span class="head_sp">|</span>
+				<a href="javascript:;" >退出登录</a>
+				<span class="head_sp">|</span>
+				<a href="javascript:;">进入官网首页</a>
+			</div>
+		</div>
+		<div class="main_common ">
+			<div class="nav">
+				<ul class="nav_ul">
+					<li>
+						<div class="img customer"></div>
+						<a href="customer.html">客户统计</a>
+					</li>
+					
+					<li>
+						<div class="img baodan"></div>
+						<a href="channel-baodan.html">保单统计</a>
+					</li>
+					<li class="active">
+						<div class="img passport"></div>
+						<a href="channel-passport.html">修改密码</a>
+					</li>
+					<li>
+						<div class="img order" style="top: 5px;" >
+							<img  src="../img/order2.png"/>
+							
+						</div>
+						<a href="channel-message.html" style="margin-left: -2px;vertical-align: middle;margin-top:30px ;">订单统计</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content_common">
+				<p class="all_tip">修改成功</p>
+				<div class="position_now">
+					<span class="position-title">当前位置：</span>
+					<a href="channel-passport.html" class="position_local">修改密码</a>
+				</div>
+				<div class="passport_cont">
+					<p class="passport_cont_top">账号：<span>admin</span></p>
+					<form class="myform">
+						<div class="change-cont">
+							<div class="passport_cont_tex">
+								
+								<input class="type_password" placeholder="请输入当前密码" type="password"  datatype="*" nullmsg="请输入当前密码" />
+								<input type="text" placeholder="请输入当前密码" class="hide-put"/>
+							</div>
+							<div class="passport_cont_tex">
+								
+								<input class="type_password " placeholder="请输入新密码" type="password"  datatype="*" nullmsg="请输入新密码"/>
+								<input type="text" placeholder="请输入新密码" class="hide-put"/>
+							</div>
+							<div class="passport_cont_tex">
+								
+								<input class="type_password "placeholder="再次确认密码" type="password"  datatype="*" nullmsg="请再次输入新密码"/>
+								<input type="text" placeholder="再次确认密码" class="hide-put"/>
+							</div>
+							<div class="cont-btn passport_cont_btn">确认修改</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/Validform_ncr_min.js" ></script>
+<script src="../../js/placeholder.js"></script>
+<script src="../js/channel.js"></script>
+<script>
+	$(".myform").Validform({
+		tiptype: 3,
+	})
+</script>
+

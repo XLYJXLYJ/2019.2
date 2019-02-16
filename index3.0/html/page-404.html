@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招-出错了！</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pageMiss.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="contents">
+			<div class="content">
+				<div class="left">
+					<div class="left-div1">404</div>
+					<div class="left-div2">抱歉，出现错误了！</div>
+					<ul class="content-ul">
+						<li>网速可能过慢或者网络中断</li>
+						<li>可能页面已删除</li>
+						<li>这个页面太受欢迎了，太多人在访问</li>
+					</ul>
+					<a class="content-a" href="#">重新加载</a>
+				</div>
+				<div class="right">
+					<img src="../img/404.png" />
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script>
+	$(function(){
+		$("#header").load("header.html",get);
+		$("#footer").load("footer.html"); 
+	})
+</script>

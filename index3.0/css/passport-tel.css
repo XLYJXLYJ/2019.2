@@ -1,0 +1,100 @@
+.hide{display: none;}
+.contents{
+    padding: 50px 0;
+    background-color: #e9e9f4;
+}
+.content{
+	width: 800px;
+	height: 635px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.cont-head{
+	height: 50px;
+	background-color: #f4f4f5;
+}
+.cont-head div{
+	line-height: 50px;
+}
+.head-div1{
+	float: left;
+	font-size: 20px;
+    padding-left: 22px;
+}
+.head-div2{
+	float: right;
+	padding-right: 22px;
+}
+.cont-nav{
+    height: 66px;
+    text-align: center;
+    border-bottom: 1px solid #ebebf5;
+}
+.cont-nav span{
+	font-size: 17px;
+    margin-top: 40px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    display: inline-block;
+}
+.cont-nav .nav-a1{margin-right: 100px;}
+.choose{border-bottom: 2px solid #524ae7;}
+.content-cont{
+    width: 360px;
+    margin: 30px auto;
+}
+.Validform_checktip{
+	height: 30px;
+}
+.content-cont input{
+	/*height: 40px;*/
+	padding:11px 0 11px 10px;
+	border: 1px solid #ebebf5;
+}
+.getCode input{
+    width: 210px;
+    outline: none;
+}
+.cont-btn{
+	height: 40px;
+	color: #fff;
+	background-color: #524ae7;
+	cursor: pointer;
+}
+.cont-btn:hover {background-color:#4037ed}
+.getCode .cont-btn{
+	border: none;
+	width: 120px;
+	text-align: center;
+    line-height: 40px;
+    display: inline-block;
+	margin-left: 12px;
+}
+#xinxi{margin-top: 5px;margin-bottom: 66px;}
+.cont-tex{position:relative;}
+.cont-tex input{width: 350px;}
+.getCode1{float: left;}
+.getCode2{
+	float: right;
+	border: 1px solid #ebebf5;
+}
+.getCode2 img{
+	width: 120px;
+	height: 35px;
+}
+.content-cont .but-ok{
+	font-size: 16px;
+	margin-top: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+}
+.Validform_checktip {
+    display: block;
+    color: red;
+    margin-left: 10px;
+    line-height: 30px;
+}
+
+
+.agentPassword {padding: 91px 0;}

@@ -1,0 +1,33 @@
+.contents{width:100%;background:#524ae7 ;height:100vh;}
+.content{position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%); margin:0 auto;height:700px;width:1200px;background: url(../img/Banner.jpg) no-repeat;background-size:cover ;}
+.login{width:499px;float:right;margin-top: 71px;background: #eaeaf6;border-radius: 4px;}
+.content_top{border-radius:3px 3px 0 0;height:53px;line-height:53px;width:100%;background: #fb6f00;text-align: center;font-size: 20px;color:#fff}
+.login_contents{padding:41px 74px 65px 77px;}
+.login_content_left{float:left;width:40px;height:32px;background: #5c5869;text-align: center;padding-top: 8px;display:block;}
+.login_contents li{margin-bottom: 30px;position:relative;}
+.login_contents .last_li{margin-bottom: 17px;}
+.login_content_right{float:left;height:40px;width:300px;position:relative;}
+.login_content_right input{font-size: 14px;border:0;width:100%;height:38px;line-height: 38px;padding-left: 10px;box-sizing: border-box;}
+.Validform_checktip{display:block;color:red;margin-left: 11px;line-height: 30px;}
+.login_content .last_input input{width:150px;float:left;}
+.last_input img{float:right;width:128px;height:42px;}
+.forget_password a{padding: 0 6px;color:#35313f;}
+.forget_password {margin-top: 20px;}
+.forget_password .first_forget{color:#727689;text-decoration: underline;}
+.start_login{ cursor:pointer;font-size:16px;background: #fb6f00;text-align: center;line-height: 43px;height:43px;width:164px;border-radius: 4px;margin-top:34px;color:#fff;}
+/*渠道登录*/
+/*.topDivL {width: 140px;height: 32px;margin-top: 28px;float: left;background: url(../img/agentlogo.png) no-repeat;}
+.topDivR {line-height: 88px;}*/
+.agentContent {background-color: #e9e9f4;height: 817px;}
+.agentContent .content {height: 780px;background: url(../img/agentBanner.png) left center no-repeat;}
+.agentContent .login {background-color: #fff;margin-top: 146px;}
+.agentContent .content_top {background-color: #524ae7;}
+.agentContent .login_content_left {background-color: #e3e7f1;}
+.agentContent .login_content_right input {height: 40px;line-height: 40px;border: 1px solid #e3e7f1;}
+.agentContent .Validform_checktip {height: 30px;line-height: 24px;}
+.agentContent .last_input img{height: 40px;border: 1px solid #ebebf5;}
+.agentContent .first_forget{color: #b1afbb;text-decoration: none;margin-left: 32px;}
+.agentContent .first_forget:hover {color: #35313f;text-decoration: underline;}
+.password_yes {width: 14px;height: 14px;margin-right: 6px;vertical-align: middle;}
+.agentContent .start_login {width: 100%;background-color: #524ae7;}
+.start_register {text-align: right;color: #727689;font-size: 12px;margin-top: 22px;}
