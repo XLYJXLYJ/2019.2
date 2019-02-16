@@ -1,0 +1,6327 @@
+			/**登录**/
+			
+			.main {
+				min-height: 800px;
+				clear: both;
+				overflow: hidden;
+			}
+			
+			.design-bj {
+				background: url(../images/design-gj.jpg) top center no-repeat;
+				padding: 135px 0;
+				overflow: hidden;
+			}
+			
+			.design-bj .design-box {
+				width: 500px;
+				height: 437px;
+				border-radius: 5px;
+				margin: 0 auto;
+				background: #fff;
+			}
+			
+			.design-bj .design-box h2 {
+				line-height: 53px;
+				background: #1a63b2;
+				color: #fff;
+				border-radius: 5px 5px 0 0;
+				font-size: 20px;
+				text-align: center;
+			}
+			
+			.design-box form {
+				margin: 40px 75px 65px 75px;
+			}
+			
+			.design-box form .form-group {
+				overflow: hidden;
+				line-height: 40px;
+				margin-bottom: 20px;
+			}
+			
+			.design-box form .form-group input {
+				width: 305px;
+				height: 40px;
+				border-radius: 0px;
+				float: left;
+				border: 1px solid #ddd;
+			}
+			
+			.design-box form .code input {
+				width: 160px;
+				margin-right: 20px;
+			}
+			
+			.design-box form .code img,
+			.register-form form .code img {
+				width: 128px;
+				height: 40px;
+			}
+			
+			.design-box form .form-group label {
+				width: 40px;
+				height: 40px;
+				float: left;
+				text-align: center;
+				font-size: 24px;
+				color: #999;
+				background: #ddd url(../../pics/public/spring.png) no-repeat;
+			}
+			
+			.design-box form .form-group label.label-email {
+				background-position: -14px -146px;
+			}
+			
+			.design-box form .form-group label.label-password {
+				background-position: -14px -210px;
+			}
+			
+			.design-box form .form-group label.label-code {
+				background-position: -14px -272px;
+			}
+			
+			.design-box form .checkbox a.register {
+				float: right;
+			}
+			
+			.design-box form .checkbox {
+			margin-bottom: 20px;
+		}
+		
+		
+		
+		.design-message i {
+			width: 15px;
+			height: 20px;
+			display: inline-block;
+			background: url(../images/spring.png) no-repeat;
+			background-position: -404px -655px;
+			vertical-align: middle;
+			margin-right: 3px;
+		}
+		
+		.design-box>dl {
+			border-radius: 9px 9px 0px 0px;
+			background: #1a63b2;
+			height: 50px;
+			line-height: 50px;
+			margin-bottom: 50px;
+			font-size: 16px;
+		}
+		
+		.design-box>dl dd {
+			width: 50%;
+			float: left;
+			text-align: center;
+			color: #fff;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		
+		.design-box>dl dd:hover,
+		.design-box>dl dd.active {
+			background: #0956a8;
+			color: #337ab7;
+			color: #fff;
+			border-radius: 9px 0 0 0;
+		}
+		
+		.design-box>dl dd:last-child:hover,
+		.design-box>dl dd:last-child.active {
+			border-radius: 0 9px 0 0;
+		}
+		
+		.design-box form .form-group label.label-phone {
+			background-position: -390px -638px;
+		}
+		
+		.design-box .design-contact .code-message input {
+			width: 190px;
+		}
+		
+		.design-contact {
+			position: relative;
+		}
+		
+		.design-contact .checkbox-message {
+			position: absolute;
+			top:130px;
+			right:115px;
+		}
+			/**注册**/
+			
+			.register_img {
+				background: url(../../pics/qbzz/register.jpg) top center no-repeat;
+				height: 130px;
+				min-width: 1200px;
+			}
+			
+			.register-form form {
+				margin: 50px 265px 80px 265px;
+			}
+			
+			.register-form_a form {
+				margin: 50px 230px 80px 230px;
+			}
+			
+			.register-form_a form .span_color {
+				color: #999;
+			}
+			
+			.register-h4 {
+				border-bottom: 1px solid #ddd;
+				padding-bottom: 10px;
+				margin-bottom: 30px;
+			}
+			
+			.register-h4 i,
+			.Upload_01 p i {
+				background: url(../../pics/public/spring.png) no-repeat;
+				;
+				width: 30px;
+				height: 25px;
+				display: inline-block;
+				vertical-align: sub;
+			}
+			
+			.register-h4 i.account-i {
+				background-position: -112px -112px;
+			}
+			
+			.register-form form .form-group {
+				margin-bottom: 15px;
+			}
+			
+			.register-form form .form-group label {
+				width: 155px;
+				text-align: right;
+				font-weight: normal;
+				float: left;
+				line-height: 40px;
+				height: 40px;
+			}
+			
+			.register-form form label span {
+				color: #db4d00;
+				margin-right: 5px;
+			}
+			
+			.register-form form .form-control {
+				width: 420px;
+				height: 40px;
+				border-radius: 0px;
+			}
+			
+			.Company_h4 {
+				margin-top: 20px;
+			}
+			
+			.Company_h4 i.account-i {
+				background-position: -112px -158px;
+			}
+			
+			.register-form form .checkbox {
+				padding-left: 155px;
+			}
+			
+			.register-form form::-webkit-input-placeholder {
+				/* WebKit browsers */
+				color: #ccc;
+			}
+			
+			.register-form form:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18 */
+				color: #ccc;
+			}
+			
+			.register-form form::-moz-placeholder {
+				/* Mozilla Firefox 19+ */
+				color: #ccc;
+			}
+			
+			.register-form form:-ms-input-placeholder {
+				/* Internet Explorer 10+ */
+				color: #ccc;
+			}
+			
+			.register-form .design-btn {
+				margin: 25px 0 0 84px;
+			}
+			
+			.Cover-form-group-b .add_tab {
+				margin-left: 5px;
+			}
+			
+			.register-form form .code input {
+				width: 273px;
+				margin-right: 20px;
+				float: left;
+			}
+			
+			.register-form .btn-group {
+				margin-right: 8px;
+			}
+			
+			.register-form .btn-lg {
+				width: 132px;
+				height: 40px;
+				border-radius: 0px;
+				padding: 0px;
+				font-size: 14px;
+				text-align: left;
+				color: #999;
+				padding-left: 10px;
+			}
+			
+			.register-form .btn-group span {
+				float: right;
+				margin: 8px 10px 0 0;
+			}
+			/**添加承保中心**/
+			
+			.Cover-h4 i.account-i {
+				background-position: -112px -197px;
+			}
+			
+			.Cover-h4-b i.account-i {
+				background-position: -112px -237px;
+			}
+			
+			.Cover-form-group .btn-lg,
+			.Cover-form-group .dropdown-menu {
+				width: 420px;
+			}
+			
+			.register-form .Cover-btn {
+				margin-top: 15px;
+			}
+			
+			.register-form form .Cover-radio .radio-inline {
+				width: auto;
+			}
+			/**验证邮件**/
+			
+			.mail-code {
+				padding: 80px 0;
+				min-height: 500px;
+				color: #666;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.mail-code p a {
+				color: #1a63b0;
+				font-size: 18px;
+			}
+			
+			.mail-code .mail-code-color {
+				font-size: 16px;
+			}
+			
+			.mail-code .design-btn {
+				float: left;
+				margin-left: 366px;
+			}
+			
+			.box-warp {
+				display: inline-block;
+				float: left;
+				padding-top: 25px;
+				font-size: 16px;
+				margin-left: 30px;
+				width: 280px;
+			}
+			
+			.box-warp:hover .box {
+				display: block;
+			}
+			
+			.box-warp .box {
+				padding: 10px 20px;
+				border: 1px solid #ddd;
+				background: #fff;
+				font-size: 14px;
+				display: none;
+				position: relative;
+			}
+			
+			.box-warp .box a {
+				color: #1a63b0;
+				text-decoration: underline;
+			}
+			
+			.box-warp i {
+				font-size: 14px;
+				color: #ddd;
+				position: absolute;
+				top: -11px;
+				left: 50%;
+				margin-left: -10px;
+			}
+			/**参保企业用户**/
+			
+			.breadcrumb {
+				padding: 0px;
+				margin-bottom: 0px;
+			}
+			
+			.information ol {
+				line-height: 74px;
+				background: #fbfbfb;
+			}
+			
+			.breadcrumb>li+li:before {
+				content: ">";
+			}
+			
+			.information ol li.active {
+				color: #1a63b1;
+			}
+			
+			.information_left {
+				overflow: hidden;
+				border: 1px solid #ddd;
+				width: 200px;
+				float: left;
+			}
+			
+			.information_left ul {
+				background: #fff;
+			}
+			
+			.information_left li {
+				border-bottom: 1px solid #ddd;
+				color: #666;
+				cursor: pointer;
+			}
+			
+			.information_left li a.active_a {
+				color: #337ab7;
+			}
+			
+			.information_left ul {
+				margin: 0px;
+			}
+			
+			.information_left li span {
+				line-height: 45px;
+				padding-left: 30px;
+			}
+			
+			.information_left li:hover>a,
+			.information_left li>a.active {
+				background: #1a63b1;
+				display: block;
+				color: #fff;
+			}
+			
+			.information_left li span i,
+			.add-Policy-box h2 i {
+				width: 23px;
+				height: 23px;
+				background: url(../../pics/public/spring.png) no-repeat;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+			
+			.information_left li span i {
+				background-position: -227px -387px;
+			}
+			
+			.information_left li:hover span i,
+			.information_left li>a.active span i {
+				background-position: -309px -387px;
+			}
+			
+			.information_left li.icon-a span i {
+				background-position: -227px -432px;
+			}
+			
+			.information_left li.icon-a:hover span i,
+			.information_left li.icon-a>a.active span i {
+				background-position: -309px -432px;
+			}
+			
+			.information_left li.icon-b span i {
+				background-position: -227px -277px;
+			}
+			
+			.information_left li.icon-b:hover span i,
+			.information_left li.icon-b>a.active span i {
+				background-position: -309px -277px;
+			}
+			
+			.information_left li.icon-c span i {
+				background-position: -227px -129px;
+			}
+			
+			.information_left li.icon-c:hover span i,
+			.information_left li.icon-c>a.active span i {
+				background-position: -309px -129px;
+			}
+			
+			.information_left li.icon-d span i {
+				background-position: -227px -173px;
+			}
+			
+			.information_left li.icon-d:hover span i,
+			.information_left li.icon-d>a.active span i {
+				background-position: -309px -173px;
+			}
+			
+			.information_left li.icon-e span i {
+				background-position: -227px -219px;
+			}
+			
+			.information_left li.icon-e:hover span i,
+			.information_left li.icon-e>a.active span i {
+				background-position: -309px -219px;
+			}
+			
+			.information_left li.icon-f span i {
+				background-position: -227px -325px;
+			}
+			
+			.information_left li.icon-f:hover span i,
+			.information_left li.icon-f>a.active span i {
+				background-position: -309px -325px;
+			}
+			
+			.information_left li.icon-g span i {
+				background-position: -227px -353px;
+			}
+			
+			.information_left li.icon-g:hover span i,
+			.information_left li.icon-g>a.active span i {
+				background-position: -309px -353px;
+			}
+			
+			.information_left li.icon-h span i {
+				background-position: -227px -465px;
+			}
+			
+			.information_left li.icon-h:hover span i,
+			.information_left li.icon-h>a.active span i {
+				background-position: -309px -465px;
+			}
+			
+			.information_left li dl {
+				padding-top: 10px;
+				border-top: 1px dotted #ddd;
+				margin: 0px 20px 10px;
+			}
+			
+			.information_left li dd {
+				line-height: 36px;
+				padding-left: 44px;
+			}
+			
+			.information_left li:hover dl {
+				display: block;
+			}
+			
+			.information_right {
+				width: 958px;
+				height: auto;
+				min-height: 800px;
+				padding-bottom: 80px;
+				border: 1px solid #ddd;
+				float: right;
+			}
+			
+			.information_img {
+				border-bottom: 1px solid #ddd;
+				padding: 16px 30px;
+				overflow: hidden;
+				color: #666;
+			}
+			
+			.information_img_left {
+				width: 507px;
+				float: left;
+				border-right: 1px solid #ddd;
+			}
+			
+			.information_img_left .container {
+				width: 110px;
+				float: left;
+			}
+			
+			.information_img_left .container img {
+				width: 110px;
+				height: 110px;
+				border-radius: 110px;
+				border: 2px solid #dddddd;
+				float: left;
+			}
+			
+			.information_img_left ul {
+				width: 360px;
+				float: left;
+				margin: 10px 0 0 30px;
+			}
+			
+			.information_img_left ul li {
+				margin-bottom: 8px;
+			}
+			
+			.information_img_left ul strong {
+				font-size: 22px;
+				font-weight: normal;
+				margin-right: 8px;
+			}
+			
+			.information_img_left ul i {
+				width: 108px;
+				height: 21px;
+				background: url(../../pics/public/spring.png) no-repeat;
+				background-position: -378px -124px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 5px;
+			}
+			
+			.information_img_left ul i.span-a {
+				background-position: -378px -149px;
+			}
+			
+			.information_img_left .file-preview-frame {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			
+			.Give {
+				padding: 0 5px;
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.Recharge {
+				text-decoration: underline;
+				color: #1a63b1;
+				margin-left: 75px;
+			}
+			
+			.information_img_left ul .Identification {
+				background: url(../../pics/public/spring.png) no-repeat;
+				width: 14px;
+				height: 14px;
+				background-position: -407px -35px;
+				display: inline-block;
+				margin-right: 10px;
+			}
+			
+			.Give:hover {
+				color: #fff;
+			}
+			
+			.information_img_left ul i.span-b {
+				background-position: -378px -173px;
+			}
+			
+			.information_img_left ul i.span-c {
+				background-position: -378px -198px;
+			}
+			
+			.information_img_left ul i.span-d {
+				background-position: -378px -222px;
+			}
+			
+			.information_img_left ul span {
+				margin-right: 45px;
+			}
+			
+			.information_img_right {
+				width: 385px;
+				float: left;
+			}
+			
+			.information_img_right li {
+				width: 50%;
+				padding-left: 50px;
+				float: left;
+				line-height: 30px;
+			}
+			
+			.information_img_right li label {
+				font-size: 16px;
+				margin-left: 5px;
+				font-weight: normal;
+			}
+			
+			.information_img_right li.information-li label {
+				color: #1a63b1;
+			}
+			
+			.information_img_right li.information-li label span {
+				font-size: 24px;
+			}
+			
+			.information_bottom li label em {
+				color: #db4d00;
+			}
+			
+			.information_bottom ul {
+				background: #fff;
+				margin-bottom: 0px;
+				padding: 40px 0;
+			}
+			
+			.information_bottom label {
+				width: 168px;
+				text-align: right;
+				font-weight: normal;
+				color: #666;
+				float: left;
+				line-height: 36px;
+			}
+			
+			.information_bottom input {
+				width: 348px;
+				height: 36px;
+				border: 1px solid #ddd;
+				padding-left: 10px;
+				margin-left: 5px;
+			}
+			
+			.information_bottom .select-d {
+				width: 348px;
+				height: 36px;
+				border: 1px solid #ddd;
+				padding-left: 10px;
+				margin-left: 5px;
+				border-radius: 0px;
+				float: left;
+			}
+			
+			.information_bottom textarea {
+				width: 349px;
+				height: 130px;
+				border: 1px solid #ddd;
+				vertical-align: middle;
+				margin-left: 5px;
+			}
+			
+			.information_bottom li {
+				padding-bottom: 10px;
+				overflow: hidden;
+			}
+			
+			.information_bottom .design-btn {
+				padding: 0 30px;
+				margin: 20px 0 0 180px;
+			}
+			
+			.information_bottom .Sex-radio {
+				line-height: 36px;
+			}
+			
+			.information_bottom .Sex-radio input {
+				margin-top: 0px;
+			}
+			
+			.New-center {
+				background: #fff;
+				padding: 10px 20px 30px 20px;
+			}
+			
+			.New-center h4 {
+				border-bottom: 1px solid #ddd;
+				line-height: 40px;
+				padding: 0 10px;
+			}
+			
+			.New-center li {
+				line-height: 40px;
+				border-bottom: 1px dotted #ddd;
+				padding: 0 10px;
+				position: relative;
+			}
+			
+			.New-center li span {
+				position: absolute;
+				right: 0px;
+				color: #999;
+			}
+			
+			.New-center li span b {
+				font-weight: normal;
+			}
+			
+			.select-radio {
+				color: #666;
+				padding: 40px 273px 20px 273px;
+			}
+			
+			.select-radio p {
+				line-height: 36px;
+			}
+			
+			.select-radio li {
+				float: left;
+				margin-right: 100px;
+			}
+			
+			.select-radio input {
+				vertical-align: sub;
+				margin-right: 5px;
+			}
+			
+			.address-input {
+				margin: 10px 0 0 155px;
+			}
+			
+			.register-form form .design-input {
+				width: 276px;
+			}
+			
+			.register-form form .bank span {
+				width: 60px;
+				text-align: right;
+				display: inline-block;
+				margin-right: 10px;
+			}
+			
+			.register-form form .bank input {
+				width: 350px;
+				display: inline-block;
+				margin-bottom: 10px;
+			}
+			
+			.register-form form .bank-span {
+				margin-left: 159px;
+			}
+			
+			.register-form form .bank input.bank-input {
+				width: 173px;
+			}
+			
+			.bank-textarea {
+				width: 420px;
+				height: 100px;
+				vertical-align: middle;
+				border: 1px solid #ddd;
+			}
+			
+			.Cover-h4-b span {
+				color: #999;
+				font-size: 14px;
+			}
+			
+			.register-form form .Cover-form-group-b .checkbox {
+				padding: 0px;
+				margin-bottom: 10px;
+				line-height: 40px;
+				margin-top: 10px;
+				border-bottom: 1px dotted #ddd;
+				padding-bottom: 20px;
+			}
+			
+			.register-form form .Cover-form-group-b .checkbox_a {
+				width: 916px;
+			}
+			
+			.register-form form .Cover-form-group-b .checkbox_a input {
+				padding-left: 5px;
+			}
+			
+			.Underwriting {
+				margin: 10px 0 0 28px;
+			}
+			
+			.register-form form .Cover-form-group-b .checkbox label {
+				text-align: left;
+			}
+			
+			.register-form form .Cover-form-group-b .checkbox label input {
+				margin-right: 5px;
+			}
+			
+			.cb-input {
+				height: 40px;
+				border: 1px solid #ddd;
+				margin-left: 10px;
+				width: 165px;
+			}
+			
+			.Cover-div {
+				float: left;
+				width: 100%;
+				margin: -20px 0 0 80px;
+			}
+			/*******保险标管理（报价）*********/
+			
+			.offer-right {
+				border: 0px;
+				text-align: right;
+			}
+			
+			.offer-top {
+				border: 1px solid #ddd;
+				padding: 20px;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			
+			.offer-top li {
+				width: 33%;
+				float: left;
+				text-align: left;
+				line-height: 30px;
+				color: #666;
+			}
+			
+			.span-color {
+				color: #999
+			}
+			
+			.span-color-b {
+				color: #1a63b1;
+			}
+			
+			.offer-h5 {
+				height: 40px;
+				margin: 30px 0 20px 0;
+				padding-left: 10px;
+				line-height: 40px;
+				text-align: left;
+				background: #f1f1f1;
+			}
+			
+			.offer-h5_a {
+				background: #eee;
+				border: 1px solid #ddd;
+				font-size: 16px;
+			}
+			
+			.offer-information ul {
+				overflow: hidden;
+			}
+			
+			.offer-information li {
+				width: 50%;
+				text-align: left;
+				padding-left: 55px;
+				line-height: 40px;
+				float: left;
+				color: #666;
+			}
+			
+			.offer-information li:last-child {
+				width: 100%;
+			}
+			
+			.offer-information li:last-child span,
+			.offer-information li.bx-li .span-color {
+				width: 89%;
+				position: relative;
+				height: 60px;
+				display: block;
+				float: right;
+				line-height: 30px;
+				padding-top: 5px;
+			}
+			
+			.offer-information li:last-child span a,
+			.offer-information li.bx-li .span-color a {
+				padding-left: 69px;
+				background: #fbfbfb;
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				line-height: 20px;
+				cursor: pointer;
+			}
+			
+			.offer-information li.bx-li-a dl {
+				margin-left: 195px;
+			}
+			
+			.offer-information li.bx-li-a dl:first-child {
+				margin-top: -34px;
+			}
+			
+			.offer-information li.detail_people dl {
+				margin-left: 95px;
+			}
+			
+			.offer-information li.ml dl {
+				margin-left: 70px;
+			}
+			
+			.offer-information li.detail dl {
+				margin-left: 110px;
+			}
+			
+			.offer-information li.detail_people dd ul {
+				border-bottom: 1px dotted #ddd;
+			}
+			
+			.offer-information li.detail_people li {
+				width: 25%;
+				padding-left: 0px;
+			}
+			
+			.offer-information li.bx-li-a dd {
+				line-height: 30px;
+			}
+			
+			.offer-h4 {
+				font-size: 16px;
+				color: #333;
+				text-align: left;
+				padding-left: 50px;
+				margin-top: 30px;
+			}
+			
+			.offer-h4-ul li:last-child {
+				width: 50%;
+			}
+			
+			.offer-form li {
+				text-align: left;
+				color: #666;
+				padding-left: 50px;
+				line-height: 40px;
+				margin-bottom: 15px;
+			}
+			
+			.offer-form li em {
+				color: #db4d00;
+				margin: 0 5px;
+			}
+			
+			.offer-form li input {
+				border: 1px solid #ddd;
+			}
+			
+			.offer-form li .btn-group {
+				border-radius: 0px;
+			}
+			
+			.offer-form li .offer-a {
+				width: 101px;
+			}
+			
+			.offer-form li .offer-b,
+			.offer-form li .offer-c {
+				width: 114px;
+				margin-right: 9px;
+			}
+			
+			{
+				width: 114px;
+				margin-right: 9px;
+			}
+			
+			.offer-form li .offer-c {
+				border-radius: 0px;
+				text-align: right;
+			}
+			
+			.offer-form li .dropdown-menu {
+				width: 114px;
+				min-width: 114px;
+			}
+			
+			.offer-form li textarea {
+				width: 590px;
+				color: #999;
+				padding-left: 10px;
+				height: 114px;
+				border: 1px solid #ddd;
+				vertical-align: middle;
+			}
+			
+			.offer-form li .checkbox {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0px;
+				vertical-align: -1px;
+			}
+			
+			.offer-form li .checkbox_a .offer-d {
+				border: 1px solid #ddd
+			}
+			
+			.offer-form li .checkbox input {
+				margin-top: 0px;
+				vertical-align: middle;
+				border: 0px;
+			}
+			
+			.offer-form li .checkbox .C-input {
+				border: 1px solid #ddd;
+			}
+			
+			.offer-form li .checkbox span {
+				color: #999;
+				margin-left: 20px;
+			}
+			
+			.offer-form li .checkbox .span_color {
+				color: #db4d00;
+				display: inline-block;
+			}
+			
+			.offer-form li.Payment_show .checkbox span.span-data {
+				margin-left: 0px;
+			}
+			
+			.offer-form li .checkbox .checkbox-b {
+				vertical-align: middle;
+			}
+			
+			.offer-form li .checkbox-c {
+				margin: -20px 0 0 16px;
+			}
+			
+			.offer-form li .checkbox-c input:nth-child(2) {
+				border: 1px solid #ddd;
+			}
+			
+			.add_tab {
+				width: 20px;
+				height: 20px;
+				background: #1a63b1;
+				color: #fff;
+				border-radius: 20px;
+				display: inline-block;
+				line-height: 17px;
+				text-align: center;
+				font-size: 20px;
+				cursor: pointer;
+			}
+			
+			.offer-form li .offer-d {
+				width: 120px;
+				height: 40px;
+				margin: 0 5px;
+			}
+			
+			.Single-batch .offer-form li .offer-d {
+				margin-left: 0px;
+			}
+			
+			.offer-form li .data_01 {
+				width: 180px;
+			}
+			
+			.premium-box .offer-form li .offer-d {
+				width: 159px;
+			}
+			
+			.offer-form li dl {
+				padding: 15px 0 0 20px;
+			}
+			
+			.offer-form li input {
+				padding-left: 5px;
+			}
+			
+			.offer-form li .bank {
+				overflow: hidden;
+			}
+			
+			.offer-form li .bank li {
+				padding-left: 0px;
+			}
+			
+			.offer-form li .bank span {
+				float: left;
+				width: 128px;
+				text-align: right;
+				margin-bottom: 10px;
+			}
+			
+			.offer-form li .bank input {
+				width: 307px;
+				height: 40px;
+				border-radius: 0px;
+				float: left;
+				margin-right: 5px;
+			}
+			
+			.offer-button-b {
+				padding-top: 40px;
+				text-align: center;
+			}
+			
+			.offer-button-b .design-btn:first-child {
+				background: #0794cf;
+			}
+			
+			.offer-button-b .text_a {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			
+			.offer-button-b .design-btn {
+				margin: 0 5px;
+			}
+			
+			.offer-form li .offer-f {
+				width: 60px;
+				height: 45px;
+				margin: 0 5px;
+			}
+			
+			.span-data {
+				position: relative;
+			}
+			
+			.span-data i {
+				position: absolute;
+				right: 15px;
+				font-size: 18px;
+				color: #999;
+			}
+			
+			.add-dl dd {
+				margin: 5px 0;
+				position: relative;
+			}
+			
+			.add-dl dd .span-data .Validform_checktip {
+				position: absolute;
+				right: -211px;
+				height: 40px;
+				line-height: 40px;
+				background: #fff;
+			}
+			
+			.Release-right {
+				text-align: left;
+			}
+			
+			.offer-right .offer-button {
+				text-align: right;
+			}
+			
+			.Release-right input {
+				border: 1px solid #ddd;
+				height: 40px;
+				padding-left: 10px;
+			}
+			
+			.Release-top {
+				border: 1px solid #ddd;
+				text-align: left;
+				padding: 27px 85px;
+			}
+			
+			.Release-right em {
+				color: #db4d00;
+			}
+			
+			.Release-type {
+				color: #666;
+				margin: 30px 0 20px 0;
+			}
+			
+			.Release-type a {
+				color: #1a63b1;
+			}
+			
+			.Release-type .btn-group button {
+				width: 180px;
+				border-radius: 0px;
+				height: 40px;
+			}
+			
+			.Release-type .btn-group .dropdown-menu {
+				width: 180px;
+			}
+			
+			.Release-type .btn-group button span {
+				float: right;
+			}
+			
+			.Release-type .dropdown-menu {
+				width: 240px;
+			}
+			
+			.Release_tab,
+			.Release_tab-f {
+				border-bottom: 1px solid #ddd;
+				overflow: hidden;
+			}
+			
+			.Release_tab li,
+			.Release_tab-f li,
+			.Release_tab_02 li {
+				width: 123px;
+				line-height: 37px;
+				margin-right: 10px;
+				cursor: pointer;
+				text-align: center;
+				border: 1px solid #ddd;
+				float: left;
+				margin-bottom: -1px;
+			}
+			
+			.Release_tab li:hover,
+			.Release_tab li.active,
+			.Release_tab-f li.active,
+			.Release_tab-f li:hover,
+			.Release_tab_02 li:hover,
+			.Release_tab_02 li.active {
+				color: #fff;
+				background: #1a63b1;
+			}
+			
+			.Release_tab li.active a,
+			.Release_tab li:hover a {
+				color: #fff;
+			}
+			
+			.Release-a .form-group label {
+				font-weight: normal;
+				float: left;
+				color: #666;
+				width: 200px;
+				text-align: right;
+				float: left;
+				line-height: 40px;
+			}
+			
+			.Release-a input {
+				width: 592px;
+				border-radius: 0px;
+			}
+			
+			.Release-a .money-a input {
+				width: 501px;
+				float: left;
+			}
+			
+			.Release-a .money-a div {
+				width: 80px;
+				margin-left: 10px;
+			}
+			
+			.Release-a .money-a button {
+				width: 80px;
+				height: 40px;
+				border-radius: 0px;
+				border: 1px solid #ddd;
+			}
+			
+			.Release-a .money-a button span {
+				float: right;
+			}
+			
+			.Release-a .money-a .dropdown-menu {
+				width: 80px;
+			}
+			
+			.Release-a .money-a textarea {
+				width: 592px;
+				height: 114px;
+				borde: 1px solid #ddd;
+				padding-left: 10px;
+			}
+			
+			.money-textarea {
+				width: 592px;
+				height: 114px;
+				border: 1px solid #ddd;
+				padding-left: 10px;
+				line-height: 30px;
+				color: #999;
+				vertical-align: middle;
+			}
+			
+			.btn-group button {
+				border-radius: 0px;
+				width: 592px;
+				height: 40px;
+			}
+			
+			.btn-group button span {
+				float: right;
+			}
+			
+			.btn-group .dropdown-menu {
+				width: 592px;
+			}
+			
+			.Release-a .data-input {
+				width: 200px;
+				float: left;
+				margin-right: 5px;
+			}
+			
+			.Release-a .data-input:last-child {
+				width: 400px;
+			}
+			
+			.Release-a .data-input input {
+				width: 125px;
+			}
+			
+			.Release-a .data-input:last-child input {
+				width: 90px;
+				margin-right: 5px;
+			}
+			
+			.Upload .close_01 {
+				width: 60px;
+				height: 40px;
+				background: #e7e7e7;
+				display: block;
+				float: left;
+				border-radius: 4px;
+				border: 1px solid #d2d2d2;
+				text-align: center;
+				line-height: 40px;
+				color: #666;
+				margin-left: 5px;
+				cursor: pointer;
+			}
+			
+			.Upload .close_01:hover {
+				background: #1962b1;
+				color: #fff;
+				border: 1px solid #1962b1;
+			}
+			
+			.Upload a {
+				text-decoration: underline;
+				float: left;
+				line-height: 40px;
+				margin-left: 5px;
+			}
+			
+			.Upload-text {
+				width: 501px;
+				float: left;
+			}
+			
+			.Upload button {
+				height: 40px;
+				color: #666;
+				float: left;
+				border: 1px solid #d2d2d2;
+				margin-left: 10px;
+			}
+			
+			.Upload .file_upload1-queue .data {
+				height: 40px;
+				line-height: 40px;
+				float: right;
+			}
+			
+			.Release-a .Upload-button {
+				width: 760px;
+				position: absolute;
+				top: 0px;
+				left: -75px;
+				border: 0px;
+				padding-top: 8px !important;
+				background: none;
+				opacity: 0;
+			}
+			
+			.Upload i {
+				width: 7px;
+				height: 38px;
+				background: #fff;
+				border-left: 1px solid #ddd;
+			}
+			
+			.add-Upload>input {
+				width: 180px;
+				height: 40px;
+				float: left;
+				margin-right: 5px;
+			}
+			
+			.add-Upload-text {
+				padding: 25px 0 0 175px;
+			}
+			
+			.offer-design-btn {
+				margin: 30px 0 0 175px;
+			}
+			
+			.offer-design-btn_a {
+				margin: 30px 0 0 120px;
+			}
+			
+			.Release-ul-b {
+				margin-top: 15px;
+				color: #666;
+			}
+			
+			.Release-ul-b .radio input {
+				margin-top: -10px;
+				border: 0px;
+			}
+			
+			.Release-ul-b li {
+				margin-top: 25px;
+			}
+			
+			.Release-ul-b li span {
+				color: #999;
+			}
+			
+			.Release-sel {
+				overflow: hidden;
+			}
+			
+			.Release-sel-l {
+				padding-top: 40px;
+				width: 365px;
+				float: left;
+			}
+			
+			.Release-sel-l .Release-sel-div {
+				position: relative;
+				clear: both;
+			}
+			
+			.Release-sel-l .Release-sel-div .search-query {
+				width: 365px;
+				height: 40px;
+				background: #fbfbfb;
+			}
+			
+			.Release-sel-l .Release-sel-div i {
+				line-height: 40px;
+				position: absolute;
+				top: 0px;
+				right: 10px;
+				font-size: 20px;
+				color: #a0a0a0;
+				cursor: pointer;
+			}
+			
+			.Release-sel-l .Release-sel-contact {
+				width: 365px;
+				height: 169px;
+				border: 1px solid #ddd;
+				margin-top: 1px;
+				overflow: scroll;
+				padding: 15px 20px 0 20px;
+			}
+			
+			.Release-sel-l .Release-sel-contact span {
+				background: #fbfbfb;
+				border: 1px solid #ddd;
+				color: #999;
+				float: right;
+				margin-top: 8px;
+				display: none;
+			}
+			
+			.Release-sel-l .Release-sel-contact li {
+				overflow: hidden;
+				line-height: 36px;
+				cursor: pointer;
+			}
+			
+			.Release-sel-l .Release-sel-contact li div {
+				float: left;
+				height: 36px;
+				width: 240px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			.Release-sel-l .Release-sel-contact li:hover span {
+				display: block
+			}
+			
+			.Release-sel-l .Release-sel-contact li:hover span:hover {
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.Release-sel-r {
+				margin-left: 30px;
+			}
+			
+			.Release-title {
+				background: #1a63b1;
+				color: #fff;
+				padding-left: 10px;
+				line-height: 40px;
+				overflow: hidden;
+			}
+			
+			.Release-title li {
+				float: left;
+				padding: 0 15px;
+				cursor: pointer;
+			}
+			
+			.Release-title li:hover,
+			.Release-title li.active {
+				background: #0f57a4;
+			}
+			
+			.Release-sel-l .Release-sel-contact li img {
+				width: 47px;
+				height: 20px;
+				border: 1px solid #ddd;
+				margin-right: 5px;
+			}
+			
+			.Release-banner li {
+				width: 367px;
+				height: 89px;
+				background: url(../images/select-bj.jpg) no-repeat;
+			}
+			
+			.Release-banner {
+				margin-top: 20px;
+			}
+			
+			.Release-banner li {
+				padding: 15px;
+				float: left;
+				margin-right: 30px;
+			}
+			
+			.Release-banner li img {
+				width: 55px;
+				height: 55px;
+				border-radius: 55px;
+				float: left;
+			}
+			
+			.Release-banner li div {
+				width: 190px;
+				float: left;
+				margin-left: 10px;
+				color: #fff;
+			}
+			
+			.Release-banner li button {
+				border-radius: 5px;
+				background: #0799d4;
+				border: 1px solid #15bff7;
+				color: #fff;
+				padding: 0 20px;
+				line-height: 30px;
+				float: right;
+				margin-top: 15px;
+			}
+			
+			.Release-banner {
+				width: 100%;
+				display: block;
+				overflow: hidden;
+			}
+			
+			.product_form .step02 .Release-banner li a {
+				color: #fff;
+			}
+			
+			.Release-banner li:nth-child(2) {
+				background: url(../images/select-bj2.jpg) no-repeat;
+			}
+			
+			.Release-banner li:nth-child(2) button {
+				background: #0dbbb0;
+				border: 1px solid #16d9cc;
+			}
+			
+			.Release-design-btn {
+				margin-top: 30px;
+			}
+			
+			.Release-c {
+				margin-top: 30px;
+			}
+			
+			.offer-form input {
+				height: 40px;
+			}
+			
+			.Release-c .offer-form li .checkbox input {
+				margin-top: 0px;
+			}
+			
+			.Release-c .offer-form .Release-c-a input {
+				width: 191px;
+			}
+			
+			.register-form .bank span {
+				width: 0px;
+			}
+			
+			.address-email {
+				width: 560px;
+				overflow: hidden;
+				float: left;
+				margin-top: 0px;
+			}
+			
+			.register-form {
+				overflow: hidden;
+			}
+			
+			.register-form .checkbox {
+				float: left;
+			}
+			
+			.address-email li,
+			.address-email .form-group {
+				margin-bottom: 0px;
+			}
+			
+			.address-email li {
+				padding-left: 10px;
+			}
+			
+			.address-email .form-group label {
+				font-weight: normal;
+			}
+			
+			.address-email .form-group input {
+				border: 1px solid #ddd;
+			}
+			
+			.address-email .address-detail {
+				padding-left: 78px;
+				line-height: normal;
+				height: 40px;
+				margin-bottom: 5px;
+			}
+			
+			.address-email .address-detail input {
+				width: 420px;
+				border-radius: 0px;
+			}
+			
+			.offer-form li .checkbox .radio_a {
+				vertical-align: bottom;
+			}
+			
+			.offer-form li .checkbox-c {
+				padding-left: 17px;
+			}
+			
+			.label-a {
+				margin-right: 10px;
+			}
+			
+			.Billing-box {
+				height: 60px;
+			}
+			
+			.Billing-information {
+				width: 725px;
+				float: left;
+				height: 40px;
+				position: relative;
+			}
+			
+			.Billing-box .checkbox {
+				float: left;
+			}
+			
+			.Billing-box .btn-group {
+				vertical-align: -14px;
+			}
+			
+			.Billing-box .btn-group button {
+				margin-top: 10px;
+				width: 190px;
+			}
+			
+			.Billing-box .btn-group .dropdown-menu {
+				width: 190px;
+			}
+			
+			.Reward {
+				clear: both;
+			}
+			
+			.Reward span {
+				color: #999;
+			}
+			
+			.Reward span b {
+				color: #1a63b1;
+				font-size: 16px;
+			}
+			
+			.open-box {
+				overflow: hidden;
+			}
+			
+			.open-box .radio {
+				width: 80px;
+				float: left;
+				margin-top: 0px;
+			}
+			
+			.open-box .open {
+				float: left;
+			}
+			
+			.open-box .radio input {
+				margin-top: 0px;
+				borer: 0px;
+			}
+			
+			.open-box span {
+				color: #999;
+				margin-left: 5px;
+			}
+			
+			.Release-table td {
+				width: 200px;
+			}
+			
+			.Release-table td {
+				line-height: 40px;
+				text-align: center;
+			}
+			
+			.Release-table td button,
+			.Release-table td .dropdown-menu,
+			.Release-table td .btn-group {
+				width: 100px;
+				margin: 5px 50px
+			}
+			
+			.Release-table td .btn-group {
+				margin-left: 0px;
+			}
+			
+			.Release-table td .checkbox-sel {
+				width: 14px;
+				height: 14px;
+				margin-top: 12px;
+				border: 0px;
+			}
+			
+			.Release-table td .weight {
+				width: 100px;
+				margin: 5px 0 10px 45px;
+			}
+			
+			.Release-table tr td:first-child {
+				text-align: left;
+			}
+			
+			.detail-find {
+				width: 420px;
+				padding: 20px;
+				position: absolute;
+				top: 35px;
+				left: 50%;
+				border: 1px solid #ddd;
+				background: #fff;
+				margin-left: -100px;
+				display: none;
+			}
+			
+			.detail-find label {
+				font-weight: normal;
+				float: left;
+				width: 123px;
+				text-align: right;
+			}
+			
+			.detail-find input {
+				width: 240px;
+				margin-left: 10px;
+				float: left;
+			}
+			
+			.detail-find div {
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			
+			.detail-find-btn {
+				padding: 0;
+				width: 94px;
+				float: left;
+				margin: 0 5px;
+			}
+			
+			.detail-find-btn-a {
+				margin-left: 130px;
+			}
+			
+			.Billing-information-tab {
+				margin-left: 5px;
+			}
+			
+			.Cover-form-group .Cover-div button,
+			.Cover-form-group .Cover-div .dropdown-menu {
+				width: 150px;
+			}
+			
+			.Cover-div .cb-input-a {
+				width: 120px;
+				border: 1px solid #ddd;
+				height: 40px;
+			}
+			/*******草稿标********/
+			
+			.product-right {
+				border: 0px;
+				color: #666;
+			}
+			
+			.search-box input {
+				padding-left: 10px;
+			}
+			
+			.search-box span input,
+			.search-box .product-name {
+				width: 125px;
+				height: 36px;
+				line-height: 36px;
+				border: 1px solid #ddd;
+			}
+			
+			.search-box .product-name {
+				width: 150px;
+				margin-left: 10px;
+			}
+			
+			.search-box .design-btn {
+				height: 36px;
+				vertical-align: middle;
+				margin-left: 10px;
+				line-height: 36px;
+				padding: 0 30px;
+				background: #3facd9;
+			}
+			
+			.product-right>table {
+				margin-top: 30px;
+				margin-bottom: -1px;
+			}
+			
+			.product-right table {
+				border: 1px solid #ddd;
+			}
+			
+			.table> tbody> tr> th {
+				vertical-align: middle;
+			}
+			
+			.product-right table td,
+			.product-right table th {
+				height: 44px;
+				line-height: 20px !important;
+				text-align: center;
+				font-weight: normal;
+				padding: 0px !important;
+			}
+			
+			.product-right table tr td {
+				border-right: 1px solid #ddd;
+				height: 60px;
+				line-height: 24px !important;
+				background: #fff;
+				vertical-align: middle;
+			}
+			
+			.width-1 {
+				width: 130px;
+			}
+			
+			.width-2 {
+				width: 150px;
+			}
+			
+			.width-3 {
+				width: 200px;
+			}
+			
+			.width-4 {
+				width: 170px;
+			}
+			
+			.width-5 {
+				width: 90px;
+				word-break: break-all
+			}
+			
+			.width-6 {
+				width: 115px;
+			}
+			
+			.width-7 {
+				width: 119px;
+			}
+			
+			.width-8 {
+				width: 137px;
+			}
+			
+			.width-8-a {
+				width: 159px;
+			}
+			
+			.width-9 {
+				width: 59px;
+			}
+			/*.width-9 {
+	width: 608px;
+   }*/
+			
+			.width-10 {
+				width: 51px;
+			}
+			
+			.width-11 {
+				width: 75px;
+			}
+			
+			.width-12 {
+				width: 225px;
+			}
+			
+			.C-btn {
+				border-radius: 2px;
+				height: 23px;
+				line-height: 20px;
+				padding: 0px 10px;
+				margin: 0 2px;
+				color: #fff;
+				background: #1a63b1;
+			}
+			
+			.C-btn:hover,
+			.C-btn:visited {
+				color: #fff;
+			}
+			
+			.C-btn2 {
+				background: #b9b9b9;
+			}
+			
+			.C-btn3 {
+				background: #0794cf;
+			}
+			
+			.C-btn4 {
+				background: #11b0b6;
+			}
+			
+			.page {
+				text-align: right;
+				margin-top: 20px;
+			}
+			
+			.page li {
+				float: left;
+				margin-left: 5px;
+			}
+			
+			.page li a {
+				width: 33px;
+				height: 33px;
+				line-height: 33px;
+				border: 1px solid #e4e4e4;
+				text-align: center;
+				background: #fbfbfb;
+				display: block;
+				color: #666;
+			}
+			
+			.page li:hover a,
+			.page li.active a {
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.page li.page-li a {
+				width: 63px;
+			}
+			
+			.search-box .btn-group button,
+			.search-box .btn-group .dropdown-menu {
+				width: 122px;
+			}
+			
+			.search-box .btn-group-a button,
+			.search-box .btn-group-a .dropdown-menu {
+				width: 82px;
+			}
+			
+			.table {
+				margin: 0px;
+			}
+			
+			.Response {
+				
+				overflow: hidden;
+			}
+			
+			.product-right .Response {
+				margin-bottom: 20px;
+			}
+			
+			.Response table th {
+				text-align: left;
+				position: relative;
+			}
+			
+			.Response table th span {
+				padding-left: 15px;
+			}
+			
+			.show-btn {
+				width: 22px;
+				height: 22px;
+				border: 1px solid #ddd;
+				border-radius: 22px;
+				position: absolute;
+				right: 15px;
+				padding-left: 4px;
+				line-height: 24px;
+				top: 10px;
+				cursor: pointer;
+				color: #999;
+			}
+			
+			.show-btn:hover {
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.response-box .modal-header {
+				padding: 10px 15px;
+			}
+			
+			.response-box .modal-dialog {
+				width: 400px;
+			}
+			
+			.response-box .response-success {
+				font-size: 18px;
+				text-align: center;
+			}
+			
+			.response-box .modal-footer-b {
+				padding: 20px 130px;
+			}
+			
+			.response-box .text_01 {
+				padding: 30px;
+				line-height: 30px;
+				color: #666;
+			}
+			
+			.response-box .text_01 a {
+				color: #999;
+			}
+			
+			.response-box .text_01 a:hover {
+				color: #1a63b1;
+			}
+			
+			.response-box .text_01 label {
+				font-weight: normal;
+			}
+			
+			.bargaining-box .modal-footer-b {
+				padding: 20px 90px;
+			}
+			
+			.bargaining-box .response-success input {
+				font-size: 14px;
+				border: 1px solid #ddd;
+				padding: 10px;
+				background: #fff;
+			}
+			
+			.bargaining-box .response-success {
+				font-size: 14px;
+			}
+			
+			.bargaining-box .response-success div {
+				width: 100%;
+			}
+			
+			.bargaining-box .response-success div input {
+				width: 300px;
+			}
+			
+			.bargaining-box .response-success div label {
+				float: left;
+				font-weight: normal;
+				margin-top: 10px;
+				width: 120px;
+				text-align: right;
+				margin-right: 5px;
+			}
+			
+			.bargaining-box .modal-footer-c {
+				margin-left: 110px;
+			}
+			
+			.bargaining-box2 .modal-footer-b {
+				padding: 20px 52px;
+			}
+			/******承接保险业务********/
+			
+			.search-business-box {
+				border: 1px solid #ddd;
+				padding: 20px 20px 5px 20px;
+				height: 250px;
+			}
+			
+			.search-business-l {
+				width: 483px;
+				float: left;
+			}
+			
+			.search-business-box label {
+				width: 105px;
+				text-align: right;
+				font-weight: normal;
+			}
+			
+			.search-business-box input {
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.search-business-box li {
+				margin-bottom: 15px;
+			}
+			
+			.search-business-l .btn-group button,
+			.search-business-l .btn-group .dropdown-menu {
+				width: 84px;
+			}
+			
+			.search-business-l .search-business-a input {
+				width: 132px;
+			}
+			
+			.search-business-l .search-business-b .btn-group button,
+			.search-business-l .search-business-b .btn-group .dropdown-menu,
+			.search-business-l .search-business-b input {
+				width: 174px;
+				border: 1px solid #ddd;
+			}
+			
+			.search-business-l .search-business-c {
+				padding-left: 105px;
+			}
+			
+			.search-business-l .search-business-c input {
+				width: 257px;
+			}
+			
+			.search-business-r {
+				width: 415px;
+				float: right;
+			}
+			
+			.search-business-r label {
+				width: 95px;
+			}
+			
+			.search-business-box .search-business-r-a button {
+				width: 298px;
+				border: 1px solid #ddd;
+			}
+			
+			.search-business-box .search-business-r-b span input {
+				width: 142px;
+			}
+			
+			.search-business-box .search-business-r-c button,
+			.search-business-box .search-business-r-c .dropdown-menu {
+				width: 97px;
+				border: 1px solid #ddd;
+			}
+			/*****保险标管理（产品申请）********/
+			
+			.download-a {
+				text-decoration: underline;
+			}
+			
+			.Apply ul {
+				margin-top: 20px;
+			}
+			
+			.Apply li {
+				margin-top: 10px;
+				overflow: hidden;
+			}
+			
+			.Apply label {
+				width: 70px;
+				text-align: right;
+				font-weight: normal;
+				line-height: 40px;
+				float: left;
+				padding-right: 5px;
+			}
+			
+			.Apply input,
+			.Apply textarea {
+				width: 650px;
+				border: 1px solid #ddd;
+				height: 40px;
+				background: #fff;
+				float: left;
+			}
+			
+			.Apply .C-file {
+				padding-top: 7px;
+			}
+			
+			.Apply textarea {
+				height: 200px;
+			}
+			
+			.Apply .design-btn {
+				margin: 20px 0 0 79px;
+				background: #1a63b1;
+			}
+			/*****企保招招********/
+			
+			.qbzz-bxslider_warp {
+				height: 401px;
+				overflow: hidden;
+			}
+			
+			.qbzz-bxslider_warp .bx-controls-direction a {
+				top: 306px
+			}
+			
+			.qbzz-design {
+				padding-top: 20px;
+			}
+			
+			.qbzz-design li {
+				height: 162px;
+				border: 1px solid #ddd;
+				margin-top: 30px;
+			}
+			
+			.qbzz-design-l {
+				width: 832px;
+				padding: 20px;
+				color: #666;
+				border-right: 1px solid #ddd;
+				overflow: hidden;
+				float: left;
+			}
+			
+			.qbzz-design-l h4 b {
+				width: 28px;
+				height: 28px;
+				border-radius: 28px;
+				background: #1a63b1;
+				font-family: arial;
+				font-size: 6px;
+				display: inline-block;
+				color: #fff;
+				line-height: 28px;
+				margin-right: 8px;
+				font-weight: normal;
+				text-align: center;
+			}
+			
+			.qbzz-design-l dl {
+				margin-left: 40px;
+			}
+			
+			.qbzz-design-l dd {
+				width: 50%;
+				float: left;
+				line-height: 36px;
+				font-size: 16px;
+			}
+			
+			.qbzz-design-ra {
+				width: 364px;
+				float: left;
+				text-align: center;
+				font-size: 16px;
+				padding-top: 40px;
+			}
+			
+			.qbzz-design-ra span {
+				color: #047dd2;
+				font-size: 28px;
+			}
+			
+			.qbzz-design-ra button {
+				border-radius: 25px;
+				padding: 0 56px;
+				line-height: 39px;
+				background: #b9b9b9;
+				color: #fff;
+			}
+			
+			.qbzz-design-ra button:hover {
+				color: #fff;
+			}
+			
+			.qbzz-design li:hover button {
+				background: #1a63b1;
+			}
+			
+			.qbzz-design li:hover .qbzz-design-box {
+				border-bottom: 0px;
+				background: #fbfbfb;
+			}
+			
+			.qbzz-design-box {
+				border-bottom: 1px solid #ddd;
+				height: 159px;
+			}
+			
+			.qbzz-more {
+				border-bottom: 1px solid #ddd;
+				position: relative;
+				height: 88px;
+				margin-bottom: 100px;
+			}
+			
+			.qbzz-more button {
+				position: absolute;
+				left: 50%;
+				top: 70px
+			}
+			/*****保险公司标管理（第N次报价）********/
+			
+			.Several-quotations {
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			
+			.Several-quotations-a h2 {
+				line-height: 40px;
+				border: 1px solid #ddd;
+				text-align: left;
+				padding-left: 15px;
+				font-size: 16px;
+				color: #666;
+				background: #f1f1f1;
+			}
+			
+			.Several-quotations-a:hover h2,
+			.Several-quotations-a h2.active {
+				background: #1a63b0;
+				color: #fff;
+			}
+			
+			.Several-quotations-a .offer-form {
+				display: none;
+			}
+			/*****我的回答********/
+			
+			.Answer-box {
+				font-size: 18px;
+				color: #333;
+			}
+			
+			.Answer-box span {
+				color: #1a63b1;
+			}
+			
+			.New-Answer {
+				padding: 0 20px;
+			}
+			
+			.New-Answer li {
+				overflow: hidden;
+				padding: 10px 0;
+				border-bottom: 1px dotted #ddd;
+				margin-top: 10px;
+			}
+			
+			.New-Answer strong {
+				width: 40px;
+				height: 40px;
+				background: #1a63b1;
+				display: inline-block;
+				line-height: 16px;
+				text-align: center;
+				color: #fff;
+				font-weight: normal;
+				font-size: 12px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.New-Answer strong i {
+				display: block;
+				font-size: 14px;
+				padding-top: 4px;
+			}
+			
+			.New-Answer .New-Answer-contact li span {
+				top: 16px;
+			}
+			
+			.New-Answer .New-Answer-contact li div {
+				display: inline-block;
+				float: left;
+				color: #666;
+			}
+			
+			.New-Answer .New-Answer-contact li div a {
+				font-size: 16px;
+			}
+			
+			.New-Answer .New-Answer-contact li div dl {
+				margin-bottom: 0px;
+			}
+			
+			.New-Answer .New-Answer-contact li dd {
+				line-height: 40px;
+			}
+			
+			.New-Answer .New-Answer-contact li dd span {
+				color: #999;
+				margin-left: 20px;
+			}
+			
+			b {
+				font-weight: normal;
+			}
+			
+			.Answer-box-warp {
+				background: #fff;
+			}
+			
+			.Answer-box-warp .Answer-box {
+				background: #fbfbfb;
+			}
+			
+			.Answer-box-warp .page {
+				padding-right: 20px;
+			}
+			
+			.Answer-table {
+				margin: 20px;
+				color: #666;
+				border: 1px solid #ddd;
+				border-top: 0px;
+			}
+			
+			.Answer-table td {
+				background: #fff;
+			}
+			
+			.Answer-table th,
+			.Answer-table td {
+				font-weight: normal;
+				line-height: 40px;
+			}
+			
+			.Gold-Answer li span.span-d {
+				border-radius: 10px;
+				padding: 0 5px;
+				background: #3facd9;
+				color: #fff;
+			}
+			
+			.Gold-Answer li span.span-e {
+				border-radius: 10px;
+				padding: 0 5px;
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.Gold-Answer li p {
+				display: inline-block;
+				color: #666;
+			}
+			
+			.Gold-Answer li p b {
+				color: #999;
+			}
+			
+			.New-Fans li img {
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				border: 1px solid #ddd;
+				float: left;
+				margin-top: 5px;
+			}
+			
+			.New-Fans li div {
+				margin-left: 10px;
+			}
+			
+			.follow {
+				padding: 15px 10px 0 10px;
+			}
+			
+			.follow-Answer li {
+				position: relative;
+			}
+			
+			.follow-Answer li div {
+				position: absolute;
+				right: 0px;
+			}
+			
+			.follow-Answer li div span {
+				color: #999;
+			}
+			
+			.follow-Answer li div button {
+				height: 24px;
+				line-height: 24px;
+				padding: 0 12px;
+				margin-left: 10px;
+			}
+			
+			.follow-Answer li div button:hover {
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.Collection-Answer li strong {
+				background: #ececec;
+				color: #666;
+			}
+			
+			.modify-box p {
+				color: #666;
+				font-size: 14px;
+			}
+			/******企业设置******/
+			
+			.enterprise .enterprise-left {
+				width: 100%;
+				border-right: 0px;
+			}
+			
+			.enterprise .enterprise-left a {
+				color: #1a63b1;
+			}
+			
+			.enterprise .information_img_left ul {
+				width: 100%;
+			}
+			
+			.enterprise .information_bottom em {
+				color: #db4d00;
+				margin-right: 10px;
+			}
+			
+			.enterprise .register-form {
+				background: #fff;
+			}
+			
+			.enterprise .register-form form {
+				margin: 0px;
+				padding: 15px 20px 0 20px;
+			}
+			
+			.Sales {
+				width: 100%;
+			}
+			
+			.Sales a {
+				line-height: 40px;
+				text-decoration: underline;
+			}
+			
+			.Sales a i {
+				margin-left: 5px;
+			}
+			
+			.register-form form .classification label {
+				width: 100px;
+			}
+			
+			.register-form form .classification button,
+			.register-form form .classification .dropdown-menu {
+				width: 316px;
+				margin-left: 5px;
+			}
+			
+			.classification-box {
+				width: 450px;
+				float: left;
+			}
+			
+			.classification-box .classification {
+				margin-bottom: 10px;
+			}
+			
+			.invoice-box .row {
+				margin: 0 -14px;
+			}
+			
+			.invoice-box .col-md-4 {
+				width: 286px;
+				height: 345px;
+				border: 1px solid #ddd;
+				margin: 0 14px 20px 14px;
+				padding: 20px;
+				position: relative;
+			}
+			
+			.invoice-box .col-md-4 label {
+				font-weight: normal;
+				color: #666;
+			}
+			
+			.invoice-box .col-md-4 span {
+				color: #999;
+				margin-left: 5px;
+			}
+			
+			.invoice-box .col-md-4 li {
+				line-height: 34px;
+			}
+			
+			.invoice-btn {
+				background: #a9a9a9;
+				color: #fff;
+				border-radius: 5px;
+				border: 0px;
+				padding: 0 35px;
+			}
+			
+			.invoice-box .col-md-4 i {
+				width: 40px;
+				height: 40px;
+				background: url(../images/spring.png) no-repeat;
+				background-position: -454px -35px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				cursor: pointer;
+				display: none;
+			}
+			
+			.invoice-box .col-md-4:hover i {
+				display: block;
+			}
+			
+			.invoice-box .col-md-4:hover .invoice-btn {
+				background: #0794cf;
+			}
+			
+			.add-invoice {
+				background: #fbfbfb;
+				text-align: center;
+				color: #d1d1d1;
+				cursor: pointer;
+			}
+			
+			.add-invoice b {
+				width: 74px;
+				height: 74px;
+				background: url(../images/spring.png) no-repeat;
+				background-position: -24px -413px;
+				display: block;
+				margin: 93px auto 33px auto;
+			}
+			
+			.invoice-box-a .modal-body .select-industry label {
+				text-align: right;
+				width: 130px;
+			}
+			
+			.invoice-box-a .modal-body label em {
+				color: #db4d00;
+				margin-right: 5px;
+			}
+			
+			.invoice-box-a .modal-body .btn-group button,
+			.invoice-box-a .modal-body .btn-group .dropdown-menu {
+				width: 138px;
+				text-align: left;
+				font-size: 14px;
+				color: #999;
+			}
+			
+			.invoice-box-a .modal-body .btn-group button .caret {
+				margin-top: 6px;
+			}
+			
+			.address-detail-a {
+				margin: 10px 0 0 135px;
+			}
+			
+			.invoice-box-a .modal-footer {
+				padding-left: 187px;
+			}
+			
+			.organization .search-box {
+				position: relative;
+			}
+			
+			.organization .search-box>button {
+				width: 77px;
+				height: 37px;
+				border: 1px solid #d2d2d2;
+				margin-right: 10px;
+			}
+			
+			.organization .search-box .search-box-a {
+				position: absolute;
+				right: 0px;
+				top: 0px
+			}
+			/******邀请链接******/
+			
+			.Invite-links-box {
+				padding-top: 100px;
+				background: url(../images/city.jpg) bottom center no-repeat;
+			}
+			
+			.Invite-links {
+				width: 985px;
+				margin: 0 auto;
+			}
+			
+			.Invite-links h2,
+			.Invite-contact {
+				text-align: center;
+			}
+			
+			.Invite-contact h3 {
+				border-bottom: 1px solid #dddddd;
+				padding: 50px 0 15px 0;
+			}
+			
+			.Invite-contact p {
+				line-height: 30px;
+				padding: 40px 0;
+				color: #666;
+			}
+			
+			.about-us {
+				padding: 95px 0 159px 0;
+			}
+			
+			.about-us p {
+				line-height: 36px;
+				color: #999;
+				text-indent: 2em;
+			}
+			
+			.address-detail-b {
+				margin-top: 10px;
+			}
+			
+			.register-form .information-btn {
+				margin-bottom: 40px;
+				overflow: hidden;
+			}
+			
+			.information-box .C_information .checkbox {
+				width: 500px;
+				border-bottom: 1px dotted #ddd;
+				padding: 15px;
+			}
+			
+			.information-box .C_information .checkbox label {
+				width: 155px;
+				text-align: left;
+			}
+			
+			.information-box .C_information .checkbox label input {
+				width: 14px;
+				height: 14px;
+				float: left;
+			}
+			
+			.C_information {
+				width: 500px;
+				margin-top: -40px;
+				overflow: hidden;
+				margin-left: 176px;
+			}
+			
+			.information-box .C_information .checkbox .cb-input {
+				width: 200px;
+			}
+			
+			.information-box>label {
+				line-height: 40px;
+			}
+			
+			.Sex-radio-box {
+				overflow: hidden;
+			}
+			
+			.Sex-radio-box>label {
+				float: left;
+			}
+			
+			.Sex-radio {
+				width: 100px;
+				float: left;
+				color: #666;
+			}
+			
+			.Sex-radio input {
+				float: left;
+				width: 14px;
+				accelerator: 14px;
+				margin-top: -8px;
+				margin-right: 5px;
+			}
+			
+			.offer-Deal .Billing-information-tab {
+				display: block;
+			}
+			
+			.clause .btn-group button {
+				width: 150px;
+			}
+			
+			.clause a {
+				text-decoration: underline;
+			}
+			
+			.offer-form .clause2 textarea {
+				height: 300px;
+			}
+			
+			.browse {
+				margin-left: 10px;
+			}
+			
+			.follow-Answer .search-box {
+				padding: 30px 0;
+				overflow: hidden;
+			}
+			
+			.follow-Answer table {
+				border: 1px solid #ddd;
+			}
+			
+			.follow-Answer table th {
+				background: #fbfbfb;
+			}
+			
+			.follow-Answer table th,
+			.follow-Answer table td {
+				font-weight: normal;
+				border-left: 1px solid #ddd;
+				text-align: center;
+			}
+			
+			.table>tbody>tr>td {
+				vertical-align: middle;
+			}
+			
+			.message b {
+				float: right;
+				color: #999;
+			}
+			
+			.Release-c .offer-form .Release-c-a .Paul,
+			.offer-form li .Paul,
+			.premium-box .offer-form li .Paul {
+				width: 100px;
+				border: 1px solid #ddd;
+			}
+			
+			.Paul-div {
+				padding: 10px 0 0 15px;
+			}
+			
+			.Quotation {
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.Quotation label {
+				float: left;
+				font-weight: normal;
+				margin-right: 5px;
+			}
+			
+			.Quotation input {
+				background: #fff;
+			}
+			/*****保单维护*******/
+			
+			.Maintain-details {
+				text-align: left;
+				padding-top: 20px;
+			}
+			
+			.details_a {
+				padding-top: 0px;
+			}
+			
+			.premium-box .offer-form {
+				padding: 25px 15px;
+			}
+			
+			.premium-box .offer-form li {
+				padding-left: 0px;
+			}
+			
+			.premium-box .offer-form li dl {
+				padding-left: 0px;
+				overflow: hidden;
+			}
+			
+			.premium-box .offer-form li dl dd {
+				overflow: hidden;
+				border-bottom: 1px dotted #ddd;
+				padding-bottom: 20px;
+				margin: 0px;
+			}
+			
+			.premium-box_a .offer-form ul {
+				margin-bottom: 15px;
+				overflow: hidden;
+			}
+			
+			.Paul-btn {
+				padding: 0 10px;
+				height: 40px;
+				border: 1px solid #ddd;
+				color: #fff;
+				border-radius: 5px;
+				background: #1a63b0;
+			}
+			
+			.premium-box .offer-form li dd div {
+				display: inline-block;
+			}
+			
+			.premium-box .offer-form li dd .paul-data {
+				width: 105px;
+			}
+			
+			.premium-box_a .offer-form li dd p {
+				padding-bottom: 10px;
+				margin-bottom: 15px;
+				color: #333;
+			}
+			
+			.offer-form li .checkbox .Policy-input {
+				border: 1px solid #ddd;
+			}
+			
+			.Policy li .checkbox a {
+				text-decoration: underline;
+				margin: 0 5px;
+			}
+			
+			.Paul-btn2 {
+				background: #b9b9b9;
+			}
+			
+			.History-record h3,
+			.History-record_a h3 {
+				border-bottom: 1px solid #ddd;
+				padding-bottom: 15px;
+				font-size: 16px;
+				padding-left: 15px;
+				margin-bottom: 20px;
+			}
+			
+			.History-record table {
+				margin: 0 15px 15px 15px;
+			}
+			
+			.History-record table td {
+				width: 200px;
+				line-height: 40px;
+				color: #666;
+			}
+			
+			.premium-file {
+				width: 592px;
+				display: inline-block;
+				float: left;
+				background: #fff;
+			}
+			
+			.Single-batch label {
+				width: 130px;
+				float: left;
+				font-weight: normal;
+				text-align: right;
+			}
+			
+			.Single-batch .file_02 {
+				margin-top: 15px;
+			}
+			
+			.Single-batch .btn-ml {
+				margin-left: 10px;
+			}
+			
+			.btn-01 {
+				margin-bottom: 20px;
+			}
+			
+			.Maintain-details .Single-batch .History-form {
+				margin-top: 20px;
+			}
+			
+			.Maintain-details .History-form h3 {
+				margin-top: 0px;
+			}
+			
+			.div-input {
+				width: 866px;
+			}
+			
+			.div-input-b {
+				margin-top: -15px;
+			}
+			
+			.premium-box .offer-form .div-input-b dd {
+				border-bottom: 0px;
+				padding-bottom: 0px;
+			}
+			
+			.div-input-b .clear-tab {
+				margin: 10px 5px;
+			}
+			
+			.div-input input {
+				margin-bottom: 15px;
+				padding-top: 8px;
+			}
+			
+			.Single-batch .add-Upload-text {
+				padding: 0px 0 0 130px;
+			}
+			
+			.Paul-btn3 {
+				margin-left: 125px;
+				padding: 0 15px;
+			}
+			
+			.span-color-a {
+				color: #999;
+			}
+			
+			.download-b {
+				color: #999;
+				text-decoration: underline;
+				margin-right: 15px;
+			}
+			
+			.History-record-table {
+				border: 1px solid #ddd;
+				text-align: center;
+			}
+			
+			.History-record-table td {
+				border-right: 1px solid #ddd;
+				height: 40px;
+			}
+			
+			.premium-box .offer-form .History-record-a li dd {
+				padding-left: 115px;
+				border-bottom: 0px;
+			}
+			
+			.History-record-a .span_color {
+				display: inline-block;
+			}
+			
+			.download-c {
+				line-height: 40px;
+				padding: 0 10px;
+			}
+			
+			.input-a {
+				margin-left: 105px;
+			}
+			
+			.Paul-btn4 {
+				margin-left: 0px;
+			}
+			
+			.premium-box-a .btn-group button {
+				width: 100px;
+			}
+			
+			.radio-premium .radio-inline {
+				width: auto;
+				padding-right: 50px;
+			}
+			
+			.radio-premium .radio-inline input {
+				margin-top: -9px;
+			}
+			
+			.select-box {
+				width: 157px;
+				height: 40px;
+				border: 1px solid #ddd;
+				color: #666;
+			}
+			
+			.div-input-a {
+				margin-top: -15px;
+			}
+			
+			.offer-top-a {
+				margin-top: 0px;
+			}
+			
+			.group>table {
+				border-top: 1px solid #ddd;
+				border-left: 1px solid #ddd;
+				width: 100%;
+			}
+			
+			.group>table td.group-a,
+			.group>table td.group-b {
+				border-bottom: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				padding: 20px;
+			}
+			
+			.group .group-a {
+				width: 20%;
+				background: #f1f1f1;
+				text-align: center;
+			}
+			
+			.group .group-b {
+				width: 80%;
+			}
+			
+			.group .offer-form li {
+				padding-left: 0px;
+			}
+			
+			.group .offer-form input.group-file {
+				border: 1px solid #ddd;
+				background: #fff;
+				margin: 0 10px;
+			}
+			
+			.group .offer-form input.paul-data {
+				width: 120px;
+			}
+			
+			.group .offer-form .add-dl div {
+				margin-top: 15px;
+			}
+			
+			.group .offer-form li .checkbox input.Paul {
+				border: 1px solid #ddd;
+			}
+			
+			.group .offer-form-c input {
+				float: left;
+			}
+			
+			.group .add-dl dd {
+				padding: 10px 0 20px 0;
+				border-bottom: 1px dotted #ddd;
+			}
+			
+			.group label {
+				font-weight: normal;
+				float: left;
+				width: 80px;
+				text-align: right;
+			}
+			
+			.group .offer-form-c ul {
+				overflow: hidden;
+			}
+			
+			.group .offer-form li select {
+				width: 200px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.group .offer-form li input {
+				background: #fff;
+			}
+			
+			.group .offer-form li {
+				display: block;
+				clear: both;
+				min-height: 40px;
+			}
+			
+			.group .offer-form li .offer-d {
+				margin: 0px;
+			}
+			
+			.group .span-data i {
+				top: 15px;
+			}
+			
+			.Insurance-tab {
+				margin-top: 30px;
+			}
+			
+			.Insurance-a .offer-form .add-dl div {
+				margin-top: 15px;
+			}
+			
+			.Policy .offer-form li label {
+				width: 150px;
+			}
+			
+			.Policy .offer-form li input {
+				background: #fff;
+			}
+			
+			.Policy .offer-form li .Paul-btn3 {
+				margin-left: 150px;
+			}
+			
+			.bargaining-box .response-success-li label {
+				float: left;
+				font-weight: normal;
+				height: 40px;
+				line-height: 40px;
+				margin-right: 5px;
+			}
+			
+			.bargaining-box .response-success-li .checkbox {
+				width: 14px;
+				height: 14px;
+				margin-top: 2px;
+			}
+			
+			.bargaining-box .response-success-li li {
+				padding-bottom: 15px;
+			}
+			
+			.bargaining-box .response-success-li li:first-child {
+				margin-left: 12px;
+			}
+			
+			.bargaining-box .response-success-li em {
+				float: left;
+				margin-right: 5px;
+				color: #db4d00;
+			}
+			
+			.bargaining-box .response-success-li li div {
+				padding-left: 35px;
+				color: #666;
+				text-align: left;
+			}
+			
+			.bargaining-box .response-success-li li div p {
+				padding-left: 0px;
+				color: #999;
+			}
+			
+			.bargaining-box-02 .modal-footer-b {
+				padding-top: 0px;
+			}
+			
+			.C_information-a {
+				width: 650px;
+				margin: -50px 0 0 163px;
+			}
+			
+			.C_information-a .Cover-div {
+				margin-left: 0px;
+			}
+			
+			.information-box .C_information-a .checkbox {
+				width: 650px;
+			}
+			
+			.C_information-b {
+				margin: 0px;
+				width: 916px;
+			}
+			
+			.C_information-b .Cover-h4-b {
+				width: 916px;
+			}
+			
+			.offer-Deal-tab {
+				display: none;
+			}
+			
+			.Release_tab-f,
+			.Release_tab_02 {
+				margin-top: 30px;
+			}
+			
+			.offer-Deal-tab {
+				margin-top: 30px;
+			}
+			/*******运营管理后台*********/
+			
+			.search-box-a .search-box-select {
+				color: #666;
+				float: left;
+			}
+			
+			.search-box-a .search-box-select select {
+				width: 120px;
+				height: 36px;
+				border: 1px solid #ddd;
+			}
+			
+			.width-a-10 {
+				width: 128px;
+			}
+			
+			.width-a-11 {
+				width: 225px;
+			}
+			
+			.width-a-12 {
+				width: 100px;
+			}
+			
+			.width-a-13 {
+				width: 255px;
+			}
+			
+			.width-a-14 {
+				width: 112px;
+			}
+			
+			.width-a-15 {
+				width: 168px;
+			}
+			
+			.width-a-17 {
+				width: 225px;
+			}
+			
+			.width-a-18 {
+				width: 100px;
+			}
+			
+			.width-a-19 {
+				width: 75px;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+			
+			.width-a-20 {
+				width: 81px;
+			}
+			
+			.add-company .modal-body .form-group {
+				width: 100%;
+			}
+			
+			.add-company .modal-body .form-group label {
+				text-align: right;
+			}
+			
+			.add-company .modal-body .form-group select {
+				width: 400px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.add-company .modal-body .radio {
+				margin-right: 20px;
+			}
+			
+			.add-company .modal-body .radio input {
+				width: 14px;
+				height: 14px;
+				vertical-align: -2px;
+			}
+			
+			.C-btn-a {
+				background: #ddd;
+			}
+			
+			.C-btn-b {
+				background: #f0f0f0;
+			}
+			
+			.hb-img {
+				width: 59px;
+				height: 25px;
+			}
+			
+			.search-contact {
+				margin-top: 30px;
+			}
+			
+			.search-contact ul {
+				width: 100%;
+				overflow: hidden;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+			}
+			
+			.search-contact ul:first-child {
+				border-bottom: 1px dotted #ddd;
+			}
+			
+			.search-contact li {
+				line-height: 40px;
+				width: 50%;
+				float: left;
+			}
+			
+			.search-contact li b {
+				color: #1a63b1;
+				font-size: 18px;
+			}
+			
+			.C-input-a {
+				padding-left: 10px;
+			}
+			
+			.state-company .modal-body .select-industry-a label {
+				text-align: right;
+				float: left;
+				line-height: 40px;
+				vertical-align: middle;
+				height: 40px;
+				width: 115px;
+			}
+			
+			.state-company .modal-body .select-industry-a .Sex-radio {
+				float: left;
+				margin-top: 8px;
+			}
+			
+			.state-company .modal-body .select-industry-a .Sex-radio input {
+				width: 14px;
+				height: 14px;
+				float: left;
+				margin-top: 5px;
+			}
+			
+			.Add-class {
+				width: 100%;
+				display: block;
+			}
+			
+			.state-company .modal-body-b label {
+				float: left;
+			}
+			
+			.state-company .modal-body-b input {
+				width: 400px;
+				background: #fff;
+				float: left;
+				padding-left: 10px;
+			}
+			
+			.state-company .modal-body-b .select-gj {
+				width: 400px;
+				float: left;
+			}
+			
+			.state-company .modal-body-b .select-search {
+				position: relative;
+			}
+			
+			.state-company .modal-body-b .select-search i {
+				position: absolute;
+				right: 10px;
+				top: 12px;
+				font-size: 18px;
+				cursor: pointer;
+			}
+			
+			.search-Result {
+				width: 400px;
+				border: 1px solid #ddd;
+				background: #fff;
+				height: 200px;
+				margin-top: 50px;
+				overflow: scroll;
+				padding: 10px;
+			}
+			
+			.state-company .modal-body-b .search-Result li {
+				width: 33%;
+				float: left;
+				margin-bottom: 15px;
+			}
+			
+			.state-company .modal-body-b .search-Result input {
+				width: 14px;
+				height: 14px;
+				margin: 5px 5px 0 0;
+			}
+			
+			.state-company .modal-body-b .raido-select {
+				float: left;
+			}
+			
+			.state-company .modal-body-b .raido-select .radio {
+				width: 100px;
+				margin-right: 0px;
+			}
+			
+			.state-company .modal-body-b .raido-select label {
+				text-align: left;
+			}
+			
+			.state-company .modal-body-b .raido-select label input {
+				margin: 12px 5px 0 0;
+			}
+			
+			.state-company .modal-body-b .select-address select {
+				width: 131px;
+			}
+			
+			.state-company .modal-body-b .select-address-a select {
+				width: 198px;
+			}
+			
+			.jian_tab {
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				border: 1px solid #ddd;
+				display: inline-block;
+				text-align: center;
+				color: #666;
+				font-size: 28px;
+			}
+			
+			.select-Enable {
+				border: 0px;
+			}
+			
+			.state-company .select-industry-a em {
+				color: #db4d00;
+				margin-right: 5px;
+			}
+			
+			.add-company .modal-body .classification-box select {
+				width: 290px;
+			}
+			
+			.Sales-file {
+				width: 420px;
+				height: 40px;
+				border: 1px solid #ccc;
+				padding-left: 10px;
+				line-height: 40px;
+			}
+			
+			.classification-box .classification select {
+				width: 316px;
+				height: 40px;
+				margin-left: 5px;
+				border: 1px solid #ddd;
+			}
+			
+			.Member-identity-box li {
+				overflow: hidden;
+				display: block;
+			}
+			
+			.Member-identity-box dd {
+				float: left;
+				margin-right: 50px;
+			}
+			
+			.Member-identity-box label {
+				float: left;
+				font-weight: normal;
+			}
+			
+			.Member-identity-box dl {
+				margin-top: -20px;
+			}
+			
+			.Member-identity-box dd input {
+				margin-right: 5px;
+			}
+			
+			.register-form .Cover-btn-a {
+				background: #a9a9a9;
+				margin: 0 0 40px 10px;
+			}
+			
+			.register-form .Cover-btn-b {
+				margin-left: 160px;
+			}
+			
+			.button-box {
+				width: 100%;
+			}
+			
+			.search-platform {
+				margin-top: 20px;
+			}
+			
+			.search-platform select {
+				width: 125px;
+				height: 36px;
+				padding-left: 10px;
+				border: 1px solid #ddd;
+			}
+			
+			.organization .search-platform .design-btn {
+				width: 110px;
+				margin: 10px 0 0 0;
+			}
+			
+			.organization .search-platform-a .design-btn {
+				margin: 10px 0 0 75px;
+			}
+			
+			.information_bottom-img {
+				overflow: hidden;
+			}
+			
+			.information_bottom-img label {
+				float: left;
+			}
+			
+			.product-name-a {
+				margin-top: 10px;
+			}
+			
+			.organization .search-platform .design-btn-a {
+				margin-top: 0px;
+			}
+			
+			.C_textarea {
+				width: 420px;
+				height: 200px;
+				border: 1px solid #ddd;
+				vertical-align: middle;
+				padding-left: 10px;
+			}
+			
+			.address-a {
+				margin-top: 10px;
+			}
+			
+			.add-company .modal-body-b .bank-a {
+				float: left;
+				margin-left: 130px;
+			}
+			
+			.add-company .modal-body-b .bank-a span {
+				float: left;
+				width: 66px;
+				text-align: right;
+				margin-right: 10px;
+			}
+			
+			.add-company .modal-body-b .bank-a {
+				margin-top: -37px;
+			}
+			
+			.add-company .modal-body-b .bank-a input {
+				width: 297px;
+				margin-bottom: 10px;
+			}
+			
+			.add-company input.bank-input-a {
+				margin-left: 76px;
+			}
+			
+			.add-company .C_information-b {
+				padding: 0 50px;
+			}
+			
+			.add-company-b .C_information-b,
+			.add-company-b .C_information-b .Cover-h4-b {
+				width: auto;
+			}
+			
+			.clear {
+				background: #eee;
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				text-align: center;
+				display: inline-block;
+				font-size: 20px;
+				color: #fff;
+				cursor: pointer;
+				line-height: 20px;
+				border: 1px solid #ccc;
+				color: #999;
+			}
+			
+			.add-company-b .cb-input {
+				width: 164px;
+			}
+			
+			.cb-input-a {
+				width: 170px;
+			}
+			
+			.Insurance-company {
+				margin-top: 30px;
+			}
+			
+			.Insurance-company-l {
+				width: 150px;
+				float: left;
+				border: 1px solid #ddd;
+				background: #fff;
+				padding: 0 10px;
+			}
+			
+			.Insurance-company-l li h3 {
+				font-size: 14px;
+				color: #666;
+				margin-top: 10px;
+				cursor: pointer;
+			}
+			
+			.Insurance-company-l li h3 i {
+				font-size: 10px;
+			}
+			
+			.Insurance-company-l li dl {
+				padding-left: 10px;
+			}
+			
+			.Insurance-company-l li dl li {
+				padding-left: 13px;
+				line-height: 26px;
+			}
+			
+			.Insurance-company-l li dl {}
+			
+			.Insurance-company-r {
+				width: 808px;
+				float: left;
+				margin-left: -1px;
+			}
+			
+			.Insurance-company-r table {
+				background: #fff;
+			}
+			
+			.width-a-21 {
+				width: 38px;
+			}
+			
+			.product-right table tr td.width-a-22 {
+				width: 59px;
+				overflow: hidden;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+			
+			.width-a-22 a {
+				display: block;
+			}
+			
+			.organization .Response {
+				height: 191px;
+			}
+			
+			.Insurance-company-l dl {
+				display: none;
+			}
+			
+			.organization-a .search-platform-a .design-btn {
+				margin: 0px
+			}
+			
+			.width-a-23 {
+				width: 225px;
+			}
+			
+			.organization-a .search-box-a {
+				display: inline-block;
+				float: right;
+			}
+			
+			.organization-b table {
+				margin-top: 0px;
+			}
+			
+			.width-a-25 {
+				width: 150px;
+			}
+			
+			.organization-c .search-platform .design-btn {
+				margin-top: 0px;
+			}
+			
+			.width-a-26 {
+				width: 128px;
+			}
+			
+			.width-a-27 {
+				width: 180px;
+			}
+			
+			.width-a-28 {
+				width: 300px;
+			}
+			
+			.width-a-29 {
+				width: 225px;
+			}
+			
+			.width-a-30 {
+				width: 50px;
+			}
+			
+			.width-a-31 {
+				width: 109px;
+				overflow: hidden;
+				word-break: break-all;
+			}
+			
+			.width-a-32 {
+				width: 327px;
+			}
+			
+			.select-address-b {
+				width: 195px;
+				height: 40px;
+				padding-left: 10px;
+				border: 1px solid #ddd;
+				color: #666;
+			}
+			
+			.select-address-c {
+				width: 393px;
+			}
+			
+			.Release-right .checkbox-box {
+				width: 592px;
+				overflow: hidden;
+			}
+			
+			.Release-right .checkbox-box li {
+				width: 50%;
+				line-height: 40px;
+				float: left;
+			}
+			
+			.Release-right .checkbox-box input {
+				width: 14px;
+				height: 14px;
+				vertical-align: sub;
+				margin-right: 5px;
+			}
+			
+			.Release-right .checkbox-box-a li {
+				width: 100%;
+			}
+			
+			.Release-right .checkbox-box-a label {
+				width: 115px;
+				margin-right: 20px;
+			}
+			
+			.Release-right .checkbox-box-c .checkbox-input {
+				width: 195px;
+				height: 40px;
+				margin-left: 0px;
+			}
+			
+			.Release-right .product-dz input {
+				margin-top: 10px;
+			}
+			
+			.Release-right select {
+				height: 40px;
+				border: 1px solid #ddd;
+				color: #666;
+			}
+			
+			.Release-right .Release-type select {
+				width: 150px;
+			}
+			
+			.Release-right .select-a {
+				width: 592px;
+			}
+			
+			.Release-right .select-b {
+				width: 85px;
+				float: left;
+				margin-right: 5px;
+			}
+			
+			.money-a {
+				overflow: hidden;
+			}
+			
+			.Deductible {
+				clear: both;
+			}
+			
+			.Release-right .clear {
+				line-height: 17px;
+			}
+			
+			.Release-right .clear-a {
+				margin: 8px 10px;
+			}
+			
+			.Release-a .form-group .ts-label-a {
+				text-align: left;
+			}
+			
+			.Release-a .ts-li {
+				display: none;
+			}
+			
+			.offer-information li.bx-li {
+				width: 100%;
+				padding-left: 55px;
+			}
+			
+			.offer-information li.bx-li .span-color {
+				overflow: hidden;
+			}
+			
+			.offer-information li.bx-li .txt {
+				width: 88%;
+			}
+			
+			.offer-information li.bx-li .txt_01 {
+				width: 85%;
+			}
+			
+			.offer-information li.bx-li-a {
+				width: 100%;
+			}
+			
+			.offer-information .bx-ul {
+				width: 90%;
+				float: right;
+			}
+			
+			.offer-information .bx-ul li {
+				width: 50%;
+				color: #999;
+				padding-left: 0px;
+			}
+			/****关于我们****/
+			
+			.about-qb {
+				color: #666;
+			}
+			
+			.about-qb p {
+				line-height: 30px;
+			}
+			
+			.about-qb .about-p {
+				font-size: 18px;
+				margin-top: 30px;
+				color: #333;
+			}
+			
+			.about-qb .about-p-a {
+				color: #333;
+			}
+			
+			.about-qb .about-p-b {
+				text-indent: 2em;
+			}
+			
+			.about-qb-d .about-p {
+				margin-top: 0px;
+			}
+			
+			.about-qb .about-img {
+				margin: 30px 0 60px 10px;
+			}
+			
+			.about-qb table {
+				margin-bottom: 30px;
+			}
+			
+			.about-p-c {
+				background: #f8f8f8;
+				padding-left: 10px;
+				border: 1px solid #ddd;
+				text-align: center;
+				margin-bottom: -1px;
+				font-weight: bold;
+			}
+			
+			.about-p-e {
+				margin-bottom: 20px;
+			}
+			
+			.select-box-a {
+				width: 150px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.Release-a .Payment {
+				overflow: hidden;
+			}
+			
+			.Release-a .Payment input {
+				width: 100px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.Release-a .Payment span {
+				line-height: 40px;
+				margin-left: 10px;
+			}
+			
+			.b-color {
+				color: #999;
+			}
+			
+			.add-company-a .modal-body-b label {
+				line-height: 40px;
+				height: 40px;
+			}
+			
+			.Insurance-company-a li {
+				border-bottom: 1px dotted #ddd;
+				padding-bottom: 30px;
+				overflow: hidden;
+				margin-bottom: 30px;
+			}
+			
+			.Insurance-company-a li img {
+				width: 239px;
+				height: 100px;
+				float: left;
+				border: 1px solid #ddd;
+			}
+			
+			.Insurance-company-a li div {
+				margin-left: 30px;
+				float: left;
+				font-size: 16px;
+				line-height: 100px;
+			}
+			
+			.Insurance-content {
+				background: #fff;
+			}
+			
+			.Insurance-content h4 {
+				border-bottom: 1px solid #ddd;
+				padding: 20px 0;
+				line-height: 80px;
+			}
+			
+			.Insurance-content h4 img {
+				width: 192px;
+				height: 80px;
+				float: left;
+			}
+			
+			.Insurance-content span {
+				font-size: 18px;
+			}
+			
+			.Insurance-content ul {
+				padding: 20px 30px 40px 30px;
+			}
+			
+			.Insurance-content ul li {
+				display: block;
+				overflow: hidden;
+				line-height: 26px;
+			}
+			
+			.Insurance-content ul label {
+				width: 70px;
+				text-align: right;
+				float: left;
+				font-weight: normal;
+				padding-right: 10px;
+			}
+			
+			.Insurance-content ul p {
+				width: 90%;
+				float: left;
+				color: #666;
+			}
+			
+			.add_tab-a {
+				background: #999;
+				border: 1px solid #ddd;
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				display: inline-block;
+				text-align: center;
+				color: #fff;
+				font-size: 20px;
+				cursor: pointer;
+			}
+			
+			.add_tab-b {
+				vertical-align: -4px;
+				line-height: 17px;
+			}
+			
+			.add_tab-c {
+				margin: 10px 0 0 5px;
+			}
+			
+			.Underwriting-a {
+				margin: 10px 0 0 0px;
+			}
+			
+			.Release-a .Payment-a input {
+				width: 195px;
+			}
+			
+			.Release-a .Payment-a span {
+				color: #666;
+			}
+			
+			.checkbox-box-b li {
+				width: 50%;
+			}
+			
+			.checkbox-box-b li:first-child,
+			.checkbox-box-b li:last-child {
+				width: 100%;
+			}
+			
+			.Release-right .checkbox-box-b .qt-input {
+				border: 1px solid #ddd;
+				width: 100px;
+				height: 40px;
+			}
+			
+			.Release-right .checkbox-box-c li {
+				width: 100%;
+				margin-bottom: 5px;
+			}
+			
+			.add-Upload_dl {
+				margin-left: 15px;
+			}
+			
+			.select-c {
+				width: 137px;
+				height: 40px;
+				border: 1px solid #ccc;
+			}
+			
+			.register-form form .city input {
+				width: 246px;
+			}
+			
+			.register-form form .bz {
+				width: 100%;
+			}
+			
+			.about-qb li {
+				line-height: 40px;
+			}
+			
+			.recruitment-box li {
+				border-bottom: 1px dotted #ddd;
+				padding-bottom: 15px;
+			}
+			
+			.recruitment-box h3 {
+				font-size: 18px;
+				border-left: 4px solid #666;
+				color: #666;
+				padding-left: 8px;
+				font-weight: bold;
+				margin-top: 30px;
+			}
+			
+			.recruitment-box p {
+				line-height: 40px;
+			}
+			
+			.recruitment-box p span {
+				font-size: 16px;
+				color: #333;
+			}
+			
+			.recruitment-box li:last-child {
+				border: 0px;
+			}
+			
+			.Administration-box img {
+				width: 200px;
+				height: 294px;
+				float: left;
+			}
+			
+			.Administration-box li {
+				width: 100%;
+				overflow: hidden;
+				border-bottom: 1px dotted #ddd;
+				margin-bottom: 20px;
+				padding-bottom: 30px;
+			}
+			
+			.Administration-box li:last-child {
+				border: 0px;
+				line-height: 30px;
+			}
+			
+			.Administration-box div {
+				width: 730px;
+				float: right;
+			}
+			
+			.Administration-box div .Title {
+				color: #333;
+				font-size: 18px;
+				font-weight: bold;
+				text-indent: 0em;
+			}
+			
+			.Administration-box div p {
+				margin-bottom: 0px;
+				text-indent: 2em;
+				line-height: 32px;
+			}
+			
+			.License {
+				position: relative;
+				height: 619px;
+			}
+			
+			.License>img {
+				height: 200px;
+				cursor: pointer;
+				border: 1px solid #ddd;
+			}
+			
+			.License .License-box {
+				position: absolute;
+				left: 225px;
+				top: 0px;
+				height: 619px;
+				display: none;
+			}
+			
+			.License .License-box img {
+				height: 400px;
+				border: 1px solid #ddd;
+			}
+			
+			.map img {
+				margin-top: 20px;
+				width: 958px;
+				border: 1px solid #ccc;
+			}
+			
+			.contact-box ul {
+				float: left;
+				width: 500px;
+			}
+			
+			.contact-box img {
+				width: 200px;
+				height: 200px;
+				float: right;
+			}
+			
+			.show-error {
+				color: #db4d00;
+				padding: 0px 0 0 155px;
+			}
+			
+			.show-error_b,
+			span.Validform_wrong {
+				margin-left: 35px;
+			}
+			
+			.show-error_b {
+				margin-left: 35px;
+			}
+			
+			.show-error_d {
+				margin-left: -62px;
+			}
+			
+			.show-error_c {
+				margin-left: 115px;
+			}
+			
+			.show-error_d {
+				margin-left: -20px;
+			}
+			
+			.C_bx {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.Release-a .form-group .ts-label-a {
+				margin-left: 15px;
+			}
+			
+			.Validform_wrong {
+				color: #db4d00;
+				padding-bottom: 0px;
+			}
+			
+			.open-box span {
+				vertical-align: top;
+				line-height: 40px;
+				color: #666;
+			}
+			
+			.offer-form .open-box input {
+				vertical-align: top;
+				margin-top: 0px;
+			}
+			
+			.offer-form .open-box input.input-radio {
+				margin-left: 20px;
+			}
+			
+			.show-error_e {
+				padding: 0px;
+				margin-left: 26px;
+			}
+			
+			.design-box .Actie-prompt {
+				color: #db4d00;
+				margin-top: 15px;
+				display: none;
+			}
+			
+			.design-box .Actie-prompt a {
+				text-decoration: underline;
+				color: #db4d00;
+			}
+			
+			.design-box .Actie-prompt a:hover {
+				color: #1a63b1;
+			}
+			
+			.design-box .register {
+				float: right;
+				cursor: pointer;
+				position: relative;
+				text-align: center;
+			}
+			
+			.design-box .register div {
+				position: absolute;
+				width: 150px;
+				top: 25px;
+				right: -40px;
+			}
+			
+			.design-box .register dl {
+				border: 1px solid #ddd;
+				padding: 5px 10px;
+				background: #f8f8f8;
+				font-size: 12px;
+				display: none;
+			}
+			
+			.design-box .register dl dd {
+				line-height: 25px;
+			}
+			
+			.design-box .register:hover dl {
+				display: block;
+			}
+			
+			.Cover-div .select-box-a {
+				width: 70px;
+			}
+			
+			.Cover-div .Underwriting {
+				margin-left: 0px;
+			}
+			
+			.Prompt-box {
+				margin-bottom: 15px;
+				overflow: hidden;
+			}
+			
+			.Prompt-box b {
+				margin: 5px;
+				color: #999;
+				line-height: 40px;
+			}
+			
+			.offer-form .Beore input {
+				vertical-align: middle;
+			}
+			
+			.offer-form .Beore input[type=radio] {
+				margin-top: 0px;
+			}
+			
+			.offer-form .Beore span {
+				color: #999;
+			}
+			
+			.offer-form .Beore p {
+				display: inline-block;
+				margin-top: 2px;
+			}
+			
+			.offer-form .Beore input.radio_m {
+				margin: 0 5px 0 32px;
+			}
+			
+			.offer-form .Beore p.Validform_checktip {
+				display: block;
+			}
+			
+			.checkbox-box-c .ul-tab,
+			.form-group .data-box {
+				position: relative;
+			}
+			
+			.checkbox-box-c .ul-tab span.Validform_checktip,
+			.form-group .data-box span.Validform_checktip {
+				position: absolute;
+				top: 0px;
+				left: 260px;
+			}
+			
+			.Release-a .data-box .data-input:last-child input {
+				width: 125px;
+			}
+			
+			.form-group .data-box span.Validform_checktip {
+				left: 375px;
+				width: 200px;
+			}
+			
+			.data_02 .data-box span.Validform_checktip {
+				left: 575px;
+			}
+			
+			p.Validform_wrong {
+				display: inline-block;
+				padding-left: 0px;
+				margin-bottom: 0px;
+			}
+			
+			.form-group .distpicker {
+				position: relative;
+			}
+			
+			.form-group .distpicker span.Validform_checktip {
+				position: absolute;
+				top: 40px;
+				text-align: left;
+				left: 0px;
+				padding: 0px;
+			}
+			
+			.design-box .Validform_checktip {
+				padding-left: 0px;
+			}
+			
+			.disabled {
+				background-color: #f8f8f8;
+				color: #999;
+			}
+			
+			.form-control[disabled] {
+				background-color: #f8f8f8;
+			}
+			
+			.clause .file-disabled {
+				background-color: #f8f8f8;
+			}
+			
+			.register-form .form-group .Prompt-box_a label {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.Release_tab_a {
+				font-size: 16px;
+				padding-bottom: 10px;
+			}
+			
+			.Release-tab-a .Release-banner a {
+				color: #fff;
+			}
+			
+			.next-step {
+				margin-right: 10px;
+			}
+			
+			.Payment_show .checkbox {
+				margin-top: 0px;
+			}
+			
+			.Beore b {
+				color: #999;
+			}
+			
+			.page_information {
+				cursor: pointer;
+				margin-right: 10px;
+				background: #f5f5f5;
+				padding: 5px;
+				border: 1px solid #ddd;
+			}
+			
+			.step01 .Release_tab_a {
+				margin-bottom: 10px;
+			}
+			
+			.step01 .Release-a {
+				margin-top: 15px;
+				color: #666;
+			}
+			
+			.step01 .Release-a em {
+				margin-right: 5px;
+			}
+			
+			.Release-a .width_195 {
+				width: 195px;
+			}
+			
+			.product_form .step01 .Release_tab,
+			.product_form .step02 .Release_tab,
+			.product_form .step03 .Release_tab {
+				font-size: 16px;
+				padding-bottom: 10px;
+			}
+			
+			.product_form .step03 .address-email {
+				margin-top: 0px;
+			}
+			
+			.address-email .btn-group {
+				width: 132px;
+			}
+			
+			.Billing-box .btn-group {
+				width: 150px;
+				margin-right: 5px;
+			}
+			
+			.Billing-box .btn-group_a {
+				float: left;
+			}
+			
+			.Billing-box .btn-group_b {
+				vertical-align: middle;
+			}
+			
+			.Billing-box .checkbox {
+				margin-top: 0px;
+			}
+			
+			.Billing-box .checkbox label {
+				vertical-align: top;
+			}
+			
+			.color_01 {
+				color: #999;
+				margin-left: 5px;
+			}
+			
+			.Release-right .Release-table {
+				margin-left: 40px;
+			}
+			
+			.money {
+				width: 80px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.money_c {
+				width: 174px;
+			}
+			
+			.money_b {
+				width: 85px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.offer-form input.input-file {
+				width: 240px;
+				display: inline-block;
+				background: #fff;
+			}
+			
+			.Calculation {
+				width: 100px;
+			}
+			
+			.product_form {
+				margin-top: 30px;
+			}
+			
+			.offer {
+				margin-top: -1px;
+			}
+			
+			.C-btn_a {
+				padding: 0 5px;
+				line-height: 20px;
+				margin: 5px 0;
+			}
+			
+			.Release-a .people {
+				width: 95px;
+				margin: 0 5px;
+			}
+			
+			.Release-a .people_rs_02 .input_01 {
+				width: 180px;
+				margin: 0 5px;
+			}
+			
+			.Release-a .people_rs_02 .people_li .input_01 {
+				width: 210px;
+			}
+			
+			.Release-a .people_rs_02 .people_li li:last-child {
+				margin-top: 15px;
+			}
+			
+			.Release-a .people_rs_02 .people_li li:last-child .people {
+				width: 155px;
+			}
+			
+			.people_box {
+				overflow: hidden;
+				color: #666;
+			}
+			
+			.people_box dl {
+				border: 1px solid #ddd;
+				width: 740px;
+				background: #fff;
+				padding: 20px;
+				margin: 15px 0 0 200px;
+			}
+			
+			.people_li {
+				border-bottom: 1px dotted #ddd;
+				overflow: hidden;
+				padding-bottom: 15px;
+				margin-top: 15px;
+				position: relative;
+			}
+			
+			.people_li span {
+				position: absolute;
+				top: 0px;
+				left: 40px;
+			}
+			
+			.people_li li {
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.people_li li:first-child {
+				width: 100%;
+			}
+			
+			.people_rs {
+				position: relative;
+			}
+			
+			.people_rs b {
+				position: absolute;
+				right: 0px;
+			}
+			
+			.clear:hover {
+				background: #ddd;
+				color: #333;
+				border: 1px solid #d2d2d2;
+			}
+			
+			.Payment_show,
+			.Payment_show_a {
+				border: 1px solid #ddd;
+				background: #fff;
+				width: 870px;
+				margin-left: 50px;
+			}
+			
+			.offer-form li.Payment_show,
+			.offer-form li.Payment_show_a {
+				padding: 15px 0px;
+			}
+			
+			.Payment_show dd {
+				margin-bottom: 10px;
+			}
+			
+			.Release-right select.Coins {
+				width: 120px;
+			}
+			
+			.Release-right .Coins-box input {
+				width: 100px;
+			}
+			
+			.Release-right .Coins-box span {
+				display: none;
+			}
+			
+			.Single_batch_a li {
+				overflow: hidden;
+			}
+			
+			.offer-form .Single_batch_a li dl {
+				padding: 0px;
+			}
+			
+			.offer-form .Single_batch_a .offer-d {
+				margin-left: 0px;
+			}
+			
+			.premium-box .offer-form {
+				margin-top: 25px;
+			}
+			
+			.premium-box .div-input-a {
+				margin-top: 0px;
+			}
+			
+			.select_width {
+				width: 590px;
+			}
+			
+			.information-box .C_information-a .checkbox {
+				width: 820px;
+			}
+			
+			.C_information-a .Cover_product {
+				overflow: hidden;
+				margin-top: 50px;
+			}
+			
+			.information-box .Cover_product .checkbox .cb-input {
+				width: 120px;
+			}
+			
+			.information-box .Cover_product .checkbox .input_check {
+				width: 14px;
+				height: 14px;
+				margin-top: 12px;
+			}
+			
+			.information_bottom .design-btn-a {
+				margin-top: 0px;
+			}
+			
+			.offer-form li.Beore div {
+				margin-left: 10px;
+			}
+			
+			.checkbox-inline {
+				padding-left: 0px;
+			}
+			
+			.select_a {
+				width: 298px;
+				height: 40px;
+				border: 1px solid #ddd;
+			}
+			
+			.select-c {
+				width: 118px;
+				border: 1px solid #ddd;
+			}
+			
+			.select-g,
+			.select-h {
+				margin-left: 5px;
+				width: 110px;
+				height: 40px;
+				border: 1px solid #ddd;
+				color: #666;
+			}
+			
+			.select-h {
+				width: 132px;
+				border: 1px solid #ccc;
+			}
+			
+			.information_bottom input.register_input {
+				width: 228px;
+				height: 40px;
+			}
+			
+			.product-right .sign-success-a {
+				float: none;
+			}
+			
+			.Release-c .offer-h5 b {
+				color: #999;
+			}
+			
+			.ts_box {
+				color: #db4d00;
+				margin-left: 10px;
+			}
+			
+			.project {
+				margin-top: 25px;
+			}
+			
+			.offer-form .Payment_show_a .span-data {
+				margin-left: 0px;
+			}
+			
+			.display_block {
+				display: block !important;
+			}
+			
+			.trading {
+				font-size: 14px;
+				background: #eee;
+				padding: 5px 20px;
+				color: #666;
+				border-radius: 3px;
+				float: right;
+				border: 1px solid #ddd;
+			}
+			
+			.trading:hover {
+				background: #1a63b0;
+				color: #fff;
+			}
+			
+			.Maintain-details .offer-form {
+				border: 1px solid #ddd;
+				margin-top: 0px;
+				background: #fff;
+			}
+			
+			.Maintain-details .Several-quotations-a h2 {
+				margin-bottom: 0px;
+			}
+			
+			.o_f {
+				overflow: hidden;
+			}
+			
+			.History-record_a table {
+				margin-left: 0px;
+				color: #666;
+			}
+			
+			.History-record-table .table_a td {
+				border-bottom: 1px solid #dddF;
+			}
+			
+			.money_b {
+				width: 100px;
+				height: 36px;
+				border: 1px solid #ddd;
+			}
+			
+			.money_c {
+				width: 125px;
+			}
+			
+			.History-record-table td {
+				padding: 0px !important;
+			}
+			
+			.premium-box .width-a-32 ul {
+				border-bottom: 1px solid #ddd;
+				overflow: hidden;
+				margin-bottom: 0px;
+			}
+			
+			.premium-box .width-a-32 ul:last-child {
+				border-bottom: 0px;
+			}
+			
+			.premium-box .width-a-32 li {
+				width: 33.3%;
+				float: left;
+				margin-bottom: 0px;
+				border-right: 1px solid #ddd;
+				text-align: center;
+			}
+			
+			.premium-box .width-a-32 li:last-child {
+				border-right: 0px;
+			}
+			
+			.Release-right .History-record_a input {
+				width: 100px;
+			}
+			
+			.corlor_9 {
+				color: #999;
+				margin-bottom: 0px;
+			}
+			
+			.Release-right .Upload .attachment_name {
+				border: 1px solid #ddd;
+				width: 440px;
+				height: 40px;
+				line-height: 40px;
+				display: block;
+				padding-left: 5px;
+				float: left;
+				background: #fff;
+			}
+			
+			.Release-right .Upload .uploadify {
+				float: left;
+				margin-left: 5px;
+			}
+			
+			.Release-right .Upload .cancel {
+				display: none;
+			}
+			
+			.Release-right .Upload .fileName {
+				display: none;
+			}
+			
+			.Payment_show {
+				display: none;
+			}
+			
+			.span_color {
+				color: #db4d00;
+				margin-right: 5px;
+			}
+			
+			.bargaining-box .response-success .div_01 {
+				margin-bottom: 15px;
+			}
+			
+			.file_01 {
+				width: 100%;
+			}
+			
+			.premium-box .offer-form li .file_01 {
+				padding: 0 0 0 106px;
+				margin: 0px;
+			}
+			
+			.premium-box .offer-form li .file_01 dd {
+				line-height: 40px;
+				padding-right: 10px;
+				padding-left: 0px;
+				padding-bottom: 0px;
+				margin-top: 10px;
+				position: relative;
+				display: inline-block;
+			}
+			
+			.premium-box .offer-form .file_01 dd a {
+				padding: 5px 10px;
+				cursor: pointer;
+				border: 1px solid #ddd;
+			}
+			
+			.premium-box .offer-form .file_01 dd a:hover {
+				border: 1px solid #ddd;
+			}
+			
+			.premium-box .file_01 dd span {
+				border: 1px solid #ddd;
+				width: 20px;
+				height: 20px;
+				border-radius: 20px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				text-align: center;
+				line-height: 20px;
+				background: #fff;
+				cursor: pointer;
+				font-size: 12px;
+				display: none;
+			}
+			
+			.premium-box .file_01 dd:hover span {
+				display: inline-block;
+			}
+			
+			.premium-box .file_01 dd span:hover {
+				background: #1a63b0;
+				color: #fff;
+			}
+			
+			.success_01 span i {
+				color: #11b0b6;
+				font-size: 36px;
+				margin-right: 10px;
+				vertical-align: -5px;
+			}
+			
+			.success_01 b {
+				font-size: 14px;
+				margin-top: 20px;
+				color: #999;
+			}
+			
+			.success_01 b a {
+				text-decoration: underline;
+				color: #999;
+			}
+			
+			.success_01 b a:hover {
+				color: #1a63b0;
+			}
+			
+			.state-box .state {
+				margin-top: 150px;
+			}
+			
+			.Validform_right {
+				display: none;
+			}
+			
+			.Upload_02 {
+				width: 670px;
+				position: relative;
+				background: none;
+			}
+			
+			.Upload_02 .Process li.Process-statu p {
+				margin-right: 7px;
+			}
+			
+			.Upload_02 .modal-body {
+				padding-top: 0px;
+			}
+			
+			.Upload_02 .contact {
+				margin-top: 100px;
+			}
+			
+			.Upload_02 .contact p {
+				line-height: 30px;
+				text-align: center;
+				color: #666;
+			}
+			
+			.Upload_02 .contact p b {
+				color: #ff7e00;
+				font-size: 20px;
+			}
+			
+			.Upload_02 .contact p span {
+				color: #333;
+				font-size: 16px;
+			}
+			
+			.Upload_02 .Process li.state_01 p {
+				margin-right: -10px;
+			}
+			
+			.evaluate_box .radio-premium {
+				width: 80%;
+				float: left;
+				overflow: hidden;
+				color: #666;
+			}
+			
+			.evaluate_box h4 {
+				margin-bottom: 25px;
+				font-size: 14px;
+				border-left: 4px solid #afafaf;
+				padding-left: 5px;
+				color: #666;
+			}
+			
+			.evaluate_box label {
+				font-weight: normal;
+				float: left;
+				width: 60px;
+				text-align: right;
+				margin-right: 5px;
+			}
+			
+			.evaluate_box .evaluate_01 {
+				overflow: hidden;
+				margin: 15px 0;
+			}
+			
+			.evaluate_box span {
+				word-break: break-all;
+			}
+			
+			.evaluate_box li {
+				line-height: 24px;
+			}
+			
+			.center {
+				width: 958px;
+				margin: 0 auto;
+				float: none;
+				border: 1px solid #ddd;
+				padding: 0 20px;
+				margin-top: -1px;
+			}
+			
+			.dowload {
+				font-size: 24px;
+				text-align: center;
+				color: #666;
+				height: 60px;
+				letter-spacing: 10px;
+				border: 1px solid #ddd;
+				width: 958px;
+				margin: 0 auto;
+				line-height: 60px;
+				margin-top: 30px;
+			}
+			
+			.offer-information li.bx-li .span_03 {
+				height: auto;
+			}
+			
+			.box_01 {
+				border-top: 1px solid #ddd;
+				margin-top: 30px;
+				color: #666;
+			}
+			
+			.box_01 p {
+				line-height: 30px;
+				margin-top: 20px;
+			}
+			
+			.box_01 .box_02 {
+				float: right;
+				margin: 30px 0;
+				line-height: 30px;
+			}
+			
+			.box_01 .box_02 span {
+				margin-left: 30px;
+			}
+			
+			.box_01 .box_02 span.span_04 {
+				margin-left: 50px;
+			}
+			
+			.sel_01 .offer-form ul {
+				padding-left: 20px;
+			}
+			
+			.sel_01 .offer-form li {
+				padding-left: 0px;
+				margin-bottom: 10px;
+			}
+			
+			.sel_01 .offer-form li img {
+				height: 33px;
+				width: 79px;
+				border: 1px solid #ddd;
+				margin-right: 15px;
+			}
+			
+			.premium-box .offer-form li .Paul {
+				width: 79px;
+			}
+			
+			.premium-box_a .offer-form li .input_02 {
+				width: 160px;
+			}
+			
+			.premium-box_a .offer-form li .Paul-btn3 {
+				margin-left: 0px;
+			}
+			
+			.premium-box.offer-form li .span_ml {
+				padding-left: 45px;
+			}
+			
+			.premium-box_a .offer-form li a {
+				margin-right: 10px;
+			}
+			
+			.evaluate_03 {
+				border-top: 1px solid #ddd;
+				padding: 20px 0;
+				margin-top: 30px;
+			}
+			
+			.evaluate_box .Paul-btn {
+				margin-left: 63px;
+				padding: 0 20px;
+			}
+			
+			.text_01 {
+				font-size: 16px;
+			}
+			
+			.text_01 strong {
+				text-align: center;
+				display: block;
+				font-size: 20px;
+				line-height: 50px;
+			}
+			
+			.text_01 p {
+				text-indent: 2em;
+				line-height: 40px;
+			}
+			
+			.text_01 span {
+				float: right;
+				color: #333;
+				margin-top: 20px;
+			}
+			
+			.tit_01 {
+				font-size: 16px;
+				color: #333;
+				overflow: hidden;
+			}
+			
+			.Payment_img img {
+				width: 171px;
+				height: 58px;
+				margin: 30px 0;
+			}
+			
+			.money_d dl {
+				width: 740px;
+				border: 1px solid #ddd;
+				background: #fff;
+				float: left;
+				padding: 20px;
+			}
+			
+			.money_d dl h4 {
+				font-size: 14px;
+				padding: 10px 0;
+			}
+			
+			.Release-a .money_e dl label {
+				width: 120px;
+			}
+			
+			.Release-a .money_e dd {
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			
+			.Release-a .money_e .position {
+				position: relative;
+			}
+			
+			.Release-a .money_e .position span.Validform_checktip {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.Release-a .money_e textarea {
+				height: 100px;
+				border: 1px solid #ddd;
+				padding-left: 10px;
+				line-height: 24px;
+			}
+			
+			.Release-a .money_e input.form-control {
+				width: 362px;
+			}
+			
+			.Release-a .money_d input {
+				width: 480px;
+				overflow: hidden;
+			}
+			
+			.Release-a .money_e input,
+			.Release-a .money_e textarea {
+				width: 452px;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+			
+			.Release-a .money_d p.Validform_wrong {
+				margin-left: 0px;
+			}
+			
+			.money_tab {
+				background: #fff;
+			}
+			
+			.Release-a .Payment-a span.Validform_wrong,
+			.offer-form .Beore span.Validform_wrong {
+				color: #db4d00;
+			}
+			
+			.Upload .file_upload1-queue .data {
+				position: absolute;
+				right: 10px;
+				top: 0px;
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.Release-a .Upload input {
+				width: 440px;
+				border-radius: 0px;
+			}
+			
+			.Release-a .form-group {
+				clear: both;
+				min-height: 40px;
+			}
+			
+			.Release-a .Registered {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.Release-a .Registered span {
+				position: absolute;
+				left: 215px;
+			}
+			
+			.fr_02 {
+				margin-right: 10px;
+			}
+			
+			.Release-a .clause3 {
+				position: relative;
+			}
+			
+			.Release-a .clause3 ul label span.Validform_wrong {
+				position: absolute;
+				top: 0px;
+				left: 800px;
+			}
+			
+			.Release-a .clause3 ul {
+				margin-left: 200px;
+			}
+			
+			.Release-a .clause3 ul li {
+				overflow: hidden;
+				margin-bottom: 15px;
+			}
+			
+			.Release-a .clause3 ul label {
+				width: 100px;
+			}
+			
+			.Release-a .clause3 ul select,
+			.Release-a .clause3 ul textarea {
+				width: 490px;
+				padding-left: 10px;
+			}
+			
+			.Release-a .clause3 ul textarea {
+				border: 1px solid #ddd;
+				height: 100px;
+				color: #666;
+			}
+			
+			.Release-a .clause3 ul input.checkbox_01 {
+				width: 14px;
+				height: 14px;
+				vertical-align: -3px;
+			}
+			
+			.address-01 dl input {
+				width: 95px;
+			}
+			
+			.address-01 span,
+			.address-01 b.add_tab {
+				vertical-align: -9px;
+			}
+			
+			.address-01 dd div {
+				border-bottom: 1px dotted #ddd;
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+			}
+			
+			.address-01 dd div span.Validform_checktip {
+				vertical-align: 0px;
+				margin-left: 10px;
+			}
+			
+			.tool {
+				position: relative;
+			}
+			
+			.tool span {
+				margin-right: 10px;
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.tool input {
+				width: 14px;
+				height: 14px;
+				margin-right: 5px;
+				vertical-align: sub;
+			}
+			
+			.tool span.Validform_checktip {
+				position: absolute;
+				left: 505px;
+			}
+			
+			.tool .input_01 {
+				width: 107px;
+				height: 40px;
+			}
+			
+			.Packing span.Validform_checktip {
+				left: 795px;
+			}
+			
+			.Release-right .radio_01 .Registered label {
+				width: 100%;
+			}
+			
+			.Release-right .radio_01 .Registered b {
+				color: #999;
+			}
+			
+			.Release-a .radio_01 .Registered span {
+				left: 0px;
+				top: 10px
+			}
+			
+			.Release-a .Payment b {
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				margin-right: 10px;
+			}
+			
+			.Release-a .Payment ul {
+				margin-left: 200px;
+			}
+			
+			.Release-a .Payment ul li {
+				margin-top: 15px;
+				overflow: hidden;
+			}
+			
+			.Release-a .Payment>span {
+				color: #999;
+			}
+			
+			.offer-Deal {
+				border: 1px solid #ddd;
+				margin-top: -1px;
+				padding: 25px 25px 25px 0;
+			}
+			
+			.border .product_form>ul,
+			.border>ul {
+				border: 1px solid #ddd;
+				padding: 25px 0;
+				margin-top: -1px;
+			}
+			
+			.border .product_form {
+				margin-top: -1px;
+			}
+			
+			.border .offer-h5_a {
+				margin-bottom: 0px;
+			}
+			
+			.offer-information li.tit_02 .span-color {
+				width: 88%;
+			}
+			
+			.Release-a .clause3 .lh-01 {
+				line-height: 24px;
+				padding-right: 5px;
+			}
+			
+			.search {
+				border: 0px;
+			}
+			
+			.search .search-box input {
+				width: 200px;
+				margin-left: 0px;
+			}
+			
+			.search .design-btn {
+				margin-left: 0px;
+			}
+			
+			.offer-information li.ml_01 dl {
+				margin-left: 75px;
+			}
+			/********分割线********/
+
+			a.invite-tips {
+				position: relative;
+			}
+
+			a.invite-tips div.tips-box {
+				width: 500px;
+				height: auto;
+				border: 1px solid #ddd;
+				background: #fff;
+				position: absolute;
+				top: 25px;
+				right: -200px;
+				z-index: 100;
+				box-shadow: 0 0 10px #d8d8d8;
+				display: none;
+			}
+
+			a.invite-tips:hover{}
+			a.invite-tips:hover div.tips-box {
+				display:inline;
+			}
+
+			a.invite-tips div.tips-box table {
+				margin: 10px;
+				width: 480px;
+				color: #666;
+				clear: both;
+			}
+
+			a.invite-tips div.tips-box table th {
+				background: #f8f8f8;
+			}
+
+			a.invite-tips div.tips-box table td,
+			a.invite-tips div.tips-box table th {
+				width: 100px;
+				font-weight: normal;
+				text-align: center;
+				border: 1px solid #ddd;
+				height: 36px;
+				line-height: 36px;
+			}
+			
+			.search-people {
+				position: relative;
+			}
+			
+			.Upload .btn-default {
+				height: 40px;
+				line-height: 40px;
+				background: #e6e6e6;
+				padding: 0px 10px;
+				font-size: 14px;
+				text-decoration: none;
+				color: #666;
+			}
+			
+			.search-people .search-box {
+				width: 500px;
+				min-height: 260px;
+				border: 1px solid #ddd;
+				background: #fff;
+				position: absolute;
+				top: 35px;
+				right: -180px;
+				z-index: 100;
+				box-shadow: 0 0 10px #d8d8d8;
+			}
+			
+			.search-people .search-box h4 {
+				background: #1a63b0;
+				margin: 0px;
+				color: #fff;
+				line-height: 40px;
+				height: 40px;
+				font-size: 14px;
+				padding-left: 10px;
+				position: relative;
+			}
+			
+			.search-people .search-box h4 i {
+				position: absolute;
+				color: #1a63b1;
+				top: -7px;
+				left: 50%;
+				background: none;
+				height: 0px;
+			}
+			
+			.search-people .search-box ul {
+				padding: 25px 25px 0px 25px;
+				overflow: hidden;
+			}
+			
+			.search-people .search-box li {
+				width: 50%;
+				float: left;
+				margin-bottom: 10px;
+			}
+			
+			.search-people .search-box select {
+				width: 140px;
+				height: 36px;
+				line-height: 36px;
+			}
+			
+			.search-people .search-box .design-btn {
+				margin-left: 0px;
+				color: #fff;
+				padding: 0 15px;
+				font-size: 14px;
+			}
+			
+			.search-people .search-box table {
+				margin-left: 25px;
+				clear: both;
+			}
+			
+			.search-people .search-box table th {
+				background: #f8f8f8;
+			}
+			
+			.search-people .search-box table td,
+			.search-people .search-box table th {
+				width: 218px;
+				font-weight: normal;
+				text-align: center;
+				border: 1px solid #ddd;
+				height: 36px;
+				line-height: 36px;
+			}
+			
+			.search-people .search-tab {
+				cursor: pointer;
+			}
+			
+			.search-people .search-box h4 em {
+				width: 40px;
+				height: 38px;
+				float: right;
+				background: #1a63b0;
+				text-align: center;
+				line-height: 38px;
+				cursor: pointer;
+				color: #fff;
+			}
+			
+			.search-people .search-box ul b {
+				line-height: 30px;
+				color: #db4d00;
+				padding-left: 10px;
+			}
+			
+			.Release-a .Payment ul li b {
+				width: 100px;
+				text-align: center;
+			}
+			
+			.Tip {
+				color: #db4d00;
+				margin-left: 35px;
+			}
+			
+			.tip_box {
+				border: 1px solid #ddd;
+				padding: 25px;
+				margin-bottom: 30px;
+				line-height: 26px;
+				background: #fff;
+			}
+			
+			.tip_box i {
+				width: 26px;
+				height: 26px;
+				display: block;
+				background: url(../../pics/public/spring.png) no-repeat;
+				background-position: -395px -509px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.tip_box p {
+				width: 90%;
+				margin: -5px 0 0 40px;
+				line-height: 36px;
+			}
+			
+			.tip_box b {
+				color: #1a63b1;
+			}
+			
+			.tip_b {
+				color: #666;
+				margin-left: 15px;
+			}
+			
+			.tip_box_01 {
+				color: #666;
+				line-height: 24px;
+			}
+			
+			.tip_box_01 b {
+				color: #db4d00;
+			}
+			
+			.company_img {
+				width: 136px;
+				height: 136px;
+				margin: 0 auto;
+			}
+			
+			.btn_img {
+				width: 136px;
+				height: 40px;
+				background: #40acda;
+				color: #fff;
+			}
+			
+			.btn_img:hover {
+				color: #fff;
+			}
+			
+			.Progress_line_box {
+				width: 180px;
+				padding: 15px 0;
+				margin-left: 168px;
+			}
+			
+			.company_img img {
+				width: 136px;
+				height: 136px;
+			}
+			
+			.Progress_line_box .Progress_line {
+				width: 136px;
+				height: 13px;
+				background: #fff;
+				position: relative;
+				border: 1px solid #ddd;
+				float: left;
+				margin-top: 3px;
+			}
+			
+			.Progress_line_box span {
+				width: 20%;
+				display: block;
+				height: 11px;
+				background: #ddd;
+			}
+			
+			.details_a .Single-batch .span-data i {
+				left: 135px;
+			}
+			
+			.details_a .Single-batch p.show-error {
+				padding-top: 0px;
+			}
+			
+			.C-btn:visited {
+				color: #fff;
+			}
+			
+			.History-record-table {
+				position: relative;
+				z-index: 9;
+			}
+			
+			.dowload_box:hover .dowload_txt_box {
+				display: block;
+			}
+			
+			.dowload_txt_box {
+				display: none;
+				position: absolute;
+				z-index: 100;
+				margin-left: -35px;
+			}
+			
+			.dowload_txt_box .dowload_txt {
+				padding: 10px 15px;
+				border: 1px solid #ddd;
+				background: #fbfbfb;
+				width: 200px;
+				box-shadow: 0 0 3px #ddd;
+				margin-top: -10px;
+				z-index: 20;
+				position: relative;
+			}
+			
+			.dowload_txt_box .dowload_txt a {
+				line-height: 30px;
+			}
+			
+			.dowload_txt_box i {
+				color: #ddd;
+				z-index: 5;
+			}
+			
+			.update_progress_area {
+				display: block;
+				height: 35px;
+				overflow: hidden;
+				padding-top: 10px;
+				width: 46%;
+			}
+			
+			.History-record-table .corlor_9 {
+				margin-top: 10px;
+			}
+			
+			.History-record-table .C-btn {
+				margin-bottom: 10px;
+			}
+			/********分割线2016.11.30********/
+			
+			.Maintain-details .Paul-btn {
+				min-width: 88px;
+			}
+			
+			.Verification_li .tip {
+				line-height: 40px;
+				color: #db4d00;
+				margin-left: 10px;
+			}
+			
+			.search-box .add-Policy {
+				margin-left: 15px;
+				border: 1px solid #ddd;
+				padding: 8px 15px;
+				border-radius: 5px;
+				background: #fff;
+			}
+			
+			.search-box .add-Policy b {
+				background: url(../../pics/public/spring.png) no-repeat;
+				background-position: -400px -569px;
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.search-box .add-Policy:hover {
+				background: #1a63b1;
+				color: #fff;
+			}
+			
+			.search-box .add-Policy:hover b {
+				background: url(../../pics/public/spring.png) no-repeat;
+				background-position: -400px -599px;
+			}
+			
+			.add-Policy-warp {
+				width: 750px;
+				margin-top: 50px;
+			}
+			
+			.add-Policy-box h2 {
+				border-bottom: 1px solid #ddd;
+				font-size: 18px;
+				padding: 0 0 15px 0;
+				margin-top: 0px;
+			}
+			
+			.add-Policy-box h2 i {
+				width: 26px;
+				height: 26px;
+				background-position: -114px -198px;
+				margin-right: 8px;
+			}
+			
+			.add-Policy-box ul {
+				margin-top: 30px;
+			}
+			
+			.add-Policy-box li {
+				overflow: hidden;
+				margin-top: 10px;
+			}
+			
+			.add-Policy-box li label {
+				width: 105px;
+				text-align: right;
+				font-weight: normal;
+				float: left;
+				line-height: 40px;
+			}
+			
+			.add-Policy-box li input {
+				width: 500px;
+				border: 1px solid #ddd;
+				height: 40px;
+				float: left;
+				padding-left: 10px;
+			}
+			
+			.add-Policy-box li input[type="file"] {
+				padding-top: 8px;
+				background: #fff;
+			}
+			
+			.add-Policy-box li em {
+				color: #db4d00;
+				margin-right: 5px;
+			}
+			
+			.add-Policy-box li textarea {
+				width: 500px;
+				height: 100px;
+				border: 1px solid #ddd;
+				padding-left: 10px;
+			}
+			
+			.add-Policy-box .Paul-btn {
+				padding: 0 20px;
+				margin-left: 105px;
+			}
+			
+			.add-Policy-box li span {
+				line-height: 40px;
+			}
+			
+			.modal-header {
+				padding: 10px;
+			}
+			
+			.modal-header h4 {
+				font-size: 16px;
+			}
+			
+			.add-Policy-box .tip-Policy {
+				text-align: center;
+				font-size: 16px;
+				padding-top: 100px;
+				line-height: 34px;
+				color: #999;
+			}
+			
+			.add-Policy-box .tip-Policy i,
+			.pay_success i {
+				color: #11b0b6;
+				font-size: 55px;
+				margin-right: 10px;
+				vertical-align: -5px;
+				margin-bottom: 10px;
+			}
+			
+			.add-Policy-box .tip-Policy span,
+			.pay_success p {
+				font-size: 22px;
+				color: #666;
+			}
+			
+			.add-Policy-box .tip-Policy a {
+				padding: 0 40px;
+				line-height: 40px;
+				height: 40px;
+				display: inline-block;
+				background: #1a63b1;
+				color: #FFF;
+				border-radius: 5px;
+				margin-top: 10px;
+			}
+			
+			.add-Policy-box .tip-Policy .Paul-btn:hover {
+				color: #FFF;
+			}
+			/********分割线2016.12.2********/
+			
+			.sel_box {
+				overflow: hidden;
+				margin-left: 60px;
+			}
+			
+			.sel_box dd {
+				float: left;
+				margin-right: 30px;
+			}
+			
+			.sel_box dd input {
+				vertical-align: -15px;
+				margin-right: 5px;
+			}
+			
+			.tip_p {
+				color: #666;
+				border: 1px solid #ddd;
+				padding: 20px;
+				margin: 30px 0 30px 130px;
+				background: #fbfbfb;
+				width: 590px;
+			}
+			
+			.tip_p button {
+				background: #0794cf;
+				height: 36px;
+			}
+			/********分割线2016.12.3********/
+			
+			.Release-c-a .span-data i {
+				left: 170px;
+			}
+			
+			.Process_warp {
+				border: 1px solid #ddd;
+				padding: 25px;
+				margin-bottom: 30px;
+				background: #fff;
+				height: 150px;
+				position: relative;
+			}
+			
+			.Process_warp .process_line {
+				width: 660px;
+				margin: 27px auto 0 auto;
+			}
+			
+			.Process_warp .process_line li {
+				width: 33.3%;
+				border: 0px;
+				border-top: 2px dotted #ddd;
+				float: left;
+			}
+			
+			.Process_warp .process_line li.active {
+				border-top: 2px dotted #0794cf;
+			}
+			
+			.Process_warp ul.container {
+				width: 100%;
+				position: absolute;
+				top: 30px;
+			}
+			
+			.Process_warp ul.container li {
+				width: 226px;
+				float: left;
+				text-align: center;
+				display: block;
+			}
+			
+			.Process_warp ul.container li i {
+				width: 52px;
+				height: 52px;
+				display: block;
+				background: #fff url(../../pics/public/spring.png) no-repeat;
+				margin: 0 auto;
+			}
+			
+			.Process_warp ul.container li i.icon_01 {
+				background-position: -35px -775px
+			}
+			
+			.Process_warp ul.container li i.icon_02 {
+				background-position: -113px -775px;
+			}
+			
+			.Process_warp ul.container li i.icon_03 {
+				background-position: -195px -775px;
+			}
+			
+			.Process_warp ul.container li i.icon_04 {
+				background-position: -283px -774px;
+			}
+			
+			.Process_warp ul.container li i.icon_01_active {
+				background-position: -35px -705px;
+			}
+			
+			.Process_warp ul.container li i.icon_02_active {
+				background-position: -114px -705px;
+			}
+			
+			.Process_warp ul.container li i.icon_03_active {
+				background-position: -194px -707px;
+			}
+			
+			.Process_warp ul.container li i.icon_04_active {
+				background-position: -283px -707px;
+			}
+			
+			.Process_warp ul.container li p {
+				margin-top: 10px;
+				color: #666;
+			}
+			
+			.Process_warp_02 .process_line {
+				width: 620px;
+			}
+			
+			.Process_warp_02 .process_line li {
+				width: 50%;
+			}
+			
+			.Process_warp_02 ul.container li {
+				width: 302px;
+			}
+			
+			.details_a .premium-box_a .add-dd {
+				margin-bottom: 15px;
+			}
+			
+			.details_a .premium-box_a .offer-form dd p {
+				margin-bottom: 0px;
+			}
+			
+			.History-record .update_progress_area {
+				width: 59%;
+			}
+			
+			.History-record .upload_pro_text {
+				width: 590px;
+				left: 0px;
+			}
+			
+			.History-record .upload_show_area,
+			.History-record .upload_progress_bar_bk {
+				width: 590px;
+			}
+			/********2016.12.6********/
+			
+			.Insurance_warp {
+				min-height: 659px;
+			}
+			
+			.add_Insurance {
+				height: 659px;
+				background: url(../../pics/qbzz/banner_bd.jpg) top center no-repeat;
+				padding-top: 80px;
+			}
+			
+			.add_Insurance .C_layout {
+				height: 490px;
+				background: #fff url(../../pics/qbzz/add_bd_bj.jpg) top left no-repeat;
+			}
+			
+			.add_Insurance .C_layout>p {
+				text-align: center;
+				padding-top: 60px;
+				color: #999;
+			}
+			
+			.add_Insurance .C_layout>p b {
+				color: #333;
+				font-size: 24px;
+				overflow: hidden;
+				display: block;
+				margin-bottom: 10px;
+			}
+			
+			.add_Insurance .C_layout li {
+				width: 50%;
+				float: left;
+				height: 280px;
+				border-right: 1px solid #ddd;
+				margin-top: 40px;
+			}
+			
+			.add_Insurance_01 {
+				text-align: center;
+			}
+			
+			.add_Insurance_01 p {
+				font-size: 16px;
+				line-height: 45px;
+			}
+			
+			.add_Insurance_01 a.Paul-btn {
+				background: #18a4e0;
+				width: 160px;
+				border: 1px solid #18a4e0;
+				height: 40px;
+				line-height: 40px;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			.add_Insurance_01 a.Paul-btn:hover {
+				background: #1a63b0;
+				border: 1px solid #1a63b0;
+				color: #fff;
+			}
+			
+			.add_Insurance_02 {
+				margin: 20px 0 0 155px;
+			}
+			
+			.add_Insurance_02 p {
+				color: #999;
+				background: url(../../pics/qbzz/icon_02.jpg) top left no-repeat;
+				padding: 0 0 10px 55px;
+			}
+			
+			.add_Insurance_02 p b {
+				font-size: 18px;
+				color: #333;
+				display: block;
+				padding-bottom: 2px;
+			}
+			
+			.add_Insurance_02 img {
+				border: 3px solid #ececec;
+				margin-left: 55px;
+			}
+			
+			.return_Policy {
+				border: 1px solid #0794cf;
+				float: right;
+				font-size: 14px;
+				padding: 0px 15px;
+				line-height: 24px;
+				border-radius: 5px;
+				background: #0794cf;
+				color: #fff;
+			}
+			
+			.return_Policy:hover {
+				color: #fff;
+				border: 1px solid #1a63b1;
+				background: #1a63b1;
+			}
+			/*******注册*********/
+			
+			.register-form form .verify-code-input {
+				width: 320px;
+			}
+			
+			.register-form form .verify-code-btn,
+			.design-contact .verify-code-btn {
+				height: 40px;
+				color: #666;
+				background: #dbdbdb;
+			}
+			
+			.register-form form .verify-code-btn:active,
+			.register-form form .verify-code-btn:hover,
+			.register-form form .verify-code-btn:visited,
+			.design-contact .verify-code-btn:active,
+			.design-contact .verify-code-btn:hover,
+			.design-contact .verify-code-btn:visited {
+				background: #23baf9;
+				color: #fff;
+				outline: 0;
+			}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>个人设置</title>
+		<link rel="stylesheet" type="text/css" href="../../css/personal_claim.css"/>
+	</head>
+	<body id="bgcolor">
+		<div class="content">
+			<div class="personalset clear">
+				<span class="portrait">头像</span>
+				<!--<img  src="../../img/company-logo.png" alt="" class="personal-pic" />-->
+				<div class="personal-pic clear">
+					<label class="clear">
+						<img src="../../img/company-logo.png" alt=""  class="potopic"/>
+						<img src=""  class="uploaded" />
+						<input type="file" class="file" runat="server" accept="image/*" />
+						<input name="id_card[]" class="policy_photo" />
+						<input type="hidden" class="attachment_url" />
+						<div class="upload_content_bottom">
+						 	<div class="fixHeight"></div>
+						 	<p class="percent_uped"></p>
+						</div>
+					</label>
+				</div>
+			</div>
+			<ul class="ul1">
+				<li>
+					<span class="personal_left">姓名</span>
+					<span class="personal_right">杜杜杜</span>
+				</li>
+				<li>
+					<span class="personal_left">证件号</span>
+					<span class="personal_right">42112323199110293245</span>
+				</li>
+				<li>
+					<span class="personal_left">手机号</span>
+					<span class="personal_right">01234567890</span>
+				</li>
+				<li>
+					<a href="acceptAccount.html">
+						<span class="personal_left">收款账户信息</span>
+						<span class="personal_right">
+							<img src="../../img/you.png" alt="" class="go"/>
+						</span>
+					</a>
+				</li>
+			</ul>	
+			<div class="out">
+				<div class="out-bt">保存更新</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/personalSet.js"></script>
+</html>	
+
+

@@ -1,0 +1,25 @@
+
+.account_title{color:#35313f;font-size: 24px;border-bottom: 1px solid #e9e9f4;line-height: 44px;}
+.account_left{width:80px;float:left;height:38px;}
+.account_left span{float:right;line-height: 38px;}
+.account_right{float:left;margin-left: 10px;width:386px;color:#35313f;}
+.account_right>input{border: 1px solid #e9e9f4;width:100%;height: 38px;line-height: 38px;padding:0 10px;box-sizing: border-box;}
+.content ul li{margin-top: 18px;} 
+.account_right textarea{resize: none;width:100%;height:150px;border: 1px solid #e9e9f4;padding: 5px 10px;box-sizing: border-box;}
+.account_right label{line-height: 38px;margin-right: 24px;}
+.account_right label input{position:relative;top:2px;}
+.account_left img{float:right;margin: 13px 3px 0 0;}
+.account_right>span{line-height: 38px;}
+.account_right a{border-radius: 3px;text-align:center;line-height:38px;font-size: 16px;width:140px;height:38px;color:#fff;margin:36px 0 50px 0;background: url(../img/bc.png) no-repeat center center;}
+.account-IC .account_right a{/*behavior: url(../../js/PIE.htc);*/position: relative;}
+.account_right .keep{float:right;background: #524ae7;}
+.account_right .keep:hover{background: #4037ed;}
+.account_right .cancel{float:right;margin-right: 45px;background: #b1afbb;}
+.account_right .cancel:hover{background: #999;}
+/*.account_right a:hover{background: #4037ed;}*/
+.account_left .sp_img{line-height: 100px;}
+.Head_portrait{cursor: pointer;width:100px;height:100px;}
+
+#upload_show_process_area_1{position:relative;margin:18px 0 38px 0;background: #e9e9f4;color:#35313f;width: 100%;height:20px;line-height: 20px;}
+.speed{color:#fff;background: #524ae7;position:absolute;top:0;left:0;height:100%;overflow: hidden;}
+.speed p{width:500px;height:36px;}

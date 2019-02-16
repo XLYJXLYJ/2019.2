@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,scrollview.bounces = no">
+		<title>修改手机号</title>
+		<link rel="stylesheet" type="text/css" href="../../css/personal.css"/>
+	</head>
+	<body>
+		<main class="main_tel">
+			<p class="topTxt">
+				<span class="colorLight">当前：</span>
+				<span>18898460586</span>
+			</p>
+			<form class="myform" action="/group/save">
+				<ul class="cont-information">
+					<li class="clear">
+						<input type="text" class="phone" placeholder="请输入新号码" datatype="phone" errormsg="请填写正确的手机号码"  nullmsg="请输入手机号码"/>
+					</li>
+					<li class="clear Verification">
+						<input type="text" placeholder="请输入短信验证码" class="yanzenma" datatype="*"  nullmsg="请输入验证码"/>
+						<span class="validate-bt">获取验证码</span>
+						<div class="Validform_checktip Verification-nub">验证码错误</div>
+					</li>
+				</ul>
+				<div class="partSmall">
+					<div class="end-bt">确认修改</div>
+				</div>
+			</form>
+		</main>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/Validform_ncr_min.js" ></script>
+	<script>
+		$(function(){
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".end-bt",
+		        datatype:{
+	            	'phone':/^1\d{10}$/
+		        },
+		        callback:function(data){
+					if(data.code==200){
+						
+					}else{
+						$(".yanzm .Validform_checktip").html("验证码错误");
+					}
+		        }
+		    });
+		})
+	</script>
+</html>

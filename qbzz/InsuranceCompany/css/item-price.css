@@ -1,0 +1,71 @@
+.content ul li{margin-top: 0;}
+.cont-price{margin-left: 20px;}
+.content_top{
+	border-bottom: 1px solid #e9e9f4;
+	margin-bottom: 40px;
+}
+.price-titl{
+	width: 165px;
+	float: left;
+    text-align: center;
+    font-size: 15px;
+    height: 48px;
+    line-height: 48px;
+    color: #35313f;
+    cursor: pointer;
+    background-color: #f4f4f5;
+    border: 1px solid #e9e9f4;
+    border-bottom: none;
+}
+.top-first{
+	width: 120px;
+}
+.choose{
+	border: none;
+	color: #fff;
+	padding-bottom:1px;
+	background: #524ae7;
+}
+.invite_left,.div_left{width:130px;float:left;height:38px;}
+.invite_left span{float:right;line-height: 20px;}
+.invite_right,.div_right{float:left;margin-left: 15px;color:#35313f;}
+.dowload-tip{position: relative;}
+.download{padding-left: 30px;float:left;line-height: 37px;height:37px;position:relative;margin: 10px 0;margin-right:40px;cursor: pointer;}
+.download .pic{background: url(../../img/background_zhaozhao.png) no-repeat -8px -447px;width:40px;height:40px;position:absolute;top:7px;left:0;}
+.download:hover{color:#35313f;}
+.download:hover .pic{background: url(../../img/background_zhaozhao.png) no-repeat -48px -447px;}
+
+/*雇主责任险*/
+.text-div{
+	width: 440px;
+    height: 213px;
+    padding: 10px 5px 12px 4px;
+    position: relative;
+    border: 1px solid #ebebf5;
+}
+.term-other{margin: 25px 0 25px 146px;}
+.text-div-p1{margin-left: 6px;color: #524ae7;}
+.text-div-p1>span{color:#35313f;font-size: 12px;}
+.text-div-p2{
+	position: absolute;
+	top: 4px;
+    right: 21px;
+    color: #727689;
+}
+.text-div-p2>span{color:#35313f;}
+.div_left{text-align: right;color: #727689;}
+.div_right{	width:200px;margin-left: 35px;}
+.item-term{margin-left: 12px;margin-top: 40px;}
+.item-term-name{
+	width: 100px;
+    color: #35313f;
+    margin-left: 166px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+}
+.invite_right-text>p{width: 600px;margin-bottom: 5px;line-height: 25px;}
+.dowload-tip{width: 450px;}
+#special-text{margin-top: 10px;}
+.dowload_item{padding-left: 32px;margin-right:30px;width:120px;}
+.attachment-cont{margin-top: 40px;padding-bottom: 260px;}
+.attachment{color: #35313f;font-size: 22px;padding-bottom: 7px;margin-bottom: 30px;border-bottom: 1px solid #e9e9f4;}

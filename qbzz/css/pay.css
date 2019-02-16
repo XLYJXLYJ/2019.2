@@ -1,0 +1,118 @@
+
+.padding{margin-top: 30px;}
+.pay_title{color:#35313f;margin-right: 50px;font-size: 24px;border-bottom: 1px solid #e9e9f4;line-height: 44px;display:block;}
+.information_cont,.pay_type{padding: 6px 20px;}
+.first_information{border: 1px solid #e9e9f4;}
+.information_cont li{line-height: 38px;}
+.information_cont span{float:left;width:75px;text-align: right;margin-right: 10px;}
+.information_cont p{float:left;color:#35313f;}
+.information_cont .red_money{color:#e5423d;}
+
+.pay_nav{margin: 96px 0 30px 0;}
+.pay_nav span{cursor: pointer;border: 1px solid #e9e9f4;border-right: 0;width:126px;height:48px;line-height:48px ;text-align: center;color:#35313f;background: #f4f4f5;float:left;font-size: 15.4px;}
+.pay_nav span:first-child+span+span{border-right: 1px solid #e9e9f4;}
+.pay_nav .active_check{background: #524ae7;color:#fff;}
+.pay_type{border: 1px solid #e9e9f4;}
+.pay_type .pay_type_title{font-size: 16px;line-height: 40px;color:#35313f;}
+.pay_type ul{padding: 0 0 0 35px;}
+.pay_type ul li{float:left;width:290px;height:90px;}
+.pay_type ul li img{margin:13px 0 0 10px;vertical-align: middle;}
+.pay_type ul li input{position:relative;top:9px;}
+.other_type{border: 1px solid #e9e9f4;display:none;min-width: 950px;margin-bottom: 100px;}
+.other_type_top{margin-bottom: 18px;height:57px;background: #f4f4f5;color:#35313f;line-height: 57px;text-align: center;font-size: 16px;}
+.other_type_top img{position:relative;top:7px;left:-5px;}
+.other_type_bottom{line-height: 38px;font-size: 16px;padding: 0 28px;margin-bottom: 18px;position: relative;}
+.other_type_bottom img{position:relative;top:-5px;}
+.other_type_bottom input{padding:0 10px;margin:0 10px;font-size: 14px;height:38px;line-height:38px;border: 1px solid #e9e9f4;width:60%;}
+.other_type_bottom button,.end_ok button{behavior: url(../../js/PIE.htc);display:inline-block;cursor: pointer;width:120px;height:38px;line-height: 38px;text-align: center;background: #524ae7;color:#fff;border-radius: 3px;}
+.end_ok{margin:90px 0;text-align: right;position: relative;}
+.other_type_bottom .Validform_checktip{font-size: 14px;margin-left: 220px;}
+.pay-balance{display:none;}
+.pay-balance-cont{border: 1px solid #e9e9f4;}
+.pay-balance-cont>p{margin:0 0 20px 25px;}
+.pay-balance-cont span{color:#35313f;}
+.end-balance{padding-left:30px;margin:50px 0 100px 0;height:72px;background: #f4f4f5;position: relative;}
+.end-balance .balance-bt{position:relative;behavior: url(../../js/PIE.htc);float:right;cursor:pointer;height:38px;width:140px;text-align: center;line-height: 38px;color:#fff;background: #524ae7;margin:16px 30px 0 0;border-radius: 3px;}
+.end-balance span{line-height: 72px;color:#35313f;float:left;}
+.end-balance .red_money{font-size: 20px;color:#e5423d;}
+.paid_fix p span{color:#e5423d;font-size: 20px;}
+.paid_fix .all_top{margin-left: 100px;}
+
+
+.zhifu{padding: 0;width:575px;}
+.zhifu .ok_fix_top{background:#5349e7 ;font-size:16px;line-height: 60px;color:#fff;padding-left: 30px;border-radius: 3px 3px 0 0;margin:0;}
+.zhifu_cont {text-align: center;}
+.zhifu_cont p{margin-top: 35px;}
+.zhifu_cont img{margin:15px 0;}
+.zhifu_cont .erwei{width:165px;height:165px;}
+.zhifu_cont span{color:#fb6f00;display:block;}
+
+.pay_end_cont{width:310px;height:310px;position:absolute;top:50%;left:50%;margin-top:-155px;text-align: center;}
+.pay_end_cont p{font-size: 28px;color:#35313f;line-height: 80px;margin-bottom: 15px;}
+.pay_right{color:#35313f;}
+.pay_nuber{color:#e5423d;}
+.pay_end_cont>div{line-height: 20px;text-align: left;margin-left: 50px;}
+.pay_end_cont a{width:140px;height:38px;line-height: 38px;border-radius: 3px;font-size: 16px;text-align: center;cursor: pointer;color:#fff;background: #524ae7;display:inline-block;margin-top: 30px;}
+
+.error{position:relative;margin-bottom:40px;background: #f4f4f5;width:0;height:0;padding:0 40px;overflow:hidden;display:none;margin-right: 50px;box-sizing: border-box;}
+.delete-line{position: absolute;top:35px;right:30px;cursor: pointer;}
+.error-title{color:#35313f;font-size: 18px;padding-top: 35px;}
+.error-cont{margin-top: 20px;padding: 0 18px;position:relative;}
+.error-cont p{color:#35313f;font-size: 16px;margin-bottom: 8px;}
+.error span{font-size: 14px;line-height: 20px;}
+.heidian{position:absolute;top:8px;left:6px;}
+.error-bottom {padding: 30px 0 35px 0;font-size: 16px;color:#35313f;}
+.error-bottom p span{color:#524ae7;cursor: pointer;}
+
+.result,.fail,.exceed{display:none;border-radius:4px;font-size:18px;width:360px;height:80px;color:#35313f;position:fixed;top:50%;left:50%;margin:-40px 0 0 -180px;background: #fff;line-height: 80px;}
+.exceed{width:470px;}
+.result-cont img{position:relative;top:4px;left:-6px;}
+.result-cont{padding-left: 60px;}
+.fail .result-cont{padding-left: 85px;}
+
+/*.all_tip{top:50%;display:none;}*/
+/*弱提示*/
+.all_tips {
+	position: absolute;
+	right: 30px;
+	top: -50px;
+	padding: 0 30px;
+    background-color: #fabc2d;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    z-index: 10000;
+}
+/*在线充值*/
+.recharge-cont{margin:-10px 0 38px 0;}
+.recharge-cont span{color:#35313f;float:left;font-size: 20px;line-height: 40px;margin-right: 20px;}
+.recharge-cont .red_money,.recharge-cont .red_money span{color:#e5423d;font-size: 40px;font-weight: bold;}
+.recharge-cont .red_money strong{font-weight: bold;}
+.recharge-cont p{line-height: 54px;color:#b1afbb;}
+.recharge_title{height:50px;border-bottom: 1px solid #e9e9f4;color:#35313f;font-size: 20px;line-height: 50px;margin-bottom: 50px;}
+.recharge-nub{/*margin:50px 0 80px 0;*/margin: 40px 0 50px 0;line-height: 38px;color:#35313f;font-size: 16px;}
+.recharge-nub>span{float:left;margin-left: 20px;}
+.recharge-nub .recharge-nub-right{float:left;}
+.recharge-nub .recharge-nub-right input{float:left;height:38px;line-height: 38px;width:260px;border: 1px solid #e9e9f4;box-sizing: border-box;padding: 0 10px;margin:0 10px;}
+.recharge-nub .recharge-nub-right .Validform_checktip{margin-left: 20px;display: block;}
+.end-left{float:left;}
+.sub button{behavior: url(../js/PIE.htc);position:relative;float:right;cursor:pointer;height:38px;width:140px;text-align: center;line-height: 38px;color:#fff;background: #524ae7;margin:16px 30px 0 0;border-radius: 3px;}
+.red_money strong{float:left;font-weight: normal;}
+.red_money span{color:#e5423d;text-align: left;}
+.balance-span{color:red;font-size: 14px;margin-left: 20px;display:none;}
+
+/*余额问题*/
+.recharge-cont .all-price-use span{font-size: 14px;}
+.recharge-cont .all-price-use .price-name{color:#727689;}
+.recharge-cont .all-price-use .price-name{margin-right: 5px;}
+.martop{margin-top: 10px;}
+.all-price-use{padding-left: 25px;position: relative;line-height: 38px;}
+.balance-pic{position:absolute;left:2px;top:10px;}
+.huoyun-tishi{color: #35313f;}
+.recharge-tishi{cursor: pointer;width:20px;height:20px;float:left;position: relative;background: url(../img/wenwen.png) no-repeat;margin:9px 0 0 -25px ;}
+.recharge-tishi:hover{background: url(../img/wenwen1.png) no-repeat;}
+.recharge-tishi:hover .introduce{display:block;}
+.introduce{width:220px;position:absolute;top:20px;right:-17px;display:none;z-index: 10;}
+.introduce .jianjian{height:17px;width:100%;background: url(../img/jianjian.png) no-repeat 185px 3px;}
+.introduce p{font-size: 12px;padding: 15px 12px;background: #fabc2d;border-radius: 5px;line-height: 22px;color:#fff;}
+.introduce p strong{font-weight: normal;}

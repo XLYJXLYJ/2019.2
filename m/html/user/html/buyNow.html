@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>立即购买</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<link href="../../../css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+	    <link href="../../../css/mobiscroll.widget.css" rel="stylesheet" type="text/css" />
+	    <link href="../../../css/mobiscroll.widget.ios.css" rel="stylesheet" type="text/css" />
+	    <link href="../../../css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+	    <link href="../../../css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css"href="../../../css/shijian.css" />
+	</head>
+
+	<body id="bgcolor">
+		<nav class="nav nav_buy clear">
+			<div class="p_right loginout">
+				<a>
+					<img src="../../../img/loginout.png"/>
+				</a>
+			</div>
+			<div class="p_left">
+				<img src="../../../img/touxiang.png" class="personPic" />
+			</div>
+			<div class="div_mid ">
+				<p class="nav_title">深圳市大锤科技有限公司</p>
+				<p>137*******1</p>
+			</div>
+		</nav>
+		<main class="main_index">
+			<ul class="indexUl clear">
+				<li class="">
+					<a href="#" class="a_cheacked left_li">
+						<img src="../../../img/buy.png">
+						<p>立即购买</p>
+					</a>
+				</li>
+				<li >
+					<a href="#" class="right_li">
+						<img src="../../../img/order1.png" />
+						<p>我的订单</p>
+					</a>
+				</li>
+			</ul>
+			<form class="myform" >
+				<ul class="ul_contain buyUl">
+					<li class="clear">
+						<div class="leftDiv">选择产品 :</div>
+						<div class="midDiv">
+							<input type="text" class="select-box selectProduct" readonly="true" data-id="check-plan" data-nub="0" data-price="5,6" data-message = "人保　国内公路运输基本险,人保　国内公路运输综合险"  value="人保　国内公路运输基本险"/>
+							<input type="hidden" name="" id="" value="" />
+						</div>
+						<div class="rightDiv rightDivFirst" >
+							<img src="../../../img/you.png"  readonly="true" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="strong">被保险人信息</div>
+						<div class="leftDiv">被保险人 :</div>
+						<div class="midDiv">
+							<input type="text" name="applicant" datatype="*1-50" placeholder="填写货主公司全称或姓名身份证号" nullmsg="请填写货主公司全称或姓名身份证号" errormsg="请填写正确的货主公司全称或姓名身份证号"/>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="strong">货物信息</div>
+						<ul class="midUl">
+							<li class="clear">
+								<div class="leftDiv">货物类型 :</div>
+								<div class="midDiv">
+									<input type="text" class="select-box  typeKind1" readonly="true" data-id="check-type1" data-nub="0" value="请选择一级货物类型" />
+									<input type="hidden" name="" id="" value="" />
+									<span class="Validform_checktip"></span>
+								</div>
+								<div class="rightDiv">
+									<img src="../../../img/you.png"  readonly="true" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">货物类型 :</div>
+								<div class="midDiv">
+									<input type="text" class="select-box  typeKind2" readonly="true" data-id = "check-type2" data-nub="0" value="请选择二级货物类型"/>
+									<input type="hidden" name="" id="" value="" />
+									<span class="Validform_checktip"></span>
+								</div>
+								<div class="rightDiv">
+									<img src="../../../img/you.png"  readonly="true" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">货物名称 :</div>
+								<div class="midDiv">
+									<input type="text" name="desc" placeholder="如苹果" datatype="*1-50" errormsg="请填写正确的货物名称"  nullmsg="请填写货物名称"/>
+								</div>
+							</li>
+							<li class="clear lastLi">
+								<div class="leftDiv">数量包装 :</div>
+								<div class="midDiv">
+									<input type="text" name="packing_num" datatype="*1-30"  placeholder="如两吨,纸箱"  errormsg="请填写正确的数量包装"  nullmsg="请填写数量包装"/>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="clear">
+						<div class="strong">运输信息</div>
+					    <ul class="midUl">
+							<li class="clear">
+								<div class="leftDiv">起运地 :</div>
+								<div class="midDiv">
+									<input class="selectPlace start" type="text" name="start" placeholder="请选择起运地" readonly="true"/>
+									<input type="hidden" class="shen" value="" />
+									<input type="hidden" class="shi" value="" />
+									<span class="Validform_checktip"></span>
+								</div>
+								<div class="rightDiv">
+									<img src="../../../img/you.png"  readonly="true" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">目的地 :</div>
+								<div class="midDiv">
+									<input class="selectPlace end" type="text" name="end" placeholder="请选择目的地" readonly="true" />
+									<input type="hidden" class="shen" value="" />
+									<input type="hidden" class="shi" value="" />
+									<span class="Validform_checktip"></span>
+								</div>
+								<div class="rightDiv">
+									<img src="../../../img/you.png"  readonly="true" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">中转地 :</div>
+								<div class="midDiv">
+									<input type="text" name="transit" placeholder="如广州韶关,若有多个请全部连续填写" maxlength="50"/>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">起运时间 :</div>
+								<div class="midDiv">
+									<input class="time" type="text" name="shipment_date" id="transport_means" placeholder="请选择起运时间" readonly="true "/>
+									<span class="Validform_checktip"></span>
+								</div>
+								<div class="rightDiv">
+									<img src="../../../img/you.png"  readonly="true" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">车牌号 :</div>
+								<div class="midDiv">
+									<input type="text" name="transport_means" placeholder="如粤B88888" datatype="*1-10" errormsg="请输入正确的车牌号" nullmsg="请输入车牌号"/>
+								</div>
+							</li>
+							<li class="clear lastLi">
+								<div class="leftDiv">运单号 :</div>
+								<div class="midDiv">
+									<input class="danhaoIpt" type="text" name="single_number" placeholder="请填写物流运单号,非必填" />
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="clear">
+						<div class="strong">费用信息</div>
+						<ul class="midUl">
+							<li class="clear">
+								<div class="leftDiv">保险金额 :</div>
+								<div class="midDiv">
+									<input class="input-prices" type="text" name="invoice_amount" placeholder="请填写货值,如100000" datatype="price" errormsg="金额格式错误" nullmsg="请输入保险金额" />
+								</div>
+							</li>
+							<li class="clear">
+								<div class="leftDiv">保险费率 :</div>
+								<div class="midDiv">
+									<input class="rate" type="text" name="rate" readonly="true " value="0.03%" />
+								</div>
+							</li>
+							<li class="clear lastLi">
+								<div class="leftDiv">服务费用 :</div>
+								<div class="midDiv">
+									<input class="moneyRed" type="text" readonly="true" value="150.00"  datatype="fuwu"  errormsg="服务费用低于0.01元，无法提交"/>
+									<span class="Validform_checktip"></span>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="clause">
+					<label>
+						<input type="checkbox" class="checkbox2" name="read" nullmsg="请勾选条款" checked="checked"/>
+						<p>我已经认真阅读，理解并同意</p>
+					</label>
+					<p class="insur_clause">《保险协议》</p>
+				</div>
+				<div class="partSmall">
+					<div class="end-bt">提交申请</div>
+				</div>
+			</form>
+		</main>
+		
+		<!--遮罩-->
+		<div class="all-fix">
+				<div class="all-no"></div>
+		</div>
+		<ul class="footer-p" id="start">
+			<div class="ul-div-head">
+				<div class="first" >城市选择</div>
+			</div>
+			<div class="ul-div-body clear">
+        		<div class="left">
+	                <span data-id="1" class="">北京市</span>
+	                <span data-id="2" class="">天津市</span>
+	                <span data-id="3">河北省</span>
+	                <span data-id="4">山西省</span>
+	                <span data-id="5">内蒙古自治区</span>
+	                <span data-id="6">辽宁省</span>
+	                <span data-id="7">吉林省</span>
+	                <span data-id="8">黑龙江省</span>
+	                <span data-id="9">上海市</span>
+	                <span data-id="10">江苏省</span>
+	                <span data-id="11">浙江省</span>
+	                <span data-id="12">安徽省</span>
+	                <span data-id="13">福建省</span>
+	                <span data-id="14">江西省</span>
+	                <span data-id="15">山东省</span>
+	                <span data-id="16">河南省</span>
+	                <span data-id="17">湖北省</span>
+	                <span data-id="18">湖南省</span>
+	                <span data-id="19">广东省</span>
+	                <span data-id="20">广西壮族自治区</span>
+	                <span data-id="21">海南省</span>
+	                <span data-id="22">重庆市</span>
+	                <span data-id="23">四川省</span>
+	                <span data-id="24">贵州省</span>
+	                <span data-id="25">云南省</span>
+	                <span data-id="26">西藏自治区</span>
+	                <span data-id="27">陕西省</span>
+	                <span data-id="28">甘肃省</span>
+	                <span data-id="29">青海省</span>
+	                <span data-id="30">宁夏回族自治区</span>
+	                <span data-id="31">新疆维吾尔自治区</span>
+	                <span data-id="32">台湾省</span>
+	                <span data-id="33">香港特别行政区</span>
+	                <span data-id="34">澳门特别行政区</span>
+	                <span data-id="14763">上海市</span>
+                </div>
+		        <div class="right">
+		        	<span data-id="1" class="">北京市</span>
+		            <span data-id="2" class="">天津市</span>
+		            <span data-id="3">河北省</span>
+		            <span data-id="4">山西省</span>
+		            <span data-id="5">内蒙古自治区</span>
+		            <span data-id="6">辽宁省</span>
+		            <span data-id="7">吉林省</span>
+		            <span data-id="8">黑龙江省</span>
+		            <span data-id="9">上海市</span>
+		            <span data-id="10">江苏省</span>
+		            <span data-id="11">浙江省</span>
+		            <span data-id="12">安徽省</span>
+		        </div>
+		    </div>
+		</ul>
+		
+		<ul class="footer-p" id="end">
+			<div class="ul-div-head">
+				<div class="first">城市选择</div>
+			</div>
+			<div class="ul-div-body">
+				<div class="left">
+					<span data-id="1" class="">北京市</span>
+	                <span data-id="2" class="">天津市</span>
+	                <span data-id="3">河北省</span>
+	                <span data-id="4">山西省</span>
+	                <span data-id="5">内蒙古自治区</span>
+	                <span data-id="6">辽宁省</span>
+	                <span data-id="7">吉林省</span>
+	                <span data-id="8">黑龙江省</span>
+	                <span data-id="9">上海市</span>
+	                <span data-id="10">江苏省</span>
+	                <span data-id="11">浙江省</span>
+	                <span data-id="12">安徽省</span>
+	                <span data-id="13">福建省</span>
+	                <span data-id="14">江西省</span>
+	                <span data-id="15">山东省</span>
+	                <span data-id="16">河南省</span>
+	                <span data-id="17">湖北省</span>
+	                <span data-id="18">湖南省</span>
+	                <span data-id="19">广东省</span>
+	                <span data-id="20">广西壮族自治区</span>
+	                <span data-id="21">海南省</span>
+	                <span data-id="22">重庆市</span>
+	                <span data-id="23">四川省</span>
+	                <span data-id="24">贵州省</span>
+	                <span data-id="25">云南省</span>
+	                <span data-id="26">西藏自治区</span>
+	                <span data-id="27">陕西省</span>
+	                <span data-id="28">甘肃省</span>
+	                <span data-id="29">青海省</span>
+	                <span data-id="30">宁夏回族自治区</span>
+	                <span data-id="31">新疆维吾尔自治区</span>
+	                <span data-id="32">台湾省</span>
+	                <span data-id="33">香港特别行政区</span>
+	                <span data-id="34">澳门特别行政区</span>
+	                <span data-id="14763">上海市</span>
+				</div>
+				<div class="right">
+					<span data-id="1" class="">北京市</span>
+	                <span data-id="2" class="">天津市</span>
+	                <span data-id="3">河北省</span>
+	                <span data-id="4">山西省</span>
+	                <span data-id="5">内蒙古自治区</span>
+	                <span data-id="6">辽宁省</span>
+	                <span data-id="7">吉林省</span>
+	                <span data-id="8">黑龙江省</span>
+	                <span data-id="9">上海市</span>
+	                <span data-id="10">江苏省</span>
+	                <span data-id="11">浙江省</span>
+	                <span data-id="12">安徽省</span>
+				</div>
+			</div>
+		</ul>
+		
+		<!--  退出登录-->
+		<div class="z-center">
+			<p class="red">是否确认退出?</p>
+			<div class="fixBnt">
+				<button class="fixBnt_cancel">取消</button>
+				<button class="fixBnt_submit">确认</button>
+			</div>
+			
+		</div>
+		
+		<!--条款-->
+		<div class="baoxian-fix">
+			<div class="all-no"></div>
+			<div class="clause-cont">
+				<div class="clause-title">保险协议</div>
+				<img src="../../../img/delete-line-ico4.png" alt="" class="delete"/>
+				<div class="mid-cont">
+					<div class="clause-type">
+						<p><strong>保险介绍</strong></p>
+						<p>1、本保险承保公司为中国人民财产保险股份有限公司；</p>
+						<p>2、本产品仅可投保货值在100万人民币或等值其他币种金额以内的保单；</p>
+						<p>3、免赔条件：</p>
+						<p>综合险，附加盗抢：（1）一般事故每次事故绝对免赔额为：人民币 1,000 元或损失金额的 5 %的绝对免赔，两者以高为准。（2）国内易碎品运输，免赔为保险金额的 3 %或者损失金额的 8 %，两者以高为准。</p>
+						<p>基本险，附加盗抢：（1）每次事故绝对免赔额为：人民币 8,000 元或损失金额的 10 %的绝对免赔，两者以高为准。（2）全损绝对免赔 20 %；（3）盗抢责任免赔（所有货物）：每次事故绝对免赔额为损失金额的 20 ％，全车被抢劫、盗窃、被骗绝对免赔 30 %。</p>
+						<p><strong>承保声明:</strong></p>
+						<p>1、被保险人必须为实际货主；保单生效后保险金额不可修改、不能退保；</p>
+						<p>2、本保单仅承保普通货物及农产品，具体以投保货物信息中的货物类型为准，不包括以下货物：</p>
+						<p>（1）金银、纪念币、贵重金属、古币、古玩、古书、古画、邮票、艺术品、稀有金属、文物、古董、现金、有价证券、票据、文件、档案、账册、图纸、技术资料、玉雕工艺品、玉石制品、名画、古代化石、瓷器、旧地毯、各类工艺品等其他价值无法确定或者保险期间内价值变化较大的货物；</p>
+						<p>（2）鱼粉、豆粕、易腐易蛀品（各类果仁、花生、大豆等谷物，粮食作物、菜籽饼、木薯干、蔬菜等）；</p>
+						<p>（3）动物及畜产品、血制品、疫苗、注射剂、针剂类药品；</p>
+						<p>（4）有防震防倾斜等要求的精密设备；单价保额超50万的医疗设备；二手设备；武器弹药；航空航天器材；成品车；</p>
+						<p>（5）易碎品（包括玻璃、玻璃制品、液晶面板、陶瓷、卫生洁具、石膏制品、灯具、易碎工艺品、搪瓷等易碎容器装的货物、瓷砖、瓦等建筑装修材料中的易碎品等）；</p>
+						<p>（6）爆炸品、放射性同位素、易燃、易爆的危险品、军用武器或装备、酒类、酒精、汽油、煤油、柴油、火柴；</p>
+						<p>（7）红木家具；原木；</p>
+						<p>（8）散装化工类货物；</p>
+						<p>（9）根据法律法规规定的其他禁止性物品；</p>
+						<p>3、被保险人在投保前或保险合同成立后放弃对第三者请求赔偿的权利的，保险人将不承担赔偿保险金的责任；保险人已经支付保险金的，被保险人应当退还保险人。</p>
+						<p>4、保证条款：投保人/被保险人违反以下保证条款造成的损失，乙方不负责赔偿。</p>
+						<p>1）被保险人须保证在本保险生效时被保货物全新且状况良好，并经过专业包装。</p>
+						<p>2）被保险人保证公路运输时使用全封闭厢式卡车/全封闭集装箱卡车，在条件不允许的情况下使用半封闭卡车时，必须使用防水布覆盖保险标的物并加以固定，以作保护。</p>
+						<p>3）为保证货物的运输安全，被保险人须选择信誉好、管理规范的货运公司承运货物，如损失涉及第三者责任方，被保险人不得擅自放弃或减损此项权益。</p>
+						<p>5、本产品为系统自动处理投保，请投保人务必根据协议要求进行投保，并如实填写投保信息。若投保标的、承运工具、运输区间等相关信息不符合保险协议的约定，保险公司不承担保险责任。</p>
+						<p class="center" style="font-size: 16px;">国内水路、陆路货物运输保险条款<strong>（2009版）</strong></p>
+						<p class="center">总    则</p>
+						<p>第一条  为使保险货物在水路、铁路、公路和联运运输中，因遭受保险责任范围内的自然灾害或意外事故所造成的损失能够得到经济补偿，并加强货物的安全防损工作，以利商品生产和商品流通，特举办保险。  </p>
+						<p>保险责任</p>
+						<p>第二条  本保险分为基本险和综合险两种。保险货物遭受损失时，保险人按承保险别的责任范围负赔偿责任。</p>
+						<p>（一）基本险：</p>
+						<p>1.因火灾、爆炸、雷电、冰雹、暴风、暴雨、洪水、地震、海啸、地陷、崖崩、滑坡、泥石流所造成的损失；</p>
+						<p>2.由于运输工具发生碰撞、搁浅、触礁、倾覆、沉没、出轨或隧道、码头坍塌所造成的损失；</p>
+						<p>3.在装货、卸货或转载时因遭受不属于包装质量不善或装卸人员违反操作规程所造成的损失；</p>
+						<p>4.按国家规定或一般惯例应分摊的共同海损的费用；</p>
+						<p>5.在发生上述灾害、事故时，因纷乱而造成货物的散失及因施救或保护货物所支付的直接合理的费用。</p>
+						<p>（二）综合险：本保险除包括基本险责任外，保险人还负责赔偿：</p>
+						<p>1.因受震动、碰撞、挤压而造成货物破碎、弯曲、凹瘪、折断、开裂或包装破裂致使货物散失的损失；</p>
+						<p>2.液体货物因受震动、碰撞或挤压致使所用容器（包括封口)损坏而渗漏的损失，或用液体保藏的货物因液体渗漏而造成保藏货物腐烂变质的损失；</p>
+						<p>3.遭受盗窃或整件提货不着的损失；</p>
+						<p>4.符合安全运输规定而遭受雨淋所致的损失。</p>
+						<p>除外责任</p>
+						<p><strong>第三条  由于下列原因造成保险货物的损失，保险人不负赔偿责任：</strong></p>
+						<p><strong>1.战争或军事行动；</strong></p>
+						<p><strong>2.核事件或核爆炸；</strong></p>
+						<p><strong>3.保险货物本身的缺陷或自然损耗，以及由于包装不善；</strong></p>
+						<p><strong>4.被保险人的故意行为或过失；</strong></p>
+						<p><strong>5.全程是公路货物运输的，盗窃和整件提货不着的损失；</strong></p>
+						<p><strong>6.其他不属于保险责任范围内的损失。</strong> </p>
+						<p class="center"><strong>责任起迄</strong></p>
+						<p>第四条  保险责任自签发保险凭证和保险货物离起运地发货人的最后一个仓库或储运处所时起，至该保险凭证上注明的目的地的收货人在当地的第一个仓库或储存处所时终止。但保险货物运抵目的地后，如果收货人未及时提货，则保险责任的终止期最多延长至以收货人接到《到货通知单》后的十五天为限（以邮戳日期为准）。</p>
+						<p class="center"><strong>保险金额</strong></p>
+						<p>第五条  保险价值为货物的实际价值，按货物的实际价值或货物的实际价值加运杂费确定。保险金额由投保人参照保险价值自行确定，并在保险合同中载明。保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。</p>
+						<p>投保人、被保险人的义务</p>
+						<p>第六条  投保人应履行如实告知义务，如实回答保险人就保险标的或被保险人的有关情况提出的询问。</p>
+						<p>投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除合同。保险合同自保险人的解约通知书到达投保人或被保险人时解除。</p>
+						<p>投保人故意不履行如实告知义务的，保险人对于保险合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。 </p>
+						<p>投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于保险合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+						<p>第七条  投保人在保险人签发保险凭证的同时，应按照保险费率，一次交清应付的保险费。若投保人未按照约定交付保险费，保险费交付前发生的保险事故，保险人不承担赔偿责任。</p>
+						<p>第八条  被保险人应严格遵守国家及交通运输部门关于安全运输的各项规定。还应当接受并协助保险人对保险货物进行的查验防损工作，货物包装必须符合国家和主管部门规定的标准。<strong>对于因被保险人未遵守上述约定而导致保险事故的，保险人不负赔偿责任；对于因被保险人未遵守上述约定而导致损失扩大的，保险人对扩大的损失不负赔偿责任。</strong> </p>
+						<p>第九条  货物如果发生保险责任范围内的损失时，被保险人获悉后，应立即通知保险人的当地保险机构并应迅速采取施救和保护措施防止或减少货物损失。</p>
+						<p><strong>故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外。</strong></p>
+						<p>赔偿处理</p>
+						<p>第十条  被保险人向保险人申请索赔时，必须提供下列有关单证：</p>
+						<p>1.保险凭证、运单（货票）、提货单、发货票；</p>
+						<p>2.承运部门签发的货运记录、普通记录、交接验收记录、鉴定书；</p>
+						<p>3.收货单位的入库记录、检验报告、损失清单及救护货物所支付的直接费用的单据。</p>
+						<p>收到被保险人的赔偿请求后，应当及时就是否属于保险责任作出核定，并将核定结果通知被保险人。情形复杂的，保险人在收到被保险人的赔偿请求并提供理赔所需资料后三十日内未能核定保险责任的，保险人与被保险人根据实际情形商议合理期间，保险人在商定的期间内作出核定结果并通知被保险人。对属于保险责任的，在与被保险人达成有关赔偿金额的协议后十日内，履行赔偿义务。</p>
+						<p>第十一条  货物发生保险责任范围内的损失时，按货价确定保险金额的，保险人根据实际损失按起运地货价计算赔偿；按货价加运杂费确定保险金额的，保险人根据实际损失按起运地货价加运杂费计算。但最高赔偿金额以保险金额为限。</p>
+						<p>第十二条  如果被保险人投保不足，保险金额低于货价时，保险人对其损失金额及支付的施救保护费用按保险金额与货价的比例计算赔偿。保险人对货物损失的赔偿金额，以及因施救或保护货物所支付的直接、合理的费用，应分别计算，并各以不超过保险金额为限。</p>
+						<p>第十三条  货物发生保险责任范围内的损失，如果根据法律规定或者有关约定，应当由承运人或其他第三者负责赔偿部分或全部的，被保险人应首先向承运人或其他第三者索赔。如被保险人提出要求，保险人也可以先予赔偿，但被保险人应签发权益转让书给保险人，并协助保险人向责任方追偿。</p>
+						<p>第十四条  经双方协商同意，保险人可将其享有的保险财产残余部分的权益作价折归被保险人，并可在保险赔偿金中直接扣除。</p>
+						<p>第十五条  被保险人与保险人发生争议时，应当实事求是，协商解决，双方不能达成协议时，可以提交仲裁机关或法院处理。  </p>
+						<p class="center">本保险合同适用中华人民共和国法律(不包括港澳台地区法律）</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../../js/jquery.js"></script>
+	<script src="../../../js/input-prices.js"></script>
+	<script src="../../../js/Validform_ncr_min.js" ></script>
+	<script src="../../../js/buyNow.js"></script>
+	<script src="../../../js/select_downBox.js"></script>
+	<script src="../../../js/mobiscroll.core.js"></script>
+    <script src="../../../js/mobiscroll.widget.js"></script>
+    <script src="../../../js/mobiscroll.scroller.js"></script>
+    <script src="../../../js/mobiscroll.util.datetime.js"></script>
+    <script src="../../../js/mobiscroll.datetimebase.js"></script>
+    <script src="../../../js/mobiscroll.widget.ios.js"></script>
+    <script src="../../../js/mobiscroll.i18n.zh.js"></script>
+
+</html>

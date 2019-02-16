@@ -1,0 +1,642 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+img,
+button,
+input {
+	outline: none;
+}
+
+em {
+	font-style: normal;
+}
+
+a {
+	color: #666;
+}
+
+a:hover {
+	color: #0151a3;
+	text-decoration: none;
+}
+
+.a_line {
+	text-decoration: underline;
+	color: #1a63b0;
+}
+
+.C_layout {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+body {
+	background: #fff;
+	font: 14px "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	min-width: 1200px;
+}
+
+ul,
+li,
+dl,
+dd {
+	list-style: none;
+}
+
+
+/***a标签***/
+
+.a-line {
+	text-decoration: underline;
+}
+
+
+/***字体***/
+
+.fc6 {
+	color: #666;
+}
+
+.fc9 {
+	color: #999;
+}
+
+.fcf {
+	color: #fff;
+}
+
+.fc3 {
+	color: #333;
+}
+
+.f14 {
+	font-size: 14px;
+}
+
+.f18 {
+	font-size: 18px;
+}
+
+.f26 {
+	font-size: 26px;
+}
+
+.f16{
+	font-size:16px;
+}
+
+
+
+/***间距***/
+
+.mt45 {
+	margin-top: 45px;
+}
+
+.mt80 {
+	margin-top: 80px;
+}
+
+.mt110 {
+	margin-top: 110px;
+}
+
+.mt35 {
+	margin-top: 35px;
+}
+
+.mt50 {
+	margin-top: 50px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.ml42 {
+	margin-right: 42px;
+}
+
+.mr-42 {
+	margin-right: -42px;
+}
+
+.ml35 {
+	margin-left: 35px;
+}
+
+
+/***边框***/
+
+.boder-top {
+	border-top: 1px solid #ddd;
+}
+
+
+/***按钮***/
+
+.skip-btn {
+	width: 150px;
+	background: #23baf9;
+	color: #fff;
+	border-radius: 0px;
+	line-height: 40px;
+	padding: 0px;
+}
+
+.skip-btn:hover {
+	background: #1173d8;
+}
+
+.skip-btn:hover,
+.skip-btn:active,
+.skip-btn:visited {
+	color: #fff;
+}
+
+.skip-btn i {
+	width: 9px;
+	height: 15px;
+	background: url(../../pics/public/spring.png) no-repeat;
+	display: inline-block;
+	background-position: -403px -793px;
+	margin-left: 5px;
+}
+
+
+/***其他公用***/
+
+.design-btn {
+	padding: 0 52px;
+	background: #1a63b0;
+	line-height: 42px;
+	border-radius: 5px;
+	border: 0px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.design-btn:hover,
+.design-btn:visited {
+	background: #047dd2;
+	color: #fff;
+}
+
+.box-shadow {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/***弹出框***/
+
+.state-box {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding-top: 100px;
+}
+
+.state-box .modal-dialog {
+	width: 700px;
+	border: 1px solid #1a63b0;
+	background: #fbfbfb;
+	padding-bottom: 70px;
+}
+
+.state-box .modal-content {
+	box-shadow: none;
+	border: 0px;
+	border-radius: 0px;
+	background: #fbfbfb;
+}
+
+.state-box .modal-header {
+	background: #1a63b0;
+	color: #fff;
+}
+
+.state-box .modal-header button {
+	color: #fff;
+	font-size: 26px;
+}
+
+.state-box .modal-header button:hover {
+	color: #c1d8f0;
+}
+
+.state-box .modal-title i {
+	background-position: -158px -51px;
+}
+
+.state-box .modal-body {
+	padding: 50px 50px 0 50px;
+}
+
+.state-box .Process {
+	width: 508px;
+	height: 6px;
+	background: #c5c5c5;
+	margin-left: 50px;
+	position: relative;
+}
+
+.state-box .Process li:first-child {
+	width: 344px;
+	background: url(../images/process.png) no-repeat;
+	height: 58px;
+	position: absolute;
+	left: -26px;
+	top: -14px;
+}
+
+.state-box .Process li.Process-statu {
+	width: 290px;
+	position: absolute;
+	left: 255px;
+	top: -12px;
+	text-align: right;
+}
+
+.state-box .Process li.Process-statu span {
+	width: 31px;
+	height: 31px;
+	background: #a9a9a9;
+	display: inline-block;
+	line-height: 31px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 31px;
+	margin-right: 20px;
+	z-index: 99;
+}
+
+.state-box .Process li.Process-statu p {
+	color: #666;
+	line-height: 34px;
+	margin-right: 5px;
+}
+
+.modal-content .modal-footer {
+	border-top: 0px;
+}
+
+.state-box li.Process-statu .Process-line {
+	width: 230px;
+	height: 6px;
+	background: #c5c5c5;
+	margin: -63px 0 0 36px;
+	z-index: 0;
+}
+
+.state-box li.Process-bj .Process-line {
+	background: #0794cf;
+}
+
+.state-box .Process li.Process-bj span {
+	background: #07afd9;
+}
+
+.state-box .contact {
+	margin-top: 80px;
+	margin-left: 20px;
+	color: #666;
+}
+
+.state-box .contact p.font-color {
+	color: #ff7e00;
+}
+
+.state-box .modal-footer {
+	text-align: left;
+	padding-left: 70px;
+}
+
+.state-company .modal-body {
+	color: #666;
+	line-height: 24px;
+}
+
+.state-company .modal-body .form-group {
+	margin-bottom: 15px;
+}
+
+.state-company .modal-body label {
+	width: 70px;
+	font-weight: normal;
+}
+
+.state-company .modal-body input {
+	width: 422px;
+	line-height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 0px;
+	height: 40px;
+}
+
+.state-cover .Process li:first-child {
+	background: url(../images/process2.png) no-repeat;
+}
+
+.Prompt-font {
+	text-align: center;
+}
+
+.state-company .modal-body .textarea {
+	width: 480px;
+	height: 120px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+}
+
+.state-company .modal-footer {
+	padding-left: 125px;
+}
+
+
+/***侧导航***/
+
+.side-nav {
+	position: fixed;
+	right: 0px;
+	top: 50%;
+	z-index: 9999;
+}
+
+.side-nav li {
+	width: 77px;
+	height: 77px;
+	border: 1px solid #ddd;
+	background: #fbfbfb;
+	text-align: center;
+	margin-top: -1px;
+	cursor: pointer;
+}
+
+.side-nav li i {
+	width: 33px;
+	height: 30px;
+	background: url(../../pics/public/spring.png) no-repeat;
+	background-position: -390px -265px;
+	display: inline-block;
+	margin-top: 12px;
+}
+
+.side-nav li a:hover {
+	color: #fff;
+}
+
+.side-nav li:hover {
+	background: #1a63b1;
+	color: #fff;
+}
+
+.side-nav li:hover i {
+	background-position: -442px -265px;
+	animation: Shake 0.5s;
+	-moz-animation: Shake 0.5s;
+	-webkit-animation: Shake 0.5s;
+	-o-animation: Shake 0.5s;
+}
+
+.side-nav li:nth-child(2) i {
+	background-position: -390px -340px;
+}
+
+.side-nav li:nth-child(2):hover i {
+	background-position: -440px -342px;
+}
+
+.side-nav li:nth-child(3) i {
+	background-position: -388px -421px;
+}
+
+.side-nav li:nth-child(3):hover i {
+	background-position: -439px -421px;
+}
+
+@keyframes Shake {
+	0% {
+		-webkit-transform: translateY(-10px);
+	}
+	20% {
+		-webkit-transform: translateY(9px);
+	}
+	40% {
+		-webkit-transform: translateY(-7px);
+	}
+	60% {
+		-webkit-transform: translateY(5px);
+	}
+	80% {
+		-webkit-transform: translateY(-2px);
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+	}
+}
+
+@-moz-keyframes Shake {
+	0% {
+		-webkit-transform: translateY(-10px);
+	}
+	20% {
+		-webkit-transform: translateY(9px);
+	}
+	40% {
+		-webkit-transform: translateY(-7px);
+	}
+	60% {
+		-webkit-transform: translateX(5px);
+	}
+	80% {
+		-webkit-transform: translateY(-2px);
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+	}
+}
+
+@-webkit-keyframes Shake {
+	0% {
+		-webkit-transform: translateY(-10px);
+	}
+	20% {
+		-webkit-transform: translateY(9px);
+	}
+	40% {
+		-webkit-transform: translateY(-7px);
+	}
+	60% {
+		-webkit-transform: translateY(5px);
+	}
+	80% {
+		-webkit-transform: translateY(-2px);
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+	}
+}
+
+@-o-keyframes Shake {
+	0% {
+		-webkit-transform: translateY(-10px);
+	}
+	20% {
+		-webkit-transform: translateY(9px);
+	}
+	40% {
+		-webkit-transform: translateY(-7px);
+	}
+	60% {
+		-webkit-transform: translateY(5px);
+	}
+	80% {
+		-webkit-transform: translateY(-2px);
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+	}
+}
+
+.state-company .modal-body .select-industry label {
+	width: 100px;
+}
+
+.state-company .modal-body .select-industry button {
+	width: 420px;
+	height: 40px;
+	border-radius: 0px;
+	border: 1px solid #ddd;
+}
+
+.state-company .modal-body .select-industry .btn-lg .caret {
+	float: right;
+}
+
+.state-company .modal-body .select-industry ul {
+	width: 420px;
+}
+
+.state-company .modal-footer-b {
+	padding-left: 155px;
+}
+
+.display-none {
+	display: none;
+}
+
+.border-none {
+	border: 0px;
+}
+
+.sign-success-a {
+	position: relative;
+	float: left;
+}
+
+.sign-success-a dl {
+	width: 100px;
+	position: absolute;
+	top: 40px;
+	text-align: center;
+	background: #272727;
+	left: 50%;
+	margin-left: -50px;
+	padding-bottom: 10px;
+	display: none;
+}
+
+.sign-success-a:hover dl {
+	display: block;
+}
+
+.sign-success-a dl dd {
+	line-height: 30px;
+}
+
+.sign-success-a dl dd a {
+	margin-right: 0px;
+}
+
+.sign-email,
+.sign-information {
+	float: left;
+	margin-right: 5px;
+}
+
+.top-nav-right .sign-email i {
+	width: 23px;
+	height: 15px;
+	background-position: -23px -160px;
+}
+
+.top-nav-right .sign-email:hover i {
+	background-position: -23px -187px;
+}
+
+.top-nav-right .sign-information {
+	position: relative;
+}
+
+.top-nav-right .sign-information b {
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	position: absolute;
+	top: 5px;
+	right: -3px;
+	background: #db4d00;
+	line-height: 15px;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+	font-size: 10px;
+}
+
+.top-nav-right .sign-information i {
+	width: 30px;
+	height: 26px;
+	background-position: -116px -345px;
+}
+
+.top-nav-right .sign-information:hover i {
+	background-position: -116px -379px;
+}
+
+.width-23 {
+	width: 60%;
+}
+
+.width-24 {
+	width: 40%;
+}
+
+.about-qb-d .table {
+	margin-top: 0px;
+}
+
+.about-qb-d .table> tbody> tr> th {
+	font-weight: bold;
+}
+
+.about-qb-d .table> tbody> tr> td {
+	height: 40px;
+}
+
+.sign-success-b dl {
+	padding: 10px 15px;
+	width: 150px;
+}

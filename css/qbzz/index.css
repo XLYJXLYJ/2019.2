@@ -1,0 +1,612 @@
+/***轮播 ***/
+
+.bxslider_banner {
+	position: relative;
+}
+
+.bxslider_banner li {
+	width: 100%;
+	height: 547px;
+}
+
+.bx-controls .bx-pager-item {
+	display: none;
+}
+
+.bx-controls-direction a {
+	width: 81px;
+	height: 112px;
+	background: url(../images/controls.png) no-repeat;
+	display: block;
+	position: absolute;
+	top: 360px;
+	text-indent: -9999px;
+}
+
+.bx-controls-direction a.bx-prev {
+	background-position: 0px 0px;
+}
+
+.bx-controls-direction a.bx-prev:hover {
+	background-position: 0px -122px;
+}
+
+.bx-controls-direction a.bx-next {
+	background-position: -99px 0px;
+	right: 0px;
+}
+
+.bx-controls-direction a.bx-next:hover {
+	background-position: -99px -122px;
+}
+
+
+/***内容 ***/
+
+.product-warp {
+	background: #fff;
+	min-width: 1200px;
+}
+
+.main .home-product div {
+	background: #fff;
+	height: 800px;
+}
+
+.product-top {
+	border-bottom: 1px solid #eee;
+	height: 99px;
+	position: relative;
+	text-align: center;
+	z-index: 999;
+}
+
+.product-top i {
+	background: url(../images/spring.png) no-repeat;
+	background-position: -22px -82px;
+	width: 315px;
+	height: 8px;
+	display: block;
+	position: absolute;
+	top: 95px;
+	left: 50%;
+	margin-left: -157px;
+}
+
+.product-top ul {
+	width: 265px;
+	height: 41px;
+	background: #9e9e9e;
+	border-radius: 5px;
+	position: absolute;
+	left: 50%;
+	margin-left: -132px;
+	top: 80px;
+}
+
+.product-top ul li {
+	float: left;
+	line-height: 41px;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.product-top ul li:first-child {
+	width: 124px;
+	border-right: 1px solid #fff;
+	border-radius: 5px 0 0 5px;
+}
+
+.product-top ul li:last-child {
+	width: 141px;
+	border-radius: 0 5px 5px 0;
+}
+
+.product-top ul li:hover,
+.product-top ul li.active {
+	background: #1a63b1;
+	color: #fff;
+}
+
+.product-content {
+	width: 1200px;
+	height: 709px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	padding-top: 90px;
+}
+
+.product-content .tempWrap {
+	margin-left: -40px;
+}
+
+.product-content .ulWrap ul {
+	float: left;
+	margin-left: 40px;
+}
+
+.product-content .ulWrap li {
+	width: 266px;
+	height: 399px;
+	border: 1px solid #ddd;
+	background: #fbfbfb;
+	font-size: 16px;
+	color: #666;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-ms-transition: 0.3s;
+	position: relative;
+}
+
+.product-content .ulWrap li h3 {
+	height: 89px;
+	padding: 20px;
+	background: #11b0b6;
+	color: #fff;
+	margin: 0px;
+	line-height: 26px;
+	font-size: 16px;
+	border-bottom: 1px solid #0e9a9f;
+}
+
+.product-content .product-pirce {
+	margin: 0 20px;
+	border-bottom: 1px solid #ddd;
+	padding: 36px 0;
+	text-align: center;
+}
+
+.product-content .product-pirce span {
+	font-size: #047dd2;
+	display: block;
+	font-size: 28px;
+	color: #047dd2;
+	line-height: 40px;
+}
+
+.product-content dl {
+	padding: 10px 20px;
+}
+
+.product-content dl dd {
+	line-height: 36px;
+}
+
+.product-content .product-Bid {
+	line-height: 39px;
+	padding: 0 56px;
+	background: #a9a9a9;
+	border: 0px;
+	color: #fff;
+	margin-left: 45px;
+	display: inline-block;
+	border-radius: 50px;
+	position: absolute;
+	bottom: 35px;
+}
+
+.product-content .ulWrap .product-b h3 {
+	background: #00a3cc;
+	border-bottom: 1px solid #0b84bc;
+}
+
+.product-content .ulWrap .product-c h3 {
+	background: #0794cf;
+	border-bottom: 1px solid #0083ba;
+}
+
+.product-content .ulWrap .product-d h3 {
+	background: #207ac6;
+	border-bottom: 1px solid #0c69b7;
+}
+
+.product-content .ulWrap ul:hover li {
+	height: 473px;
+	background: #11b0b6;
+	color: #fff;
+}
+
+.display-block {
+	display: none;
+}
+
+.product-content .ulWrap ul:hover .display-block {
+	display: block;
+}
+
+.product-content .ulWrap ul:hover .product-pirce {
+	border-bottom: 1px solid #0e9a9f;
+}
+
+.product-content .ulWrap ul:hover .product-pirce span {
+	color: #fff;
+}
+
+.product-content ul:hover .product-Bid {
+	background: #fff;
+	color: #11b0b6;
+}
+
+.product-content .ulWrap .product-b:hover li {
+	background: #00a3cc;
+}
+
+.product-content .ulWrap .product-b:hover .product-pirce {
+	border-bottom: 1px solid #0b84bc;
+}
+
+.product-content .ulWrap .product-b:hover .product-Bid {
+	color: #0491d2;
+}
+
+.product-content .ulWrap .product-b:hover .product-pirce {
+	border-bottom: 1px solid #0b84bc;
+}
+
+.product-content .ulWrap .product-b:hover .product-Bid {
+	color: #0491d2;
+}
+
+.product-content .ulWrap .product-c:hover li {
+	background: #0794cf;
+}
+
+.product-content .ulWrap .product-c:hover .product-pirce {
+	border-bottom: 1px solid #0083ba;
+}
+
+.product-content .ulWrap .product-c:hover .product-Bid {
+	color: #0491d2;
+}
+
+.product-content .ulWrap .product-d:hover li {
+	background: #207ac6;
+}
+
+.product-content .ulWrap .product-d:hover .product-pirce {
+	border-bottom: 1px solid #0c69b7;
+}
+
+.product-content .ulWrap .product-d:hover .product-Bid {
+	color: #207ac6;
+}
+
+.product-content .hd {
+	height: 10px;
+	position: absolute;
+	top: 545px;
+	left: 50%;
+	margin-left: -57px;
+}
+
+.product-content .hd ul {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.product-content .hd li {
+	float: left;
+	text-indent: -9999px;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background: #b9b9b9;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.product-content .hd li:hover {
+	background: #1a63b1;
+}
+
+.product-button {
+	width: 163px;
+	line-height: 36px;
+	border-radius: 50px;
+	border: 1px solid #ddd;
+	background: #fff;
+	margin: 0 auto;
+	display: inline-block;
+	color: #666;
+	position: absolute;
+	top: 592px;
+	left: 50%;
+	margin-left: -81px;
+}
+
+.product-button:hover {
+	background: #1a63b1;
+	color: #fff;
+}
+
+.product-button-a {
+	top: 818px;
+}
+
+.Community {
+	background: #fbfbfb;
+	border: 1px solid #efefef;
+	padding: 80px 0 99px 0;
+	z-index: 99;
+}
+
+.Community h3 {
+	text-align: center;
+	color: #047dd2;
+	font-size: 22px;
+}
+
+.Community h3>a {
+	width: 151px;
+	border-radius: 5px;
+	line-height: 41px;
+	background: #1a63b1;
+	font-size: 16px;
+	color: #fff;
+	display: block;
+	margin: 15px auto 0 auto;
+}
+
+.Community h3 a i {
+	width: 31px;
+	height: 25px;
+	background: url(../images/spring.png) no-repeat;
+	display: inline-block;
+	background-position: -117px -284px;
+	vertical-align: middle;
+	margin: -3px 5px 0 0;
+}
+
+.Community h3 a:hover i {
+	animation: Shake 0.5s;
+	-moz-animation: Shake 0.5s;
+	-webkit-animation: Shake 0.5s;
+	-o-animation: Shake 0.5s;
+}
+
+.video-home .row {
+	margin: 80px -21px 40px -21px;
+}
+
+.video-home .col-md-3 {
+	border: 1px solid #ddd;
+	margin: 0 21px;
+	padding: 0 12px;
+	width: 266px;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-ms-transition: 0.3s;
+	float: left;
+}
+
+.video-home .col-md-3 h3 {
+	margin: 0;
+	font-size: 16px;
+	color: #666;
+	line-height: 46px;
+	overflow: hidden;
+}
+
+.icon-strong {
+	width: 25px;
+	height: 25px;
+	background: #1a63b1;
+	border-radius: 25px;
+	color: #fff;
+	font-size: 14px;
+	display: block;
+	line-height: 25px;
+	float: left;
+	font-weight: normal;
+	margin: 9px 5px 8px 0;
+}
+
+.video-home .col-md-3 span {
+	width: 192px;
+	float: left;
+	height: 46px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.video-home .col-md-3 .video-a {
+	position: relative;
+	width: 243px;
+	height: 243px;
+	overflow: hidden;
+	display: block;
+}
+
+.video-home .col-md-3 .video-a img {
+	width: 243px;
+	height: 243px;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-ms-transition: 0.3s;
+}
+
+.video-home .col-md-3 .video-opacity {
+	width: 243px;
+	height: 243px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.5);
+	line-height: 243px;
+	text-align: center;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-ms-transition: 0.3s;
+}
+
+.video-home .col-md-3 .video-opacity i {
+	color: #fff;
+	font-size: 46px;
+}
+
+.video-home .col-md-3 .btn-a {
+	padding: 0 10px;
+	line-height: 31px;
+	background: #a9a9a9;
+	color: #fff;
+	margin: 16px 0;
+	border: 0px;
+}
+
+.video-home .col-md-3:hover {
+	background: #f6f6f6;
+}
+
+.video-home .col-md-3:hover .video-opacity {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.video-home .col-md-3:hover .video-a img {
+	transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+}
+
+.video-home .col-md-3:hover span {
+	color: #1a63b1;
+}
+
+.video-home .col-md-3:hover .btn-a {
+	background: #1a63b1;
+}
+
+.Community-font .row {
+	margin: 0 -20px;
+}
+
+.Community {
+	position: relative;
+	min-width: 1200px;
+}
+
+.Community-font .col-md-6 a:first-child {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.Community-font .icon-strong {
+	text-align: center;
+	margin: -2px 10px 0 0;
+}
+
+.Community-font .col-md-6 p {
+	color: #666;
+	line-height: 30px;
+	padding-left: 36px;
+	margin-top: 8px;
+}
+
+.Community-font-btn {
+	border: 1px solid #ddd;
+	line-height: 33px;
+	display: inline-block;
+	padding: 0 10px;
+	float: right;
+}
+
+.Community-font-btn i {
+	width: 16px;
+	height: 16px;
+	background: url(../images/spring.png) no-repeat;
+	background-position: -29px -336px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.Community-font-btn:hover {
+	background: #1a63b1;
+	color: #fff;
+}
+
+.Community-font-btn:hover i {
+	background-position: -29px -363px;
+}
+
+.Partner {
+	background: #fff;
+	height: 617px;
+	position: relative;
+	z-index: 11;
+	min-width: 1200px;
+}
+
+.Partner .product-top {
+	height: 107px;
+	margin-bottom: 107px;
+}
+
+.Partner .product-top i {
+	width: 145px;
+	background-position: -213px -31px;
+	margin-left: -72px;
+	top: 102px;
+	background: #fff;
+}
+
+.Partner .product-top strong {
+	font-size: 22px;
+	color: #047dd2;
+	line-height: 40px;
+	display: block;
+	position: absolute;
+	top: 85px;
+	left: 50%;
+	margin-left: -40px;
+}
+
+.Partner-box {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	margin-top: 107px;
+	clear: both;
+	overflow: hidden;
+}
+
+.Partner-box li {
+	width: 20%;
+	float: left;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+.Partner-box li img {
+	width: 100%;
+	height: 100%;
+}
+
+.Partner .product-button {
+	top: 500px;
+}
+
+.Partner-box li:hover {
+	opacity: 0.5;
+}
+
+.video-home .col-md-3 {
+	float: left;
+}
+
+.col-md-6 {
+	width: 50%;
+	float: left;
+}
+
+.bxslider_warp {
+	min-width: 1200px;
+	overflow: hidden;
+	height: 547px;
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>企保招招-招招主页</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/home.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/selectivizr.js" ></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/moxie.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/plupload.dev.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qiniu.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qibao.js"></script>
+		<script src="../js/area2.0.js"></script>
+		
+	</head>
+	<body>
+		<div class="aside aside-IC">
+			<div class="background">
+				<div class="aside_contents">
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li class="active">
+								<div class="img home"></div>
+								<a href="home-IC.html">招招主页</a>
+							</li>
+							<li>
+								<div class="img undertake"></div>
+								<a href="undertake-IC.html">承接业务</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft-IC.html">报价草稿</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response-IC.html">响应中</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my-IC.html">保单管理</a>
+							</li>
+							<!--<li>
+								<div class="img  endorsement"></div>
+								<a href="../ endorsement-IC.html">批单管理</a>
+							</li>-->
+							<li>
+								<div class="img case"></div>
+								<a href="case-IC.html">赔案管理</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history-IC.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHaves"></div>
+								<a href="accountHave-IC.html">个人信息</a>
+							</li>
+							
+							<li>
+								<div class="img business"></div>
+								<a href="business-IC.html">业务部设置</a>
+							</li>
+							<li>
+								<div class="img securitys"></div>
+								<a href="security-IC.html">安全设置</a>
+							</li>
+							<!--<li>
+								<div class="img recharge"></div>
+								<a href="home-IC/bail.html">在线充值</a>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<!--<span class="gogo">上传已有保单</span>-->
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../../html/news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		
+		<!--上传头像弹框-->
+		<div class="check_id_fix hide">
+			<div class=" check_id" id="container">
+				<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+				<div id="up-img">上传头像</div>
+				<div class="invite_cont uplaod">
+					<div>
+						<img id="upload_display_1" src="../../img/upload.jpg" />
+					</div>
+					<button class="sure_up sure_up_scan" id="pickfiles_1">浏览</button>
+				</div>
+				<input type="hidden" name="license" id="uploaded_key" value="" datatype="*" nullmsg="请上传头像" />
+					
+				<div class="percentage" id="upload_show_process_area_1"></div>
+
+				<div class="check_id_tips">
+					<p class="check_id_tips_titl">温馨提示：</p>
+					<p class="check_id_tips_cont">1.请尽量控制上传文件大小在1M以内，以免因本地网络原因造成上传时间过长。</p>
+				</div>
+				<span class="sure_up sure_up_ok">确认上传</span>
+			</div>
+		</div>
+		
+		
+		<div class="content content-IC">
+			<div class="content_people clear">
+				<div class="content_people_left clear">
+					<img src="../../img/peopel.png" alt="" class="Head_portrait"/>
+					<div class="content_people_cont">
+						<p>您好！ 王松阳</p>
+						<div class="member-kind">
+							<img src="../img/ordinary.png" class="ordinary hide"/>
+							<img src="../img/certified.png" class="certified "/>
+							<img src="../img/senior.png" class="senior hide"/>
+							<img src="../img/paied.png" class="paied_img paied hide" />
+							<img src="../img/unpaied.png" class="paied_img unpaied " />
+						</div>
+						<div class="credibility">
+							<span>信用度: </span>
+							<img src="../../img/xinxin1.png" alt="" />
+							<img src="../../img/xinxin.png" alt="" />
+							<img src="../../img/xinxin.png" alt="" />
+							<img src="../../img/xinxin.png" alt="" />
+							<img src="../../img/xinxin.png" alt="" />
+						</div>
+						<ul class="clear">
+							<li class="li_first">
+								<span>保证金：</span><span>0</span>
+								<a href="javascript:;">立即充值</a>
+							</li>
+							<li>
+								<span>金币数：</span><span>20</span>
+							</li>
+							<li>
+								<span>经验值：</span><span>40</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="content_people_right">
+					<ul class="content_ul">
+						<li class="home-li-left">
+							<span>发　标　数：　</span><span>150</span>
+						</li>
+						<li class="home-li-left">
+							<span>成　交　数：　</span><span>40</span>
+						</li>
+						<li class="home-li-left">
+							<span>已结赔案数：　</span><span>4</span>
+						</li>
+					</ul>
+					<ul class="content_ul second-ul">
+						<li>
+							<span>保险金额：　</span><span>150,700,150,360</span>
+						</li>
+						<li>
+							<span>成交保费：　</span><span>700,150,36</span>
+						</li>
+						<li>
+							<span>赔款余额：　</span><span>1,000,000,00</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="Todo">
+				<div class="Todo_top">
+					待办事项：
+				</div>
+				<div class="Todo_cont">
+					<ul class="clear">
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>受邀请待报价</span>
+								<div class="todo_nub">5</div>
+							</a>
+							
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>待出单</span>
+								<div class="todo_nub">1</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>待收款</span>
+								<div class="todo_nub">1</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>理赔待办</span>
+								<div class="todo_nub">5</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>批单待办</span>
+								<div class="todo_nub">5</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="todo_none"><span>您暂时没有任何待办事项，快去</span><a href="release.html">发布</a><span>需求。</span></div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/home.js"></script>
+</html>

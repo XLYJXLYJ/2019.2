@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>常用企业-新增</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/addenterprise.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content"> 
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">招招主页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="../release.html">发布</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿标</a>
+							</li>
+							<li class="active">
+								<div class="img response"></div>
+								<a href="../response.html">响应中</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">我的保单</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+							<li>
+								<div class="img case"></div>
+								<a href="../case.html">我的赔案</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用企业管理</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="../security.html">安全设置</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="../recharge.html">在线充值</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="content clear">
+			<div class="add_title">新增常用企业</div>
+			<div class="padding">
+				<ul class="clear select_ul1">
+					<li class="clear">
+						<div class="account_left">
+							<span>企业名称：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" placeholder="请填写完整的企业名称"/>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>统一社会信用代码：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" placeholder="统一社会信用代码（18位）/组织机构代码（9位）"/>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>联系人：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" placeholder="请填写联系人姓名"/>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>联系人电话：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" placeholder="请填写联系人的手机号码"/>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>保单邮寄地址：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right inputs_right">
+							<div class="cityInpt">
+								<input type="text" placeholder="选择城市" id="selt-city" readonly unselectable="on" />
+								<input type="hidden" name='area_id' value="" class="inpt-hide"/>
+								<div class="Validform_checktip">选择城市</div>
+							</div>
+							<div class="city hide">
+								<div class="city_top">
+									<img src="../../InsuranceCompany/img/delete-line-ico3.png">
+									<ul>
+										<li>
+											<span class="choose">热门</span>
+										</li>
+										<li>
+											<span>ABCD</span>
+										</li>
+										<li>
+											<span>EFGH</span>
+										</li>
+										<li>
+											<span>JKLM</span>
+										</li>
+										<li>
+											<span>NOPQRS</span>
+										</li>
+										<li>
+											<span>TUVWX</span>
+										</li>
+										<li>
+											<span>YZ</span>
+										</li>
+									</ul>
+								</div>
+								<div class="city_cont">
+									<ul class="hot_city">
+										<li>
+											<span data-id="10">北京</span>
+										</li>
+										<li>
+											<span>上海</span>
+										</li>
+										<li>
+											<span>广州</span>
+										</li>
+										<li>
+											<span>深圳</span>
+										</li>
+									</ul>
+									<ul class="city_a_d hide cities">
+										<li>
+											<p>A</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>B</p>
+											<div>
+												<span>上海</span>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>C</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>D</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="city_e_h hide cities">
+										<li>
+											<p>E</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>F</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>G</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>H</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="city_j_m hide cities">
+										<li>
+											<p>J</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>K</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>L</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>M</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="city_n_s hide cities">
+										<li>
+											<p>N</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>O</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>P</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>Q</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>R</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>S</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="city_t_x hide cities">
+										<li>
+											<p>T</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>U</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>V</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>W</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+										<li>
+											<p>X</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+									<ul class="city_y_z hide cities">
+										<li>
+											<p>Y</p>
+											<div>
+												<span>澳门</span>
+											</div>
+										</li>
+										<li>
+											<p>Z</p>
+											<div>
+												<span>上海</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<input type="text" placeholder="请提供详细的收件地址" class="check_city"/>
+								<!--<div class="Validform_checktip ">请提供详细的收件地址</div>-->
+							</div>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>发票类型：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<select name="" id="need">
+								<option value="1">增值税普通发票</option>
+								<option value="2">不需要发票</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+				<ul class="clear select_ul">
+					<li class="clear">
+						<div class="account_left">
+							<span>税务登记地址：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>税务登记电话：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>税务开户银行名称：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>税务开户银行账号：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="account_right">
+							<input type="text" />
+						</div>
+					</li>
+				</ul>
+				<div class="prompt">温馨提示：</div>
+				<p class="prompt_cont">我们将尽快完成纸质保单及发票的寄送，若您在成交后7个工作日内没有收到相关材料，请于我们的客服人员联系：400-009-7855（10:00-18:00）</p>
+				<ul class="clear last_ul">
+					<li class="clear">
+						<div class="account_left">
+							<span>企业所属行业：</span>
+						</div>
+						<div class="account_right">
+							<span class="spSlect">
+								<select name="" id="">
+									<option value="">金融</option>
+								</select>
+							</span>
+							<span class="spSlect">
+								<select name="" id="right_select">
+									<option value="">请选择（一级）</option>
+									<option value="">请选择（二级）</option>
+								</select>
+							</span>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>企业资质：</span>
+						</div>
+						<div class="account_right">
+							<select name="" id="">
+							</select>
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left">
+							<span>雇员总数：</span>
+						</div>
+						<div class="account_right">
+							<input type="text" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="account_left"></div>
+						<div class="account_right clear">
+							<button href="javascript:;" class="hold">保存</button>
+							<button href="javascript:;" class="cancel">取消</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/placeholder.js"></script>
+	<script type="text/javascript" src="../../js/addenterprise.js" ></script>
+	
+</html>
+

@@ -1,0 +1,26 @@
+.content{padding-bottom: 200px;}
+.security_title{color:#35313f;font-size: 24px;border-bottom: 1px solid #e9e9f4;line-height: 44px;}
+.security_content{width:530px;margin-top: 24px;}
+.security_content_title{color:#35313f;border-bottom: 1px solid #35313f;font-size: 18px;line-height: 26px;}
+.other_content{margin-top: 24px;}
+.security_left{width:125px;float:left;height:38px;}
+.security_left span{float:right;line-height: 38px;}
+.security_right{float:left;margin-left: 10px;width:390px;}
+.security_right>input,.mailCode{border: 1px solid #e9e9f4;width:100%;height:38px;line-height: 38px;padding:0 10px;box-sizing: border-box;}
+.security_right .ok{float:right;text-align:center;display:block;line-height:38px;font-size: 16px;width:118px;height:38px;background: #524ae7;color:#fff;border-radius: 4px;behavior: url(../js/PIE.htc);}
+.security_right span{line-height: 38px;color:#35313f;}
+.check input{width:228px;float:left;}
+.check .validate{width:120px;height:38px;margin-bottom:20px;line-height: 38px;border-radius: 4px;cursor: pointer;background: #fb6f00;font-size: 16px;text-align: center;color:#fff;float:right;behavior: url(../js/PIE.htc);}
+
+.security_right .ok:hover{background: #4037ed;}
+.code input{width:228px;float:left;}
+.code img{cursor:pointer;float:right;width:118px;height:36px;border: 1px solid #e9e9f4;}
+.mail_code{cursor:pointer;float:right;text-align:center;display:block;line-height:38px;font-size: 16px;width:118px;height:38px;background: #e9e9f4;color:#727689;border-radius: 4px;behavior: url(../js/PIE.htc);}
+
+.inpt1{width: 228px;border: 1px solid #e9e9f4;height: 36px;}
+
+.hide{display: none;}
+.resend{color: #524ae7;cursor: pointer;}
+.resend a{text-decoration: underline;}
+.resend a,.resend span{color: #524ae7;}
+#security-IC .check .validate,#security-IC .security_right .ok,#security-IC .mail_code{behavior: url(../../js/PIE.htc);}

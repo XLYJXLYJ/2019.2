@@ -1,0 +1,16 @@
+
+.account_title a{color:#524ae7;font-size: 16px;position:absolute;bottom:10px;left:150px;line-height: 16px;}
+.account_title a:hover{text-decoration: underline;}
+.account_title{color:#35313f;font-size: 24px;position:relative;border-bottom: 1px solid #e9e9f4;line-height: 44px;}
+.account_left{width:80px;float:left;height:28px;}
+.account_left span{float:right;line-height: 28px;}
+.account_left .sp_img {line-height: 100px;}
+.account_right{float:left;margin-left: 10px;width:386px;color:#35313f;}
+.content ul li{margin-top: 25px;} 
+.account_right>span{line-height: 28px;}
+.Head_portrait{cursor: pointer;width:100px;height:100px;}
+.geren-margin-bt{margin-bottom: 100px;}
+
+
+
+

@@ -1,0 +1,175 @@
+<div class="content clear">
+    <div class="add_title">新增常用企业</div>
+    <div class="padding">
+        <form class="myform" {if condition="isset($list) && !empty($list)"}action="{:url('enterprise/update_enterprise',['plat'=>$list.id])}"{else/}action="{:url('enterprise/addenterprise')}"{/if} method="post">
+        <ul class="clear select_ul1">
+            <li class="clear">
+                <div class="account_left">
+                    <span>企业名称：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input type="text" name="company_name" {if condition="isset($list) && !empty($list)"}value="{$list.company_name}"{/if} placeholder="请填写完整的企业名称" datatype="*2-150" nullmsg="请输入企业名称" errormsg="企业名称字符在2-150个字符内">
+                    <div class="Validform_checktip" id="company_name"></div>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>统一社会信用代码：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input type="text" {if condition="isset($list) && !empty($list)"}value="{$list.credit_code}"{/if} name="credit_code" placeholder="统一社会信用代码(18位)/组织机构代码(9位)" datatype="*9-18" nullmsg="请输入代码" errormsg="统一社会信用代码(18位)/组织机构代码(9位)">
+                    <div class="Validform_checktip" id="credit_code"></div>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>联系人：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input type="text" name="contact" {if condition="isset($list) && !empty($list)"}value="{$list.contact}"{/if} placeholder="请填写联系人姓名" datatype="*2-50" nullmsg="请输入联系人姓名" errormsg="联系人格式错误">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>联系人电话：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input type="text" name="phone" {if condition="isset($list) && !empty($list)"}value="{$list.phone}"{/if} placeholder="请填写联系人的手机号码" datatype="phone" nullmsg="请输入联系人电话" errormsg="联系人电话格式错误">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>保单邮寄地址：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <a href="javascript:;">选择城市</a>
+                    <input type="text" name="policy_send_add" {if condition="isset($list) && !empty($list)"}value="{$list.policy_send_add}"{/if} placeholder="请提供详细的收件地址" class="check_city" datatype="*2-150" nullmsg="请输入详细地址" errormsg="详细收货地址在2-150字符以内">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>发票类型：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <select name="invoices_type" id="need">
+                        <option value="1" {if condition="isset($list) && !empty($list) && $list.invoices_type eq 1"}selected="selected"{/if}>增值税普通发票</option>
+                        <option value="2" {if condition="isset($list) && !empty($list) && $list.invoices_type eq 2"}selected="selected"{/if}>不需要发票</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <ul class="clear select_ul" {if condition="isset($list) && !empty($list) && $list.invoices_type eq 2"}style="display:none"{/if}>
+            <li class="clear">
+                <div class="account_left">
+                    <span>税务登记地址：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input name="tax_register_address" {if condition="isset($list) && !empty($list)"}value="{$list.tax_register_address}"{/if} type="text" datatype="*2-150" nullmsg="请输入税务登记地址" errormsg="限制在2-150个字符以内">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>税务登记电话：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input name="tax_register_tel" {if condition="isset($list) && !empty($list)"}value="{$list.tax_register_tel}"{/if} type="text" datatype="*5-20" nullmsg="请输入税务登记电话" errormsg="限制在5-20个字符以内">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>税务开户银行名称：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input name="tax_bank_name" {if condition="isset($list) && !empty($list)"}value="{$list.tax_bank_name}"{/if} type="text" datatype="*2-40" nullmsg="请输入税务开户银行" errormsg="限制在2-40个字符以内">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>税务开户银行账号：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input name="tax_bank_account" {if condition="isset($list) && !empty($list)"}value="{$list.tax_bank_account}"{/if} type="text" datatype="*5-40" nullmsg="请输入税务银行账号" errormsg="限制在5-40个字符以内">
+                </div>
+            </li>
+        </ul>
+        <div class="prompt">温馨提示：</div>
+        <p class="prompt_cont">我们将尽快完成纸质保单及发票的寄送，若您在成交后7个工作日内没有收到相关材料，请于我们的客服人员联系：400-009-7855（10:00-18:00）</p>
+        <ul class="clear last_ul">
+            <li class="clear">
+                <div class="account_left">
+                    <span>行业性质：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <select name="industry_nature_one" datatype="*" nullmsg="请选择行业性质(一级)" onchange="change_industry(this.value)">
+                        <option value="">请选择行业性质(一级)</option>
+                        {foreach $industry_one as $v}
+                            <option value="{$v.id}" {if condition="isset($list) && !empty($list) && $list.industry_nature_one eq $v.id"}selected="selected"{/if}>{$v.name}</option>
+                        {/foreach}
+                    </select>
+                    <select name="industry_nature_two" id="right_select" datatype="*" nullmsg="请选择行业性质(二级)">
+                        {if condition="isset($industry_two) && !empty($industry_two) && !empty($list)"}
+                            {foreach $industry_two as $vo}
+                                <option value="{$vo.id}" {if condition="$vo.id eq $list.industry_nature_two"}selected="selected"{/if}>{$vo.name}</option>
+                            {/foreach}
+                        {/if}
+                    </select>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>企业资质：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <select name="qualification" id="" datatype="*" nullmsg="请选择企业资质">
+                        <option value="">请选择企业资质</option>
+                        {foreach $qualification_list as $v}
+                            <option value="{$v.id}"  {if condition="isset($list) && !empty($list) && $v.id eq $list.qualification"}selected="selected"{/if}>{$v.standard}</option>
+                        {/foreach}
+                    </select>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left">
+                    <span>雇员总数：</span>
+                    <img src="//{$Think.config.website.static}/qbzz/img/key.png" alt="">
+                </div>
+                <div class="account_right">
+                    <input name="employees_num" {if condition="isset($list) && !empty($list)"}value="{$list.employees_num }"{/if} type="text" placeholder="请输入雇员总数" datatype="*1-20" nullmsg="请输入雇员总数" errormsg="限制在1-20个字符">
+                </div>
+            </li>
+            <li class="clear">
+                <div class="account_left"></div>
+                <div class="account_right clear">
+                    <button class="hold" type="submit">保存</button>
+                    <button class="cancel" type="cancel">取消</button>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </div>
+</div>
+
+
+
+
+<script>
+    $(".myform").Validform({
+        tiptype: 4,
+        ignoreHidden:true,//
+        postonce: true,
+        datatype:{
+            'phone':/^1\d{10}$/
+        },
+</script>

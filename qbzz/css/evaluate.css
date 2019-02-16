@@ -1,0 +1,30 @@
+
+.cont_title{font-size:24px;color:#35313f;border-bottom: 1px solid #e9e9f4;line-height: 44px;}
+
+.content ul{margin-top: 40px;}
+.content ul li{line-height:30px;margin-top: 24px;cursor: pointer;}
+.content ul li .account_left{width:70px;float:left;}
+.content ul li .account_left span{float:right;}
+.content ul li .account_left img{float:right;position: relative;top:8px;right:3px;}
+.content ul li .account_right{float:left;width:400px}
+.account_right{padding-left: 10px;}
+.account_right input{width:345px;padding: 0 10px;box-sizing: border-box;border: 1px solid #e9e9f4;height:30px;}
+.account_right span{color:#35313f;}
+.account_right a{color:#524ae7;text-decoration: underline;}
+.download{padding-left: 30px;line-height: 37px;height:37px;position:relative;margin: 10px 0;width:100px;cursor: pointer;}
+.download .pic{background: url(../img/background_zhaozhao.png) no-repeat -8px -447px;width:40px;height:40px;position:absolute;top:7px;left:0;}
+.download:hover{color:#35313f;}
+.download:hover .pic{background: url(../img/background_zhaozhao.png) no-repeat -48px -447px;}
+.ok{behavior: url(../../../js/PIE.htc);height:38px;line-height:38px;width:120px;text-align:center;float:right;margin:50px 53px 0 0;color:#fff;background: #524ae7;border-radius: 3px;}
+.quxiao{behavior: url(../../../js/PIE.htc);width:120px;text-align:center;float:right;height:38px;line-height:38px;margin:50px 60px 0 0;color:#fff;background: #524ae7;border-radius: 3px;}
+.ok:hover,.quxiao:hover{background: #4037ed;cursor: pointer;}
+
+.Satisfaction,.other-Satisfaction{cursor: pointer;float:left;background:url(../img/type.png) no-repeat -568px -48px;width:30px;height:30px;}
+.label{margin:0 20px 20px 0;float:left;width:98px;height:28px;border: 1px solid #e9e9f4;line-height: 28px;text-align: center;position:relative;}
+.label img{position:absolute;right:-1px;bottom:-1px;display:none;}
+.have img{display:block;position:absolute;right:-1px;bottom:-1px;}
+.have{margin:0 20px 20px 0;float:left;width:98px;height:28px;border: 1px solid #524ae7;color: #524ae7;line-height: 28px;text-align: center;position:relative;}
+.end{width:480px;font-size: 16px;}
+.label:hover{border-color: #524ae7;color: #524ae7;}
+
+.no_top textarea{resize: none;width:100%;height:134px;padding:2px 10px;line-height: 24px;border: 1px solid #e9e9f4;box-sizing: border-box;font-size: 14px;}

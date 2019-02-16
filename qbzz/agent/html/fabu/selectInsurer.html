@@ -1,0 +1,337 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>采购比价-指定业务员</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/selectInsurer.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/selectivizr.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li class="active">
+								<div class="img release"></div>
+								<a href="../release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+							<!--<li>
+								<div class="img case"></div>
+								<a href="../case.html">我的赔案</a>
+							</li>-->
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise1"></div>
+								<a href="../enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="../customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="../recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="../security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../../img/right-default-phone.png" alt="" />
+				<!--<span class="gogo">上传已有保单</span>-->
+				<a class="replace-top" href="release.html">采购比价</a>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<!--<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>-->
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="fix-people">
+				<img src="../../../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="fix-title">请选择保险业务员</div>
+				<div class="error-tishi">请选择保险业务员</div>
+				<div class="have-no">暂无保险业务员</div>
+				<ul class="clear">
+					<li class="yewuyuan-cont" data-id="1">
+						<label>
+							<span class="ywname">张三</span>
+							<span class="ywcompany">人保财险</span>
+							<input type="checkbox" />
+						</label>
+					</li>
+					<li class="yewuyuan-cont" data-id="2">
+						<label>
+							<span class="ywname">王大锤</span>
+							<span class="ywcompany">深圳市大锤科技有限公司</span>
+							<input type="checkbox" />
+						</label>
+					</li>
+					<li class="yewuyuan-cont" data-id="3">
+						<label>
+							<span class="ywname">王大锤</span>
+							<span class="ywcompany">深圳市大锤科技有限公司</span>
+							<input type="checkbox" />
+						</label>
+					</li>
+					<li class="yewuyuan-cont" data-id="4">
+						<label>
+							<span class="ywname">王大锤</span>
+							<span class="ywcompany">深圳市大锤科技有限公司</span>
+							<input type="checkbox" />
+						</label>
+					</li>
+					<li class="yewuyuan-cont" data-id="5">
+						<label>
+							<span class="ywname">王大锤</span>
+							<span class="ywcompany">深圳市大锤科技有限公司</span>
+							<input type="checkbox" />
+						</label>
+					</li>
+				</ul>
+				<button>确定</button>
+			</div>
+		</div>
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">03</span><span>指定业务员</span></li>
+			</ol>
+			<form class="myform" onkeydown="if(event.keyCode==13){return false;}">
+				<div class="padding">	
+					
+					<div class="topDiv clear">
+						<div class="enterprise_left">
+							<span>投保人：</span>
+							<img src="../../../img/key.png" alt="" />
+						</div>
+						<div class="enterprise_right">
+							<input type="text" class="toubao_inpt" placeholder="请输入投保人企业名称" name="company_name" datatype="name" nullmsg="请输入投保人企业名" errormsg="企业名称不能输入除中英文数字·号空格_-等之外的符号" />
+						</div>
+					</div>
+					<div class="topDiv clear">
+						<div class="enterprise_left">
+							<span>被保险人：</span>
+							<img src="../../../img/key.png" alt="" />
+						</div>
+						<div class="enterprise_right">
+							<input type="text" placeholder="请输入被保险人企业名称" name="company_name2" datatype="name" nullmsg="请输入被保险人企业名" errormsg="企业名称不能输入除中英文数字·号空格_-等之外的符号" />
+						</div>
+					</div>
+					<div class="clear brand_top">
+						<p>成交说明</p>
+					</div>
+					<div class="deal">	
+						<ul class="clear ">
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>业务类型：</span>
+									<img src="../../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right gb">
+									<label>
+										<input type="radio" name="gongbao" checked="checked" value="1"/>
+										<span>非共保业务类型</span>
+									</label>
+									<label>
+										<input type="radio" name="gongbao" value="2"/>
+										<span>共保业务类型</span>
+									</label>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>佣金比例：</span>
+									<img src="../../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right ">
+									<input class="yongj" type="text" name="commission_rate" placeholder="请写本项目的佣金比例" datatype="number1" nullmsg="请输入佣金比例" errormsg="佣金比例为大于零的数值(最多两位小数)"> %
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>报价截止时间：</span>
+									<img src="../../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right clear">
+									<div class="inlineDiv">
+										<input class="baoj" id="datetimepicker1" data-begin_time = "2017-10-5" type="text"  readonly="readonly">
+										<span class="Validform_checktip tell">请选择日期</span>
+									</div>
+									<div class="inlineDiv">
+										币种 ：<span>CNY</span>
+									</div>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>保费支付方式：</span>
+									<img src="../../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<label>
+										<input type="radio" name="method" class="qibao" checked="checked"/>
+										<span>起保后付费</span>
+									</label>
+								</div>
+							</li>
+						</ul>
+						
+						<div class="deal_content_other">
+							<span class="Validform_checktip tell1">输入不为空且总和为100的数</span>
+							<span class="Validform_checktip tell2">请选择日期</span>
+							<div class="deal_content_other_top">
+								<span>缴费计划</span>
+							</div>	
+							<div class="deal_others">
+								<span class="other_span">第 <span class="period">1</span> 期：</span>
+								<input type="text" class="numb"/>
+								<span>%，在</span>
+								<input type="text"  class="duan_input"  readonly="readonly"/>
+								<span>　十六时前支付到账</span>
+								<span class="add_img1 add_mid"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="choose-method clear">
+						<div class="method-type method-type-active">
+							<div class="left-pic"><img src="../../../img/method-type3.png" alt="" /></div>
+							<div class="method-type-cont">
+								<p>指定业务员发布</p>
+								<span>选择指定的业务员为您报价</span>
+							</div>
+							<img src="../../../img/check.png" alt="" class="check-pic" />
+						</div>
+					</div>
+					<div class="salesman method-tree">
+						<div class="clear brand_top">
+							<p>指定参与报价的业务员</p>
+						</div> 
+						<div class="search clear">
+							<span>搜索：</span>
+							<div class="search_cont">
+								<input type="text" placeholder="请输入您要查找的手机号或姓名"/>
+								<a href="javascript:;"class="seach_pic"><img src="../../../img/search1.png" alt="" /></a>
+							</div>
+							<span class="others">或</span>
+							<span class="check-others">选取常用保险人</span>
+						</div>
+						<ul class="search_ul" >
+							<li>1</li>
+							<li>2</li>
+						</ul>
+						<div class="check_pp clear">
+							<span>已选报价人：</span>
+							<div class="have clear">
+							</div>
+						</div>
+					</div>
+					<div class="tishi">
+						<img src="../../../img/gantan.png" alt="" id="jinshi"/>
+						<span>您选中了定向邀请报价，请选择报价品牌或者报价人。</span>
+					</div>
+					<div class="end">
+						<input type="hidden" value="" class="input1"/>
+						<input type="hidden" value="" class="input2"/>
+						<!--<button href="javascript:;" class="hold">保存草稿</button>-->
+						<a href="ProjectInformation.html" class="up">上一步</a>
+						<button href="selectInsurer.html" class="next">确认发布</button>
+					</div>
+				</div>
+		
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/selectInsurer.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>企保招招-首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/home.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/moxie.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/plupload.dev.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qiniu.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qibao.js"></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li class="active">
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+							<li>
+								<div class="img release"></div>
+								<a href="release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response.html">查看报价
+									<span class="newTips">NEW</span>
+								</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img claim"></div>
+								<a href="claimManagement.html">赔案管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img points"></div>
+								<a href="points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+					<!--<a href="javascript:;" class="img_bottm">
+						<img src="../img/xubao.png" />
+					</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+				<a class="replace-top" href="release.html">采购比价</a>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+				<!--<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic4 nav-top-pic"></p></dt>
+						<dd><span>特惠推荐</span></dd>
+					</a>
+				</dl>-->
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="home.html">首页</a>
+				<span>></span>
+			</div>
+			<!--<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>-->
+		</div>
+		<!--新用户首次进入引导弹框-->
+		<div class="new-user-fix hide">
+			<div class="new-user-fix-cont">
+				<img src="../img/delete-line-ico2.png" alt="" class="new-delete" />
+				<div class="clear check-img">
+					<img src="../img/Demonstration.jpg" alt=""  class="new-user-active"/>
+					<img src="../img/Demonstration1.jpg" alt="" />
+					<img src="../img/Demonstration2.jpg" alt="" />
+					<img src="../img/Demonstration3.jpg" alt="" />
+				</div>
+				<div class="new-user-fix-end">
+					<span class="shang">上一步</span>
+					<span class="xia">下一步</span>
+				</div>
+			</div>
+			
+		</div>
+
+		<!--上传头像弹框-->
+		<div class="check_id_fix hide">
+			<div class=" check_id" id="container">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div id="up-img">上传头像</div>
+				<div class="invite_cont uplaod">
+					<div>
+						<img id="upload_display_1" src="../img/upload.jpg" />
+					</div>
+					<button class="sure_up sure_up_scan" id="pickfiles_1">浏览</button>
+				</div>
+				<input type="hidden" name="license" id="uploaded_key" value="" datatype="*" nullmsg="请上传头像">
+					
+				<div class="percentage" id="upload_show_process_area_1"></div>
+
+				<div class="check_id_tips">
+					<p class="check_id_tips_titl">温馨提示：</p>
+					<p class="check_id_tips_cont">1.请尽量控制上传文件大小在1M以内，以免因本地网络原因造成上传时间过长。</p>
+				</div>
+				<span class="sure_up sure_up_ok">确认上传</span>
+			</div>
+		</div>
+		
+		<!--上传保单弹框-->
+		<div class="uplaod_tex_fix hide">
+			<div class=" check_id uplaod_tex_cont">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="up-tex">上传保单</div>
+				<div class="invite_cont uplaod">
+					<input type="text" class="uplaod_tex_inpt" placeholder="请选择你的保单文件" />
+					<button class="sure_up sure_up_scan">浏览</button>
+				</div>
+				<div class="check_id_tips">
+					<p class="check_id_tips_titl">温馨提示：</p>
+					<p class="check_id_tips_cont">您上传保单后，我们将会为您把它录入系统，便于您日后的保单批改及理赔。我们承诺，我们将严格保护您的个人信息隐私。</p>
+				</div>
+				<span class="sure_up sure_up_ok">确认上传</span>
+			</div>
+		</div>
+		
+		<div class="content">
+			<div class="content_people clear">
+				<div class="content_people_left clear">
+					<img src="../img/peopel.png" alt="" class="Head_portrait"/>
+					<div class="content_people_cont">
+						<p>您好！ 王松阳</p>
+						<div class="credibility">
+							<span>信用度:</span>
+							<img src="../img/xinxin1.png" alt="" />
+							<img src="../img/xinxin.png" alt="" />
+							<img src="../img/xinxin.png" alt="" />
+							<img src="../img/xinxin.png" alt="" />
+							<img src="../img/xinxin.png" alt="" />
+						</div>
+						<div class="account_num">
+							<p>
+								<span>积分：</span><span>20</span>
+							</p>
+							<p class="clear">
+								<div class="nav_cont clear">
+									<div class="nav_txt">
+										<p class="contTxt">
+											<span>账户总余额：</span>
+											<span>￥1,234.00</span>
+										</p>
+								   	</div>
+									<div class="clickPic pullPic"></div>
+								</div>
+								<div class="nav_cont clear hide">
+									<div class="nav_txt">
+										<p class="contTxt">
+											<span>通用余额：</span>
+											<span>￥1,000.00</span>
+										</p>
+										<p class="contTxt">
+											<span>货运专用额：</span>
+											<span>￥234.00</span>
+										</p>
+									</div>
+									<div class="clickPic pushPic"></div>
+								</div>
+								<a class="onlinePay" href="recharge.html">在线充值</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="content_people_right">
+					<ul class="content_ul">
+						<li class="home-li-left">
+							<span>发　标　数：　</span><span>150</span>
+						</li>
+						<li class="home-li-left">
+							<span>成　交　数：　</span><span>40</span>
+						</li>
+						<li class="home-li-left">
+							<span>已结赔案数：　</span><span>4</span>
+						</li>
+					</ul>
+					<ul class="content_ul second-ul">
+						<li>
+							<span>保险金额：　</span><span>150,700,150,360</span>
+						</li>
+						<li>
+							<span>成交保费：　</span><span>700,150,36</span>
+						</li>
+						<li>
+							<span>赔款余额：　</span><span>1,000,000,00</span>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="guide">
+					<div class="guide-more">
+						<span>操作指引</span>
+						<div class="brand_pic"></div>
+					</div>
+					<div class="guide-cont">
+						<img class="jiantou" src="../img/jianjian.png" />
+						<ul>
+							<li>
+								<span class="guide-cont-name">采购比价：</span>
+								<span>【采购比价】，填写需求信息，选择发布即可邀请保险公司参与报价。</span>
+							</li>
+							<li>
+								<span class="guide-cont-name">查看报价：</span>
+								<span>【查看报价】，查看保险公司的报价信息，点击“报价号”，可查看报价详情。</span>
+							</li>
+							<li>
+								<span class="guide-cont-name">支付成交：</span>
+								<span>【查看报价】，在列表处确认您觉得合适的报价，并进一步支付金额即可。</span>
+							</li>
+							<li>
+								<span class="guide-cont-name">查看保单：　</span>
+								<span>【查看保单】，即可查看保险公司为您上传的保单及您手动上传的保单。</span>
+							</li>
+							<li class="guide-cont-last">
+								<span class="guide-cont-name">主流程： </span>
+								<span class="guide-cont-last-right clear">
+									<span class="guide-cont-last-cont">采购比价</span>
+									<span class="guide-cont-last-line"></span>
+									<span class="guide-cont-last-cont">保险公司报价</span>
+									<span class="guide-cont-last-line"></span>
+									<span class="guide-cont-last-cont">确认报价并支付</span>
+									<span class="guide-cont-last-line"></span>
+									<span class="guide-cont-last-cont">保险公司出单</span>
+								</span>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+			<div class="hotDiv">
+				<ul class="clear">
+					<li class="clear">
+						<div class="leftImg">
+							<img class="hotImg" src="../img/huoyun2.png" />
+						</div>
+						<div class="rightTxt">
+							<p class="hotTitle">货物运输投保<span class="hotTips">HOT</span></p>
+							<div class="hotTxt">
+								<p>全球顶尖保险公司竭诚服务 </p>
+								<p>全面保障您的货运安全</p>
+								<p>普品、冻品、易碎品、</p>
+								<p>化工品全面覆盖</p>
+							</div>
+							<a href="javascript:;" class="hotBtn">立即投保</a>
+						</div>
+						<img class="hover_bc" src="../img/hover_bc.png" />
+					</li>
+					<li class="clear">
+						<div class="leftImg">
+							<img class="hotImg" src="../img/caigou.png" />
+						</div>
+						<div class="rightTxt">
+							<p class="hotTitle">企业保险全方位比价<span class="hotTips">HOT</span></p>
+							<div class="hotTxt">
+								<p>财产、责任、信用、人员全面保障</p>
+								<p>国内外80+大牌保险公司比价 </p>
+								<p>企业买保险的全新生态</p>
+							</div>
+							<a href="javascript:;" class="hotBtn">立即投保</a>
+						</div>
+						<img class="hover_bc" src="../img/hover_bc.png" />
+					</li>
+				</ul>	
+			</div>
+			
+			<!--<div class="Todo">
+				<div class="Todo_top">
+					待办事项：
+				</div>
+				<div class="Todo_cont ">
+					<ul class="clear">-->
+						<!--<li>
+							<a href="javascript:;" class="clear">
+								<span>货运投保</span>
+								<div class="todo_transport "></div>
+							</a>
+						</li>-->
+						<!--<li>
+							<a href="javascript:;" class="clear">
+								<span>待发布</span>
+								<div class="todo_nub round">5</div>
+							</a>
+							
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>待投保</span>
+								<div class="todo_nub round">2</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>待支付</span>
+								<div class="todo_nub round">0</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>理赔待办</span>
+								<div class="todo_nub round">5</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>批单待办</span>
+								<div class="todo_nub round">5</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clear">
+								<span>待认证企业</span>
+								<div class="todo_nub round">5</div>
+							</a>
+						</li>
+					</ul>
+				</div>-->
+				<!--<div class="todo_none "><span>您暂时没有任何待办事项，快去</span><a href="release.html">发布</a><span>需求</span></div>-->
+			<!--</div>-->
+			<!--<div class="Todo1">
+				<div class="Todo_top">
+					猜你喜欢：
+				</div>
+				<div class="Todo1_cont ">
+					<ul class="clear">-->
+						<!--<li>
+							<div class="left-pic"><img src="../img/huoyun.png" alt="" /></div>
+							<div class="lick-cont clear">
+								<div class="lick-title">货物运输保障（一切险）</div>
+								<p>覆盖普品、易碎品、冻品，保障国内/进出口的货物运输。</p>
+								<a class="a_detail" href="#" >查看详情</a>
+								<a class="a_insureNow" href="#" >立即投保</a>
+							</div>
+						</li>
+						<li>
+							<div class="left-pic"><img src="../img/car.png" alt="" /></div>
+							<div class="lick-cont">
+								<div class="lick-title">采购比价</div>
+								<p>发布需求，一键邀请保险公司参与报价，让您的采购性价比更高！</p>
+								<a href="#">立即询价</a>
+							</div>
+						</li>
+						<li>
+							<div class="left-pic"><img src="../img/cloud-management.png" alt="" /></div>
+							<div class="lick-cont">
+								<div class="lick-title">保单云管理</div>
+								<p>保单线上维护，极光理赔、线上批改、续保更便捷。</p>
+								<a href="#" class="gogo">立即上传</a>
+							</div>
+						</li>-->
+						<!--<li>
+							<div class="left-pic"><img src="../img/guide.png" alt="" /></div>
+							<div class="lick-cont">
+								<div class="lick-title">新手引导</div>
+								<p>询价采购、填写项目信息、查看报一目了然。</p>
+								<a href="#" class="look-new-people">查看</a>
+							</div>
+						</li>-->
+						<!--<li>
+							<div class="left-pic"><img src="../img/gift.png" alt="" /></div>
+							<div class="lick-cont">
+								<div class="lick-title">九折续保<span class="activity">活动</span></div>
+								<p>九折续保相关活动说明九折续保相关活动说明</p>
+								<a href="#">查看活动</a>
+							</div>
+						</li>-->
+					<!--</ul>
+				</div>
+				
+			</div>-->
+			
+		</div>
+		<div id="footer"></div>
+		<script src="../js/home.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			$("#footer").load("../../index3.0/html/footer.html"); 
+		</script>
+
+
+	</body>
+</html>

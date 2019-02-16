@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>账户充值</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	</head>
+	<body>
+		<main class="recharge">
+			<form class="myform">
+				<div class="recharge_div">
+					<span>CNY</span>
+					<div class="input_money">
+						<input name="money" class="input-prices"  placeholder="请输入充值金额" datatype="price" nullmsg="请输入充值金额"  errormsg="金额格式错误"/>
+					</div>
+				</div>	
+				<div class="partSmall">
+					<div class="end-bt">立即充值</div>
+				</div>
+			</form>
+			<div class="recharge_step">
+				<p>充值流程:</p>
+				
+				<p class="money">1、输入充值金额</p>
+				
+				<p>2、长按识别二维码完成付款</p>
+				
+				<p>3、等待充值金额到账</p>
+				
+				<p>4、如有问题可致电民信金融服务人员</p>
+			</div>
+		</main>
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/Validform_ncr_min.js"></script>
+	<script src="../js/input-prices.js"></script>	
+	<script>
+		$(function(){
+            $(".myform").Validform({
+                tiptype: 4,
+                ignoreHidden:true,
+                postonce: true,
+                ajaxPost:true,
+                btnSubmit:".end-bt",
+                datatype:{
+                	'price':/^[1-9]\d*(,\d{3})*(\.\d{1,2})?$/
+                },
+                callback:function(data){
+                    if(data.code==200){
+
+                    }
+                }
+            });
+        })
+	</script>
+</html>

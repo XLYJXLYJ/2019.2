@@ -1,0 +1,34 @@
+body {background-color: #e9e9f4;}
+#header,.content {background-color: #fff;}
+.nav-position {color: #35313f;width: 1200px;margin: 15px auto;font-size: 15px;font-weight: bold;}
+.content {width: 1200px;margin: 0 auto;padding-bottom: 150px;}
+.endorsement-top{position:relative;}
+.endorsement-top-left{padding:10px 200px 10px 10px;font-size: 16px;width:100%;box-sizing: border-box;}
+.endorsement-top-left a,.endorsement-title-right a{color:#524ae7;}
+.endorsement-top-left a:hover,.endorsement-title-right a:hover{text-decoration: underline;}
+.endorsement-top-left p{line-height: 30px;}
+.endorsement-top-left p span{margin-right: 42px;display:inline-block;}
+.endorsement-top-right{position:absolute;top:0;right:50px;}
+.endorsement-top-right a{width:100px;height:28px;line-height: 28px;margin:5px 0;border-radius:3px;background: #524ae7;color:#fff;font-size: 16px;text-align: center;display:block;}
+.endorsement-title{height:40px;line-height: 40px;background:#f4f4f5;padding: 0 10px;}
+.endorsement-title-left{float:left;}
+.endorsement-title-right{float:left;}
+.endorsement-title-right .state{display:inline-block;height:24px;line-height: 24px;background: #ccc;color:#fff;border-radius: 3px;padding: 0 10px;margin-left: 50px;}
+
+.contents-ul>li{margin-top: 20px;} 
+.contents-ul_left{width:120px;float:left;height:30px;}
+.contents-ul_left span{float:right;line-height: 30px;}
+.contents-ul_left img{float:right;margin: 10px 3px 0 0;}
+.contents-ul_right{float:left;margin-left: 10px;color:#727689;position:relative;}
+.sp_cont {width:650px;line-height: 30px;color:#35313f;}
+.contents-ul_right>span{line-height: 30px;color:#35313f;}
+.needToPay {padding: 0 10px;}
+.upTxt {line-height: 30px;color:#35313f;;}
+.li_section2 {border-top:1px solid #e9e9f4;padding-top: 20px;}
+
+.step{border-top:1px solid #e9e9f4;margin-top: 20px;}
+.step li{margin-top: 20px;margin-left: 25px;}
+.step-left{margin-right: 50px;}
+
+.last_end{margin:50px 0 0 42px;}
+.click-sure{width:120px;height:38px;line-height: 38px;text-align: center;color:#fff;background: #524ae7;font-size: 16px;display:inline-block;border-radius: 3px;}

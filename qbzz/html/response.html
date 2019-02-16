@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>企保招招-查看报价</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<!--<script type="text/javascript" src="../js/selectivizr.js"></script>-->
+		<style type="text/css">
+			/*.mark_top_right .priceCompare {padding: 0 10px;margin-right: 16px;color: #524AE7;border: 1px solid #524AE7;border-radius: 3px;position: relative;cursor: pointer;}*/
+			.page1Txt {float: right;margin-top: 32px;margin-right: 20px;font-size: 16px;}
+		</style>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="release.html">发布需求</a>
+							</li>
+							<li class="active">
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img points"></div>
+								<a href="points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="all_fix" >
+			<div class="all_no"></div>
+			<div class="look_fix">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<p>查看补充要求：</p>
+				<div class="textarea">1、请带上相关证明的资料</div>
+				<span class="look_yes">立即补充</span>
+			</div>
+				
+			<!--索要发票-->
+			<div class="invoice_fix">
+				<div class="no"></div>
+				<div class="invoice-page1">
+					<div class="invoicetit">索要发票<span>　（增值税专用发票）</span></div>
+					<form class="invoiceform">
+						<div class="invoice-type clear">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>税务登记号：</span>
+							</div>
+							<div class="invoice-type-right">
+								<input type="text" placeholder="请输入税务登记号" name="tax_register_number" datatype="number" nullmsg="请输入税务登记号" errormsg="税务登记号格式错误"/>
+							</div>
+						</div>
+						<div class="invoice-type clear">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>税务登记地址：</span>
+							</div>
+							<div class="invoice-type-right">
+								<input type="text" placeholder="请输入税务登记地址" name="tax_register_address" datatype="*2-150" nullmsg="请输入税务登记地址" errormsg="限制在2-150个字符内"/>
+							</div>
+						</div>
+						<div class="invoice-type clear">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>税务登记电话：</span>
+							</div>
+							<div class="invoice-type-right">
+								<input type="text" placeholder="请输入税务登记电话" name="tax_register_tel" datatype="phone" nullmsg="请输入税务登记电话" errormsg="税务登记电话格式错误"/>
+							</div>
+						</div>
+						<div class="invoice-type clear">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>开户银行名称：</span>
+							</div>
+							<div class="invoice-type-right">
+								<input type="text" placeholder="请输入开户银行名称" name="tax_bank_name" datatype="name" nullmsg="请输入税务开户银行名称" errormsg="税务开户银行名称只能有中文、英文、数字、括号"/>
+							</div>
+						</div>
+						<div class="invoice-type clear">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>开户银行账号：</span>
+							</div>
+							<div class="invoice-type-right">
+								<input type="text" placeholder="请输入开户银行账号" name="tax_bank_account" datatype="n" nullmsg="请输入税务开户银行账号" errormsg="税务开户银行账号格式错误"/>
+							</div>
+						</div>
+						<div class="invoice-type clear invoice-type-spc">
+							<div class="invoice-type-left clear">
+								<img src="../img/key.png" alt="" />
+								<span>发票类型：</span>
+							</div>
+							<div class="invoice-type-right">
+								<label><input type="radio" name="invoicetype" checked="checked" value="0"/> 电子发票</label>
+								<label><input type="radio" name="invoicetype"  value="1"/> 纸质发票</label>
+							</div>
+						</div>
+						<div class="end-ok clear">
+							<span class="end-bt">提交</span>
+						</div>
+						<input type="hidden" class="biao"/>
+					</form>
+				</div>
+				<div class="invoice-page2">
+					<img src="../img/gougou.png" alt="" />
+					<div class="invoice-state">发票信息提交成功！</div>
+					<div class="invoice-titcont">我们一般会在10工作日内完成配送（保费满1000元包邮）。若10个工作日内没有收到相关单证，请与我们联系：400-830-1985（10:00-18:00）。</div>
+					<div class="end-ok clear">
+						<span class="end-finish">提交</span>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="content" id="response">
+			<div class="content_top  clear">
+				<p>
+					<span>发标时间：</span>
+					<span class="spTime">
+						<select>
+							<option value="">全部</option>
+							<option value="">一周内</option>
+							<option value="">一个月内</option>
+							<option value="">三个月内</option>
+							<option value="">半年内</option>
+						</select>
+					</span>
+				</p>
+				<p>
+					<span>险种：</span>
+					<span class="spInsure">
+						<select>
+							<option value="">全部</option>
+							<option value="">财产基本险</option>
+							<option value="">财产综合险</option>
+							<option value="">产品一切险</option>
+							<option value="">营业中断险</option>
+							<option value="">现金险</option>
+							<option value="">雇主责任险</option>
+							<option value="">财产一切险</option>
+							<option value="">产品责任险</option>
+							<option value="">食品安全责任险</option>
+							<option value="">旅行社责任险</option>
+							<option value="">停车责任险</option>
+							<option value="">物业管理责任险</option>
+							<option value="">保安公司责任险</option>
+							<option value="">道路客运承运人责任险</option>
+							<option value="">保险经纪人职业责任险</option>
+							<option value="">国内道路货物运输承运人责任险</option>
+							<option value="">建筑工程一切险</option>
+							<option value="">安装工程一切险</option>
+							<option value="">困难意外险</option>
+							<option value="">建筑施工人员意外险</option>
+							<option value="">国际货物运输保险（预约）</option>
+							<option value="">国内货物运输保险（预约）</option>
+							<option value="">贷款保证保险</option>
+							<option value="">雇员忠诚保证保险</option>
+							<option value="">短期出口贸易信用险</option>
+						</select>
+					</span>
+				</p>
+				<div class="search">
+					<input type="text" placeholder="项目名称关键字/标号"/>
+				</div>
+				<input type="image" src="../img/search-ico.png" class="input_submit"/>
+			</div>
+			<div class="padding">
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">待确认报价
+								<div class="zhuangtai-null"></div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span>
+							</p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							<span class="suer-baojia">
+								<a class="bijia-a" href="javascript:;" data-tender="12"  target="_blank">对比报价</a>
+								<div class="gongbao-div">
+									<img src="../img/delete-line-ico2.png" alt="" class="no1"/>
+									<div class="all_tip2"></div>
+									<div class="gongbaopage1">
+										<div class="fix-title">选择保险公司进行对比报价</div>
+										<div class="nei">
+											<div class="tabel-head clear">
+												<span class="gs">保险公司 </span>
+												<span class="bj">报价人</span>
+												<span class="bf">保费</span>
+												<span class="xz">选择状态</span>
+											</div>
+											<div class='gongbao_tabel'>
+												<table>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="page1-end clear">
+											<a href="javascript:;" class="page1next page1-bt"  target="_blank">立即对比</a>
+											<div class="page1Txt">（最多选择4家）</div>
+										</div>
+									</div>
+								</div>
+							</span>	
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									
+									<table class='next_tabel'>
+										<thead>
+											<tr>
+												<th>公司名称 </th>
+												<th>被邀请人</th>
+												<th>状态</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>要求补充资料</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>要求补充资料</td>
+											</tr>
+										</tbody>
+										
+										
+									</table>
+								</div>
+							</span>
+							<!--<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+							<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>-->
+							<div class="moreBtn">
+								更多操作
+								<p class="kongbaiheight"></p>
+								<div class="moreBtnDiv">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+									<a href="javascript:;" class="invoicehave" data-biaoji = "1">索要发票</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<table>
+							<tr>
+								<th>报价号</th>
+								<th>报价的保险公司</th>
+								<th>报价人</th>
+								<th>报价时间</th>
+								<th>状态</th>
+								<th>保费价格</th>
+								<th>操作</th>
+							</tr>
+							<tr data-status="yes" data-id="5" data-msg="亚太财产保险公司亚太财产保险公司亚太财产保险公司" data-person = "张三" data-currency = "CNY" data-money="150000000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司亚太财产保险公司亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-status="yes" data-id="6" data-msg="亚太财产保险公司" data-person = "李四" data-currency = "CNY" data-money="5,000,000.00">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>李四</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">5,000,000.00</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-status="yes" data-id="7" data-msg="太平洋保险公司" data-person = "张三" data-currency = "CNY" data-money="150,000,000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>太平洋保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150,000,000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="8" data-msg="亚太财产保险公司亚太财产保险公司亚太财产保险公司" data-person = "张三" data-currency = "CNY" data-money="150000000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>要求补充资料</td>
+								<td>—————</td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="require ">查看要求</a>
+									<a href='javascript:;' class="cannot click-sure" data-message = "若无法按要求补充业务资料，对方有可能会重新报价或放弃报价，您确定无法更改或补充资料吗？">无法补充</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">未通过
+								<div class="zhuangtai-null"></div>
+								<div class="zhuangtai-cont">标信息有误，请修改投保信息后再发布，或者关闭本标。</div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span></p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									<table class='next_tabel'>
+										<tr>
+											<th>公司名称 </th>
+											<th>被邀请人</th>
+											<th>状态</th>
+										</tr>
+										<tr>
+											<td colspan="3" >公开发布，无指定邀请对象</td>
+										</tr>
+									</table>
+								</div>
+							</span>
+							<!--<a href="javascript:;" class="check_a" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+							<a href="javascript:;"class="close">关闭</a>-->
+							<div class="moreBtn">
+								更多操作
+								<p class="kongbaiheight"></p>
+								<div class="moreBtnDiv">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+									<a href="javascript:;" class="invoicehave" data-biaoji = "2">索要发票</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<p>暂无保险公司报价</p>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">待确认报价
+								<div class="zhuangtai-null"></div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span></p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							<span class="suer-baojia">
+								<a class="bijia-a" href="javascript:;" data-tender="15" target="_blank">对比报价</a>
+								<div class="gongbao-div">
+									<img src="../img/delete-line-ico2.png" alt="" class="no1"/>
+									<div class="all_tip2"></div>
+									<div class="gongbaopage1">
+										<div class="fix-title">选择保险公司进行对比报价</div>
+										<div class="nei">
+											<div class="tabel-head clear">
+												<span class="gs">保险公司 </span>
+												<span class="bj">报价人</span>
+												<span class="bf">保费</span>
+												<span class="xz">选择状态</span>
+											</div>
+											<div class='gongbao_tabel'>
+												<table>
+													<tbody>
+														
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="page1-end clear">
+											<a href="javascript:;" class="page1next page1-bt"  target="_blank">立即对比</a>
+											<div class="page1Txt">（最多选择4家）</div>
+										</div>
+									</div>
+								</div>
+							</span>	
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									<table class='next_tabel'>
+										<tr>
+											<th>公司名称 </th>
+											<th>被邀请人</th>
+											<th>状态</th>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+									</table>
+								</div>
+							</span>
+							<!--<a href="javascript:;" class="check_a roundify">修改</a>
+							<a href="javascript:;"class="close roundify">关闭</a>-->
+							<div class="moreBtn">
+								更多操作
+								<p class="kongbaiheight"></p>
+								<div class="moreBtnDiv">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<table>
+							<tr>
+								<th>报价号</th>
+								<th>报价的保险公司</th>
+								<th>报价人</th>
+								<th>报价时间</th>
+								<th>状态</th>
+								<th>保费价格</th>
+								<th>操作</th>
+							</tr>
+							<tr data-id="11" data-msg="亚太财产保险公司亚太财产保险公司亚太财产保险公司" data-person = "张三" data-currency = "CNY" data-money="150000000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司亚太财产保险公司亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="12" data-msg="亚太财产保险公司" data-person = "李四" data-currency = "CNY" data-money="5,000,000.00">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>李四</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">5,000,000.00</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="13" data-msg="太平洋保险公司" data-person = "张三" data-currency = "CNY" data-money="150,000,000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>太平洋保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150,000,000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="14" data-msg="中国人寿" data-person = "王五" data-currency = "CNY" data-money="150000000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>中国人寿</td>
+								<td>王五</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="15" data-msg="亚太财产保险公司" data-person = "李四" data-currency = "CNY" data-money="5,000,000.00">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>李四</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">5,000,000.00</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr data-id="16" data-msg="太平洋保险公司" data-person = "张三" data-currency = "CNY" data-money="150,000,000">
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>太平洋保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150,000,000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>
+									<a href='javascript:;' class="open click-sure" data-message = "退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="list_none">
+					<img src="../img/list-none.png" alt="" />
+				</div>
+			</div>
+			<div class="nubs">
+				<div class="nub">
+					<img src="../img/left-go.png" alt="" class="img_left"/>
+					<span class="check">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<img src="../img/right-go.png" alt="" class="img_right"/>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<script type="text/javascript" src="../js/Validform_ncr_min.js" ></script>
+	<script type="text/javascript" src="../js/bounced.js" ></script>
+	<script src="../js/money_change.js"></script>
+	<script type="text/javascript" src="../js/response.js" ></script>
+	<script type="text/javascript" src="../js/invoice.js" ></script>
+	<script>
+		$("#footer").load("../../index3.0/html/footer.html"); 
+	</script>
+</html>
+ 

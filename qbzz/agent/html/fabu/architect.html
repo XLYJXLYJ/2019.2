@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发布-项目信息-建筑工程一切险</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/ProjectInformation.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<!--<script type="text/javascript" src="../../js/selectivizr.js"></script>-->
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					<div class="aside_content"> 
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li>
+							<li class="special-parity active">
+								<div class="img release"></div>
+								<a href="../release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿箱</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="../customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">采购比价</a>
+				<span>></span>
+			</div>
+			<!--<div class="now-area">
+				<a href="../response.html">订单支付</a>
+				<span>></span>
+			</div>-->
+		</div>
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li><span>　————　</span><span class="big-step">03</span><span>企业信息&支付说明</span></li>
+				<li><span>　————　</span><span class="big-step">04</span><span>选择保险品牌</span></li>
+			</ol>
+			 <form class="myform">
+			 	<div class="project">
+					<div class="content_title">项目信息</div>
+					<ul class="clear">
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">项目名称：</span>
+								<img src="../../../img/key.png" alt="" class="first_img"/>
+							</div>
+							<div class="project_right color_red">
+								<input type="text" class="first_input" placeholder="自动生成（公司名+年份+险种，可编辑）" datatype="*2-150" nullmsg="请输入项目名称" errormsg="项目名称在2-150个字符内"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>险种名称：</span>
+							</div>
+							<div class="project_right">
+								<span class="heise">建筑工程一切险 </span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>币种选择：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect1">
+								<select name="" id="" class="duan">
+									<option value="">CNY</option>
+									<option value="">HKD</option>
+									<option value="">USD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">JPY</option>
+								</select>
+								<img src="../../../img/xiala.png" />
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>工程期限：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right fudong">
+								<span>自　</span>
+								<div class="riqi">
+									<input id="datetimepicker1" type="text"/>
+									<span class="Validform_checktip tell">请选择日期</span>
+								</div>
+								<span>零时起至　</span>
+								<div class="riqi">
+									<input id="datetimepicker2" type="text" readonly="true"/>
+								</div>
+								<span>二十四时止</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>保证期：</span>
+								<img src="../../../img/key.png" alt=""/>
+							</div>
+							<div class="project_right architect_put color_red">
+								<input type="text"  datatype="number" nullmsg="请输入天数" errormsg="大于零的数字"/>
+								<span>天</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">工程名称：</span>
+								<img src="../../../img/key.png" alt=""  class="first_img"/>
+							</div>
+							<div class="project_right color_red">
+								<input type="text" class="first_input" datatype="*2-150" nullmsg="请输入工程名称" errormsg="项目名称在2-150个字符内"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">工程地点：</span>
+								<img src="../../../img/key.png" alt=""  class="first_img"/>
+							</div>
+							<div class="project_right color_red">
+								<input type="text" class="first_input" datatype="*2-150" nullmsg="请输入工程地点" errormsg="项目名称在2-150个字符内"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">总保险额金额：</span>
+								<img src="../../../img/key.png" alt=""  class="first_img"/>
+							</div>
+							<div class="project_right">
+								<div class="all_price first_price">
+									1. 物质损失部分　<span class="price-kind">CNY</span>
+									<input type="text" class="input-prices" datatype="price" nullmsg="请输入金额" errormsg="只能由数字或小数点组成且大于零"/>
+								</div>
+								<div class="all_price">
+									2. 第三者责任部分　<span class="price-kind">CNY</span>
+									<input type="text" class="input-prices"  datatype="price" nullmsg="请输入金额" errormsg="只能由数字或小数点组成且大于零"/>
+								</div>
+							</div>
+						</li>
+						
+						<li class="clear">
+							<div class="project_left">
+								<span>责任范围：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect2">
+								<select name=""  class="lang">
+									<option value="">中华人民共和国（不含港、澳、台地区）</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>司法管理：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect2">
+								<select name=""  class="lang">
+									<option value="">中华人民共和国（不含港、澳、台地区）</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>争议处理：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right do">
+								<p class="tit_p">因本合同或与本合同有关争议，双方因通过协商解决，协商解决不成，采取下列方式之一解决。</p>
+								<label class="secai"><input type="radio" name="do" checked="checked"/> 向人民法院起诉</label>
+								<label><input type="radio" name="do"/> 向仲裁委员会申请仲裁</label>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>免赔额：</span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput1">1、物质损失：每次事故绝对免赔额CNY 5万元或损失金额的10%，两者以高者为准&#10;2、第三者责任：人身伤亡部分无免赔；财产损失部分每次事故绝对免赔CNY 1000元或损失金额的10%，两者以高者为准。
+								</textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>特别约定：</span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput2" >单次事故每人赔偿限额CNY50万元。</textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>附加条款：</span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput3" ></textarea>
+							</div>
+						</li>
+					</ul>
+				</div>	
+				<div class="accessory">
+					<div class="content_title">附件</div>
+					<ul class="clear">
+						<li class="clear first_accessory">
+							<div class="project_left ">
+								<span class="first_span">工程合同：</span>
+								<img src="../../../img/key.png" alt="" class="first_img"/>
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input" ></span>
+									<label><span class="input_file">点击上传</span></label>
+								</div>
+								<div class="Validform_checktip tell_file tell">请上传文件</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear accessory_li">
+							<div class="project_left ">
+								<input type="text" />
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input" ></span>
+									<label><span class="input_file">点击上传</span></label>
+									<div class="reduce"></div>
+								</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear infor">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<span>如果需填写更多信息，可增加填写栏目</span>
+								<div class="add_img2"></div>
+							</div>
+						</li>
+						<li class="clear last_end">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<button href="enterpriseIinformation.html" class="nexts">下一步</button>
+								<a href="javascript:history.go(-1);" class="up">上一步</a>
+								<button href="javascript:;" class="hold">保存草稿</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/ProjectInformation.js" ></script>
+	<script type="text/javascript" src="../../js/timeHelper.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+	<script src="../../js/input-prices.js"></script>
+</html>
+

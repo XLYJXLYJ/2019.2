@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>餐饮保</title>
+		<!--<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-datetimepicker.min.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../../css/cyb.css"/>
+		
+
+		<link href="../../css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+		
+
+		<!-- S 可根据自己喜好引入样式风格文件 -->
+		<link href="../../css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="header">
+			<a href="javascript:history.go(-1);" class="back">
+				<img src="../../img/back.png" alt="" />
+				<span>返回</span>
+			</a>
+			<p>企保科技</p>
+		</div>
+		<div class="contents" id="insure"> 
+			<div class="content-title">立即投保</div>
+			<div class="content">
+				<form class="myform">
+					<ul class="cont-information">
+						<li class="clear">
+							<div class="information-title">请选择投保方案:</div>
+							<input id="type" type="text" data-id = "check-plan" data-type="1" class="select select-box pricemoney" readonly="true" data-nub="1" data-pnub="550" data-price="180,550,1500"  data-message = "A款（180元/份）,B款（550元/份）,C款（1500元/份）"  value="B款（550元/份）"/>
+							
+						</li>
+						<li class="clear">
+							<div class="information-title">请选择份数:</div>
+							<input type="text" data-id = "check-copies" class="select select-box pricemoney" readonly="true" data-message = "1,2,3"  data-nub="1" value="2"/>
+						</li>
+						<li class="riqi clear">
+							<div class="information-title">保险期限:</div>
+							<input id="datetimepicker1" type="text" class="correct" readonly="true" datatype="*"  nullmsg="请选择"/>
+							<span class="riqi-midcont">至</span>
+							<input id="datetimepicker2" type="text" readonly="true"/>
+						</li>
+						<li class="clear">
+							<div class="information-title">证件上传:</div>
+							<div class="Photograph-left Photographs">
+								<label class="clear">
+									<img src="../../img/Photograph.png" alt="" class="potopic"/>
+									<div class="img"></div>
+									<input id="File1" class="file" runat="server" type="file" accept="image/*" capture="camera" style="width:100%" />
+									<input name="applicant_license" class="policy_photo" />
+									<span class="poto poto1">请上传照片</span>
+								</label>	
+								<span class="Explain">投保人身份证或营业执照</span>
+							</div>
+							<div class="Photograph-right Photographs">
+								<label class="clear">
+									<img src="../../img/Photograph2.png" alt=""  class="potopic"/>
+									<div class="img"></div>
+									<input id="File2"  class="file" runat="server" type="file" accept="image/*" capture="camera"  />
+									<input name="applicant_license" class="policy_photo" />
+									<span class="poto poto2">请上传照片</span>
+								</label>
+								<span class="Explain">被保险人营业执照</span>
+							</div>
+							
+						</li>
+						<li class="clear">
+							<div class="information-title">公司名称:</div>
+							<input type="text" placeholder="请输入公司名称" datatype="name"  nullmsg="请输入公司名称" errormsg="公司名由2-30个数字、字母、中文、括号组成的字符"/>
+						</li>
+						<li class="clear">
+							<div class="information-title">营业地址:</div>
+							<input type="text" placeholder="请输入餐厅地址" datatype="*2-60"  nullmsg="请输入餐厅地址" errormsg="地址由2-60个字符组成"/>
+						</li>
+						<li class="clear">
+							<div class="information-title">建筑结构:</div>
+							<input type="text" data-id = "check-architecture" class="select select-box" readonly="readonly" data-message = "砖混结构,钢混结构"  value="砖混结构"/>
+						</li>
+						<li class="clear">
+							<div class="information-title">电子邮箱:</div>
+							<input type="text" placeholder="请输入个人邮箱" datatype="mail"  nullmsg="请输入个人邮箱" errormsg="邮箱格式错误"/>
+						</li>
+						<li class="clear">
+							<div class="information-title">手机号码:</div>
+							<input type="text" class="phone" placeholder="请输入手机号码" datatype="phone"  nullmsg="请输入手机号码"/>
+						</li>
+						<li class="clear Verification">
+							<div class="information-title">验证号码:</div>
+							<input type="text" placeholder="请输入验证码" class="yanzenma" datatype="*"  nullmsg="请输入验证码"/>
+							<span class="validate-bt">发送验证码</span>
+							<div class="Verification-nub">验证码错误</div>
+						</li>
+					</ul>
+					<div class="clause">
+						<input type="checkbox" name="read" datatype="*"  nullmsg="请选择"/>
+						<p>我已仔细阅读 <a href="javascript:;" class="clause-a">保险条款&投保须知</a> ，并确保提供的投保信息真实有效</p>
+					</div>
+					<div class="money-all">
+						<input type="hidden" name="premium" value="1100">
+						总保费：<span class="red">￥<span class="money-nub">1100</span></span>
+					</div>
+					<div class="end-bt">确认投保</div>
+				</form>
+			</div>
+		</div>	
+		<!--下拉框遮罩-->
+		<div class="all-fix">
+				<div class="all-no"></div>
+		</div>
+		
+		
+		<!--保险条款浮层-->
+		<div class="baoxian-fix">
+			<div class="all-no"></div>
+			<div class="clause-cont">
+				<div class="clause-title">保险条款&投保须知</div>
+				<img src="../../img/delete-line-ico4.png" alt="" class="delete"/>
+				<div class="mid-cont">
+					<div class="clause-A clause-type">
+						<div class="clause-cont-top">
+							<p>中国人寿财产保险股份有限公司</p>
+							<p>“餐饮业守护神综合保险”（A款）</p>
+							<p>《投保须知》及《保险条款》</p>
+						</div>
+						<div class="clause-start">
+							<div class="title-one">一、 基本信息</div>
+							<p class="indent">本产品为“餐饮业守护神综合保险”（A款），由中国人寿财产
+							保险股份有限公司承保，本公司在全国除西藏自治区之外的所
+							有省、自治区及直辖市均设有分公司。本产品面向除西藏以外
+							的大陆地区销售。</p>
+							<div class="title-one">二、 产品介绍</div>
+							<div class="title-two">1、适用对象</div>
+							<p>“餐饮业守护神综合保险”适用于具备下列条件的商户：</p>
+							<p>（1）主营业务：餐饮业；</p>
+							<p>（2）建筑结构为钢筋混凝土结构或砖混结构；</p>
+							<p>本产品不适用于无就餐店铺的餐饮配送企业、中央厨房。</p>
+							<div class="title-two">2、责任及保险方案介绍：</div>
+							<div class="other-two"> 每份“餐饮业守护神综合保险”（A款），包含以下风险保障：</div>
+							<table border="" cellspacing="" cellpadding="" class="table table1">
+								<tr>
+									<th colspan="2">方案</th>
+									<th>责任范围</th>
+									<th>保险金额/赔偿限额</th>
+								</tr>
+								<tr>
+									<td>主险</td>
+									<td>财产损失</td>
+									<td>火灾、爆炸、雷击或飞行物体及其他空中运行物体坠落引起的财产损失</td>
+									<td>10万元</td>
+								</tr>
+								<tr>
+									<td rowspan="2">附加险</td>
+									<td>第三者责任</td>
+									<td>因经营过程中发生的意外事故导致的第三者的人身伤亡或财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额5万元，每次事故的每人人身伤亡、医疗费用、财产损失赔偿限额合计为5万元，其中医疗费用赔偿限额为5000元</td>
+								</tr>
+								<tr>
+									<td>食品饮料任</td>
+									<td>因被保险人销售或提供食品、饮料或卫生装置造成第三者的人身伤亡与财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额1万元（每次事故每人赔偿限额1万元）</td>
+								</tr>
+								<tr>
+									<td colspan="2">总保险费</td>
+									<td colspan="2">180元</td>
+								</tr>
+							</table>
+							<p class="indent">客户可在上述方案的基础上，根据自身规模及资产状况，选择投保份数，<span class="heise">单一地址投保份数上限为三份，多保无效。</span></p>
+							<p class="indent heise">如果同一经营场所投保两份或两份以上的，则承保方案中各项责任的保险金额/赔偿限额按投保份数累加。</p>
+							<div class="title-two">3、免赔条件：</div>
+							<p class="indent heise">（1）财产损失部分的每次事故绝对免赔额200元或损失金额的10%，以高者为准；</p>
+							<p class="indent heise">（2）“第三者责任”及“食品饮料责任”项下，医疗费用的每次事故绝对免赔额均为200元。</p>
+							<p class="indent heise">上述免赔条件不受投保份数增加而变化。</p>
+							<div class="title-two">4、保险期间：</div>
+							<p class="indent">自本产品生效之日起一年。</p>
+							<div class="title-two">5、适用条款及责任免除</div>
+							<p class="indent heise">请详细阅读《保险条款》，特别是有关免除保险人责任、投保人及被保险人义务、赔偿处理的条款的内容和法律后果的内容。</p>
+							
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产基本险条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　本保险合同由保险条款、投保单、保险单或其他保险凭证以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。</p>
+							<p class="center-p">保险标的</p>  
+							<p class="indent"><span class="heise">第二条</span>　本保险合同载明地址内的下列财产可作为保险标的：</p>
+							<p class="indent">（一）属于被保险人所有或与他人共有而由被保险人负责的财产；</p>
+							<p class="indent">（二）由被保险人经营管理或替他人保管的财产；</p>
+							<p class="indent">（三）其他具有法律上承认的与被保险人有经济利害关系的财产。</p>
+							<p class="indent"><span class="heise">第三条</span>　本保险合同载明地址内的下列财产未经保险合同双方特别约定并在保险合同中载明保险价值的，不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）金银、珠宝、钻石、玉器、首饰、古币、古玩、古书、古画、邮票、字画、艺术品、稀有金属等珍贵财物；</p>
+							<p class="indent">（二）堤堰、水闸、铁路、道路、涵洞、隧道、桥梁、码头；</p>
+							<p class="indent">（三）矿井（坑）内的设备和物资；</p>
+							<p class="indent">（四）便携式通讯装置、便携式计算机设备、便携式照相摄像器材以及其他便携式装置、设备；</p>
+							<p class="indent">（五）尚未交付使用或验收的工程。</p>
+							<p class="indent"><span class="heise">第四条</span>　下列财产不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）土地、矿藏、水资源及其他自然资源；</p>
+							<p class="indent">（二）矿井、矿坑；</p>
+							<p class="indent">（三）货币、票证、有价证券以及有现金价值的磁卡、集成电路（IC）卡等卡类；</p>
+							<p class="indent">（四）文件、账册、图表、技术资料、计算机软件、计算机数据资料等无法鉴定价值的财产；</p>
+							<p class="indent">（五）枪支弹药； </p>
+							<p class="indent">（六）违章建筑、危险建筑、非法占用的财产；</p>
+							<p class="indent">（七）领取公共行驶执照的机动车辆；</p>
+							<p class="indent">（八）动物、植物、农作物。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第五条</span>　在保险期间内，由于下列原因造成保险标的的损失，保险人按照本保险合同的约定负责赔偿：</p>
+							<p class="indent">（一）火灾；</p>
+							<p class="indent">（二）爆炸；</p>
+							<p class="indent">（三）雷击；</p>
+							<p class="indent">（四）飞行物体及其他空中运行物体坠落。</p>
+							<p class="indent">前款原因造成的保险事故发生时，为抢救保险标的或防止灾害蔓延，采取必要的、合理的措施而造成保险标的的损失，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="indent"><span class="heise">第六条</span>　保险事故发生后，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">责任免除</p>
+							<p class="indent"><span class="heise">第七条</span>　下列原因造成的损失、费用，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）行政行为或司法行为； </p>
+							<p class="indent heise">（三）战争、类似战争行为、敌对行动、军事行动、武装冲突、罢工、骚乱、暴动、政变、谋反、恐怖活动； </p>
+							<p class="indent heise">（四）地震、海啸及其次生灾害；</p>
+							<p class="indent heise">（五）核辐射、核裂变、核聚变、核污染及其他放射性污染；</p>
+							<p class="indent heise">（六）大气污染、土地污染、水污染及其他非放射性污染，但因保险事故造成的非放射性污染不在此限；</p>
+							<p class="indent heise">（七）保险标的的内在或潜在缺陷、自然磨损、自然损耗，大气（气候或气温）变化、正常水位变化或其他渐变原因，物质本身变化、霉烂、受潮、鼠咬、虫蛀、鸟啄、氧化、锈蚀、渗漏、自燃、烘焙；</p>
+							<p class="indent heise">（八）暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、暴雪、冰凌、沙尘暴、突发性滑坡、崩塌、泥石流、地面突然下陷下沉；</p>
+							<p class="indent heise">（九）水箱、水管爆裂；</p>
+							<p class="indent heise">（十）盗窃、抢劫。</p>
+							<p class="indent heise"><span class="heise">第八条</span>　下列损失、费用，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）保险标的遭受保险事故引起的各种间接损失；</p>
+							<p class="indent heise">（二）广告牌、天线、霓虹灯、太阳能装置等建筑物外部附属设施，存放于露天或简易建筑物内部的保险标的以及简易建筑本身，由于雷击造成的损失；</p>
+							<p class="indent heise">（三）锅炉及压力容器爆炸造成其本身的损失；</p>
+							<p class="indent heise">（四）任何原因导致供电、供水、供气及其他能源供应中断造成的损失和费用；</p>
+							<p class="indent heise">（五）本保险合同中载明的免赔额或按本保险合同中载明的免赔率计算的免赔额。</p>
+							<p class="indent heise"><span class="heise">第九条</span>　其他不属于本保险合同责任范围内的损失和费用，保险人不负责赔偿。</p>
+							<p class="center-p">保险价值、保险金额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第十条</span>　保险标的的保险价值可以为出险时的重置价值、出险时的账面余额、出险时的市场价值或其他价值，由投保人与保险人协商确定，并在本保险合同中载明。</p>
+							<p class="indent"><span class="heise">第十一条</span>　保险金额由投保人参照保险价值自行确定，并在保险合同中载明。保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。</p>
+							<p class="indent"><span class="heise">第十二条</span>　免赔额（率）由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="center-p">保险期间</p>
+							<p class="indent"><span class="heise">第十三条</span>　除另有约定外，保险期间为一年，以保险单载明的起讫时间为准。</p>
+							<p class="center-p">保险人义务</p>
+							<p class="indent"><span class="heise">第十四条</span>　订立保险合同时，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明保险合同的内容。对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</p>
+							<p class="indent"><span class="heise">第十五条</span>　本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。</p>
+							<p class="indent"><span class="heise">第十六条</span>　保险人依据第二十条所取得的保险合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自保险合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人承担赔偿责任。</p>
+							<p class="indent">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第十七条</span>　保险人按照第二十六条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。</p>
+							<p class="indent"><span class="heise">第十八条</span>　保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定；情形复杂的，应当在三十日内作出核定，但保险合同另有约定的除外。</p>
+							<p class="indent">保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。</p>
+							<p class="indent"><span class="heise">第十九条</span>　保险人自收到赔偿的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。 </p>
+							<p class="center-p">投保人、被保险人义务</p>
+							<p class="indent"><span class="heise">第二十条</span>　订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知，并如实填写投保单。</p>
+							<p class="indent">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除合同。</p>
+							<p class="indent heise">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。</p>
+							<p class="indent heise">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+							<p class="indent"><span class="heise">第二十一条</span>　投保人应按约定交付保险费。</p>
+							<p class="indent">约定一次性交付保险费的，<span class="heise">投保人在约定交费日后交付保险费的，保险人对交费之前发生的保险事故不承担保险责任。</span></p>
+							<p class="indent">约定分期交付保险费的，<span class="heise">保险人按照保险事故发生前保险人实际收取保险费总额与投保人应当交付的保险费的比例承担保险责任，</span>投保人应当交付的保险费是指截至保险事故发生时投保人按约定分期应该缴纳的保费总额。</p>
+							<p class="indent"><span class="heise">第二十二条</span>　被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面的相关法律、法规及规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。</p>
+							<p class="indent">保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。</p>
+							<p class="indent">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent"><span class="heise">第二十三条</span>　保险标的转让的，被保险人或者受让人应当及时通知保险人。</p>
+							<p class="indent">因保险标的转让导致危险程度显著增加的，保险人自收到前款规定的通知之日起三十日内，可以按照合同约定增加保险费或者解除合同。保险人解除合同的，应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent heise">被保险人、受让人未履行本条规定的通知义务的，因转让导致保险标的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十四条</span>　在合同有效期内，如保险标的占用与使用性质、保险标的地址及其他可能导致保险标的危险程度显著增加的、或其他足以影响保险人决定是否继续承保或是否增加保险费的保险合同重要事项变更，被保险人应及时书面通知保险人，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent heise">被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十五条</span>　知道保险事故发生后，被保险人应该：</p>
+							<p class="indent">（一）尽力采取必要、合理的措施，防止或减少损失，否则，<span class="heise">对因此扩大的损失，保险人不承担赔偿责任；</span></p>
+							<p class="indent">（二）立即通知保险人，并书面说明事故发生的原因、经过和损失情况；<span class="heise">故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；</span></p>
+							<p class="indent">（三）保护事故现场，允许并且协助保险人进行事故调查；<span class="heise">对于拒绝或者妨碍保险人进行事故调查导致无法确定事故原因或核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第二十六条</span>　被保险人请求赔偿时，应向保险人提供下列证明和资料：</p>
+							<p class="indent">（一）保险单正本、索赔申请、财产损失清单、技术鉴定证明、事故报告书、救护费用发票、必要的账簿、单据和有关部门的证明；</p>
+							<p class="indent">（二）投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。</p>
+							<p class="indent heise">投保人、被保险人未履行前款约定的单证提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent heise">第二十七条　保险事故发生时，被保险人对保险标的不具有保险利益的，不得向保险人请求赔偿保险金。</p>
+							<p class="indent"><span class="heise">第二十八条</span>　保险标的发生保险责任范围内的损失，保险人有权选择下列方式赔偿：</p>
+							<p class="indent">（一）货币赔偿：保险人以支付保险金的方式赔偿；</p>
+							<p class="indent">（二）实物赔偿：保险人以实物替换受损标的，该实物应具有保险标的出险前同等的类型、结构、状态和性能；</p>
+							<p class="indent">（三）实际修复：保险人自行或委托他人修理修复受损标的。</p>
+							<p class="indent heise">对保险标的在修复或替换过程中，被保险人进行的任何变更、性能增加或改进所产生的额外费用，保险人不负责赔偿。</p>
+							<p class="indent"><span class="heise">第二十九条</span>　保险标的遭受损失后保，如果有残余价值，应由双方协商处理。如折归被保险人，由双方协商确定其价值，并在险赔款中扣除。</p>
+							<p class="indent"><span class="heise">第三十条</span>　保险标的发生保险责任范围内的损失，保险人按以下方式计算赔偿：</p>
+							<p class="indent">（一）保险金额等于或高于保险价值时，按实际损失计算赔偿，最高不超过保险价值；</p>
+							<p class="indent">（二）保险金额低于保险价值时，按保险金额与保险价值的比例乘以实际损失计算赔偿，最高不超过保险金额；</p>
+							<p class="indent">（三）若本保险合同所列标的不止一项时，应分项按照本条约定处理。</p>
+							<p class="indent"><span class="heise">第三十一条</span>　保险标的的保险金额大于或等于其保险价值时，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险价值。</p>
+							<p class="indent">保险标的的保险金额小于其保险价值时，上述费用按被施救保险标的的保险金额与其保险价值的比例在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险金额。</p>
+							<p class="indent">被施救的财产中，含有本保险合同未承保财产的，按被施救保险标的的保险价值与全部被施救财产价值的比例分摊施救费用。</p>
+							<p class="indent"><span class="heise">第三十二条</span>　每次事故保险人的赔偿金额为根据第三十条、第三十一条约定计算的金额扣除每次事故免赔额后的金额，或者为根据第三十条、第三十一条约定计算的金额扣除该金额与免赔率乘积后的金额。</p>
+							<p class="indent"><span class="heise">第三十三条</span>　保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第三十四条</span>　保险标的发生部分损失，保险人履行赔偿义务后，本保险合同的保险金额自损失发生之日起按保险人的赔偿金额相应减少，保险人不退还保险金额减少部分的保险费。如投保人请求恢复至原保险金额，应按原约定的保险费率另行支付恢复部分从投保人请求的恢复日期起至保险期间届满之日止按日比例计算的保险费。</p>
+							<p class="indent"><span class="heise">第三十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；<span class="heise">由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p>
+							<p class="indent"><span class="heise">第三十六条</span>　被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。 </p>
+							<p class="center-p">争议处理和法律适用</p>
+							<p class="indent"><span class="heise">第三十七条</span>　因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险单载明的仲裁机构仲裁；保险单未载明仲裁机构且争议发生后未达成仲裁协议的，依法向人民法院起诉。</p>
+							<p class="indent"><span class="heise">第三十八条</span>　与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。</p>
+							<p class="center-p">其他事项</p>
+							<p class="indent"><span class="heise">第三十九条</span>　保险标的发生部分损失的，自保险人赔偿之日起三十日内，投保人可以解除合同；除合同另有约定外，保险人也可以解除合同，但应当提前十五日通知投保人。</p>
+							<p class="indent">保险合同依据前款规定解除的，保险人应当将保险标的未受损失部分的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent"><span class="heise">第四十条</span>　保险责任开始前，投保人要求解除保险合同的，应当按本保险合同的约定向保险人支付退保手续费，保险人应当退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，投保人要求解除保险合同的，自通知保险人之日起，保险合同解除，保险人按短期费率计收保险责任开始之日起至合同解除之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，保险人要求解除保险合同的，可提前十五日向投保人发出解约通知书解除本保险合同，保险人按照保险责任开始之日起至合同解除之日止期间与保险期间的日比例计收保险费，并退还剩余部分保险费。</p>
+							<p class="indent"><span class="heise">第四十一条</span>　保险标的发生全部损失，属于保险责任的，保险人在履行赔偿义务后，本保险合同终止；不属于保险责任的，本保险合同终止，保险人按短期费率计收自保险责任开始之日起至损失发生之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="center-p">释义</p>
+							<p class="indent">第四十二条　<span class="heise">本保险合同涉及下列术语时，适用下列释义：</span></p>
+							<p class="indent heise">（一）火灾</p>
+							<p class="indent">在时间或空间上失去控制的燃烧所造成的灾害。构成本保险的火灾责任必须同时具备以下三个条件：</p>
+							<p class="indent">1．有燃烧现象，即有热有光有火焰；</p>
+							<p class="indent">2．偶然、意外发生的燃烧；</p>
+							<p class="indent">3．燃烧失去控制并有蔓延扩大的趋势。</p>
+							<p class="indent">因此，仅有燃烧现象并不等于构成本保险中的火灾责任。在生产、生活中有目的用火，如为了防疫而焚毁玷污的衣物，点火烧荒等属正常燃烧，不同于火灾责任。</p>
+							<p class="indent">因烘、烤、烫、烙造成焦糊变质等损失，既无燃烧现象，又无蔓延扩大趋势，也不属于火灾责任。</p>
+							<p class="indent">电机、电器、电气设备因使用过度、超电压、碰线、孤花、漏电、自身发热所造成的本身损毁，不属于火灾责任。但如果发生了燃烧并失去控制蔓延扩大，才构成火灾责任，并对电机、电器、电气设备本身的损失负责赔偿。</p>
+							<p class="indent">（二）爆炸</p>
+							<p class="indent">爆炸分物理性爆炸和化学性爆炸。</p>
+							<p class="indent">1．物理性爆炸：由于液体变为蒸汽或气体膨胀，压力急剧增加并大大超过容器所能承受的极限压力，因而发生爆炸。如锅炉、空气压缩机、压缩气体钢瓶、液化气罐爆炸等。关于锅炉、压力容器爆炸的定义是：锅炉或压力容器在使用中或试压时发生破裂，使压力瞬时降到等于外界大气压力的事故，称为“爆炸事故”。</p>
+							<p class="indent">2．化学性爆炸：物体在瞬息分解或燃烧时放出大量的热和气体，并以很大的压力向四周扩散的现象。如火药爆炸、可燃性粉尘纤维爆炸、可燃气体爆炸及各种化学物品的爆炸等。</p>
+							<p class="indent">因物体本身的瑕疵，使用损耗或产品质量低劣以及由于容器内部承受“负压”（内压比外压小）造成的损失，不属于爆炸责任。</p>
+							<p class="indent">（三）雷击</p>
+							<p class="indent">雷击指由雷电造成的灾害。雷电为积雨云中、云间或云地之间产生的放电现象。雷击的破坏形式分直接雷击与感应雷击两种。</p>
+							<p class="indent">1．直接雷击：由于雷电直接击中保险标的造成损失，属直接雷击责任。</p>
+							<p class="indent">2．感应雷击：由于雷击产生的静电感应或电磁感应使屋内对地绝缘金属物体产生高电位放出火花引起的火灾，导致电器本身的损毁，或因雷电的高电压感应，致使电器部件的损毁，属感应雷击责任。 </p>   
+							<p class="indent">（四）暴雨：指每小时降雨量达16毫米以上，或连续12小时降雨量达30毫米以上，或连续24小时降雨量达50毫米以上的降雨。</p>
+							<p class="indent">（五）洪水：指山洪暴发、江河泛滥、潮水上岸及倒灌。但规律性的涨潮、自动灭火设施漏水以及在常年水位以下或地下渗水、水管爆裂不属于洪水责任。</p>
+							<p class="indent">（六）暴风：指风力达8级、风速在17.2米/秒以上的自然风。</p>
+							<p class="indent">（七）龙卷风：指一种范围小而时间短的猛烈旋风，陆地上平均最大风速在79米/秒-103米/秒，极端最大风速在100米/秒以上。</p>
+							<p class="indent">（八）冰雹：指从强烈对流的积雨云中降落到地面的冰块或冰球，直径大于5毫米，核心坚硬的固体降水。</p>
+							<p class="indent">（九）台风、飓风：台风指中心附近最大平均风力12级或以上，即风速在32.6米/秒以上的热带气旋；飓风是一种与台风性质相同、但出现的位置区域不同的热带气旋，台风出现在西北太平洋海域，而飓风出现在印度洋、大西洋海域。
+							<p class="indent">（十）沙尘暴：指强风将地面大量尘沙吹起，使空气很混浊，水平能见度小于1公里的天气现象。</p>
+							<p class="indent">（十一）暴雪：指连续12小时的降雪量大于或等于10毫米的降雪现象。</p>
+							<p class="indent">（十二）冰凌：指春季江河解冻期时冰块飘浮遇阻，堆积成坝，堵塞江道，造成水位急剧上升，以致江水溢出江道，漫延成灾。</p>
+							<p class="indent">陆上有些地区，如山谷风口或酷寒致使雨雪在物体上结成冰块，成下垂形状，越结越厚，重量增加，由于下垂的拉力致使物体毁坏，也属冰凌责任。</p>
+							<p class="indent">（十三）突发性滑坡：斜坡上不稳的岩土体或人为堆积物在重力作用下突然整体向下滑动的现象。</p>
+							<p class="indent">（十四）崩塌：石崖、土崖、岩石受自然风化、雨蚀造成崩溃下塌，以及大量积雪在重力作用下从高处突然崩塌滚落。</p>
+							<p class="indent">（十五）泥石流：由于雨水、冰雪融化等水源激发的、含有大量泥沙石块的特殊洪流。</p>
+							<p class="indent">（十六）地面突然下陷下沉：地壳因为自然变异，地层收缩而发生突然塌陷。对于因海潮、河流、大雨侵蚀或在建筑房屋前没有掌握地层情况，地下有孔穴、矿穴，以致地面突然塌陷，也属地面突然下陷下沉。但未按建筑施工要求导致建筑地基下沉、裂缝、倒塌等，不在此列。</p>
+							<p class="indent">（十七）飞行物体及其他空中运行物体坠落：指空中飞行器、人造卫星、陨石坠落，吊车、行车在运行时发生的物体坠落，人工开凿或爆炸而致石方、石块、土方飞射、塌下，建筑物倒塌、倒落、倾倒，以及其他空中运行物体坠落。</p>
+							<p class="indent">（十八）自然灾害：指雷击、暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、沙尘暴、暴雪、冰凌、突发性滑坡、崩塌、泥石流、地面突然下陷下沉及其他人力不可抗拒的破坏力强大的自然现象。</p>
+							<p class="indent">（十九）意外事故：指不可预料的以及被保险人无法控制并造成物质损失的突发性事件，包括火灾和爆炸。</p>
+							<p class="indent">（二十）重大过失行为：指行为人不但没有遵守法律规范对其较高要求，甚至连人们都应当注意并能注意的一般标准也未达到的行为。</p>
+							<p class="indent">（二十一）恐怖活动：指任何人以某一组织的名义或参与某一组织使用武力或暴力对任何政府进行恐吓或施加影响而采取的行动。</p>
+							<p class="indent">（二十二）地震：地壳发生的震动。</p>
+							<p class="indent">（二十三）海啸：海啸是指由海底地震，火山爆发或水下滑坡、塌陷所激发的海洋巨波。</p>
+							<p class="indent">（二十四）行政行为或司法行为：指各级政府部门、执法机关或依法履行公共管理、社会管理职能的机构下令破坏、征用、罚没保险标的的行为。</p>
+							<p class="indent">（二十五）简易建筑：指符合下列条件之一的建筑：（1）使用竹木、芦席、蓬布、茅草、油毛毡、塑料膜、尼龙布、玻璃钢瓦等材料为顶或墙体的建筑；（2）顶部封闭，但直立面非封闭部分的面积与直立面总面积的比例超过10％的建筑；（3）屋顶与所有墙体之间的最大距离超过一米的建筑。</p>
+							<p class="indent">（二十六）自燃：指可燃物在没有外部热源直接作用的情况下，由于其内部的物理作用（如吸附、辐射等）、化学作用（如氧化、分解、聚合等）或生物作用（如发酵、细菌腐败等）而发热，热量积聚导致升温，当可燃物达到一定温度时，未与明火直接接触而发生燃烧的现象。</p>
+							<p class="indent">（二十七）重置价值：指替换、重建受损保险标的，以使其达到全新状态而发生的费用，但不包括被保险人进行的任何变更、性能增加或改进所产生的额外费用。</p>
+							<p class="indent">（二十八）水箱、水管爆裂：包括冻裂和意外爆裂两种情况。水箱、水管爆裂一般是由水箱、水管本身瑕疵或使用耗损或严寒结冰造成的。</p>
+							<p class="center-p">附录</p>
+							<p class="table-title">短期费率表</p>			
+							<table class="table table2">
+								<tr>
+									<th>保险期间</th>
+									<th>一个月</th>
+									<th>二个月</th>
+									<th>三个月</th>
+									<th>四个月</th>
+									<th>五个月</th>
+									<th>六个月</th>
+									<th>七个月</th>
+									<th>八个月</th>
+									<th>九个月</th>
+									<th>十个月</th>
+									<th>十一个月</th>
+									<th>十二个月</th>
+								</tr>	
+								<tr>
+									<td>年费率的百分比</td>
+									<td>10</td>
+									<td>20</td>
+									<td>30</td>
+									<td>40</td>
+									<td>50</td>
+									<td>60</td>
+									<td>70</td>
+									<td>80</td>
+									<td>85</td>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+								</tr>	
+							</table>
+							<p>注：不足一个月的部分按一个月计收。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加第三者责任保险条款C</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）的基础上，投保人可以投保本附加险。本附加险条款与主险条款相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在保险合同载明的地点范围内合法从事生产、经营等活动时发生意外事故，造成第三者的人身伤亡或财产损失，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人按照本附加险的约定负责赔偿。</p>
+							<p class="indent"><span class="heise">第三条</span>　被保险人因保险事故的发生而被提起仲裁或者诉讼的，对应由被保险人支付的仲裁或诉讼费用以及事先经保险人书面同意支付的其他必要的、合理的费用（以下简称“法律费用”），保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第四条　下列任一情形下的损失、费用或责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员因从事医师、律师、会计师、设计师、建筑师、美容师或其他专门职业所发生的赔偿责任；</p>
+							<p class="indent heise">（二）不洁、有害食物或饮料引起的食物中毒或传染性疾病，有缺陷的卫生装置，以及售出的商品、食物、饮料存在缺陷造成他人的损害；</p>
+							<p class="indent heise">（三）对于未载入本保险合同而属于被保险人的或其所占有的或以其名义使用的任何牲畜、车辆、火车头、各类船只、飞机、电梯、升降机、自动梯、起重机、吊车或其他升降装置造成的损失；</p>
+							<p class="indent heise">（四）由于震动、移动或减弱支撑引起任何土地、财产、建筑物的赔偿责任；</p>
+							<p class="indent heise">（五）被保险人因改变、维修或装修建筑物造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（六）未经有关监督管理部门验收或经验收不合格的固定场所或设备发生意外事故造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（七）因保险固定场所周围建筑物发生火灾、爆炸波及保险固定场所，再经保险固定场所波及他处的火灾责任。</p>
+							<p class="indent heise">第五条　下列原因造成的损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）战争、敌对行为、军事行为、武装冲突、罢工、骚乱、暴动、恐怖活动、盗窃、抢劫；</p>
+							<p class="indent heise">（三）行政行为或司法行为；</p>
+							<p class="indent heise">（四）核反应、核子辐射和放射性污染；</p>
+							<p class="indent heise">（五）地震、海啸、雷击、暴雨、洪水、火山爆发、地下火、龙卷风、台风、暴风、暴雪等自然灾害；</p>
+							<p class="indent heise">（六）烟熏、大气、土地、水污染及其他污染；</p>
+							<p class="indent heise">（七）锅炉爆炸、空中运行物体坠落。</p>
+							<p class="indent heise">第六条　被保险人的下列损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其代表、雇佣人员人身伤亡的赔偿责任，以及上述人员所有的或由其保管或控制的财产的损失；</p>
+							<p class="indent heise">（二）罚款、罚金或惩罚性赔款；</p>
+							<p class="indent heise">（三）被保险人与他人签订协议所约定的责任，但应由被保险人承担的法律责任除外；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）被保险人及第三者的一切间接损失；</p>
+							<p class="indent heise">（六）本保险合同中载明的免赔额，或根据本保险合同中载明的免赔率计算的金额；</p>
+							<p class="indent heise">（七）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的游泳池发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（八）被保险人因在本保险单列明的固定场所内布置的广告、霓虹灯、灯饰物发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（九）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的停车场发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（十）被保险人因出租房屋或建筑物发生火灾造成第三者人身伤亡或财产损失的赔偿责任。</p>
+							<p class="indent heise">第七条　其他不属于本保险责任范围内的一切损失、费用和责任，保险人不负责赔偿。</p>
+							<p class="center-p">赔偿限额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第八条</span>　本附加险的赔偿限额包括累计赔偿限额、每次事故赔偿限额、每次事故每人人身伤亡赔偿限额、每次事故每人医疗费用赔偿限额和每次事故财产损失赔偿限额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第九条</span>　每次事故免赔额（率）由投保人与保险人在签订保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="indent heise">保险合同中同时载明了免赔额和免赔率的，免赔金额以免赔额和按照免赔率计算的金额中的高者为准。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第十条</span>　保险人在本附加险项下的赔偿以下列方式之一确定的被保险人的赔偿责任为基础：</p>
+							<p class="indent">（一）被保险人和向其提出损害赔偿请求的索赔方的协商并经保险人确认；</p>
+							<p class="indent">（二）仲裁机构裁决；</p>
+							<p class="indent">（三）人民法院判决；</p>
+							<p class="indent">（四）保险人认可的其他方式。</p>
+							<p class="indent heise">第十一条　被保险人给第三者造成损害，被保险人未向该第三者赔偿的，保险人不得向被保险人赔偿保险金。</p>
+							<p class="indent"><span class="heise">第十二条</span>　保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过每次事故赔偿限额，且对于每人医疗费用的赔偿金额不超过每次事故每人医疗费用赔偿限额，对于每人财产损失的赔偿金额不超过每次事故财产损失赔偿限额，对每人人身伤亡的赔偿金额与每人医疗费用的赔偿金额合计不超过每次事故每人人身伤亡赔偿限额;</p>
+							<p class="indent">（二）保险人对每次事故发生的法律费用的赔偿金额与依据本条第一款计算的赔偿金额之和不超过每次事故赔偿限额；</p>
+							<p class="indent">（三）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过累计赔偿限额。</p>
+							<p class="indent"><span class="heise">第十三条</span>　保险期间内，被保险人在保险合同载明的地点范围内，合法从事生产、经营等活动时，由于同一原因发生意外事故造成多名第三者的人身伤亡或财产损失，应视为一次事故造成的损失。</p>
+							<p class="indent"><span class="heise">第十四条</span>　发生保险事故时，如果被保险人的损失在有相同保障的其他保险项下也能够获得赔偿，则本保险人按照本保险合同的赔偿限额与其他保险合同及本合同的赔偿限额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加食品、饮料责任条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、 《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）和《中国人寿财产保险股份有限公司财产保险附加第三者责任保险C》的基础上，投保人可以投保本附加险。</p>
+							<p class="indent">本附加险条款与主险条款及《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》内容相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款及财产保险附加第三者责任保险条款C为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在本保险合同载明的地点范围内，因其提供的食品、饮料或卫生装置存在缺陷造成第三者人身伤亡或财产损失时，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人依照本附加险约定负责赔偿。</p>
+							<p class="indent heise">被保险人应恪尽职责防止出售或提供任何不洁的或不符合食品安全国家标准的食品或饮料。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第三条　下列情形下的任何损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人未依法取得食品生产许可证、食品流通许可证或餐饮服务许可证，或持伪造、变造、过期的许可证，或许可证被撤销、吊销或注销的；</p>
+							<p class="indent heise">（二）被保险人从事与其食品生产、经营资质等级或许可范围不符的食品生产、经营活动的；</p>
+							<p class="indent heise">（三）被保险人在本保险合同载明的生产、经营场所外从事食品生产、经营活动的；</p>
+							<p class="indent heise">（四）被保险人生产、经营食品安全法律、法规或规定禁止生产经营的食品、食品添加剂或食品相关产品的，或未按食品安全法律、法规或规定获批准生产、经营的；</p>
+							<p class="indent heise">（五）被保险人生产、经营超过保质期的食品、食品添加剂或食品相关产品，或违法私自更改生产日期或保质期的；</p>
+							<p class="indent heise">（六）被保险人生产、经营营养成分不符合食品安全标准的专供婴幼儿和其他特定人群的主辅食品的；</p>
+							<p class="indent heise">（七）被保险人使用患有痢疾、伤寒、病毒性肝炎等消化道传染病，以及患有活动性肺结核、化脓性或者渗出性皮肤病等有碍食品安全的疾病的人员从事接触直接入口食品的工作的；</p>
+							<p class="indent heise">（八）由食品、食品添加剂或食品相关产品引起的任何慢性病、代谢病，如糖尿病、高血压等；</p>
+							<p class="indent heise">（九）由食品、食品添加剂或食品相关产品引起的传染性疾病的传播；</p>
+							<p class="indent heise">（十）受害人自身的疾病，或特异体质引起的食物过敏；</p>
+							<p class="indent heise">（十一）在食品中添加药品的，但按照传统既是食品又是中药材的物质除外；</p>
+							<p class="indent heise">（十二）食品、食品添加剂或食品相关产品投入流通时的科学技术水平尚不能发现缺陷的存在的；</p>
+							<p class="indent heise">（十三）投保人或被保险人在投保时已经知道或可以合理预见索赔发生的。</p>
+							<p class="indent heise">第四条　下列损失、费用和责任，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员的人身伤亡及其所有或管理的财产的损失；</p>
+							<p class="indent heise">（二）被保险人应该承担的合同责任，但无合同存在时依法仍然应由被保险人承担的经济赔偿责任不在此限；</p>
+							<p class="indent heise">（三）罚款、罚金及惩罚性赔偿；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）间接损失；</p>
+							<p class="indent heise">（六）食品、食品添加剂或食品相关产品本身的损失；</p>
+							<p class="indent heise">（七）被保险人对食品、食品添加剂或食品相关产品进行更换、退货、召回、补救、无害化处理或销毁造成的损失和费用;</p>
+							<p class="indent heise">（八）其他不属于保险责任范围的损失、费用和责任。</p>
+							<p class="center-p">赔偿限额、每次事故免赔额</p>
+							<p class="indent"><span class="heise">第五条</span>　本附加险项下的赔偿限额包括每次事故赔偿限额、每次事故每人赔偿限额、累计赔偿限额、每次事故免赔额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第六条</span>　发生本附加险项下的保险事故，保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按照《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过本附加险项下每次事故赔偿限额，且对于每人的赔偿金额不超过本附加险项下的每次事故每人赔偿限额；</p>
+							<p class="indent">（二）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过本附加险项下的累计赔偿限额。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加放弃比例分摊扩展条款</p>
+							<p class="indent">兹经双方同意，保险人视本保险单为足额投保，发生保险责任范围内的损失，保险人在保险金额内按实际损失计算赔偿，不作比例分摊。若本保险合同所列标的物不止一项时，应逐项分别计算各自赔偿金额。保险期间内累计赔偿金额仍以总保险金额为限。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+						</div>
+					</div>
+					<div class="clause-B clause-type">
+						<div class="clause-cont-top">
+							<p>中国人寿财产保险股份有限公司</p>
+							<p>“餐饮业守护神综合保险”（B款）</p>
+							<p>《投保须知》及《保险条款》</p>
+						</div>
+						<div class="clause-start">
+							<div class="title-one">一、 基本信息</div>
+							<p class="indent">本产品为“餐饮业守护神综合保险”（B款），由中国人寿财产
+							保险股份有限公司承保，本公司在全国除西藏自治区之外的所
+							有省、自治区及直辖市均设有分公司。本产品面向除西藏以外
+							的大陆地区销售。</p>
+							<div class="title-one">二、 产品介绍</div>
+							<div class="title-two">1、适用对象</div>
+							<p>“餐饮业守护神综合保险”适用于具备下列条件的商户：</p>
+							<p>（1）主营业务：餐饮业；</p>
+							<p>（2）建筑结构为钢筋混凝土结构或砖混结构；</p>
+							<p>本产品不适用于无就餐店铺的餐饮配送企业、中央厨房。</p>
+							<div class="title-two">2、责任及保险方案介绍：</div>
+							<div class="other-two"> 每份“餐饮业守护神综合保险”（B款），包含以下风险保障：</div>
+							<table border="" cellspacing="" cellpadding="" class="table table1">
+								<tr>
+									<th colspan="2">方案</th>
+									<th>责任范围</th>
+									<th>保险金额/赔偿限额</th>
+								</tr>
+								<tr>
+									<td rowspan="2">主险</td>
+									<td>财产损失</td>
+									<td>火灾、爆炸、雷击或飞行物体及其他空中运行物体坠落引起的财产损失</td>
+									<td>30万元</td>
+								</tr>
+								<tr>
+									<td>营业中断</td>
+									<td>因发生财产损失险项下保险事故，导致完全无法营业引起的毛利润损失</td>
+									<td>500元/天，最大赔偿期7天</td>
+								</tr>
+								<tr>
+									<td rowspan="5">附加险</td>
+									<td>第三者责任</td>
+									<td>因经营过程中发生的意外事故导致的第三者的人身伤亡或财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额15万元，每次事故的每人人身伤亡、医疗费用、财产损失赔偿限额合计为5万元，其中医疗费用赔偿限额为5000元</td>
+								</tr>
+								<tr>
+									<td>食品饮料任</td>
+									<td>因被保险人销售或提供的食品、饮料或卫生装置造成第三者的人身伤亡与财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额3万元（每次事故每人赔偿限额1万元）</td>
+								</tr>
+								<tr>
+									<td>水箱、水管爆裂</td>
+									<td>水箱、水管因雷电、飞行物体及其他空中运行物体坠落、高压、碰撞、严寒、高温造成爆裂引起的财产损失</td>
+									<td>同主险</td>
+								</tr>
+								<tr>
+									<td>清除残骸费用</td>
+									<td>因保险责任范围内的原因导致保险标的物损失而产生的清除、拆除或支撑受损保险标的物的费用</td>
+									<td>2000元</td>
+								</tr>
+								<tr>
+									<td>小额现金损失</td>
+									<td>存放于被保险人办公场所内的小额现金损失，如果因盗窃丢失，须有明显的盗窃痕迹</td>
+									<td>累计赔偿限额及每次事故赔偿限额均为1000元</td>
+								</tr>
+								<tr>
+									<td colspan="2">总保险费</td>
+									<td colspan="2">550元</td>
+								</tr>
+							</table>
+							<p class="indent">客户可在上述方案的基础上，根据自身规模及资产状况，选择投保份数，<span class="heise">单一地址投保份数上限为三份，多保无效。</span></p>
+							<p class="indent heise">如果同一经营场所投保两份或两份以上的，则承保方案中各项责任的保险金额/赔偿限额按投保份数累加，但无论投保多少份，保险人对同一经营场所的“营业中断责任”项下仅按一份赔偿限额承保（每日赔偿限额500元，最大赔偿期间7天）。</p>
+							<div class="title-two">3、免赔条件：</div>
+							<p class="indent heise">（1）财产损失及现金损失的免赔条件均为：每次事故绝对免赔额200元或损失金额的10%，以高者为准；</p>
+							<p class="indent heise">（2）“第三者责任”及“食品饮料责任”项下，医疗费用的每次事故绝对免赔额均为200元。</p>
+							<p class="indent heise">上述免赔条件不受投保份数增加而变化。</p>
+							<div class="title-two">4、保险期间：</div>
+							<p class="indent">自本产品生效之日起一年。</p>
+							<div class="title-two">5、适用条款</div>
+							<p class="indent heise">请详细阅读《保险条款》，特别是有关免除保险人责任、投保人及被保险人义务、赔偿处理的条款的内容和法律后果的内容。</p>
+							
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产基本险条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　本保险合同由保险条款、投保单、保险单或其他保险凭证以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。</p>
+							<p class="center-p">保险标的</p>  
+							<p class="indent"><span class="heise">第二条</span>　本保险合同载明地址内的下列财产可作为保险标的：</p>
+							<p class="indent">（一）属于被保险人所有或与他人共有而由被保险人负责的财产；</p>
+							<p class="indent">（二）由被保险人经营管理或替他人保管的财产；</p>
+							<p class="indent">（三）其他具有法律上承认的与被保险人有经济利害关系的财产。</p>
+							<p class="indent"><span class="heise">第三条</span>　本保险合同载明地址内的下列财产未经保险合同双方特别约定并在保险合同中载明保险价值的，不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）金银、珠宝、钻石、玉器、首饰、古币、古玩、古书、古画、邮票、字画、艺术品、稀有金属等珍贵财物；</p>
+							<p class="indent">（二）堤堰、水闸、铁路、道路、涵洞、隧道、桥梁、码头；</p>
+							<p class="indent">（三）矿井（坑）内的设备和物资；</p>
+							<p class="indent">（四）便携式通讯装置、便携式计算机设备、便携式照相摄像器材以及其他便携式装置、设备；</p>
+							<p class="indent">（五）尚未交付使用或验收的工程。</p>
+							<p class="indent"><span class="heise">第四条</span>　下列财产不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）土地、矿藏、水资源及其他自然资源；</p>
+							<p class="indent">（二）矿井、矿坑；</p>
+							<p class="indent">（三）货币、票证、有价证券以及有现金价值的磁卡、集成电路（IC）卡等卡类；</p>
+							<p class="indent">（四）文件、账册、图表、技术资料、计算机软件、计算机数据资料等无法鉴定价值的财产；</p>
+							<p class="indent">（五）枪支弹药； </p>
+							<p class="indent">（六）违章建筑、危险建筑、非法占用的财产；</p>
+							<p class="indent">（七）领取公共行驶执照的机动车辆；</p>
+							<p class="indent">（八）动物、植物、农作物。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第五条</span>　在保险期间内，由于下列原因造成保险标的的损失，保险人按照本保险合同的约定负责赔偿：</p>
+							<p class="indent">（一）火灾；</p>
+							<p class="indent">（二）爆炸；</p>
+							<p class="indent">（三）雷击；</p>
+							<p class="indent">（四）飞行物体及其他空中运行物体坠落。</p>
+							<p class="indent">前款原因造成的保险事故发生时，为抢救保险标的或防止灾害蔓延，采取必要的、合理的措施而造成保险标的的损失，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="indent"><span class="heise">第六条</span>　保险事故发生后，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">责任免除</p>
+							<p class="indent"><span class="heise">第七条</span>　下列原因造成的损失、费用，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）行政行为或司法行为； </p>
+							<p class="indent heise">（三）战争、类似战争行为、敌对行动、军事行动、武装冲突、罢工、骚乱、暴动、政变、谋反、恐怖活动； </p>
+							<p class="indent heise">（四）地震、海啸及其次生灾害；</p>
+							<p class="indent heise">（五）核辐射、核裂变、核聚变、核污染及其他放射性污染；</p>
+							<p class="indent heise">（六）大气污染、土地污染、水污染及其他非放射性污染，但因保险事故造成的非放射性污染不在此限；</p>
+							<p class="indent heise">（七）保险标的的内在或潜在缺陷、自然磨损、自然损耗，大气（气候或气温）变化、正常水位变化或其他渐变原因，物质本身变化、霉烂、受潮、鼠咬、虫蛀、鸟啄、氧化、锈蚀、渗漏、自燃、烘焙；</p>
+							<p class="indent heise">（八）暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、暴雪、冰凌、沙尘暴、突发性滑坡、崩塌、泥石流、地面突然下陷下沉；</p>
+							<p class="indent heise">（九）水箱、水管爆裂；</p>
+							<p class="indent heise">（十）盗窃、抢劫。</p>
+							<p class="indent heise"><span class="heise">第八条</span>　下列损失、费用，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）保险标的遭受保险事故引起的各种间接损失；</p>
+							<p class="indent heise">（二）广告牌、天线、霓虹灯、太阳能装置等建筑物外部附属设施，存放于露天或简易建筑物内部的保险标的以及简易建筑本身，由于雷击造成的损失；</p>
+							<p class="indent heise">（三）锅炉及压力容器爆炸造成其本身的损失；</p>
+							<p class="indent heise">（四）任何原因导致供电、供水、供气及其他能源供应中断造成的损失和费用；</p>
+							<p class="indent heise">（五）本保险合同中载明的免赔额或按本保险合同中载明的免赔率计算的免赔额。</p>
+							<p class="indent heise"><span class="heise">第九条</span>　其他不属于本保险合同责任范围内的损失和费用，保险人不负责赔偿。</p>
+							<p class="center-p">保险价值、保险金额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第十条</span>　保险标的的保险价值可以为出险时的重置价值、出险时的账面余额、出险时的市场价值或其他价值，由投保人与保险人协商确定，并在本保险合同中载明。</p>
+							<p class="indent"><span class="heise">第十一条</span>　保险金额由投保人参照保险价值自行确定，并在保险合同中载明。保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。</p>
+							<p class="indent"><span class="heise">第十二条</span>　免赔额（率）由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="center-p">保险期间</p>
+							<p class="indent"><span class="heise">第十三条</span>　除另有约定外，保险期间为一年，以保险单载明的起讫时间为准。</p>
+							<p class="center-p">保险人义务</p>
+							<p class="indent"><span class="heise">第十四条</span>　订立保险合同时，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明保险合同的内容。对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</p>
+							<p class="indent"><span class="heise">第十五条</span>　本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。</p>
+							<p class="indent"><span class="heise">第十六条</span>　保险人依据第二十条所取得的保险合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自保险合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人承担赔偿责任。</p>
+							<p class="indent">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第十七条</span>　保险人按照第二十六条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。</p>
+							<p class="indent"><span class="heise">第十八条</span>　保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定；情形复杂的，应当在三十日内作出核定，但保险合同另有约定的除外。</p>
+							<p class="indent">保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。</p>
+							<p class="indent"><span class="heise">第十九条</span>　保险人自收到赔偿的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。 </p>
+							<p class="center-p">投保人、被保险人义务</p>
+							<p class="indent"><span class="heise">第二十条</span>　订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知，并如实填写投保单。</p>
+							<p class="indent">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除合同。</p>
+							<p class="indent heise">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。</p>
+							<p class="indent heise">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+							<p class="indent"><span class="heise">第二十一条</span>　投保人应按约定交付保险费。</p>
+							<p class="indent">约定一次性交付保险费的，<span class="heise">投保人在约定交费日后交付保险费的，保险人对交费之前发生的保险事故不承担保险责任。</span></p>
+							<p class="indent">约定分期交付保险费的，<span class="heise">保险人按照保险事故发生前保险人实际收取保险费总额与投保人应当交付的保险费的比例承担保险责任，</span>投保人应当交付的保险费是指截至保险事故发生时投保人按约定分期应该缴纳的保费总额。</p>
+							<p class="indent"><span class="heise">第二十二条</span>　被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面的相关法律、法规及规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。</p>
+							<p class="indent">保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。</p>
+							<p class="indent">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent"><span class="heise">第二十三条</span>　保险标的转让的，被保险人或者受让人应当及时通知保险人。</p>
+							<p class="indent">因保险标的转让导致危险程度显著增加的，保险人自收到前款规定的通知之日起三十日内，可以按照合同约定增加保险费或者解除合同。保险人解除合同的，应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent heise">被保险人、受让人未履行本条规定的通知义务的，因转让导致保险标的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十四条</span>　在合同有效期内，如保险标的占用与使用性质、保险标的地址及其他可能导致保险标的危险程度显著增加的、或其他足以影响保险人决定是否继续承保或是否增加保险费的保险合同重要事项变更，被保险人应及时书面通知保险人，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent heise">被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十五条</span>　知道保险事故发生后，被保险人应该：</p>
+							<p class="indent">（一）尽力采取必要、合理的措施，防止或减少损失，否则，<span class="heise">对因此扩大的损失，保险人不承担赔偿责任；</span></p>
+							<p class="indent">（二）立即通知保险人，并书面说明事故发生的原因、经过和损失情况；<span class="heise">故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；</span></p>
+							<p class="indent">（三）保护事故现场，允许并且协助保险人进行事故调查；<span class="heise">对于拒绝或者妨碍保险人进行事故调查导致无法确定事故原因或核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第二十六条</span>　被保险人请求赔偿时，应向保险人提供下列证明和资料：</p>
+							<p class="indent">（一）保险单正本、索赔申请、财产损失清单、技术鉴定证明、事故报告书、救护费用发票、必要的账簿、单据和有关部门的证明；</p>
+							<p class="indent">（二）投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。</p>
+							<p class="indent heise">投保人、被保险人未履行前款约定的单证提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent heise">第二十七条　保险事故发生时，被保险人对保险标的不具有保险利益的，不得向保险人请求赔偿保险金。</p>
+							<p class="indent"><span class="heise">第二十八条</span>　保险标的发生保险责任范围内的损失，保险人有权选择下列方式赔偿：</p>
+							<p class="indent">（一）货币赔偿：保险人以支付保险金的方式赔偿；</p>
+							<p class="indent">（二）实物赔偿：保险人以实物替换受损标的，该实物应具有保险标的出险前同等的类型、结构、状态和性能；</p>
+							<p class="indent">（三）实际修复：保险人自行或委托他人修理修复受损标的。</p>
+							<p class="indent heise">对保险标的在修复或替换过程中，被保险人进行的任何变更、性能增加或改进所产生的额外费用，保险人不负责赔偿。</p>
+							<p class="indent"><span class="heise">第二十九条</span>　保险标的遭受损失后保，如果有残余价值，应由双方协商处理。如折归被保险人，由双方协商确定其价值，并在险赔款中扣除。</p>
+							<p class="indent"><span class="heise">第三十条</span>　保险标的发生保险责任范围内的损失，保险人按以下方式计算赔偿：</p>
+							<p class="indent">（一）保险金额等于或高于保险价值时，按实际损失计算赔偿，最高不超过保险价值；</p>
+							<p class="indent">（二）保险金额低于保险价值时，按保险金额与保险价值的比例乘以实际损失计算赔偿，最高不超过保险金额；</p>
+							<p class="indent">（三）若本保险合同所列标的不止一项时，应分项按照本条约定处理。</p>
+							<p class="indent"><span class="heise">第三十一条</span>　保险标的的保险金额大于或等于其保险价值时，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险价值。</p>
+							<p class="indent">保险标的的保险金额小于其保险价值时，上述费用按被施救保险标的的保险金额与其保险价值的比例在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险金额。</p>
+							<p class="indent">被施救的财产中，含有本保险合同未承保财产的，按被施救保险标的的保险价值与全部被施救财产价值的比例分摊施救费用。</p>
+							<p class="indent"><span class="heise">第三十二条</span>　每次事故保险人的赔偿金额为根据第三十条、第三十一条约定计算的金额扣除每次事故免赔额后的金额，或者为根据第三十条、第三十一条约定计算的金额扣除该金额与免赔率乘积后的金额。</p>
+							<p class="indent"><span class="heise">第三十三条</span>　保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第三十四条</span>　保险标的发生部分损失，保险人履行赔偿义务后，本保险合同的保险金额自损失发生之日起按保险人的赔偿金额相应减少，保险人不退还保险金额减少部分的保险费。如投保人请求恢复至原保险金额，应按原约定的保险费率另行支付恢复部分从投保人请求的恢复日期起至保险期间届满之日止按日比例计算的保险费。</p>
+							<p class="indent"><span class="heise">第三十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；<span class="heise">由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p>
+							<p class="indent"><span class="heise">第三十六条</span>　被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。 </p>
+							<p class="center-p">争议处理和法律适用</p>
+							<p class="indent"><span class="heise">第三十七条</span>　因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险单载明的仲裁机构仲裁；保险单未载明仲裁机构且争议发生后未达成仲裁协议的，依法向人民法院起诉。</p>
+							<p class="indent"><span class="heise">第三十八条</span>　与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。</p>
+							<p class="center-p">其他事项</p>
+							<p class="indent"><span class="heise">第三十九条</span>　保险标的发生部分损失的，自保险人赔偿之日起三十日内，投保人可以解除合同；除合同另有约定外，保险人也可以解除合同，但应当提前十五日通知投保人。</p>
+							<p class="indent">保险合同依据前款规定解除的，保险人应当将保险标的未受损失部分的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent"><span class="heise">第四十条</span>　保险责任开始前，投保人要求解除保险合同的，应当按本保险合同的约定向保险人支付退保手续费，保险人应当退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，投保人要求解除保险合同的，自通知保险人之日起，保险合同解除，保险人按短期费率计收保险责任开始之日起至合同解除之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，保险人要求解除保险合同的，可提前十五日向投保人发出解约通知书解除本保险合同，保险人按照保险责任开始之日起至合同解除之日止期间与保险期间的日比例计收保险费，并退还剩余部分保险费。</p>
+							<p class="indent"><span class="heise">第四十一条</span>　保险标的发生全部损失，属于保险责任的，保险人在履行赔偿义务后，本保险合同终止；不属于保险责任的，本保险合同终止，保险人按短期费率计收自保险责任开始之日起至损失发生之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="center-p">释义</p>
+							<p class="indent">第四十二条　<span class="heise">本保险合同涉及下列术语时，适用下列释义：</span></p>
+							<p class="indent heise">（一）火灾</p>
+							<p class="indent">在时间或空间上失去控制的燃烧所造成的灾害。构成本保险的火灾责任必须同时具备以下三个条件：</p>
+							<p class="indent">1．有燃烧现象，即有热有光有火焰；</p>
+							<p class="indent">2．偶然、意外发生的燃烧；</p>
+							<p class="indent">3．燃烧失去控制并有蔓延扩大的趋势。</p>
+							<p class="indent">因此，仅有燃烧现象并不等于构成本保险中的火灾责任。在生产、生活中有目的用火，如为了防疫而焚毁玷污的衣物，点火烧荒等属正常燃烧，不同于火灾责任。</p>
+							<p class="indent">因烘、烤、烫、烙造成焦糊变质等损失，既无燃烧现象，又无蔓延扩大趋势，也不属于火灾责任。</p>
+							<p class="indent">电机、电器、电气设备因使用过度、超电压、碰线、孤花、漏电、自身发热所造成的本身损毁，不属于火灾责任。但如果发生了燃烧并失去控制蔓延扩大，才构成火灾责任，并对电机、电器、电气设备本身的损失负责赔偿。</p>
+							<p class="indent">（二）爆炸</p>
+							<p class="indent">爆炸分物理性爆炸和化学性爆炸。</p>
+							<p class="indent">1．物理性爆炸：由于液体变为蒸汽或气体膨胀，压力急剧增加并大大超过容器所能承受的极限压力，因而发生爆炸。如锅炉、空气压缩机、压缩气体钢瓶、液化气罐爆炸等。关于锅炉、压力容器爆炸的定义是：锅炉或压力容器在使用中或试压时发生破裂，使压力瞬时降到等于外界大气压力的事故，称为“爆炸事故”。</p>
+							<p class="indent">2．化学性爆炸：物体在瞬息分解或燃烧时放出大量的热和气体，并以很大的压力向四周扩散的现象。如火药爆炸、可燃性粉尘纤维爆炸、可燃气体爆炸及各种化学物品的爆炸等。</p>
+							<p class="indent">因物体本身的瑕疵，使用损耗或产品质量低劣以及由于容器内部承受“负压”（内压比外压小）造成的损失，不属于爆炸责任。</p>
+							<p class="indent">（三）雷击</p>
+							<p class="indent">雷击指由雷电造成的灾害。雷电为积雨云中、云间或云地之间产生的放电现象。雷击的破坏形式分直接雷击与感应雷击两种。</p>
+							<p class="indent">1．直接雷击：由于雷电直接击中保险标的造成损失，属直接雷击责任。</p>
+							<p class="indent">2．感应雷击：由于雷击产生的静电感应或电磁感应使屋内对地绝缘金属物体产生高电位放出火花引起的火灾，导致电器本身的损毁，或因雷电的高电压感应，致使电器部件的损毁，属感应雷击责任。 </p>   
+							<p class="indent">（四）暴雨：指每小时降雨量达16毫米以上，或连续12小时降雨量达30毫米以上，或连续24小时降雨量达50毫米以上的降雨。</p>
+							<p class="indent">（五）洪水：指山洪暴发、江河泛滥、潮水上岸及倒灌。但规律性的涨潮、自动灭火设施漏水以及在常年水位以下或地下渗水、水管爆裂不属于洪水责任。</p>
+							<p class="indent">（六）暴风：指风力达8级、风速在17.2米/秒以上的自然风。</p>
+							<p class="indent">（七）龙卷风：指一种范围小而时间短的猛烈旋风，陆地上平均最大风速在79米/秒-103米/秒，极端最大风速在100米/秒以上。</p>
+							<p class="indent">（八）冰雹：指从强烈对流的积雨云中降落到地面的冰块或冰球，直径大于5毫米，核心坚硬的固体降水。</p>
+							<p class="indent">（九）台风、飓风：台风指中心附近最大平均风力12级或以上，即风速在32.6米/秒以上的热带气旋；飓风是一种与台风性质相同、但出现的位置区域不同的热带气旋，台风出现在西北太平洋海域，而飓风出现在印度洋、大西洋海域。
+							<p class="indent">（十）沙尘暴：指强风将地面大量尘沙吹起，使空气很混浊，水平能见度小于1公里的天气现象。</p>
+							<p class="indent">（十一）暴雪：指连续12小时的降雪量大于或等于10毫米的降雪现象。</p>
+							<p class="indent">（十二）冰凌：指春季江河解冻期时冰块飘浮遇阻，堆积成坝，堵塞江道，造成水位急剧上升，以致江水溢出江道，漫延成灾。</p>
+							<p class="indent">陆上有些地区，如山谷风口或酷寒致使雨雪在物体上结成冰块，成下垂形状，越结越厚，重量增加，由于下垂的拉力致使物体毁坏，也属冰凌责任。</p>
+							<p class="indent">（十三）突发性滑坡：斜坡上不稳的岩土体或人为堆积物在重力作用下突然整体向下滑动的现象。</p>
+							<p class="indent">（十四）崩塌：石崖、土崖、岩石受自然风化、雨蚀造成崩溃下塌，以及大量积雪在重力作用下从高处突然崩塌滚落。</p>
+							<p class="indent">（十五）泥石流：由于雨水、冰雪融化等水源激发的、含有大量泥沙石块的特殊洪流。</p>
+							<p class="indent">（十六）地面突然下陷下沉：地壳因为自然变异，地层收缩而发生突然塌陷。对于因海潮、河流、大雨侵蚀或在建筑房屋前没有掌握地层情况，地下有孔穴、矿穴，以致地面突然塌陷，也属地面突然下陷下沉。但未按建筑施工要求导致建筑地基下沉、裂缝、倒塌等，不在此列。</p>
+							<p class="indent">（十七）飞行物体及其他空中运行物体坠落：指空中飞行器、人造卫星、陨石坠落，吊车、行车在运行时发生的物体坠落，人工开凿或爆炸而致石方、石块、土方飞射、塌下，建筑物倒塌、倒落、倾倒，以及其他空中运行物体坠落。</p>
+							<p class="indent">（十八）自然灾害：指雷击、暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、沙尘暴、暴雪、冰凌、突发性滑坡、崩塌、泥石流、地面突然下陷下沉及其他人力不可抗拒的破坏力强大的自然现象。</p>
+							<p class="indent">（十九）意外事故：指不可预料的以及被保险人无法控制并造成物质损失的突发性事件，包括火灾和爆炸。</p>
+							<p class="indent">（二十）重大过失行为：指行为人不但没有遵守法律规范对其较高要求，甚至连人们都应当注意并能注意的一般标准也未达到的行为。</p>
+							<p class="indent">（二十一）恐怖活动：指任何人以某一组织的名义或参与某一组织使用武力或暴力对任何政府进行恐吓或施加影响而采取的行动。</p>
+							<p class="indent">（二十二）地震：地壳发生的震动。</p>
+							<p class="indent">（二十三）海啸：海啸是指由海底地震，火山爆发或水下滑坡、塌陷所激发的海洋巨波。</p>
+							<p class="indent">（二十四）行政行为或司法行为：指各级政府部门、执法机关或依法履行公共管理、社会管理职能的机构下令破坏、征用、罚没保险标的的行为。</p>
+							<p class="indent">（二十五）简易建筑：指符合下列条件之一的建筑：（1）使用竹木、芦席、蓬布、茅草、油毛毡、塑料膜、尼龙布、玻璃钢瓦等材料为顶或墙体的建筑；（2）顶部封闭，但直立面非封闭部分的面积与直立面总面积的比例超过10％的建筑；（3）屋顶与所有墙体之间的最大距离超过一米的建筑。</p>
+							<p class="indent">（二十六）自燃：指可燃物在没有外部热源直接作用的情况下，由于其内部的物理作用（如吸附、辐射等）、化学作用（如氧化、分解、聚合等）或生物作用（如发酵、细菌腐败等）而发热，热量积聚导致升温，当可燃物达到一定温度时，未与明火直接接触而发生燃烧的现象。</p>
+							<p class="indent">（二十七）重置价值：指替换、重建受损保险标的，以使其达到全新状态而发生的费用，但不包括被保险人进行的任何变更、性能增加或改进所产生的额外费用。</p>
+							<p class="indent">（二十八）水箱、水管爆裂：包括冻裂和意外爆裂两种情况。水箱、水管爆裂一般是由水箱、水管本身瑕疵或使用耗损或严寒结冰造成的。</p>
+							<p class="center-p">附录</p>
+							<p class="table-title">短期费率表</p>			
+							<table class="table table2">
+								<tr>
+									<th>保险期间</th>
+									<th>一个月</th>
+									<th>二个月</th>
+									<th>三个月</th>
+									<th>四个月</th>
+									<th>五个月</th>
+									<th>六个月</th>
+									<th>七个月</th>
+									<th>八个月</th>
+									<th>九个月</th>
+									<th>十个月</th>
+									<th>十一个月</th>
+									<th>十二个月</th>
+								</tr>	
+								<tr>
+									<td>年费率的百分比</td>
+									<td>10</td>
+									<td>20</td>
+									<td>30</td>
+									<td>40</td>
+									<td>50</td>
+									<td>60</td>
+									<td>70</td>
+									<td>80</td>
+									<td>85</td>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+								</tr>	
+							</table>
+							<p>注：不足一个月的部分按一个月计收。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">营业中断保险条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　本保险合同由保险条款、投保单、保险单或其他保险凭证以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。</p>
+							<p class="indent"><span class="heise">第二条</span>　投保人应将被保险人在本保险合同载明的营业处所从事载明的经营业务（以下简称“营业”）所使用的物质财产向保险人投保相关的物质财产损失保险。物质财产损失保险合同（以下简称“物质损失保险合同”）号应在本保险合同中载明。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第三条</span>　在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，由此产生的赔偿期间内的毛利润损失，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent">本保险合同所称赔偿期间是指自物质保险损失发生之日起，被保险人的营业结果因该物质保险损失而受到影响的期间，但该期间最长不得超过本保险合同约定的最大赔偿期。</p>
+							<p class="indent">本保险合同所称毛利润是指按照下述公式计算的金额：</p>
+							<p class="indent">毛利润=营业利润+约定的维持费用</p>
+							<p class="indent">或</p>
+							<p class="indent">毛利润=约定的维持费用-营业亏损×约定的维持费用/全部的维持费用</p>
+							<p class="indent">本保险合同所称维持费用是指被保险人为维持正常的营业活动而发生的、不随被保险人营业收入的减少而成正比例减少的成本或费用。约定的维持费用由投保人自行确定，经保险人确认后在保险合同中载明。</p>
+							<p class="indent">除另有约定外，上述公式所用的会计措辞的含义与被保险人会计账表中的含义一致。</p>
+							<p class="indent"><span class="heise">第四条</span>　发生第三条约定的保险事故后，被保险人申请赔偿时，按照保险人的要求提供有关账表、账表审计结果或其他证据所付给被保险人聘请的注册会计师的合理的、必要的费用（以下简称“审计费用”），保险人在本保险合同约定的赔偿限额内也负责赔偿。</p>
+							<p class="center-p">责任免除</p>
+							<p class="indent"><span class="heise">第五条</span>　保险人不负责赔偿下列损失：</p>
+							<p class="indent heise">（一）投保人、被保险人的故意或重大过失行为产生或扩大的任何损失；</p>
+							<p class="indent heise">（二）由于物质损失保险合同主险条款责任范围以外的原因产生或扩大的损失；</p>
+							<p class="indent heise">（三）地震、海啸及其次生灾害产生或扩大的损失；</p>
+							<p class="indent heise">（四）由于政府对受损财产的修建或修复的限制而产生或扩大的损失；</p>
+							<p class="indent heise">（五）恐怖主义活动产生或扩大的损失；</p>
+							<p class="indent heise">（六）本保险合同载明的免赔额或本保险合同约定的免赔期内的损失。</p>
+							<p class="center-p">保险金额与赔偿限额</p>
+							<p class="indent"><span class="heise">第六条</span>　毛利润损失保险金额由投保人自行确定并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第七条</span>　审计费用赔偿限额由投保人自行确定并在保险合同中载明。</p>
+							<p class="center-p">保险期间与最大赔偿期</p>
+							<p class="indent"><span class="heise">第八条</span>　除另有约定外，保险期间为一年，以保险单载明的起讫时间为准。</p>
+							<p class="indent"><span class="heise">第九条</span>　最大赔偿期由投保人自行确定并在保险合同中载明。</p>
+							<p class="center-p">免赔额与免赔期</p>
+							<p class="indent"><span class="heise">第十条</span>　免赔额或免赔期由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="center-p">保险人义务</p>
+							<p class="indent"><span class="heise">第十一条</span>　订立保险合同时，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明保险合同的内容。对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</p>
+							<p class="indent"><span class="heise">第十二条</span>　本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。</p>
+							<p class="indent"><span class="heise">第十三条</span>　保险人依据第十七条所取得的保险合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自保险合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人承担赔偿责任。</p>
+							<p class="indent">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第十四条</span>　保险人按照第二十二条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。</p>
+							<p class="indent"><span class="heise">第十五条</span>　保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定；情形复杂的，应当在三十日内作出核定，但保险合同另有约定的除外。</p>
+							<p class="indent">保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。</p>
+							<p class="indent"><span class="heise">第十六条</span>　保险人自收到赔偿保险金的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。</p>
+							<p class="center-p">投保人、被保险人义务</p>
+							<p class="indent"><span class="heise">第十七条</span>　订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知。</p>
+							<p class="indent">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除保险合同。</p>
+							<p class="indent heise">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。</p>
+							<p class="indent heise">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+							<p class="indent"><span class="heise">第十八条</span>　除另有约定外，投保人应在保险合同成立时一次性支付全部保险费。<span class="heise">保险费交付前发生的保险事故，保险人不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第十九条</span>　被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。</p>
+							<p class="indent">保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。</p>
+							<p class="indent">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent"><span class="heise">第二十条</span>　在保险期间内，如被保险人在保险合同载明的营业处所经营的业务发生变化、被进行清算或由清算人或财产管理人接管经营，或营业所用的物质财产的风险加大，以及足以影响保险人决定是否继续承保或是否增加保险费的保险合同重要事项变更，被保险人应及时书面通知保险人，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent heise">被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十一条</span>　知道保险事故发生后，被保险人应当：</p>
+							<p class="indent">（一）尽力采取必要、合理的措施以修理、修复营业所用的受损的物质财产，尽快恢复营业以防止或减少因营业受到干扰或中断所造成的损失，<span class="heise">否则，对因此扩大的损失，保险人不承担赔偿责任；</span></p>
+							<p class="indent">（二）立即通知保险人，并书面说明事故发生的原因、经过和损失情况；<span class="heise">故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，</span>但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；</p>
+							<p class="indent">（三）保护事故现场，允许并且协助保险人进行事故原因和损失情况的调查，以及对被保险人相关的会计凭证和账表的检查；<span class="heise">对于拒绝或者妨碍保险人进行上述调查或检查导致无法确定事故原因或核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第二十二条</span>　被保险人请求赔偿时，应向保险人提供下列证明和资料：</p>
+							<p class="indent">（一）保险单正本、索赔申请、财产损失清单、技术鉴定证明、事故报告书、救护费用发票、相关的会计凭证及账表、单据和有关部门的证明；</p>
+							<p class="indent">（二）投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。</p>
+							<p class="indent heise">投保人、被保险人未履行前款约定的单证提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第二十三条</span>　发生保险事故后，被保险人在物质损失保险合同主险条款项下取得赔款或其保险责任已获保险人认定，是保险人承担本保险合同项下赔偿责任的前提条件。</p>
+							<p class="indent">如被保险人因物质损失保险合同主险条款项下的免赔额而无法获得该合同项下的赔款，则不受本条前款约定所限。</p>
+							<p class="indent"><span class="heise">第二十四条</span>　赔偿期间内的毛利润损失为分别按照营业收入的减少和经营费用的增加计算的损失之和，扣除在赔偿期间内被保险人因保险事故的发生而从毛利润中减少或停止支付的费用：</p>
+							<p class="indent">（一）因营业收入减少导致的损失为毛利润率乘以赔偿期间内的实际营业收入与标准营业收入的差额，即：</p>
+							<p class="indent">毛利润率×（标准营业收入－赔偿期间内的实际营业收入）</p>
+							<p class="indent">本保险合同所称营业收入是指被保险人在营业过程中，因销售商品、提供劳务或者让渡资产使用权等实现的收入金额。</p>
+							<p class="indent">本保险合同所称毛利润率是指发生物质保险损失之日前最近一个完整的会计年度内的毛利润与营业收入的比率。</p>
+							<p class="indent">本保险合同所称标准营业收入是指发生物质保险损失之日前十二个月中与赔偿期间对应的日历期间的营业收入。</p>
+							<p class="indent">在赔偿期间内，被保险人或他人代其在保险合同载明的营业处所以外的地点从事保险合同载明的经营业务而取得的营业收入，应计算在赔偿期间内的实际营业收入内。</p>
+							<p class="indent">（二）经营费用增加导致的损失是指被保险人专门为避免或降低赔偿期间内营业收入的减少而额外支出的必要的、合理的经营费用或成本；如果不予支出，则赔偿期间内的营业收入就会因保险事故的发生而降低。但该项损失以不超过毛利润率乘以因花费该经营费用而避免降低的营业收入为限。</p>
+							<p class="indent">若投保人确定的维持费用仅包括营业所需的部分维持费用，则保险人对额外增加的经营费用的赔偿金额按照该经营费用乘以毛利润与毛利润加上未承保的维持费用的比例计算，即：</p>
+							<p class="indent">增加的经营费用×毛利润/（毛利润+未承保的维持费用）</p>
+							<p class="indent"><span class="heise">第二十五条</span>　若最大赔偿期小于或等于十二个月，且保险金额低于毛利润率与年度营业收入的乘积，则保险人对毛利润损失的赔偿金额应按保险金额和前述乘积的比例计算确定，即：</p>
+							<p class="indent">赔偿金额＝毛利润损失×保险金额/（毛利润率×年度营业收入）</p>
+							<p class="indent">若最大赔偿期大于十二个月，且保险金额低于毛利润率与年度营业收入及最大赔偿期与十二个月的比例的乘积，则保险人对毛利润损失的赔偿金额应按保险金额和前述乘积的比例计算确定，即：</p>
+							<p class="indent">赔偿金额＝毛利润损失×保险金额/（毛利润率×年度营业收入×最大赔偿期/12）。</p>
+							<p class="indent">本保险合同所称年度营业收入是指发生物质保险损失之日前十二个月内的营业收入。</p>
+							<p class="indent"><span class="heise">第二十六条</span>　被保险人、保险人应根据被保险人营业趋势及情况的变化、物质保险损失发生前后营业受影响的情况或若未发生物质保险损失原本会影响营业的其他情况对毛利润率、标准营业收入以及年度营业收入进行必要的调整，使调整后的数额尽可能合理地接近在赔偿期间内若未发生损失被保险人原本可以取得的经营成果。</p>
+							<p class="indent"><span class="heise">第二十七条</span>　若保险合同约定了免赔额，保险人按照第二十四条、第二十五条计算的毛利润损失扣除保险合同约定的免赔额计算毛利润损失赔偿金额。</p>
+							<p class="indent">若保险合同约定了免赔期，则免赔额为免赔期和赔偿期间的比例与按照本条款第二十四条、第二十五条计算出的毛利润损失的乘积。</p>
+							<p class="indent"><span class="heise">第二十八条</span>　因保险事故而发生的保险责任约定的审计费用，保险人按费用实际发生数予以赔偿，但最高不超过保险合同中载明的相应赔偿限额。</p>
+							<p class="indent"><span class="heise">第二十九条</span>　被保险人在请求赔偿时应当如实向保险人说明与本保险有关的其他保险合同的情况。保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第三十条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；<span class="heise">由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p>
+							<p class="indent"><span class="heise">第三十一条</span>　保险人履行赔偿义务后，本保险合同的保险金额自物质保险损失发生之日起按保险人的赔偿金额相应减少，保险人不退还保险金额减少部分的保险费。如投保人请求恢复至原保险金额，应按原约定的保险费率另行支付恢复部分从投保人请求的恢复日期起至保险期间届满之日止按日比例计算的保险费。</p>
+							<p class="indent"><span class="heise">第三十二条</span>　被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。</p>
+							<p class="center-p">争议处理和法律适用</p>
+							<p class="indent"><span class="heise">第三十三条</span>　因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险合同载明的仲裁机构仲裁；保险合同未载明仲裁机构且争议发生后未达成仲裁协议的，可向人民法院起诉。</p>
+							<p class="indent"><span class="heise">第三十四条</span>　与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。</p>
+							<p class="center-p">其他事项</p>
+							<p class="indent"><span class="heise">第三十五条</span>　若被保险人聘请的注册会计师证明被保险人在与保险期间重合程度最高的一个会计年度内的毛利润（若最大赔偿期大于十二个月，则该毛利润金额应按照最大赔偿期与十二个月的比例扩大后计算）少于投保的保险金额，则被保险人可以在保险期间届满后六个月内向保险人提供书面退还多余保险费的申请，保险人按照保险金额减去前述毛利润的差额与保险金额的比例计算退还差额部分的保险费，但保险人退还保险费的比例最高不得超过保险期间内对该项保险金额所交保险费的百分之五十。</p>
+							<p class="indent">若被保险人在保险期间内因保险事故发生索赔，则应从保险金额中扣除保险人因此而支付的赔款金额后，再按照前款约定计算应退还的保险费。</p>
+							<p class="indent"><span class="heise">第三十六条</span>　保险责任开始前，投保人要求解除保险合同的，应当按本保险合同的约定向保险人支付退保手续费，保险人应当退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，投保人要求解除保险合同的，自通知保险人之日起，保险合同解除，保险人按短期费率计收保险责任开始之日起至合同解除之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，保险人要求解除保险合同的，可提前十五日向投保人发出解约通知书解除本保险合同，保险人按照保险责任开始之日起至合同解除之日止期间与保险期间的日比例计收保险费，并退还剩余部分保险费。</p>
+							<p class="table-title">附录：短期费率表</p>			
+							<table class="table table2">
+								<tr>
+									<th>保险期间</th>
+									<th>一个月</th>
+									<th>二个月</th>
+									<th>三个月</th>
+									<th>四个月</th>
+									<th>五个月</th>
+									<th>六个月</th>
+									<th>七个月</th>
+									<th>八个月</th>
+									<th>九个月</th>
+									<th>十个月</th>
+									<th>十一个月</th>
+									<th>十二个月</th>
+								</tr>	
+								<tr>
+									<td>年费率的百分比</td>
+									<td>10</td>
+									<td>20</td>
+									<td>30</td>
+									<td>40</td>
+									<td>50</td>
+									<td>60</td>
+									<td>70</td>
+									<td>80</td>
+									<td>85</td>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+								</tr>	
+							</table>
+							<p>注：不足一个月的部分按一个月计收。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加第三者责任保险条款C</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）的基础上，投保人可以投保本附加险。本附加险条款与主险条款相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在保险合同载明的地点范围内合法从事生产、经营等活动时发生意外事故，造成第三者的人身伤亡或财产损失，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人按照本附加险的约定负责赔偿。</p>
+							<p class="indent"><span class="heise">第三条</span>　被保险人因保险事故的发生而被提起仲裁或者诉讼的，对应由被保险人支付的仲裁或诉讼费用以及事先经保险人书面同意支付的其他必要的、合理的费用（以下简称“法律费用”），保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第四条　下列任一情形下的损失、费用或责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员因从事医师、律师、会计师、设计师、建筑师、美容师或其他专门职业所发生的赔偿责任；</p>
+							<p class="indent heise">（二）不洁、有害食物或饮料引起的食物中毒或传染性疾病，有缺陷的卫生装置，以及售出的商品、食物、饮料存在缺陷造成他人的损害；</p>
+							<p class="indent heise">（三）对于未载入本保险合同而属于被保险人的或其所占有的或以其名义使用的任何牲畜、车辆、火车头、各类船只、飞机、电梯、升降机、自动梯、起重机、吊车或其他升降装置造成的损失；</p>
+							<p class="indent heise">（四）由于震动、移动或减弱支撑引起任何土地、财产、建筑物的赔偿责任；</p>
+							<p class="indent heise">（五）被保险人因改变、维修或装修建筑物造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（六）未经有关监督管理部门验收或经验收不合格的固定场所或设备发生意外事故造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（七）因保险固定场所周围建筑物发生火灾、爆炸波及保险固定场所，再经保险固定场所波及他处的火灾责任。</p>
+							<p class="indent heise">第五条　下列原因造成的损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）战争、敌对行为、军事行为、武装冲突、罢工、骚乱、暴动、恐怖活动、盗窃、抢劫；</p>
+							<p class="indent heise">（三）行政行为或司法行为；</p>
+							<p class="indent heise">（四）核反应、核子辐射和放射性污染；</p>
+							<p class="indent heise">（五）地震、海啸、雷击、暴雨、洪水、火山爆发、地下火、龙卷风、台风、暴风、暴雪等自然灾害；</p>
+							<p class="indent heise">（六）烟熏、大气、土地、水污染及其他污染；</p>
+							<p class="indent heise">（七）锅炉爆炸、空中运行物体坠落。</p>
+							<p class="indent heise">第六条　被保险人的下列损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其代表、雇佣人员人身伤亡的赔偿责任，以及上述人员所有的或由其保管或控制的财产的损失；</p>
+							<p class="indent heise">（二）罚款、罚金或惩罚性赔款；</p>
+							<p class="indent heise">（三）被保险人与他人签订协议所约定的责任，但应由被保险人承担的法律责任除外；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）被保险人及第三者的一切间接损失；</p>
+							<p class="indent heise">（六）本保险合同中载明的免赔额，或根据本保险合同中载明的免赔率计算的金额；</p>
+							<p class="indent heise">（七）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的游泳池发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（八）被保险人因在本保险单列明的固定场所内布置的广告、霓虹灯、灯饰物发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（九）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的停车场发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（十）被保险人因出租房屋或建筑物发生火灾造成第三者人身伤亡或财产损失的赔偿责任。</p>
+							<p class="indent heise">第七条　其他不属于本保险责任范围内的一切损失、费用和责任，保险人不负责赔偿。</p>
+							<p class="center-p">赔偿限额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第八条</span>　本附加险的赔偿限额包括累计赔偿限额、每次事故赔偿限额、每次事故每人人身伤亡赔偿限额、每次事故每人医疗费用赔偿限额和每次事故财产损失赔偿限额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第九条</span>　每次事故免赔额（率）由投保人与保险人在签订保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="indent heise">保险合同中同时载明了免赔额和免赔率的，免赔金额以免赔额和按照免赔率计算的金额中的高者为准。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第十条</span>　保险人在本附加险项下的赔偿以下列方式之一确定的被保险人的赔偿责任为基础：</p>
+							<p class="indent">（一）被保险人和向其提出损害赔偿请求的索赔方的协商并经保险人确认；</p>
+							<p class="indent">（二）仲裁机构裁决；</p>
+							<p class="indent">（三）人民法院判决；</p>
+							<p class="indent">（四）保险人认可的其他方式。</p>
+							<p class="indent heise">第十一条　被保险人给第三者造成损害，被保险人未向该第三者赔偿的，保险人不得向被保险人赔偿保险金。</p>
+							<p class="indent"><span class="heise">第十二条</span>　保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过每次事故赔偿限额，且对于每人医疗费用的赔偿金额不超过每次事故每人医疗费用赔偿限额，对于每人财产损失的赔偿金额不超过每次事故财产损失赔偿限额，对每人人身伤亡的赔偿金额与每人医疗费用的赔偿金额合计不超过每次事故每人人身伤亡赔偿限额;</p>
+							<p class="indent">（二）保险人对每次事故发生的法律费用的赔偿金额与依据本条第一款计算的赔偿金额之和不超过每次事故赔偿限额；</p>
+							<p class="indent">（三）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过累计赔偿限额。</p>
+							<p class="indent"><span class="heise">第十三条</span>　保险期间内，被保险人在保险合同载明的地点范围内，合法从事生产、经营等活动时，由于同一原因发生意外事故造成多名第三者的人身伤亡或财产损失，应视为一次事故造成的损失。</p>
+							<p class="indent"><span class="heise">第十四条</span>　发生保险事故时，如果被保险人的损失在有相同保障的其他保险项下也能够获得赔偿，则本保险人按照本保险合同的赔偿限额与其他保险合同及本合同的赔偿限额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加食品、饮料责任条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、 《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）和《中国人寿财产保险股份有限公司财产保险附加第三者责任保险C》的基础上，投保人可以投保本附加险。</p>
+							<p class="indent">本附加险条款与主险条款及《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》内容相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款及财产保险附加第三者责任保险条款C为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在本保险合同载明的地点范围内，因其提供的食品、饮料或卫生装置存在缺陷造成第三者人身伤亡或财产损失时，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人依照本附加险约定负责赔偿。</p>
+							<p class="indent heise">被保险人应恪尽职责防止出售或提供任何不洁的或不符合食品安全国家标准的食品或饮料。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第三条　下列情形下的任何损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人未依法取得食品生产许可证、食品流通许可证或餐饮服务许可证，或持伪造、变造、过期的许可证，或许可证被撤销、吊销或注销的；</p>
+							<p class="indent heise">（二）被保险人从事与其食品生产、经营资质等级或许可范围不符的食品生产、经营活动的；</p>
+							<p class="indent heise">（三）被保险人在本保险合同载明的生产、经营场所外从事食品生产、经营活动的；</p>
+							<p class="indent heise">（四）被保险人生产、经营食品安全法律、法规或规定禁止生产经营的食品、食品添加剂或食品相关产品的，或未按食品安全法律、法规或规定获批准生产、经营的；</p>
+							<p class="indent heise">（五）被保险人生产、经营超过保质期的食品、食品添加剂或食品相关产品，或违法私自更改生产日期或保质期的；</p>
+							<p class="indent heise">（六）被保险人生产、经营营养成分不符合食品安全标准的专供婴幼儿和其他特定人群的主辅食品的；</p>
+							<p class="indent heise">（七）被保险人使用患有痢疾、伤寒、病毒性肝炎等消化道传染病，以及患有活动性肺结核、化脓性或者渗出性皮肤病等有碍食品安全的疾病的人员从事接触直接入口食品的工作的；</p>
+							<p class="indent heise">（八）由食品、食品添加剂或食品相关产品引起的任何慢性病、代谢病，如糖尿病、高血压等；</p>
+							<p class="indent heise">（九）由食品、食品添加剂或食品相关产品引起的传染性疾病的传播；</p>
+							<p class="indent heise">（十）受害人自身的疾病，或特异体质引起的食物过敏；</p>
+							<p class="indent heise">（十一）在食品中添加药品的，但按照传统既是食品又是中药材的物质除外；</p>
+							<p class="indent heise">（十二）食品、食品添加剂或食品相关产品投入流通时的科学技术水平尚不能发现缺陷的存在的；</p>
+							<p class="indent heise">（十三）投保人或被保险人在投保时已经知道或可以合理预见索赔发生的。</p>
+							<p class="indent heise">第四条　下列损失、费用和责任，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员的人身伤亡及其所有或管理的财产的损失；</p>
+							<p class="indent heise">（二）被保险人应该承担的合同责任，但无合同存在时依法仍然应由被保险人承担的经济赔偿责任不在此限；</p>
+							<p class="indent heise">（三）罚款、罚金及惩罚性赔偿；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）间接损失；</p>
+							<p class="indent heise">（六）食品、食品添加剂或食品相关产品本身的损失；</p>
+							<p class="indent heise">（七）被保险人对食品、食品添加剂或食品相关产品进行更换、退货、召回、补救、无害化处理或销毁造成的损失和费用;</p>
+							<p class="indent heise">（八）其他不属于保险责任范围的损失、费用和责任。</p>
+							<p class="center-p">赔偿限额、每次事故免赔额</p>
+							<p class="indent"><span class="heise">第五条</span>　本附加险项下的赔偿限额包括每次事故赔偿限额、每次事故每人赔偿限额、累计赔偿限额、每次事故免赔额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第六条</span>　发生本附加险项下的保险事故，保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按照《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过本附加险项下每次事故赔偿限额，且对于每人的赔偿金额不超过本附加险项下的每次事故每人赔偿限额；</p>
+							<p class="indent">（二）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过本附加险项下的累计赔偿限额。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加水箱、水管爆裂扩展条款</p>
+							<p class="indent">兹经双方同意，由于水箱、水管因雷电、飞行物体及其他空中运行物体坠落、高压、碰撞、严寒、高温造成爆裂，致使其本身损失以及由此引起的其他保险标的损失，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent heise">但由于下列原因造成保险标的损失，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）水箱或水管安装、检修、试水、试压；</p>
+							<p class="indent heise">（二）水箱、水管年久失修以及未采取必要的防护措施；</p>
+							<p class="indent heise">（三）水箱、水管本身的质量缺陷；</p>
+							<p class="indent heise">（四）临时性管道的爆裂。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加清理残骸费用扩展条款</p>
+							<p class="indent">兹经双方同意，因发生保险责任范围内的损失而产生的清除、拆除或支撑受损保险标的的费用，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent">本附加条款项下保险人的赔偿责任不超过本保险合同中载明的相应赔偿限额。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">营业中断保险附加赔偿处理标准条款</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司营业中断保险条款》（以下简称“主险”），并同时投保《中国人寿财产保险股份有限公司财产基本险》、《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》中任一物质损失保险的基础上，投保人可以投保本附加险。本附加险条款与主险条款内容相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦终止；主险无效，本附加险亦无效。</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，主险条款第三条第一款：“在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，由此产生的赔偿期间内的毛利润损失，保险人按照本保险合同的约定负责赔偿。”变更为：“在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，保险人按照本附加险的约定，在营业中断保险金额范围内负责赔偿。”</p>
+							<p class="indent"><span class="heise">第三条</span>　每日赔偿限额的金额由投保人与保险人协商确定并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第四条</span>　本附加险项下营业中断保险金额为每日赔偿限额与最大赔偿期间天数的乘积，但最高不超过物质损失保险合同保险金额的10%。</p>
+							<p class="indent"><span class="heise">第五条</span>　投保人投保本附加险的，主险条款第二十四条、第二十五条、第二十六条中关于以毛利润损失计算赔偿的约定不再适用。</p>
+							<p class="indent"><span class="heise">第六条</span>　对于被保险人遭受的营业中断损失，保险人按以下方式计算赔偿：</p>
+							<p class="indent">（一）被保险人在赔偿期间内的每日平均利润损失高于保险合同中载明的每日赔偿限额的，保险人按每日赔偿限额与赔偿期间的乘积计算赔偿；</p>
+							<p class="indent">（二）被保险人在赔偿期间内的每日平均利润损失低于保险合同中载明的每日赔偿限额的，保险人按每日利润损失与赔偿期间的乘积计算赔偿。</p>
+							<p class="indent">其中，每日平均利润损失为赔偿期间内按照营业收入的减少计算的损失。</p>
+							<p class="indent"><span class="heise">第七条</span>　保险合同中约定了免赔额或免赔期的，保险人按照本附加险计算的赔偿金额，扣除保险合同约定的免赔额或者按免赔期与每日赔偿限额乘积计算的金额后计算赔偿金额。</p>
+							<p class="indent"><span class="heise">第八条</span>　被保险人按本附加险的约定请求赔偿保险金时，无需履行主险条款第二十二条第（一）款约定的“相关的会计凭证及账表、单据”的提供义务。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加小额现金扩展条款</p>
+							<p class="indent">兹经双方同意，本保险扩展承保存放于被保险人办公场所内的小额现金损失，如因盗窃丢失，须有明显的盗窃痕迹。</p>
+							<p class="indent">本附加险条款每次事故赔偿限额、累计责任限额和每次事故免赔额由投保人与保险人协商确定，并在保险合同中载明。</p>
+							<p class="indent">本附加险条款与主险条款内容相悖之处，以本附加险条款为准；未尽之处，以主险条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加放弃比例分摊扩展条款</p>
+							<p class="indent">兹经双方同意，保险人视本保险单为足额投保，发生保险责任范围内的损失，保险人在保险金额内按实际损失计算赔偿，不作比例分摊。若本保险合同所列标的物不止一项时，应逐项分别计算各自赔偿金额。保险期间内累计赔偿金额仍以总保险金额为限。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+						</div>
+					</div>
+					<div class="clause-C clause-type">
+						<div class="clause-cont-top">
+							<p>中国人寿财产保险股份有限公司</p>
+							<p>“餐饮业守护神综合保险”（C款）</p>
+							<p>《投保须知》及《保险条款》</p>
+						</div>
+						<div class="clause-start">
+							<div class="title-one">一、 基本信息</div>
+							<p class="indent">本产品为“餐饮业守护神综合保险”（C款），由中国人寿财产
+							保险股份有限公司承保，本公司在全国除西藏自治区之外的所
+							有省、自治区及直辖市均设有分公司。本产品面向除西藏以外
+							的大陆地区销售。</p>
+							<div class="title-one">二、 产品介绍</div>
+							<div class="title-two">1、适用对象</div>
+							<p>“餐饮业守护神综合保险”适用于具备下列条件的商户：</p>
+							<p>（1）主营业务：餐饮业；</p>
+							<p>（2）建筑结构为钢筋混凝土结构或砖混结构；</p>
+							<p>本产品不适用于无就餐店铺的餐饮配送企业、中央厨房。</p>
+							<div class="title-two">2、责任及保险方案介绍：</div>
+							<div class="other-two"> 每份“餐饮业守护神综合保险”（C款），包含以下风险保障：</div>
+							<table border="" cellspacing="" cellpadding="" class="table table1">
+								<tr>
+									<th colspan="2">方案</th>
+									<th>责任范围</th>
+									<th>保险金额/赔偿限额</th>
+								</tr>
+								<tr>
+									<td rowspan="2">主险</td>
+									<td>财产损失</td>
+									<td>火灾、爆炸、雷击或飞行物体及其他空中运行物体坠落引起的财产损失</td>
+									<td>100万元</td>
+								</tr>
+								<tr>
+									<td>营业中断</td>
+									<td>因发生财产损失险项下保险事故，导致完全无法营业引起的毛利润损失</td>
+									<td>1000元/天，最大赔偿期7天</td>
+								</tr>
+								<tr>
+									<td rowspan="6">附加险</td>
+									<td>第三者责任</td>
+									<td>因经营过程中发生的意外事故导致的第三者的人身伤亡或财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额40万元，每次事故的每人人身伤亡、医疗费用、财产损失赔偿限额合计为5万元，其中医疗费用赔偿限额为5000元</td>
+								</tr>
+								<tr>
+									<td>食品饮料任</td>
+									<td>因被保险人销售或提供的食品、饮料或卫生装置造成第三者的人身伤亡与财产损失，餐饮企业依法应承担的经济赔偿责任</td>
+									<td>累计赔偿限额10万元（每次事故每人赔偿限额1万元）</td>
+								</tr>
+								<tr>
+									<td>水箱、水管爆裂</td>
+									<td>水箱、水管因雷电、飞行物体及其他空中运行物体坠落、高压、碰撞、严寒、高温造成爆裂引起的财产损失</td>
+									<td>同主险</td>
+								</tr>
+								<tr>
+									<td>清除残骸费用</td>
+									<td>因保险责任范围内的原因导致保险标的物损失而产生的清除、拆除或支撑受损保险标的物的费用</td>
+									<td>6000元</td>
+								</tr>
+								<tr>
+									<td>冷藏货物损失</td>
+									<td>因条款列明原因导致的冷藏库连续八个小时无法发挥功能引起的冷藏食品变质</td>
+									<td>3万元</td>
+								</tr>
+								<tr>
+									<td>小额现金损失</td>
+									<td>存放于被保险人办公场所内的小额现金损失，如果因盗窃丢失，须有明显的盗窃痕迹</td>
+									<td>累计赔偿限额及每次事故赔偿限额均为3000元</td>
+								</tr>
+								<tr>
+									<td colspan="2">总保险费</td>
+									<td colspan="2">1500元</td>
+								</tr>
+							</table>
+							<p class="indent">客户可在上述方案的基础上，根据自身规模及资产状况，选择投保份数，<span class="heise">单一地址投保份数上限为三份，多保无效。</span></p>
+							<p class="indent heise">如果同一经营场所投保两份或两份以上的，则承保方案中各项责任的保险金额/赔偿限额按投保份数累加，但无论投保多少份，保险人对同一经营场所的“营业中断责任”和“冷藏货物损失”项下仅按一份赔偿限额承保（营业中断责任：每日赔偿限额1000元，最大赔偿期间7天；冷藏货物损失：赔偿限额3万元）。</p>
+							<div class="title-two">3、免赔条件：</div>
+							<p class="indent heise">（1）财产损失及现金损失的免赔条件均为：每次事故绝对免赔额200元或损失金额的10%，以高者为准；</p>
+							<p class="indent heise">（2）“第三者责任”及“食品饮料责任”项下，医疗费用的每次事故绝对免赔额均为200元。</p>
+							<p class="indent heise">上述免赔条件不受投保份数增加而变化。</p>
+							<div class="title-two">4、保险期间：</div>
+							<p class="indent">自本产品生效之日起一年。</p>
+							<div class="title-two">5、适用条款及责任免除</div>
+							<p class="indent heise">请详细阅读《保险条款》，特别是条款中有关责任免除和投保人、被保险人义务的内容。</p>
+							
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产基本险条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　本保险合同由保险条款、投保单、保险单或其他保险凭证以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。</p>
+							<p class="center-p">保险标的</p>  
+							<p class="indent"><span class="heise">第二条</span>　本保险合同载明地址内的下列财产可作为保险标的：</p>
+							<p class="indent">（一）属于被保险人所有或与他人共有而由被保险人负责的财产；</p>
+							<p class="indent">（二）由被保险人经营管理或替他人保管的财产；</p>
+							<p class="indent">（三）其他具有法律上承认的与被保险人有经济利害关系的财产。</p>
+							<p class="indent"><span class="heise">第三条</span>　本保险合同载明地址内的下列财产未经保险合同双方特别约定并在保险合同中载明保险价值的，不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）金银、珠宝、钻石、玉器、首饰、古币、古玩、古书、古画、邮票、字画、艺术品、稀有金属等珍贵财物；</p>
+							<p class="indent">（二）堤堰、水闸、铁路、道路、涵洞、隧道、桥梁、码头；</p>
+							<p class="indent">（三）矿井（坑）内的设备和物资；</p>
+							<p class="indent">（四）便携式通讯装置、便携式计算机设备、便携式照相摄像器材以及其他便携式装置、设备；</p>
+							<p class="indent">（五）尚未交付使用或验收的工程。</p>
+							<p class="indent"><span class="heise">第四条</span>　下列财产不属于本保险合同的保险标的：</p>
+							<p class="indent">（一）土地、矿藏、水资源及其他自然资源；</p>
+							<p class="indent">（二）矿井、矿坑；</p>
+							<p class="indent">（三）货币、票证、有价证券以及有现金价值的磁卡、集成电路（IC）卡等卡类；</p>
+							<p class="indent">（四）文件、账册、图表、技术资料、计算机软件、计算机数据资料等无法鉴定价值的财产；</p>
+							<p class="indent">（五）枪支弹药； </p>
+							<p class="indent">（六）违章建筑、危险建筑、非法占用的财产；</p>
+							<p class="indent">（七）领取公共行驶执照的机动车辆；</p>
+							<p class="indent">（八）动物、植物、农作物。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第五条</span>　在保险期间内，由于下列原因造成保险标的的损失，保险人按照本保险合同的约定负责赔偿：</p>
+							<p class="indent">（一）火灾；</p>
+							<p class="indent">（二）爆炸；</p>
+							<p class="indent">（三）雷击；</p>
+							<p class="indent">（四）飞行物体及其他空中运行物体坠落。</p>
+							<p class="indent">前款原因造成的保险事故发生时，为抢救保险标的或防止灾害蔓延，采取必要的、合理的措施而造成保险标的的损失，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="indent"><span class="heise">第六条</span>　保险事故发生后，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">责任免除</p>
+							<p class="indent"><span class="heise">第七条</span>　下列原因造成的损失、费用，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）行政行为或司法行为； </p>
+							<p class="indent heise">（三）战争、类似战争行为、敌对行动、军事行动、武装冲突、罢工、骚乱、暴动、政变、谋反、恐怖活动； </p>
+							<p class="indent heise">（四）地震、海啸及其次生灾害；</p>
+							<p class="indent heise">（五）核辐射、核裂变、核聚变、核污染及其他放射性污染；</p>
+							<p class="indent heise">（六）大气污染、土地污染、水污染及其他非放射性污染，但因保险事故造成的非放射性污染不在此限；</p>
+							<p class="indent heise">（七）保险标的的内在或潜在缺陷、自然磨损、自然损耗，大气（气候或气温）变化、正常水位变化或其他渐变原因，物质本身变化、霉烂、受潮、鼠咬、虫蛀、鸟啄、氧化、锈蚀、渗漏、自燃、烘焙；</p>
+							<p class="indent heise">（八）暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、暴雪、冰凌、沙尘暴、突发性滑坡、崩塌、泥石流、地面突然下陷下沉；</p>
+							<p class="indent heise">（九）水箱、水管爆裂；</p>
+							<p class="indent heise">（十）盗窃、抢劫。</p>
+							<p class="indent heise"><span class="heise">第八条</span>　下列损失、费用，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）保险标的遭受保险事故引起的各种间接损失；</p>
+							<p class="indent heise">（二）广告牌、天线、霓虹灯、太阳能装置等建筑物外部附属设施，存放于露天或简易建筑物内部的保险标的以及简易建筑本身，由于雷击造成的损失；</p>
+							<p class="indent heise">（三）锅炉及压力容器爆炸造成其本身的损失；</p>
+							<p class="indent heise">（四）任何原因导致供电、供水、供气及其他能源供应中断造成的损失和费用；</p>
+							<p class="indent heise">（五）本保险合同中载明的免赔额或按本保险合同中载明的免赔率计算的免赔额。</p>
+							<p class="indent heise"><span class="heise">第九条</span>　其他不属于本保险合同责任范围内的损失和费用，保险人不负责赔偿。</p>
+							<p class="center-p">保险价值、保险金额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第十条</span>　保险标的的保险价值可以为出险时的重置价值、出险时的账面余额、出险时的市场价值或其他价值，由投保人与保险人协商确定，并在本保险合同中载明。</p>
+							<p class="indent"><span class="heise">第十一条</span>　保险金额由投保人参照保险价值自行确定，并在保险合同中载明。保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。</p>
+							<p class="indent"><span class="heise">第十二条</span>　免赔额（率）由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="center-p">保险期间</p>
+							<p class="indent"><span class="heise">第十三条</span>　除另有约定外，保险期间为一年，以保险单载明的起讫时间为准。</p>
+							<p class="center-p">保险人义务</p>
+							<p class="indent"><span class="heise">第十四条</span>　订立保险合同时，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明保险合同的内容。对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</p>
+							<p class="indent"><span class="heise">第十五条</span>　本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。</p>
+							<p class="indent"><span class="heise">第十六条</span>　保险人依据第二十条所取得的保险合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自保险合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人承担赔偿责任。</p>
+							<p class="indent">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第十七条</span>　保险人按照第二十六条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。</p>
+							<p class="indent"><span class="heise">第十八条</span>　保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定；情形复杂的，应当在三十日内作出核定，但保险合同另有约定的除外。</p>
+							<p class="indent">保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。</p>
+							<p class="indent"><span class="heise">第十九条</span>　保险人自收到赔偿的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。 </p>
+							<p class="center-p">投保人、被保险人义务</p>
+							<p class="indent"><span class="heise">第二十条</span>　订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知，并如实填写投保单。</p>
+							<p class="indent">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除合同。</p>
+							<p class="indent heise">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。</p>
+							<p class="indent heise">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+							<p class="indent"><span class="heise">第二十一条</span>　投保人应按约定交付保险费。</p>
+							<p class="indent">约定一次性交付保险费的，<span class="heise">投保人在约定交费日后交付保险费的，保险人对交费之前发生的保险事故不承担保险责任。</span></p>
+							<p class="indent">约定分期交付保险费的，<span class="heise">保险人按照保险事故发生前保险人实际收取保险费总额与投保人应当交付的保险费的比例承担保险责任，</span>投保人应当交付的保险费是指截至保险事故发生时投保人按约定分期应该缴纳的保费总额。</p>
+							<p class="indent"><span class="heise">第二十二条</span>　被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面的相关法律、法规及规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。</p>
+							<p class="indent">保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。</p>
+							<p class="indent">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent"><span class="heise">第二十三条</span>　保险标的转让的，被保险人或者受让人应当及时通知保险人。</p>
+							<p class="indent">因保险标的转让导致危险程度显著增加的，保险人自收到前款规定的通知之日起三十日内，可以按照合同约定增加保险费或者解除合同。保险人解除合同的，应当将已收取的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent heise">被保险人、受让人未履行本条规定的通知义务的，因转让导致保险标的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十四条</span>　在合同有效期内，如保险标的占用与使用性质、保险标的地址及其他可能导致保险标的危险程度显著增加的、或其他足以影响保险人决定是否继续承保或是否增加保险费的保险合同重要事项变更，被保险人应及时书面通知保险人，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent heise">被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十五条</span>　知道保险事故发生后，被保险人应该：</p>
+							<p class="indent">（一）尽力采取必要、合理的措施，防止或减少损失，否则，<span class="heise">对因此扩大的损失，保险人不承担赔偿责任；</span></p>
+							<p class="indent">（二）立即通知保险人，并书面说明事故发生的原因、经过和损失情况；<span class="heise">故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；</span></p>
+							<p class="indent">（三）保护事故现场，允许并且协助保险人进行事故调查；<span class="heise">对于拒绝或者妨碍保险人进行事故调查导致无法确定事故原因或核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第二十六条</span>　被保险人请求赔偿时，应向保险人提供下列证明和资料：</p>
+							<p class="indent">（一）保险单正本、索赔申请、财产损失清单、技术鉴定证明、事故报告书、救护费用发票、必要的账簿、单据和有关部门的证明；</p>
+							<p class="indent">（二）投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。</p>
+							<p class="indent heise">投保人、被保险人未履行前款约定的单证提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent heise">第二十七条　保险事故发生时，被保险人对保险标的不具有保险利益的，不得向保险人请求赔偿保险金。</p>
+							<p class="indent"><span class="heise">第二十八条</span>　保险标的发生保险责任范围内的损失，保险人有权选择下列方式赔偿：</p>
+							<p class="indent">（一）货币赔偿：保险人以支付保险金的方式赔偿；</p>
+							<p class="indent">（二）实物赔偿：保险人以实物替换受损标的，该实物应具有保险标的出险前同等的类型、结构、状态和性能；</p>
+							<p class="indent">（三）实际修复：保险人自行或委托他人修理修复受损标的。</p>
+							<p class="indent heise">对保险标的在修复或替换过程中，被保险人进行的任何变更、性能增加或改进所产生的额外费用，保险人不负责赔偿。</p>
+							<p class="indent"><span class="heise">第二十九条</span>　保险标的遭受损失后保，如果有残余价值，应由双方协商处理。如折归被保险人，由双方协商确定其价值，并在险赔款中扣除。</p>
+							<p class="indent"><span class="heise">第三十条</span>　保险标的发生保险责任范围内的损失，保险人按以下方式计算赔偿：</p>
+							<p class="indent">（一）保险金额等于或高于保险价值时，按实际损失计算赔偿，最高不超过保险价值；</p>
+							<p class="indent">（二）保险金额低于保险价值时，按保险金额与保险价值的比例乘以实际损失计算赔偿，最高不超过保险金额；</p>
+							<p class="indent">（三）若本保险合同所列标的不止一项时，应分项按照本条约定处理。</p>
+							<p class="indent"><span class="heise">第三十一条</span>　保险标的的保险金额大于或等于其保险价值时，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险价值。</p>
+							<p class="indent">保险标的的保险金额小于其保险价值时，上述费用按被施救保险标的的保险金额与其保险价值的比例在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险金额。</p>
+							<p class="indent">被施救的财产中，含有本保险合同未承保财产的，按被施救保险标的的保险价值与全部被施救财产价值的比例分摊施救费用。</p>
+							<p class="indent"><span class="heise">第三十二条</span>　每次事故保险人的赔偿金额为根据第三十条、第三十一条约定计算的金额扣除每次事故免赔额后的金额，或者为根据第三十条、第三十一条约定计算的金额扣除该金额与免赔率乘积后的金额。</p>
+							<p class="indent"><span class="heise">第三十三条</span>　保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第三十四条</span>　保险标的发生部分损失，保险人履行赔偿义务后，本保险合同的保险金额自损失发生之日起按保险人的赔偿金额相应减少，保险人不退还保险金额减少部分的保险费。如投保人请求恢复至原保险金额，应按原约定的保险费率另行支付恢复部分从投保人请求的恢复日期起至保险期间届满之日止按日比例计算的保险费。</p>
+							<p class="indent"><span class="heise">第三十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；<span class="heise">由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p>
+							<p class="indent"><span class="heise">第三十六条</span>　被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。 </p>
+							<p class="center-p">争议处理和法律适用</p>
+							<p class="indent"><span class="heise">第三十七条</span>　因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险单载明的仲裁机构仲裁；保险单未载明仲裁机构且争议发生后未达成仲裁协议的，依法向人民法院起诉。</p>
+							<p class="indent"><span class="heise">第三十八条</span>　与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。</p>
+							<p class="center-p">其他事项</p>
+							<p class="indent"><span class="heise">第三十九条</span>　保险标的发生部分损失的，自保险人赔偿之日起三十日内，投保人可以解除合同；除合同另有约定外，保险人也可以解除合同，但应当提前十五日通知投保人。</p>
+							<p class="indent">保险合同依据前款规定解除的，保险人应当将保险标的未受损失部分的保险费，按照合同约定扣除自保险责任开始之日起至合同解除之日止应收的部分后，退还投保人。</p>
+							<p class="indent"><span class="heise">第四十条</span>　保险责任开始前，投保人要求解除保险合同的，应当按本保险合同的约定向保险人支付退保手续费，保险人应当退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，投保人要求解除保险合同的，自通知保险人之日起，保险合同解除，保险人按短期费率计收保险责任开始之日起至合同解除之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，保险人要求解除保险合同的，可提前十五日向投保人发出解约通知书解除本保险合同，保险人按照保险责任开始之日起至合同解除之日止期间与保险期间的日比例计收保险费，并退还剩余部分保险费。</p>
+							<p class="indent"><span class="heise">第四十一条</span>　保险标的发生全部损失，属于保险责任的，保险人在履行赔偿义务后，本保险合同终止；不属于保险责任的，本保险合同终止，保险人按短期费率计收自保险责任开始之日起至损失发生之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="center-p">释义</p>
+							<p class="indent">第四十二条　<span class="heise">本保险合同涉及下列术语时，适用下列释义：</span></p>
+							<p class="indent heise">（一）火灾</p>
+							<p class="indent">在时间或空间上失去控制的燃烧所造成的灾害。构成本保险的火灾责任必须同时具备以下三个条件：</p>
+							<p class="indent">1．有燃烧现象，即有热有光有火焰；</p>
+							<p class="indent">2．偶然、意外发生的燃烧；</p>
+							<p class="indent">3．燃烧失去控制并有蔓延扩大的趋势。</p>
+							<p class="indent">因此，仅有燃烧现象并不等于构成本保险中的火灾责任。在生产、生活中有目的用火，如为了防疫而焚毁玷污的衣物，点火烧荒等属正常燃烧，不同于火灾责任。</p>
+							<p class="indent">因烘、烤、烫、烙造成焦糊变质等损失，既无燃烧现象，又无蔓延扩大趋势，也不属于火灾责任。</p>
+							<p class="indent">电机、电器、电气设备因使用过度、超电压、碰线、孤花、漏电、自身发热所造成的本身损毁，不属于火灾责任。但如果发生了燃烧并失去控制蔓延扩大，才构成火灾责任，并对电机、电器、电气设备本身的损失负责赔偿。</p>
+							<p class="indent">（二）爆炸</p>
+							<p class="indent">爆炸分物理性爆炸和化学性爆炸。</p>
+							<p class="indent">1．物理性爆炸：由于液体变为蒸汽或气体膨胀，压力急剧增加并大大超过容器所能承受的极限压力，因而发生爆炸。如锅炉、空气压缩机、压缩气体钢瓶、液化气罐爆炸等。关于锅炉、压力容器爆炸的定义是：锅炉或压力容器在使用中或试压时发生破裂，使压力瞬时降到等于外界大气压力的事故，称为“爆炸事故”。</p>
+							<p class="indent">2．化学性爆炸：物体在瞬息分解或燃烧时放出大量的热和气体，并以很大的压力向四周扩散的现象。如火药爆炸、可燃性粉尘纤维爆炸、可燃气体爆炸及各种化学物品的爆炸等。</p>
+							<p class="indent">因物体本身的瑕疵，使用损耗或产品质量低劣以及由于容器内部承受“负压”（内压比外压小）造成的损失，不属于爆炸责任。</p>
+							<p class="indent">（三）雷击</p>
+							<p class="indent">雷击指由雷电造成的灾害。雷电为积雨云中、云间或云地之间产生的放电现象。雷击的破坏形式分直接雷击与感应雷击两种。</p>
+							<p class="indent">1．直接雷击：由于雷电直接击中保险标的造成损失，属直接雷击责任。</p>
+							<p class="indent">2．感应雷击：由于雷击产生的静电感应或电磁感应使屋内对地绝缘金属物体产生高电位放出火花引起的火灾，导致电器本身的损毁，或因雷电的高电压感应，致使电器部件的损毁，属感应雷击责任。 </p>   
+							<p class="indent">（四）暴雨：指每小时降雨量达16毫米以上，或连续12小时降雨量达30毫米以上，或连续24小时降雨量达50毫米以上的降雨。</p>
+							<p class="indent">（五）洪水：指山洪暴发、江河泛滥、潮水上岸及倒灌。但规律性的涨潮、自动灭火设施漏水以及在常年水位以下或地下渗水、水管爆裂不属于洪水责任。</p>
+							<p class="indent">（六）暴风：指风力达8级、风速在17.2米/秒以上的自然风。</p>
+							<p class="indent">（七）龙卷风：指一种范围小而时间短的猛烈旋风，陆地上平均最大风速在79米/秒-103米/秒，极端最大风速在100米/秒以上。</p>
+							<p class="indent">（八）冰雹：指从强烈对流的积雨云中降落到地面的冰块或冰球，直径大于5毫米，核心坚硬的固体降水。</p>
+							<p class="indent">（九）台风、飓风：台风指中心附近最大平均风力12级或以上，即风速在32.6米/秒以上的热带气旋；飓风是一种与台风性质相同、但出现的位置区域不同的热带气旋，台风出现在西北太平洋海域，而飓风出现在印度洋、大西洋海域。
+							<p class="indent">（十）沙尘暴：指强风将地面大量尘沙吹起，使空气很混浊，水平能见度小于1公里的天气现象。</p>
+							<p class="indent">（十一）暴雪：指连续12小时的降雪量大于或等于10毫米的降雪现象。</p>
+							<p class="indent">（十二）冰凌：指春季江河解冻期时冰块飘浮遇阻，堆积成坝，堵塞江道，造成水位急剧上升，以致江水溢出江道，漫延成灾。</p>
+							<p class="indent">陆上有些地区，如山谷风口或酷寒致使雨雪在物体上结成冰块，成下垂形状，越结越厚，重量增加，由于下垂的拉力致使物体毁坏，也属冰凌责任。</p>
+							<p class="indent">（十三）突发性滑坡：斜坡上不稳的岩土体或人为堆积物在重力作用下突然整体向下滑动的现象。</p>
+							<p class="indent">（十四）崩塌：石崖、土崖、岩石受自然风化、雨蚀造成崩溃下塌，以及大量积雪在重力作用下从高处突然崩塌滚落。</p>
+							<p class="indent">（十五）泥石流：由于雨水、冰雪融化等水源激发的、含有大量泥沙石块的特殊洪流。</p>
+							<p class="indent">（十六）地面突然下陷下沉：地壳因为自然变异，地层收缩而发生突然塌陷。对于因海潮、河流、大雨侵蚀或在建筑房屋前没有掌握地层情况，地下有孔穴、矿穴，以致地面突然塌陷，也属地面突然下陷下沉。但未按建筑施工要求导致建筑地基下沉、裂缝、倒塌等，不在此列。</p>
+							<p class="indent">（十七）飞行物体及其他空中运行物体坠落：指空中飞行器、人造卫星、陨石坠落，吊车、行车在运行时发生的物体坠落，人工开凿或爆炸而致石方、石块、土方飞射、塌下，建筑物倒塌、倒落、倾倒，以及其他空中运行物体坠落。</p>
+							<p class="indent">（十八）自然灾害：指雷击、暴雨、洪水、暴风、龙卷风、冰雹、台风、飓风、沙尘暴、暴雪、冰凌、突发性滑坡、崩塌、泥石流、地面突然下陷下沉及其他人力不可抗拒的破坏力强大的自然现象。</p>
+							<p class="indent">（十九）意外事故：指不可预料的以及被保险人无法控制并造成物质损失的突发性事件，包括火灾和爆炸。</p>
+							<p class="indent">（二十）重大过失行为：指行为人不但没有遵守法律规范对其较高要求，甚至连人们都应当注意并能注意的一般标准也未达到的行为。</p>
+							<p class="indent">（二十一）恐怖活动：指任何人以某一组织的名义或参与某一组织使用武力或暴力对任何政府进行恐吓或施加影响而采取的行动。</p>
+							<p class="indent">（二十二）地震：地壳发生的震动。</p>
+							<p class="indent">（二十三）海啸：海啸是指由海底地震，火山爆发或水下滑坡、塌陷所激发的海洋巨波。</p>
+							<p class="indent">（二十四）行政行为或司法行为：指各级政府部门、执法机关或依法履行公共管理、社会管理职能的机构下令破坏、征用、罚没保险标的的行为。</p>
+							<p class="indent">（二十五）简易建筑：指符合下列条件之一的建筑：（1）使用竹木、芦席、蓬布、茅草、油毛毡、塑料膜、尼龙布、玻璃钢瓦等材料为顶或墙体的建筑；（2）顶部封闭，但直立面非封闭部分的面积与直立面总面积的比例超过10％的建筑；（3）屋顶与所有墙体之间的最大距离超过一米的建筑。</p>
+							<p class="indent">（二十六）自燃：指可燃物在没有外部热源直接作用的情况下，由于其内部的物理作用（如吸附、辐射等）、化学作用（如氧化、分解、聚合等）或生物作用（如发酵、细菌腐败等）而发热，热量积聚导致升温，当可燃物达到一定温度时，未与明火直接接触而发生燃烧的现象。</p>
+							<p class="indent">（二十七）重置价值：指替换、重建受损保险标的，以使其达到全新状态而发生的费用，但不包括被保险人进行的任何变更、性能增加或改进所产生的额外费用。</p>
+							<p class="indent">（二十八）水箱、水管爆裂：包括冻裂和意外爆裂两种情况。水箱、水管爆裂一般是由水箱、水管本身瑕疵或使用耗损或严寒结冰造成的。</p>
+							<p class="center-p">附录</p>
+							<p class="table-title">短期费率表</p>			
+							<table class="table table2">
+								<tr>
+									<th>保险期间</th>
+									<th>一个月</th>
+									<th>二个月</th>
+									<th>三个月</th>
+									<th>四个月</th>
+									<th>五个月</th>
+									<th>六个月</th>
+									<th>七个月</th>
+									<th>八个月</th>
+									<th>九个月</th>
+									<th>十个月</th>
+									<th>十一个月</th>
+									<th>十二个月</th>
+								</tr>	
+								<tr>
+									<td>年费率的百分比</td>
+									<td>10</td>
+									<td>20</td>
+									<td>30</td>
+									<td>40</td>
+									<td>50</td>
+									<td>60</td>
+									<td>70</td>
+									<td>80</td>
+									<td>85</td>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+								</tr>	
+							</table>
+							<p>注：不足一个月的部分按一个月计收。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">营业中断保险条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　本保险合同由保险条款、投保单、保险单或其他保险凭证以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。</p>
+							<p class="indent"><span class="heise">第二条</span>　投保人应将被保险人在本保险合同载明的营业处所从事载明的经营业务（以下简称“营业”）所使用的物质财产向保险人投保相关的物质财产损失保险。物质财产损失保险合同（以下简称“物质损失保险合同”）号应在本保险合同中载明。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第三条</span>　在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，由此产生的赔偿期间内的毛利润损失，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent">本保险合同所称赔偿期间是指自物质保险损失发生之日起，被保险人的营业结果因该物质保险损失而受到影响的期间，但该期间最长不得超过本保险合同约定的最大赔偿期。</p>
+							<p class="indent">本保险合同所称毛利润是指按照下述公式计算的金额：</p>
+							<p class="indent">毛利润=营业利润+约定的维持费用</p>
+							<p class="indent">或</p>
+							<p class="indent">毛利润=约定的维持费用-营业亏损×约定的维持费用/全部的维持费用</p>
+							<p class="indent">本保险合同所称维持费用是指被保险人为维持正常的营业活动而发生的、不随被保险人营业收入的减少而成正比例减少的成本或费用。约定的维持费用由投保人自行确定，经保险人确认后在保险合同中载明。</p>
+							<p class="indent">除另有约定外，上述公式所用的会计措辞的含义与被保险人会计账表中的含义一致。</p>
+							<p class="indent"><span class="heise">第四条</span>　发生第三条约定的保险事故后，被保险人申请赔偿时，按照保险人的要求提供有关账表、账表审计结果或其他证据所付给被保险人聘请的注册会计师的合理的、必要的费用（以下简称“审计费用”），保险人在本保险合同约定的赔偿限额内也负责赔偿。</p>
+							<p class="center-p">责任免除</p>
+							<p class="indent"><span class="heise">第五条</span>　保险人不负责赔偿下列损失：</p>
+							<p class="indent heise">（一）投保人、被保险人的故意或重大过失行为产生或扩大的任何损失；</p>
+							<p class="indent heise">（二）由于物质损失保险合同主险条款责任范围以外的原因产生或扩大的损失；</p>
+							<p class="indent heise">（三）地震、海啸及其次生灾害产生或扩大的损失；</p>
+							<p class="indent heise">（四）由于政府对受损财产的修建或修复的限制而产生或扩大的损失；</p>
+							<p class="indent heise">（五）恐怖主义活动产生或扩大的损失；</p>
+							<p class="indent heise">（六）本保险合同载明的免赔额或本保险合同约定的免赔期内的损失。</p>
+							<p class="center-p">保险金额与赔偿限额</p>
+							<p class="indent"><span class="heise">第六条</span>　毛利润损失保险金额由投保人自行确定并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第七条</span>　审计费用赔偿限额由投保人自行确定并在保险合同中载明。</p>
+							<p class="center-p">保险期间与最大赔偿期</p>
+							<p class="indent"><span class="heise">第八条</span>　除另有约定外，保险期间为一年，以保险单载明的起讫时间为准。</p>
+							<p class="indent"><span class="heise">第九条</span>　最大赔偿期由投保人自行确定并在保险合同中载明。</p>
+							<p class="center-p">免赔额与免赔期</p>
+							<p class="indent"><span class="heise">第十条</span>　免赔额或免赔期由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="center-p">保险人义务</p>
+							<p class="indent"><span class="heise">第十一条</span>　订立保险合同时，采用保险人提供的格式条款的，保险人向投保人提供的投保单应当附格式条款，保险人应当向投保人说明保险合同的内容。对保险合同中免除保险人责任的条款，保险人在订立合同时应当在投保单、保险单或者其他保险凭证上作出足以引起投保人注意的提示，并对该条款的内容以书面或者口头形式向投保人作出明确说明；未作提示或者明确说明的，该条款不产生效力。</p>
+							<p class="indent"><span class="heise">第十二条</span>　本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。</p>
+							<p class="indent"><span class="heise">第十三条</span>　保险人依据第十七条所取得的保险合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自保险合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人承担赔偿责任。</p>
+							<p class="indent">保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第十四条</span>　保险人按照第二十二条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。</p>
+							<p class="indent"><span class="heise">第十五条</span>　保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定；情形复杂的，应当在三十日内作出核定，但保险合同另有约定的除外。</p>
+							<p class="indent">保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。</p>
+							<p class="indent"><span class="heise">第十六条</span>　保险人自收到赔偿保险金的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。</p>
+							<p class="center-p">投保人、被保险人义务</p>
+							<p class="indent"><span class="heise">第十七条</span>　订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知。</p>
+							<p class="indent">投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除保险合同。</p>
+							<p class="indent heise">投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，并不退还保险费。</p>
+							<p class="indent heise">投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿责任，但应当退还保险费。</p>
+							<p class="indent"><span class="heise">第十八条</span>　除另有约定外，投保人应在保险合同成立时一次性支付全部保险费。<span class="heise">保险费交付前发生的保险事故，保险人不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第十九条</span>　被保险人应当遵守国家有关消防、安全、生产操作、劳动保护等方面规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。</p>
+							<p class="indent">保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。</p>
+							<p class="indent">投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent"><span class="heise">第二十条</span>　在保险期间内，如被保险人在保险合同载明的营业处所经营的业务发生变化、被进行清算或由清算人或财产管理人接管经营，或营业所用的物质财产的风险加大，以及足以影响保险人决定是否继续承保或是否增加保险费的保险合同重要事项变更，被保险人应及时书面通知保险人，保险人有权要求增加保险费或者解除合同。</p>
+							<p class="indent heise">被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿责任。</p>
+							<p class="indent"><span class="heise">第二十一条</span>　知道保险事故发生后，被保险人应当：</p>
+							<p class="indent">（一）尽力采取必要、合理的措施以修理、修复营业所用的受损的物质财产，尽快恢复营业以防止或减少因营业受到干扰或中断所造成的损失，<span class="heise">否则，对因此扩大的损失，保险人不承担赔偿责任；</span></p>
+							<p class="indent">（二）立即通知保险人，并书面说明事故发生的原因、经过和损失情况；<span class="heise">故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿责任，</span>但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；</p>
+							<p class="indent">（三）保护事故现场，允许并且协助保险人进行事故原因和损失情况的调查，以及对被保险人相关的会计凭证和账表的检查；<span class="heise">对于拒绝或者妨碍保险人进行上述调查或检查导致无法确定事故原因或核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</span></p>
+							<p class="indent"><span class="heise">第二十二条</span>　被保险人请求赔偿时，应向保险人提供下列证明和资料：</p>
+							<p class="indent">（一）保险单正本、索赔申请、财产损失清单、技术鉴定证明、事故报告书、救护费用发票、相关的会计凭证及账表、单据和有关部门的证明；</p>
+							<p class="indent">（二）投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。</p>
+							<p class="indent heise">投保人、被保险人未履行前款约定的单证提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第二十三条</span>　发生保险事故后，被保险人在物质损失保险合同主险条款项下取得赔款或其保险责任已获保险人认定，是保险人承担本保险合同项下赔偿责任的前提条件。</p>
+							<p class="indent">如被保险人因物质损失保险合同主险条款项下的免赔额而无法获得该合同项下的赔款，则不受本条前款约定所限。</p>
+							<p class="indent"><span class="heise">第二十四条</span>　赔偿期间内的毛利润损失为分别按照营业收入的减少和经营费用的增加计算的损失之和，扣除在赔偿期间内被保险人因保险事故的发生而从毛利润中减少或停止支付的费用：</p>
+							<p class="indent">（一）因营业收入减少导致的损失为毛利润率乘以赔偿期间内的实际营业收入与标准营业收入的差额，即：</p>
+							<p class="indent">毛利润率×（标准营业收入－赔偿期间内的实际营业收入）</p>
+							<p class="indent">本保险合同所称营业收入是指被保险人在营业过程中，因销售商品、提供劳务或者让渡资产使用权等实现的收入金额。</p>
+							<p class="indent">本保险合同所称毛利润率是指发生物质保险损失之日前最近一个完整的会计年度内的毛利润与营业收入的比率。</p>
+							<p class="indent">本保险合同所称标准营业收入是指发生物质保险损失之日前十二个月中与赔偿期间对应的日历期间的营业收入。</p>
+							<p class="indent">在赔偿期间内，被保险人或他人代其在保险合同载明的营业处所以外的地点从事保险合同载明的经营业务而取得的营业收入，应计算在赔偿期间内的实际营业收入内。</p>
+							<p class="indent">（二）经营费用增加导致的损失是指被保险人专门为避免或降低赔偿期间内营业收入的减少而额外支出的必要的、合理的经营费用或成本；如果不予支出，则赔偿期间内的营业收入就会因保险事故的发生而降低。但该项损失以不超过毛利润率乘以因花费该经营费用而避免降低的营业收入为限。</p>
+							<p class="indent">若投保人确定的维持费用仅包括营业所需的部分维持费用，则保险人对额外增加的经营费用的赔偿金额按照该经营费用乘以毛利润与毛利润加上未承保的维持费用的比例计算，即：</p>
+							<p class="indent">增加的经营费用×毛利润/（毛利润+未承保的维持费用）</p>
+							<p class="indent"><span class="heise">第二十五条</span>　若最大赔偿期小于或等于十二个月，且保险金额低于毛利润率与年度营业收入的乘积，则保险人对毛利润损失的赔偿金额应按保险金额和前述乘积的比例计算确定，即：</p>
+							<p class="indent">赔偿金额＝毛利润损失×保险金额/（毛利润率×年度营业收入）</p>
+							<p class="indent">若最大赔偿期大于十二个月，且保险金额低于毛利润率与年度营业收入及最大赔偿期与十二个月的比例的乘积，则保险人对毛利润损失的赔偿金额应按保险金额和前述乘积的比例计算确定，即：</p>
+							<p class="indent">赔偿金额＝毛利润损失×保险金额/（毛利润率×年度营业收入×最大赔偿期/12）。</p>
+							<p class="indent">本保险合同所称年度营业收入是指发生物质保险损失之日前十二个月内的营业收入。</p>
+							<p class="indent"><span class="heise">第二十六条</span>　被保险人、保险人应根据被保险人营业趋势及情况的变化、物质保险损失发生前后营业受影响的情况或若未发生物质保险损失原本会影响营业的其他情况对毛利润率、标准营业收入以及年度营业收入进行必要的调整，使调整后的数额尽可能合理地接近在赔偿期间内若未发生损失被保险人原本可以取得的经营成果。</p>
+							<p class="indent"><span class="heise">第二十七条</span>　若保险合同约定了免赔额，保险人按照第二十四条、第二十五条计算的毛利润损失扣除保险合同约定的免赔额计算毛利润损失赔偿金额。</p>
+							<p class="indent">若保险合同约定了免赔期，则免赔额为免赔期和赔偿期间的比例与按照本条款第二十四条、第二十五条计算出的毛利润损失的乘积。</p>
+							<p class="indent"><span class="heise">第二十八条</span>　因保险事故而发生的保险责任约定的审计费用，保险人按费用实际发生数予以赔偿，但最高不超过保险合同中载明的相应赔偿限额。</p>
+							<p class="indent"><span class="heise">第二十九条</span>　被保险人在请求赔偿时应当如实向保险人说明与本保险有关的其他保险合同的情况。保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第三十条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；<span class="heise">由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</span></p>
+							<p class="indent"><span class="heise">第三十一条</span>　保险人履行赔偿义务后，本保险合同的保险金额自物质保险损失发生之日起按保险人的赔偿金额相应减少，保险人不退还保险金额减少部分的保险费。如投保人请求恢复至原保险金额，应按原约定的保险费率另行支付恢复部分从投保人请求的恢复日期起至保险期间届满之日止按日比例计算的保险费。</p>
+							<p class="indent"><span class="heise">第三十二条</span>　被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。</p>
+							<p class="center-p">争议处理和法律适用</p>
+							<p class="indent"><span class="heise">第三十三条</span>　因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险合同载明的仲裁机构仲裁；保险合同未载明仲裁机构且争议发生后未达成仲裁协议的，可向人民法院起诉。</p>
+							<p class="indent"><span class="heise">第三十四条</span>　与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。</p>
+							<p class="center-p">其他事项</p>
+							<p class="indent"><span class="heise">第三十五条</span>　若被保险人聘请的注册会计师证明被保险人在与保险期间重合程度最高的一个会计年度内的毛利润（若最大赔偿期大于十二个月，则该毛利润金额应按照最大赔偿期与十二个月的比例扩大后计算）少于投保的保险金额，则被保险人可以在保险期间届满后六个月内向保险人提供书面退还多余保险费的申请，保险人按照保险金额减去前述毛利润的差额与保险金额的比例计算退还差额部分的保险费，但保险人退还保险费的比例最高不得超过保险期间内对该项保险金额所交保险费的百分之五十。</p>
+							<p class="indent">若被保险人在保险期间内因保险事故发生索赔，则应从保险金额中扣除保险人因此而支付的赔款金额后，再按照前款约定计算应退还的保险费。</p>
+							<p class="indent"><span class="heise">第三十六条</span>　保险责任开始前，投保人要求解除保险合同的，应当按本保险合同的约定向保险人支付退保手续费，保险人应当退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，投保人要求解除保险合同的，自通知保险人之日起，保险合同解除，保险人按短期费率计收保险责任开始之日起至合同解除之日止期间的保险费，并退还剩余部分保险费。</p>
+							<p class="indent">保险责任开始后，保险人要求解除保险合同的，可提前十五日向投保人发出解约通知书解除本保险合同，保险人按照保险责任开始之日起至合同解除之日止期间与保险期间的日比例计收保险费，并退还剩余部分保险费。</p>
+							<p class="table-title">附录：短期费率表</p>			
+							<table class="table table2">
+								<tr>
+									<th>保险期间</th>
+									<th>一个月</th>
+									<th>二个月</th>
+									<th>三个月</th>
+									<th>四个月</th>
+									<th>五个月</th>
+									<th>六个月</th>
+									<th>七个月</th>
+									<th>八个月</th>
+									<th>九个月</th>
+									<th>十个月</th>
+									<th>十一个月</th>
+									<th>十二个月</th>
+								</tr>	
+								<tr>
+									<td>年费率的百分比</td>
+									<td>10</td>
+									<td>20</td>
+									<td>30</td>
+									<td>40</td>
+									<td>50</td>
+									<td>60</td>
+									<td>70</td>
+									<td>80</td>
+									<td>85</td>
+									<td>90</td>
+									<td>95</td>
+									<td>100</td>
+								</tr>	
+							</table>
+							<p>注：不足一个月的部分按一个月计收。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加第三者责任保险条款C</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）的基础上，投保人可以投保本附加险。本附加险条款与主险条款相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在保险合同载明的地点范围内合法从事生产、经营等活动时发生意外事故，造成第三者的人身伤亡或财产损失，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人按照本附加险的约定负责赔偿。</p>
+							<p class="indent"><span class="heise">第三条</span>　被保险人因保险事故的发生而被提起仲裁或者诉讼的，对应由被保险人支付的仲裁或诉讼费用以及事先经保险人书面同意支付的其他必要的、合理的费用（以下简称“法律费用”），保险人按照本保险合同的约定也负责赔偿。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第四条　下列任一情形下的损失、费用或责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员因从事医师、律师、会计师、设计师、建筑师、美容师或其他专门职业所发生的赔偿责任；</p>
+							<p class="indent heise">（二）不洁、有害食物或饮料引起的食物中毒或传染性疾病，有缺陷的卫生装置，以及售出的商品、食物、饮料存在缺陷造成他人的损害；</p>
+							<p class="indent heise">（三）对于未载入本保险合同而属于被保险人的或其所占有的或以其名义使用的任何牲畜、车辆、火车头、各类船只、飞机、电梯、升降机、自动梯、起重机、吊车或其他升降装置造成的损失；</p>
+							<p class="indent heise">（四）由于震动、移动或减弱支撑引起任何土地、财产、建筑物的赔偿责任；</p>
+							<p class="indent heise">（五）被保险人因改变、维修或装修建筑物造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（六）未经有关监督管理部门验收或经验收不合格的固定场所或设备发生意外事故造成第三者人身伤亡或财产损失的赔偿责任；</p>
+							<p class="indent heise">（七）因保险固定场所周围建筑物发生火灾、爆炸波及保险固定场所，再经保险固定场所波及他处的火灾责任。</p>
+							<p class="indent heise">第五条　下列原因造成的损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）投保人、被保险人及其代表的故意或重大过失行为；</p>
+							<p class="indent heise">（二）战争、敌对行为、军事行为、武装冲突、罢工、骚乱、暴动、恐怖活动、盗窃、抢劫；</p>
+							<p class="indent heise">（三）行政行为或司法行为；</p>
+							<p class="indent heise">（四）核反应、核子辐射和放射性污染；</p>
+							<p class="indent heise">（五）地震、海啸、雷击、暴雨、洪水、火山爆发、地下火、龙卷风、台风、暴风、暴雪等自然灾害；</p>
+							<p class="indent heise">（六）烟熏、大气、土地、水污染及其他污染；</p>
+							<p class="indent heise">（七）锅炉爆炸、空中运行物体坠落。</p>
+							<p class="indent heise">第六条　被保险人的下列损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其代表、雇佣人员人身伤亡的赔偿责任，以及上述人员所有的或由其保管或控制的财产的损失；</p>
+							<p class="indent heise">（二）罚款、罚金或惩罚性赔款；</p>
+							<p class="indent heise">（三）被保险人与他人签订协议所约定的责任，但应由被保险人承担的法律责任除外；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）被保险人及第三者的一切间接损失；</p>
+							<p class="indent heise">（六）本保险合同中载明的免赔额，或根据本保险合同中载明的免赔率计算的金额；</p>
+							<p class="indent heise">（七）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的游泳池发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（八）被保险人因在本保险单列明的固定场所内布置的广告、霓虹灯、灯饰物发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（九）被保险人因在本保险单列明的地点范围内所拥有、使用或经营的停车场发生意外事故造成的第三者人身伤亡或财产损失；</p>
+							<p class="indent heise">（十）被保险人因出租房屋或建筑物发生火灾造成第三者人身伤亡或财产损失的赔偿责任。</p>
+							<p class="indent heise">第七条　其他不属于本保险责任范围内的一切损失、费用和责任，保险人不负责赔偿。</p>
+							<p class="center-p">赔偿限额与免赔额（率）</p>
+							<p class="indent"><span class="heise">第八条</span>　本附加险的赔偿限额包括累计赔偿限额、每次事故赔偿限额、每次事故每人人身伤亡赔偿限额、每次事故每人医疗费用赔偿限额和每次事故财产损失赔偿限额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第九条</span>　每次事故免赔额（率）由投保人与保险人在签订保险合同时协商确定，并在保险合同中载明。</p>
+							<p class="indent heise">保险合同中同时载明了免赔额和免赔率的，免赔金额以免赔额和按照免赔率计算的金额中的高者为准。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第十条</span>　保险人在本附加险项下的赔偿以下列方式之一确定的被保险人的赔偿责任为基础：</p>
+							<p class="indent">（一）被保险人和向其提出损害赔偿请求的索赔方的协商并经保险人确认；</p>
+							<p class="indent">（二）仲裁机构裁决；</p>
+							<p class="indent">（三）人民法院判决；</p>
+							<p class="indent">（四）保险人认可的其他方式。</p>
+							<p class="indent heise">第十一条　被保险人给第三者造成损害，被保险人未向该第三者赔偿的，保险人不得向被保险人赔偿保险金。</p>
+							<p class="indent"><span class="heise">第十二条</span>　保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过每次事故赔偿限额，且对于每人医疗费用的赔偿金额不超过每次事故每人医疗费用赔偿限额，对于每人财产损失的赔偿金额不超过每次事故财产损失赔偿限额，对每人人身伤亡的赔偿金额与每人医疗费用的赔偿金额合计不超过每次事故每人人身伤亡赔偿限额;</p>
+							<p class="indent">（二）保险人对每次事故发生的法律费用的赔偿金额与依据本条第一款计算的赔偿金额之和不超过每次事故赔偿限额；</p>
+							<p class="indent">（三）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过累计赔偿限额。</p>
+							<p class="indent"><span class="heise">第十三条</span>　保险期间内，被保险人在保险合同载明的地点范围内，合法从事生产、经营等活动时，由于同一原因发生意外事故造成多名第三者的人身伤亡或财产损失，应视为一次事故造成的损失。</p>
+							<p class="indent"><span class="heise">第十四条</span>　发生保险事故时，如果被保险人的损失在有相同保障的其他保险项下也能够获得赔偿，则本保险人按照本保险合同的赔偿限额与其他保险合同及本合同的赔偿限额总和的比例承担赔偿责任。</p>
+							<p class="indent heise">其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。</p>
+							<p class="indent"><span class="heise">第十五条</span>　发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况。</p>
+							<p class="indent">被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。</p>
+							<p class="indent"><span class="heise">保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；</span>保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加食品、饮料责任条款</p>
+							<p class="center-p">总则</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司财产基本险》、 《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）和《中国人寿财产保险股份有限公司财产保险附加第三者责任保险C》的基础上，投保人可以投保本附加险。</p>
+							<p class="indent">本附加险条款与主险条款及《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》内容相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款及财产保险附加第三者责任保险条款C为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="center-p">保险责任</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，在保险期间内，被保险人在本保险合同载明的地点范围内，因其提供的食品、饮料或卫生装置存在缺陷造成第三者人身伤亡或财产损失时，依照中华人民共和国法律（不包括港澳台地区法律）应由被保险人承担的经济赔偿责任，保险人依照本附加险约定负责赔偿。</p>
+							<p class="indent heise">被保险人应恪尽职责防止出售或提供任何不洁的或不符合食品安全国家标准的食品或饮料。</p>
+							<p class="center-p">除外责任</p>
+							<p class="indent heise">第三条　下列情形下的任何损失、费用和责任，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人未依法取得食品生产许可证、食品流通许可证或餐饮服务许可证，或持伪造、变造、过期的许可证，或许可证被撤销、吊销或注销的；</p>
+							<p class="indent heise">（二）被保险人从事与其食品生产、经营资质等级或许可范围不符的食品生产、经营活动的；</p>
+							<p class="indent heise">（三）被保险人在本保险合同载明的生产、经营场所外从事食品生产、经营活动的；</p>
+							<p class="indent heise">（四）被保险人生产、经营食品安全法律、法规或规定禁止生产经营的食品、食品添加剂或食品相关产品的，或未按食品安全法律、法规或规定获批准生产、经营的；</p>
+							<p class="indent heise">（五）被保险人生产、经营超过保质期的食品、食品添加剂或食品相关产品，或违法私自更改生产日期或保质期的；</p>
+							<p class="indent heise">（六）被保险人生产、经营营养成分不符合食品安全标准的专供婴幼儿和其他特定人群的主辅食品的；</p>
+							<p class="indent heise">（七）被保险人使用患有痢疾、伤寒、病毒性肝炎等消化道传染病，以及患有活动性肺结核、化脓性或者渗出性皮肤病等有碍食品安全的疾病的人员从事接触直接入口食品的工作的；</p>
+							<p class="indent heise">（八）由食品、食品添加剂或食品相关产品引起的任何慢性病、代谢病，如糖尿病、高血压等；</p>
+							<p class="indent heise">（九）由食品、食品添加剂或食品相关产品引起的传染性疾病的传播；</p>
+							<p class="indent heise">（十）受害人自身的疾病，或特异体质引起的食物过敏；</p>
+							<p class="indent heise">（十一）在食品中添加药品的，但按照传统既是食品又是中药材的物质除外；</p>
+							<p class="indent heise">（十二）食品、食品添加剂或食品相关产品投入流通时的科学技术水平尚不能发现缺陷的存在的；</p>
+							<p class="indent heise">（十三）投保人或被保险人在投保时已经知道或可以合理预见索赔发生的。</p>
+							<p class="indent heise">第四条　下列损失、费用和责任，保险人也不负责赔偿：</p>
+							<p class="indent heise">（一）被保险人或其雇员的人身伤亡及其所有或管理的财产的损失；</p>
+							<p class="indent heise">（二）被保险人应该承担的合同责任，但无合同存在时依法仍然应由被保险人承担的经济赔偿责任不在此限；</p>
+							<p class="indent heise">（三）罚款、罚金及惩罚性赔偿；</p>
+							<p class="indent heise">（四）精神损害赔偿；</p>
+							<p class="indent heise">（五）间接损失；</p>
+							<p class="indent heise">（六）食品、食品添加剂或食品相关产品本身的损失；</p>
+							<p class="indent heise">（七）被保险人对食品、食品添加剂或食品相关产品进行更换、退货、召回、补救、无害化处理或销毁造成的损失和费用;</p>
+							<p class="indent heise">（八）其他不属于保险责任范围的损失、费用和责任。</p>
+							<p class="center-p">赔偿限额、每次事故免赔额</p>
+							<p class="indent"><span class="heise">第五条</span>　本附加险项下的赔偿限额包括每次事故赔偿限额、每次事故每人赔偿限额、累计赔偿限额、每次事故免赔额，由投保人和保险人协商确定,并在保险合同中载明。</p>
+							<p class="center-p">赔偿处理</p>
+							<p class="indent"><span class="heise">第六条</span>　发生本附加险项下的保险事故，保险人按照以下方式计算赔偿：</p>
+							<p class="indent">（一）对于每次事故造成的损失，保险人按照《中国人寿财产保险股份有限公司财产保险附加第三者责任保险条款C》第十条确定的应由被保险人承担的赔偿金额扣除每次事故免赔额后计算赔款，但最高不超过本附加险项下每次事故赔偿限额，且对于每人的赔偿金额不超过本附加险项下的每次事故每人赔偿限额；</p>
+							<p class="indent">（二）保险期间内，保险人对一次或多次事故的累计赔偿金额不超过本附加险项下的累计赔偿限额。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加水箱、水管爆裂扩展条款</p>
+							<p class="indent">兹经双方同意，由于水箱、水管因雷电、飞行物体及其他空中运行物体坠落、高压、碰撞、严寒、高温造成爆裂，致使其本身损失以及由此引起的其他保险标的损失，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent heise">但由于下列原因造成保险标的损失，保险人不负责赔偿：</p>
+							<p class="indent heise">（一）水箱或水管安装、检修、试水、试压；</p>
+							<p class="indent heise">（二）水箱、水管年久失修以及未采取必要的防护措施；</p>
+							<p class="indent heise">（三）水箱、水管本身的质量缺陷；</p>
+							<p class="indent heise">（四）临时性管道的爆裂。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加清理残骸费用扩展条款</p>
+							<p class="indent">兹经双方同意，因发生保险责任范围内的损失而产生的清除、拆除或支撑受损保险标的的费用，保险人按照本保险合同的约定负责赔偿。</p>
+							<p class="indent">本附加条款项下保险人的赔偿责任不超过本保险合同中载明的相应赔偿限额。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">营业中断保险附加赔偿处理标准条款</p>
+							<p class="indent"><span class="heise">第一条</span>　在投保《中国人寿财产保险股份有限公司营业中断保险条款》（以下简称“主险”），并同时投保《中国人寿财产保险股份有限公司财产基本险》、《中国人寿财产保险股份有限公司财产综合险》、《中国人寿财产保险股份有限公司财产一切险》中任一物质损失保险的基础上，投保人可以投保本附加险。本附加险条款与主险条款内容相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦终止；主险无效，本附加险亦无效。</p>
+							<p class="indent"><span class="heise">第二条</span>　兹经保险合同双方同意，主险条款第三条第一款：“在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，由此产生的赔偿期间内的毛利润损失，保险人按照本保险合同的约定负责赔偿。”变更为：“在保险期间内，被保险人因物质损失保险合同主险条款所承保的风险造成营业所使用的物质财产遭受损失（以下简称“物质保险损失”），导致被保险人营业受到干扰或中断，保险人按照本附加险的约定，在营业中断保险金额范围内负责赔偿。”</p>
+							<p class="indent"><span class="heise">第三条</span>　每日赔偿限额的金额由投保人与保险人协商确定并在保险合同中载明。</p>
+							<p class="indent"><span class="heise">第四条</span>　本附加险项下营业中断保险金额为每日赔偿限额与最大赔偿期间天数的乘积，但最高不超过物质损失保险合同保险金额的10%。</p>
+							<p class="indent"><span class="heise">第五条</span>　投保人投保本附加险的，主险条款第二十四条、第二十五条、第二十六条中关于以毛利润损失计算赔偿的约定不再适用。</p>
+							<p class="indent"><span class="heise">第六条</span>　对于被保险人遭受的营业中断损失，保险人按以下方式计算赔偿：</p>
+							<p class="indent">（一）被保险人在赔偿期间内的每日平均利润损失高于保险合同中载明的每日赔偿限额的，保险人按每日赔偿限额与赔偿期间的乘积计算赔偿；</p>
+							<p class="indent">（二）被保险人在赔偿期间内的每日平均利润损失低于保险合同中载明的每日赔偿限额的，保险人按每日利润损失与赔偿期间的乘积计算赔偿。</p>
+							<p class="indent">其中，每日平均利润损失为赔偿期间内按照营业收入的减少计算的损失。</p>
+							<p class="indent"><span class="heise">第七条</span>　保险合同中约定了免赔额或免赔期的，保险人按照本附加险计算的赔偿金额，扣除保险合同约定的免赔额或者按免赔期与每日赔偿限额乘积计算的金额后计算赔偿金额。</p>
+							<p class="indent"><span class="heise">第八条</span>　被保险人按本附加险的约定请求赔偿保险金时，无需履行主险条款第二十二条第（一）款约定的“相关的会计凭证及账表、单据”的提供义务。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加冷库条款B</p>
+							<p class="indent"><span class="heise">在投保《中国人寿财产保险股份有限公司财产基本险》、 《中国人寿财产保险股份有限公司财产综合险》、 《中国人寿财产保险股份有限公司财产一切险》（以下简称“主险”）的基础上，投保人可以投保本附加险。</span>本附加险条款与主险条款相悖之处，以本附加险条款为准；本附加险条款未尽事宜，以主险条款为准。主险效力终止，本附加险效力亦同时终止；主险无效，本附加险亦无效。</p>
+							<p class="indent">兹经保险合同双方同意，在保险期间内，本保险合同扩展承保存放在保险合同载明的地点内的冷藏库中的物品由于下列原因导致的冷藏库连续八个小时无法发挥功能，进而导致冷藏库中的物品变质或腐烂而造成的损失：</p>
+							<p class="indent">（一）由于发生主险保险责任范围内的保险事故，致使冷藏库设备器具损坏、停止或不能运作；</p>
+							<p class="indent">（二）由于自然灾害或意外事故导致公共供电、供水、供气突然中断；</p>
+							<p class="indent">（三）由于冷藏库设备器具的内在原因造成损坏、停止或不能运作；</p>
+							<p class="indent">（四）由于制冷气体从冷藏库设备器具中溢出。</p>
+							<p class="indent">对任何三年以上的冷藏设备，被保险人必须保证由具备资质的冷冻工程师/公司进行定期维修并保留相关记录证明。<span class="heise">否则，保险人对未定期维修导致的损失不承担赔偿责任。</span></p>
+							<p class="indent heise">以下情况，保险人不承担本附加险项下的赔偿责任：</p>
+							<p class="indent heise">（一） 由于公共事业当局已至少提前24小时对即将发生的中断供电、供气，或抑制或管制供电、供气的行为进行预告或通知后，被保险人仍由于公共供电、供气中断的行为而造成的损失；</p>
+							<p class="indent heise">（二）冷藏库连续失效时间小于八个小时造成的损失；</p>
+							<p class="indent heise">（三）使用超过十年以上的冷藏库设备器具内的物品的变质或腐烂而造成的损失。</p>
+							<p class="indent">本附加险项下的保险金额由投保人与保险人协商确定,并在保险合同中载明。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加小额现金扩展条款</p>
+							<p class="indent">兹经双方同意，本保险扩展承保存放于被保险人办公场所内的小额现金损失，如因盗窃丢失，须有明显的盗窃痕迹。</p>
+							<p class="indent">本附加险条款每次事故赔偿限额、累计责任限额和每次事故免赔额由投保人与保险人协商确定，并在保险合同中载明。</p>
+							<p class="indent">本附加险条款与主险条款内容相悖之处，以本附加险条款为准；未尽之处，以主险条款为准。</p>
+							<p class="center-p db-margtop">中国人寿财产保险股份有限公司</p>
+							<p class="center-p">财产保险附加放弃比例分摊扩展条款</p>
+							<p class="indent">兹经双方同意，保险人视本保险单为足额投保，发生保险责任范围内的损失，保险人在保险金额内按实际损失计算赔偿，不作比例分摊。若本保险合同所列标的物不止一项时，应逐项分别计算各自赔偿金额。保险期间内累计赔偿金额仍以总保险金额为限。</p>
+							<p class="indent">本附加条款与主条款内容相悖之处，以本附加条款为准；未尽之处，以主条款为准。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script src="../../js/mobiscroll.core-2.5.2.js" type="text/javascript"></script> 
+	<script src="../../js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+	<script src="../../js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/downBox.js"></script>
+	<script type="text/javascript" src="../../js/timeHelper.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+	<script type="text/javascript" src="../../js/immediately-Insure.js"></script>
+</html>

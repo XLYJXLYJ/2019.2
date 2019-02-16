@@ -1,0 +1,267 @@
+.ov_hi {
+	overflow: hidden;
+}
+
+.alwaysShow td {
+	position: relative;
+}
+
+.alwaysShow td .df-class {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+}
+
+.df-persp,
+.persp-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 6000;
+	pointer-events: auto;
+	/*禁止事件穿透*/
+}
+
+.persp-bg {
+	-webkit-opacity: 0.5;
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 1;
+}
+
+.df-box {
+	min-width: 17rem;
+	height:28rem;
+	background: #fff;
+	border-radius: 10px;
+	font-size: 12px;
+	text-shadow: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 2;
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-ms-touch-action: none;
+	overflow: hidden;
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding-top: 1rem;
+}
+
+.df-main {
+	/*padding: 10px;*/
+}
+
+.df-item {
+	position: relative;
+	overflow: hidden;
+}
+
+.df-item .G-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.G-top {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: linear-gradient(#fff 0%, rgba(255, 255, 255, .85)45%, rgba(255, 255, 255, .6) 75%, rgba(255, 255, 255, .4) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.45, rgba(255, 255, 255, .85)), color-stop(0.75, rgba(255, 255, 255, .6)), to(rgba(255, 255, 255, .4)));
+	background: -moz-linear-gradient(#fff 0%, rgba(255, 255, 255, .85) 45%, rgba(255, 255, 255, .6) 75%, rgba(255, 255, 255, .4) 100%);
+	background: -o-linear-gradient(#fff 0%, rgba(255, 255, 255, .85) 45%, rgba(255, 255, 255, .6) 75%, rgba(255, 255, 255, .4) 100%);
+}
+
+.G-mid {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.G-btm {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: linear-gradient(rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .6)25%, rgba(255, 255, 255, .85) 65%, #fff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .4)), color-stop(0.25, rgba(255, 255, 255, .6)), color-stop(0.65, rgba(255, 255, 255, .85)), to(#fff));
+	background: -moz-linear-gradient(rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .6) 25%, rgba(255, 255, 255, .85) 48%, #fff 100%);
+	background: -o-linear-gradient(rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .6) 25%, rgba(255, 255, 255, .85) 48%, #fff 100%);
+}
+
+.df-ctn {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 2px;
+	position: relative;
+	background: #000;
+	zoom: 1;
+}
+
+.df-wrap {
+	display: inline-block;
+}
+
+.df-strip {
+	position: relative;
+	z-index: 2;
+}
+
+.df-ul {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.df-li {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 5px;
+	display: block;
+	text-align: center;
+	vertical-align: bottom;
+	filter: Alpha(Opacity=90);
+	/* text-shadow: 0 1px 1px #000;*/
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+.df-class {
+	font-size: 18px;
+}
+
+.df-btn {
+	display: block;
+}
+
+.df-btn div {
+	display: inline-block;
+	width: 40%;
+	cursor: pointer;
+	border: .1rem solid #ddd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-radius: .3rem;
+}
+.df-btn .df-ok {margin-left: 1rem;border-color: #524AE7;}
+
+.df-btn div:active {
+	background: #f60;
+	color: #fff;
+	border: 1px solid #f60;
+}
+.df-hide {
+	visibility: hidden;
+}
+
+
+
+.fix-cont,#check-typeInit1,#check-typeInit2 {
+    min-height: 9rem;
+    max-height: 18rem;
+    background: #fff;
+    z-index: 11;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    overflow-y: auto;
+}
+.fix-cont li,#check-typeInit1 li,#check-typeInit2 li {
+    height: 4.4rem;
+    border-bottom: 1px solid #e4e3f5;
+    line-height: 4.4rem;
+    color: #35313f;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.fix-cont li.active,#check-typeInit1 li.active,#check-typeInit2 li.active {
+    color: #524ae7;
+    background-color: #FFFFFF;
+}
+#check-typeInit1,#check-typeInit2 {display: none;}
+
+.buyUl .Validform_checktip {padding: 0;font-size: 1.2rem;margin-top: 0;}
+.personPic {border: none;}
+
+.indexUl {padding: .8rem 0;}
+.indexUl li {width: 49%;}
+.ul_contain>li {margin-top: 1rem;padding: .86rem 1.2rem;font-size: 1.4rem;background-color: #FFFFFF;position: relative;line-height: 2.2rem;}
+.leftDiv {float: left;width: 24%;height: 2.6rem;line-height: 2.8rem;box-sizing: border-box;}
+.rightDiv {position: absolute;right: 0;top: 1.2rem;}
+.rightDivFirst {right: 1.2rem;}
+.midDiv {float: left;width: 76%; box-sizing: border-box;}
+.midDiv input {border: none;font-size: 1.4rem;width: 100%;padding: .6rem 0;color: #35313F;background-color: #FFFFFF;box-sizing: border-box;padding-right: .8rem;}
+.rightDiv img {width: .7rem;height: 1.35rem;}
+.midDiv .selectProduct {color: #524AE7;}
+.ul_contain .clear .strong {
+    border-left: .4rem solid #524AE7;
+    padding-left: .3rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    margin: .5rem 0;
+}
+.midUl li {border-bottom: .02rem solid #E9E9F4;padding: .8rem 0;position: relative;}
+.midUl .lastLi {border: none;padding-bottom: .2rem;}
+.midDiv .moneyRed {color: red;}
+.main_index {padding-bottom: 4rem;}
+
+
+/*选择城市*/
+.footer-p {position: fixed;bottom:0;padding: 0;width: 100%;background-color: #FFFFFF;color: #727689;font-size: 1.6rem;z-index: 9;}
+.ul-div-head {width: 100%;height: 4.2rem;line-height: 4.2rem;box-sizing: border-box;color: #35313f;text-align: left;padding-left: 2.2rem;background-color: #FFFFFF;border-bottom: .1rem solid #E9E9F4;}
+.ul-div-body {width: 100%;text-align: center;}
+.ul-div-body .active {background-color: #524AE7;color: #FFFFFF;}
+.left {float: left;width: 30%;height: 42rem;overflow-y: auto;background-color: #eeeeee;}
+.right {float: left;width: 70%;height: 42rem;overflow-y: auto;}
+.ul-div-body span {display: block;width: 100%;height: 4.7rem;line-height: 4.7rem;box-sizing: border-box;}
+.right span {border-bottom: .1rem solid #E9E9F4;}
+
+.ovfHiden{overflow: hidden;height: 100%;}
+
+
+.dw-bottom,.dw-persp {height: 100%!important;width: 100%!important;position: fixed!important;top: 0!important;left: 0!important;}
+
+.mbsc-ios .dwo {
+    background: rgba(3,3,3,.7);
+    filter: Alpha(Opacity=70);
+}
+
+.dw-bottom .dw {
+    position: absolute!important;
+    top: 33%!important;}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name = "format-detection" content = "telephone = no" />
+		<title>企保招招-常用企业</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="../js/selectivizr.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/moxie.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/plupload.dev.js"></script>
+		<script src="http://static01.qibaozz.com/upload/plupload-2.1.2/js/i18n/zh_CN.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qiniu.js"></script>
+		<script src="http://static01.qibaozz.com/upload/qibao.js"></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li class="active">
+								<div class="img enterprise"></div>
+								<a href="enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img points"></div>
+								<a href="points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<!-- 放大营业执照 -->
+			<div class="zhizhao_pic">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<img src="" alt=""  class="mid_pic"/>
+			</div>
+		</div>
+		<!--上传营业执照认证弹框-->
+		<div class="check_id_fix hide">
+			<div class=" check_id" id="container">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div id="up-img">上传营业执照认证</div>
+				<div class="invite_cont uplaod">
+					<div>
+						<img id="upload_display_1" src="../img/upload.jpg" />
+					</div>
+					<button class="sure_up sure_up_scan" id="pickfiles_1">浏览</button>
+				</div>
+				<input type="hidden" name="license" id="uploaded_key" value="" datatype="*" nullmsg="请上传名片认证">
+					
+				<div class="percentage" id="upload_show_process_area_1"></div>
+
+				<div class="check_id_tips">
+					<p class="check_id_tips_titl">温馨提示：</p>
+					<p class="check_id_tips_cont">1.请尽量控制上传文件大小在1M以内，以免因本地网络原因造成上传时间过长。</p>
+					<p class="check_id_tips_cont">2.名片上传后，我们将在5分钟后完成审核，请确保上传的图片足够清晰。</p>
+				</div>
+				<span class="sure_up sure_up_ok">确认上传</span>
+			</div>
+		</div>
+		<div class="content clear" id="enterprise">
+			<span class="title_span">常用企业管理</span>
+			<a href="changyongqiye/addenterprise.html" class="addenterprise">+ 新增</a>
+			<div class="padding">
+				<table> 
+					<tr>
+						<th>序号</th>
+						<th>企业名称</th>
+						<th>统一社会信用代码</th>
+						<th>联系人</th>
+						<th>联系电话</th>
+						<th>保单邮寄地址</th>
+						<th>营业执照</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>91440300MC8LBKQR9E</td>
+						<td>Alex Wang</td>
+						<td>020-84891371</td>
+						<td>广东省深圳市南山区科文路****</td>
+						<td>
+							<div class="uplaodDiv2 ">
+								<img class="picNo click-sure" src="../img/delete-line-pic.png" data-message="是否对该选中的图片进行删除" data-url=""/>
+								<img class="uplaodPic" src="../img/upload.jpg" />
+							</div>
+						</td>
+						<td class=" ie8-back">
+							<a href='javascript:;' class="insure">编辑</a>
+							<a href='javascript:;' class="">客户风险</a>
+							<img src="../img/delete-ico.png" data-url="" data-message="是否对该选中常用企业进行删除？" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>91440300MC8LBKQR9E</td>
+						<td>Alex Wang</td>
+						<td>020-84891371</td>
+						<td>广东省深圳市南山区科文路****</td>
+						<td>
+							<p>未上传</p>
+							<a href="javascript:;" class="upload">（点击上传）</a>
+						</td>
+						<td class=" ie8-back">
+							<a href='javascript:;' class="insure">编辑</a>
+							<img src="../img/delete-ico.png" data-url="" data-message="是否对该选中常用企业进行删除？" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>91440300MC8LBKQR9E</td>
+						<td>Alex Wang</td>
+						<td>13751228309</td>
+						<td>广东省深圳市南山区科文路****</td>
+						<td>
+							<div class="uplaodDiv2 ">
+								<img class="picNo click-sure" src="../img/delete-line-pic.png" data-message="是否对该选中的图片进行删除" data-url=""/>
+								<img class="uplaodPic" src="../img/upload.jpg" />
+							</div>
+						</td>
+						<td class=" ie8-back">
+							<a href='javascript:;' class="insure">编辑</a>
+							<img src="../img/delete-ico.png" data-url="" data-message="是否对该选中常用企业进行删除？" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>91440300MC8LBKQR9E</td>
+						<td>Alex Wang</td>
+						<td>13751228309</td>
+						<td>广东省深圳市南山区科文路****</td>
+						<td>
+							<p>上传失败</p>
+							<a href="javascript:;" class="upload">（再次上传）</a>
+						</td>
+						<td class=" ie8-back">
+							<a href='javascript:;' class="insure">编辑</a>
+							<img src="../img/delete-ico.png" data-url="" data-message="是否对该选中常用企业进行删除？" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		<div class="list_none">
+			<img src="../img/list-none.png" alt="" />
+		</div>
+		<div class="nubs">
+			<div class="nub">
+				<img src="../img/left-go.png" alt="" class="img_left"/>
+				<span class="check">1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+				<span>5</span>
+				<img src="../img/right-go.png" alt="" class="img_right"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/bounced.js" ></script>
+	<script type="text/javascript" src="../js/enterprise.js" ></script>
+</html>

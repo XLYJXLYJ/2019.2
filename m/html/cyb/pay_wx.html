@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>餐饮保</title>
+		<link rel="stylesheet" type="text/css" href="../../css/cyb.css"/>
+	</head>
+	<body style="background-color: #f4f4f5;">
+		<div class="header">
+			<a href="javascript:history.go(-1);" class="back">
+				<img src="../../img/back.png" alt="" />
+				<span>返回</span>
+			</a>
+			<p>微信支付</p>
+		</div>
+		<div class="contents" id="pay_wx">
+			<div class="pay_cont">
+				<p class="pay_contTitl">微信支付</p>
+				<div class="div_img">
+					<img src="../../img/loading.gif" />
+				</div>
+				<p class="pay_bottom">长按二维码，选择识别二维码，即可支付</p>
+			</div>
+		</div>	
+		
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script>
+	//支付
+		function requestPayStatus() {
+			var order_id = $('#payParam').data('order_id');
+			var amount =  $('#payParam').data('amount');
+			var tp =  $('#payParam').data('pay_type');
+			var url =  $('#payParam').data('url');
+			var type=$('#payParam').data('type');
+			$.ajax({
+				type: 'GET',
+				url: '/api/payment/ajax/get/pay_status',
+				dataType: 'json',
+				data: {
+					'order_id': order_id,
+					'type': type
+				},
+				success: function(res) {
+					if(res && res.code === 200) {
+						if(res.data == true) {
+							location.href = '/api/payment/pay_success?pay_type='+tp+'&amount=' + amount+'&url='+url;
+						}
+					}
+				}
+			});
+		};
+		
+		//支付方式
+		var time;
+		$(window).load(function(){
+			$.ajax({
+				type: 'GET',
+				url: '/api/payment/weixin_pay',
+				dataType: 'json',
+				data:$('#YeepayPayForm').serialize(),
+				success: function(res) {
+					if(res) {
+						$(".div_img img").addClass("erwei").attr('src', res);
+						time=setInterval(function(){requestPayStatus();}, 2000);
+					}
+				}
+			});
+			return false;
+		});		
+	</script>
+</html>

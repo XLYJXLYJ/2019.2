@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发布-项目信息-短期出口贸易信用保险小微企业综合保险</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/ProjectInformation.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/selectivizr.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li>
+							<li class="special-parity active">
+								<div class="img release"></div>
+								<a href="../release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿箱</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="../customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li><span>　————　</span><span class="big-step">03</span><span>企业信息&支付说明</span></li>
+				<li><span>　————　</span><span class="big-step">04</span><span>选择保险品牌</span></li>
+			</ol>
+			 <form class="myform">
+			 	<div class="project">
+					<div class="content_title">项目信息</div>
+					<ul class="clear">
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">项目名称：</span>
+								<img src="../../../img/key.png" alt="" class="first_img"/>
+							</div>
+							<div class="project_right color_red">
+								<input type="text" class="first_input" placeholder="自动生成（公司名+年份+险种，可编辑）" datatype="*2-150" nullmsg="请输入项目名称" errormsg="项目名称在2-150个字符内"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>险种名称：</span>
+							</div>
+							<div class="project_right">
+								<span class="heise">短期出口贸易信用保险小微企业综合保险 </span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>币种选择：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect1">
+								<select name="" id="" class="duan">
+									<option value="">CNY</option>
+									<option value="">HKD</option>
+									<option value="">USD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">JPY</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>保险期限：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right fudong">
+								<div class="spSlect1">
+									<select name="" id="need" class="duan">
+										<option value="12">12个月</option>
+										<option value="11">11个月</option>
+										<option value="10">10个月</option>
+										<option value="9">9个月</option>
+										<option value="8">8个月</option>
+										<option value="7">7个月</option>
+										<option value="6">6个月</option>
+										<option value="5">5个月</option>
+										<option value="4">4个月</option>
+										<option value="3">3个月</option>
+										<option value="2">2个月</option>
+										<option value="1">1个月</option>
+									</select>
+								</div>
+								<span>自　</span>
+								<div class="riqi">
+									<input id="datetimepicker1" type="text" readonly="true"/>
+									<span class="Validform_checktip tell">请选择日期</span>
+								</div>
+								<span>零时起至　</span>
+								<div class="riqi">
+									<input id="datetimepicker2" type="text" readonly="true"/>
+								</div>
+								<span>二十四时止</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>企业经营性质：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right setting">
+								<label class="company-kind">
+									<input type="radio" name="kinds" checked="checked"/>贸易公司
+								</label>
+								<label class="company-kind">
+									<input type="radio" name="kinds"/>贸易代理
+								</label>
+								<label class="company-kind">
+									<input type="radio" name="kinds"/>生产性企业
+								</label>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>企业海关代码：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right p-inpt color_red">
+								<input type="text"  datatype="Customs" nullmsg="请输入企业海关代码" errormsg="企业海关代码为10位数数字"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>上年出口总额：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right p-inpt color_red">
+								<input type="text" class="input-prices"  datatype="price" nullmsg="请输入金额" errormsg="只能由数字或小数点组成且大于零"/>　<span>美元</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>本年预计总额：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right p-inpt color_red">
+								<input type="text" class="input-prices"  datatype="price" nullmsg="请输入金额" errormsg="只能由数字或小数点组成且大于零"/>　<span>美元</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>产品类型：</span>
+							</div>
+							<div class="project_right ">
+								<textarea></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>赔偿限额：</span>
+							</div>
+							<div class="project_right ">
+								<textarea></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>特别约定：</span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput2" ></textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>争议处理：</span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right do">
+								<span>向北京市仲裁委员会申请仲裁。</span>
+							</div>
+						</li>
+					</ul>
+				</div>	
+				<div class="accessory">
+					<div class="content_title">附件</div>
+					<ul class="clear">
+						<li class="clear first_accessory">
+							<div class="project_left ">
+								<span class="first_span">标准投保单：</span>
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input" ></span>
+									<label><input type="file" class="input_file"/>点击上传</label>
+								</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear accessory_li">
+							<div class="project_left ">
+								<input type="text" />
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input" ></span>
+									<label><input type="file" class="input_file"/>点击上传</label>
+									<div class="reduce"></div>
+								</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear infor">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<span>如果需填写更多信息，可增加填写栏目</span>
+								<div class="add_img2"></div>
+							</div>
+						</li>
+						<li class="clear last_end">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<button href="enterpriseIinformation.html" class="nexts">下一步</button>
+								<a href="javascript:history.go(-1);" class="up">上一步</a>
+								<button href="javascript:;" class="hold">保存草稿</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/ProjectInformation.js" ></script>
+	<script type="text/javascript" src="../../js/timeHelper.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+	<script type="text/javascript" src="../../js/input-prices.js"></script>
+</html>
+

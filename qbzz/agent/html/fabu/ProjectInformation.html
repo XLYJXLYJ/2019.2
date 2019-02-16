@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发布-项目信息-雇主</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/ProjectInformation.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body id="poject">
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li>
+							<li class="special-parity active">
+								<div class="img release"></div>
+								<a href="../release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿箱</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="../customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li><span>　————　</span><span class="big-step">03</span><span>企业信息&支付说明</span></li>
+				<li><span>　————　</span><span class="big-step">04</span><span>选择保险品牌</span></li>
+			</ol>
+			<form class="myform">
+			 	<div class="project">
+					<div class="content_title">项目信息</div>
+					<ul class="clear">
+						<li class="clear">
+							<div class="project_left">
+								<span class="first_span">项目名称：<i></i></span>
+								<img src="../../../img/key.png" alt="" class="first_img"/>
+							</div>
+							<div class="project_right color_red">
+								<input type="text" class="first_input" placeholder="自动生成（公司名+年份+险种，可编辑）" datatype="name" nullmsg="请输入项目名称" errormsg="项目名称在2-150个字符内"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>险种名称：<i></i></span>
+							</div>
+							<div class="project_right">
+								<span class="heise">雇主责任险</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>币种选择：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect1">
+								<select name="" id="" class="duan">
+									<option value="">CNY</option>
+									<option value="">HKD</option>
+									<option value="">USD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">JPY</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>保险期限：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right fudong">
+								<div class="spSlect1">
+									<select name="" id="need" class="duan">
+										<option value="12">12个月</option>
+										<option value="11">11个月</option>
+										<option value="10">10个月</option>
+										<option value="9">9个月</option>
+										<option value="8">8个月</option>
+										<option value="7">7个月</option>
+										<option value="6">6个月</option>
+										<option value="5">5个月</option>
+										<option value="4">4个月</option>
+										<option value="3">3个月</option>
+										<option value="2">2个月</option>
+										<option value="1">1个月</option>
+									</select>
+								</div>
+								<span>自　</span>
+								<div class="riqi">
+									<input id="datetimepicker1" type="text" readonly="true"/>
+									<span class="Validform_checktip tell">请选择日期</span>
+								</div>
+								<span>零时起至　</span>
+								<div class="riqi">
+									<input id="datetimepicker2" type="text" readonly="true"/>
+								</div>
+								<span>二十四时止</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>行业性质：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right industry">
+								<span class="spSlect2">
+									<select name="" id="">
+										<option value="">请选择（一级）</option>
+									</select>
+								</span>
+								<span class="spSlect2">
+									<select name="" id="">
+										<option value="">请选择（二级）</option>
+									</select>
+								</span>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>投保方案：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right add_parent">
+								<div class="group">
+									<div class="group_fix clear">
+										<p class="add_group"></p>
+										<span>（点击增加分组）</span>
+									</div>
+									<div class="group_top clear">
+										<div class="group_top_left">
+											<span class="fenzu">分组 <span class="fenzu_nub">1</span></span>
+											<input type="text" placeholder="分组备注" datatype="*1-5" nullmsg="请输入备注内容" errormsg="分组备注不能超过5个字符"/>
+										</div>
+										<div class="group_top_right">
+											<span>本组投保人数</span>
+											<input type="text" value="" placeholder="0" datatype="number" nullmsg="请输入投保人数" errormsg="大于零的数字" class="nub"/>
+											<span>人</span>
+										</div>
+									</div>
+									<div class="group_bottom clear">
+										<ol class="first_ol">
+											<li></li>
+											<li>死亡、伤残赔偿限额</li>
+											<li>医疗费用赔偿限额</li>
+											<li>附加住院津贴</li>
+										</ol>
+										<ol class="check other_ol">
+											<li><label><input type="radio" name="plan" checked="checked"/> 方案 <span>A</span></label></li>
+											<li>10万元</li>
+											<li>1万元</li>
+											<li>100元/天</li>
+										</ol>
+										<ol class="other_ol">
+											<li><label><input type="radio" name="plan" /> 方案 <span>B</span></label></li>
+											<li>20万元</li>
+											<li>2万元</li>
+											<li>100元/天</li>
+										</ol>
+										<ol class="other_ol">
+											<li><label><input type="radio" name="plan" /> 方案 <span>C</span></label></li>
+											<li>50万元</li>
+											<li>5万元</li>
+											<li>100元/天</li>
+										</ol>
+										<ol class="last_ol">
+											<li><label><input type="radio" name="plan" class="sub_check"/> 方案 <span>D</span></label></li>
+											<li><input type="text" class="nub_input nub_input0" /> 万元<span class="Validform_checktip tell">输入大于零的数字</span></li>
+											<li><input type="text" class="nub_input1"  /> 万元<span class="Validform_checktip tell">输入大于零的数字且最多一位小数</span></li>
+											<li><input type="text" class="nub_input"  />元/天<span class="Validform_checktip tell">输入大于零的数字</span></li>
+										</ol>
+										<input type="hidden"  class="suzu" value="A" name="scheme[]"/>
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>投保总人数：<i></i></span>
+							</div>
+							<div class="project_right">
+								<span class="heise all_nub">0</span><span>人</span>
+								<input type="hidden" value="" class="nub_all"/>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>责任范围：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect2">
+								<select name="" id="" class="lang">
+									<option value="">中华人民共和国（不含港、澳、台地区）</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>司法管辖：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right divSlect2">
+								<select name="" id="" class="lang">
+									<option value="">中华人民共和国（不含港、澳、台地区）</option>
+								</select>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>争议处理：<i></i></span>
+								<img src="../../../img/key.png" alt="" />
+							</div>
+							<div class="project_right do">
+								<p class="tit_p">因本合同或与本合同有关争议，双方因通过协商解决，协商解决不成，采取下列方式之一解决。</p>
+								<label class="secai"><input type="radio" name="do" checked="checked"/> 向人民法院起诉</label>
+								<label><input type="radio" name="do"/> 向仲裁委员会申请仲裁</label>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>免赔额：<i></i></span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput1">1、24小时扩展条款（扩展承保被保险人的员工在7*24小时内发生意外伤亡事故时被保险人依法应承担的经济赔偿责任)，本条款会影响报价金额。&#10;2、医疗费用：每次事故绝对免赔额CNY100元，100%给付比例&#10;3、附加住院津贴：每次事故免赔3天，单次事故最大赔偿天数为180天</textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>特别约定：<i></i></span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput2" >1、本保单采用记名方式进行投保</textarea>
+							</div>
+						</li>
+						<li class="clear">
+							<div class="project_left">
+								<span>附加条款：<i></i></span>
+							</div>
+							<div class="project_right">
+								<textarea id="myinput3" >1、附加24小时条款</textarea>
+							</div>
+						</li>
+					</ul>
+				</div>	
+				<div class="accessory">
+					<div class="content_title">附件</div>
+					<ul class="clear">
+						<li class="clear first_accessory">
+							<div class="project_left ">
+								<span class="first_span">人员清单：<i></i></span>
+								<img src="../../../img/key.png" alt="" class="first_img"/>
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input tell_html" ></span>
+									<label><span class="input_file">点击上传</span></label>
+									<a href="javascript:;" class="category">
+										<span>职业类别查询</span>
+										<div class="category_allcontent clear">
+											<img src="../../../img/jiantou.png" alt="" />
+											<div class="category_content">
+												<div class="category_content_top clear">
+													<span>职业类别查询</span>
+													<img src="../../../img/delete-line-ico3.png" alt="" />
+												</div>
+												<ul class="clear">
+													<li>
+														<span>一级分类：</span>
+														<p class="liSelect">
+															<select name="" id="">
+															<option value="">餐饮业</option>
+														</select>
+														</p>
+													</li>
+													<li>
+														<span>二级分类：</span>
+														<p class="liSelect">
+															<select name="" id="">
+																<option value="">旅游业</option>
+															</select>
+														</p>
+													</li>
+													<li>
+														<span>职业名称：</span>
+														<p class="liSelect">
+															<select name="" id="">
+																<option value="">一般内勤人员</option>
+															</select>
+														</p>
+													</li>
+												</ul>
+												<div class="table">
+													<table>
+														<tr><th>职业代码</th><th>职业风险等级</th></tr>
+														<tr><td>060601</td><td>1</td></tr>
+													</table>
+												</div>
+												
+											</div>
+										</div>
+									</a>
+									<a href="javascript:;" class="download">样本下载</a>
+								</div>	
+								<div class="Validform_checktip tell_file tell">请上传文件</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear accessory_li">
+							<div class="project_left ">
+								<input type="text" />
+							</div>
+							<div class="project_right clear file_label">
+								<div class="clear">
+									<span class="accessory_input first_input" ></span>
+									<label><span class="input_file">点击上传</span></label>
+									<div class="reduce"></div>
+								</div>
+								<div class="upload_content_bottom">
+									<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									<div class="speed">
+										<p>共：<span class="size">902.51M</span> 已上传：<span class="percentage">10% </span>上传速度：<span class="upload_speed">26.87KB/s</span></p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clear infor">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<span>如果需填写更多信息，可增加填写栏目</span>
+								<div class="add_img2"></div>
+							</div>
+						</li>
+						<li class="clear last_end">
+							<div class="project_left "></div>
+							<div class="project_right clear">
+								<a href="javascript:;" class="nexts">下一步</a>
+								<a href="javascript:history.go(-1);" class="up">上一步</a>
+								<button href="javascript:;" class="hold">保存草稿</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/ProjectInformation.js" ></script>
+	<script type="text/javascript" src="../../js/timeHelper.js" ></script>
+	<script type="text/javascript" src="../../js/placeholder.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script> 
+</html>
+

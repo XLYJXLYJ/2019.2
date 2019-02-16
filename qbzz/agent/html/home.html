@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>企保招招-货物运输保障详情</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+    	<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+    	<link rel="stylesheet" type="text/css" href="../../css/freight.css"/>
+	</head>
+	<body>
+		<!-- 弹框 -->
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="toubao_fix">
+				<div class="no"></div>
+				<div class="fixCont">
+					<p class="fix_title"></p>	
+					<div class="toubao_cont">
+						<div class="toubaocont_type">
+							<p class="instructionTitle">保险介绍：</p>
+							<p>1. 本保险承保公司为中国人民财产保险股份有限公司；</p>
+							<p>2. 本产品每次仅可投保货值在<span class="huozhi">100万美金</span>或等值其他币种金额以内的保单，若超过该金额，请与客服联系采用其他方式投保；</p>
+							<p>3. 保单查询：本保单投保完成后可通过企保招招平台保单管理板块查询或致电保险公司客服95518查询；</p>
+							<p>4. 投保中有任何问题请联系客服400-830-1985。</p>
+							<p class="last_p"></p>
+						</div>
+						<div class="toubaocont_type">
+							<p class="instructionTitle">承保声明：</p>
+							<div class="statrTxt"></div>
+						</div>
+					</div>
+					<div class="fixCont_bottom clear">
+						<p class="bottom_left">
+							<span>费率：</span>
+							<span class="redTxt"></span>
+						</p>
+						<div class="bottom_right" data-url="">确认上述信息并投保</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--顶部 -->
+		<div id="header"></div>
+		<div class="nav">
+			<div class="nav_banner"></div>
+			<!--<div class="nav_bottom clear">
+				<p class="nav_bottomTxt">
+					<span>货物运输保障（一切险）</span>
+					<img src="../../img/transport/picc.png" />
+				</p>
+				<p class="insure_now">充值享优惠</p>
+			</div>-->
+		</div>
+		<div class="contentDetail">
+			<input type="hidden" name="is_lading" value="{$is_lading}" />
+			<div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">普货保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万1</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<span class="place">进出口</span>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div>立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/zhongyi.png"/>
+			 					<div>立即投保</div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<span class="place">国内</span>
+			 				<div class="position">
+			 					<img src="../../img/transport/picc1.png"/>
+			 					<div>立即投保</div>
+			 				</div>
+			 				<div class="position">
+			 					<img src="../../img/transport/renshou.png"/>
+			 					<div>立即投保</div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			</div>
+			<div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top1"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">易碎保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万3.5</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<span class="place">进出口</span>
+			 				<div class="position">
+				 				<img src="../../img/transport/picc1.png"/>
+				 				<div>立即投保</div>
+				 			</div>	
+				 			<div class="position">
+				 				<img />
+				 			</div>
+			 				<!--<img src="../../img/transport/zhongyi.png"/>-->
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<span class="place">国内</span>
+			 				<div class="position">
+				 				<img src="../../img/transport/picc1.png"/>
+				 				<div>立即投保</div>
+				 			</div>
+				 			<div class="position">
+			 					<img />
+			 				</div>
+			 				<!--<img src="../../img/transport/renshou.png"/>-->
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top1"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">冻品保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万4</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<span class="place">进出口</span>
+			 				<div class="position">
+				 				<img src="../../img/transport/picc1.png"/>
+				 				<div>立即投保</div>
+				 			</div>
+				 			<div class="position">
+			 					<img src="../../img/transport/taipingyang.png"/>
+			 					<div>立即投保</div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<span class=" place1">国内</span>
+			 				<span class="online">产品上线中，敬请期待</span>
+			 				
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="first">
+			 	<div class="first-left">
+			 		<div class="first-left-top1"></div>
+			 		<div class="first-left-bottom">
+			 			<span class="span_title">冻品保</span>
+			 			<span class="span_rate">费率低至<span class="span_rateNum">万4</span></span>
+			 		</div>
+			 	</div>
+			 	<div class="first-right">
+			 		<div class="first-right-top">
+			 			<div class="first-right-top-international">
+			 				<span class=" place1">进出口</span>
+			 				<span class="online1">产品上线中，敬请期待</span>
+			 				
+			 			</div>
+			 		</div>
+			 		<div class="first-right-bottom">
+			 			<div class="first-right-top-international">
+			 				<span class="place">国内</span>
+			 				<div class="position">
+				 				<img src="../../img/transport/picc1.png"/>
+				 				<div>立即投保</div>
+				 			</div>
+				 			<div class="position">
+			 					<img />
+			 				</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			<div class="section1">
+				<p class="section_title">他们都在用</p>
+				<ul class="ul2 clear">
+					<li>
+						<img src="../../img/transport/robinson.png" />
+						<p class="li_hover">罗宾升物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/Worldwide.png" />
+						<p class="li_hover">环世物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/saicheng.png" />
+						<p class="li_hover">赛诚物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/AML.png" />
+						<p class="li_hover">AML</p>
+					</li>
+					<li>
+						<img src="../../img/transport/GoPlus.png" />
+						<p class="li_hover">GoPlus</p>
+					</li>
+					<li>
+						<img src="../../img/transport/easyocean.png" />
+						<p class="li_hover">EasyOcean</p>
+					</li>
+					<li>
+						<img src="../../img/transport/guanhaitong.png" />
+						<p class="li_hover">冠海通物流</p>
+					</li>
+					<li>
+						<img src="../../img/transport/TCI.png" />
+						<p class="li_hover">科荣微电子</p>
+					</li>
+				</ul>
+			</div>
+			<div class="section4">
+				<p class="section_title">常见问题</p>
+				<ul class="ul3">
+					<li>Q.什么时间投保最合适呢?有没有什么要求?</li>
+					<li>A.一般是在起运前将投保资料齐全后进行投保，起运的当天也可以进行投保，如果是起运后投保则需要提供未出险证明。</li>
+					<li>Q.投保时你们的货物种类与我这个产品不太相符，货物种类会在保单上显示吗?</li>
+					<li>A.您选择与您投保产品相近的货物种类就可以了，货运种类不会在保单上显示的，我们是按您填写的货物名称来出单。保单上只显示货物名称。</li>
+					<li>Q.同一被保险人，两种货物，同一运输方式，同一目的地，起运日期相同，可否出一张保单?</li>
+					<li>A.可以的，同一票货，同一运输路线，同一被保险人，同一运输工具只出一张保单即可。</li>
+					<li>Q.什么是免赔？</li>
+					<li>A.免赔额是保险公司的免责限度，是在保险合同中明确规定的不予赔付的承保损失部分，即保险期间发生保险事故并造成承保损失时，保险公司按照合同约定对其中一部分损失免于承担赔偿责任，由被保险人自己承担这部分损失。免赔额的实质是风险共担，其目的在于：一是减少道德风险，鼓励被保险人采取减损防损措施，避免由于风险转移使被保险人降低责任心；二是减少损失索赔次数，降低保险公司的承保损失成 本和理赔费用。</li>
+					<li>Q.什么是不足额投保，其后果是什么?</li>
+					<li>A.不足额投保是指保险合同约定的保险金额低于保险价值。例如一台价值12万元的设备，如果按照8万元确定保险金额，则属于不足额投保。不足额投保的后果是：发生保险事故后，保险公司按照保险金额与保险价值的比例承担赔偿责任，也就是比例赔付。</li>
+				</ul>
+			</div>
+		</div>
+		<!--底部 -->
+		<div id="footer"></div>
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../layer/layer.js"></script>
+		
+		<script type="text/javascript">
+//			$(".ext1").mousemove(function(){
+//				$(".who_pic11").show();
+//				$(".who_pic1").hide();
+//			})
+//			$(".ext1").mouseleave(function(){
+//				$(".who_pic1").show();
+//				$(".who_pic11").hide();
+//			})
+			
+			$(".first-right-top-international img").mousemove(function(){
+				var this_=$(this);
+				$(".first-right-top-international img").siblings("div").hide();
+				$(".first-right-top-international img").show();
+				this_.hide();
+				this_.siblings("div").show();
+				
+//				var index1=$(".first-right-top-international").index(this_);
+//				if(index1==0){
+//					var index2=$(".first-right-top-international:eq(0) img").index(this_);
+//					if()
+//				}
+				
+				
+			})
+			
+			
+			$(function(){
+				// 投保弹框
+			    $(".position div").on("click", function(){
+			        var index = $(this).closest(".part").index();
+			            puhuo_state = '<p>1、被保险人必须为实际货主；投保后保险金额不可修改、不能退保；</p>\
+			            				<p>2、本保单仅承保普通货物，易碎品及冷冻品请选择相应产品投保，具体以投保货物信息中的货物类型为准，不包括以下货物：</p>\
+									    <p>（1）金银、纪念币、贵重金属、古币、古玩、古书、古画、邮票、艺术品、稀有金属、文物、古董、现金、有价证券、票据、文件、档案、账册、图纸、技术资料、玉雕工艺品、玉石制品、名画、古代化石、瓷器、旧地毯、各类工艺品等其他价值无法确定或者保险期间内价值变化较大的货物；</p>\
+									    <p>（2）鱼粉、豆粕、易腐易蛀品（各类果仁、花生、大豆等谷物，粮食作物、菜籽饼、木薯干、蔬菜等）；</p>\
+									    <p>（3）动植物及畜产品、血制品、疫苗、注射剂、针剂类药品；</p>\
+									    <p>（4）有防震防倾斜等要求的精密设备；单价保额超50万的医疗设备；二手设备；武器弹药；航空航天器材；成品车；</p>\
+									    <p>（5）易碎品（包括玻璃、玻璃制品、液晶面板、陶瓷、卫生洁具、石膏制品、灯具、易碎工艺品、搪瓷等易碎容器装的货物、瓷砖、瓦等建筑装修材料中的易碎品等）；</p>\
+									    <p>（6）爆炸品、放射性同位素、易燃、易爆的危险品、军用武器或装备、酒类、酒精、汽油、煤油、柴油、火柴；</p>\
+									    <p>（7）红木家具；原木；</p>\
+									    <p>（8）散装化工类货物；</p>\
+									    <p>（9）根据法律法规规定的其他禁止性物品；</p>\
+									    <p>3、本产品为系统自动处理投保，请投保人务必根据协议要求进行投保，并如实填写投保信息。若投保标的、承运工具、运输区间等相关信息不符合保险协议的约定，保险公司不承担保险责任。</p>',
+			            yisui_state = '<p>1、被保险人必须为实际货主；投保后保险金额不可修改、不能退保；</p>\
+			            				<p>2、本保单仅承保易碎品，普通货物及冷冻品请选择相应产品投保，具体以投保货物信息中的货物类型为准，不包括以下货物：</p>\
+										<p>（1）金银、纪念币、贵重金属、古币、古玩、古书、古画、邮票、艺术品、稀有金属、文物、古董、现金、有价证券、票据、文件、档案、账册、图纸、技术资料、玉雕工艺品、玉石制品、名画、古代化石、瓷器、旧地毯、各类工艺品等其他价值无法确定或者保险期间内价值变化较大的货物；</p>\
+										<p>（2）鱼粉、豆粕、易腐易蛀品（各类果仁、花生、大豆等谷物，粮食作物、菜籽饼、木薯干、蔬菜等）；</p>\
+										<p>（3）动植物及畜产品、血制品、疫苗、注射剂、针剂类药品；</p>\
+										<p>（4）有防震防倾斜等要求的精密设备；单价保额超50万的医疗设备；二手设备；武器弹药；航空航天器材；成品车；</p>\
+										<p>（5）爆炸品、放射性同位素、易燃、易爆的危险品、军用武器或装备、酒类、酒精、汽油、煤油、柴油、火柴；</p>\
+										<p>（6）红木家具；原木；</p>\
+										<p>（7）散装化工类货物；</p>\
+										<p>（8）根据法律法规规定的其他禁止性物品；</p>\
+										<p>3、本产品为系统自动处理投保，请投保人务必根据协议要求进行投保，并如实填写投保信息。若投保标的、承运工具、运输区间等相关信息不符合保险协议的约定，保险公司不承担保险责任。</p>',
+			            dongpin_state = '<p>1、被保险人必须为实际货主；投保后保险金额不可修改、不能退保；</p>\
+			            				<p>2、本保单仅承保冷藏冷冻条件下的货品，易碎品及普通货物请选择相应产品投保，具体以投保货物信息中的货物类型为准，包括以下货物：</p>\
+										<p>（1）冷藏、冷冻的肉制品及实用杂碎制品；</p>\
+										<p>（2）冷藏、冷冻的果蔬类制品；</p>\
+										<p>3、本产品为系统自动处理投保，请投保人务必根据协议要求进行投保，并如实填写投保信息。若投保标的、承运工具、运输区间等相关信息不符合保险协议的约定，保险公司不承担保险责任。</p>',
+						huagong_state ='<p>1、被保险人必须为实际货主；投保后保险金额不可修改、不能退保。</p>\
+										<p>2、本保单仅承保经密封容器盛装的化工类产品（非危险品），具体以投保货物信息中的货物类型为准，不包括以下货物：</p>\
+										<p>（1）金银、纪念币、贵重金属、古币、古玩、古书、古画、邮票、艺术品、稀有金属、文物、古董、现金、有价证券、票据、文件、档案、账册、图纸、技术资料、玉雕工艺品、玉石制品、名画、古代化石、瓷器、旧地毯、各类工艺品等其他价值无法确定或者保险期间内价值变化较大的货物；</p>\
+										<p>（2）鱼粉、豆粕、易腐易蛀品（各类果仁、花生、大豆等谷物，粮食作物、菜籽饼、木薯干、蔬菜等）；</p>\
+										<p>（3）动植物及畜产品、血制品、疫苗、注射剂、针剂类药品；</p>\
+										<p>（4）有防震防倾斜等要求的精密设备；单价保额超50万的医疗设备；二手设备；武器弹药；航空航天器材；成品车；</p>\
+										<p>（5）易碎品（包括玻璃、玻璃制品、液晶面板、陶瓷、卫生洁具、石膏制品、灯具、易碎工艺品、搪瓷等易碎容器装的货物、瓷砖、瓦等建筑装修材料中的易碎品等）；</p>\
+										<p>（6）爆炸品、放射性同位素、易燃、易爆的危险品、军用武器或装备、酒类、酒精、汽油、煤油、柴油、火柴；</p>\
+										<p>（7）红木家具；原木；</p>\
+										<p>（8）根据法律法规规定的其他禁止性物品。</p>\
+										<p>3、被保险人在投保前或保险合同成立后放弃对第三者请求赔偿的权利的，保险人将不承担赔偿保险金的责任；保险人已经支付保险金的，被保险人应当退还保险人。</p>\
+										<p>4、保证条款：投保人/被保险人违反以下保证条款造成的损失，乙方不负责赔偿。</p>\
+										<p>（1）被保险人须保证在本保险生效时被保货物全新且状况良好，并经过专业包装；</p>\
+										<p>（2）被保险人保证公路运输时使用全封闭厢式卡车/全封闭集装箱卡车/专业槽罐车等；</p>\
+										<p>（3）被保险人保证海运是全程使用全封闭式集装箱运输；</p>\
+										<p>（4）为保证货物的运输安全，被保险人须选择信誉好、管理规范的货运公司承运货物，如损失涉及第三者责任方，被保险人不得擅自放弃或减损此项权益。</p>\
+										<p>5、本产品为系统自动处理投保，请投保人务必根据协议要求进行投保，并如实填写投保信息。若投保标的、承运工具、运输区间等相关信息不符合保险协议的约定，保险公司不承担保险责任。</p>';
+			        if(index === 0) {
+			            $(".fix_title").text("普货保投保须知");
+			            $(".huozhi").text("100万美金");
+			            $(".redTxt").text("0.025%");
+			            $(".last_p").text("");
+			            $(".statrTxt").html(puhuo_state);
+			        } else if(index === 1) {
+			            $(".fix_title").text("易碎保投保须知");
+			            $(".huozhi").text("100万美金");
+			            $(".redTxt").text("0.035%");
+			            $(".last_p").text("");
+			            $(".statrTxt").html(yisui_state);
+			        } else if(index === 2) {
+			            $(".fix_title").text("冻品保投保须知");
+			            $(".huozhi").text("100万美金");
+			            $(".redTxt").text("0.04%");
+			            $(".last_p").text("");
+			            $(".statrTxt").html(dongpin_state);
+			        } else if(index === 3) {
+			        	$(".fix_title").text("化工保投保须知");
+			        	$(".huozhi").text("80万人民币");
+			        	$(".redTxt").text("0.03%");
+			        	$(".last_p").text("5、国内公路运输保险仅承保因火灾、爆炸等列明的自然灾害或运输工具发生交通事故所造成的损失，具体以保险条款为准。")
+			            $(".statrTxt").html(huagong_state);
+			        } else {}
+			        $(".all_fix").show();
+			        var goodsType = $(this).data('goods');
+			    	var type = $(this).data('type');
+			    	var inputVal = $("input[name='is_lading']").val();
+					if(inputVal != 2) {                // 跳转页面
+//						$(".bottom_right").data("url","http://{$Think.config.website.www}/cargo/index?goodsType="+goodsType+"&insuranceId="+type);
+//					} else {
+						$(".bottom_right").data("url","");
+					}
+			    });
+			
+			    // 关闭投保弹框
+			    $(document).on("click", ".all_no,.no", function(){
+			    	$('.toubao_cont').scrollTop(0);
+			        $(".all_fix").hide();
+			    });
+				
+				// 点击确认投保
+				$(".bottom_right").on("click",function(){
+					$(".all_fix").hide();
+					if($(this).data("url") != "") {
+						window.open($(this).data("url"));
+					} else {
+						layer.open({
+							title: false,
+							type: 2,
+							closeBtn: 0, //不显示关闭按钮
+							anim: -1,
+							area:["540px",'520px'],
+							shade: [0.7, '#333'],
+							shadeClose: true, //开启遮罩关闭
+//							content: ["http://127.0.0.1:8020/static/index3.0/html/insurance%20type/upload_policy.html","no"]
+							content: ["http://172.16.2.74:8020/static/index3.0/html/insurance%20type/upload_policy.html","no"]
+						});
+					}
+					
+				});
+			})
+		</script>
+	</body>
+</html>

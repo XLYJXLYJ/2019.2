@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>企保招招-草稿标</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li class="active">
+								<div class="img draft"></div>
+								<a href="draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise1"></div>
+								<a href="enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="fixed-pic">
+			<div class="all-fixed-no"></div>
+			<div class="fixed1">
+				<img src="../../img/delete-line-ico2.png" alt="" class="delete-line"/>
+				<img src="../../img/load-pic.jpg" alt="" class="sure-pic" />
+			</div>
+			<div class="fixed1">
+				<img src="../../img/delete-line-ico2.png" alt="" class="delete-line"/>
+				<img src="../../img/load-pic2.jpg" alt="" class="sure-pic"/>
+			</div>
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+		</div>
+		<div class="content" id="draft">
+			<div class="content_top clear">
+				<p class="select-parents">
+					<span>保存时间：</span>
+					<span class="spTime">
+						<select>
+							<option value="">全部</option>
+							<option value="">一周内</option>
+							<option value="">一个月内</option>
+							<option value="">三个月内</option>
+							<option value="">半年内</option>
+						</select>
+					</span>
+				</p>
+				<p>
+					<span>险种：</span>
+					<span class="spInsure">
+						<select>
+							<option value="">全部</option>
+							<option value="">财产基本险</option>
+							<option value="">财产综合险</option>
+							<option value="">产品一切险</option>
+							<option value="">营业中断险</option>
+							<option value="">现金险</option>
+							<option value="">雇主责任险</option>
+							<option value="">财产一切险</option>
+							<option value="">产品责任险</option>
+							<option value="">食品安全责任险</option>
+							<option value="">旅行社责任险</option>
+							<option value="">停车责任险</option>
+							<option value="">物业管理责任险</option>
+							<option value="">保安公司责任险</option>
+							<option value="">道路客运承运人责任险</option>
+							<option value="">保险经纪人职业责任险</option>
+							<option value="">国内道路货物运输承运人责任险</option>
+							<option value="">建筑工程一切险</option>
+							<option value="">安装工程一切险</option>
+							<option value="">困难意外险</option>
+							<option value="">建筑施工人员意外险</option>
+							<option value="">国际货物运输保险（预约）</option>
+							<option value="">国内货物运输保险（预约）</option>
+							<option value="">贷款保证保险</option>
+							<option value="">雇员忠诚保证保险</option>
+							<option value="">短期出口贸易信用险</option>
+						</select>
+					</span>
+				</p>
+				<div class="search">
+					<input type="text" placeholder="项目名称关键字/标号"/>
+				</div>
+				<input type="image" src="../../img/search-ico.png" class="input_submit"/>
+			</div>
+			<div class="padding">
+				<table>
+					<tr>
+						<th>标号</th>
+						<th>险种</th>
+						<th>项目名称</th>
+						<th>保存时间</th>
+						<th>保险期限</th>
+						<th>保险金额</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>海运货物保险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<a href="release.html" class="roundify">编辑</a>
+							<a href="javascript:;" class="prohibit">发布<span class="prohibit_cont">未完成所有编辑内容，还不能发布！</span></a>
+							<img src="../../img/delete-ico.png" alt="" class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>建筑施工人员意外险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<a href="release.html" class="roundify">编辑</a>
+							<a href="javascript:;" class=" click-sure roundify">发布</a>
+							<img src="../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>海运货物保险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>建筑施工人员意外险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>海运货物保险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;"  class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>建筑施工人员意外险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>海运货物保险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>建筑施工人员意外险</td>
+						<td>前海企保招招2017年团体意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">17010425000272</a></td>
+						<td>海运货物保险</td>
+						<td>甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</td>
+						<td>2017-01-04    16:06</td>
+						<td>2017-2-5至2018-2-4</td>
+						<td>CNY    1,500,000.00</td>
+						<td class=" ie8-back">
+							<p class="bianji"><a href="release.html" class="roundify">编辑</a></p>
+							<p class="fabu"><a href="javascript:;" class=" click-sure roundify">发布</a></p>
+							<img src="../../img/delete-ico.png" alt=""  class="delet click-sure"/>
+						</td>
+					</tr>
+				</table>
+				<div class="list_none">
+					<img src="../../img/list-none.png" alt="" />
+				</div>
+			</div>
+			<div class="nubs">
+				<div class="nub">
+					<img src="../../img/left-go.png" alt="" class="img_left"/>
+					<span class="check">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<img src="../../img/right-go.png" alt="" class="img_right"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/bounced.js" ></script>
+	<script type="text/javascript" src="../js/draft.js" ></script>
+</html>

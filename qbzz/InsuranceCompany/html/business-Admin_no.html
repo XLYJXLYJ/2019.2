@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>保险公司-业务部信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/business-Admin.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<!--<script type="text/javascript" src="../../js/selectivizr.js" ></script>-->
+	</head>
+	<body>
+		<div class="aside aside-IC">
+			<div class="background">
+				<div class="aside_contents">
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home-IC.html">招招主页</a>
+							</li>
+							<li>
+								<div class="img undertake"></div>
+								<a href="undertake-IC.html">承接业务</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft-IC.html">报价草稿</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response-IC.html">响应中</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my-IC.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img case"></div>
+								<a href="case-IC.html">赔案管理</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history-IC.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li class="active">
+								<div class="img accountHaves"></div>
+								<a href="accountHave-IC.html">个人信息</a>
+							</li>
+							
+							<li>
+								<div class="img business"></div>
+								<a href="business-IC.html">业务部设置</a>
+							</li>
+							<li>
+								<div class="img securitys"></div>
+								<a href="security-IC.html">安全设置</a>
+							</li>
+							<!--<li>
+								<div class="img recharge"></div>
+								<a href="home-IC/bail.html">在线充值</a>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<!--<span class="gogo">上传已有保单</span>-->
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../../html/news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">响应中</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>
+		</div>
+		
+		<!--退出业务部的弹框-->
+		<div class="exit_fix hide">
+			<div class="exit_cont">
+				<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="exit_cont_top">退出确认</div>
+				<p class="sure_tit">您是否确认退出本业务部并将所有业务移交给管理员？</p>
+				<span class="exit_cont_yes">确认退出</span>
+			</div>
+		</div>
+		<!--邀请加入弹框-->
+		<div class="all_fix hide">
+			<div class="all_invite_fix">
+				<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="ok_fix_top">邀请加入</div>
+				<p class="invite_tit">请准确填写您要邀请的业务部人员信息，平台将发送邀请链接帮助其快速注册加入。</p>
+				<div class="clear invite_cont">
+					<div class="invite_left">
+						<span>电子邮箱：</span>
+						<img src="../../img/key.png" alt="" />
+					</div>
+					<div class="invite_right">
+						<input type="text" />
+					</div>
+				</div>
+				<span class="invite_yes">确认邀请</span>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content_business">
+				<div class="content_busi_top">
+					<p>基本信息</p>
+				</div>
+				<div class="content_tab">
+					<a href="#" class="addenterprise">邀请加入</a>
+					<table>
+						<tr>
+							<th>序号</th>
+							<th>联系人</th>
+							<th>职务</th>
+							<th>联系电话</th>
+							<th>邮箱地址</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>张三（管理员）</td>
+							<td>团队经理</td>
+							<td>13751228309</td>
+							<td>wangsongyang@picc.com.cn</td>
+							<td class=" ie8-back"></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>李四</td>
+							<td>主管</td>
+							<td>13751228309</td>
+							<td>wangsongyang@picc.com.cn</td>
+							<td class=" ie8-back">
+								<a href='javascript:;' class="insure">退出业务部</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/business-Admin.js"></script>
+</html>

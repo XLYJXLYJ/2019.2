@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>修改手机号</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	</head>
+	<body>
+		
+		<main class="">
+			<form class="myform" action="/group/save">
+				<p class="topTxt">
+					<span class="colorLight">当前：</span>
+					<span>18898460586</span>
+				</p>
+				<div class="div_contain clear">
+					
+					<input type="text" name="" class="phone" placeholder="请输入手机号" datatype="phone" errormsg="请填写正确的手机号"  nullmsg="请输入手机号/身份证号" />
+					
+				</div>
+				
+				<div class="div_contain clear  Verification">
+					
+					<input type="text" placeholder="请输入验证码"  name="verificationCode" datatype="*4-6" errormsg="验证码输入错误" nullmsg="请输入验证码" />
+					<span class="validate-bt code codes">发送验证码</span>
+				</div>
+				<div class="div_contain clear">
+					
+					<input type="text" placeholder="请输入邀请码,可填可不填"  name="inviteCode"/>
+				</div>
+				<div class="clause">
+					<label>
+						<input type="checkbox" name="read" datatype="*"  nullmsg="请勾选条款" checked="checked" style="vertical-align:middle"/>
+						<p style="vertical-align:middle">阅读并同意</p> 
+						
+                        
+					</label>
+					<p class="insur_clause">《客户服务隐私及保障条款》</p>
+				</div>
+				
+				<div class="partSmall">
+					<div class="end-bt">注册并登录</div>
+				</div>				
+			</form>
+		</main>
+		
+		
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/Validform_ncr_min.js" ></script>
+	<script>
+			$(function(){
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".end-bt",
+		        datatype:{
+	            	'phone':/^1\d{10}$/
+		        },
+		        
+		        callback:function(data){
+					if(data.code==200){
+						
+					}else{
+						$(".yanzm .Validform_checktip").html("验证码错误");
+					}
+		        }
+		    });
+		    
+		    //短信验证码
+		    $(document).on("click",".code",function(){
+				var phone=$(".phone").val();
+				
+				if(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone)) {
+					var n=60;
+					$(".validate-bt").removeClass("code").html(n+"s");
+					timeer=setInterval(function(){
+						n--;
+						if(n>0){
+							$(".validate-bt").html(n+"s");
+						}else{
+							$(".validate-bt").addClass("code").html("获取验证码");
+							clearInterval(timeer);
+						}
+					},1000)
+//					
+				}else{
+					$(".phone").focus();
+					$(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+				}
+			});
+			
+			
+
+		})
+		
+	</script>
+</html>

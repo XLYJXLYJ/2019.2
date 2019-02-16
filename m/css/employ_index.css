@@ -1,0 +1,162 @@
+html{font-size: 62.5%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;} 
+ul li{list-style: none;}
+a{text-decoration: none;}
+img{border:0;}
+a:active{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;outline:none；}
+body,html{width:100%;height:100%;font-family:"微软雅黑";color: #35313f;}
+.clear:after{content: "";clear:both;overflow: hidden;display:block;}
+/*bootstrp虚线框*/
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {box-shadow: none;}
+
+header {background-color: #fff;}
+.barner img{width:100%;}
+
+main {font-size: 1.3rem;}
+.section1 {padding: 0 1.2rem;margin-bottom: 2rem;}
+.shuoming {padding: .8rem 0;}
+.explainTxt{width: 98%;box-sizing: border-box;padding-left: 0.5rem;float: left;line-height: 1.8rem;display: inline-block;}
+.borderleft{width:.3rem;background: #524ae7;height:1.5rem;float:left;}
+.div_bottm {margin-bottom: 0.8rem;}
+.div_bottm2 {border-bottom: .1rem solid #e9e9f4;padding-bottom: 1.5rem;}
+.imgs {width: 1.3rem;height: 1.3rem;margin-right: .8rem;vertical-align: middle;}
+.p_float {float: left;line-height: 3.8rem;}
+.type-ul {display:inline-block;margin-top: .8rem;}
+.type-ul li {cursor: pointer;position: relative;font-size: .9rem;color: #727689;display:inline-block;width: 4rem;height: 2rem;line-height: 2rem;box-sizing: border-box;text-align: center;margin-left: 1rem;border: .1rem solid #e9e9f4;}
+.type-ul .liFirst {margin-left: .5rem;}
+.checkedImg {position: absolute;bottom: -0.1rem;right: -0.1rem;display: none;width: 0.9rem;height: .85rem;}
+.type-ul .checkedBtn {border-color: #524AE7;color: #524AE7;}
+.checkedBtn .checkedImg {display: inline-block;}
+.buleBtn {background-color: #524AE7;color: #fff;}
+.imgYou {width: .8rem;height: 1.5rem;vertical-align: middle;margin-left: .3rem;margin-bottom: .2rem;}
+.section_title {font-size: 1.4rem;display: block;height: 3rem;line-height: 3rem;text-align: center;margin-bottom: .5rem;}
+.allSpeak {height: 5.8rem;position: relative;}
+.allSpeakPic {width: 100%;height: 100%;}
+.allSpeakTxt {width: 100%;color: #524AE7;position: absolute;bottom: 1rem;font-weight: bolder;}
+.section1 .p_floatLeft {font-weight: bolder;}
+.p_floatLeft {float: left;}
+.p_floatRight {float: right;}
+.goToDetail {display: inline-block;width: 100%;height: 100%;color: #524AE7;}
+.tableIndex {font-size: 1.2rem;width: 100%;text-align: center;border: .1rem solid #e9e9f4;border-collapse: collapse;margin: 0 auto;margin-bottom: .8rem;}
+.tableIndex .tr_first {background-color: #f7f7ff;border-bottom: .1rem solid #e9e9f4;}
+.tableIndex th {padding: 2.5rem 0;box-sizing: border-box;color: #524AE7;border-right: .1rem solid #e9e9f4;}
+.tableIndex td {color: #727689;border-right: .05rem solid #e9e9f4;border-bottom: .05rem solid #e9e9f4;padding: 2.5rem 1.6rem;box-sizing: border-box;}
+.tableIndex2 {margin-top: 2rem;}
+/*.backColor {background-color: #eaebec;}*/
+.floatContain li  {float: left;width: 33.3%;text-align: center;margin: 0 auto;}
+.ul_allTalk li {margin: 2.5rem 0 3.5rem 0;font-size: 1.1rem;}
+.div_img {width: 3.2rem;height: 3.2rem;margin: 0 auto;margin-bottom: 1.2rem;}
+.div_img img {width: 100%;height: 100%;}
+.partnersDiv {height: 4rem;color: #524AE7;line-height: 2rem;margin-bottom: 1rem;font-weight: bolder;}
+.partnersImg {width: 100%;height: 1rem;display: inline-block;}
+
+.partner_logo {padding: .8rem 0;}
+.partner_logo li {margin: 0 auto;text-align: center;width: 24%;line-height: 4rem;}
+.partner_logo .li2 {width: 36%;}
+.partner_logo .li5 {width: 39%;}
+.partner_logo img {display: inline-block;}
+.logoImg1 {width: 5.6rem;height: 1.4rem;}
+.logoImg2 {width: 8rem;height: 2.8rem;}
+.logoImg3 {width: 11.2rem;height: 3.6rem;}
+.logoImg4 {width: 5.1rem;height: 2rem;}
+.logoImg5 {width: 9.6rem;height: 3.1rem;}
+.logoImg6 {width: 9.8rem;height: 2rem;}
+
+.setion_lp {border-top: 1rem solid #f4f4f5;border-bottom: .1rem solid #e9e9f4;}
+.title_a {height: 4rem;line-height: 4rem;padding: 0 1.2rem;color: #524AE7;margin-bottom: 0;}
+.setion_wt {border-bottom: .1rem solid #e9e9f4;}
+
+.div_gzh {height: 18rem;box-sizing: border-box;text-align: center;background-color: #f4f4f5;padding: 1.5rem 0 2.3rem 0;margin-bottom: 4.5rem;}
+.div_gzh img {width: 10.7rem;height: 10.7rem;}
+.grayTxt {color: #727689;font-size: 1rem;margin-top: 1rem;color: #727689;}
+
+footer {border-top: .1rem solid #e9e9f4;width: 100%;height: 4.5rem;line-height: 4.5rem;position: fixed;bottom: 0;background-color: #fff;}
+
+.payMoney {text-align: right;font-size: 1.8rem;color: #e5423d;margin-right: .6rem;}
+.moneyTip {color: #727689;font-size: 1rem;}
+.moneyLogo{font-size: 1.3rem;}
+.orderBtn {display: block;width: 12rem;text-align: center;margin-right: 0;font-size: 1.8rem;}
+
+
+/* 保障详情  */
+/*头部*/
+.header{height:4.4rem;background:#38373b;color:#fff;font-size: 1.7rem;margin-bottom: .8rem;}
+.header p{text-align: center;line-height: 4.4rem;}
+.header .share{position: absolute;top:0;right: 0;padding:1rem;color:#fff;}
+.header .share img{width:2.4rem;}
+.header .back{position: absolute;top:0;left: 0;padding: 0 1rem;color:#fff;}
+.header .back img{width:1rem;vertical-align: middle;float:left;margin: 1.1rem .4rem 0 0;}
+.header .back span{line-height: 4.4rem;float:left;}
+.orderHeader {margin-bottom: 0;}
+
+.main_detail table td {padding: 2rem .5rem;}
+.main_detail .th_cont {width: 25%;padding: 2rem 0;}
+.main_detail .th_money {width: 20%;}
+.main_detail .th_scene {width: 44%;}
+
+.sectionTxt {padding: 0 1.2rem;font-size: 1.2rem;line-height: 1.6rem;margin-bottom: 2rem;color: #727689;}
+.p_bold {font-weight: bold;font-size: 1.3rem;padding-top: .8rem;color: #35313f;}
+.insur_clause {color: #524AE7;line-height: 2rem;}
+.sectionClause {padding-bottom: 2.5rem;}
+
+/*条款弹框*/
+.baoxian-fix{display:none;position:fixed;width:100%;height:100%;background: rgba(3,3,3,.7);z-index: 9;top:0;left:0;}
+.all-no{width:100%;height:100%;cursor:pointer}
+.fix-cont{min-height:13.3rem;max-height: 18rem;background: #fff;z-index: 11;position:fixed;bottom: -13.3rem;left:0;width:100%;text-align: center;overflow-y: auto;}
+.fix-cont li{height:4.4rem;border-bottom: 1px solid #e4e3f5;line-height: 4.4rem;color:#35313f;font-size: 1.5rem;cursor:pointer}
+.fix-cont li.active{color:#524ae7;}
+.baoxian-fix .delete{position:absolute;top:-3.3rem;right:1rem;width:2.4rem;}
+.clause-cont{position:absolute;width:90%;height:70%;top:15%;left:5%;background:#fff;border-radius: .3rem;/*overflow-y: auto;*/font-size: 1.2rem;color:#727689;}
+.clause-title{height:4.4rem;line-height: 4.4rem;text-align: center;border-bottom: .1rem solid #e9e9f4;color:#524ae7;font-size: 1.5rem;margin-bottom: .6rem;}
+.mid-cont{overflow-y: auto;padding: 0 1rem;height:85%;}
+.clause-cont-top p{text-align: center;font-size:1.5rem;font-weight: bold;color:#000;line-height: 1.8rem;}
+.title-one{font-size: 1.4rem;line-height: 3.6rem;color:#000;}
+.title-two{color:#000;margin-top: 1rem;}
+.clause-start .indent{line-height: 1.8rem;text-indent: 2.4rem;}
+.table {width: 100%;}
+.table,.table th,.table td{border:.1rem solid #e9e9f4;text-align: center;vertical-align: middle;margin:0;font-size: 1rem;line-height: 1.4rem;border-collapse:collapse;padding: .4rem .6rem;}
+.heise,.table th,.other-two{color:#000;}
+.center-p{color:#000;text-align: center;margin: 1rem 0 .5rem 0;}
+.db-margtop{margin-top: 1rem;}
+.table-title{text-align: center;}
+.table2 th,.table2 td{padding: .4rem;}
+.clause-type{display:none;}
+
+.clauseCont {line-height:1.8rem;font-size:1.2rem;text-indent:2.1rem;}
+.clauseTitle {margin:2rem 0 .5rem 0;font-weight:bold;font-size: 1.5rem;}
+.clauseTitleSmall {margin:1rem 0 .5rem 0;}
+.contBold {font-weight:bold;}
+.clauseTable td {width: 50%;padding-left:0;text-indent: 1rem ;text-align: left;}
+
+.clause-cont-top .bold_no {font-weight: 100;font-size: 1.3rem;}
+
+.center-h1 {font-size: 1.5rem;font-weight: bold;text-align: center;color: #000;margin-bottom: 6rem;margin-top: 2rem;}
+.center-h2 {font-size: 1.3rem;font-weight: bold;text-align: center;color: #000;}
+.center-h3 {font-size: 1.3rem;font-weight: bold;text-align: center;color: #000;margin-top: 4rem;margin-bottom: 2rem;}
+.indentDouble {line-height: 1.8rem;text-indent: 4rem;}
+.noIndent_title {color: #000;margin: 1rem 0 .5rem 0;}
+.noIndent {line-height: 1.8rem;}
+.tipsTxt {font-family: "楷体";font-size: 1rem;}
+.table .td_long {width: 82%;text-align: left;}
+
+
+/* 预约投保 */
+.main_order {padding: 1rem 1.2rem 1.6rem 1.2rem;color: #35313F;}
+.main_order .Validform_checktip {color: #e5423d;margin-left: 1rem;}
+.cont-information li {margin-bottom: .6rem;}
+.cont-information .li_textarea {margin-bottom: 1.2rem;}
+.cont-information input{height:4.4rem;box-sizing:border-box;font-size: 1.5rem;padding: 2.15rem 1rem;width:100%;border:.05rem solid #e9e9f4;border-radius: .3rem;outline: none;-webkit-appearance: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.beizhu {width: 100%;height:11rem;box-sizing:border-box;font-size: 1.5rem;font-family: "微软雅黑";padding: .5rem 1rem;border:.05rem solid #e9e9f4;border-radius: .3rem;resize: none;outline: none;-webkit-appearance: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.cont-information .Verification {margin-bottom: 6rem;}
+.Verification input{width:60%;}
+.Verification .validate-bt{cursor: pointer;width:36%;background: #fb6f00;font-size: 1.5rem;line-height: 4.4rem;text-align: center;;color:#fff;float:right;border-radius: .3rem;}
+.Verification-nub{display:none;}
+.submit{display:block;width:100%;margin:0 auto;height:4.4rem;line-height: 4.4rem;font-size: 1.8rem;text-align: center;color:#fff;background: #524ae7;border-radius: .3rem;}
+
+/* 预约成功 */
+.ordered{padding: 2rem 1.2rem;}
+.paied_img {height: 16rem;text-align: center;margin-bottom: 1.5rem;font-size: 1.5rem;color: #35313f;}
+.paied_img img {width: 5rem;height: 5rem;margin-top: 5rem;margin-bottom: 2rem;}
+.paied_other {color: #727689;font-size: 1.3rem;padding: 0 .5rem;line-height: 1.8rem;}
+.paied_txt {color: #e5423d;}
+

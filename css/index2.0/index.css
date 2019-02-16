@@ -1,0 +1,530 @@
+/***轮播***/
+
+.carousel {
+	z-index: 9;
+	
+}
+
+.carousel-indicators li {
+	background: #fff;
+	margin: 0 5px;
+}
+
+.carousel-indicators .active {
+	width: 45px;
+	height: 10px;
+	background: #fff;
+	border: 0px;
+}
+
+
+
+
+/***内容***/
+
+.content {
+	background: #fbfbfb;
+}
+
+.hot-guide-list {
+	height: 155px;
+	background: #fbfbfb;
+	border-bottom: 1px solid #ddd;
+}
+
+.hot-guide-list li {
+	width: 200px;
+	float: left;
+	position: relative;
+	text-align: center;
+	z-index: 12;
+}
+
+.hot-guide .icon-pic,
+.hot-guide-hover .icon-pic {
+	width: 68px;
+	height: 68px;
+	display: block;
+	background: url(../../pics/index2.0/index-spring.png) no-repeat;
+	position: absolute;
+	top: 120px;
+	left: 50%;
+	margin-left: -34px;
+}
+
+.hot-guide-hover {
+	display: none;
+}
+
+.hot-guide .icon01-pic {
+	background-position: -335px 0;
+}
+
+.hot-guide .icon02-pic {
+	background-position: -267px 0;
+}
+
+.hot-guide .icon03-pic {
+	background-position: -403px 0;
+}
+
+.hot-guide .icon04-pic {
+	background-position: -539px 0;
+}
+
+.hot-guide .icon05-pic {
+	background-position: -63px 0;
+}
+
+.hot-guide .icon06-pic {
+	background-position: -131px 0;
+}
+
+.hot-guide-hover .icon01-pic {
+	background-position: -472px 0;
+}
+
+.hot-guide-hover .icon02-pic {
+	background-position: -199px 0;
+}
+
+.hot-guide-hover .icon03-pic {
+	background-position: -811px 0;
+}
+
+.hot-guide-hover .icon04-pic {
+	background-position: -675px 0;
+}
+
+.hot-guide-hover .icon05-pic {
+	background-position: -607px 0;
+}
+
+.hot-guide-hover .icon06-pic {
+	background-position: -743px 0;
+}
+
+.hot-guide p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.hot-guide p b {
+	display: block;
+	font-weight: normal;
+}
+
+.suspend-box {
+	width: 202px;
+	height: 128px;
+	display: block;
+	position: absolute;
+	top: 0px;
+}
+
+.suspend-box span {
+	color: #fff;
+	line-height: 75px;
+}
+
+.suspend-box p {
+	line-height: 35px;
+}
+
+.pic-ccx {
+	background: url(../../pics/index2.0/ccx-index.png) no-repeat;
+}
+
+.pic-zrx {
+	background: url(../../pics/index2.0/zrx-index.png) no-repeat;
+}
+
+.pic-xyx {
+	background: url(../../pics/index2.0/xyx-index.png) no-repeat;
+}
+
+.pic-ywjk {
+	background: url(../../pics/index2.0/ywjk-index.png) no-repeat;
+}
+
+.pic-cpx {
+	background: url(../../pics/index2.0/cpx-index.png) no-repeat;
+}
+
+.pic-gcx {
+	background: url(../../pics/index2.0/gcx-index.png) no-repeat;
+}
+
+.hot-guide-list li:hover .hot-guide {
+	display: none;
+}
+
+.hot-guide-list li:hover .hot-guide-hover {
+	display: block;
+}
+
+.service-warp {
+	overflow: hidden;
+	z-index: 15;
+	background: #fff;
+}
+
+.service-warp .title {
+	text-align: center;
+}
+
+.service-warp .title span {
+	line-height: 30px;
+}
+
+.service-warp .title span a {
+	margin: 0 3px;
+	color: #0151a3;
+}
+
+.service-list li {
+	width: 265px;
+	float: left;
+	margin-bottom: -1px;
+	background: #fff;
+	text-align: center;
+	margin-bottom: 80px;
+	padding: 30px 0;
+}
+
+.service-list li:hover {
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.service-list li b {
+	line-height: 55px;
+}
+
+.service-list li p {
+	margin: 0 13px;
+	line-height: 28px;
+	text-align: left;
+}
+
+.service-list li i {
+	width: 75px;
+	height: 68px;
+	background: url(../../pics/index2.0/index-spring.png) no-repeat;
+	display: block;
+	margin: 0px auto;
+}
+
+.service-list li.service-community i {
+	background-position: -1107px 0;
+}
+
+.service-list li.service-price i {
+	background-position: -951px 0;
+}
+
+.service-list li.service-manage i {
+	background-position: -880px 0;
+}
+
+.service-list li.service-custom i {
+	background-position: -1035px 0;
+}
+
+.service-cover {
+	height: 55px;
+	background: #fbfbfb;
+	position: relative;
+	top: -55px
+}
+
+.advantage-warp {
+	height: 530px;
+	width: 100%;
+}
+
+.partner-warp {
+	background: #fff;
+	padding-bottom: 80px;
+	overflow: hidden;
+}
+
+.partner-warp .title {
+	text-align: center;
+}
+
+.partner-logo ul {
+	border-left: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	overflow: hidden;
+}
+
+.partner-warp li {
+	width: 20%;
+	float: left;
+	border-top: 1px solid #e4e4e4;
+	border-right: 1px solid #e4e4e4;
+}
+
+.partner-warp .title span {
+	display: block;
+}
+
+.partner-warp a {
+	margin-top: 15px;
+}
+
+.partner-warp li img {
+	width: 100%;
+	height: 100%;
+}
+
+.Who-we-are {
+	width: 100%;
+	background: #294d8a url(../../pics/index2.0/AboutUs_img.jpg) top center no-repeat;
+	height: 900px;
+}
+
+
+/***企保问问轮播图***/
+
+.slideBox {
+	width: 320px;
+	height: 320px;
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+
+.slideBox .hd {
+	height: 15px;
+	overflow: hidden;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	z-index: 1;
+}
+
+.slideBox .hd ul {
+	overflow: hidden;
+	zoom: 1;
+	float: left;
+}
+
+.slideBox .hd ul li {
+	float: left;
+	margin-right: 2px;
+	width: 15px;
+	height: 15px;
+	line-height: 14px;
+	text-align: center;
+	background: #fff;
+	cursor: pointer;
+}
+
+.slideBox .hd ul li.on {
+	background: #f00;
+	color: #fff;
+}
+
+.slideBox .bd {
+	position: relative;
+	height: 100%;
+	z-index: 0;
+}
+
+.slideBox .bd li {
+	zoom: 1;
+	vertical-align: middle;
+}
+
+.slideBox .bd img {
+	width: 290px;
+	height: 290px;
+	display: block;
+}
+
+.slideBox .prev,
+.slideBox .next {
+	position: absolute;
+	left: 320px;
+	top: 5px;
+	display: block;
+	width: 36px;
+	height: 36px;
+	background: #1173d8;
+}
+
+.slideBox .prev i,
+.slideBox .next i {
+	margin: 0 auto;
+	width: 15px;
+	height: 36px;
+	display: block;
+	background: url(../../pics/index2.0/spring.png) no-repeat;
+	background-position: -400px -640px;
+}
+
+.slideBox .next i {
+	background: url(../../pics/index2.0/spring.png) no-repeat;
+	background-position: -400px -670px;
+}
+
+.slideBox .prev:hover {
+	background: #23baf9;
+}
+
+.slideBox .next:hover {
+	background: #23baf9;
+}
+
+.slideBox .next:hover i {
+	background-position: -443px -669px;
+}
+
+.slideBox .next {
+	top: 45px;
+	background: #e4e4e4;
+}
+
+.slideBox .prev:hover,
+.slideBox .next:hover {
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+.slideBox .prevStop {
+	display: none;
+}
+
+.slideBox .nextStop {
+	display: none;
+}
+
+.slideBox li {
+	position: relative;
+}
+
+.slideBox li p {
+	position: absolute;
+	bottom: -9px;
+	left: 0px;
+	width: 290px;
+	background: #000;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.service-list li:hover i {
+	animation: Shake 0.5s;
+	-moz-animation: Shake 0.5s;
+	-webkit-animation: Shake 0.5s;
+	-o-animation: Shake 0.5s;
+}
+
+
+/***填写联系方式弹出框***/
+
+.contact-warp .modal-header {
+	padding: 10px 15px;
+}
+
+.contact-warp .contact-form label {
+	width: 100px;
+	font-weight: normal;
+	text-align: right;
+	color: #666;
+}
+
+.contact-warp .contact-form em {
+	color: #db4d00;
+	margin-right: 5px;
+}
+
+.contact-warp .contact-form input,
+.contact-warp .contact-form textarea {
+	width: 350px;
+	height: 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 15px;
+	padding-left: 5px;
+	color: #666;
+}
+
+.contact-warp .contact-form textarea {
+	height: 100px;
+	vertical-align: middle;
+}
+
+.contact-warp .contact-form button {
+	background: #23baf9;
+	padding: 10px 30px;
+	border: 0px;
+	color: #fff;
+	border-radius: 4px;
+	margin-left: 105px;
+}
+
+.contact-warp span.Validform_wrong {
+	color: #db4d00;
+}
+
+.contact-warp .success-tip {
+	text-align: center;
+	color: #666;
+}
+
+.contact-warp .success-tip p i {
+	color: #11b0b6;
+	font-size: 55px;
+	margin-right: 10px;
+	vertical-align: -5px;
+	margin-bottom: 10px;
+}
+
+.contact-warp .success-tip span {
+	font-size: 22px;
+	line-height: 30px;
+	display: block;
+}
+
+.contact-warp .success-tip b {
+	display: block;
+	font-weight: normal;
+	line-height: 30px;
+}
+
+
+/***圣诞广告***/
+
+.Christmas {
+	height: 102px;
+	background: url(../../pics/index2.0/credit_risk.png) top center no-repeat;
+}
+
+.Christmas .C_layout {
+	position: relative;
+}
+
+.Christmas i {
+	width: 19px;
+	height: 19px;
+	display: block;
+	background: url(../../pics/index2.0/close2.png);
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.regist-color {
+	color: #0151a3;
+}
+
+.Christmas a {
+	width: 100%;
+	height: 100px;
+	display: block;
+}

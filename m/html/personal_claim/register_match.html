@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/personal_claim.css"/>
+	</head>
+	<body>
+		<header class="topImg">
+			<img src="../../img/claim.png" />
+		</header>
+		<main class="main_form">
+			<form class="myform" action="/group/save">
+				<ul class="cont-information">
+					<li class="clear">
+						<input type="text" class="name" placeholder="请输入姓名" datatype="*" errormsg=""  nullmsg="请输入请输入姓名"/>
+					</li>
+					<li class="clear">
+						<input type="text" class="identity" placeholder="请输入身份证号" datatype="identity" errormsg="请填写正确的身份证号"  nullmsg="请输入身份证号"/>
+					</li>
+				</ul>
+				<div class="partSmall">
+					<div class="end-bt">完成</div>
+				</div>
+			</form>
+		</main>
+		<footer class="footer2">企保科技客服电话 400-830-1985</footer>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+	<script>
+		$(function(){
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".end-bt",
+		        datatype:{
+	            	'identity':/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/
+		        },
+		        
+		        callback:function(data){
+					if(data.code==200){
+						
+					}else{
+						$(".yanzm .Validform_checktip").html("验证码错误");
+					}
+		        }
+		    });
+		    
+		    //短信验证码
+		    $(document).on("click",".code",function(){
+				var phone=$(".phone").val();
+				var resultphone = /^1\d{10}$/;
+				if(resultphone.test(phone)) {
+					$.post("/group/sendMessage",{'cellphone':phone},function(data){
+//						if(data.code==200){
+							var n=60;
+							$(".validate-bt").removeClass("code").html(n+"s");
+							timeer=setInterval(function(){
+								n--;
+								if(n>0){
+									$(".validate-bt").html(n+"s");
+								}else{
+									$(".validate-bt").addClass("code").html("获取验证码");
+									clearInterval(timeer);
+								}
+							},1000)
+//						}
+					});
+				}else{
+					$(".phone").focus();
+					$(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+				}
+			});
+			
+			
+			//保险协议    
+			$(".insur_clause").on("click",function(){
+				$(".baoxian-fix").css({display:"block"});
+				$(".clause-type").css({display:"block"});
+				
+			});
+			$("body").on("click",".all-no,.delete",function(){
+				$(".mid-cont").scrollTop(0);
+				$(".baoxian-fix").css({display:"none"});
+				$(".clause-type").css({display:"none"});
+			});	
+
+		})
+	</script>
+</html>

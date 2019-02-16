@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发布-选择业务部</title>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/selectInsurer.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/selectivizr.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" ></script>
+		<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li class="active">
+								<div class="img release"></div>
+								<a href="../release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+							<!--<li>
+								<div class="img case"></div>
+								<a href="../case.html">我的赔案</a>
+							</li>-->
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="../recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img points"></div>
+								<a href="../points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="../security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">采购比价</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../response.html">选择保险品牌</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="aimi-tishi">Aimi智能定价功能暂时只对货运险、财产险、公众责任险开放，后续会开放更多</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="aimi_fix">
+				<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="aimi_top">
+					<img src="../../img/aimi1.png" alt="" />
+					<span>智能Aimi为您估算投保费率</span>
+				</div>
+				<div class="aimi-tit">补充以下信息，估价更准确：</div>
+				<div class="error-tit"></div>
+				<form action="" id="Aimi-gujia">
+					<div class="tableheight">
+						<div class="gujia-cont">
+							<table class="gujia-one">
+								<thead>
+									<tr>
+										<th>前1年赔付率（%）</th>
+										<th>前2年赔付率（%）</th>
+										<th>前3年赔付率（%）</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input class="loss_ratios nubers"  type="text" name="last_one_years_paid" placeholder="未投保" /></td>
+										<td><input class="loss_ratios nubers"  type="text" name="last_two_years_paid" placeholder="未投保" /></td>
+										<td><input class="loss_ratios nubers"  type="text" name="last_three_years_paid" placeholder="未投保" /></td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="gujia-two">
+								<thead>
+									<tr>
+										<th>免赔事项</th>
+										<th>免赔额(￥）</th>
+										<th>免赔率(%)</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<div class="begin">
+						<div class="gujia-bg">
+							<span class="gujia-bt">开始估价</span>
+							<p class="end-shuoming">（我们保证，您的数据仅用于核价）</p>
+						</div>
+						<div class="gujia-end">
+							<p class="end-top">费率：<span class="red feilv"></span>　　保费：<span class="red">￥<span class="change-money">0.00</span></span></p>
+							<p class="end-shuoming">（仅供参考，具体以保险公司报价为准）<span class="gujia-else">重新估价</span></p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li class="hei"><span>　————　</span><span class="big-step">03</span><span>选择保险品牌</span></li>
+			</ol>
+			<!--<div class="cont_title">选择保险人</div>-->
+			<form class="myform" onkeydown="if(event.keyCode==13){return false;}">
+				<div class="padding">	
+					
+					<div class="topDiv clear">
+						<div class="enterprise_left">
+							<span>投保人：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="enterprise_right">
+							<input type="text" class="toubao_inpt" placeholder="请输入投保人企业名称" name="company_name" datatype="name" nullmsg="请输入投保人企业名" errormsg="企业名称不能输入除中英文数字·号空格_-等之外的符号" />
+							<div class="Prompt">
+								<div class="introduce">
+									<div class="jianjian"></div>
+									<p>投保人是指与保险人订立保险合同，并按照合同约定负有支付保险费义务的企业。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="topDiv clear">
+						<div class="enterprise_left">
+							<span>被保险人：</span>
+							<img src="../../img/key.png" alt="" />
+						</div>
+						<div class="enterprise_right">
+							<input type="text" placeholder="请输入被保险人企业名称" name="company_name2" datatype="name" nullmsg="请输入被保险人企业名" errormsg="企业名称不能输入除中英文数字·号空格_-等之外的符号" />
+							<div class="Prompt">
+								<div class="introduce">
+									<div class="jianjian"></div>
+									<p>被保险人是指其财产或者人身受保险合同保障，享有保险金请求权的企业或个人，投保人可以为被保险人。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear brand_top">
+						<p>成交说明</p>
+					</div>
+					<div class="deal">	
+						<ul class="clear ">
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>报价截止时间：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<div class="inlineDiv">
+										<input class="baoj" id="datetimepicker1" data-begin_time = "2017-10-5" type="text"  readonly="readonly">
+										<span class="Validform_checktip tell">请选择日期</span>
+									</div>
+									<div class="inlineDiv">
+										币种 ：<span>CNY</span>
+									</div>
+								</div>
+							</li>
+							<li class="clear">
+								<div class="enterprise_left">
+									<span>保费支付方式：</span>
+									<img src="../../img/key.png" alt="" />
+								</div>
+								<div class="enterprise_right">
+									<span class="paySpan">根据监管规定，若保费金额在人民币10万元以下，将只能选择见费出单</span>
+								</div>
+							</li>
+						</ul>
+						<div class="methods clear">
+							<label>
+								<input type="radio" name="method" checked="checked" />
+								<span>见费出单</span>
+							</label>
+							<label>
+								<input type="radio" name="method" class="qibao"/>
+								<span>起保后付费</span>
+							</label>
+						</div>
+						<div class="deal_content">
+							<span>缴费计划　　</span>
+							<span class="percent">100</span>
+							<span>　%，在　</span>
+							<span class="data">2017-01-30 </span>
+							<span>　十六时前支付到账</span>
+						</div>
+						<div class="deal_content_other">
+							<span class="Validform_checktip tell1">输入不为空且总和为100的数</span>
+							<span class="Validform_checktip tell2">请选择日期</span>
+							<div class="deal_content_other_top">
+								<span>缴费计划</span>
+							</div>	
+							<div class="deal_others clear">
+								<span class="other_span">第 <span class="period">1</span> 期：</span>
+								<input type="text" class="numb" value="100"/>
+								<span>%，在</span>
+								<input type="text"  class="duan_input"  readonly="readonly" />
+								<span>　十六时前支付到账</span>
+								<span class="add_img1 add_mid"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="choose-method clear">
+						<div class="method-type method-type-active">
+							<div class="left-pic"><img src="../../img/method-type1.png" alt="" /></div>
+							<div class="method-type-cont">
+								<p>公开发布需求</p>
+								<span>邀请全部保险公司</span>
+							</div>
+							<img src="../../img/check.png" alt="" class="check-pic" />
+						</div>
+						<div class="method-type">
+							<div class="left-pic"><img src="../../img/method-type2.png" alt="" /></div>
+							<div class="method-type-cont">
+								<p>定向发布需求</p>
+								<span>选择特定保险公司</span>
+							</div>	
+							<img src="../../img/check.png" alt="" class="check-pic" />
+						</div>
+						<div class="method-type">
+							<div class="left-pic"><img src="../../img/method-type3.png" alt="" /></div>
+							<div class="method-type-cont">
+								<p>指定业务员发布</p>
+								<span>选择指定的业务员</span>
+							</div>
+							<img src="../../img/check.png" alt="" class="check-pic" />
+						</div>
+						<div class="aimi">
+							<img src="../../img/aimi.png" alt="" class="aimi-picbt"/>
+							<div class="gujia">
+								<span class="aimi-bt" data-type="0">Aimi智能估价</span>
+							</div>
+							<div class="Prompt">
+								<div class="introduce">
+									<div class="jianjian"></div>
+									<p>智能机器人Aimi，基于您的项目资料而预估的行业平均水平报价，仅供参考。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--<div class="inquiry clear">
+						<img src="../../img/key.png" alt="" />
+						<span>询价方式：</span>
+						<div>
+							<label><input type="radio" name="method"/>公开发布询价（平台上所有的保险公司均可查看信息并参与报价）</label>
+							<label><input type="radio" class="judge" name="method" checked="checked"/>定向邀请报价（只有下列被您选中的保险公司或业务人员可以查看信息并参与报价）</label>
+						</div>
+					</div>-->
+					<div class="brand clear ">
+						<div class="clear brand_top">
+							<p>各大主流保险公司为您报价</p>
+							<div class="more"><span>更多品牌</span><div class="brand_pic"></div></div>
+						</div>
+						<ul class="clear insuranceNames">
+							<li class="choose_no" data-id = "1">
+								<img src="../../img/1484377368140495.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国平安（PING AN）</span>
+							</li>
+							<li class="choose_no" data-id = "2">
+								<img src="../../img/1484377102234396.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>华安保险（SINOSAFE INSURANCE）</span>
+							</li>
+							<li class="choose_no" data-id = "3">
+								<img src="../../img/1484377409179408.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国人民保险（PICC）</span>
+							</li>
+							<li class="choose_no" data-id = "4">
+								<img src="../../img/1484377480260741.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国人寿（CHINA LIFE）</span>
+							</li>
+							<li class="choose_no" data-id = "5">
+								<img src="../../img/1484377507324046.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>太平洋保险（CPIC）</span>
+							</li>
+							<li class="choose_no" data-id = "6">
+								<img src="../../img/1484377530986092.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中意财险（GENERALI CHINA INSURANCE）</span>
+							</li>
+							<li class="choose_no" data-id = "7">
+								<img src="../../img/1484377601209300.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>安联保险集团（ALLIANZ）</span>
+							</li>
+							<li class="choose_no" data-id = "8">
+								<img src="../../img/1484377772775408.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>美亚（AIG）</span>
+							</li>
+							<li class="choose_no" data-id = "9">
+								<img src="../../img/1484378174658431.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>苏黎世保险（ZURICH）</span>
+							</li>
+							<li class="choose_no" data-id = "10">
+								<img src="../../img/1484378214531184.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>史带财险（STARR）</span>
+							</li>
+							<li class="choose_no" data-id = "11">
+								<img src="../../img/1484383526659479.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国太平（CHINA TAIPING）</span>
+							</li>
+						</ul>
+						<ul class="clear insuranceNames hide">
+							<li class="choose_no" data-id = "1">
+								<img src="../../img/1484377368140495.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国平安（PING AN）</span>
+							</li>
+							<li class="choose_no" data-id = "2">
+								<img src="../../img/1484377102234396.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>华安保险（SINOSAFE INSURANCE）</span>
+							</li>
+							<li class="choose_no" data-id = "3">
+								<img src="../../img/1484377409179408.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国人民保险（PICC）</span>
+							</li>
+							<li class="choose_no" data-id = "4">
+								<img src="../../img/1484377480260741.png" alt="" class="pic"/>
+								<img src="../../img/check.png" alt="" class="check_pic" />
+								<span>中国人寿（CHINA LIFE）</span>
+							</li>
+							
+							
+						</ul>
+						<div class="choose_brand clear">
+							<span>已选公司：</span>
+							<div class="have clear">
+							</div>
+						</div>
+					</div>
+					<div class="salesman">
+						<div class="clear brand_top">
+							<p>指定参与报价的业务员</p>
+						</div>
+						<!--<div class="often clear">
+							<p>我的常用保险人：</p>
+							<div class="often_cont">
+								<span data-id = "20" class="target"><span>张三</span>　<span>人保财险</span></span>
+								<span data-id = "22" class="target">李四　太平洋保险</span>
+							</div>
+						</div>-->
+						<div class="search clear">
+							<!--<span>搜索：</span>-->
+							<div class="search_cont">
+								<input type="text" placeholder="请输入您要查找的手机号或姓名"/>
+								<input type="button" style="display:none;"/>
+								<a href="javascript:;" class="seach_pic"><img src="../../img/search1.png" alt="" /></a>
+							</div>
+						</div>
+						<ul class="search_ul">
+							<li data-id = "20" class="target">张三　人保财险</li>
+							<li data-id = "23" class="target">张三　平安财险</li>
+							<li data-id = "24" class="target">张三　太平洋财险</li>
+							<li data-id = "25" class="target">张三　史带财险</li>
+							<li data-id = "26" class="target">张三　中国太平</li>
+						</ul>
+						<div class="check_pp clear">
+							<span>已选报价人：</span>
+							<div class="have clear">
+							</div>
+						</div>
+					</div>
+					<div class="tishi">
+						<img src="../../img/gantan.png" alt="" id="jinshi"/>
+						<span>您选中了定向邀请报价，请选择报价品牌或者报价人。</span>
+					</div>
+					<div class="end">
+						<input type="hidden" value="" class="input1"/>
+						<input type="hidden" value="" class="input2"/>
+						<!--<button href="javascript:;" class="hold">保存草稿</button>-->
+						<a href="ProjectInformation.html" class="up">上一步</a>
+						<button href="selectInsurer.html" class="next">确认发布</button>
+					</div>
+				</div>
+		
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/input-prices.js" ></script>
+	<script type="text/javascript" src="../../js/selectInsurer.js" ></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+</html>

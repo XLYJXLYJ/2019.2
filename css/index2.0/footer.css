@@ -1,0 +1,64 @@
+/***底部***/
+
+footer {
+	background: #272727;
+	min-width: 1200px;
+	clear: both;
+}
+
+.footer-top {
+	padding: 40px 0;
+	overflow: hidden;
+}
+
+.footer-top ul {
+	color: #a0a0a0;
+}
+
+.footer-top ul li {
+	width: 240px;
+	float: left;
+}
+
+.footer-top ul li:last-child h3{
+	margin-right: 0px;
+}
+
+.footer-top h3 {
+	font-size: 16px;
+	border-bottom: 1px dotted #565656;
+	margin-right: 50px;
+	height: 45px;
+	margin-bottom: 15px;
+}
+
+.footer-top h3 span {
+	font-size: 12px;
+}
+
+.footer-top ul a {
+	color: #a0a0a0;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.footer-top ul a:hover {
+	color: #e1e1e1;
+}
+
+.footer-bottom {
+	background: #181818;
+	text-align: center;
+	line-height: 50px;
+	color: #a1a1a1;
+}
+
+.tel-footer p {
+	font-size: 18px;
+	margin-bottom: 0px;
+	line-height: 34px;
+}
+
+.tel-footer p span {
+	font-size: 12px;
+}

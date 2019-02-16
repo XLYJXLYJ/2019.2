@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的积分-兑换礼品</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="../release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="../recharge.html">在线充值</a>
+							</li>
+							<li class="active">
+								<div class="img points"></div>
+								<a href="../points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="../security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传保单</span>
+				<a class="replace-top" href="../release.html">发布需求</a>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<!--<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>-->
+				<dl>
+					<a href="../news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="../home.html">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="../points.html">我的积分</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="pointExchange.html">兑换礼品</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+		</div>
+		<div class="content clear">
+			<div class="point-title">兑换礼品</div>
+			<div class="now-point clear"><span>当前积分：</span><span class="big-now-point">3580</span></div>
+			<div class="choose-gift">选择礼品：</div>
+			<ul class="point-ul">	
+				<li class="gift-type">
+					<div class="gift-type-left"><img src="../../img/price100.png" alt="" /></div>
+					<div class="gift-type-mid">
+						<p class="gift-top">面值<span class="blue"><span class="small-price">￥</span>100.00</span></p>
+						<p class="jq-name">京东E卡</p>
+						<span class="need-point">所需积分:　<span class="unit-price">1000</span></span>
+					</div>
+					<div class="gift-type-right">
+						<img class="reduce-nub" src="../../img/price-reduce.png"/>
+						<input type="text" class="nub-put" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						<img class="add-nub" src="../../img/price-add.png"/>
+					</div>
+				</li>
+				<li class="gift-type">
+					<div class="gift-type-left"><img src="../../img/price200.png" alt="" /></div>
+					<div class="gift-type-mid">
+						<p class="gift-top">面值<span class="blue"><span class="small-price">￥</span>200.00</span></p>
+						<p class="jq-name">京东E卡</p>
+						<span class="need-point">所需积分:　<span class="unit-price">1950</span></span>
+					</div>
+					<div class="gift-type-right">
+						<img class="reduce-nub" src="../../img/price-reduce.png"/>
+						<input type="text" class="nub-put" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						<img class="add-nub" src="../../img/price-add.png"/>
+					</div>
+				</li>
+				<li class="gift-type">
+					<div class="gift-type-left"><img src="../../img/price500.png" alt="" /></div>
+					<div class="gift-type-mid">
+						<p class="gift-top">面值<span class="blue"><span class="small-price">￥</span>500.00</span></p>
+						<p class="jq-name">京东E卡</p>
+						<span class="need-point">所需积分:　<span class="unit-price">4800</span></span>
+					</div>
+					<div class="gift-type-right">
+						<img class="reduce-nub" src="../../img/price-reduce.png"/>
+						<input type="text" class="nub-put" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						<img class="add-nub" src="../../img/price-add.png"/>
+					</div>
+				</li>
+				<li class="gift-type">
+					<div class="gift-type-left"><img src="../../img/price1000.png" alt="" /></div>
+					<div class="gift-type-mid">
+						<p class="gift-top">面值<span class="blue"><span class="small-price">￥</span>1000.00</span></p>
+						<p class="jq-name">京东E卡</p>
+						<span class="need-point">所需积分:　<span class="unit-price">9500</span></span>
+					</div>
+					<div class="gift-type-right">
+						<img class="reduce-nub" src="../../img/price-reduce.png"/>
+						<input type="text" value="0" class="nub-put" onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+						<img class="add-nub" src="../../img/price-add.png"/>
+					</div>
+				</li>
+			</ul>	
+			<div class="end-point clear">
+				<div class="end-point-right">
+					<span class="bt click-sure" data-message = "您未选择礼品，请选择礼品！" data-url = "close">确定兑换</span>
+				</div>
+				<div class="end-point-left clear">
+					<span>需要积分：</span>
+					<span class="all-points red">0</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="../../js/points.js" ></script>
+	<script type="text/javascript" src="../../js/bounced.js" ></script>
+</html>

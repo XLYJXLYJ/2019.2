@@ -1,0 +1,131 @@
+/*.check_insurance{padding-left:245px ;position:relative;height: 90px;background: #fff;width:100%;box-sizing: border-box;}
+.check_insurance>p{font-size: 18px;line-height: 30px;position:absolute;left:0;top:0;}
+.check_insurance_nub{margin-left:25px;margin-bottom:10px;position:relative;background: #fb6f00;color:#fff;float:left;padding:6px 32px 6px 12px;border-radius: 20px;}
+.delete_line{background: url(../img/delete-line-ico.png) no-repeat;width:13px;height:13px;position:absolute;right:10px;top:10px;}*/
+
+.step{height:55px;line-height: 50px;color:#d9d9d9;border-bottom: 1px solid #e9e9f4;margin-bottom: 20px;}
+.step li{float:left;}
+.step li span{float:left;line-height: 50px;}
+.step .hei{color:#323234;}
+.step li .big-step{font-size: 24px;margin-right:5px;width:34px;height:34px;border-radius: 20px;text-align: center;margin-top: 7px;line-height: 34px;}
+.step li.hei .big-step{background: url(../img/runond-bg.png) no-repeat;color:#fff;font-size: 18px;}
+
+
+.all_insurance{max-width: 1100px;}
+.type{width:314px;float:left;margin-left:10px;}
+.type>p{line-height: 35px;margin-bottom:20px;font-size: 26px;font-weight: bold;color:#524ae7;}
+.type ul {font-size: 12px;}
+.type ul li{cursor:pointer;position:relative;width:90px;height:90px;border: 1px solid #e9e9f4;float:left;margin-bottom: 20px;margin-right: 12px;}
+.type ul li:hover{border:1px solid #524ae7;}
+.type ul li>p{margin-top: 55px;text-align: center;}
+.second-p{text-align: center;}
+/*.type ul li:hover>p{color:#fff;}*/
+.type ul li.blue{background: #524ae7;border:1px solid #524ae7;}
+.type ul li.blue p,.type ul li.blue .second-p{color:#fff;}
+.Prompt{width:20px;height:20px;position:absolute;right:-8px;top:-14px;background: url(../img/wenwen.png) no-repeat ;}
+.Prompt:hover{background: url(../img/wenwen1.png) no-repeat;}
+.Prompt:hover .introduce{display:block;}
+.introduce{width:345px;position:absolute;top:20px;right:-17px;display:none;z-index: 10;}
+.introduce .jianjian{height:17px;width:100%;background: url(../img/jianjian.png) no-repeat 310px 3px;}
+.introduce p{padding: 15px 12px;background: #fabc2d;border-radius: 5px;line-height: 22px;color:#fff;}
+.introduce p strong{font-weight: normal;}
+
+
+.peaple li.insurance-type1 .bg_pic{background: url(../img/type.png) no-repeat ;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.peaple li.insurance-type1.ca .bg_pic{background-position-x: -60px;}
+.peaple li.insurance-type2 .bg_pic{background: url(../img/type.png) no-repeat -171px top;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.peaple li.insurance-type2.ca .bg_pic{background-position-x: -231px;}
+.peaple li.insurance-type3 .bg_pic{background: url(../img/type.png) no-repeat -171px -60px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.peaple li.insurance-type3.ca .bg_pic{background-position-x: -231px;}
+
+.credit li.insurance-type4 .bg_pic{background: url(../img/type.png) no-repeat -339px -361px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.credit li.insurance-type4.ca .bg_pic{background-position-x: -399px;}
+.credit li.insurance-type5 .bg_pic{background: url(../img/type.png) no-repeat 0 -60px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.credit li.insurance-type5.ca .bg_pic{background-position-x: -60px;}
+.credit li.insurance-type6 .bg_pic{background: url(../img/type.png) no-repeat -171px -180px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.credit li.insurance-type6.ca .bg_pic{background-position-x: -231px;}
+
+.engineering li.insurance-type7 .bg_pic{background: url(../img/type.png) no-repeat -171px -240px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.engineering li.insurance-type7.ca .bg_pic{background-position-x: -231px;}
+.engineering li.insurance-type8 .bg_pic{background: url(../img/type.png) no-repeat 0 -120px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.engineering li.insurance-type8.ca .bg_pic{background-position-x: -60px;}
+.engineering li.insurance-type9 .bg_pic{background: url(../img/type.png) no-repeat 0 -240px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.engineering li.insurance-type9.ca .bg_pic{background-position-x: -60px;}
+
+.responsibility li.insurance-type10 .bg_pic{background: url(../img/type.png) no-repeat 0 -180px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type10.ca .bg_pic{background-position-x: -60px;}
+.responsibility li.insurance-type11 .bg_pic{background: url(../img/type.png) no-repeat -171px -420px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type11.ca .bg_pic{background-position-x: -231px;}
+.responsibility li.insurance-type12 .bg_pic{background: url(../img/type.png) no-repeat -339px -120px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type12.ca .bg_pic{background-position-x: -399px;}
+.responsibility li.insurance-type13 .bg_pic{background: url(../img/type.png) no-repeat 0 -300px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type13.ca .bg_pic{background-position-x: -60px;}
+.responsibility li.insurance-type14 .bg_pic{background: url(../img/type.png) no-repeat 0 -360px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type14.ca .bg_pic{background-position-x: -60px;}
+.responsibility li.insurance-type15 .bg_pic{background: url(../img/type.png) no-repeat -339px -420px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type15.ca .bg_pic{background-position-x: -399px;}
+.responsibility li.insurance-type16 .bg_pic{background: url(../img/type.png) no-repeat -339px 0;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type16.ca .bg_pic{background-position-x: -399px;}
+.responsibility li.insurance-type17 .bg_pic{background: url(../img/type.png) no-repeat -339px -240px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type17.ca .bg_pic{background-position-x: -399px;}
+.responsibility li.insurance-type18 .bg_pic{background: url(../img/type.png) no-repeat -171px -540px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.responsibility li.insurance-type18.ca .bg_pic{background-position-x: -231px;}
+
+.property li.insurance-type19 .bg_pic{background: url(../img/type.png) no-repeat -171px -300px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type19.ca .bg_pic{background-position-x: -231px;}
+.property li.insurance-type20 .bg_pic{background: url(../img/type.png) no-repeat 0 -480px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type20.ca .bg_pic{background-position-x: -60px;}
+.property li.insurance-type21 .bg_pic{background: url(../img/type.png) no-repeat -171px -360px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type21.ca .bg_pic{background-position-x: -231px;}
+.property li.insurance-type22 .bg_pic{background: url(../img/type.png) no-repeat 0 -540px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type22.ca .bg_pic{background-position-x: -60px;}
+.property li.insurance-type23 .bg_pic{background: url(../img/type.png) no-repeat 0 -420px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type23.ca .bg_pic{background-position-x: -60px;}
+.property li.insurance-type24 .bg_pic{background: url(../img/type.png) no-repeat -171px -480px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.property li.insurance-type24.ca .bg_pic{background-position-x: -231px;}
+
+.transport li.insurance-type25 .bg_pic{background: url(../img/type.png) no-repeat -339px -300px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.transport li.insurance-type25.ca .bg_pic{background-position-x: -399px;}
+.transport li.insurance-type26 .bg_pic{background: url(../img/type.png) no-repeat -339px -60px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.transport li.insurance-type26.ca .bg_pic{background-position-x: -399px;}
+.transport li.insurance-type27 .bg_pic{background: url(../img/type.png) no-repeat -339px -180px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.transport li.insurance-type27.ca .bg_pic{background-position-x: -399px;}
+.transport li.insurance-type28 .bg_pic{background: url(../img/type.png) no-repeat -171px -120px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.transport li.insurance-type28.ca .bg_pic{background-position-x: -231px;}
+.transport li.insurance-type29 .bg_pic{background: url(../img/type.png) no-repeat -339px -480px;width:60px;height:60px;position:absolute;top:0;left:16px;}
+.transport li.insurance-type29.ca .bg_pic{background-position-x: -399px;}
+
+
+
+
+.end{margin-left: 430px;}
+.ok{cursor: pointer;behavior: url(../js/PIE.htc);background: #524ae7;display:inline-block;font-size:16px;width:120px;height:38px;line-height:38px;text-align:center;color:#fff;border-radius: 4px;margin: 0 auto 52px auto;}
+.ok:hover{background: #4037ed;}
+
+.all_tip{display:none;top:140px;}
+
+
+/* 新需求  */
+.insures {padding-top: 30px;padding-bottom: 100px;}
+.insures ul {float: left;}
+.insuresNav {padding-right: 20px;border-right: 1px solid #E9E9F4;margin-right: 20px;}
+.insureTitl {font-size: 18px;color: #727689;padding: 20px 0;cursor: pointer;}
+.select ,.insureTitl:hover{color: #524AE7;}
+
+.insuerCont {width: 779px;display: none;}
+.choose {display: block;}
+.insuerLi {float: left;width: 239px;height: 120px;box-sizing: border-box;margin-left: 20px;margin-bottom: 20px;position: relative;border: 1px solid #E9E9F4;}
+.liLeft {float: left;width: 30px;height: 40px;text-align: center;margin: 20px 26px 0 19px;}
+.liRight {float: left;font-size: 12px;color: #727689;margin-top: 14px;}
+.liRightTitl {color: #524AE7;font-size: 14px;margin-bottom: 8px;}
+.liRightCont{max-width: 146px;height: 18px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap; }
+.insureNow {display: inline-block;width: 80px;height: 28px;text-align: center;line-height: 28px;border: 1px solid #727689;border-radius: 3px;margin-top: 16px;}
+.insureNow:hover {background-color: #524AE7;color: #fff;border-color: #524AE7;}
+
+.Prompt{cursor: pointer;width:20px;height:20px;position:absolute;right:-8px;top:-14px;background: url(../img/wenwen.png) no-repeat ;}
+.Prompt:hover{background: url(../img/wenwen1.png) no-repeat;}
+.Prompt:hover .introduce{display:block;}
+.introduce{width:345px;position:absolute;top:20px;right:-17px;display:none;z-index: 10;}
+.introduce .jianjian{height:17px;width:100%;background: url(../img/jianjian.png) no-repeat 310px 3px;}
+.introduce p{font-size: 12px;padding: 15px 12px;background: #fabc2d;border-radius: 5px;line-height: 22px;color:#fff;}
+.introduce p strong{font-weight: normal;}

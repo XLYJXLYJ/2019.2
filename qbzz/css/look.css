@@ -1,0 +1,15 @@
+.cont_title{font-size:24px;color:#35313f;line-height: 44px;}
+
+.content ul{padding-top: 40px;border-top: 1px solid #e9e9f4;}
+.content .content_ul2 {padding-top: 20px;margin-top: 20px;}
+.content ul li{line-height:36px;}
+.account_left{width:140px;float:left;text-align: right;}
+.account_right{width: 600px;float:left;padding-left: 10px;color:#35313f;}
+.account_right a{color:#524ae7;text-decoration: none;}
+.account_right a:hover{text-decoration: underline;}
+.download{padding-left: 30px;float:left;line-height: 18px;height:19px;position:relative;margin: 10px 0;margin-right:40px;cursor: pointer;}
+.download .pic{background: url(../img/background_zhaozhao.png) no-repeat -6px -447px;width:30px;height:30px;position:absolute;top:-4px;left:0;}
+.download:hover{color:#35313f;}
+.download:hover .pic{background: url(../img/background_zhaozhao.png) no-repeat -46px -447px;}
+.ok{height:38px;font-size:16px;line-height: 38px;margin:50px 0 100px 620px;display:block;width:120px;text-align:center;color:#fff;background: #524ae7;border-radius: 3px;}
+.ok:hover{background: #4037ed;}

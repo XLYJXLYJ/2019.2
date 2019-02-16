@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>雇主责任险</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/employ_index.css"/>
+	</head>
+	<body>
+		<!--<div class="header orderHeader">
+			<a href="javascript:history.go(-1);" class="back">
+				<img src="../../../img/back.png" alt="" />
+				<span>返回</span>
+			</a>
+			<p>预约雇主责任险</p>
+		</div>-->
+		<header class="barner">
+			<img src="../../../img/order.png" alt="" />
+		</header>
+		<main class="main_order">
+			<form class="myform" action="/group/save">
+				<ul class="cont-information">
+					<li class="clear">
+						<input type="text" name="company_name" placeholder="请输入公司名称" datatype="names" nullmsg="请输入公司名称"  errormsg="公司名称只能有汉字，字母，数字，空格，点号，-号" />
+					</li>
+					<li class="clear">
+						<input type="text" name="name" class=""  placeholder="请输入您的姓名" datatype="names" nullmsg="请输入您的姓名"  errormsg="姓名只能有汉字，字母，数字，空格，点号，-号" />
+					</li>
+					<li class="clear">
+						<input type="text" name="cellphone" class="phone"  placeholder="请输入您的手机号" datatype="phone" nullmsg="请输入您的手机号"  errormsg="手机号格式错误" />
+					</li>
+					<li class="li_textarea clear">
+						<textarea  type="text" class="beizhu" maxlength="500" placeholder="请填写备注（选填500字）：如备注您的行业特点，企业经营背景等，便于我们为您量身定制保险" ></textarea>
+					</li>
+					<li class="Verification yanzm clear">
+						<input type="text" placeholder="请输入短信验证码" class="inpt1" name="verify_code" datatype="*6-6" nullmsg="请输入短信验证码" errormsg="请正确输入短信验证码">
+						<span class="validate-bt code">获取验证码</span>
+					</li>
+					<li class="clear">
+						<div class="submit">提交预约</div>
+					</li>
+				</ul>	
+			</form>
+		</main>
+	</body>
+	<script src="../../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../../js/Validform_ncr_min.js" ></script>
+	<script>
+		$(function(){
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".submit",
+		        datatype:{
+		        	'names':/^[\u4e00-\u9fa5\w\-\.(^\s*)]+$/,
+	            	'phone':/^1\d{10}$/
+		        },
+		        callback:function(data){
+					if(data.code==200){
+						
+					}else{
+						$(".yanzm .Validform_checktip").html("验证码错误");
+					}
+		        }
+		    });
+		    
+		    
+		    $(document).on("click",".code",function(){
+				var phone=$(".phone").val();
+				var resultphone = /^1\d{10}$/;
+				if(resultphone.test(phone)) {
+					$.post("/group/sendMessage",{'cellphone':phone},function(data){
+//						if(data.code==200){
+							var n=60;
+							$(".validate-bt").removeClass("code").html(n+"s");
+							timeer=setInterval(function(){
+								n--;
+								if(n>0){
+									$(".validate-bt").html(n+"s");
+								}else{
+									$(".validate-bt").addClass("code").html("获取验证码");
+									clearInterval(timeer);
+								}
+							},1000)
+//						}
+					});
+				}else{
+					$(".phone").focus();
+					$(".phone").siblings(".Validform_checktip").html("请输入正确手机号");
+				}
+				
+			});
+		})
+	</script>
+</html>

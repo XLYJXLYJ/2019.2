@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招-保单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="../js/selectivizr.js"></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li class="active">
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise1"></div>
+								<a href="enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+				<a class="replace-top" href="release.html">发布需求</a>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="javascript:;">保单管理</a>
+				<span>></span>
+			</div>
+		</div>
+		
+		<div class="all_fix">
+			<div class="all_no"></div>
+		</div>
+		<div class="content">
+			<div class="content_top  clear">
+				<p>
+					<span>生成时间：</span>
+					<span class="spTime">
+						<select>
+							<option value="">全部</option>
+							<option value="">一周内</option>
+							<option value="">一个月内</option>
+							<option value="">三个月内</option>
+							<option value="">半年内</option>
+						</select>
+					</span>
+				</p>
+				
+				<div class="search">
+					<input type="text" placeholder="按保单号/险种名称进行搜索"/>
+				</div>
+				<input type="image" src="../../img/search-ico.png" class="input_submit"/>
+			</div>
+			<div class="padding" id="my-ic">
+				<table>
+					<tr>
+						<th>保单号</th>
+						<th>险种</th>
+						<th>投保人</th>
+						<th>承保公司</th>
+						<th>保险期限</th>
+						<th>成交保费</th>
+						<th>保险金额</th>
+						<th>成交时间</th>
+						<th>结算状态</th>
+						<th class="th-last my-th-baodan">操作</th>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">16110313000117</a></td>
+						<td>餐饮保</td>
+						<td>前海企保科技（深圳）有限公司前海企保科技（深圳）有限公司</td>
+						<td>平安银行</td>
+						<td>2016-12-15 至 2017-12-14</td>
+						<td class="td-money">CNY 30.00</td>
+						<td class="td-money">CNY 234,000,000,000.00</td>
+						<td>2016-12-15 16:46:48</td>
+						<td>待结清</td>
+						<td class=" ie8-back my-baodan">
+							<a href='my/CashManagement.html' class="my_payment">收付</a>
+							<a href='my/evaluate.html' class="my_evaluate">评价</a>
+							<a href='my/claim.html' class="my_Case">赔案</a>
+							<a href='javascript:;' class="my_renewal click-sure" data-message = "系统将同步您的保单资料，请你继续完善保险期限、成交说明等信息，即可发布">续保</a>
+							<a href='my/applyEndorsement.html' class="my_Correcting my_now" >批改<p>当前有正在进行的批单。</p></a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">16110313000117</a></td>
+						<td>信用险</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>平安银行</td>
+						<td>2016-12-15 至 2017-12-14</td>
+						<td>CNY 30.00</td>
+						<td>CNY 234,000.00</td>
+						<td>2016-12-15 16:46:48</td>
+						<td>已结清</td>
+						<td class=" ie8-back">
+							<a href='my/CashManagement.html' class="my_payment">收付</a>
+							<a href='my/evaluate.html' class="my_evaluate">评价</a>
+							<a href='my/applyEndorsement.html' class="my_Correcting">批单</a>
+							<a href='my/claim.html' class="my_Case">赔案</a>
+							<a href='javascript:;' class="my_renewal">续保</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;">16110313000117</a></td>
+						<td>雇主责任险</td>
+						<td>前海企保科技（深圳）有限公司</td>
+						<td>平安银行</td>
+						<td>2016-12-15 至 2017-12-14</td>
+						<td>CNY 30.00</td>
+						<td>CNY 234,000.00</td>
+						<td>2016-12-15 16:46:48</td>
+						<td>待结清</td>
+						<td class=" ie8-back">
+							<a href='my/CashManagement.html' class="my_payment">收付</a>
+							<a href='my/evaluate.html' class="my_evaluate">评价</a>
+							<a href='my/applyEndorsement.html' class="my_Correcting">批单</a>
+							<a href='my/claim.html' class="my_Case">赔案</a>
+							<a href='javascript:;' class="my_renewal">续保</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="nubs">
+				<div class="nub">
+					<img src="../../img/left-go.png" alt="" class="img_left"/>
+					<span class="check">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<img src="../../img/right-go.png" alt="" class="img_right"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/bounced.js" ></script>
+	<script type="text/javascript" src="../js/my.js" ></script>
+</html>

@@ -1,0 +1,62 @@
+body,div,dl,dt,dd,ul,li,pre,form,fieldset,select,input,textarea,button,p,blockquote,th,td,img,iframe{margin: 0;padding: 0;}
+.main{z-index: 1;position: absolute;width: 100%;
+    height: 100%;overflow-y: scroll;
+    }
+.header{height:70px;width: 100%;border-bottom: 1px solid rgba(255, 255, 255, .5);}
+.header-left{float:left;margin:20px 20px 20px 40px}
+.header-left img{height:33px;width:76px}
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{width: 100%;
+    height: 100%;
+    min-width: 1200px;font-family:"微软雅黑"}
+#wonder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    top: 0;
+    background: url(../img/background.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /*overflow: scroll;*/
+}
+canvas{
+    min-width: 1200px;
+    position: absolute;
+    /*overflow: scroll;*/
+}
+.header-left img,.header-left>span{vertical-align:sub;margin-top:0px }
+.header-left{margin-top: 19px}
+.header-left>span{color:#66c4dd;font-size: 25px;margin-left: 5px;letter-spacing: 1px;font-weight: bold;}
+.header-right{float:right;width:420px;margin:25px 40px 25px 20px;}
+.header-right img{width:23px;height:18px}
+.header-right >div:first-child{float:left;width:241px;}
+.header-right >div:first-child>img,.header-right >div:first-child>span{vertical-align: middle;color:white;font-weight: bold;}
+.header-right >div:last-child{float:right}
+.header-right >div:last-child>img {margin-left: 15px;margin-top: 5px}
+.header-right >div:first-child>span{font-size: 19px;margin-left: 10px}
+.content{height:700px;width:100%;margin-top:80px;}
+.content-left{width:45%;margin-left: 40px;float: left;}
+.content-right{width:40%;float: right;margin-right:7%;}
+.content-left .title{color:white;font-size: 48px;font-weight: bold;}
+.content-left .sub_title{font-size: 28px;color:#4ca6ff;margin-top: -6px;line-height: 40px}
+.content-left div:last-child{margin-top: 50px;color:#6cb5fe;font-size: 22px;line-height:30px}
+.content-right img{width:100%}
+.footer{width:100%;height:210px;background-color:#05133f;}
+.market,.innovations,.solution{margin:20px 0px 0px 0px;border-left:1px solid #233b83;height:170px;width:33%;float:left;color:#2a95ff;font-size: 19px;}
+.market{border-left:none;}
+.market>div{margin-left: 40px;
+    margin-right: 20px;}
+.innovations>div,.solution>div{margin-left:20px;margin-right: 20px}
+.market>div:first-child,.innovations>div:first-child,.solution>div:first-child{color:white;font-size:22px;margin-bottom:15px}
+.market>div:last-child,.innovations>div:last-child,.solution>div:last-child{line-height: 24px}
+
+@media screen and (max-width: 1400px) {
+    .footer{height:280px;}
+     .market,.innovations,.solution{height:240px;}
+}
+
+@media screen and (max-width:1200px)
+{
+   
+}

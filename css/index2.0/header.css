@@ -1,0 +1,242 @@
+/***顶部***/
+
+header {
+	height: 85px;
+	z-index: 10;
+	position: relative;
+}
+
+.header-nav a,
+.header-nav>ul,
+.header-nav li {
+	float: left;
+}
+
+.header-nav>ul {
+	font-size: 18px;
+	padding-top: 42px;
+	margin-bottom: 0px;
+	position: relative;
+}
+
+.header-nav>ul li {
+	margin-left: 30px;
+}
+
+.header-nav>ul li a {
+	color: #333;
+	height: 43px;
+}
+
+.header-nav>ul li a:hover {
+	color: #0151a3;
+}
+
+.header-nav>ul li a i {
+	background: url(../../pics/public/spring.png) no-repeat;
+	width: 19px;
+	height: 11px;
+	float: right;
+	margin: 10px 0 0 5px;
+	background-position: -395px -756px;
+}
+
+.header-nav>ul li a:hover i {
+	background-position: -395px -726px;
+}
+
+header .nav-menu {
+	float: right;
+	text-align: right;
+	color: #666;
+	padding-top: 10px;
+}
+
+header .nav-menu a {
+	padding: 5px 10px;
+	margin-right: 0px;
+}
+
+.nav-menu span {
+	font-size: 16px;
+}
+
+header .nav-menu p {
+	display: block;
+	padding-top: 20px;
+	clear: both;
+}
+
+header .nav-menu p b {
+	color: #ff8017;
+}
+
+.header-suspend {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
+	z-index: 50;
+}
+
+.nav-menu a.pr0 {
+	padding-right: 0px;
+}
+
+.nav-menu a.pl0 {
+	padding-left: 0px;
+}
+
+.nav-menu .weixin,
+.nav-menu .my_qbzz {
+	position: relative;
+}
+
+.nav-menu .weixin span {
+	position: absolute;
+	top: 25px;
+	left: -50px;
+}
+
+.nav-menu .weixin span {
+	text-align: center;
+}
+
+.nav-menu .weixin span img {
+	border: 1px solid #ddd;
+	width: 155px;
+	height: 155px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.nav-menu .weixin:hover img {
+	display: block;
+}
+
+.nav-menu .my_qbzz dl {
+	width: 72px;
+	position: absolute;
+	top: -5px;
+	left: 2px;
+	border: 1px solid #ddd;
+	padding-bottom: 10px;
+	background: #fff;
+	display: none;
+	text-align: center;
+}
+
+.nav-menu .my_qbzz dl a {
+	padding: 0px;
+}
+
+.nav-menu .my_qbzz:hover dl {
+	display: block;
+}
+
+.nav-menu .my_qbzz dl dd {
+	line-height: 26px;
+}
+
+.top-nav-menu {
+	margin-bottom: 0px;
+}
+
+.top-nav-menu li {
+	float: left;
+}
+
+
+/***子导航***/
+
+.sub-nav {
+	width: 500px;
+	height: 430px;
+	z-index: 10;
+	position: absolute;
+	top: 85px;
+	left: 0px;
+	overflow: hidden;
+	background: #fff url(../../pics/index2.0/nav_bj.jpg) bottom right no-repeat;
+	border-top: 3px solid #1366bc;
+	display: none;
+}
+
+.sub-nav ul {
+	height: 430px;
+}
+
+.sub-nav li {
+	width: 100%;
+	text-align: center;
+}
+
+.header-nav .sub-nav li {
+	margin-left: 0px;
+}
+
+.sub-nav .sub-nav-left {
+	width: 175px;
+	background: #1366bc;
+	float: left;
+	font-size: 14px;
+	border-bottom: 0px;
+}
+
+.sub-nav .sub-nav-left a {
+	width: 165px;
+	color: #fff;
+	height: 48px;
+	line-height: 48px;
+	margin-left: 7px;
+	border-radius: 0px;
+	border-bottom: 1px solid #0855a5;
+}
+
+.sub-nav .sub-nav-left li.active,
+.sub-nav .sub-nav-left li:hover {
+	border-radius: 0px;
+	background: #fff;
+	color: #333;
+}
+
+.sub-nav .sub-nav-left li.active a,
+.sub-nav .sub-nav-left li:hover a {
+	color: #333;
+	border: 0px;
+}
+
+.sub-nav-right {
+	width: 325px;
+	float: left;
+}
+
+.sub-nav-right .tab-pane {
+	padding: 25px 20px;
+}
+
+.sub-nav-right .tab-pane dd {
+	min-width: 118px;
+	float: left;
+	margin: 0px 10px 15px 10px;
+}
+
+.header-nav .sub-nav-right .tab-pane dd a {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	border: 1px solid #ddd;
+	background: #fbfbfb;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+.sub-nav-right .tab-pane dd a:hover,
+.sub-nav-right .tab-pane dd a.active {
+	background: #f3a73b;
+	border: 0px;
+	color: #fff;
+}

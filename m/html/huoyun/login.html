@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招货运保险要搞个大事情</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../../css/freight.css"/>
+	</head>
+	<body>
+		<div class="hy-baner">
+			<img src="../../img/log-regist.png" alt="" />
+		</div>
+		<div class="login">
+			<form class="loginform" action="/group/save">
+				<ul class="hy-form">
+					<li class="form-type clear">
+						<img src="../../img/ren.png" class="login_pic" />
+						<input type="text" name="account" class="account tubiaoput"  placeholder="请输入您的账号" datatype="*" nullmsg="请输入您的账号"/>
+					</li>
+					<li class="form-type clear">
+						<img src="../../img/shuo.png" class="login_pic" />
+						<input type="password" name="password" class="password tubiaoput"  placeholder="请输入您的密码" datatype="*" nullmsg="请输入您的密码"/>
+					</li>
+				</ul>	
+				<div class="tijiao-bt">
+					<div class="submit loginsubmit">立即签到</div>
+				</div>
+			</form>
+			<p class="go-other">暂无账号？ 点此<a href="register.html" class="go-register">参与活动</a></p>
+		</div>
+		<div class="footer-p">企保科技客服电话400-830-1985</div>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/Validform_ncr_min.js" ></script>
+	<script>
+		$(function(){
+		    var h=$(window).height();
+		    $(window).resize(function() {
+		        if($(window).height()<h){
+		            $('.footer-p').hide();
+		        }
+		        if($(window).height()>=h){
+		            $('.footer-p').show();
+		        }
+		    });
+		    $(".loginform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".loginsubmit",
+		        callback:function(data){
+					if(data.code==200){
+						
+					}else{
+						$(".yanzm .Validform_checktip").html("验证码错误");
+					}
+		        }
+		    });
+		})    
+	</script>
+</html>

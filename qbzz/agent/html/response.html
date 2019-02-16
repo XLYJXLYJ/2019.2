@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>企保大师-查看报价</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qi.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li>
+							<li class="special-parity">
+								<div class="img release"></div>
+								<a href="release.html">采购比价</a>
+							</li>
+							<li class="active">
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li><li>
+								<div class="img claim"></div>
+								<a href="claimManagement.html">赔案管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿箱</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise1"></div>
+								<a href="enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="top agentTop">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/agentlogo.png" alt="" />
+			</a>
+			
+			<div class="top_right">
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-830-1985</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<a class="replace-top" href="release.html">采购比价</a>
+			</div>
+			<p class="agentName">深圳民太安经纪公司</p>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">查看报价</a>
+				<span>></span>
+			</div>
+			<!--<div class="now-area">
+				<a href="response.html">订单支付</a>
+				<span>></span>
+			</div>-->
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="look_fix">
+				<img src="../../img/delete-line-ico2.png" alt="" class="no"/>
+				<p>查看补充要求：</p>
+				<div class="textarea">1、请带上相关证明的资料</div>
+				<span class="look_yes">立即补充</span>
+			</div>
+		</div>
+		<div class="content" id="response">
+			<div class="content_top  clear">
+				<p>
+					<span>发标时间：</span>
+					<span class="spTime">
+						<select>
+							<option value="">全部</option>
+							<option value="">一周内</option>
+							<option value="">一个月内</option>
+							<option value="">三个月内</option>
+							<option value="">半年内</option>
+						</select>
+					</span>
+				</p>
+				<p>
+					<span>险种：</span>
+					<span class="spInsure">
+						<select>
+							<option value="">全部</option>
+							<option value="">财产基本险</option>
+							<option value="">财产综合险</option>
+							<option value="">产品一切险</option>
+							<option value="">营业中断险</option>
+							<option value="">现金险</option>
+							<option value="">雇主责任险</option>
+							<option value="">财产一切险</option>
+							<option value="">产品责任险</option>
+							<option value="">食品安全责任险</option>
+							<option value="">旅行社责任险</option>
+							<option value="">停车责任险</option>
+							<option value="">物业管理责任险</option>
+							<option value="">保安公司责任险</option>
+							<option value="">道路客运承运人责任险</option>
+							<option value="">保险经纪人职业责任险</option>
+							<option value="">国内道路货物运输承运人责任险</option>
+							<option value="">建筑工程一切险</option>
+							<option value="">安装工程一切险</option>
+							<option value="">困难意外险</option>
+							<option value="">建筑施工人员意外险</option>
+							<option value="">国际货物运输保险（预约）</option>
+							<option value="">国内货物运输保险（预约）</option>
+							<option value="">贷款保证保险</option>
+							<option value="">雇员忠诚保证保险</option>
+							<option value="">短期出口贸易信用险</option>
+						</select>
+					</span>
+				</p>
+				<div class="search">
+					<input type="text" placeholder="项目名称关键字/标号"/>
+				</div>
+				<input type="image" src="../../img/search-ico.png" class="input_submit"/>
+			</div>
+			<div class="padding">
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">未通过
+								<div class="zhuangtai-null"></div>
+								<div class="zhuangtai-cont">标信息有误，请修改投保信息后再发布，或者关闭本标。</div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span>
+							</p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							<span class="suer-baojia">
+								<span class="bijia-a">确认报价</span>
+								<div class="gongbao-div">
+									<img src="../../img/delete-line-ico2.png" alt="" class="no1"/>
+									<div class="all_tip2"></div>
+									<div class="gongbaopage1">
+										<div class="fix-title">请确认报价及共保份额</div>
+										<div class="nei">
+											<div class="tabel-head clear">
+												<span class="gs">保险公司 </span>
+												<span class="bj">报价人</span>
+												<span class="bf">保费</span>
+												<span class="fe">意愿份额</span>
+												<span class="xz">选择状态</span>
+											</div>
+											<div class='gongbao_tabel'>
+												<table>
+													<tbody>
+														<tr data-id="1" data-msg="中国平安" data-price_premium = "1,966.00" data-currency = "CNY">
+															<td class="gs">中国平安</td>
+															<td class="bj">张三张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="2" data-msg="亚太财产保险公司" data-price_premium = "1,967.00" data-currency = "CNY">
+															<td class="gs">亚太财产保险公司亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="3" data-msg="中国人寿" data-price_premium = "1,968.00" data-currency = "CNY">
+															<td class="gs">中国人寿</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="4" data-msg="亚太财产保险公司" data-price_premium = "1,969.00" data-currency = "CNY">
+															<td class="gs">亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="5" data-msg="亚太财产保险公司" data-price_premium = "1,965.00" data-currency = "CNY">
+															<td class="gs">亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										
+										<div class="page1-end clear">
+											<div class="page1-left">
+												<div class="tipTxt">温馨提示：</div>
+												<p>请在充分沟通后，确定主承保人、承保条件、总承保费等。如果已统一共保条件，可选择共保方，点击【下一步】。</p>
+											</div>
+											<span class="page1next page1-bt">下一步</span>
+										</div>
+									</div>
+									
+										<div class="gongbaopage2 hide">
+											<input type="hidden" value="1" name="tender_id" />
+											<form class="myForm">
+												<div class="fix-title">设置共保份额</div>
+												<div class="nei">
+													<div class="tabel-head clear">
+														<span class="widthdabo">承保人 </span>
+														<span>承保份额</span>
+														<span>主承保人</span>
+													</div>
+													<div class='gongbao_tabel'>
+														<table>
+															<tbody></tbody>
+														</table>
+													</div>
+												</div>
+											</form>
+											<div class="page1-end clear">
+												<p class="pageRate">主承保人报价：
+													<span class="bitype">CNY </span><span class="main-money"></span>
+												</p>
+												<span class="page1next">下一步</span>
+												<span class="pageLast">上一步</span>
+											</div>
+										</div>
+										<div class="gongbaopage3 hide">
+											<div class="fix-title">确认共保份额</div>
+											<ul class="sureTxt">
+												<!--<li class="clear">
+													<div class="divLeft" >中国平安财产保险公司：</div>
+													<div class="divRight">
+														<span class="mainInsure">60%</span>
+													</div>
+												</li>
+												<li  class="clear">
+													<div class="divLeft">中国人保股份有限公司：</div>
+													<div class="divRight">
+														<span class="">60%</span>
+													</div>
+												</li>
+												<li  class="clear">
+													<div class="divLeft">承保费率：</div>
+													<div class="divRight">
+														<span class="">10‰</span>
+													</div>
+												</li>-->
+											</ul>
+											<div class="page1-end clear">
+												<span class="page1next">确定</span>
+												<span class="pageLast">上一步</span>
+											</div>
+										</div>
+									
+								</div>
+							</span>
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									
+									<table class='next_tabel'>
+										<thead>
+											<tr>
+												<th>公司名称 </th>
+												<th>被邀请人</th>
+												<th>状态</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>要求补充资料</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>已报价</td>
+											</tr>
+											<tr>
+												<td>亚太财产保险公司</td>
+												<td>张三</td>
+												<td>要求补充资料</td>
+											</tr>
+										</tbody>
+										
+										
+									</table>
+								</div>
+							</span>
+							<div class="moreBtn">
+								更多操作
+								<p class="kongbaiheight"></p>
+								<div class="moreBtnDiv">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<table>
+							<tr>
+								<th>报价号</th>
+								<th>报价的保险公司</th>
+								<th>报价人</th>
+								<th>报价时间</th>
+								<th>状态</th>
+								<th>保费价格</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司亚太财产保险公司亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<!--<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>-->
+									<a href='javascript:;' class="open click-sure" data-message = "温馨提示：退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<!--<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>-->
+									<a href='javascript:;' class="open click-sure" data-message = "温馨提示：退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<!--<a href='javascript:;' class="insure click-sure" data-message = "报价一经选中将无法更改，是否确认选中该报价进行投保？">确认投保</a>-->
+									<a href='javascript:;' class="open click-sure" data-message = "温馨提示：退回报价将允许对方修改或放弃报价，是否确认退回？">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>要求补充资料</td>
+								<td>—————</td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="require ">查看要求</a>
+									<a href='javascript:;' class="cannot click-sure" data-message = "温馨提示：若无法按要求补充业务资料，对方有可能会重新报价或放弃报价，您确定无法更改或补充资料吗？">无法补充</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">未通过
+								<div class="zhuangtai-null"></div>
+								<div class="zhuangtai-cont">标信息有误，请修改投保信息后再发布，或者关闭本标。</div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span></p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									<table class='next_tabel'>
+										<tr>
+											<th>公司名称 </th>
+											<th>被邀请人</th>
+											<th>状态</th>
+										</tr>
+										<tr>
+											<td colspan="3" >公开发布，无指定邀请对象</td>
+										</tr>
+									</table>
+								</div>
+							</span>
+							<div class="moreBtn">
+								更多操作
+								<div class="moreBtnDiv hide">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<p>暂无保险公司报价</p>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="mark clear">
+					<div class="mark_top clear">
+						<div class="mark_top_left">
+							<div class="zhuangtai-type">未通过
+								<div class="zhuangtai-null"></div>
+								<div class="zhuangtai-cont">标信息有误，请修改投保信息后再发布，或者关闭本标。</div>
+							</div>
+							<p>
+								<span>保险标号: <a href="javascript:;">1611031300017</a></span>
+								<span>保险期限: 2016-12-25零时起 至 2017-12-24二十四时止</span></p>
+							<p>
+								<span>项目名称: 甬台温高速公路复线温州瑞安至苍南段工程土建施工第1/8/9/11标段建工意外险</span>
+								<span>险种: 建筑施工人员意外险</span>
+							</p>
+						</div>
+						<div class="mark_top_right">
+							<span class="suer-baojia">
+								<span class="bijia-a">确认报价</span>
+								<div class="gongbao-div">
+									<img src="../../img/delete-line-ico2.png" alt="" class="no1"/>
+									<div class="all_tip2"></div>
+									<div class="gongbaopage1">
+										<div class="fix-title">请确认报价及共保份额</div>
+										<div class="nei">
+											<div class="tabel-head clear">
+												<span class="gs">保险公司 </span>
+												<span class="bj">报价人</span>
+												<span class="bf">保费</span>
+												<span class="fe">意愿份额</span>
+												<span class="xz">选择状态</span>
+											</div>
+											<div class='gongbao_tabel'>
+												<table>
+													<tbody>
+														<tr data-id="1" data-msg="中国平安" >
+															<td class="gs">中国平安</td>
+															<td class="bj">张三张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="2" data-msg="亚太财产保险公司" >
+															<td class="gs">亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="3" data-msg="中国人寿">
+															<td class="gs">中国人寿</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="4" data-msg="亚太财产保险公司">
+															<td class="gs">亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+														<tr data-id="5" data-msg="亚太财产保险公司">
+															<td class="gs">亚太财产保险公司</td>
+															<td class="bj">张三</td>
+															<td class="bf">CNY 5,000,000.00</td>
+															<td class="fe">20%~60%</td>
+															<td class="xz lan-check"><label><input type="checkbox" /></label></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										
+										<div class="page1-end clear">
+												<div class="tipTxt">温馨提示：</div>
+											<p>请在充分沟通后，确定主承保人及条件，统一的共保费率，重新修改标的内容。</p>
+											<p>如果已统一共保条件，可选择共保方，点击【下一步】。</p>
+											<span class="page1next">下一步</span>
+										</div>
+									</div>
+									<div class="gongbaopage2 hide">
+										<input type="hidden" value="1" name="tender_id" />
+										<form class="myForm">
+											<div class="fix-title">设置共保份额</div>
+											<div class="nei">
+												<div class="tabel-head clear">
+													<span class="widthdabo">承保人 </span>
+													<span>承保份额</span>
+													<span>主承保人</span>
+												</div>
+												<div class='gongbao_tabel'>
+													<table>
+														<tbody></tbody>
+													</table>
+												</div>
+											</div>
+										</form>
+										
+										<div class="page1-end clear">
+											<p class="pageRate">统一费率：
+												<input type="text" placeholder="请输入共保费率" name="rate2" /> ‰
+											</p>
+											<span class="page1next">下一步</span>
+											<span class="pageLast">上一步</span>
+										</div>
+									</div>
+									<div class="gongbaopage3 hide">
+										<div class="fix-title">确认共保份额</div>
+										<ul class="sureTxt">
+											
+										</ul>
+										<div class="page1-end clear">
+											<span class="page1next">确定</span>
+											<span class="pageLast">上一步</span>
+										</div>
+									</div>
+								</div>
+							</span>
+							<span class='See'>
+								查看邀请信息
+								<div class="information">
+									<table class='next_tabel'>
+										<tr>
+											<th>公司名称 </th>
+											<th>被邀请人</th>
+											<th>状态</th>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+										<tr>
+											<td>亚太财产保险公司</td>
+											<td>张三</td>
+											<td>已报价</td>
+										</tr>
+									</table>
+								</div>
+							</span>
+							<div class="moreBtn">
+								更多操作
+								<div class="moreBtnDiv hide">
+									<a href="javascript:;" class="check_a click-sure" data-message = "修改项目信息将使目前所有报价失效，保险公司将重新报价，是否确认修改？">修改</a>
+									<a href="javascript:;" class="close click-sure" data-message = "关闭项目将被视为中止询价，再次询价将需要重新填写项目信息，是否确认关闭？">关闭</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mark_tabel">
+						<table>
+							<tr>
+								<th>报价号</th>
+								<th>报价的保险公司</th>
+								<th>报价人</th>
+								<th>报价时间</th>
+								<th>状态</th>
+								<th>保费价格</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure roundify">确认投保</a>
+									<a href='javascript:;' class="open roundify">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure roundify">确认投保</a>
+									<a href='javascript:;' class="open roundify">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure roundify">确认投保</a>
+									<a href='javascript:;' class="open roundify">退回重报</a>
+								</td>
+							</tr>
+							<tr>
+								<td><a href='javascript:;'>1611031300017001</a></td>
+								<td>亚太财产保险公司</td>
+								<td>张三</td>
+								<td>2016-12-15  14：36</td>
+								<td>已报价</td>
+								<td>CNY    <span class="money">150000000</span></td>
+								<td class=" ie8-back">
+									<a href='javascript:;' class="insure roundify">确认投保</a>
+									<a href='javascript:;' class="open roundify">退回重报</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="mark_Arrow">
+						<div class="up_down"></div>
+					</div>
+				</div>
+				<div class="list_none">
+					<img src="../../img/list-none.png" alt="" />
+				</div>
+			</div>
+			<div class="nubs">
+				<div class="nub">
+					<img src="../../img/left-go.png" alt="" class="img_left"/>
+					<span class="check">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<img src="../../img/right-go.png" alt="" class="img_right"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/Validform_ncr_min.js"></script>
+	<script type="text/javascript" src="../js/bounced.js" ></script>
+	<script src="../js/money_change.js"></script>
+	<script type="text/javascript" src="../js/response.js" ></script>
+	<script>
+		//只可以输入数字和小数点,小数点只能有2位
+		function clearNoNum(obj) {  
+		    obj.value = obj.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符  
+	        obj.value = obj.value.replace(/^\./g,""); //验证第一个字符是数字而不是  
+	        obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的  
+	        obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");  
+	        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数  
+		      
+		} 
+	</script>
+</html>

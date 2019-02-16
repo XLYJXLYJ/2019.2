@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,scrollview.bounces = no">
+		<title>保单详情</title>
+		<link rel="stylesheet" type="text/css" href="../../css/personal_claim.css"/>
+	</head>
+	<body id="bgcolor">
+		<div class="policy">
+			<ul class="">
+				<li class="typeTitle clear">
+					<div class="type-left"><span>保单号</span><i>：</i></div>
+					<div class="type-cont">LP132421341223412</div>
+					<div class="statusTips p_right clear">
+						<p class="circleRight"></p>
+						<p>保障中</p>
+						<p class="circleLeft"></p>
+					</div>
+					<!--<p class="statusTips">保障中</p>-->
+				</li>
+				<li class="clear">
+					<div class="type-left"><span>险种</span><i>：</i></div>
+					<div class="type-cont">雇主责任险</div>
+				</li>	
+				<li class="clear">
+					<div class="type-left"><span>生效日期</span><i>：</i></div>
+					<div class="type-cont">2017-07-01 0时</div>
+				</li>	
+				<li class="clear">
+					<div class="type-left"><span>截止日期</span><i>：</i></div>
+					<div class="type-cont">2018-07-01 24时</div>
+				</li>
+			</ul>
+			<a href="#" class="claimBtn">申请理赔</a>
+		</div>
+		<ul class="ul1 policyList">
+			<li>
+				<span class="personal_left">投保人</span>
+				<span class="personal_right">深圳市大锤科技有限公司</span>
+			</li>
+			<li>
+				<span class="personal_left">被保险人</span>
+				<span class="personal_right">深圳市大锤科技有限公司</span>
+			</li>
+			<li>
+				<span class="personal_left">承保公司</span>
+				<span class="personal_right">华泰保险</span>
+			</li>
+			<li>
+				<span class="personal_left">保障范围</span>
+				<span class="personal_right">
+					<a href="#" class="clear">
+						<img src="../../img/you.png" alt="" class="go"/>
+						<span class="seeDetail">查看详情</span>
+					</a>
+				</span>
+			</li>
+			<li class="clear">
+				<span class="personal_left">电子保单</span>
+				<span class="personal_right">
+					<p><a href="javascript:;">2017年医疗补充保险投保单附件1</a></p>
+					<p><a href="javascript:;" >2017年医疗补充保险投保单附件2</a></p>
+				</span>
+			</li>
+		</ul>
+		<footer class="footer-p">企保科技客服电话 400-830-1985</footer>
+		<!-- 弹框 -->
+		<!--<div class="baoxian-fix">
+			<div class="all-no"></div>
+			<div class="clause-cont baodan-cont">
+				<p class="downloadTitle">提 示</p>
+				<p class="dowloadCont">确定开始下载该文件？</p>
+				<div class="dowloadBtn clear">
+					<p class="p_floatLeft">取消</p>
+					<p class="p_floatRight">确定</p>
+				</div>
+			</div>
+		</div>-->
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script>
+		$(function(){
+			// 附件下载 弹框   
+//			$(".personal_right a").on("click",function(){
+//				$(".baoxian-fix").css({display:"block"});
+//				
+//			});
+//			$("body").on("click",".all-no,.p_floatLeft",function(){
+//				$(".baoxian-fix").css({display:"none"});
+//			});	
+		})
+	</script>
+</html>

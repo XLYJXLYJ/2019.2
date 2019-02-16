@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招-采购比价</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/release.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../img/qibao.png">
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="home.html">首页</a>
+							</li>
+							<li class="special-parity active">
+								<div class="img release"></div>
+								<a href="release.html">采购比价</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="response.html">查看报价</a>
+							</li>
+							<li>
+								<div class="img my"></div>
+								<a href="my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="draft.html">草稿箱</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="history.html">历史记录</a>
+							</li>
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise1"></div>
+								<a href="enterprise.html">常用保险人</a>
+							</li>
+							<li>
+								<div class="img customer"></div>
+								<a href="customer.html">客户管理</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../img/right-default-phone.png" alt="" />
+				<span class="gogo">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="response.html">采购比价</a>
+				<span>></span>
+			</div>
+		</div>
+		<!--<div class="all_fix">
+			<div class="all_no"></div>
+			<div class="fabu_fix">
+				<img src="../img/delete-line-ico2.png" alt="" class="no"/>
+				<div class="ok_fix_top">温馨提示：</div>
+				<div class="all_top clear">
+					<img src="../img/gantan.png" alt="" />
+					<p>您已选择多个险种，系统已自动为您生成多个草稿标。</p>
+				</div>
+				<span class="fabu_yes">确认</span>
+			</div>
+		</div>-->
+		
+		<div class="content">
+			<ol class="step clear">
+				<li class="hei"><span class="big-step">01</span><span>选择险种</span></li>
+				<li><span>　————　</span><span class="big-step">02</span><span>填写项目信息</span></li>
+				<li><span>　————　</span><span class="big-step">03</span><span>企业信息&支付说明</span></li>
+				<li><span>　————　</span><span class="big-step">04</span><span>指定业务员</span></li>
+			</ol>
+			<div class="insures clear">
+				<ul class="insuresNav">
+					<li class="insureTitl select">人员/团险</li>
+					<li class="insureTitl">财产安全</li>
+					<li class="insureTitl">经营责任</li>
+					<li class="insureTitl">信用保障</li>
+					<li class="insureTitl">物流运输</li>
+					<li class="insureTitl">工程建筑</li>
+				</ul>
+				
+				<!-- 人员/团险  -->
+				<ul class="insuerCont choose clear">
+					<li class="insuerLi clear" data-id = "" data-name="雇主责任险">
+						<div class="liLeft">
+							<img src="../img/insureType/type1-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">雇主责任险</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="团体意外险">
+						<div class="liLeft">
+							<img src="../img/insureType/type1-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">团体意外险</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="雇员忠诚保证险">
+						<div class="liLeft">
+							<img src="../img/insureType/type1-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">雇员忠诚保证险</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!-- 财产安全  -->
+				<ul class="insuerCont clear">
+					<li class="insuerLi clear" data-id = "" data-name="财产一切险">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">财产一切险</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="财产综合险">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">财产综合险</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="财产基本险">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">财产基本险</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="机器损坏险">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-4.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">机器损坏险</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="营业中断">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-5.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">营业中断</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="现金保障">
+						<div class="liLeft">
+							<img src="../img/insureType/type2-6.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">现金保障</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!-- 经营责任  -->
+				<ul class="insuerCont clear">
+					<li class="insuerLi clear" data-id = "" data-name="公众责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">公众责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="食品安全责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">食品安全责任</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="物业管理责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">物业管理责任</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="停车场责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-4.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">停车场责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="保安公司责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-5.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">保安公司责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="保险经纪人责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-6.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">保险经纪人责任</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="产品责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-7.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">产品责任</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="产品质量保证">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-8.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">产品质量保证</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="保险代理人责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-9.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">保险代理人责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="无船承运人责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-10.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">无船承运人责任</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="货款责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-11.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">货款责任</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="超额责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-12.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">超额责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="账号安全责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-13.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">账号安全责任</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="律师执业责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-14.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">律师执业责任</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="董监事责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type3-15.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">董监事责任</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!-- 信用保障  -->
+				<ul class="insuerCont clear">
+					<li class="insuerLi clear" data-id = "" data-name="进出口贸易">
+						<div class="liLeft">
+							<img src="../img/insureType/type4-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">进出口贸易</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="国内贸易">
+						<div class="liLeft">
+							<img src="../img/insureType/type4-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">国内贸易</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="企业贷款保证">
+						<div class="liLeft">
+							<img src="../img/insureType/type4-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">企业贷款保证</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!-- 物流运输 -->
+				<ul class="insuerCont clear">
+					<li class="insuerLi clear" data-id = "" data-name="国内货物运输">
+						<div class="liLeft">
+							<img src="../img/insureType/type5-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">国内货物运输</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="国际货物运输">
+						<div class="liLeft">
+							<img src="../img/insureType/type5-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">国际货物运输</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="旅客承运责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type5-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">旅客承运责任</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="货物承运责任">
+						<div class="liLeft">
+							<img src="../img/insureType/type5-4.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">货物承运责任</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="其他险种">
+						<div class="liLeft">
+							<img src="../img/insureType/type5-5.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">其他险种</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+				<!-- 工程建筑  -->
+				<ul class="insuerCont clear">
+					<li class="insuerLi clear" data-id = "" data-name="建筑工程">
+						<div class="liLeft">
+							<img src="../img/insureType/type6-1.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">建筑工程</div>
+							<p class="liRightCont">经营场所有保证，企业更放心！</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="安装工程">
+						<div class="liLeft">
+							<img src="../img/insureType/type6-2.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">安装工程</div>
+							<p class="liRightCont">健康食品，有问题我买单。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="施工人员意外">
+						<div class="liLeft">
+							<img src="../img/insureType/type6-3.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">施工人员意外</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+					<li class="insuerLi clear" data-id = "" data-name="潜在缺陷保障">
+						<div class="liLeft">
+							<img src="../img/insureType/type6-4.png" />
+						</div>
+						<div class="liRight">
+							<div class="liRightTitl">潜在缺陷保障</div>
+							<p class="liRightCont">楼宇安全保障，让物业更省心。</p>
+							<a href="javascript:;" class="insureNow">立即投保</a>
+						</div>
+						<div class="Prompt">
+							<div class="introduce">
+								<div class="jianjian"></div>
+								<p>安装工程保险简称安工险，与建筑工程险同属综合性
+									的工程保险业务，其承保的对象是机械设备的安装，
+									包括成套设备、生产线、大型机械装置如发电机组、
+									各种钢结构构造物、管道安装等工程等。安装工程保
+									险有地铁安装工程保险、建筑安装工程保险等险种组
+									成。安装工程保险承保责任分为物质损失保险、第三
+									者责任保险。</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+	<script type="text/javascript">
+		//  选择险种类型
+		$(document).on("click",".insureTitl",function(){
+			$(this).addClass('select').siblings().removeClass('select');
+			var index=$(this).index();
+			$(".insuerCont").eq(index).show().siblings(".insuerCont").hide();
+		});
+		$("#footer").load("../../index3.0/html/footer.html"); 
+	</script>
+</html>

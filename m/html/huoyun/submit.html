@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企保招招货运保险要搞个大事情</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="../../css/freight.css"/>
+	</head>
+	<body>
+		<div class="hy-baner">
+			<img src="../../img/yaoqing.png" alt="" />
+		</div>
+		<div id="submit-ok">
+			<div id="submit-ok1">
+				<img src="../../img/submit-ok_01.png" alt="" />
+				<div class="bgbaner" >
+					<p class="sub-ok">提交成功!</p>
+					<p class="sub-explain">参与成功，快邀请更多好友参与活动吧！</p>
+				</div>
+				<div class="active">
+					<div class="hy-bt">
+						<p>你当前成功邀请了<span class="red">0<span>位</span></span>好友</p>
+						<p>他们首充金额的<span class="red">5%</span>将自动汇入您的账号</p>
+					</div>
+				</div>
+			</div>
+			<div id="submit-ok2">
+				<img src="../../img/submit-ok_02.png" alt="" />
+				<div class="frend">邀请好友参与</div>
+				<ul class="invite clear">
+					<li><img src="../../img/shearwx.png" alt="" /><p>分享微信好友</p></li>
+					<li><img src="../../img/shearpyc.png" alt="" /><p>分享到朋友圈</p></li>
+				</ul>
+			</div>
+			<div id="submit-ok3">
+				<img src="../../img/submit-ok_03.png" alt="" />
+			</div>
+		<div class="ewm">
+			<img src="../../img/gzewm.png" alt="" />
+			<p>（关注企保招招了解更多）</p>
+		</div>
+		<div class="fixed">
+			<img src="../../img/shear-zhiy.png" alt="" />
+			<span class="close-sure">知道啦 !</span>
+		</div>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script>
+		$(function(){
+			$(".close-sure").on("click",function(){
+				$(".fixed").hide();
+			});
+			$(".invite li").on("click",function(){
+				$(".fixed").show();
+			});
+			
+		})
+	</script>
+</html>

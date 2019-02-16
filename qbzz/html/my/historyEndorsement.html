@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>批单管理-历史批单</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/list.css"/>
+		<link rel="icon" sizes="16x16 32x32" mask="" href="../../img/qibao.png">
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<script type="text/javascript" src="../../js/selectivizr.js"></script>
+	</head>
+	<body>
+		<div class="aside">
+			<div class="background">
+				<div class="aside_contents">
+					
+					<div class="aside_content">
+						<div class="title">我的招招</div>
+						<ul class="ul1">
+							<li>
+								<div class="img home"></div>
+								<a href="../home.html">首页</a>
+							</li>
+							<li>
+								<div class="img release"></div>
+								<a href="../release.html">发布需求</a>
+							</li>
+							<li>
+								<div class="img response"></div>
+								<a href="../response.html">查看报价</a>
+							</li>
+							<li class="active">
+								<div class="img my"></div>
+								<a href="../my.html">保单管理</a>
+							</li>
+							<li>
+								<div class="img draft"></div>
+								<a href="../draft.html">草稿标</a>
+							</li>
+							<li>
+								<div class="img history"></div>
+								<a href="../history.html">历史记录</a>
+							</li>
+							<!--<li>
+								<div class="img case"></div>
+								<a href="../case.html">我的赔案</a>
+							</li>-->
+						</ul>
+					</div>
+					<div class="aside_content">
+						<div class="title">账户中心</div>
+						<ul class="ul2">
+							<li>
+								<div class="img accountHave"></div>
+								<a href="../accountHave.html">个人信息</a>
+							</li>
+							<li>
+								<div class="img enterprise"></div>
+								<a href="../enterprise.html">常用企业</a>
+							</li>
+							<li>
+								<div class="img recharge"></div>
+								<a href="../recharge.html">在线充值</a>
+							</li>
+							<li>
+								<div class="img points"></div>
+								<a href="../points.html">我的积分</a>
+							</li>
+							<li>
+								<div class="img security"></div>
+								<a href="../security.html">安全设置</a>
+							</li>
+						</ul>
+					</div>
+					<!--<a href="javascript:;" class="wenwen">我的问问</a>-->
+				</div>
+			</div>
+		</div>	
+		<div class="top">
+			<a class="logo" href="www.qibaozz.com">
+				<img src="../../img/head-icon.png" alt="" />
+			</a>
+			<div class="top_right">
+				<a href="javascript:;">返回官网首页</a>
+				<span>｜</span>
+				<a href="javascript:;">退出登录</a>
+				<span>｜</span>
+				<a href="javascript:;" class="colorname">王松阳</a>
+				<a href="javascript:;"><img src="../../img/right-default-QQ.png" alt="" class="qq"/></a>
+				<span>400-009-7855</span>
+				<img src="../../img/right-default-phone.png" alt="" />
+				<span class="gogo roundify">上传已有保单</span>
+			</div>
+			<div class="top_left">
+				<dl class="check-ok">
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic1 nav-top-pic"></p></dt>
+						<dd><span>我的招招</span></dd>
+					</a>
+					
+				</dl>
+				<dl>
+					<a href="javascript:;">
+						<dt><p class="nav-top-pic2 nav-top-pic"></p></dt>
+						<dd><span>数据统计</span></dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="news.html">
+						<dt><p class="nav-top-pic3 nav-top-pic"></p><div class="news-have"></div></dt>
+						<dd><span>消息</span></dd>
+					</a>
+				</dl>
+			</div>	
+		</div>	
+		
+		<div class="now clear">
+			<span class="now-title">当前位置：</span>
+			<div class="now-area">
+				<a href="javascript:;">我的招招</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="javascript:;">我的保单</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="javascript:;">批单管理</a>
+				<span>></span>
+			</div>
+			<div class="now-area">
+				<a href="javascript:;">历史批单</a>
+				<span>></span>
+			</div>
+		</div>
+		<div class="all_fix">
+			<div class="all_no"></div>
+		</div>
+		<div class="content">
+			<div id="historyEndorsement">
+				<div class="content_top clear">
+					<p class="select-parents">
+						<span>保存时间：</span>
+						<span class="spTime">
+							<select>
+								<option value="">全部</option>
+								<option value="">一周内</option>
+								<option value="">一个月内</option>
+								<option value="">三个月内</option>
+								<option value="">半年内</option>
+							</select>
+						</span>
+					</p>
+					<div class="search">
+						<input type="text" placeholder="按批单号搜索"/>
+					</div>
+					<input type="image" src="../../img/search-ico.png" class="input_submit"/>
+				</div>
+				<div class="padding">
+					<table>
+						<tr>
+							<th>批单号</th>
+	 						<th>申请时间</th>
+							<th>经办人</th>
+							<th>批单事项</th>
+							<th>承保公司</th>
+							<th>状态更新时间</th>
+							<th>当前状态</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td><a href="javascript:;">1316543216532E000001</a></td>
+							<td>2017-03-10 14:56:10</td>
+							<td>admin</td>
+							<td>变更保险条款</td>
+							<td>平安保险</td>
+							<td>2017-03-10 14:56:10</td>
+							<td>已完成</td>
+							<td class=" ie8-back">
+								<p class="bianji"><a href="release.html">查看详情</a></p>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="javascript:;">1316543216532E000001</a></td>
+							<td>2017-03-10 14:56:10</td>
+							<td>admin</td>
+							<td>变更保险条款</td>
+							<td>平安保险</td>
+							<td>2017-03-10 14:56:10</td>
+							<td>已过期</td>
+							<td class=" ie8-back">
+								<p class="bianji"><a href="release.html">查看详情</a></p>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="javascript:;">1316543216532E000001</a></td>
+							<td>2017-03-10 14:56:10</td>
+							<td>admin</td>
+							<td>变更保险条款</td>
+							<td>平安保险</td>
+							<td>2017-03-10 14:56:10</td>
+							<td>已取消</td>
+							<td class=" ie8-back">
+								<p class="bianji"><a href="release.html">查看详情</a></p>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="javascript:;">1316543216532E000001</a></td>
+							<td>2017-03-10 14:56:10</td>
+							<td>admin</td>
+							<td>变更保险条款</td>
+							<td>平安保险</td>
+							<td>2017-03-10 14:56:10</td>
+							<td>已退回</td>
+							<td class=" ie8-back">
+								<p class="bianji"><a href="release.html">查看详情</a></p>
+							</td>
+						</tr>
+					</table>
+					<div class="list_none">
+						<img src="../../img/list-none.png" alt="" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="nubs">
+				<div class="nub">
+					<img src="../../img/left-go.png" alt="" class="img_left"/>
+					<span class="check">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<img src="../../img/right-go.png" alt="" class="img_right"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

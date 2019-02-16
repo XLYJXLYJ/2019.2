@@ -1,0 +1,174 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+body,html{font-family:"微软雅黑";font-size: 14px;color: #5c5869;min-width: 1255px;background-color: #e9e9f4;;}
+a{color: #5c5869;text-decoration: none;}
+ol,ul,li{list-style: none;} 
+.clear:after{content:"";overflow:hidden;clear:both;display:block;}
+textarea{resize: none}
+
+.hide-put{position:absolute;top:0px;display:none;}
+/*弱提示*/
+.all_tip {display: none;left: 42%;top: 27%;}
+
+
+.content{
+	width: 1200px;
+    height: 630px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+.content_busi_top{margin-bottom: 42px;font-size: 20px;color: #35313f;padding-top: 30px;}
+
+.content_busi_cont{width: 520px;position: relative;text-align: left;margin: 0 auto;}
+.content_busi_cont input{border: 1px solid #ebebf5;width: 388px;padding: 10px;box-sizing: border-box;margin-top: 18px;/*margin-bottom: 20px;*/}
+.content_busi_cont select {
+	width: 408px;
+    color: #35313f;
+    padding:6px 0 10px 6px;
+    height: 100%; 
+    background: transparent;
+    border: none;
+ }
+ .spSlect {
+ 	width: 388px;
+	background: url(../../img/xiala.png) no-repeat right center;
+	border: 1px solid #ebebf5;
+	overflow: hidden;
+	margin-left: 4px;
+}
+
+ .spTip,.spSlect {display: inline-block;height: 38px;line-height: 38px;float: left;}
+ .txt_p1 {color: #727689;float: left;font-size: 12px;margin:8px 0 20px 93px;}
+ .txt_p2 {color: #727689;padding-top:16px;margin-top: 50px;margin-bottom: 16px;border-top: 1px dashed #ebebf5;}
+ .txt_p2 a{color: #524ae7;margin-left: 8px;display: inline-block;border-bottom: 1px solid #524ae7;cursor: pointer;}
+ 
+ /*.review{color: red;font-size: 14px;padding-left: 20px;}
+ .review_no{position: absolute;left: 115px;bottom: 10px;}
+ .review_no img{width: 14px;position: absolute;top: 3px;left: 4px;}
+.tips_count{margin-left: 56px;}*/
+.tips{display: inline-block;width: 88px;text-align: right;}
+.answers{color: #35313f;}
+.btn{
+	display: block;
+	margin: 0 auto;
+	width: 140px;
+	height: 38px;
+	line-height: 38px;
+    color: #fff;
+    background: url(../img/bc.png) no-repeat center center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.div_apply {line-height: 38px;}
+.txt_apply {margin-top: 120px;padding-top: 36px;}
+.txt_refuse {color: #e5423d;margin-top: 106px;padding-top: 30px;}
+
+/*所在城市弹框*/
+.hide{display:none;}
+.city{
+	width: 450px;
+    position: absolute;
+    left: 92px;
+    top: 62px;
+    border: 1px solid #524ae7;
+    padding: 5px 10px 20px 10px;
+    background-color: white;
+    z-index: 3;
+}
+.city li{
+	display: inline-block;
+    padding: 13px 2px 1px 2px;
+    color: black;
+    text-align: center;
+}
+.city_top{width: 410px;border-bottom: 1px solid #ebebf5;}
+.city_top{width: 410px;border-bottom: 1px solid #ebebf5;}
+.city_top img{width: 14px;height:14px;position: absolute;top: 7px;right: 6px;}
+.city_top span{padding: 0 6px;color: #5c5869;font-size: 14px;cursor: pointer;}
+.city_cont span{padding: 2px 8px;cursor: pointer;}
+.city_cont span:hover{color: white;background: blue;}
+.city_cont li{padding-left: .5px;}
+.city_cont p{color: orange;padding: 5px 10px 0 8px;float: left;width: 8px;}
+
+.cities li{width: 100%;text-align:left;padding-top: 0;}
+.cities span{/*padding-right: 16px;*/display: inline-block;}
+.choose {color: blue;border-bottom: 2px solid blue;}
+.city_cont div{float: left;width: 392px;position: relative;bottom: 0px;left:7px;line-height: 27px;}
+
+.citySpan {vertical-align: top;margin-top: 28px;}
+.diInpt {display: inline-block;margin: 20px 0;}
+
+/*创建业务部的弹框*/
+.all_fix,.check_id_fix{position:fixed;width:100%;height:100%;z-index: 9;background: rgba(3,3,3,.7);}
+.invite_fix{border-radius: 4px;display:block;position:absolute;top:35%;left:50%;margin-top:-180px;background:#fff;margin-left: -295px;padding:0 50px 0 50px;width:510px;}
+.no{position:absolute;right:-50px;top:0;cursor:pointer;}
+.ok_fix_top{font-size: 18px;line-height: 68px;color:#35313f;margin-bottom: 0;}
+.invite_yes{
+	font-size: 14px;
+    margin: 52px 0 40px 0;
+    float: right;
+    color: #fff;
+    cursor: pointer;
+    width: 140px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background: url(../img/bc.png) no-repeat center center;
+}
+.invite_yes:hover,.invite:hover{background: #4037ed;}
+.invite_left{width:130px;float:left;height:38px;}
+.invite_left span{float:right;line-height: 38px;}
+.invite_left img{float:right;position:relative;top:13px;right:3px;}
+.invite_right{float:left;margin-left: 10px;width:370px;color:#35313f;}
+.invite_right>input,.scan{border: 1px solid #e9e9f4;width:100%;padding:9px 0 9px 10px;box-sizing: border-box;}
+.invite_fix ul li{margin-top: 20px;} 
+
+/* 加入业务部选择城市*/
+.div_city,.div_gs {position: relative;float:left;margin-right: 20px;}
+.div_city .selc,.div_gs .selc{width: 170px;filter:alpha(opacity:0);opacity: 0;position:relative;left: 0;top: 0;z-index: 2;height: 38px;line-height: 38px;border: 1px solid #e9e9f4;box-sizing: border-box;}
+.div_city .selcSpan,.div_gs .selcSpan {
+	width: 158px;
+	height: 36px;
+	line-height: 36px;
+	display:inline-block;
+	position:absolute;
+	top:0;
+	left:0;
+	/*z-index: -10;*/
+	background: url(../../img/xiala.png) no-repeat right center;
+	border:1px solid #e9e9f4;
+	margin-left: 0px;
+	padding-left: 10px;
+}
+.div_gs .selc {width: 400px;}
+.div_gs .selcSpan {width: 388px;}
+.div_city .Validform_checktip,.div_gs .Validform_checktip {padding-left: 10px;}
+/*上传名片弹框*/
+/*.check_id{padding: 0 25px 0 25px;width: 540px;}
+.check_id_right{margin-left: 20px;float:left;}
+.check_id_left{width: 600px;}
+.invite_cont{margin: 10px 0 40px 0;}
+.check_id_tips{}
+.check_id_tips_titl{color: red;margin-bottom: 15px;}
+.check_id_tips_cont{margin-bottom: 3px;}
+.sure_up{
+	font-size: 14px;
+    float: right;
+    background: #524ae7;
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    border-radius: 3px;
+}
+.uplaod{margin-bottom: 25px;position: relative;}
+.sure_up_ok{margin: 30px 2px 25px 0;}
+.sure_up_scan{background-color: #5c5869;bottom: 0;right: 0;position: absolute;}
+
+#upload_display_1{width: 224px;height: 170px;}
+.percentage{width: 500px;}*/

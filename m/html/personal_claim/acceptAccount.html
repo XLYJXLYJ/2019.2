@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>收款账户信息</title>
+		<link rel="stylesheet" type="text/css" href="../../css/personal_claim.css"/>
+	</head>
+	<body>
+		<div class="content">
+			<form class="myform" action="/group/save">
+				<ul class="ul_account">
+					<li class="clear">
+						<div class="accountLeft">联系地址:</div>
+						<div class="accountRight">
+							<div class="divSelect clear">
+								<select class="province_select prov"></select>
+								<select class="city_select city"></select>
+							</div>
+							<input type="text" name="" placeholder="详细地址" datatype="*" errormsg=""  nullmsg="请输入详细地址" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="accountLeft">收款账户:</div>
+						<div class="accountRight">
+							<input type="text" name="" placeholder="请输入账户姓名" datatype="*" errormsg="请填写正确的账户姓名"  nullmsg="请输入账户姓名" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="accountLeft">银行卡号:</div>
+						<div class="accountRight">
+							<input type="text" name="" placeholder="请输入卡号" datatype="n" errormsg="请填写正确的卡号"  nullmsg="请输入卡号" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="accountLeft">开户银行:</div>
+						<div class="accountRight">
+							<input type="text" name="" placeholder="请输入银行及分支行信息" datatype="*" errormsg=""  nullmsg="请输入银行及分支行信息" />
+						</div>
+					</li>
+					<li class="clear">
+						<div class="accountLeft">邮箱地址:</div>
+						<div class="accountRight">
+							<input type="text" name="" placeholder="请输入有效邮箱地址" datatype="e" errormsg="请填写正确的邮箱地址"  nullmsg="请输入有效邮箱地址" />
+						</div>
+					</li>
+				</ul>	
+				<div class="out">
+					<div class="out-bt">保存更新</div>
+				</div>
+			</form>	
+		</div>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/Validform_ncr_min.js" ></script>
+	<script src="../../js/jquery.cityselect.js"></script>
+	<script>
+   		$(function(){
+			$(".myform").Validform({
+		        tiptype: 4,
+		        ignoreHidden:true,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".out-bt",
+//		        datatype:{
+//	            	'name':,
+//	            	'email':/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+//		        },
+		    });
+		    
+		    //省市二级联动
+		    $(".divSelect").citySelect({
+				prov:"", 
+			});
+			$(".province_select").on("change",function(){ 
+				var that=$(this);
+				setTimeout(function(){
+					var name=that.siblings(".city option:selected").val();
+				})
+			});
+		})
+  	</script>
+</html>	
+
+

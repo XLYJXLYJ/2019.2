@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/shownew.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../../css/复制(2)show.css"/>-->
+	</head>
+	<body>
+		<div class="tc_contain">
+			<img class="tc_bc" src="../img/tc_big.jpg" />
+			<div class="audio_contain">
+				<!--<img class="tc_bc" src="../../img/tc/tc_round.png" />-->
+				<video class="video" preload="auto" autoplay loop>
+				    <source src="../img/aimi1.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="progress_contain">
+				<p class="loadTxt" style="display: none;">我正在阅读你的保单...</p>
+				<div class="progress_border" >
+					<img src="../img/tc_k5.png"/>
+					<div class="progress_total">
+						<div class="progress_done"></div>
+						<p class="progress_label">0%</p>
+					</div>
+				</div>
+				
+				<p class="loadTxt1">AIMI正在解析你的保单...</p>
+				<div class="progress_border1" >
+					<img src="../img/tc_k5.png"/>
+					<div class="progress_total1">
+						<div class="progress_done1"></div>
+						<p class="progress_label1">0%</p>
+					</div>
+				</div>
+			</div>
+			<div class="load_link clear">
+				<a href="go(-1)" class="link_back">
+					<img src="../img/tc_back.png" />
+					<span>Back</span>
+				</a>
+				<a href="javascript:;" class="link_go hide">
+					<span>Go</span>
+					<img src="../img/tc_go.png" />
+				</a>
+			</div>
+			<p class="madeTxt">@企保科技</p>
+		</div>
+		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script src="../js/progress.js" type="text/javascript"></script>
+	</body>
+</html>

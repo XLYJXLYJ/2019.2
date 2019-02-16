@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改公司名</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/list.css" />
+</head>
+<body>
+    <div class="resetCompany">
+        <form class="myform">
+            <div class="company_input">
+                <input type="text" name="company-name" datatype="*6-16" errormsg="范围在6~20位之间" nullmsg="请输入公司全称"/>
+            </div>
+            <div class="partSmall">
+                <span class="end-bt">保存</span>
+            </div>
+        </form>
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Validform_ncr_min.js"></script>
+    <script>
+        $(function(){
+            $(".myform").Validform({
+                tiptype: 4,
+                ignoreHidden:true,
+                postonce: true,
+                ajaxPost:true,
+                btnSubmit:".end-bt",
+                datatype:{},
+                callback:function(data){
+                    if(data.code==200){
+
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+</html>

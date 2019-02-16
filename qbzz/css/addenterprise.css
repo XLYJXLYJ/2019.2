@@ -1,0 +1,69 @@
+select {font-family: "微软雅黑";padding:8px 0 9px 6px;height: 100%; background: transparent;border: none;color: #727689;}
+
+.add_title{font-size: 24px;color:#35313f;border-bottom: 1px solid #e9e9f4;line-height: 44px;}
+.padding{width:646px;}
+
+.account_left{width:156px;float:left;height:38px;}
+.account_left span{float:right;line-height: 38px;}
+.account_right{float:left;margin-left: 10px;width:472px;}
+.account_right input{border: 1px solid #e9e9f4;width:95%;height: 38px;line-height: 36px ;padding: 0 10px;box-sizing: border-box;}
+.content ul li{margin-top: 24px;} 
+.account_left img{float:right;margin: 16px 3px 0 0;}
+.select_ul{border: 1px dashed #c1c1ce;margin-top: 29px;padding-bottom: 20px;}
+.select_ul1 .account_right>a{color:#524ae7;text-decoration: underline;float:left;line-height: 38px;}
+.account_right .check_city{width:353px;}
+.prompt{line-height:46px ;color:#e5423d;margin-top: 7px;}
+.prompt_cont{line-height: 20px;}
+
+
+.last_ul input {width:200px;height:36px;}
+.last_ul .account_left{height:26px;}
+.last_ul .account_left span{line-height: 36px;}
+/*.last_ul .account_left img{margin-top: 7px;}*/
+.hold{cursor:pointer;float:right;background: #524ae7;font-size: 16px;border-radius: 3px;width: 118px;height: 38px;color:#fff;margin:78px 0 168px 0;}
+.cancel{line-height: 38px;text-align: center;background:#b1afbb;font-size: 16px;border-radius: 3px;width: 118px;height: 38px;color:#fff;margin:78px 45px 168px 0;cursor:pointer;float:right;}
+.cancel:hover{background:#999;}
+
+.spSlect {display: inline-block;width: 300px;}
+.account_right .spSlect:first-child {margin-right: 40px;}
+.select_ul1 li:first-child+li+li+li+li+li .account_right,.spSlect,.last_ul li:first-child+li .account_right {height: 38px;background: url(../img/xiala.png) no-repeat right center;border: 1px solid #ebebf5;overflow: hidden;}
+.select_ul1 li:first-child+li+li+li+li+li .account_right {width: 156px;}
+.select_ul1 li:first-child+li+li+li+li+li select {width: 175px;}
+.last_ul li:first-child+li .account_right {width: 300px;}
+.spSlect select,.last_ul li:first-child+li select {width: 320px;}
+
+.hold:hover{background: #4037ed;}
+
+#selt-city{width: 76px;}
+/*所在城市弹框*/
+.hide{display:none;}
+.city{
+	width: 458px;
+    position: absolute;
+    margin-top: 43px;
+    border: 1px solid #524ae7;
+    padding: 5px 10px 20px 10px;
+    background-color: white;
+    z-index: 3;
+}
+.city li{
+	display: inline-block;
+    padding: 13px 2px 1px 2px;
+    color: black;
+    text-align: center;
+}
+.city_top{width: 410px;border-bottom: 1px solid #ebebf5;}
+.city_top img{width: 14px;height:14px;position: absolute;top: 7px;right: 6px;}
+.city_top span{padding: 0 6px;color: #5c5869;font-size: 14px;cursor: pointer;}
+.city_cont span{padding: 2px 8px;cursor: pointer;}
+.city_cont span:hover{color: white;background: blue;}
+.city_cont li{padding-left: .5px;}
+.city_cont p{color: orange;padding: 5px 10px 0 8px;float: left;width: 8px;}
+
+.cities li{width: 100%;text-align:left;padding-top: 0;}
+.cities span{/*padding-right: 16px;*/display: inline-block;}
+.choose{color: blue;border-bottom: 2px solid blue;}
+.city_cont div{float: left;width: 392px;position: relative;bottom: 0px;left:7px;line-height: 27px;}
+
+.cityInpt{margin-right: 20px;}
+.inputs_right>div {float: left;}

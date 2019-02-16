@@ -1,0 +1,342 @@
+.active-ad {
+	width: 100%;
+	background: url(../../pics/active2.0/ad-active.jpg) top center no-repeat;
+	height: 646px;
+}
+
+.acitve-service {
+	background: #fdeee9;
+	height: 544px;
+}
+
+.acitve-service .C_layout {
+	background: url(../../pics/active2.0/active-service.jpg) top center no-repeat;
+	height: 544px;
+}
+
+.active-receive {
+	background: #da251c;
+	height: 682px;
+}
+
+.receive-content {
+	background: url(../../pics/active2.0/active-receive.jpg) top center no-repeat;
+	height: 311px;
+	position: relative;
+}
+
+.receive-content button {
+	width: 290px;
+	height: 90px;
+	position: absolute;
+	right: 50px;
+	top: 124px;
+	background: transparent;
+	outline: 0px;
+}
+
+.active-people {
+	background: url(../../pics/active2.0/active-people.jpg) top center no-repeat;
+	height: 372px;
+}
+
+.active-process {
+	background: url(../../pics/active2.0/active-process.jpg) top center no-repeat;
+	height: 406px;
+}
+
+.active-rule {
+	background: #f8e5de;
+	height: 420px;
+}
+
+.active-rule .C_layout {
+	background: url(../../pics/active2.0/active-rule.jpg) top center no-repeat;
+	height: 332px;
+}
+
+.active-next {
+	background: #da251c;
+	height: 300px;
+	text-align: center;
+	font-size: 24px;
+	color: #ffea13;
+	line-height: 34px;
+}
+
+.active-next p {
+	color: #fff;
+	font-size: 30px;
+	padding: 70px 0 30px 0;
+}
+
+.active-box {
+	display: none;
+}
+
+.active-box .modal-body {
+	height:650px;
+	overflow-y: scroll;
+}
+.active-box .success-tip{
+	height: 230px;
+	
+}
+
+.active-box h3 {
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+
+.active-box b {
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 0 20px;
+	overflow: hidden;
+	cursor: pointer;
+	line-height: 30px;
+	display: inline-block;
+	font-weight: normal;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+}
+
+.active-box h3 span {
+	color: #ff8017;
+	font-size: 14px;
+}
+
+.active-box .modal-body {
+	padding: 0px 15px 0px 15px;
+}
+
+.active-box .modal-dialog {
+	width: 600px;
+	border-radius: 10px;
+	background: #fff;
+	border: 3px solid red;
+	margin: 0 auto;
+	padding-bottom: 0px;
+}
+
+.active-box .modal-header {
+	background: #f8f8f8;
+	position: relative;
+	border-bottom: 0px;
+	border-radius: 10px;
+}
+
+.active-box .modal-content {
+	box-shadow: 0px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.active-box li {
+	margin: 15px 0;
+	overflow: hidden;
+}
+
+.active-box input {
+	width: 300px;
+	height: 40px;
+	border: 1px solid #ddd;
+	padding-left: 10px;
+	float: left;
+}
+
+.active-box label {
+	color: #666;
+	font-weight: normal;
+	display: block;
+	width: 80px;
+	float: left;
+	line-height: 40px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.active-box .btn,
+.add-people-box .btn {
+	background: #524ae7;
+	border-radius: 0px;
+	color: #fff;
+	width: 135px;
+	height: 45px;
+}
+
+.active-box .submit-btn {
+	margin: 0 0 40px 150px;
+}
+
+.add-people-box .btn {
+	width: 100px;
+	background: #ff8017;
+	height: 40px;
+}
+
+.active-box .modal-header .close {
+	width: 46px;
+	height: 45px;
+	background: url(../../pics/active2.0/close.png) no-repeat;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	position: absolute;
+	right: -20px;
+	top: -15px;
+	cursor: pointer;
+	border: 0;
+}
+
+.active-box .modal-header .close:hover {
+	color: #da251c;
+}
+
+.active-box .Validform_right {
+	display: none;
+}
+
+.active-box .modal-body em,
+.active-box .Validform_wrong,
+.add-people-box ul label em,
+.add-people-box ul li .Validform_wrong {
+	color: #ff8017;
+	margin-right: 5px;
+}
+
+.active-box .Validform_wrong {
+	line-height: 40px;
+	margin-left: 5px;
+}
+
+.active-box .mobile {
+	width: 185px;
+	float: left;
+}
+
+.active-box .code-btn {
+	float: left;
+	background: #ddd;
+	color: #666;
+	width: 110px;
+	height: 40px;
+	line-height: 25px;
+	margin-left: 5px;
+}
+
+.active-box table {
+	border-left: 1px solid #ddd;
+}
+
+.active-box table td,
+.active-box table th {
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	font-weight: normal;
+	border-right: 1px solid #ddd;
+}
+
+.active-box table td.width30 {
+	width: 30%;
+}
+
+.active-box table td.width50 {
+	width: 50%;
+}
+
+.active-box table td.width20 {
+	width: 20%;
+}
+
+.active-box table td a:hover {
+	color: #da251c;
+}
+
+.active-box .modal-backdrop {
+	display: none;
+}
+
+.active-box .success-tip {
+	text-align: center;
+}
+
+.active-box .success-tip {
+	color: #999;
+}
+
+.active-box .success-tip i {
+	color: #ff8017;
+	font-size: 55px;
+}
+
+.active-box .success-tip span {
+	font-size: 22px;
+	line-height: 40px;
+	color: #333;
+}
+
+.add-people-box {
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+}
+
+.add-people-box div {
+	margin: 200px auto 0 auto;
+	width: 300px;
+	background: #fff;
+	border: 3px solid #da251c;
+	border-radius: 10px;
+}
+
+.add-people-box div h3 {
+	background: #da251c;
+	margin: 0px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #fff;
+	padding-left: 10px;
+}
+
+.add-people-box ul {
+	padding: 15px;
+}
+
+.add-people-box ul li {
+	margin-bottom: 15px;
+}
+
+.add-people-box ul label {
+	display: block;
+	color: #666;
+	font-weight: normal;
+}
+
+.add-people-box ul input {
+	width: 260px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #ddd;
+	padding-left: 10px;
+}
+
+.add-people-box h3 {
+	position: relative;
+}
+
+.add-people-box h3 span {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	cursor: pointer;
+}
