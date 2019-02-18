@@ -180,11 +180,16 @@
           this_.sent('false');
         }
       });
+      Bus.$on('sentProcess',function (msg) {
+          this_.temp=msg.data_text;
+          this_.sent('false');
+      });
       Bus.$on('look',function (msg) {
+        this_.text = msg.data_text;
         if(msg.index==this_.index){
-          this_.text=msg.data_text;
-          this_.is_edit = true ;
-          this_.old_sentence = msg.data_text;
+          this_.temp=msg.data_text;
+          this_.text = msg.data_text;
+          // this_.sent('false');
         }
       })
       var arrStr = document.cookie.split("; ");
@@ -206,9 +211,7 @@
       }else{
         this_.environment= "http://open.qb-tech.net/chat_image/";
       }
-//      console.log($$)
       var inputs = document.getElementsByClassName('input');
-      console.log(inputs,"abc");
       /*this_.$jquery('.input').resizable({*/
      /* this_.$jquery('.input').resizable({
         handles: 'n', //'e'是east，允许拖动右侧边框的意思

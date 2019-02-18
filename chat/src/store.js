@@ -90,11 +90,8 @@ IndexedDB.prototype.getDataByKey = function(key,length) {
         console.log('没有匹配的数据')
         resolve(res)
       } else {
-        console.log(res.value)
         resolve({value:res.value,length:length})
-
       }
-
     }
   })
 }
