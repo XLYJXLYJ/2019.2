@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const state = {
     flowArray:[], // 流程答案的数据
-    text:''
+    text:'', //  聊天窗口要发送的数据
+    intent:''
 }
 
 const actions = {

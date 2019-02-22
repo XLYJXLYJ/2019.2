@@ -84,7 +84,7 @@
     left 150px;
     top -29px;
     width calc(100vw - 150px)
-    height 79px
+    height 70px
     padding 50px 100px 0px 20px
     box-sizing border-box
     padding-bottom: 40px

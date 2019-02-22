@@ -378,6 +378,12 @@
                               array.push(data.value[j])
                             }
                           }
+
+                          this_.db.getDataByKey('100',100).then(data=> {
+                            console.log(data.value)
+                            this_.$store.state.flowArray = data.value
+                          })
+
                           this_.targetIds[data.length].qa_record =array;
                           this_.$set(this_.targetIds[data.length], 'qa_record', array)
                         }
@@ -418,11 +424,13 @@
                             array.push(data.value[j])
                           }
                         }
-                        if (array[array.length-1].process_flag === 1) {
-                          this_.db.getDataByKey(array[array.length-1].process_id,array.length-1).then(data=> {
-                            this_.$store.state.flowArray = data.value[0].a
-                          })
-                        }
+                        console.log(data)
+
+                        this_.db.getDataByKey('100',100).then(data=> {
+                          console.log(data)
+                          this_.$store.state.flowArray = data.value
+                        })
+
                         this_.targetIds[data.length].qa_record =array;
                         
                         this_.$set(this_.targetIds[data.length], 'qa_record', array)
@@ -453,12 +461,10 @@
             // do something...
           }
         }, null);
-
       }
       function deleateconnect() {
         RongIMClient.getInstance().logout()
       }
-
     },
     mounted:function() {
       var this_ = this
@@ -506,9 +512,6 @@
     watch:{
       targetIds: {
         handler: function (newVal, oldVal) {
-        /*  console.log('newVal', newVal)
-          console.log('oldVal', oldVal)*/
-
         },
         immediate:true,
         deep: true,
@@ -596,7 +599,7 @@
             },
             data: {
               'sentence': sentence,
-              'dialogId': dialogId ,
+              'dialogId': dialogId,
               'productId':productId
             },
             transformRequest: [function (data) {
@@ -611,10 +614,12 @@
               if(sentence.indexOf("<div><img src='"+this_.environment)==0){
                 sentence='[图片]';
               }
+              this.process_id = res.data.data.process_id
               this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,process_id:res.data.data.process_id,process_flag:res.data.data.process_flag})
               resolve(res.data.data.robot_answer)
               try{
                 this_.db.getDataByKey(dialogId,index).then(data=>{
+                  console.log(data)
                   if(data){
                     if(data.value[data.value.length-1].sentTime==sentTime){
                       var array=[];
@@ -624,12 +629,12 @@
                           array.push(data.value[j]);
                         }
                       }
-                      if (array[array.length-1].process_flag === 1) {
-                        this_.db.getDataByKey(array[array.length-1].process_id,array.length-1).then(data=> {
-                          console.log(data.value[0])
-                          this_.$store.state.flowArray = data.value[0].flowArray || data.value[0].a
+
+                        this_.db.getDataByKey('100',100).then(data=> {
+                          console.log(data)
+                          this_.$store.state.flowArray = data.value
                         })
-                      }
+
                       this_.targetIds[index].qa_record= array;
                       this_.$set(this_.targetIds[index], 'qa_record', array)
                     }else{
@@ -639,20 +644,17 @@
                     this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,process_id:res.data.data.process_id,process_flag:res.data.data.process_flag}]})
                   }
                 })
-                if(res.data.data.process_flag === 1){
-                  this.process_id = res.data.data.process_id
-                  this.getFlowAnswer()
-                } else {
-                  this_.$store.state.flowArray = []
-                }
               } catch(e) {
+              }
+              if(res.data.data.process_flag === 1){
+                this_.getFlowAnswer(index)
               }
             }
           })
         })
       },
       // 获取流程答案
-      getFlowAnswer(){
+      getFlowAnswer(index){
         return new  Promise((resolve,reject)=> {
           var this_ = this
           this_.$ajax({
@@ -662,7 +664,7 @@
               'Content-type': 'application/x-www-form-urlencoded'
             },
             data: {
-              'dialogId': this.dialogId ,
+              'dialogId': this.dialogId,
               'process_id':this.process_id
             },
             transformRequest: [function (data) {
@@ -673,10 +675,47 @@
               return ret
             }],
           }).then((res) => {
-            if (res.data.status == 200) {
-              this_.$store.state.flowArray = res.data.data
-              this_.db.addData({'id':this.process_id,'value':[{flowArray:res.data.data}]})
+             console.log(1111111)
+            if (res.data.status == 200) { 
+              var fArray=[];
+              fArray = Object.keys(res.data).map(function(i){return res.data[i]})
+              // this_.db.updateData(dialogId,{w:fArray})
+              console.log(fArray)
+              if(this_.$store.state.flowArray.length>0){
+                this_.db.updateData('100',fArray)
+                this_.$store.state.flowArray.push(fArray)
+              }else{
+                this_.db.addData({'id':'100','value':[fArray]})
+                this_.$store.state.flowArray.push(fArray)
+              }
             }
+            // if (res.data.status == 200) { 
+            //   var fArray=[];
+            //   fArray = Object.keys(res.data).map(function(i){return res.data[i]})
+            //   if(this_.$store.state.flowArray.length>0){
+            //     var arr = [];
+            //     var arr_targetId = [];
+            //     for (let i=0;i<this_.$store.state.flowArray.length;i++)
+            //     {
+            //       arr.push(this_.$store.state.flowArray[i][4])
+            //       arr_targetId.push(this_.$store.state.flowArray[i][5])
+            //     }
+            //     if(arr.indexOf(fArray[4]) > -1 && arr_targetId.indexOf(fArray[5]) > -1){
+            //       console.log('存在该元素')
+            //       this_.db.getDataByKey('100',100).then(data=> {
+            //         console.log(data)
+            //         this_.$store.state.flowArray = data.value
+            //       })
+            //     }else{
+            //       console.log('不存在该元素')
+            //       this_.db.updateData('100',fArray)
+            //       this_.$store.state.flowArray.push(fArray)
+            //     }
+            //   }else{
+            //     this_.db.addData({'id':'100','value':[fArray]})
+            //     this_.$store.state.flowArray.push(fArray)
+            //   }
+            // }
           })
         })
       },
@@ -1002,17 +1041,18 @@
       background: #eef3f6;
       width calc(100vw - 150px)
      /* height calc(100vh - 61px)*/
-      height:93%
+      height:93.7%
       .chat-wrapper {
+        border 1px solid #d6d6d6
         float left
         height 100%
         background: white
-        margin-left: 10px
-        border-radius:5px;
-        margin-top: 18px;
+        margin-left: 0px
+        border-radius:0px;
+        margin-top: 0px;
         margin-right: 14px
         box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
-        border-radius:5px;
+        border-radius:0px;
         .chat_content{
           width 180px;
          /* height 40px*/
@@ -1044,7 +1084,7 @@
           }
           .status {
             display block
-            margin-top 20px
+            margin-top 10px
             label{
               /*width 120px
               margin-left -100px*/

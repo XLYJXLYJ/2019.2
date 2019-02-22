@@ -23,33 +23,26 @@
     </div>
     <span class="title">流程指引</span>
     <div style="height:25px"></div>
-    <div class="gm-scroll-view" style="height:55%;" v-show="processGuidance">
+    <div class="gm-scroll-view" style="height:55%;">
       <ul style="margin-bottom:20px">
-        <div class="recommended" v-show="!processPproduct">
-          <span class="productBtn">产品推荐</span>
-          <span class="unfoldBtn" @click="Spread()">展开</span>
-        </div>
-        <div class="recommended" v-show="processPproduct">
-          <span class="productBtn">产品推荐</span>
-          <span class="unfoldBtn" @click="Fold()">折叠</span>
-        </div>
-        <li v-show="flowArrayNum.length>0 && processPproduct" v-for="(a,index) in flowArrayNum" :key='index' style="height:auto" @click="sentProcess($event)">
-          <span style="color:#666">流程{{index+1}}：</span> <span style="color:#666">{{a.content}}</span>
+        <li v-for="(a,index) in flowArrayNum" :key='index' style="height:auto" v-show="flowArrayNum.length>0 && processGuidance && a[5] == targetIds.targetId">
+          <!-- 第一层循环 -->
+          <div class="recommended"  v-show="!processPproduct">
+            <span class="productBtn">{{a[4]}}</span>
+            <span class="unfoldBtn" @click="Spread(index)">展开</span>
+          </div>
+          <div class="recommended" v-show="processPproduct">
+            <span class="productBtn">{{a[4]}}</span>
+            <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span>
+          </div>
+          <!-- 第二层循环 -->
+          <ul v-show="indexNum == index && processPproduct">
+            <li v-for="(b,index) in a[8]" :key='index' style="height:auto" v-show="processPproduct">
+              <span style="color:#666;font-size: 14px;" @click="sentProcess($event)" :title='b.content'>流程{{index+1}}：{{b.content.length>12 ? b.content.substring(0,12)+'...'  : b.content}}</span>
+            </li>
+          </ul>
         </li>
       </ul>
-      <!-- <ul style="margin-bottom:20px">
-        <div class="recommended">
-          <span class="productBtn">产品推荐</span>
-          <span class="unfoldBtn" @click="handleUnfold(true)">展开</span>
-        </div>
-        <div class="recommended">
-          <span class="productBtn">理赔资料</span>
-          <span class="unfoldBtn" @click="handleUnfold(false)">折叠</span>
-        </div>
-        <li v-show="flowArray.length>0" v-for="(a,index) in flowArray" :key='index' style="height:auto" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sentProcess($event)">
-          流程：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span>
-        </li>
-      </ul> -->
     </div>
   </div>
 </template>
@@ -73,11 +66,15 @@
       return {
         processGuidance: false, // 是否显示流程指引
         processPproduct: '', // 流程产品
-        flowArrayNum: []
+        productRecommendation:localStorage.getItem('display_name'), // 产品推荐
+        flowArrayNum: [],
+        flowArrayNumSmall: [],
+        indexNum:''
       }
     },
     computed: {
       newArray: function () {
+        // console.log(this.targetIds.qa_record)
         if (this.targetIds.qa_record && this.targetIds.qa_record.length > 0) {
           var qa_record = this.targetIds.qa_record;
           var answers = this.targetIds.answers;
@@ -89,8 +86,10 @@
               }
             }
           }
+          console.log(this.targetIds.qa_record.concat(this.targetIds.answers))
           return this.targetIds.qa_record.concat(this.targetIds.answers)
         } else {
+          console.log(this.targetIds.answers)
           return this.targetIds.answers
         }
       },
@@ -130,6 +129,7 @@
       },
       flowArray (val) {
         this.flowArrayNum = this.$store.state.flowArray
+        console.log(this.$store.state.flowArray)
         if (this.flowArrayNum.length > 0) {
           this.processGuidance = true
         } else {
@@ -153,8 +153,8 @@
       sentProcess(event) {
         var this_ = this;
         var target = event.target
-        this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('sentProcess', {data_text: target.outerText, 'index': this_.index})
+        // this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
+        Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
       },
 
       robot_balance(robot_uu_id, dialogId) {
@@ -179,10 +179,12 @@
 
         })
       },
-      Spread () {
+      Spread (index) {
+        this.indexNum = index
         this.processPproduct = true
       },
-      Fold () {
+      Fold (index) {
+        this.indexNum = index
         this.processPproduct = false
       }
     }
@@ -192,17 +194,21 @@
   body {
     margin 0
     .answer {
+      border 1px solid #d6d6d6
+      border-right none
       display none
       float left
-      width 270px
+      width 300px
       padding-top 20px
       height 100%
       box-sizing border-box
       background: #eef3f6;
       border-radius: 5px;
-      box-shadow: 0px 0px 16px 0px rgba(61, 104, 169, 0.17);
-      border-radius: 5px;
+      // box-shadow: 0px 0px 16px 0px rgba(61, 104, 169, 0.17);
+      border-radius: 0px;
       overflow hidden
+      position relative
+      left -13px
       .title {
         margin-left 20px
         font-size: 20px;
@@ -218,7 +224,8 @@
           background: rgba(255, 255, 255, 1);
           box-shadow: 0px 0px 17px 0px #cad7ea
           border-radius: 5px;
-          margin-bottom: 10px;
+          margin-bottom: 0px;
+          margin-top 12px;
           cursor pointer
           &:hover {
             background: #d0e1ed
@@ -275,14 +282,13 @@
     margin-bottom: 20px;
     width: calc(100% + 20px);
     height 35%
-    
     .recommended {
         width: 100%
         height: 30px;
 
         .productBtn {
           float: left;
-          margin-left: 32px;
+          margin-left: 12px;
           color: #3199e0;
           padding: 3px 5px;
           font-size: 14px;
@@ -299,7 +305,7 @@
 
         .unfoldBtn {
           float: left;
-          margin-left: 20px;
+          margin-left: 12px;
           color: #3199e0;
           padding: 3px 5px;
           font-size: 14px;

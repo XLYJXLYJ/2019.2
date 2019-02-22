@@ -181,8 +181,10 @@
         }
       });
       Bus.$on('sentProcess',function (msg) {
+        if(msg.index==this_.index){
           this_.temp=msg.data_text;
           this_.sent('false');
+        }
       });
       Bus.$on('look',function (msg) {
         this_.text = msg.data_text;
@@ -631,6 +633,7 @@
     }
   }
   .chatWindow{
+    border-top 1px solid #d6d6d6
     position relative
     float left
     background-color #eef3f6
@@ -639,6 +642,7 @@
     padding 20px 0px
     box-sizing border-box
     display none
+    left -14px;
     .head {
       height 40px
       border-bottom 1px solid rgba(215,218,220,.3)
