@@ -80,7 +80,7 @@ IndexedDB.prototype.updateData = function(key,data) {
     getStore(this_).put(res)
   }
 }
-//
+
 IndexedDB.prototype.getDataByKey = function(key,length) {
   return new Promise((resolve, reject) => {
     const request = getStoreReadOnly(this).get(key)

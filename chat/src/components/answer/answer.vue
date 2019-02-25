@@ -25,19 +25,19 @@
     <div style="height:25px"></div>
     <div class="gm-scroll-view" style="height:55%;">
       <ul style="margin-bottom:20px">
-        <li v-for="(a,index) in flowArrayNum" :key='index' style="height:auto" v-show="flowArrayNum.length>0 && processGuidance && a[5] == targetIds.targetId">
+        <li v-for="(a,index) in newArray" :key='index' style="height:auto" v-show="newArray.length>0">
           <!-- 第一层循环 -->
-          <div class="recommended"  v-show="!processPproduct">
-            <span class="productBtn">{{a[4]}}</span>
+          <div class="recommended">
+            <div class="productBtn" style="height:300px">{{a.pAnswer.data}}</div>
             <span class="unfoldBtn" @click="Spread(index)">展开</span>
           </div>
           <div class="recommended" v-show="processPproduct">
-            <span class="productBtn">{{a[4]}}</span>
+            <span class="productBtn">{{a}}</span>
             <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span>
           </div>
           <!-- 第二层循环 -->
-          <ul v-show="indexNum == index && processPproduct">
-            <li v-for="(b,index) in a[8]" :key='index' style="height:auto" v-show="processPproduct">
+          <ul>
+            <li v-for="(b,index) in a.pAnswer.data" :key='index' style="height:auto">
               <span style="color:#666;font-size: 14px;" @click="sentProcess($event)" :title='b.content'>流程{{index+1}}：{{b.content.length>12 ? b.content.substring(0,12)+'...'  : b.content}}</span>
             </li>
           </ul>

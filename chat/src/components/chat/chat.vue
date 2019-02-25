@@ -676,19 +676,30 @@
             }],
           }).then((res) => {
              console.log(1111111)
-            if (res.data.status == 200) { 
-              var fArray=[];
-              fArray = Object.keys(res.data).map(function(i){return res.data[i]})
-              // this_.db.updateData(dialogId,{w:fArray})
-              console.log(fArray)
-              if(this_.$store.state.flowArray.length>0){
-                this_.db.updateData('100',fArray)
-                this_.$store.state.flowArray.push(fArray)
-              }else{
-                this_.db.addData({'id':'100','value':[fArray]})
-                this_.$store.state.flowArray.push(fArray)
-              }
-            }
+             let arry2 = []
+            this_.targetIds[index].answers.map(((item, index)=> {
+                arry2.push(Object.assign({},item,{pAnswer:res.data}))
+            }))
+            console.log(arry2)
+            this_.targetIds[index].qa_record=arry2;
+            // this_.targetIds[index].answers =arry2;
+            this_.$set(this_.targetIds[index], 'qa_record', arry2)
+            console.log(this_.targetIds[index].answers)
+            console.log(arry2)
+            console.log(index)
+            // if (res.data.status == 200) { 
+            //   var fArray=[];
+            //   fArray = Object.keys(res.data).map(function(i){return res.data[i]})
+            //   // this_.db.updateData(dialogId,{w:fArray})
+            //   console.log(fArray)
+            //   if(this_.$store.state.flowArray.length>0){
+            //     this_.db.updateData('100',fArray)
+            //     this_.$store.state.flowArray.push(fArray)
+            //   }else{
+            //     this_.db.addData({'id':'100','value':[fArray]})
+            //     this_.$store.state.flowArray.push(fArray)
+            //   }
+            // }
             // if (res.data.status == 200) { 
             //   var fArray=[];
             //   fArray = Object.keys(res.data).map(function(i){return res.data[i]})
