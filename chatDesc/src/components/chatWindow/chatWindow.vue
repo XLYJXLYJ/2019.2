@@ -7,28 +7,17 @@
       <div class="operation">
         <span class="magnify" v-show="!lessen" @click="magnify_window" title="还原"></span>
         <span class="lessen"  v-show="lessen" @click="lessen_window" title="全屏"></span>
-        <!--<span class="closeWindow" @click="closeWrapper"></span>-->
       </div>
     </div>
     <div class="record images"  ref="recordWrapper"  id="">
-      <!--<ul >-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-1.jpg" alt="Picture 1"></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-2.jpg" alt="Picture 2"></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-3.jpg" alt="Picture 3"></li>&ndash;&gt;-->
-      <!--</ul>-->
-      <div  ref="texts" class="g-scroll-view" :style="{width:width}">
+      <div  ref="texts" class="g-scroll-view scroll"  :style="{width:width}">
         <div ref="text">
           <div class="more" @click="more">
             <span class="text" v-show="get_record"><span class="time"></span>查看更多消息</span>
             <span class="load" v-show="finish"></span>
           </div>
-          <div class="paging_record">
-            <!--<div class="div_left" >-->
-            <!--<p>2131353(450654经纪(⊙o⊙)…)</p>-->
-            <!--<span class="avatar"></span>-->
-            <!--<span class="box" >544444444444444444444442432kkrte大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发</span>-->
-            <!--</div>-->
-            <div  v-if="targetIds.more" v-for="(m,index) in paging_record">
+          <div class="paging_record" v-if="targetIds.more">
+            <div v-for="(m,index) in paging_record" :key="index">
               <div class="div_right" :style="{padding:padding}"  v-if="m.messageDirection==1">
                 <p>({{m.sentTime}}){{m.name}}</p>
                 <span class="service_avatar"></span>
@@ -49,56 +38,50 @@
               </div>
             </div>
           </div>
-          <!--<div class="swiper-slide swiper-slide-active">-->
-          <div v-if="deal.length>0" v-for="(h,index) in deal">
-            <div class="div_right" :style="{padding:padding}"  v-if="h.messageDirection==1">
-              <p>({{h.sentTime}}){{h.name}}</p>
-              <span class="service_avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
-            </div>
-            <div class="div_right" :style="{padding:padding}"  v-else-if="h.messageDirection==3">
-              <p>({{h.sentTime}})Aimi</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
-            </div>
-            <div class="div_left" v-else-if="h.messageDirection==2" >
-              <p>{{targetIds.h5_record[3]}}({{h.sentTime}})</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
+          <div v-if="deal.length>0">
+            <div v-for="(h,index) in deal" :key="index">
+              <div class="div_right" :style="{padding:padding}"  v-if="h.messageDirection==1">
+                <p>({{h.sentTime}}){{h.name}}</p>
+                <span class="service_avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
+              <div class="div_right" :style="{padding:padding}"  v-else-if="h.messageDirection==3">
+                <p>({{h.sentTime}})Aimi</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
+              <div class="div_left" v-else-if="h.messageDirection==2" >
+                <p>{{targetIds.h5_record[3]}}({{h.sentTime}})</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
             </div>
           </div>
-          <!--<span v-show="targetIds.content.length>0">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&nbsp;历史记录&nbsp;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</span>-->
-          <div v-if="targetIds.content.length>0" v-for="(con,index) in targetIds.content" :key="index" >
-            <div class="div_left" v-if="con.type==1">
-              <p>{{targetIds.h5_record[3]}}({{con.sentTime}})</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
-              <span class="pic" v-else  v-html="con.content"></span>
-            </div>
-            <div class="div_right" :style="{padding:padding}"  v-else="con.type==2">
-              <p>({{con.sentTime}}){{s_name}}</p>
-              <span class="service_avatar"></span>
-              <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
-              <span class="pic" v-else  v-html="con.content"></span>
+          <div v-if="targetIds.content.length>0">
+            <div v-for="(con,index) in targetIds.content" :key="index" >
+              <div class="div_left" v-if="con.type==1">
+                <p>{{targetIds.h5_record[3]}}({{con.sentTime}})</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
+                <span class="pic" v-else  v-html="con.content"></span>
+              </div>
+              <div class="div_right" :style="{padding:padding}"  v-else-if="con.type==2">
+                <p>({{con.sentTime}}){{s_name}}</p>
+                <span class="service_avatar"></span>
+                <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
+                <span class="pic" v-else  v-html="con.content"></span>
+              </div>
             </div>
           </div>
           <div class="div_right" :style="{padding:padding}" style="display: none;">
-            <p><!--({{m.sentTime}}){{s_name}}--></p>
             <span class="service_avatar"></span>
             <span class="box" >
               <img  style="width: 100%;" src="../../../static/tibet-1.jpg">
             </span>
           </div>
-          <!--<div class="div_right" :style="{padding:padding}">-->
-          <!--<p>&lt;!&ndash;({{m.sentTime}}){{s_name}}&ndash;&gt;</p>-->
-          <!--<span class="service_avatar"></span>-->
-          <!--<span class="box" >-->
-          <!--<img  style="width: 100%;" src="../../../static/algorithm2.png"/>-->
-          <!--</span>-->
-          <!--</div>-->
         </div>
       </div>
     </div>
@@ -106,8 +89,8 @@
         <span class="picture">
           <input type="file"  name="service_image" ref="referenceUpload"   @change="updateFile">
         </span>
-      <textarea v-model="text" id="textarea"  ref=""    @keyup="keyDown($event)"></textarea>
-      <span class="send" @click="sent($event)">发送</span>
+        <textarea v-model="text" id="textarea"  ref=""    @keyup="keyDown($event)"></textarea>
+        <span class="send" @click="sent($event)">发送</span>
     </div>
     <v_close v-show="closeStatus" v-on:isClose="listenClose" >是否关闭?</v_close>
   </div>
@@ -134,9 +117,9 @@
       index:{
         type:Number
       },
-//      gallery:{
-//        type:Object
-//      }
+      showIndex:{
+        type:Number
+      }
     },
     data(){
       return {
@@ -175,18 +158,23 @@
           this_.sent('false');
         }
       });
-      Bus.$on('look',function (msg) {
+      Bus.$on('sentProcess',function (msg) {
         if(msg.index==this_.index){
-          this_.text=msg.data_text;
-          this_.is_edit = true ;
-          this_.old_sentence = msg.data_text;
+          this_.temp=msg.data_text;
+          this_.sent('false');
+        }
+      });
+      Bus.$on('look',function (msg) {
+        this_.text = msg.data_text;
+        if(msg.index==this_.index){
+          this_.temp=msg.data_text;
+          this_.text = msg.data_text;
         }
       })
       var arrStr = document.cookie.split("; ");
       for (var i = 0; i < arrStr.length; i++) {
         var temp = arrStr[i].split("=");
         if (temp[0] == 's_name'){
-          //return unescape(temp[1]);
           this_.s_name=unescape(temp[1]);
         }
       }
@@ -195,26 +183,12 @@
         toolbar:false,
         title:false
       })
-//     this_.environment="http://test.open.qb-tech.net/chat_image/";
       if(window.location.href.indexOf("test") > 0) {
         this_.environment= "http://test.open.qb-tech.net/chat_image/";
       }else{
         this_.environment= "http://open.qb-tech.net/chat_image/";
       }
-      this_.$jquery('.input').resizable({
-        handles: 'n', //
-        maxHeight: 300,
-        minHeight: 110,
-        resize: function(event, ui) {
-          clearTimeout(this_.timer);
-          this_.$jquery('.record').height(this_.$jquery('.chatWindow').height() - ui.size.height - this_.$jquery('.head').height());
-          this_.timer=setTimeout(function(){
-            var div = document.getElementsByClassName('g-scroll-view');
-            div[this_.index].scrollTop = div[this_.index].scrollHeight;
-            this_.$jquery('.chatWindow .input textarea').height(ui.size.height - 60)
-          },200);
-        }
-      })
+      var inputs = document.getElementsByClassName('input');
       this_.$jquery(window).resize(function () {
         var t = null;
         clearTimeout(t);
@@ -230,18 +204,18 @@
     },
     computed:{
       deal() {
-        if(this.targetIds.total_page==0){
-          this.get_record=false;
-        }else{
-          this.get_record=true;
-        }
-        var history = this.targetIds.history;
-        var length = this.targetIds.history.length;
-        for (var i = 0; i < length; i++) {
-          var split=history[i].create.split(" ");
-          history[i].sentTime = split[1];
-        }
-        return history;
+          if(this.targetIds.total_page==0){
+            this.get_record=false;
+          }else{
+            this.get_record=true;
+          }
+          var history = this.targetIds.history;
+          var length = this.targetIds.history.length;
+          for (var i = 0; i < length; i++) {
+            var split=history[i].create.split(" ");
+            history[i].sentTime = split[1];
+          }
+          return history;
       },
       content() {
         return this.targetIds.content
@@ -266,10 +240,6 @@
           this_.$nextTick(function(){
             var heights= this_.$refs.texts.offsetHeight;
             var height= this_.$refs.text.offsetHeight;
-//            if(height>heights){
-//              this_.width="calc(100% + 20px)"
-//              this_.padding="0 16px 0  0"
-//            }
             setTimeout(function () {
               var div = document.getElementsByClassName('g-scroll-view');
               div[this_.index].scrollTop = div[this_.index].scrollHeight;
@@ -295,10 +265,6 @@
         this_.$nextTick(function() {
           var heights= this_.$refs.texts.offsetHeight;
           var height= this_.$refs.text.offsetHeight;
-//          if(height>heights){
-//            this_.width="calc(100% + 20px)";
-//            this_.padding="0 16px 0  0"
-//          }
           setTimeout(function () {
             var paging_record = document.getElementsByClassName('paging_record');
             var st = div[this_.index].scrollTop + paging_record[this_.index].scrollHeight-this_.pre;
@@ -323,10 +289,6 @@
           this_.$nextTick(function () {
             var heights = this_.$refs.texts.offsetHeight;
             var height = this_.$refs.text.offsetHeight;
-//            if (height > heights) {
-//              this_.width = "calc(100% + 20px)";
-//              this_.padding = "0 16px 0  0"
-//            }
             setTimeout(function () {
               var div = document.getElementsByClassName('g-scroll-view');
               for (var i = 0; i < div.length; i++) {
@@ -335,23 +297,22 @@
             }, 100)
           })
           setTimeout(function () {
-            this_.gallery.destroy();
-            var child=document.getElementsByClassName("viewer-container");
-            if(child.length>0){
-              var parent=document.getElementsByTagName("body")[0];
-              for(var j=0;j<child.length;j++){
-                parent.removeChild(child[j]);
-              }
-            }
-            this_.gallery=new Viewer(document.getElementById('content'),{
-              navbar:false,
-              toolbar:false,
-              title:false
-            })
+             this_.gallery.destroy();
+             var child=document.getElementsByClassName("viewer-container");
+             if(child.length>0){
+               var parent=document.getElementsByTagName("body")[0];
+               for(var j=0;j<child.length;j++){
+                 parent.removeChild(child[j]);
+               }
+             }
+             this_.gallery=new Viewer(document.getElementById('content'),{
+                navbar:false,
+                  toolbar:false,
+                  title:false
+             })
 
           },100)
         },
-
         deep:true,
         immediate:true,
       },
@@ -370,8 +331,6 @@
           },100)
         })
       }
-
-
     },
     methods:{
       photoCompress(file,w,objDiv){
@@ -437,13 +396,13 @@
           this_.photoCompress(files,{
             quality:0.9
           },function (base64Codes) {
-            var bl = this_.convertBase64UrlToBlob(base64Codes);
-            form.append("service_image", bl, "file_"+Date.parse(new Date())+".jpg"); // 文件对象
-            xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
-            xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
-            xhr.onload = this_.uploadComplete; //请求完成
-            xhr.onerror =  this_.uploadFailed; //请求失败
-            xhr.send(form); //开始上传，发送form数据
+          var bl = this_.convertBase64UrlToBlob(base64Codes);
+          form.append("service_image", bl, "file_"+Date.parse(new Date())+".jpg"); // 文件对象
+          xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+          xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+          xhr.onload = this_.uploadComplete; //请求完成
+          xhr.onerror =  this_.uploadFailed; //请求失败
+          xhr.send(form); //开始上传，发送form数据
           })
         }else{
           form.append("service_image", files); // 文件对象
@@ -528,7 +487,7 @@
         }
       },
       sent(data){
-        console.log(this.text);
+       /* console.log(this.text);*/
         var html =""
         if(data=='false'){
           html=this.temp;
@@ -543,37 +502,13 @@
         if(html.trim().length<1) return false;
         if(this.is_edit){
           this.is_edit = false ;
-          console.log('编辑前')
-          console.log('编辑后'+html)
+        /*  console.log('编辑前')
+          console.log('编辑后'+html)*/
         }
         this.$emit("updateRecord",{index:this.index,content:html,type:2,extra:this.targetIds.h5_record});
       },
       keyDown(event){
         event.preventDefault()
-//        var this_=this;
-//        if (event.ctrlKey && event.keyCode == 13)  {
-//          var $input = document.getElementById("textarea");
-//          var cursurPosition=0;
-//          if($input.selectionStart){//非IE
-//            cursurPosition= $input.selectionStart;
-//          }else{//IE
-//            try{
-//              var range = document.selection.createRange();
-//              range.moveStart("character",-$input.value.length);
-//              cursurPosition=range.text.length;
-//            }catch(e){
-//              cursurPosition = 0;
-//            }
-//          }
-//          //var value=$input[this_.index].value;
-//          document.getElementById("textarea").value=document.getElementById("textarea").value.slice(0, cursurPosition) + '\n' + document.getElementById("textarea").value.slice(cursurPosition);
-//          this.setCaretPosition( document.getElementById("textarea"),cursurPosition+1);
-//          //document.getElementById("textarea").value+= '\n'
-//        }else if(event.keyCode == 13){
-//          event.preventDefault();
-//          event.returnValue = false;
-//          this.sent({});
-//        }
       },
     }
   }
@@ -583,7 +518,8 @@
     text-align center
     font-size 13px
     cursor pointer
-    color #524ae7
+   /* color #524ae7*/
+    color rgba(49,153,224,1)
     margin-top 10px
     .text {
       width 97px
@@ -592,7 +528,7 @@
       .time {
         width 14px
         height 14px
-        background url("../../../static/time.png") no-repeat
+        background url("../../../static/history.png") no-repeat
         /*display inline-block !important*/
         margin-right 5px
         float left
@@ -609,14 +545,16 @@
     }
   }
   .chatWindow{
+    border-top 1px solid #d6d6d6
     position relative
     float left
-    background-color #f8f9fd
-    width calc(100vw - 629px)
+    background-color #eef3f6
+    width calc(100vw - 650px)
     height 100%
     padding 20px 0px
     box-sizing border-box
     display none
+    left -14px;
     .head {
       height 40px
       border-bottom 1px solid rgba(215,218,220,.3)
@@ -628,17 +566,18 @@
         float right
         span {
           display inline-block
-          width 20px
-          height 20px
-          background url("operation.png")
+          width 21px
+          height 21px
+          background url("../../assets/toggle.png")
           background-repeat no-repeat
-          background-position-y -4px
+          background-position-y -40px
           cursor: pointer
           &.magnify {
-            background-position-x -13px
+            background-position-x -36px
           }
           &.lessen {
-            background-position-x -52px
+            background-position-x -102px
+
           }
           &.closeWindow {
             background-position-x -88px
@@ -648,15 +587,24 @@
     }
     .input{
       position absolute
-      bottom 0
-      height 110px
+      bottom 0px
+      height 135px
       width 100%
-      background-color white
-      border-top 1px solid #eaeaea
+      background:rgba(253,253,253,1)
+    /*  .bg{
+        width 90%
+        !*height 150px*!
+        background:rgba(253,253,253,1);
+        margin: 0 auto
+        position: absolute
+        bottom: 0
+      }*/
       .picture{
         position absolute
         left 10px
         top 5px
+        /*margin-top 5px
+        margin-left 10px*/
         display inline-block
         width 23px
         height 19px
@@ -670,25 +618,36 @@
         }
       }
       textarea{
-        height 52px
+        height 100px
+       /* height 52px*/
         width 100%
         resize none
         outline none
-        border none
-        padding 0px 10px 5px 10px
+        border-top solid rgba(221,221,221,1) 1px
+        border-right none
+        border-bottom  none
+        border-left  none
+        padding 5px 10px 5px 10px
         box-sizing border-box
         font-size 15px
-        margin-top 24px
+        margin-top 32px
       }
       .send{
         position absolute
-        font-size 14px
-        padding 3px 15px
-        border 1px solid #e5e5e5
-        border-radius 3px
-        cursor: pointer
-        right: 10px
-        bottom 10px
+       /* font-size 14px*/
+        display block
+        width 32px
+        height 15px
+       /* padding 3px 15px
+        border 1px solid #e5e5e5*/
+        font-size: 14px;
+        padding: 3px 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        cursor: pointer;
+        line-height:15px
+        right: 30px
+        top 4px
       }
     }
     .record{
@@ -709,7 +668,7 @@
           display inline-block
           width 35px
           height 35px
-          background url("customer.png")
+          background url("../../assets/customer.png")
           background-repeat  no-repeat
           float left
         }
@@ -734,16 +693,19 @@
           position relative
           display inline-block
           min-width 12px
-          max-width 90%
+          max-width 80%
           padding 6px 7px
           background white
-          border-radius  3px
+         /* border-radius  3px*/
           margin-left 20px
+          background:rgba(255,255,255,1);
+          box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
+          border-radius:6px;
           border 1px solid #e2e2ec
           float left
           word-break:break-all
           text-align left
-          &:before{
+        /*  &:before{
             position absolute
             content ""
             background  url("../../../static/triangle_left.png") no-repeat
@@ -751,7 +713,7 @@
             top 7px
             width 9px
             height 19.5px
-          }
+          }*/
           &:after{
             position absolute
             content: ""
@@ -781,12 +743,12 @@
           display inline-block
           width 35px
           height 35px
-          background url("aimi.png")
+          background url("../../assets/aimi.png")
           background-repeat  no-repeat
           float right
         }
         .service_avatar{
-          background url("customer.png")
+          background url("../../assets/customer.png")
         }
         .pic{
           position relative
@@ -812,10 +774,13 @@
           max-width 80%
           padding 8px 10px
           background rgba(169,165,253,.35)
-          border-radius  3px
+         /* border-radius  3px*/
           margin-right 20px
           border 1px solid #e2e2ec
           float right
+          background:rgba(49,153,224,1);
+          box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
+          border-radius:6px;
           word-break:break-all
           text-align left
           /*&:before{
@@ -830,7 +795,7 @@
             border-bottom 8px solid transparent
             background-color transparent
           }*/
-          &:after{
+         /* &:after{
             position absolute
             content: ""
             background  url("../../../static/triangle_right.png") no-repeat
@@ -839,7 +804,7 @@
             right -8.5px
             top 7px
 
-          }
+          }*/
           div{
             width 100%
             img{
