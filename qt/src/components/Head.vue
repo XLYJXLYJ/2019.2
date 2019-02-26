@@ -11,7 +11,7 @@
             </ul>
             <ul class="user">
                 <li>用户:{{cookie[0]}} {{cookie[1]}}</li>
-                <li>退出</li>
+                <li @click="quit()">退出</li>
             </ul>
         </div>
     </div>
@@ -27,13 +27,21 @@
       }
     },
     mounted(){
-        var value  ='data.data.name'+'&&'+'data.data.company'+'&&'+'data.data.customer_service_status'+'&&'+'data.data.user_xa_status'+'&&'+'data.data.robot_hopper'
-        this.setCookie('user',value,1);
         var user = this.getCookie('user')
-        this.cookie = user.split('%26%26') || user.split('&&');
+        this.cookie = user.split('%26%26');
+        // console.log(user)
+        // console.log(this.cookie)
     },
-    method:{
-
+    methods:{
+        quit(){
+        this.axios.delete('/merchant/v1.0/session')
+            .then(response => {  
+                if(response.errmsg=="OK"){
+                    delCookie('user');
+                    window.location.href="/login.html";
+                }
+            })
+        }
     }
   }
 </script>
@@ -50,18 +58,18 @@
         .logo{
             width: 150px;
             height: 80px;
-            background-color: #524AE7;
+            background-color: #8180f8;
             text-align: center;
             color: white;
             .name{
                 font-size: 20px;
                 font-weight: 600;
                 margin: 0 20px;
-                padding: 13px 0px 5px 0px;
+                padding: 16px 0px 5px 0px;
                 border-bottom: 2px solid white;
             }
             .slogan{
-                margin-top: 5px;
+                margin-top: 8px;
                 margin-bottom: 0px;
                 font-size: 12px;
             }
@@ -74,7 +82,7 @@
             top: -81px;
             li{
                 float: left;
-                width: 200px;
+                width: 160px;
                 height: 50px;
                 text-align: center;
                 padding-top: 34px;

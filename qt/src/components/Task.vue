@@ -10,6 +10,7 @@
                     <li>任务名称</li>
                     <li>录音名称</li>
                     <li>录音类型</li>
+                    <li>客户名称</li>
                     <li>录音时长</li>
                     <li>全部状态</li>
                     <li>操作</li>
@@ -18,13 +19,14 @@
                     <li v-for="(item,index) in task" :key='index'>
                         <div class="time"><p>{{item.create_time}}</p><img src="../assets/delete.png" alt="" @click="Delete(item.id)"></div>
                         <div class="detail">
-                            <p class="detail-context">{{item.task_name}}</p>
-                            <p class="detail-context">{{item.record_name}}</p>
-                            <p class="detail-context">{{item.record_type}}</p>
-                            <p class="detail-context">{{item.record_time}}</p>
-                            <p class="detail-context">{{item.status_name}}</p>
-                            <p class="detail-context" v-show="!item.record_status"><el-button style="background:red" @click="Delete(item.id)">取消任务</el-button></p>
-                            <p class="detail-context" v-show="item.record_status"><router-link to="/Result"><el-button style="background:green">查看结果</el-button></router-link></p>
+                            <p class="detail-context" :title="item.task_name">{{item.task_name}}</p>
+                            <p class="detail-context" :title="item.record_name">{{item.record_name}}</p>
+                            <p class="detail-context" :title="item.record_type">{{item.record_type}}</p>
+                            <p class="detail-context" :title="item.record_type">{{item.customer_name}}</p>
+                            <p class="detail-context" :title="item.record_time">{{item.record_time}}</p>
+                            <p class="detail-context" :title="item.status_name">{{item.status_name}}</p>
+                            <p class="detail-context" v-show="!item.record_status"><el-button type="danger" @click="Delete(item.id)">取消任务</el-button></p>
+                            <p class="detail-context" v-show="item.record_status"><router-link :to="`/Result/${item.id}`"><el-button type="success">查看结果</el-button></router-link></p>
                         </div>
                     </li>
                 </ul>
@@ -57,51 +59,83 @@ import Qs from 'qs'
         totalPageNum:0,
         cur_page:1,
         currentPage:1,//当前页数
+        intervalid:'' //定时器
       }
     },
-    mounted(){
+    created(){
         this.GetTask()
+        this.intervalid = setInterval(() => {
+            this.GetTask()
+        },20000)
+    },
+    // mounted(){
+    //     this.intervalid = setInterval(() => {
+    //         this.GetTask()
+    //     },2000)
+    // },
+    destroyed () {
+        clearInterval(this.intervalid)
     },
     methods:{
         GetTask(){
-            console.log(this.cur_page)
             this.axios.get('/merchant/v2.0/inspection/inspection_task?pageSize='+this.cur_page)
             .then(response => {  
-                console.log(response)
                 this.task = response.data.data.logs_dict_list
+                if(this.task.length==0){
+                    this.cur_page = this.cur_page-1
+                    this.axios.get('/merchant/v2.0/inspection/inspection_task?pageSize='+this.cur_page)
+                    .then(response => {  
+                        this.task = response.data.data.logs_dict_list
+                        this.totalPageNum = response.data.data.total_page*10
+                    }) 
+                }
                 this.totalPageNum = response.data.data.total_page*10
-                console.log(this.totalPageNum)
             }) 
         },
         Delete(id){
-            this.axios.post('/merchant/v2.0/inspection/inspection_task',
-                Qs.stringify({
-                    ins_id:id,
-                })
-            )
-            .then(response => {  
-                console.log(response)
-                this.task = response.data.data.logs_dict_list
-            }) 
+            this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+            }).then(() => {
+                this.axios.post('/merchant/v2.0/inspection/inspection_task',
+                    Qs.stringify({
+                        ins_id:id,
+                    })
+                )
+                .then(response => {  
+                    this.task = response.data.data.logs_dict_list
+                }) 
+                this.GetTask()
+            }).catch(() => {
+            this.$message({
+                type: 'info',
+                message: '已取消删除'
+            });          
+            });
         },
+        // routeResult(id){
+        //     this.$router.push({
+        //         name: 'Result',
+        //         params: {
+        //             id: id
+        //         }
+        //     })
+        // },
         //获取当前页数
         handleCurrentChange(val){
             this.cur_page = val;
             this.currentPage = val;
-            console.log(this.cur_page)
             this.GetTask()
         },
 
         // 前页数
         Selectpagebefore(){
-            console.log(this.cur_page)
-            console.log(this.currentPage)
             this.cur_page = this.cur_page-1
             this.GetTask()
         },
         // 后页数
         Selectpageafter(){
-            console.log(this.cur_page)
             this.cur_page = this.cur_page+1
             this.GetTask()
         },
@@ -165,7 +199,7 @@ import Qs from 'qs'
                 background: #F5F5F5;
                 li{
                     float: left;
-                    width: 182px;
+                    width: 156px;
                     text-align: center;
                     font-size: 16px;
                     color: #666;
@@ -197,7 +231,7 @@ import Qs from 'qs'
                             width: 25px;
                             height: 25px;
                             position: relative;
-                            left: 984px;
+                            left: 1000px;
                             top: -8px;
                         }
                     }
@@ -208,12 +242,12 @@ import Qs from 'qs'
                         border-bottom: none;
                         .detail-context{
                             display: inline-block;
-                            width: 177px;
+                            width: 152px;
                             height: 60px;
                             text-align: center;
                             line-height: 60px;
                             color: #666;
-                            font-size: 18px;
+                            font-size: 14px;
                             border-left:1px solid #d6d6d6;
                         }
                     }
@@ -228,5 +262,12 @@ import Qs from 'qs'
     }
   }
 }
+// .el-button{
+//   background: #524AE7;
+//   color: #fff;
+// }
+// .el-button--primary{
+//   border-color:#524AE7;
+// }
 </style>
 

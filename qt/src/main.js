@@ -7,6 +7,9 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import uploader from 'vue-simple-uploader'
+
+Vue.use(uploader)
 
 Vue.use(VueAxios, axios)
 
@@ -31,6 +34,15 @@ Vue.prototype.getCookie = function (cookieName) {
   }
   return "";
 }
+
+Vue.prototype.delCookie = function (name){
+  var exp = new Date();
+  exp.setTime(exp.getTime() - 1);
+  var cval=getCookie(name);
+  if(cval!=null)
+      document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+
 
 /* eslint-disable no-new */
 new Vue({

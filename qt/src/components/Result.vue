@@ -3,16 +3,17 @@
       <Head></Head>
       <div class="head-content">
         <div class="head-content-center">
-          <div class="my-task">
+          <!-- <div class="my-task">
             <span>我的任务</span>
             <span>></span>
             <span class="new-task">查看结果</span>
-          </div>
+          </div> -->
           <div class="task-concent">
             <p class="language">质检结果</p>
             <div class="result">
                 <div class="head">
                     <span class="name">任务名称：{{task_name}}</span>
+                    <span class="name01">音频名称：{{record_name}}</span>
                     <span class="time">录音时长：{{record_time}}</span>
                 </div>
                 <div class="talk">
@@ -25,13 +26,17 @@
                 </div>
                 <div class="how">
                     <ul class="one">
-                        <li>客户情绪：{{customer_emotion}}</li>
-                        <li>客服情绪：{{service_emotion}}</li>
+                        <li v-if="customer_emotion=='消极'" style="color:red">客户情绪：{{customer_emotion}}</li>
+                        <li v-if="customer_emotion=='中性'" style="color:yellow">客户情绪：{{customer_emotion}}</li>
+                        <li v-if="customer_emotion=='积极'" style="color:green">客户情绪：{{customer_emotion}}</li>
+                        <li v-if="service_emotion=='消极'" style="color:red">客服情绪：{{service_emotion}}</li>
+                        <li v-if="service_emotion=='中性'" style="color:yellow">客服情绪：{{service_emotion}}</li>
+                        <li v-if="service_emotion=='积极'" style="color:green">客服情绪：{{service_emotion}}</li>
                         <li>抢话次数：{{talk_number}}次</li>
                         <li>抢话时长：2分钟</li>
                         <li>语速：{{speed}}</li>
                         <li>敏感词：</li>
-                        <ul class="two">
+                        <ul class="two" v-show="violate_result.length>1">
                             <li v-for="(item,index) in sensitive_word" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
@@ -39,23 +44,25 @@
                 <div class="judge">
                     <p>质检结果</p>
                     <ul class="one">
-                        <li style="font-weight: bold">评分结果：{{score_result}}</li>
+                        <li style="font-weight: bold" :class="score_result=='及格'?'judgeresult01':'judgeresult02'">评分结果：{{score_result}}</li>
                         <li>违禁结果:</li>
-                        <ul class="two">
+                        <ul class="two" v-show="violate_result.length>1">
                             <li v-for="(item,index) in violate_result" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
+                    <router-link to="/Task" class="return"><button>返回上一页</button></router-link>
                 </div>
             </div>
             <div class="voice">
-                <aplayer autoplay controls class="voicecss"
+                <audio :src="record_url" controls="controls" loop="loop" autoplay="autoplay" class="voicecss">亲 您的浏览器不支持html5的audio标签</audio>
+                <!-- <aplayer autoplay controls class="voicecss"
                 :music="{
-                    title: 'secret base~君がくれたもの~',
+                    title: record_name,
                     artist: ' ',
                     src: record_url,
                     pic: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.jpg'
                 }"
-                />
+                /> -->
             </div>
           </div>
         </div>
@@ -83,15 +90,18 @@ export default {
         record_time:'',
         task_name:'',
         record_url:'',
-        tra_res_list:[]
+        tra_res_list:[],
+        ins_id:'',
+        record_name:''
         }
     },
     mounted(){
+        this.ins_id = this.$route.params.id
         this.GetResult()
     },
     methods:{
         GetResult(){
-            this.axios.get('/merchant/v2.0/inspection/transfer_result?ins_id=5')
+            this.axios.get('/merchant/v2.0/inspection/transfer_result?ins_id='+this.ins_id)
             .then(response => {  
                 this.customer_emotion = response.data.data.ins_res_dict.customer_emotion
                 this.service_emotion = response.data.data.ins_res_dict.service_emotion
@@ -105,6 +115,9 @@ export default {
                 this.task_name = response.data.data.int_ins_dict.task_name
                 this.record_url = response.data.data.int_ins_dict.record_url
                 this.tra_res_list = response.data.data.tra_res_list
+                this.record_name = response.data.data.int_ins_dict.record_name
+                console.log(this.sensitive_word)
+                console.log(this.sensitive_word.length)
             }) 
         }
     },
@@ -178,6 +191,13 @@ export default {
                     position: absolute;
                     left: 60px;
                 }
+                .name01{
+                    line-height: 65px;
+                    color: #666;
+                    font-size: 18px;
+                    position: absolute;
+                    left: 460px;
+                }
                 .time{
                     line-height: 65px;
                     color: #666;
@@ -201,7 +221,7 @@ export default {
                     overflow: auto;
                     padding-top:10px;
                     li{
-                        width: 678px;
+                        width: 660px;
                         height: auto;
                         display:inline-block;
                         line-height:24px;
@@ -221,7 +241,7 @@ export default {
                             height: auto;
                             position: relative;
                             left: 60px;
-                            top: -28px;
+                            top: -34px;
                             background: #fff;
                             border-radius: 6px;
                             line-height: 20px;
@@ -247,7 +267,7 @@ export default {
                             height: auto;
                             position: relative;
                             right: 60px;
-                            top: -38px;
+                            top: -45px;
                             background: #9eea6a;
                             border-radius: 6px;
                             line-height: 20px;
@@ -293,7 +313,7 @@ export default {
                       width: auto;
                       height: auto;
                       text-align: center;
-                      background: green;
+                      background: red;
                       border-radius: 16px;
                       color: #fff;
                   }
@@ -325,6 +345,25 @@ export default {
                       padding-left: 20px;
                   }  
                 }
+                .return{
+                    position: absolute;
+                    right: 4px;
+                    top: 236px;
+                    width: 80px;
+                    height: 40px;
+                    cursor: pointer;
+                    background: #fff;
+                    border-radius: 8px;
+                    button{
+                        width: 80px;
+                        height: 40px;
+                        cursor: pointer;
+                        border-radius: 8px;
+                    }
+                    button:hover{
+                        color: #362389;
+                    }
+                }
                 .two{
                   width: 386px;
                   height: 122px;
@@ -347,19 +386,23 @@ export default {
                 }
             }
         }
+        .judgeresult01{
+            color:green;
+        }
+        .judgeresult02{
+            color:red;
+        }
         .voice{
-            background: #2c2c2c;
+            // background: #2c2c2c;
             width: 1100px;
             height: 70px;
             position: absolute;
             bottom: 0px;
             .voicecss{
-                background: #2c2c2c;
+                // background: #2c2c2c;
                 width: 1100px;
                 height: 70px;
                 position: absolute;
-                bottom: -8px;
-                left: -5px;
             }
         }
       }

@@ -6,18 +6,19 @@
       <Head></Head>
       <div class="head-content">
         <div class="head-content-center">
-          <div class="my-task">
+          <!-- <div class="my-task">
             <span>我的任务</span>
             <span>></span>
             <span class="new-task">创建任务</span>
-          </div>
+          </div> -->
           <div class="task-concent">
             <p class="language">语音质检</p>
+            <div class="name"><span class="task-name">任务名称：</span> <el-input v-model="dataInfo.taskName" :maxlength="15" placeholder="请输入任务名称,长度不超过15个字" class="task-name-input"></el-input></div>
+
             <el-form>
-              <div class="name"><span class="task-name">任务名称：</span> <el-input v-model="dataInfo.taskName" placeholder="请输入任务名称" class="task-name-input"></el-input></div>
+            <span class="upload-task-name">上传音频：</span>
               <div class="upload">
-                <span class="task-name">上传音频：</span>
-                <el-upload
+                <!-- <el-upload
                   action="/merchant/v2.0/inspection/audio_upload?audio_transfer"
                   class="upload-demo"
                   accept=".mp3,.wav,.m4a,.opus,.flac"
@@ -34,8 +35,16 @@
                   :before-remove="remove"
                   :on-progress="Progress">
                   <el-button size="small" type="primary" class="task-button">选择文件</el-button>
-                </el-upload>
-              </div>
+                </el-upload>-->
+              </div> 
+                <!-- <div class="block" @click="uploadMusic()" v-show="!dataInfo.taskName||!dataInfo.sort"></div> -->
+                <uploader :options="options" class="uploader" @file-success="onFileSuccess" @file-added="onFileAdded" @file-removed="onFileRemove" >
+                  <uploader-unsupport></uploader-unsupport>
+                  <uploader-drop>
+                    <uploader-btn :attrs="attrs">选择录音</uploader-btn>
+                  </uploader-drop>
+                  <uploader-list></uploader-list>
+                </uploader>
             </el-form>
             <!-- <div class="showSong">
               <ul>
@@ -59,9 +68,11 @@
               </div>
             </div>
             <!-- <div class="sumit"><router-link to="/Task"><el-button>创建任务</el-button></router-link></div> -->
-            <div class="sumit" @click="submitUpload()"><el-button>创建任务</el-button></div>
+            <div class="sumit" @click="submitUpload()"><el-button type="primary">创建任务</el-button></div>
+
           </div>
-        <button @click="login()">登录</button>
+          
+        <!-- <button @click="login()">登录</button> -->
         </div>
       </div>
   </div>
@@ -79,7 +90,19 @@ export default {
         taskName:'',
       },
       fileListNum:'',
-      loading:''
+      loading:'',
+      options: {
+        // https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js
+        target: '/merchant/v2.0/inspection/audio_upload',
+        testChunks: false,
+        fileParameterName: 'audio_transfer',
+      },
+      attrs: {
+        accept: '.mp3,.wav,.m4a,.opus,.flac'
+      },
+      arrUser:[],
+      arrSongs:[],
+      objArr:{}
     }
   },
   filters: {
@@ -88,6 +111,21 @@ export default {
     }
   },
   methods:{
+    uploadMusic(){
+      if(!this.dataInfo.taskName){
+        this.$message('请输入任务内容');
+      }else if(!this.dataInfo.sort){
+        this.$message('请选择录音类型');
+      }
+    },
+    onFileRemove(file,filelist){
+      let id = file.id
+      console.log(this.objArr[id])
+      delete this.objArr[id]
+      console.log(this.objArr)
+      // let Num = this.arrUser.indexOf(file.id)
+      // this.arrUser.push(file.id)
+    },
     login(){//查看更多
         this.axios.post('/merchant/v1.0/sessions',
           Qs.stringify({
@@ -105,30 +143,91 @@ export default {
       }else if(!this.dataInfo.sort){
         this.$message('请选择录音类型');
       }else{
-        this.loading = true
-        this.$refs.upload.submit();
+        // this.loading = true
+
+                
+      for (var property in this.objArr){
+        this.arrSongs.push(this.objArr[property]);
       }
-    },
-    Done(response, file, fileList){
-      console.log(response.data.all_transfer_number)
-      console.log('成功了')
+
+        // this.objArr.map(
+        //   function(key,value){
+        //     this.arrSongs.push(value)
+        //   }
+        // )
+        
         this.axios.put('/merchant/v2.0/inspection/audio_upload',
           Qs.stringify({
             task_name:this.dataInfo.taskName,
             record_type:this.dataInfo.sort,
-            all_transfer_number:JSON.stringify(response.data.all_transfer_number)
+            all_transfer_number:JSON.stringify(this.arrSongs)
           })
         )
         .then(response => {  
           console.log(response)
         }) 
-      this.loading = false
-      this.$router.push({ name: 'Task' })
+        this.$router.push({ name: 'Task' })
+        // this.$refs.upload.submit();
+      }
+    },
+    // Done(response, file, fileList){
+    //   this.arrSongs.push(response.data.all_transfer_number)
+    //   // this.loading = false
+    // },
+    onFileSuccess(rootFile, file, message, chunk){
+      
+      let smessage = JSON.parse(message)
+      console.log('成功了')
+      // this.arrSongs.push(smessage.data.all_transfer_number)
+      let obj = {} 
+      let key = file.id;
+      let value = smessage.data.all_transfer_number[0]
+      obj[key] = value
+      
+      Object.assign(this.objArr,obj);
+      // this.arrSongs.push(obj)
+      console.log(this.objArr)
+      // this.axios.put('/merchant/v2.0/inspection/audio_upload',
+      //   Qs.stringify({
+      //     task_name:this.dataInfo.taskName,
+      //     record_type:this.dataInfo.sort,
+      //     all_transfer_number:JSON.stringify(smessage.data.all_transfer_number)
+      //   })
+      // )
+      // .then(response => {  
+      //   console.log(response)
+      // }) 
+      //   this.axios.put('/merchant/v2.0/inspection/audio_upload',
+      //     Qs.stringify({
+      //       task_name:this.dataInfo.taskName,
+      //       record_type:this.dataInfo.sort,
+      //       all_transfer_number:JSON.stringify(response.data.all_transfer_number)
+      //     })
+      //   )
+      //   .then(response => {  
+      //     console.log(response)
+      //   }) 
+      // // this.loading = false
+      // this.$router.push({ name: 'Task' })
+    },
+    onFileAdded(files){
+      console.log(files)
+      // arrUser.push(files.id)
+      if(!this.dataInfo.taskName){
+        this.$message('请输入任务内容');
+        return
+      }else if(!this.dataInfo.sort){
+        this.$message('请选择录音类型');
+        return
+      }else{
+        // this.loading = true
+        // this.$refs.upload.submit();
+      }
     },
     ErrorEv(err, file, fileList){
       console.log(err)
-      console.log('失败了')
-      this.loading = false
+      // console.log('失败了')
+      // this.loading = false
       this.$router.push({ name: 'Task' })
     },
     Progress(event, file, fileList){
@@ -170,17 +269,20 @@ export default {
     }
   .head-content{
     width: 100%;
-    height: 100%;
+    min-height: auto;
+    flex: 1;
     position: relative;
     background: #f8f8f8;
     .head-content-center{
       width: 1200px;
-      min-height: 870px;
+      _height:200px; 
+      min-height:200px;
       position: relative;
       top: 4px;
       margin: 0 auto;
       background: #fff;
       border: 1px solid #dddddd;
+      padding-bottom:200px;
       .my-task{
         width: 1100px;
         height: 15px;
@@ -193,11 +295,39 @@ export default {
         }
       }
       .task-concent{
-        width: 600px;
-        height: 800px;
+        width: 800px;
+        _height:200px; 
+        min-height:200px;
+        flex: 1;
         position: relative;
         top: 20px;
         margin: 0 auto;
+        display: block;
+        .block{
+          width: 100px;
+          height: 50px;
+          position: absolute;
+          left: 96px;
+          top: 186px;
+          z-index: 1000;
+        }
+        .uploader{
+          margin-top: 10px;
+          border-radius: 10px;
+          width:678px;
+          height: auto;
+          position: relative;
+          left: 96px;
+          top: -25px;
+        }
+        .uploader-drop{
+          background: #fff;
+          border: none;
+        }
+        .uploader-btn{
+          color: #fff;
+          background:#524AE7;
+        }
         .showSong{
           width: 600px;
           height: auto;
@@ -271,18 +401,26 @@ export default {
           color: #666;
           font-family: 'SimSun';
         }
+        .upload-task-name{
+          position: relative;
+          font-size: 18px;
+          color: #666;
+          font-family: 'SimSun';
+          top: 16px;
+        }
         .task-name-input{
           position: relative;
-          width: 480px;
+          width: 680px;
         }
         .language-sort{
           position: relative;
-          top: 50px;
+          top: 70px;
         }
         .sumit{
           position: relative;
-          top: 50px;
+          top: 80px;
           text-align: center;
+          height: 30px;
         }
         .task-button{
           position: relative;

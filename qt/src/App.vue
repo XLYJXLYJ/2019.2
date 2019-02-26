@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+      <router-view/>
   </div>
 </template>
 
@@ -32,25 +32,36 @@ button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
 mark{background-color:transparent}
 a,ins,s,u,del{text-decoration:none}
 sup,sub{vertical-align:baseline}
-html {overflow-x: hidden;height: 100%;font-size: 50px;-webkit-tap-highlight-color: transparent;}
+html {overflow-x: hidden;height: auto;font-size: 50px;-webkit-tap-highlight-color: transparent;}
 body {font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;color: #333;font-size: .28em;line-height: 1;-webkit-text-size-adjust: none;}
 hr {height: .02rem;margin: .1rem 0;border: medium none;border-top: .02rem solid #cacaca;}
 a {color: #25a4bb;text-decoration: none;}
-.el-button{
-  background: #524AE7;
-  color: #fff;
+// .el-button{
+//   background: #524AE7;
+//   color: #fff;
+// }
+// .el-radio__input.is-checked+.el-radio__label{
+//   color: #524AE7;
+// }
+// .el-radio__input.is-checked .el-radio__inner{
+//   background-color: #524AE7;
+//   border-color:#524AE7;
+// }
+// .el-radio__input:hover{
+//   color: #524AE7;
+// }
+// .el-button--primary{
+//   border-color:#524AE7;
+// }
+.el-button .el-button--default:hover{
+  background: #524AE7!important;
+  color: #fff!important;
 }
-.el-radio__input.is-checked+.el-radio__label{
-  color: #524AE7;
-}
-.el-radio__input.is-checked .el-radio__inner{
-  background-color: #524AE7;
-  border-color:#524AE7;
-}
-.el-radio__input:hover{
-  color: #524AE7;
-}
-.el-button--primary{
-  border-color:#524AE7;
+.uploader-list{
+  ul{
+    li{
+      margin-bottom: 10px;
+    }
+  }
 }
 </style>

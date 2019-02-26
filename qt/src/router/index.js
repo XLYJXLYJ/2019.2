@@ -6,6 +6,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      component: resolve =>require(['@/components/Index'],resolve)
+    }, 
+    {
       path: '/Qt',
       name: 'Index',
       component: resolve =>require(['@/components/Index'],resolve)
@@ -16,7 +20,7 @@ export default new Router({
       component: resolve =>require(['@/components/Task'],resolve)
     },
     {
-      path: '/Result',
+      path: '/Result/:id',
       name: 'Result',
       component: resolve =>require(['@/components/Result'],resolve)
     }
