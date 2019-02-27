@@ -3,13 +3,20 @@
     <span class="title">机器人答案</span>
     <div style="height:25px"></div>
     <div class="gm-scroll-view">
+      <!-- <span class="title">机器人答案</span>-->
       <ul>
-        <li v-show="newArray.length>0" v-for="(a,index) in newArray" :key='index'>
+        <!--<p>{{answers}}</p>-->
+        <!--<p v-if="targetIds.answers">{{targetIds.answers.length}}</p>-->
+        <li v-for="(a,index) in newArray" :key="index">
           <div>
             <span class="number">{{index+1}}、</span>
             <div>
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
+              <!--replace(/<br\/>/g,'')-->
               <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span>
+              <!--              <span class="q_answer" :title="a.a.replace(/<br\/>/g,'').length>200 ?  a.a.replace(/<br\/>/g,''):''"
+                                  v-text=" a.a.replace(/<br\/>/g,'').length > 200 ? a.a.replace(/<br\/>/g,'').substring(0,200)+'...':a.a.replace(/<br\/>/g,'') "></span>-->
+
             </div>
           </div>
           <div>
@@ -19,27 +26,92 @@
                   @click="sent($event)">发送</span>
           </div>
         </li>
+        <!--<li>-->
+        <!--<div>-->
+        <!--<span class="number">1、</span>-->
+        <!--<div>-->
+        <!--<span class="question" >问题：客服电话是多少</span>-->
+        <!--<span  class="q_answer">答案：5448516</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
+        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<div>-->
+        <!--<span class="number">1、</span>-->
+        <!--<div>-->
+        <!--<span class="question" >问题：客服电话是多少</span>-->
+        <!--<span  class="q_answer">答案：5448516</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
+        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<div>-->
+        <!--<span class="number">1、</span>-->
+        <!--<div>-->
+        <!--<span class="question" >问题：客服电话是多少</span>-->
+        <!--<span  class="q_answer">答案：5448516</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
+        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<div>-->
+        <!--<span class="number">1、</span>-->
+        <!--<div>-->
+        <!--<span class="question" >问题：客服电话是多少</span>-->
+        <!--<span  class="q_answer">答案：5448516</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
+        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
+        <!--</div>-->
+        <!--</li>-->
       </ul>
     </div>
     <span class="title">流程指引</span>
     <div style="height:25px"></div>
     <div class="gm-scroll-view" style="height:55%;">
+      <ul>
+        <li v-for="(a,index) in newArray" :key='index'>
+           <ul>
+             <li v-for="(b,index) in a.pAnswer" :key='index'>
+               <ul>
+                 <li v-for="(c,index) in b" :key='index'>
+                   {{c.content}}
+                 </li>
+               </ul>
+             </li>
+           </ul>
+        </li>
+      </ul>
       <ul style="margin-bottom:20px">
         <li v-for="(a,index) in newArray" :key='index' style="height:auto" v-show="newArray.length>0">
           <!-- 第一层循环 -->
           <div class="recommended">
-            <div class="productBtn" style="height:300px">{{a.pAnswer.data}}</div>
+            <!-- <div class="productBtn" style="height:300px">{{a.pAnswer.display_name}}</div> -->
             <span class="unfoldBtn" @click="Spread(index)">展开</span>
           </div>
-          <div class="recommended" v-show="processPproduct">
-            <span class="productBtn">{{a}}</span>
-            <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span>
+          <div class="recommended">
+            <!-- <span class="productBtn">{{a.pAnswer.display_name}}</span> -->
+            <!-- <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span> -->
           </div>
           <!-- 第二层循环 -->
           <ul>
-            <li v-for="(b,index) in a.pAnswer.data" :key='index' style="height:auto">
+            <!-- <li v-for="(b,index) in a.pAnswer.data" :key='index' style="height:auto">
               <span style="color:#666;font-size: 14px;" @click="sentProcess($event)" :title='b.content'>流程{{index+1}}：{{b.content.length>12 ? b.content.substring(0,12)+'...'  : b.content}}</span>
-            </li>
+            </li> -->
           </ul>
         </li>
       </ul>
@@ -48,14 +120,11 @@
 </template>
 <script>
   import Bus from '../../bus.js';
-  import Vuex from '../../vuex/store.js';
+
   export default {
     name: 'answer',
     props: {
       targetIds: {
-        type: Object,
-      },
-      targetFlow: {
         type: Object,
       },
       index: {
@@ -64,29 +133,24 @@
     },
     data() {
       return {
-        processGuidance: false, // 是否显示流程指引
-        processPproduct: '', // 流程产品
-        productRecommendation:localStorage.getItem('display_name'), // 产品推荐
-        flowArrayNum: [],
-        flowArrayNumSmall: [],
-        indexNum:''
+        isShow: ''
       }
     },
     computed: {
       newArray: function () {
-        // console.log(this.targetIds.qa_record)
         if (this.targetIds.qa_record && this.targetIds.qa_record.length > 0) {
           var qa_record = this.targetIds.qa_record;
           var answers = this.targetIds.answers;
           for (var i = 0; i < qa_record.length; i++) {
+//              qa_record[i].a = qa_record[i].a .replace(/<br\/>/g,'')
             for (var j = 0; j < answers.length; j++) {
+//                answers[j].a = answers[j].a.replace(/<br\/>/g,'')
               if (qa_record[i].q == answers[j].q && qa_record[i].sentTime == answers[j].sentTime) {
                 answers.splice(j, 1);
                 j--;
               }
             }
           }
-          console.log(this.targetIds.qa_record.concat(this.targetIds.answers))
           return this.targetIds.qa_record.concat(this.targetIds.answers)
         } else {
           console.log(this.targetIds.answers)
@@ -95,9 +159,6 @@
       },
       answer: function () {
         return this.targetIds.answer
-      },
-      flowArray: function () {
-        return this.$store.state.flowArray
       }
     },
     watch: {
@@ -127,15 +188,6 @@
         deep: true,
         immediate: true,
       },
-      flowArray (val) {
-        this.flowArrayNum = this.$store.state.flowArray
-        console.log(this.$store.state.flowArray)
-        if (this.flowArrayNum.length > 0) {
-          this.processGuidance = true
-        } else {
-          this.processGuidance = false
-        }
-      }  
     },
     methods: {
       edit(event) {
@@ -154,7 +206,7 @@
         var this_ = this;
         var target = event.target
         // this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
+        Bus.$emit('sentProcess', {data_text: target.getAttribute("data-text"), 'index': this_.index})
       },
 
       robot_balance(robot_uu_id, dialogId) {
@@ -179,13 +231,8 @@
 
         })
       },
-      Spread (index) {
-        this.indexNum = index
-        this.processPproduct = true
-      },
-      Fold (index) {
-        this.indexNum = index
-        this.processPproduct = false
+      handleUnfold: function (isShow) {
+        this.isShow = isShow
       }
     }
   }
@@ -323,4 +370,3 @@
 
   }
 </style>
-

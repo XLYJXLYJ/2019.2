@@ -19,7 +19,7 @@
         <chatList  :class="{'active':targetId==cl.targetId}"  v-for="(cl,index) in lists"  :id="index" :lists="lists[index]"  :key="index"   v-on:chat_List="remove(index)" v-on:s_l="addClass({id:cl.targetId,index:index})"></chatList>
       </div>
       <chatWindow :showIndex="showIndex" v-for="(list,index) in lists"  :targetIds="targetIds[index]" :index="index"  :gallery="gallery"  v-on:listenStatus="remove(index)" v-on:updateRecord="updateRecord"  :class="{'show':targetIds[index].targetId==targetId}" :key="index"></chatWindow>
-      <answer v-for="(l,index) in lists" :targetIds="targetIds[index]" :key="targetIds[index].targetId" :index="index" :class="{'show':targetIds[index].targetId==targetId}"></answer>
+      <answer v-for="(l,index) in lists" :targetIds="targetIds[index]"  :key="targetIds[index].targetId" :index="index" :class="{'show':targetIds[index].targetId==targetId}"></answer>
     </div>
     <v_close v-show="closeStatus" v-on:isClose="listenClose" >是否{{state}}?</v_close>
     <div class="z_index" v-show="logout">
@@ -50,8 +50,7 @@
         checkActive:"",
         lists:[],
         extra:[],
-        targetIds:[],//机器人答案
-        targetFlow:[],//流程答案
+        targetIds:[],
         targetId:"",
         temp:"",
         token:"",
@@ -78,8 +77,12 @@
         lessen:true,
         environment:"",
         gallery:"",
-        dialogId:"", // 对话Id
-        process_id:"" // 流程Id
+        arryAnswer:[],
+        dialogId_ :'',
+        process_id_:'',
+        robot_answer_ :'',
+        robot_uu_id_ :'',
+        sentTime_:''
       }
     },
     created:function () {
@@ -155,6 +158,7 @@
               if(date<message.sentTime&&message.targetId=="systemcustomerrepeatlogin"&&message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"&&message.content.extra!=date){
                   this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
                     this_.logout=true;
+                   /* console.log(res.data)*/
                     if(res.data.errmsg=="OK"){
                       this_.delCookie('s_token')
                       this_.delCookie('service_id')
@@ -198,6 +202,7 @@
                   }
                 }
               }
+              console.log(message);
 
 //              $("ul").append("<li>" + message.senderUserId+':'+message.content.content+ "</li>");
 
@@ -378,12 +383,6 @@
                               array.push(data.value[j])
                             }
                           }
-
-                          this_.db.getDataByKey('100',100).then(data=> {
-                            console.log(data.value)
-                            this_.$store.state.flowArray = data.value
-                          })
-
                           this_.targetIds[data.length].qa_record =array;
                           this_.$set(this_.targetIds[data.length], 'qa_record', array)
                         }
@@ -424,15 +423,7 @@
                             array.push(data.value[j])
                           }
                         }
-                        console.log(data)
-
-                        this_.db.getDataByKey('100',100).then(data=> {
-                          console.log(data)
-                          this_.$store.state.flowArray = data.value
-                        })
-
                         this_.targetIds[data.length].qa_record =array;
-                        
                         this_.$set(this_.targetIds[data.length], 'qa_record', array)
                       }
                     })
@@ -461,10 +452,12 @@
             // do something...
           }
         }, null);
+
       }
       function deleateconnect() {
         RongIMClient.getInstance().logout()
       }
+
     },
     mounted:function() {
       var this_ = this
@@ -512,6 +505,9 @@
     watch:{
       targetIds: {
         handler: function (newVal, oldVal) {
+        /*  console.log('newVal', newVal)
+          console.log('oldVal', oldVal)*/
+
         },
         immediate:true,
         deep: true,
@@ -586,9 +582,9 @@
         exdate.setDate(exdate.getDate() + expiredays);
         document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
       },
-      // 获取机器人答案
+
       getAnswer(sentence,dialogId,productId,index,sentTime){
-        this.dialogId = dialogId
+        
         return new  Promise((resolve,reject)=> {
           var this_ = this
           this_.$ajax({
@@ -599,7 +595,7 @@
             },
             data: {
               'sentence': sentence,
-              'dialogId': dialogId,
+              'dialogId': dialogId ,
               'productId':productId
             },
             transformRequest: [function (data) {
@@ -610,126 +606,132 @@
               return ret
             }],
           }).then((res) => {
+              var lAnswer //接受异步数据
+              var llAnswer 
+
+              if(res.data.data.process_flag === 1){
+                  // var insex_ = index
+                  console.log(res.data.data)
+                  this_.dialogId_ = res.data.data.dialogId
+                  this_.process_id_ = res.data.data.process_id
+                  this_.robot_answer_ = res.data.data.robot_answer
+                  this_.robot_uu_id_ = res.data.data.robot_uu_id
+                  this_.sentTime_ = sentTime
+                  function getFlowAnswer(robot_answer_,dialogId_,robot_uu_id_){
+                          new Promise((resolve,reject)=> {
+                          this_.$ajax({
+                            method: "post",
+                            url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
+                            headers: {
+                              'Content-type': 'application/x-www-form-urlencoded'
+                            },
+                            data: {
+                              'dialogId': this_.dialogId_ ,
+                              'process_id':this_.process_id_
+                            },
+                            transformRequest: [function (data) {
+                              let ret = ''
+                              for (let it in data) {
+                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                              }
+                              return ret
+                            }],
+                          }).then((res) => {
+                            resolve(res.data)
+                            lAnswer = res.data.data
+                            console.log(lAnswer.data)
+                            console.log(index)
+                            this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer}})
+                            console.log(this_.targetIds[index].answers)
+                            this_.targetIds[index].qa_record = array;
+                          })
+                        })
+                      }
+                  getFlowAnswer()
+                  // console.log(lAnswer)
+                  // lAnswer.then(function(result){
+                  //   console.log(result)
+                  //   console.log(result.data)
+                  //   llAnswer = result.data
+                  //   this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:llAnswer})
+                  // })
+                // console.log(lAnswer)
+                // console.log(lAnswer.data)
+              }
             if (res.data.msg == '机器人返回信息') {
               if(sentence.indexOf("<div><img src='"+this_.environment)==0){
                 sentence='[图片]';
               }
-              this.process_id = res.data.data.process_id
-              this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,process_id:res.data.data.process_id,process_flag:res.data.data.process_flag})
+              if(res.data.data.process_flag !== 1){
+                this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:[]})
+              }
+            //  this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:[]})
+              console.log(this_.targetIds[index].answers)
               resolve(res.data.data.robot_answer)
               try{
                 this_.db.getDataByKey(dialogId,index).then(data=>{
-                  console.log(data)
                   if(data){
                     if(data.value[data.value.length-1].sentTime==sentTime){
                       var array=[];
                       var date = this_.getCookie('date');
+                      console.log(date)
+                      console.log(data)
                       for(var j=0;j<data.value.length;j++){
                         if(data.value[j].sentTime>date){
                           array.push(data.value[j]);
                         }
                       }
-
-                        this_.db.getDataByKey('100',100).then(data=> {
-                          console.log(data)
-                          this_.$store.state.flowArray = data.value
-                        })
-
-                      this_.targetIds[index].qa_record= array;
+                      this_.targetIds[index].qa_record = array;
+                      console.log(array)
                       this_.$set(this_.targetIds[index], 'qa_record', array)
                     }else{
-                      this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,process_id:res.data.data.process_id,process_flag:res.data.data.process_flag})
+                      this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId})
                     }
                   }else{
-                    this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,process_id:res.data.data.process_id,process_flag:res.data.data.process_flag}]})
+                    this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId}]})
                   }
                 })
               } catch(e) {
               }
-              if(res.data.data.process_flag === 1){
-                this_.getFlowAnswer(index)
-              }
+
             }
           })
         })
       },
-      // 获取流程答案
-      getFlowAnswer(index){
-        return new  Promise((resolve,reject)=> {
-          var this_ = this
-          this_.$ajax({
-            method: "post",
-            url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
-            headers: {
-              'Content-type': 'application/x-www-form-urlencoded'
-            },
-            data: {
-              'dialogId': this.dialogId,
-              'process_id':this.process_id
-            },
-            transformRequest: [function (data) {
-              let ret = ''
-              for (let it in data) {
-                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-              }
-              return ret
-            }],
-          }).then((res) => {
-             console.log(1111111)
-             let arry2 = []
-            this_.targetIds[index].answers.map(((item, index)=> {
-                arry2.push(Object.assign({},item,{pAnswer:res.data}))
-            }))
-            console.log(arry2)
-            this_.targetIds[index].qa_record=arry2;
-            // this_.targetIds[index].answers =arry2;
-            this_.$set(this_.targetIds[index], 'qa_record', arry2)
-            console.log(this_.targetIds[index].answers)
-            console.log(arry2)
-            console.log(index)
-            // if (res.data.status == 200) { 
-            //   var fArray=[];
-            //   fArray = Object.keys(res.data).map(function(i){return res.data[i]})
-            //   // this_.db.updateData(dialogId,{w:fArray})
-            //   console.log(fArray)
-            //   if(this_.$store.state.flowArray.length>0){
-            //     this_.db.updateData('100',fArray)
-            //     this_.$store.state.flowArray.push(fArray)
-            //   }else{
-            //     this_.db.addData({'id':'100','value':[fArray]})
-            //     this_.$store.state.flowArray.push(fArray)
-            //   }
-            // }
-            // if (res.data.status == 200) { 
-            //   var fArray=[];
-            //   fArray = Object.keys(res.data).map(function(i){return res.data[i]})
-            //   if(this_.$store.state.flowArray.length>0){
-            //     var arr = [];
-            //     var arr_targetId = [];
-            //     for (let i=0;i<this_.$store.state.flowArray.length;i++)
-            //     {
-            //       arr.push(this_.$store.state.flowArray[i][4])
-            //       arr_targetId.push(this_.$store.state.flowArray[i][5])
-            //     }
-            //     if(arr.indexOf(fArray[4]) > -1 && arr_targetId.indexOf(fArray[5]) > -1){
-            //       console.log('存在该元素')
-            //       this_.db.getDataByKey('100',100).then(data=> {
-            //         console.log(data)
-            //         this_.$store.state.flowArray = data.value
-            //       })
-            //     }else{
-            //       console.log('不存在该元素')
-            //       this_.db.updateData('100',fArray)
-            //       this_.$store.state.flowArray.push(fArray)
-            //     }
-            //   }else{
-            //     this_.db.addData({'id':'100','value':[fArray]})
-            //     this_.$store.state.flowArray.push(fArray)
-            //   }
-            // }
-          })
-        })
-      },
+
+            // 获取流程答案
+      // getFlowAnswer(index,process_id,dialogId){
+      //   return new  Promise((resolve,reject)=> {
+      //     var this_ = this
+      //     this_.$ajax({
+      //       method: "post",
+      //       url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
+      //       headers: {
+      //         'Content-type': 'application/x-www-form-urlencoded'
+      //       },
+      //       data: {
+      //         'dialogId': dialogId,
+      //         'process_id':process_id
+      //       },
+      //       transformRequest: [function (data) {
+      //         let ret = ''
+      //         for (let it in data) {
+      //           ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+      //         }
+      //         return ret
+      //       }],
+      //     }).then((res) => {
+      //       resolve(res.data)
+      //       // this_.targetIds[index].answers.map(((item, index)=> {
+      //       //     this_.arryAnswer.push(Object.assign({},item,{pAnswer:res.data}))
+      //       // }))
+      //       // console.log(this_.arryAnswer)
+      //       // this_.targetIds[index].qa_record=this_.arryAnswer;
+      //       // // this_.targetIds[index].answers =arry2;
+      //       // this_.$set(this_.targetIds[index], 'qa_record', this_.arryAnswer)
+      //     })
+      //   })
+      // },
 
       listenClose(data){
         if(data){
@@ -781,6 +783,7 @@
       },
       setActive(event){
 //        this.checkActive=!this.checkActive;
+       /* console.log(event);*/
         if(event.target.className=="active"){
           return false;
         }
@@ -812,9 +815,11 @@
         this.targetId=index.id;
         this.temp=index.index
         this.showIndex=index.index
+        console.log("ii123",this.showIndex);
         for(var i=0;i<this.targetIds.length;i++){
           if(this.targetIds[i].targetId==index.id){
             this.extra=this.targetIds[i].h5_record
+          /*  console.log(this.extra);*/
           }
         }
         this.clearUnreadCount(this.targetId)
@@ -841,6 +846,7 @@
               //message 为发送的消息对象并且包含服务器返回的消息唯一Id和发送消息时间戳
 
 //              $("ul").append("<li>" + 'userid3:' + $('#message').val() + "</li>");
+             /* console.log("Send successfully");*/
               if(m=="592b71f0-b3f8-4f64-bd45-40b35c0191af"){
                 this_.removeConversation(id);//关闭会话
               }
@@ -870,6 +876,7 @@
                   info = x;
                   break;
               }
+            /*  console.log('发送失败:' + info);*/
             }
           }
         );
@@ -896,9 +903,11 @@
             },1000)
 
             // 删除会话成功。
+          /*  console.log(bool)*/
           },
           onError: function (error) {
             // error => 删除会话的错误码
+           /* console.log(error)*/
           }
         })
       },
@@ -920,6 +929,7 @@
         RongIMClient.getInstance().sendMessage(conversationtype, targetId, msg, {
             onSuccess: function (message) {
               //message 为发送的消息对象并且包含服务器返回的消息唯一Id和发送消息时间戳
+            /*  console.log(message);*/
               this_.$ajax({
                 method:"post",
                 url:"/acs/v1.0/customer_logout",
@@ -953,6 +963,7 @@
         var targetId = targetId;
         RongIMClient.getInstance().clearUnreadCount(conversationType,targetId,{
           onSuccess:function(){
+           /* console.log('清除未读消息成功');*/
            // 清除未读消息成功。
           },
           onError:function(error){

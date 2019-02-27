@@ -381,7 +381,7 @@
               height 30px
               width 200px
               border-radius 5px
-              border 1px solid #d6d6d6
+              border 1px solid #999999
               &.verify {
                 width 130px
               }

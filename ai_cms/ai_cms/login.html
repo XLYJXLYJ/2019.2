@@ -153,6 +153,7 @@
 					if(data.errmsg=='登录成功'){
 						var value=data.data.name+'&&'+data.data.company+'&&'+data.data.customer_service_status+'&&'+data.data.user_xa_status+'&&'+data.data.robot_hopper;
 						setCookie('user',value,1);
+						console.log(getCookie('user'))
 						delCookie('customer_token');
 						window.location.href="index.html";
 					}else{

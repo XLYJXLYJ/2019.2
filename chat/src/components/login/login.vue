@@ -217,7 +217,6 @@
               text-align center
               margin-top 30px
               font-size 20px
-              cursor pointer
               @media screen and (max-width: 1300px) {
                 height: 34px;
                 line-height: 34px;
