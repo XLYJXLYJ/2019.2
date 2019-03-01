@@ -151,9 +151,10 @@
 		        btnSubmit:".login_btn",
 		        callback:function(data){
 					if(data.errmsg=='登录成功'){
-						var value=data.data.name+'&&'+data.data.company+'&&'+data.data.customer_service_status+'&&'+data.data.user_xa_status+'&&'+data.data.robot_hopper;
+						console.log(data)
+						console.log(data.data)
+						var value=data.data.name+'&&'+data.data.company+'&&'+data.data.customer_service_status+'&&'+data.data.user_xa_status+'&&'+data.data.robot_hopper+'&&'+data.data.user_id;
 						setCookie('user',value,1);
-						console.log(getCookie('user'))
 						delCookie('customer_token');
 						window.location.href="index.html";
 					}else{
@@ -164,7 +165,7 @@
 		   function setCookie(c_name, value, expiredays){
 		 　　　　var exdate=new Date();
 		　　　　exdate.setDate(exdate.getDate() + expiredays);
-		　　　　document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+		　　　　document.cookie=c_name+ "=" + value + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
 		 　 }
 
 			function delCookie(name){

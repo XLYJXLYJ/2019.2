@@ -13,7 +13,7 @@ if(y>0){
 }*/
 var cookie=getCookie('user');
 if(cookie=="not find"){
-	window.location.href="login.html";
+	// window.location.href="login.html";
 }else{
 	cookie=cookie.split('&&');
 	$(".top .username").css("display","inline")
@@ -21,6 +21,7 @@ if(cookie=="not find"){
 	$('.top .username').text(cookie[0]);
 	$('.top .company').text(cookie[1]);
 	console.log(cookie);
+	console.log(cookie[5]);
 	/*if(cookie[1]=="中国人寿保险（海外）股份有限公司"){
 		$('.li_sub').eq(-3).hide();//隐藏销售漏斗
 	}*/
@@ -32,10 +33,13 @@ if(cookie=="not find"){
 		$('.li_sub').eq(-1).hide();//隐藏客服数据
 	}
 	if(cookie[3]==0){
-		$('.li_father').eq(5).hide();//隐藏智能呼叫
+		$('.li_father').eq(6).hide();//隐藏智能呼叫
 	}
 	if(cookie[4]=="0"){//隐藏销售漏斗
 		$('.li_sub').eq(-3).hide();
+	}
+	if(cookie[5]==1){//显示质检模块
+		$('.li_father').eq(5).show();
 	}
 }
 

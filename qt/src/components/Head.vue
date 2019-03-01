@@ -10,8 +10,8 @@
                 <router-link to="/Task"><li>我的任务</li></router-link>
             </ul>
             <ul class="user">
-                <li>用户:{{cookie[0]}} {{cookie[1]}}</li>
-                <li @click="quit()">退出</li>
+                <li><img src="../assets/user.png"> {{cookie[0]}} {{this.cookie[1]}}</li>
+                <!-- <li @click="quit()">退出</li> -->
             </ul>
         </div>
     </div>
@@ -23,14 +23,13 @@
       return {
         qtTrasversion:'',
         cancelTask:'',
-        cookie:''
+        cookie:'',
+        company:''
       }
     },
     mounted(){
         var user = this.getCookie('user')
-        this.cookie = user.split('%26%26');
-        // console.log(user)
-        // console.log(this.cookie)
+        this.cookie = user.split('&&');
     },
     methods:{
         quit(){
@@ -89,6 +88,7 @@
                 font-size: 18px;
                 font-family:'SimSun';
                 cursor: pointer;
+                color: #fff;
             }
             li:hover{
                 background: #524AE7;
@@ -97,12 +97,12 @@
         }
         .user{
             position: relative;
-            width: 450px;
+            width: 350px;
             height: 80px;
-            left: 750px;
+            left: 850px;
             top: -161px;
             li{
-                float: left;
+                float: right;
                 width: auto;
                 height: 50px;
                 text-align: center;
@@ -110,12 +110,8 @@
                 padding-left:20px;
                 padding-right:20px;
                 font-size: 18px;
-                cursor: pointer;
                 font-family:'SimSun';
                 font-weight:Medium;
-            }
-            li:hover{
-                background: #524AE7;
                 color: #fff;
             }
         }

@@ -181,6 +181,7 @@
         }
       });
       Bus.$on('sentProcess',function (msg) {
+        console.log(msg)
         if(msg.index==this_.index){
           this_.temp=msg.data_text;
           this_.sent('false');
@@ -656,7 +657,7 @@
           display inline-block
           width 21px
           height 21px
-          background url("toggle.png")
+          background url("../../assets/toggle.png")
           background-repeat no-repeat
           background-position-y -40px
           cursor: pointer
@@ -757,7 +758,7 @@
           display inline-block
           width 35px
           height 35px
-          background url("customer.png")
+          background url("../../assets/customer.png")
           background-repeat  no-repeat
           float left
         }
@@ -832,12 +833,12 @@
           display inline-block
           width 35px
           height 35px
-          background url("aimi.png")
+          background url("../../assets/aimi.png")
           background-repeat  no-repeat
           float right
         }
         .service_avatar{
-          background url("customer.png")
+          background url("../../assets/customer.png")
         }
         .pic{
           position relative

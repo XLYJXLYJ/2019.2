@@ -3,116 +3,44 @@
     <span class="title">机器人答案</span>
     <div style="height:25px"></div>
     <div class="gm-scroll-view">
-      <!-- <span class="title">机器人答案</span>-->
-      <ul>
-        <!--<p>{{answers}}</p>-->
-        <!--<p v-if="targetIds.answers">{{targetIds.answers.length}}</p>-->
+      <ul class="answer-view">
         <li v-for="(a,index) in newArray" :key="index">
           <div>
             <span class="number">{{index+1}}、</span>
             <div>
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
-              <!--replace(/<br\/>/g,'')-->
               <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span>
-              <!--              <span class="q_answer" :title="a.a.replace(/<br\/>/g,'').length>200 ?  a.a.replace(/<br\/>/g,''):''"
-                                  v-text=" a.a.replace(/<br\/>/g,'').length > 200 ? a.a.replace(/<br\/>/g,'').substring(0,200)+'...':a.a.replace(/<br\/>/g,'') "></span>-->
-
             </div>
           </div>
           <div>
-            <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId"
-                  @click="edit($event)">查看编辑</span>
-            <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId"
-                  @click="sent($event)">发送</span>
+            <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
+            <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
           </div>
         </li>
-        <!--<li>-->
-        <!--<div>-->
-        <!--<span class="number">1、</span>-->
-        <!--<div>-->
-        <!--<span class="question" >问题：客服电话是多少</span>-->
-        <!--<span  class="q_answer">答案：5448516</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
-        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
-        <!--</div>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<div>-->
-        <!--<span class="number">1、</span>-->
-        <!--<div>-->
-        <!--<span class="question" >问题：客服电话是多少</span>-->
-        <!--<span  class="q_answer">答案：5448516</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
-        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
-        <!--</div>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<div>-->
-        <!--<span class="number">1、</span>-->
-        <!--<div>-->
-        <!--<span class="question" >问题：客服电话是多少</span>-->
-        <!--<span  class="q_answer">答案：5448516</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
-        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
-        <!--</div>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<div>-->
-        <!--<span class="number">1、</span>-->
-        <!--<div>-->
-        <!--<span class="question" >问题：客服电话是多少</span>-->
-        <!--<span  class="q_answer">答案：5448516</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--<span class="look" :data-text="5448516" @click="look($event)">查看编辑</span>-->
-        <!--<span class="sent_btn" :data-text="5448516" @click="sent($event)">发送</span>-->
-        <!--</div>-->
-        <!--</li>-->
       </ul>
     </div>
     <span class="title">流程指引</span>
     <div style="height:25px"></div>
     <div class="gm-scroll-view" style="height:55%;">
-      <ul>
-        <li v-for="(a,index) in newArray" :key='index'>
-           <ul>
-             <li v-for="(b,index) in a.pAnswer" :key='index'>
-               <ul>
-                 <li v-for="(c,index) in b" :key='index'>
-                   {{c.content}}
+      <ul class="one">
+        <li v-for="(a,index) in newArray" :key='index' class="one-li">
+           <ul class="two">
+             <li v-for="(b,index_) in a.pAnswer" :key='index_'>
+                <div class="recommended">
+                  <div class="productBtn" @click="showHide(index_,index)" v-show="a.display_name">{{a.display_name}}</div>
+                  <!-- <span class="unfoldBtn" >{{indexNum == index?'展开':'折叠'}}</span> -->
+                </div>
+                <!-- <div class="recommended">
+                  <span class="productBtn">{{a.display_name}}</span>
+                  <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span>
+                </div> -->
+               <ul class="three" :ref="index_">
+                 <li v-for="(c,index__) in b" :key='index__' @click="sentProcess($event)" :title='c.content'>
+                    流程{{index__+1}}：{{c.content.length>12 ? c.content.substring(0,12)+'...'  : c.content}}
                  </li>
                </ul>
              </li>
            </ul>
-        </li>
-      </ul>
-      <ul style="margin-bottom:20px">
-        <li v-for="(a,index) in newArray" :key='index' style="height:auto" v-show="newArray.length>0">
-          <!-- 第一层循环 -->
-          <div class="recommended">
-            <!-- <div class="productBtn" style="height:300px">{{a.pAnswer.display_name}}</div> -->
-            <span class="unfoldBtn" @click="Spread(index)">展开</span>
-          </div>
-          <div class="recommended">
-            <!-- <span class="productBtn">{{a.pAnswer.display_name}}</span> -->
-            <!-- <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span> -->
-          </div>
-          <!-- 第二层循环 -->
-          <ul>
-            <!-- <li v-for="(b,index) in a.pAnswer.data" :key='index' style="height:auto">
-              <span style="color:#666;font-size: 14px;" @click="sentProcess($event)" :title='b.content'>流程{{index+1}}：{{b.content.length>12 ? b.content.substring(0,12)+'...'  : b.content}}</span>
-            </li> -->
-          </ul>
         </li>
       </ul>
     </div>
@@ -133,7 +61,8 @@
     },
     data() {
       return {
-        isShow: ''
+        indexNum:'',
+        processPproduct:''
       }
     },
     computed: {
@@ -204,9 +133,11 @@
       },
       sentProcess(event) {
         var this_ = this;
+        console.log(event)
         var target = event.target
+        console.log(target)
         // this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('sentProcess', {data_text: target.getAttribute("data-text"), 'index': this_.index})
+        Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
       },
 
       robot_balance(robot_uu_id, dialogId) {
@@ -231,8 +162,30 @@
 
         })
       },
-      handleUnfold: function (isShow) {
-        this.isShow = isShow
+      Spread(index) {
+        this.indexNum = index
+        this.processPproduct = true
+      },
+      Fold(index) {
+        console.log(index)
+        this.indexNum = index
+        this.processPproduct = false
+      },
+      showHide(index_,index) {
+        console.log(index)
+        console.log(index_)
+        this.indexNum = index
+        // var index = 1
+        // console.log(this.$refs)
+        // console.log(this.$refs[index])
+        // console.log(this.$refs[index][0])
+        // console.log(this.$refs[index][0].style)
+        // console.log(this.$refs[index][0].style.display)
+        if (this.$refs[index_][index].style.display=="none") {
+          this.$refs[index_][index].style.display=""
+        }else if (this.$refs[index_][index].style.display=="") {
+          this.$refs[index_][index].style.display="none"
+        }
       }
     }
   }
@@ -263,7 +216,7 @@
         font-weight: bold;
         color: rgba(69, 69, 69, 1);
       }
-      ul {
+      .answer-view {
         margin 0px 0 0 0
         padding-left 8px;
         li {
@@ -329,44 +282,60 @@
     margin-bottom: 20px;
     width: calc(100% + 20px);
     height 35%
-    .recommended {
-        width: 100%
-        height: 30px;
-
-        .productBtn {
-          float: left;
-          margin-left: 12px;
-          color: #3199e0;
-          padding: 3px 5px;
-          font-size: 14px;
-          border: 1px solid #3199e0;
-          cursor: pointer;
-          /* background: rgba(49,153,224,1); */
+    .one{
+        width 100%
+        min-height 0px
+        background: #eef3f6;
+        .one-li{
+          background: #eef3f6;
           border-radius: 5px;
-
-          &:hover {
-            background: rgba(49, 153, 224, 1);
-            color white
+          margin-bottom: 0px;
+          height auto
+          cursor pointer
+        }
+    }
+    .two{
+        width 100%
+        min-height 0px
+        background: #eef3f6;
+        li{
+          .recommended {
+            width: 80px
+            min-height: 0px;
+            display block
+            .productBtn {
+              display block
+              margin-left: 12px;
+              margin-top:4px;
+              color: #3199e0;
+              padding: 3px 5px;
+              font-size: 14px;
+              border: 1px solid #3199e0;
+              cursor: pointer;
+              /* background: rgba(49,153,224,1); */
+              border-radius: 5px;
+              position relative
+              &:hover {
+                background: rgba(49, 153, 224, 1);
+                color white
+              }
+            }
           }
         }
-
-        .unfoldBtn {
-          float: left;
-          margin-left: 12px;
-          color: #3199e0;
-          padding: 3px 5px;
-          font-size: 14px;
-          border: 1px solid #3199e0;
-          cursor: pointer;
-          /* background: rgba(49,153,224,1); */
-          border-radius: 5px;
-
-          &:hover {
-            background: rgba(49, 153, 224, 1);
-            color white
-          }
+    }
+    .three{
+        width 100%
+        min-height 0px
+        font-size 14px
+        color #666666
+        background: #eef3f6;
+        li{
+          padding 7px 0px 7px 6px
+          background: #fff;
+          margin-top 8px;
+          margin-bottom:8px;
+          margin-left 8px
         }
-      }
-
+    }
   }
 </style>

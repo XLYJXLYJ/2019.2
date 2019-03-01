@@ -13,7 +13,7 @@
             <div class="result">
                 <div class="head">
                     <span class="name">任务名称：{{task_name}}</span>
-                    <span class="name01">音频名称：{{record_name}}</span>
+                    <!-- <span class="name01">音频名称：{{record_name}}</span> -->
                     <span class="time">录音时长：{{record_time}}</span>
                 </div>
                 <div class="talk">
@@ -27,10 +27,10 @@
                 <div class="how">
                     <ul class="one">
                         <li v-if="customer_emotion=='消极'" style="color:red">客户情绪：{{customer_emotion}}</li>
-                        <li v-if="customer_emotion=='中性'" style="color:yellow">客户情绪：{{customer_emotion}}</li>
+                        <li v-if="customer_emotion=='中性'" style="color:blue">客户情绪：{{customer_emotion}}</li>
                         <li v-if="customer_emotion=='积极'" style="color:green">客户情绪：{{customer_emotion}}</li>
                         <li v-if="service_emotion=='消极'" style="color:red">客服情绪：{{service_emotion}}</li>
-                        <li v-if="service_emotion=='中性'" style="color:yellow">客服情绪：{{service_emotion}}</li>
+                        <li v-if="service_emotion=='中性'" style="color:blue">客服情绪：{{service_emotion}}</li>
                         <li v-if="service_emotion=='积极'" style="color:green">客服情绪：{{service_emotion}}</li>
                         <li>抢话次数：{{talk_number}}次</li>
                         <li>抢话时长：2分钟</li>
@@ -44,17 +44,18 @@
                 <div class="judge">
                     <p>质检结果</p>
                     <ul class="one">
-                        <li style="font-weight: bold" :class="score_result=='及格'?'judgeresult01':'judgeresult02'">评分结果：{{score_result}}</li>
+                        <li :class="score_result=='及格'?'judgeresult01':'judgeresult02'">评分结果：{{score_result}}</li>
                         <li>违禁结果:</li>
                         <ul class="two" v-show="violate_result.length>1">
                             <li v-for="(item,index) in violate_result" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
-                    <router-link to="/Task" class="return"><button>返回上一页</button></router-link>
                 </div>
             </div>
             <div class="voice">
-                <audio :src="record_url" controls="controls" loop="loop" autoplay="autoplay" class="voicecss">亲 您的浏览器不支持html5的audio标签</audio>
+                <span class="name01" :title="record_name">音频名称：{{record_name.length>10 ? record_name.substring(0,10)+'...'  : record_name}}</span>
+                <audio :src="record_url" controls="controls" loop="loop" class="voicecss">亲 您的浏览器不支持html5的audio标签</audio>
+                <router-link to="/Task" class="return"><button style="font-size: 14px;">返回上一页</button></router-link>
                 <!-- <aplayer autoplay controls class="voicecss"
                 :music="{
                     title: record_name,
@@ -103,21 +104,21 @@ export default {
         GetResult(){
             this.axios.get('/merchant/v2.0/inspection/transfer_result?ins_id='+this.ins_id)
             .then(response => {  
-                this.customer_emotion = response.data.data.ins_res_dict.customer_emotion
-                this.service_emotion = response.data.data.ins_res_dict.service_emotion
-                this.talk_number = response.data.data.ins_res_dict.talk_number
-                this.talk_time = response.data.data.ins_res_dict.talk_time
-                this.speed = response.data.data.ins_res_dict.speed
-                this.sensitive_word = response.data.data.ins_res_dict.sensitive_word
-                this.score_result = response.data.data.ins_res_dict.score_result
-                this.violate_result = response.data.data.ins_res_dict.violate_result
-                this.record_time = response.data.data.int_ins_dict.record_time
-                this.task_name = response.data.data.int_ins_dict.task_name
-                this.record_url = response.data.data.int_ins_dict.record_url
-                this.tra_res_list = response.data.data.tra_res_list
-                this.record_name = response.data.data.int_ins_dict.record_name
-                console.log(this.sensitive_word)
-                console.log(this.sensitive_word.length)
+                if(response.data.status == 200){
+                    this.customer_emotion = response.data.data.ins_res_dict.customer_emotion
+                    this.service_emotion = response.data.data.ins_res_dict.service_emotion
+                    this.talk_number = response.data.data.ins_res_dict.talk_number
+                    this.talk_time = response.data.data.ins_res_dict.talk_time
+                    this.speed = response.data.data.ins_res_dict.speed
+                    this.sensitive_word = response.data.data.ins_res_dict.sensitive_word
+                    this.score_result = response.data.data.ins_res_dict.score_result
+                    this.violate_result = response.data.data.ins_res_dict.violate_result
+                    this.record_time = response.data.data.int_ins_dict.record_time
+                    this.task_name = response.data.data.int_ins_dict.task_name
+                    this.record_url = response.data.data.int_ins_dict.record_url
+                    this.tra_res_list = response.data.data.tra_res_list
+                    this.record_name = response.data.data.int_ins_dict.record_name
+                } 
             }) 
         }
     },
@@ -191,13 +192,6 @@ export default {
                     position: absolute;
                     left: 60px;
                 }
-                .name01{
-                    line-height: 65px;
-                    color: #666;
-                    font-size: 18px;
-                    position: absolute;
-                    left: 460px;
-                }
                 .time{
                     line-height: 65px;
                     color: #666;
@@ -216,10 +210,10 @@ export default {
                 left: 0px;
                 ul{
                     width: 678px;
-                    height: 558px; 
+                    height: 526px; 
                     background: #f5f5f5;
                     overflow: auto;
-                    padding-top:10px;
+                    padding-top:40px;
                     li{
                         width: 660px;
                         height: auto;
@@ -266,7 +260,7 @@ export default {
                             word-wrap: break-word;word-break: break-all;
                             height: auto;
                             position: relative;
-                            right: 60px;
+                            right: 44px;
                             top: -45px;
                             background: #9eea6a;
                             border-radius: 6px;
@@ -345,25 +339,6 @@ export default {
                       padding-left: 20px;
                   }  
                 }
-                .return{
-                    position: absolute;
-                    right: 4px;
-                    top: 236px;
-                    width: 80px;
-                    height: 40px;
-                    cursor: pointer;
-                    background: #fff;
-                    border-radius: 8px;
-                    button{
-                        width: 80px;
-                        height: 40px;
-                        cursor: pointer;
-                        border-radius: 8px;
-                    }
-                    button:hover{
-                        color: #362389;
-                    }
-                }
                 .two{
                   width: 386px;
                   height: 122px;
@@ -393,16 +368,53 @@ export default {
             color:red;
         }
         .voice{
-            // background: #2c2c2c;
             width: 1100px;
             height: 70px;
             position: absolute;
             bottom: 0px;
+            .name01{
+                display: inline-block;
+                line-height: 55px;
+                color: #666;
+                font-size: 14px;
+                position: relative;
+                width: 200px;
+                height: 54px;
+                left: 10px;
+                top: 11px;
+                border-radius: 20px;
+                text-align: center;
+                overflow: hidden;
+                background: #f5f5f5;
+            }
             .voicecss{
-                // background: #2c2c2c;
-                width: 1100px;
+                width: 776px;
                 height: 70px;
                 position: absolute;
+                left: 220px;
+                top: -5px;
+            }
+            .return{
+                position: absolute;
+                right: 14px;
+                top: 18px;
+                width: 80px;
+                height: 40px;
+                cursor: pointer;
+                border-radius: 8px;
+                font-size: 14px;
+                button{
+                    font-size: 14px;
+                    width: 80px;
+                    height: 40px;
+                    cursor: pointer;
+                    background: #8180f8;
+                    color: #fff;
+                    border-radius: 8px;
+                }
+                button:hover{
+                    color: #fff;
+                }
             }
         }
       }

@@ -53,9 +53,24 @@ a {color: #25a4bb;text-decoration: none;}
 // .el-button--primary{
 //   border-color:#524AE7;
 // }
+.el-button--primary{
+  background-color: #524AE7;
+  border-color:#524AE7;
+  color: #fff;
+}
 .el-button .el-button--default:hover{
   background: #524AE7!important;
   color: #fff!important;
+}
+.el-radio__input.is-checked+.el-radio__label{
+  color: #666!important;
+}
+.el-radio__input.is-checked .el-radio__inner{
+    border-color: #666!important;
+    background: #333!important;
+}
+.el-radio__inner{
+  border: 1px solid #666!important;
 }
 .uploader-list{
   ul{

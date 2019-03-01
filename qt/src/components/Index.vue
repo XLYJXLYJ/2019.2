@@ -56,20 +56,19 @@
                 </li>
               </ul>
             </div> -->
+            <div class="language-sort">
+              <div class="name"><span class="task-name">录音类型选择：</span> 
+                <el-radio v-model="dataInfo.sort" label="电销外呼" style="color:#666;">电销外呼</el-radio>
+                <el-radio v-model="dataInfo.sort" label="现场查勘" style="color:#666;">现场查勘</el-radio>
+              </div>
+            </div>
             <div class="upload-tips">
               <p class="main">上传提示：</p>
               <p class="small">每条音频不能超过500M(音频时长不能超过5小时),可同时支持10个音频文件上传。</p>
               <p class="small">目前支持wav、flac、opus、mp3、m4a的音频格式。</p>
             </div>
-            <div class="language-sort">
-              <div class="name"><span class="task-name">录音类型选择：</span> 
-                <el-radio v-model="dataInfo.sort" label="电销外呼">电销外呼</el-radio>
-                <el-radio v-model="dataInfo.sort" label="现场查勘">现场查勘</el-radio>
-              </div>
-            </div>
             <!-- <div class="sumit"><router-link to="/Task"><el-button>创建任务</el-button></router-link></div> -->
-            <div class="sumit" @click="submitUpload()"><el-button type="primary">创建任务</el-button></div>
-
+            <div class="sumit" @click="submitUpload()"><el-button type="primary" style="background-color: #524AE7;border-color:#524AE7;color: #fff;">创建任务</el-button></div>
           </div>
           
         <!-- <button @click="login()">登录</button> -->
@@ -98,11 +97,13 @@ export default {
         fileParameterName: 'audio_transfer',
       },
       attrs: {
-        accept: '.mp3,.wav,.m4a,.opus,.flac'
+        accept: '.mp3,.wav,.m4a,.opus,.flac',
       },
       arrUser:[],
       arrSongs:[],
-      objArr:{}
+      objArr:{},
+      uploadNum:0,//上传的次数
+      successNum:0//成功的次数
     }
   },
   filters: {
@@ -113,18 +114,16 @@ export default {
   methods:{
     uploadMusic(){
       if(!this.dataInfo.taskName){
-        this.$message('请输入任务内容');
+        this.$message('请输入任务名称');
       }else if(!this.dataInfo.sort){
         this.$message('请选择录音类型');
       }
     },
     onFileRemove(file,filelist){
       let id = file.id
-      console.log(this.objArr[id])
       delete this.objArr[id]
-      console.log(this.objArr)
-      // let Num = this.arrUser.indexOf(file.id)
-      // this.arrUser.push(file.id)
+      this.uploadNum = this.uploadNum-1
+      this.successNum = this.successNum-1
     },
     login(){//查看更多
         this.axios.post('/merchant/v1.0/sessions',
@@ -134,28 +133,25 @@ export default {
           })
         )
         .then(response => {  
-          console.log(response)
+          var value=response.data.data.name+'&&'+response.data.data.company+'&&'+response.data.data.customer_service_status+'&&'+response.data.data.user_xa_status+'&&'+response.data.data.robot_hopper+'&&'+response.data.data.user_id;
+					this.setCookie('user',value,1);
         }) 
     },
     submitUpload() {
       if(!this.dataInfo.taskName){
-        this.$message('请输入任务内容');
+        this.$message('请输入任务名称');
       }else if(!this.dataInfo.sort){
         this.$message('请选择录音类型');
-      }else{
-        // this.loading = true
-
-                
+      }else if(this.uploadNum!==this.successNum-1 && this.uploadNum!==this.successNum){
+        this.$message('录音正在上传中，请稍等...');
+      }else if(this.successNum>10){
+        this.$message('上传次数超过限制，请删除超过项目');
+      }
+      else{
+        // this.loading = true      
       for (var property in this.objArr){
         this.arrSongs.push(this.objArr[property]);
       }
-
-        // this.objArr.map(
-        //   function(key,value){
-        //     this.arrSongs.push(value)
-        //   }
-        // )
-        
         this.axios.put('/merchant/v2.0/inspection/audio_upload',
           Qs.stringify({
             task_name:this.dataInfo.taskName,
@@ -164,75 +160,33 @@ export default {
           })
         )
         .then(response => {  
-          console.log(response)
+          if(response.data.status == 200){
+              this.$router.push({ name: 'Task' })
+          }
         }) 
-        this.$router.push({ name: 'Task' })
-        // this.$refs.upload.submit();
       }
     },
-    // Done(response, file, fileList){
-    //   this.arrSongs.push(response.data.all_transfer_number)
-    //   // this.loading = false
-    // },
     onFileSuccess(rootFile, file, message, chunk){
-      
       let smessage = JSON.parse(message)
-      console.log('成功了')
-      // this.arrSongs.push(smessage.data.all_transfer_number)
       let obj = {} 
       let key = file.id;
       let value = smessage.data.all_transfer_number[0]
       obj[key] = value
-      
       Object.assign(this.objArr,obj);
-      // this.arrSongs.push(obj)
-      console.log(this.objArr)
-      // this.axios.put('/merchant/v2.0/inspection/audio_upload',
-      //   Qs.stringify({
-      //     task_name:this.dataInfo.taskName,
-      //     record_type:this.dataInfo.sort,
-      //     all_transfer_number:JSON.stringify(smessage.data.all_transfer_number)
-      //   })
-      // )
-      // .then(response => {  
-      //   console.log(response)
-      // }) 
-      //   this.axios.put('/merchant/v2.0/inspection/audio_upload',
-      //     Qs.stringify({
-      //       task_name:this.dataInfo.taskName,
-      //       record_type:this.dataInfo.sort,
-      //       all_transfer_number:JSON.stringify(response.data.all_transfer_number)
-      //     })
-      //   )
-      //   .then(response => {  
-      //     console.log(response)
-      //   }) 
-      // // this.loading = false
-      // this.$router.push({ name: 'Task' })
+      this.successNum = this.successNum+1
     },
-    onFileAdded(files){
-      console.log(files)
-      // arrUser.push(files.id)
-      if(!this.dataInfo.taskName){
-        this.$message('请输入任务内容');
-        return
-      }else if(!this.dataInfo.sort){
-        this.$message('请选择录音类型');
-        return
-      }else{
-        // this.loading = true
-        // this.$refs.upload.submit();
+    onFileAdded(files,fileList){
+      this.uploadNum = this.uploadNum+1
+      if(this.successNum>10){
+        files.ignored = true
+        this.$message('上传次数超过限制');
       }
     },
     ErrorEv(err, file, fileList){
-      console.log(err)
-      // console.log('失败了')
-      // this.loading = false
       this.$router.push({ name: 'Task' })
     },
     Progress(event, file, fileList){
       this.fileListNum = fileList
-
     },
     preview(file){
     },
@@ -317,7 +271,7 @@ export default {
           width:678px;
           height: auto;
           position: relative;
-          left: 96px;
+          left: 94px;
           top: -25px;
         }
         .uploader-drop{
@@ -327,6 +281,8 @@ export default {
         .uploader-btn{
           color: #fff;
           background:#524AE7;
+          position: relative;
+          left: -10px;
         }
         .showSong{
           width: 600px;
@@ -414,7 +370,7 @@ export default {
         }
         .language-sort{
           position: relative;
-          top: 70px;
+          top: 8px;
         }
         .sumit{
           position: relative;
@@ -431,4 +387,5 @@ export default {
     }
   }
 }
+
 </style>

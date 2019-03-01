@@ -607,7 +607,7 @@
             }],
           }).then((res) => {
               var lAnswer //接受异步数据
-              var llAnswer 
+              var display_name 
 
               if(res.data.data.process_flag === 1){
                   // var insex_ = index
@@ -639,100 +639,94 @@
                           }).then((res) => {
                             resolve(res.data)
                             lAnswer = res.data.data
+                            display_name = res.data.display_name
+                            
                             console.log(lAnswer.data)
                             console.log(index)
-                            this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer}})
+                            this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
                             console.log(this_.targetIds[index].answers)
-                            this_.targetIds[index].qa_record = array;
+                            console.log(0)
+                            try{
+                              this_.db.getDataByKey(this_.dialogId_,index).then(data=>{
+                                console.log(1)
+                                if(data){
+                                  console.log(2)
+                                  if(data.value[data.value.length-1].sentTime==sentTime){
+                                    console.log(3)
+                                    var array=[];
+                                    var date = this_.getCookie('date');
+                                    console.log(date)
+                                    console.log(data)
+                                    for(var j=0;j<data.value.length;j++){
+                                      if(data.value[j].sentTime>date){
+                                        array.push(data.value[j]);
+                                      }
+                                    }
+                                    this_.targetIds[index].qa_record = array;
+                                    console.log(array)
+                                    this_.$set(this_.targetIds[index], 'qa_record', array)
+                                  }else{
+                                    console.log(4)
+                                    this_.db.updateData(this_.dialogId_,{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
+                                  }
+                                }else{
+                                  console.log(5)
+                                  console.log(lAnswer)
+                                  this_.db.addData({'id':this_.dialogId_,'value':[{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name}]})
+                                }
+                              })
+                            } catch(e) {
+                            }
+
                           })
                         })
                       }
                   getFlowAnswer()
-                  // console.log(lAnswer)
-                  // lAnswer.then(function(result){
-                  //   console.log(result)
-                  //   console.log(result.data)
-                  //   llAnswer = result.data
-                  //   this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:llAnswer})
-                  // })
-                // console.log(lAnswer)
-                // console.log(lAnswer.data)
               }
             if (res.data.msg == '机器人返回信息') {
               if(sentence.indexOf("<div><img src='"+this_.environment)==0){
                 sentence='[图片]';
               }
               if(res.data.data.process_flag !== 1){
-                this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:[]})
+                console.log(6)
+                this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
+                try{
+                  this_.db.getDataByKey(dialogId,index).then(data=>{
+                    console.log(7)
+                    if(data){
+                      console.log(8)
+                      if(data.value[data.value.length-1].sentTime==sentTime){
+                        var array=[];
+                        var date = this_.getCookie('date');
+                        console.log(date)
+                        console.log(data)
+                        for(var j=0;j<data.value.length;j++){
+                          if(data.value[j].sentTime>date){
+                            array.push(data.value[j]);
+                          }
+                        }
+                        this_.targetIds[index].qa_record = array;
+                        console.log(array)
+                        this_.$set(this_.targetIds[index], 'qa_record', array)
+                      }else{
+                        console.log(9)
+                        this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
+                      }
+                    }else{
+                      console.log(10)
+                      console.log(lAnswer)
+                      this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
+                    }
+                  })
+                } catch(e) {
+                }
               }
-            //  this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:[]})
               console.log(this_.targetIds[index].answers)
               resolve(res.data.data.robot_answer)
-              try{
-                this_.db.getDataByKey(dialogId,index).then(data=>{
-                  if(data){
-                    if(data.value[data.value.length-1].sentTime==sentTime){
-                      var array=[];
-                      var date = this_.getCookie('date');
-                      console.log(date)
-                      console.log(data)
-                      for(var j=0;j<data.value.length;j++){
-                        if(data.value[j].sentTime>date){
-                          array.push(data.value[j]);
-                        }
-                      }
-                      this_.targetIds[index].qa_record = array;
-                      console.log(array)
-                      this_.$set(this_.targetIds[index], 'qa_record', array)
-                    }else{
-                      this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId})
-                    }
-                  }else{
-                    this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId}]})
-                  }
-                })
-              } catch(e) {
-              }
-
             }
           })
         })
       },
-
-            // 获取流程答案
-      // getFlowAnswer(index,process_id,dialogId){
-      //   return new  Promise((resolve,reject)=> {
-      //     var this_ = this
-      //     this_.$ajax({
-      //       method: "post",
-      //       url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
-      //       headers: {
-      //         'Content-type': 'application/x-www-form-urlencoded'
-      //       },
-      //       data: {
-      //         'dialogId': dialogId,
-      //         'process_id':process_id
-      //       },
-      //       transformRequest: [function (data) {
-      //         let ret = ''
-      //         for (let it in data) {
-      //           ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-      //         }
-      //         return ret
-      //       }],
-      //     }).then((res) => {
-      //       resolve(res.data)
-      //       // this_.targetIds[index].answers.map(((item, index)=> {
-      //       //     this_.arryAnswer.push(Object.assign({},item,{pAnswer:res.data}))
-      //       // }))
-      //       // console.log(this_.arryAnswer)
-      //       // this_.targetIds[index].qa_record=this_.arryAnswer;
-      //       // // this_.targetIds[index].answers =arry2;
-      //       // this_.$set(this_.targetIds[index], 'qa_record', this_.arryAnswer)
-      //     })
-      //   })
-      // },
-
       listenClose(data){
         if(data){
 //          this.checkActive=!this.checkActive;

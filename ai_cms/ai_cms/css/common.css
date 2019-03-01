@@ -280,6 +280,14 @@ a {
     display: inline-block;
     background-position-x: -5px;
 }
+.fas {
+    width: 25px;
+    height: 14px;
+    display: inline-block;
+    margin-top:6px;
+    text-align: center;
+    vertical-align: middle;
+}
 
 .icon1 {
     background-position-y: -8px;
@@ -2052,5 +2060,9 @@ td.operation {
     .conent .lists .list > div:nth-child(2n) {
         margin-left: 200px;
     }
+}
+
+.show_none{
+    display: none;
 }
 
