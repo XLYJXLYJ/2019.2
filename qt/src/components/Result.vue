@@ -19,34 +19,39 @@
                 <div class="talk">
                     <ul>
                         <li v-for="(item,index) in tra_res_list" :key="index">
-                            <p :class="item.direction==2?'guesthead02':'guesthead01'">{{item.speaker}}</p>
+                            <p :class="item.direction==2?'guesthead02':'guesthead01'">{{item.speaker | clearString}}</p>
                             <span :class="{'guestcontext02':item.direction==2,'guestcontext01':item.direction!==2}" v-html="item.content"></span>
                         </li>
                     </ul>
                 </div>
                 <div class="how">
                     <ul class="one">
-                        <li v-if="customer_emotion=='消极'" style="color:red">客户情绪：{{customer_emotion}}</li>
-                        <li v-if="customer_emotion=='中性'" style="color:blue">客户情绪：{{customer_emotion}}</li>
-                        <li v-if="customer_emotion=='积极'" style="color:green">客户情绪：{{customer_emotion}}</li>
-                        <li v-if="service_emotion=='消极'" style="color:red">客服情绪：{{service_emotion}}</li>
-                        <li v-if="service_emotion=='中性'" style="color:blue">客服情绪：{{service_emotion}}</li>
-                        <li v-if="service_emotion=='积极'" style="color:green">客服情绪：{{service_emotion}}</li>
-                        <li>抢话次数：{{talk_number}}次</li>
-                        <li>抢话时长：2分钟</li>
-                        <li>语速：{{speed}}</li>
+                        <li v-if="customer_emotion>7">客户情绪：<span style="color:red">高涨</span></li>
+                        <li v-if="customer_emotion<8">客户情绪：<span style="color:#8691a5">正常</span></li>
+                        <li v-if="service_emotion>7">客服情绪：<span style="color:red">高涨</span></li>
+                        <li v-if="service_emotion<8">客服情绪：<span style="color:#8691a5">正常</span></li>
+                        <!-- <li v-if="talk_number==0" style="color:#8691a5">抢话次数：无</li>
+                        <li v-if="talk_number>0">抢话次数：<span style="color:red">{{talk_number}}次</span></li>
+                        <li v-if="talk_time==0" style="color:#8691a5">抢话时长：无</li>
+                        <li v-if="talk_time>0">抢话时长：<span style="color:red">{{talk_time}}秒</span></li> -->
+                        <li v-if="speed>119">语速：<span style="color:red">{{speed}}字/分</span></li>
+                        <li v-if="speed<120" style="color:#8691a5">语速：{{speed}}字/分</li>
+                        <li v-if="silence_number==0" style="color:#8691a5">静默次数：无</li>
+                        <li v-if="silence_number>0">静默次数：<span style="color:red">{{silence_number}}次</span></li>
+                        <li v-if="silence_duration==0" style="color:#8691a5">静默时长：无</li>
+                        <li v-if="silence_duration>0">静默时长：<span style="color:red">{{silence_duration}}秒</span></li>
                         <li>敏感词：</li>
-                        <ul class="two" v-show="violate_result.length>1">
+                        <ul class="two" v-show="sensitive_word.length>0">
                             <li v-for="(item,index) in sensitive_word" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
                 </div>
                 <div class="judge">
-                    <p>质检结果</p>
+                    <p>质检评分</p>
                     <ul class="one">
-                        <li :class="score_result=='及格'?'judgeresult01':'judgeresult02'">评分结果：{{score_result}}</li>
+                        <li>评分结果：<span :class="score_result=='及格'?'judgeresult01':'judgeresult02'">{{score_result}}</span></li>
                         <li>违禁结果:</li>
-                        <ul class="two" v-show="violate_result.length>1">
+                        <ul class="two" v-show="violate_result.length>0">
                             <li v-for="(item,index) in violate_result" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
@@ -54,7 +59,8 @@
             </div>
             <div class="voice">
                 <span class="name01" :title="record_name">音频名称：{{record_name.length>10 ? record_name.substring(0,10)+'...'  : record_name}}</span>
-                <audio :src="record_url" controls="controls" loop="loop" class="voicecss">亲 您的浏览器不支持html5的audio标签</audio>
+                <audio :src="record_url" controls="controls" loop="loop" class="voicecss" controlslist="nodownload"></audio>
+                <a :href="record_url_download" download>下载</a>
                 <router-link to="/Task" class="return"><button style="font-size: 14px;">返回上一页</button></router-link>
                 <!-- <aplayer autoplay controls class="voicecss"
                 :music="{
@@ -80,8 +86,8 @@ export default {
         return {
         checked1:true,
         checked2:false,
-        customer_emotion:'',
-        service_emotion:'',
+        customer_emotion:'无',
+        service_emotion:'无',
         talk_number:'',
         talk_time:'',
         speed:'',
@@ -93,10 +99,24 @@ export default {
         record_url:'',
         tra_res_list:[],
         ins_id:'',
-        record_name:''
+        record_name:'',
+        silence_number:'',
+        silence_duration:'',
+        record_url_download:''
+        }
+    },
+    filters: {
+        clearString: function (value) {
+            if (value == '客服') {
+                return ''
+            } else {
+                return ''
+            }
         }
     },
     mounted(){
+        let url = window.location.href;
+        document.title = url;
         this.ins_id = this.$route.params.id
         this.GetResult()
     },
@@ -107,17 +127,31 @@ export default {
                 if(response.data.status == 200){
                     this.customer_emotion = response.data.data.ins_res_dict.customer_emotion
                     this.service_emotion = response.data.data.ins_res_dict.service_emotion
-                    this.talk_number = response.data.data.ins_res_dict.talk_number
-                    this.talk_time = response.data.data.ins_res_dict.talk_time
-                    this.speed = response.data.data.ins_res_dict.speed
+                    this.talk_number = parseInt(response.data.data.ins_res_dict.talk_number) 
+                    this.talk_time = parseInt(response.data.data.ins_res_dict.talk_time) 
+                    this.speed = parseInt(response.data.data.ins_res_dict.speed)  
                     this.sensitive_word = response.data.data.ins_res_dict.sensitive_word
                     this.score_result = response.data.data.ins_res_dict.score_result
                     this.violate_result = response.data.data.ins_res_dict.violate_result
                     this.record_time = response.data.data.int_ins_dict.record_time
                     this.task_name = response.data.data.int_ins_dict.task_name
-                    this.record_url = response.data.data.int_ins_dict.record_url
+                    this.record_url = response.data.data.int_ins_dict.xunfei_wav_url
+                    this.record_url_download = response.data.data.int_ins_dict.record_url
                     this.tra_res_list = response.data.data.tra_res_list
                     this.record_name = response.data.data.int_ins_dict.record_name
+                    this.silence_duration = parseInt(response.data.data.ins_res_dict.silence_duration) 
+                    this.silence_number = parseInt(response.data.data.ins_res_dict.silence_number)
+                    if(this.sensitive_word.length==1){
+                        if(this.sensitive_word[0] ==''){
+                            this.sensitive_word[0] = '无'
+                        }
+                    }
+                    if(this.sensitive_word.length==1){
+                        if(this.violate_result[0] ==''){
+                            this.violate_result[0] = '无'
+                        }
+                    }
+
                 } 
             }) 
         }
@@ -173,7 +207,7 @@ export default {
           font-size: 24px;
           padding-top: 30px;
           padding-bottom: 30px;
-          background: #f5f5f5;
+          background: #fff;
         }
         .result{
             width: 1099px;
@@ -184,13 +218,15 @@ export default {
             .head{
                 width: 1099px;
                 height: 63px;
-                background: #f5f5f5;
+                background: #fff;
+                font-family: '微软雅黑';
                 .name{
                     line-height: 65px;
                     color: #666;
                     font-size: 18px;
                     position: absolute;
                     left: 60px;
+                    font-family: '微软雅黑';
                 }
                 .time{
                     line-height: 65px;
@@ -198,6 +234,7 @@ export default {
                     font-size: 18px;
                     position: absolute;
                     right: 60px;
+                    font-family: '微软雅黑';
                 }
             }
             .talk{
@@ -219,6 +256,7 @@ export default {
                         height: auto;
                         display:inline-block;
                         line-height:24px;
+                        font-family: '微软雅黑';
                         .guesthead01{
                             width: 36px;
                             height: 36px;
@@ -227,6 +265,8 @@ export default {
                             position: relative;
                             left: 16px;
                             background: #fff;
+                            background: url(../assets/customer.png);
+                            background-size:36px 36px;
                             border-radius: 20px;
                         }
                         .guestcontext01{
@@ -238,11 +278,13 @@ export default {
                             top: -34px;
                             background: #fff;
                             border-radius: 6px;
-                            line-height: 20px;
+                            line-height: 24px;
                             border: 1px solid #ededed;
                             float:left;
                             padding: 6px;
                             display: block;
+                            font-size: 16px;
+                            font-family: '微软雅黑';
                         }
                         .guesthead02{
                             width: 36px;
@@ -252,7 +294,8 @@ export default {
                             position: relative;
                             top: -10px;
                             left: 623px;
-                            background: #9eea6a;
+                            background: url(../assets/aimi.png);
+                            background-size:36px 36px;
                             border-radius: 20px;
                         }
                         .guestcontext02{
@@ -264,109 +307,146 @@ export default {
                             top: -45px;
                             background: #9eea6a;
                             border-radius: 6px;
-                            line-height: 20px;
+                            line-height: 24px;
                             border: 1px solid #ededed;
                             float:right;
                             padding: 6px;
+                            font-size: 16px;
+                            font-family: '微软雅黑';  
+                        }
+                        
+                        .guestcontext01:before,.guestcontext02:after{   /*用伪类写出小三角形*/
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            border: 8px solid transparent;
+                            position: absolute;
+                            top: 11px;
+                        }
+                        /*分别给左右两边的小三角形定位*/
+                        .guestcontext01:before{    
+                            border-right: 8px solid #fff;
+                            left: -16px;
+                        }
+                        .guestcontext02:after{    
+                            border-left: 8px solid #9EEA6A;
+                            right: -16px;
                         }
                     }
                 }
             }
             .how{
                 width: 419px;
-                height: 285px;
+                height: 345px;
                 display: inline-block;
                 position: absolute;
                 top: 63px;
                 right: -1px;
                 border: 1px solid #d6d6d6;
                 border-right:none;
-                background: #e5e5e6;
+                background: #fff;
+                font-family: '微软雅黑';
                 .one{
                   width: 416px;
-                  height: 282px;
-                  padding-top:12px;
+                  height: 322px;
+                  padding-top:16px;
                   li{
                       font-size: 16px;
-                      padding: 7px;
+                      padding: 10px;
                       padding-left: 20px;
+                      color: #8691a5;
                   }  
                 }
                 .two{
-                  width: 386px;
-                  height: 82px;
-                  font-size: 18px;
+                  width: 330px;
+                  height: 102px;
+                  font-size: 16px;
                   position: relative;
-                  left: 20px;
+                  left: 86px;
+                  top: -30px;
                   overflow: auto;
                   li{
                       float: left;
                       margin: 4px;
                       margin-right: 12px;
-                      padding-right: 16px;
+                      padding-right: 20px;
                       width: auto;
                       height: auto;
                       text-align: center;
-                      background: red;
+                      background:rgb(243, 55, 55);
                       border-radius: 16px;
                       color: #fff;
+                      padding: 4px;
+                      padding-left: 10px;
+                      padding-right: 10px;
                   }
                 }
             }
             .judge{
                 width: 419px;
-                height: 280px;
+                height: 220px;
                 display: inline-block;
                 position: absolute;
                 right: -1px;
-                top: 350px;
+                top: 410px;
                 border-left: 1px solid #d6d6d6;
-                background: #e5e5e6;
+                background: #fff;
                 p{
                     width: 100%;
                     text-align: center;
-                    font-size: 24px;
+                    font-size: 18px;
                     padding-top: 30px;
                     padding-bottom: 30px;
                     font-weight: bold;
                 }
                 .one{
                   width: 416px;
-                  height: 194px;
+                  height: 134px;
+                  position: relative;
+                  top: -14px;
                   li{
                       font-size: 16px;
-                      padding: 8px;
+                      padding: 10px;
                       padding-left: 20px;
-                  }  
+                      color: #8691a5;
+                  }
+                    .judgeresult01{
+                        color:#8691a5;
+                        font-weight: bold;
+                    }
+                    .judgeresult02{
+                        color:red;
+                        font-weight: bold;
+                    }  
                 }
                 .two{
-                  width: 386px;
-                  height: 122px;
+                  width: 320px;
+                  height: 102px;
                   font-size: 18px;
                   position: relative;
-                  left: 20px;
+                  left: 96px;
+                  top: -32px;
                   overflow: auto;
                   li{
                       float: left;
                       margin: 4px;
                       margin-right: 12px;
-                      padding-right: 16px;
+                      padding-right: 20px;
                       width: auto;
                       height: auto;
                       text-align: center;
-                      background: red;
+                      background:rgb(243, 55, 55);
                       border-radius: 16px;
                       color: #fff;
+                      padding: 4px;
+                      padding-left: 10px;
+                      padding-right: 10px;
                   }
                 }
             }
         }
-        .judgeresult01{
-            color:green;
-        }
-        .judgeresult02{
-            color:red;
-        }
+
         .voice{
             width: 1100px;
             height: 70px;
@@ -375,8 +455,8 @@ export default {
             .name01{
                 display: inline-block;
                 line-height: 55px;
-                color: #666;
-                font-size: 14px;
+                color: #8691a5;
+                font-size: 16px;
                 position: relative;
                 width: 200px;
                 height: 54px;
@@ -385,35 +465,55 @@ export default {
                 border-radius: 20px;
                 text-align: center;
                 overflow: hidden;
-                background: #f5f5f5;
+                background: #f1f3f4;
+                font-family: '微软雅黑';
             }
             .voicecss{
-                width: 776px;
-                height: 70px;
+                width: 736px;
+                height: 52px;
                 position: absolute;
                 left: 220px;
-                top: -5px;
+                top: 12px;
+            }
+            a{
+                position: relative;
+                left: 756px;
+                top: -12px;
+                width: 40px;
+                height: 52px;
+                font-size: 16px!important;
+                font-family: '微软雅黑';
+                color: #8691a5;
+                background: #f1f3f4;
+                display: inline-block;
+                line-height: 50px;
+                padding-left: 2px;
+                border-radius: 8px;
             }
             .return{
-                position: absolute;
+                position: relative;
                 right: 14px;
-                top: 18px;
+                top: -12px;
                 width: 80px;
                 height: 40px;
                 cursor: pointer;
                 border-radius: 8px;
-                font-size: 14px;
+                font-size: 16px!important;
+                font-family: '微软雅黑';
                 button{
-                    font-size: 14px;
-                    width: 80px;
-                    height: 40px;
+                    font-size: 16px!important;
+                    width: 90px;
+                    height: 52px;
                     cursor: pointer;
-                    background: #8180f8;
-                    color: #fff;
+                    background: #f1f3f4;
+                    color: #8691a5;
                     border-radius: 8px;
+                    font-family: '微软雅黑';
+                    padding-left: 4px;
+                    padding-right: 4px;
                 }
                 button:hover{
-                    color: #fff;
+                    color: #000;
                 }
             }
         }

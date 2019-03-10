@@ -4,37 +4,59 @@
     <div style="height:25px"></div>
     <div class="gm-scroll-view">
       <ul class="answer-view">
-        <li v-for="(a,index) in newArray" :key="index">
-          <div>
-            <span class="number">{{index+1}}、</span>
-            <div>
+        <li v-for="(a,index) in newArray" :key="index" @mouseover="hoverAnswer(index)" @mouseleave="leaveAnswer()">
+          <el-popover
+            placement="left"
+            width="400"
+            trigger="hover">
+              <span style="font-size:15px;color:#000">问题{{index+1}}：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span><br/>
+              <span class="q_answer02">答案：<span>{{a.a}}</span></span>
+          <div slot="reference">
+            <!-- <span class="number">{{index+1}}、</span> -->
+            <div v-show="hoverAnswerNum!==index"> 
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
               <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span>
             </div>
+            <div v-show="hoverAnswerNum==index"> 
+              <span class="edit" style="width:60px" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
+              <span class="sent_btn" style="width:60px;text-align:center" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
+            </div>
           </div>
+          </el-popover>
           <div>
+            <!-- <span class="number">{{index+1}}、</span> -->
+            <!-- <div> -->
+              <!-- <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
+              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span> -->
+            <!-- </div> -->
+          </div>
+          <!-- <div>
             <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
             <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
-          </div>
+          </div> -->
         </li>
       </ul>
     </div>
     <span class="title">流程指引</span>
     <div style="height:25px"></div>
-    <div class="gm-scroll-view" style="height:55%;">
-      <ul class="one">
+    <div class="gm-scroll-view" style="height:50%;">
+      <!-- <ul class="one">
         <li v-for="(a,index) in newArray" :key='index' class="one-li">
            <ul class="two">
              <li v-for="(b,index_) in a.pAnswer" :key='index_'>
                 <div class="recommended">
-                  <div class="productBtn" @click="showHide(index_,index)" v-show="a.display_name">{{a.display_name}}</div>
-                  <!-- <span class="unfoldBtn" >{{indexNum == index?'展开':'折叠'}}</span> -->
+                  <div class="productBtn" @click="showHide(index_,index)" v-show="a.display_name">{{a.display_name}}
+                    <span v-if="index==indexNum">
+                      <img v-show="!showIcon" src="../../assets/down.png">
+                      <img v-show="showIcon" src="../../assets/up.png">
+                    </span>
+                    <span v-else>
+                      <span v-if="showIconOther[index] !==''"><img  src="../../assets/up.png" alt=""></span>
+                      <span v-else><img  src="../../assets/down.png" alt=""></span>
+                    </span>
+                  </div>
                 </div>
-                <!-- <div class="recommended">
-                  <span class="productBtn">{{a.display_name}}</span>
-                  <span class="unfoldBtn" @click="Fold(index)">{{indexNum == index?'折叠':'展开'}}</span>
-                </div> -->
-               <ul class="three" :ref="index_">
+               <ul class="three" :ref="index_" v-show="showIcon">
                  <li v-for="(c,index__) in b" :key='index__' @click="sentProcess($event)" :title='c.content'>
                     流程{{index__+1}}：{{c.content.length>12 ? c.content.substring(0,12)+'...'  : c.content}}
                  </li>
@@ -42,7 +64,27 @@
              </li>
            </ul>
         </li>
-      </ul>
+      </ul> -->
+
+<!--
+    <el-collapse v-model="activeNames" @change="handleChange">
+      <el-collapse-item title="一致性 Consistency" name="1">
+        <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
+        <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+      </el-collapse-item>
+    </el-collapse> -->
+
+      <el-collapse class="one">
+        <el-collapse-item class="one-li" v-for="(a,index) in newArray" :key='index' :title="a.display_name" v-show="a.display_name">
+            <ul class="two">
+              <li v-for="(c,index__) in a.pAnswer.lAnswer" :key='index__' @click="sentProcess($event)" :title='c.content'>
+                流程{{index__+1}}：{{c.content.length>12 ? c.content.substring(0,12)+'...'  : c.content}}
+              </li>
+            </ul>
+        </el-collapse-item>
+      </el-collapse>
+
+
     </div>
   </div>
 </template>
@@ -62,7 +104,11 @@
     data() {
       return {
         indexNum:'',
-        processPproduct:''
+        processPproduct:'',
+        showIcon:'',
+        showIconOther:[],
+        screen:'',
+        hoverAnswerNum:''
       }
     },
     computed: {
@@ -82,7 +128,6 @@
           }
           return this.targetIds.qa_record.concat(this.targetIds.answers)
         } else {
-          console.log(this.targetIds.answers)
           return this.targetIds.answers
         }
       },
@@ -118,7 +163,20 @@
         immediate: true,
       },
     },
+    created(){
+      if(screen.width>1500){
+        this.screen = true
+      }else{
+        this.screen = false
+      }
+    },
     methods: {
+      hoverAnswer(index){
+        this.hoverAnswerNum = index
+      },
+      leaveAnswer(index){
+        this.hoverAnswerNum = -1
+      },
       edit(event) {
         var this_ = this;
         var target = event.target
@@ -133,11 +191,10 @@
       },
       sentProcess(event) {
         var this_ = this;
-        console.log(event)
         var target = event.target
-        console.log(target)
         // this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
+        // Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
+         Bus.$emit('look', {data_text: target.title, 'index': this_.index})
       },
 
       robot_balance(robot_uu_id, dialogId) {
@@ -167,20 +224,13 @@
         this.processPproduct = true
       },
       Fold(index) {
-        console.log(index)
         this.indexNum = index
         this.processPproduct = false
       },
       showHide(index_,index) {
-        console.log(index)
-        console.log(index_)
         this.indexNum = index
-        // var index = 1
-        // console.log(this.$refs)
-        // console.log(this.$refs[index])
-        // console.log(this.$refs[index][0])
-        // console.log(this.$refs[index][0].style)
-        // console.log(this.$refs[index][0].style.display)
+        this.showIcon = !this.showIcon
+        this.showIconOther[index] = this.$refs[index_][index].style.display
         if (this.$refs[index_][index].style.display=="none") {
           this.$refs[index_][index].style.display=""
         }else if (this.$refs[index_][index].style.display=="") {
@@ -218,17 +268,17 @@
       }
       .answer-view {
         margin 0px 0 0 0
-        padding-left 8px;
+        padding-left 18px
         li {
           padding 7px 0px 7px 6px
           background: rgba(255, 255, 255, 1);
           box-shadow: 0px 0px 17px 0px #cad7ea
           border-radius: 5px;
           margin-bottom: 0px;
-          margin-top 12px;
+          margin-top 8px;
           cursor pointer
           &:hover {
-            background: #d0e1ed
+            // background: #d0e1ed
             box-shadow: 0px 0px 8px 0px rgba(61, 104, 169, 0.17);
             border-radius: 5px;
           }
@@ -249,11 +299,13 @@
               line-height 24px
               font-size 15px
               word-break break-all
+              padding-left:8px;
             }
             .q_answer {
               display block
               font-size 14px
               color #666666
+              padding-left:8px;
             }
             .edit:hover, .sent_btn:hover {
               background: rgba(49, 153, 224, 1);
@@ -261,11 +313,12 @@
             }
             .edit, .sent_btn {
               float right
-              margin-right 20px
+              margin-right 45px
               color rgba(49, 153, 224, 1)
               padding 3px 5px
               font-size 14px
-              margin-top 10px
+              margin-top 8px
+              margin-bottom 8px
               border 1px solid rgba(49, 153, 224, 1)
               cursor pointer
               border-radius: 5px;
@@ -280,62 +333,30 @@
     overflow-x: hidden;
     margin-top: -10px;
     margin-bottom: 20px;
-    width: calc(100% + 20px);
+    width: calc(100% + 15px);
     height 35%
     .one{
-        width 100%
-        min-height 0px
-        background: #eef3f6;
-        .one-li{
-          background: #eef3f6;
-          border-radius: 5px;
-          margin-bottom: 0px;
-          height auto
-          cursor pointer
-        }
-    }
-    .two{
-        width 100%
-        min-height 0px
-        background: #eef3f6;
-        li{
-          .recommended {
-            width: 80px
-            min-height: 0px;
-            display block
-            .productBtn {
-              display block
-              margin-left: 12px;
-              margin-top:4px;
-              color: #3199e0;
-              padding: 3px 5px;
-              font-size: 14px;
-              border: 1px solid #3199e0;
-              cursor: pointer;
-              /* background: rgba(49,153,224,1); */
-              border-radius: 5px;
-              position relative
-              &:hover {
-                background: rgba(49, 153, 224, 1);
-                color white
-              }
-            }
+      .one-li{
+        margin-left 8px
+        margin-right 8px
+        position relative
+        left 10px
+        margin-bottom 4px;
+        .two{
+          margin-top:-2px
+          li{
+            padding 2px;
+            border-radius:10px;
+            margin 4px
+            border: 1px solid #d0e1ed;
+            cursor pointer
+            padding-left 8px;
+          }
+          li:hover{
+            background:#d0e1ed;
           }
         }
-    }
-    .three{
-        width 100%
-        min-height 0px
-        font-size 14px
-        color #666666
-        background: #eef3f6;
-        li{
-          padding 7px 0px 7px 6px
-          background: #fff;
-          margin-top 8px;
-          margin-bottom:8px;
-          margin-left 8px
-        }
+      }
     }
   }
 </style>

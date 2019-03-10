@@ -1,5 +1,5 @@
 <template>
-  <div class="chat" @onkeydown="onkeydown"  @mousemove="mousemove"  @mousedown="mousedown">
+  <div :class="{'chat':screen,'chat-small':!screen}" @onkeydown="onkeydown"  @mousemove="mousemove"  @mousedown="mousedown">
     <v_aside v-show="lessen"></v_aside>
     <v_head v-show="lessen" title="客服工作台"></v_head>
     <div class="content" id="content">
@@ -82,7 +82,8 @@
         process_id_:'',
         robot_answer_ :'',
         robot_uu_id_ :'',
-        sentTime_:''
+        sentTime_:'',
+        screen:true
       }
     },
     created:function () {
@@ -164,7 +165,7 @@
                       this_.delCookie('service_id')
                       this_.delCookie('company');
                       this_.delCookie('s_name');
-                      this_.delCookie('date');
+                      this_.delCookie('date')
                       this_.delCookie('targetId');
                       return false;
                     }
@@ -460,6 +461,11 @@
 
     },
     mounted:function() {
+      if(screen.width>1500){
+        this.screen = true
+      }else{
+        this.screen = false
+      }
       var this_ = this
       setInterval(function () {
         this_.clearUnreadCount(this_.targetId)
@@ -471,12 +477,17 @@
       })
       Bus.$on('lessen_window',function () {
         this_.lessen=false;
+        this_.screen = true;
         if(document.getElementsByClassName('content')[0].className.indexOf('active')==-1){
           document.getElementsByClassName('content')[0].className +=" active";
         }
       })
       Bus.$on('magnify_window',function () {
         this_.lessen=true;
+        if(screen.width<1500){
+          this_.screen = false
+        }
+
         if(document.getElementsByClassName('content')[0].className.indexOf('active')!=-1){
           document.getElementsByClassName('content')[0].className ="content";
         }
@@ -1036,7 +1047,7 @@
   .chat{
     width 100%
     height 100%
-    background-color #f5f6fb
+    background: #eef3f6;
     >.content{
       &.active{
         left 0
@@ -1044,7 +1055,7 @@
         width 100%
         height 100%
         .chatWindow{
-          width calc(100vw - 487px)
+          width calc(100vw - 497px)
           .record{
             height calc(100vh - 195px)
           }
@@ -1052,8 +1063,8 @@
       }
       overflow: hidden;
       position absolute
-      left 150px
-      top 61px;
+      left 132px
+      top 59px;
       background: #eef3f6;
       width calc(100vw - 150px)
      /* height calc(100vh - 61px)*/
@@ -1168,4 +1179,141 @@
      /* border-radius:5px;*/
     }
   }
+
+    .chat-small{
+    width 99%
+    height 102.8%
+    background-color #2b303e;
+    >.content{
+      &.active{
+        left 0
+        top 0
+        width 100%
+        height 100%
+        .chatWindow{
+          width calc(100vw - 487px)
+          .record{
+            height calc(100vh - 195px)
+          }
+        }
+      }
+      overflow: hidden;
+      position absolute
+      left 132px
+      top 59px;
+      background: #eef3f6;
+      width calc(100vw - 150px)
+     /* height calc(100vh - 61px)*/
+      height:93.7%
+      .chat-wrapper {
+        border 1px solid #d6d6d6
+        float left
+        height 100%
+        background: white
+        margin-left: 0px
+        border-radius:0px;
+        margin-top: 0px;
+        margin-right: 14px
+        box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
+        border-radius:0px;
+        .chat_content{
+          width 180px;
+         /* height 40px*/
+          margin-bottom 10px
+          color #454545
+          padding 8px 5px
+          text-align center
+          box-sizing border-box
+          font-size 14px
+          .chat_title {
+            float left
+            span {
+              position relative
+              font-size 15px
+              &:before {
+                position absolute
+                content ""
+                display inline-block
+                height 16px
+                width 3px;
+                background-color #524AE7
+                left -8px
+                margin-top 2px
+              }
+            }
+          }
+          img {
+            margin-top 50px
+          }
+          .status {
+            display block
+            margin-top 10px
+            label{
+              /*width 120px
+              margin-left -100px*/
+              display block
+              padding-left: 18px;
+              text-align left
+              font-size:20px;
+              font-family:MicrosoftYaHei;
+              font-weight:400;
+              color:rgba(43,48,62,1);
+            }
+            span {
+              position relative
+              display inline-block
+              margin-top: 10px
+              margin-bottom: 10px
+              cursor pointer
+              font-size:16px;
+              font-family:SourceHanSansCN-Regular;
+              font-weight:400;
+              color:rgba(153,153,153,1);
+              &:after {
+                display none
+                content ""
+                width 40px
+                height 2px
+                position: absolute
+                left:-4px
+                bottom: -6px
+                background:rgba(49,153,224,1);
+              }
+              &:last-child {
+                margin-left 5px
+              }
+              &:first-child {
+                margin-right 5px
+              }
+              &.active {
+                color:rgba(0,0,0,1);
+                &:after {
+                 /* background-color #524AE7*/
+                  display inline-block
+
+                }
+              }
+            }
+            .online{
+              margin-left:-35px;
+              margin-right:25px
+            }
+          }
+        }
+      }
+    }
+    .chatWindow.show,.answer.show{
+      display block
+    }
+    .chatList.hide {
+      display none
+    }
+    .chatList.active{
+      /*background:rgba(255,255,255,1);*/
+      background: #d0e1ed
+     /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
+     /* border-radius:5px;*/
+    }
+  }
+
 </style>

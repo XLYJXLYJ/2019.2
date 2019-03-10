@@ -64,7 +64,7 @@
     position absolute;
     top 0;
     left 0;
-    width 150px
+    width 132px
    /* height 100vh*/
     height:100%
     background: rgba(43, 48, 62, 1);
@@ -96,8 +96,8 @@
 
     .list {
       .li_father {
-        line-height 20px;
-        padding 0 20px;
+        line-height 40px;
+        padding 0 10px;
         margin-bottom 10px
         a {
           color: rgba(135, 144, 160, 1)

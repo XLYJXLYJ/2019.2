@@ -70,17 +70,17 @@ import Qs from 'qs'
         },20000)
         this.currentPage = parseInt(localStorage.getItem('page')) || 1
     },
-    // mounted(){
-    //     this.intervalid = setInterval(() => {
-    //         this.GetTask()
-    //     },2000)
-    // },
+    mounted(){
+        let url = window.location.href;
+        document.title = url;
+    },
     destroyed () {
         clearInterval(this.intervalid)
     },
     methods:{
         GetTask(){
-            this.axios.get('/merchant/v2.0/inspection/inspection_task?pageSize=' + parseInt(localStorage.getItem('page')))
+            let pageNum = parseInt(localStorage.getItem('page')) || 1
+            this.axios.get('/merchant/v2.0/inspection/inspection_task?pageSize=' + pageNum)
             .then(response => {  
                 this.task = response.data.data.logs_dict_list
                 if(this.task.length==0){

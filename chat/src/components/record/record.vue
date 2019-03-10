@@ -39,15 +39,15 @@
           </thead>
           <thead>
           <tr v-for="(record,index) in records" :key="index">
-            <td :title="record.id.length>10 ?  record.id:'' ">{{record.id.length>10 ? record.id.substring(0,10)+'...' :
+            <td :title="record.id.length>8 ?  record.id:'' ">{{record.id.length>8 ? record.id.substring(0,8)+'...' :
               record.id}}
             </td>
             <td>{{record.robot_code}}</td>
             <td>{{record.create}}</td>
             <td>{{record.role}}</td>
             <td>{{record.name}}</td>
-            <td :title="record.content.length>10 ?  record.content:'' ">{{record.content.length>10 ?
-              record.content.substring(0,10)+'...' : record.content}}
+            <td :title="record.content.length>8 ?  record.content:'' ">{{record.content.length>8 ?
+              record.content.substring(0,8)+'...' : record.content}}
             </td>
             <td>{{record.is_solve}}</td>
           </tr>
@@ -321,7 +321,7 @@
       padding-left:20px*/
       padding-right:20px
       box-sizing border-box
-      min-width 1100px
+      min-width 1000px
       padding-left 170px
       padding-top 100px
 

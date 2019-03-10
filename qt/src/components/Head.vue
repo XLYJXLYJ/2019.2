@@ -28,6 +28,8 @@
       }
     },
     mounted(){
+        let url = window.location.href;
+        document.title = url;
         var user = this.getCookie('user')
         this.cookie = user.split('&&');
     },

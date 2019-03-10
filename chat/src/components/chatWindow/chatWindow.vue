@@ -574,30 +574,30 @@
       },
       keyDown(event){
         event.preventDefault()
-//        var this_=this;
-//        if (event.ctrlKey && event.keyCode == 13)  {
-//          var $input = document.getElementById("textarea");
-//          var cursurPosition=0;
-//          if($input.selectionStart){//非IE
-//            cursurPosition= $input.selectionStart;
-//          }else{//IE
-//            try{
-//              var range = document.selection.createRange();
-//              range.moveStart("character",-$input.value.length);
-//              cursurPosition=range.text.length;
-//            }catch(e){
-//              cursurPosition = 0;
-//            }
-//          }
-//          //var value=$input[this_.index].value;
-//          document.getElementById("textarea").value=document.getElementById("textarea").value.slice(0, cursurPosition) + '\n' + document.getElementById("textarea").value.slice(cursurPosition);
-//          this.setCaretPosition( document.getElementById("textarea"),cursurPosition+1);
-//          //document.getElementById("textarea").value+= '\n'
-//        }else if(event.keyCode == 13){
-//          event.preventDefault();
-//          event.returnValue = false;
-//          this.sent({});
-//        }
+       var this_=this;
+       if (event.ctrlKey && event.keyCode == 13)  {
+         var $input = document.getElementById("textarea");
+         var cursurPosition=0;
+         if($input.selectionStart){//非IE
+           cursurPosition= $input.selectionStart;
+         }else{//IE
+           try{
+             var range = document.selection.createRange();
+             range.moveStart("character",-$input.value.length);
+             cursurPosition=range.text.length;
+           }catch(e){
+             cursurPosition = 0;
+           }
+         }
+         //var value=$input[this_.index].value;
+         document.getElementById("textarea").value=document.getElementById("textarea").value.slice(0, cursurPosition) + '\n' + document.getElementById("textarea").value.slice(cursurPosition);
+         this.setCaretPosition( document.getElementById("textarea"),cursurPosition+1);
+         //document.getElementById("textarea").value+= '\n'
+       }else if(event.keyCode == 13){
+         event.preventDefault();
+         event.returnValue = false;
+         this.sent({});
+       }
       },
     }
   }

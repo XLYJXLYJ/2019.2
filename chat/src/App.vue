@@ -48,7 +48,7 @@ export default {
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 body,html,#app{
-  min-width 1250px
+  min-width 600px
   width 100%
   height 100%
 }
@@ -80,5 +80,25 @@ body,html,#app{
     }
   }
 
+}
+.el-collapse-item__header{
+  padding-left:12px;
+  font-size: 15px!important;
+  color #000;
+  height 30px!important;
+  border-radius:4px 4px 0px 0px;
+  box-shadow: 0px 0px 8px 0px rgba(61, 104, 169, 0.17);
+}
+.el-collapse-item__header:hover{
+  background:#d0e1ed;
+}
+.el-collapse-item__content{
+  padding-bottom 0px!important;
+  padding-top 0px!important;
+}
+.el-collapse-item__wrap{
+  border-radius:0px 0px 4px 4px;
+  margin-bottom:4px;
+  padding-bottom:-10px!important;
 }
 </style>

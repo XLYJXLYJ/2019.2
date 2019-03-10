@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-head">
+  <div :class="{'vue-head':screen,'vue-head-big':!screen}">
     <img src="./location.png" alt="" class="location">
     <span class="title">当前位置：<span class="current">{{title}}</span></span>
     <span class="message">
@@ -20,7 +20,8 @@
     data(){
       return {
         company:'',
-        s_name:''
+        s_name:'',
+        screen:true
       }
     },
     created:function () {
@@ -38,6 +39,13 @@
       this.s_name = getCookie('s_name');
       if (!(this.company && this.s_name)) {
        this.$router.push({'path': '/'})
+      }
+    },
+    mounted(){
+      if(screen.width<1500){
+        this.screen = true
+      }else{
+        this.screen = false
       }
     },
     methods:{
@@ -81,11 +89,83 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .vue-head{
     position absolute
-    left 150px;
+    left 132px;
     top -29px;
     width calc(100vw - 150px)
     height 79px
-    padding 50px 100px 0px 20px
+    padding 50px 70px 0px 20px
+    box-sizing border-box
+    padding-bottom: 40px
+    font-size 14px
+    background:rgba(255,255,255,1);
+   /* border-bottom 1px solid #cac8f9*/
+    .location{
+      width: 16px
+      height: 16px
+      display: inline-block
+      float left
+      margin-top:2px
+      margin-right:10px
+      margin-left:10px
+    }
+    .title{
+      float left
+      font-family:PingFang-SC-Medium;
+      font-weight:500;
+      font-size:16px;
+      color:rgba(69,69,69,1);
+      .current{
+        margin-left 5px
+       /* color #524AE7*/
+        font-size:16px;
+        font-family:PingFang-SC-Bold;
+        font-weight:bold;
+        color:rgba(43,48,62,1);
+      }
+    }
+    .message{
+      float right
+      .user{
+        display inline-block
+        width 25px
+        height 25px
+        background url("../../../static/user1.png")
+        background-repeat no-repeat
+        float left
+      }
+      .username,.company{
+        line-height 20px
+        font-size:16px;
+        font-family:PingFang-SC-Medium;
+        font-weight:500;
+        color:rgba(69,69,69,1);
+      }
+      .company{
+        margin-left 5px
+      }
+      .login_out{
+        margin-left 30px
+      /*  color #524AE7*/
+        cursor: pointer
+        font-size:16px;
+        font-family:PingFang-SC-Medium;
+        font-weight:500;
+        color:rgba(49,153,224,1);
+      }
+      a{
+        text-decoration none
+        color #454545
+      }
+    }
+  }
+
+  .vue-head-big{
+    position absolute
+    left 132px;
+    top -29px;
+    width calc(100vw - 132px)
+    height 79px
+    padding 50px 70px 0px 20px
     box-sizing border-box
     padding-bottom: 40px
     font-size 14px

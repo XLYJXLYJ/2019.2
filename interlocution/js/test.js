@@ -30,27 +30,48 @@ var result;
 var flag=true;
 openDB(myDB.name,myDB.version); 
 var robot_url=window.location.href;
+var index = robot_url.lastIndexOf("\/");
+var str = robot_url.substring(index + 1,robot_url.length);
 function zan(type,target,isLine) {
 	var temp=""
 	if(isLine){
 		temp = '<hr/>';
 	}
-    temp += '<div class="questionnaire">';
-    temp += '<p>以上回答是否解决您的问题?</p>';
-    temp += '<div class="questionnaire-content">';
-    temp += '<div class="feedback yes" data-target="' + target + '" data-type="'+ type +'">';
-    temp += '<span class="icon"></span>';
-    temp += '<span class="desc">是,已解决</span>';
-    temp += '</div>';
-    temp += '<div class="feedback no"  data-target="' + target + '" data-type="'+ type +'">';
-    temp += '<span class="icon"></span>';
-    temp += '<span class="desc">否,未解决</span>';
-    temp += '</div>';
-    temp += '</div>';
-    temp += '</div>';
-    temp += '<div class="retroaction">';
-    temp += '<p><span class="flower"></span><span>感谢您的反馈,我们将继续努力</span></p>';
-    temp += '</div>';
+	if(str=='CL-fss'){
+		temp += '<div class="questionnaire">';
+		temp += '<p>以上回答是否解決您的問題?</p>';
+		temp += '<div class="questionnaire-content">';
+		temp += '<div class="feedback yes" data-target="' + target + '" data-type="'+ type +'">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">是,已解決</span>';
+		temp += '</div>';
+		temp += '<div class="feedback no"  data-target="' + target + '" data-type="'+ type +'">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">否,未解決</span>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '<div class="retroaction">';
+		temp += '<p><span class="flower"></span><span>感謝您的反饋,我們將繼續努力</span></p>';
+		temp += '</div>';
+	}else{
+		temp += '<div class="questionnaire">';
+		temp += '<p>以上回答是否解决您的问题?</p>';
+		temp += '<div class="questionnaire-content">';
+		temp += '<div class="feedback yes" data-target="' + target + '" data-type="'+ type +'">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">是,已解决</span>';
+		temp += '</div>';
+		temp += '<div class="feedback no"  data-target="' + target + '" data-type="'+ type +'">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">否,未解决</span>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '<div class="retroaction">';
+		temp += '<p><span class="flower"></span><span>感谢您的反馈,我们将继续努力</span></p>';
+		temp += '</div>';
+	}
     return temp;
 }
 function zan1(type,uuid){

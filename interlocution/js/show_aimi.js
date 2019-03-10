@@ -42,22 +42,44 @@ function zan(type, target, isLine) {
 	if(isLine) {
 		temp = '<hr/>';
 	}
-	temp += '<div class="questionnaire">';
-	temp += '<p>以上回答是否解决您的问题?</p>';
-	temp += '<div class="questionnaire-content">';
-	temp += '<div class="feedback yes" data-target="' + target + '" data-type="' + type + '">';
-	temp += '<span class="icon"></span>';
-	temp += '<span class="desc">是,已解决</span>';
-	temp += '</div>';
-	temp += '<div class="feedback no"  data-target="' + target + '" data-type="' + type + '">';
-	temp += '<span class="icon"></span>';
-	temp += '<span class="desc">否,未解决</span>';
-	temp += '</div>';
-	temp += '</div>';
-	temp += '</div>';
-	temp += '<div class="retroaction">';
-	temp += '<p><span class="flower"></span><span>感谢您的反馈,我们将继续努力</span></p>';
-	temp += '</div>';
+	var CLurl=window.location.href;
+	var index = CLurl.lastIndexOf("\/");
+	var str = CLurl.substring(index + 1,CLurl.length);
+	if(str=='CL-fss'){
+		temp += '<div class="questionnaire">';
+		temp += '<p>以上回答是否解決您的問題?</p>';
+		temp += '<div class="questionnaire-content">';
+		temp += '<div class="feedback yes" data-target="' + target + '" data-type="' + type + '">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">是,已解決</span>';
+		temp += '</div>';
+		temp += '<div class="feedback no"  data-target="' + target + '" data-type="' + type + '">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">否,未解決</span>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '<div class="retroaction">';
+		temp += '<p><span class="flower"></span><span>感謝您的反饋,我們將繼續努力</span></p>';
+		temp += '</div>';
+	}else{
+		temp += '<div class="questionnaire">';
+		temp += '<p>以上回答是否解决您的问题?</p>';
+		temp += '<div class="questionnaire-content">';
+		temp += '<div class="feedback yes" data-target="' + target + '" data-type="' + type + '">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">是,已解决</span>';
+		temp += '</div>';
+		temp += '<div class="feedback no"  data-target="' + target + '" data-type="' + type + '">';
+		temp += '<span class="icon"></span>';
+		temp += '<span class="desc">否,未解决</span>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '</div>';
+		temp += '<div class="retroaction">';
+		temp += '<p><span class="flower"></span><span>感谢您的反馈,我们将继续努力</span></p>';
+		temp += '</div>';
+	}
 	return temp;
 }
 
@@ -1257,12 +1279,18 @@ function doUpload(url) {
 
 	}
 }
+
 //单选
 $(document).on('click','.choice',function(){
+	var strTarget = event.target.innerHTML
 	$(this).hide();
-	$('.send').addClass('blue')
-	send(event.target.innerText);
-	
-	//console.log(event.target.innerText)
+	$('.send').addClass('blue');
+    if(strTarget.indexOf('li')!=-1){ 
+		return;
+    }else{
+		send(event.target.innerText);
+    }
 })
+
+
 

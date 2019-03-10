@@ -111,6 +111,10 @@ export default {
       return parseInt(value)
     }
   },
+  mounted(){
+    let url = window.location.href;
+    document.title = url;
+  },
   methods:{
     uploadMusic(){
       if(!this.dataInfo.taskName){

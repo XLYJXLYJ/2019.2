@@ -322,7 +322,7 @@
       padding-left:20px*/
       padding-right:20px
       box-sizing border-box
-      min-width 1100px
+      min-width 1000px
       padding-left 170px
       padding-top 100px
 

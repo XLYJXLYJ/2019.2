@@ -119,7 +119,7 @@
   body,html {
     width 100%
     height 100%
-    min-width 1250px
+    min-width 600px
     .login {
       position relative
       width 100vw
