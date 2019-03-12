@@ -23,6 +23,25 @@ var priority = 2;
 //	}, 350)
 //
 //}, 3000)
+
+//定时轮循客户是否在线
+var maxTime = 300; // seconds
+var time = maxTime;
+$('body').on('keydown mousemove mousedown touchstart touchmove touchend', function(e) {
+	time = maxTime; // reset
+});
+var intervalId = setInterval(function() {
+	time--;
+	// console.log(time)
+	if (time <= 0) {
+		ShowInvalidLoginMessage();
+		clearInterval(intervalId);
+	}
+}, 3000)
+function ShowInvalidLoginMessage() {
+	alert("服务超时已结束");
+}
+
 var roy_domain = "http://chat.qb-tech.net";
 if(window.location.href.indexOf("test") > 0) {
 	var roy_domain = "http://test.chat.qb-tech.net";
@@ -384,12 +403,12 @@ function send(msg) {
 				//var data={"msg":{"data":["\u60a8\u597d\uff0c\u6839\u636e\u60a8\u7684\u8d39\u7528\u660e\u7ec6\uff0c\u5e8a\u4f4d\u8d39\u5728\u4fdd\u969c\u8303\u56f4\u5185,\u5728\u4fdd\u969c\u8303\u56f4\u5185\u7684\u7d22\u8d54\u91d1\u989d\u4e3a400.0\u5143\uff0c\u8003\u8651\u514d\u8d54\u989d\uff0c\u8d54\u507f\u9650\u989d\uff0c\u8d54\u4ed8\u6bd4\u4f8b\u7b49\u56e0\u7d20\u540e\uff0c\u6d4b\u7b97\u51fa\u672c\u6b21\u8d54\u507f\u91d1\u989d\u4e3a400.0\u5143\u3002\u82e5\u9700\u518d\u6b21\u8ba1\u7b97\uff0c\u8bf7\u8f93\u5165\"\u91cd\u65b0\u8ba1\u7b97\"\u6216\"\u7ed3\u675f\"\u6765\u7ed3\u675f\u672c\u8f6e\u5bf9\u8bdd\u3002"]}}
 				//var data={"msg":{"data":["\u6309\u60a8\u7684\u8981\u6c42\uff0c\u672c\u8f6e\u5bf9\u8bdd\u7ed3\u675f\u3002\u82e5\u6709\u65b0\u7684\u60c5\u51b5\u54a8\u8be2\uff0c\u8bf7\u91cd\u65b0\u5f00\u59cb\u63d0\u95ee \"XXX\u4fdd\u4e0d\u4fdd\""]}}
 				//var data ={"msg":{'data':
-				//				var data={"msg":{"data":["設立公積金個人計劃的辦理手續及所需文件？<br /><br />帳戶擁有人與基金管理實體訂立公積金個人計劃合同後，親臨或委托他人遞交以下文件到基金管理實體：<br />1.<a href='http://www.fss.gov.mo/uploads/wizdownload/201808/4599_ghf9r.pdf' target='_blank' >設立公積金個人計劃申請表（E）</a>；  <a href='http://www.fss.gov.mo/uploads/wizdownload/201808/4600_0llz4.pdf' target='_blank' >（填表樣本）</a><br />2.公積金個人計劃合同影印本（已簽署文本）；<br />3.", "您是否還需要瞭解以下問題：","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
-				//				var data={"msg":{"data":["未滿六十五歲的帳戶擁有人，因配偶、任一親等的直系血親或姻親的嚴重傷病而需負擔龐大的醫療開支<br /><br />賬戶擁有人每年只可提取一次其個人賬戶內全部或部分款項。提取金額上限為該賬戶擁有人有權獲得的鼓勵性基本款項及預算盈餘特別分配款項。<br /><br />辦理手續及所需文件：：親身或由他人遞交以下文件至服務辦理地點：<a href='http://www.fss.gov.mo/uploads/media/dag/location.pdf' target='_blank' >詳細地址：</a><br />1.<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/l1-f-ch.pdf' target='_blank' >提取款項申請表L1（格式FSS/PC-6）</a>；<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/l1-s-ch.pdf' target='_blank' >（填表樣本）</a><br />2.澳門居民身份證影印本；<br />3.患者的身份證影印本；<br />4.患者由當地認可的醫療單位發出的患病證明（需顯示申請日前十二個月內的患病情況，包括疾病名稱、嚴重程度、接受治療的期間及情況，倘屬下列疾病，則患病證明須同時顯示相關數據。）<br />(1)惡性腫瘤：患病證明須顯示患者申請日前十二個月內是否曾接受或預計需接受抗癌治療，是否已轉移或擴散至其他部位，是否屬晚期腫瘤。<br />(2)中風：患病證明須顯示患者最近一次中風的日期，患者是否因中風而導致永久喪失工作能力。<br />5.患者因嚴重傷病須負擔龐大醫療開支的證明文件：<br />(1)必須遞交收據等證明文件。<br />(2)預計的醫療開支：<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/c11-f-ch.pdf' target='_blank' >填寫C/11聲明書</a>   ；<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/c11-s-ch.pdf' target='_blank' >（填表樣本）</a>。<br />6.賬戶擁有人與患者的有效關係證明文件；<br />7.賬戶擁有人的澳門幣銀行賬戶影印本；<br />8.如賬戶擁有人為無行為能力人士，請參閱<a href='http://www.fss.gov.mo/zh-hant/rpc/rpc-pessoasincapazes' target='_blank' >無行為能力的賬戶擁有人提取款項手續</a>。<br /><br />備註/申請須知：接受社會保障基金轉賬的銀行包括：中國銀行澳門分行、大西洋銀行、大豐銀行、華僑永亨銀行股份有限公司、澳門國際銀行、澳門商業銀行、香港上海匯豐銀行、中國工商銀行(澳門)股份有限公司、匯業銀行、澳門華人銀行。"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
-//				var data={"msg":{"data":["提取款項資格？<br /><br />http://www.fss.gov.mo/zh-hant/rpc/levantamento","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"],"whether":["是","否"]}}
-//				var data={"msg":{"data":["您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"],"whether":["是","否"]}}
-				//				var data={"msg":{"data":["基金錶現情況？<br /><br />閣下可通過以下鏈接查看基金錶現情況<br />保證基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00020  <br />平衡基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00021    <br />增長基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00022","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
-				//				var data={"msg":{"data":['登入指引？<div class="imgshow"><figure> <div class="img-dv"><a style="position: static;"  index="1" href="http://test.open.qb-tech.net/kg_img/tupiana.png" data-size="813x1527"><img  src="http://test.open.qb-tech.net/kg_img/tupiana.png"></a></div> </figure></div>',"您是否還需要瞭解以下問題"],"folds":[],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
+				//var data={"msg":{"data":["設立公積金個人計劃的辦理手續及所需文件？<br /><br />帳戶擁有人與基金管理實體訂立公積金個人計劃合同後，親臨或委托他人遞交以下文件到基金管理實體：<br />1.<a href='http://www.fss.gov.mo/uploads/wizdownload/201808/4599_ghf9r.pdf' target='_blank' >設立公積金個人計劃申請表（E）</a>；  <a href='http://www.fss.gov.mo/uploads/wizdownload/201808/4600_0llz4.pdf' target='_blank' >（填表樣本）</a><br />2.公積金個人計劃合同影印本（已簽署文本）；<br />3.", "您是否還需要瞭解以下問題：","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
+				//var data={"msg":{"data":["未滿六十五歲的帳戶擁有人，因配偶、任一親等的直系血親或姻親的嚴重傷病而需負擔龐大的醫療開支<br /><br />賬戶擁有人每年只可提取一次其個人賬戶內全部或部分款項。提取金額上限為該賬戶擁有人有權獲得的鼓勵性基本款項及預算盈餘特別分配款項。<br /><br />辦理手續及所需文件：：親身或由他人遞交以下文件至服務辦理地點：<a href='http://www.fss.gov.mo/uploads/media/dag/location.pdf' target='_blank' >詳細地址：</a><br />1.<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/l1-f-ch.pdf' target='_blank' >提取款項申請表L1（格式FSS/PC-6）</a>；<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/l1-s-ch.pdf' target='_blank' >（填表樣本）</a><br />2.澳門居民身份證影印本；<br />3.患者的身份證影印本；<br />4.患者由當地認可的醫療單位發出的患病證明（需顯示申請日前十二個月內的患病情況，包括疾病名稱、嚴重程度、接受治療的期間及情況，倘屬下列疾病，則患病證明須同時顯示相關數據。）<br />(1)惡性腫瘤：患病證明須顯示患者申請日前十二個月內是否曾接受或預計需接受抗癌治療，是否已轉移或擴散至其他部位，是否屬晚期腫瘤。<br />(2)中風：患病證明須顯示患者最近一次中風的日期，患者是否因中風而導致永久喪失工作能力。<br />5.患者因嚴重傷病須負擔龐大醫療開支的證明文件：<br />(1)必須遞交收據等證明文件。<br />(2)預計的醫療開支：<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/c11-f-ch.pdf' target='_blank' >填寫C/11聲明書</a>   ；<a href='http://www.fss.gov.mo/uploads/media/dag/withdrawal/c11-s-ch.pdf' target='_blank' >（填表樣本）</a>。<br />6.賬戶擁有人與患者的有效關係證明文件；<br />7.賬戶擁有人的澳門幣銀行賬戶影印本；<br />8.如賬戶擁有人為無行為能力人士，請參閱<a href='http://www.fss.gov.mo/zh-hant/rpc/rpc-pessoasincapazes' target='_blank' >無行為能力的賬戶擁有人提取款項手續</a>。<br /><br />備註/申請須知：接受社會保障基金轉賬的銀行包括：中國銀行澳門分行、大西洋銀行、大豐銀行、華僑永亨銀行股份有限公司、澳門國際銀行、澳門商業銀行、香港上海匯豐銀行、中國工商銀行(澳門)股份有限公司、匯業銀行、澳門華人銀行。"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
+				//var data={"msg":{"data":["提取款項資格？<br /><br />http://www.fss.gov.mo/zh-hant/rpc/levantamento","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"],"whether":["是","否"]}}
+				//var data={"msg":{"data":["您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"],"whether":["是","否"]}}
+				//var data={"msg":{"data":["基金錶現情況？<br /><br />閣下可通過以下鏈接查看基金錶現情況<br />保證基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00020  <br />平衡基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00021    <br />增長基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00022","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
+				//var data={"msg":{"data":['登入指引？<div class="imgshow"><figure> <div class="img-dv"><a style="position: static;"  index="1" href="http://test.open.qb-tech.net/kg_img/tupiana.png" data-size="813x1527"><img  src="http://test.open.qb-tech.net/kg_img/tupiana.png"></a></div> </figure></div>',"您是否還需要瞭解以下問題"],"folds":[],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
 
 				if(data.hasOwnProperty("iv") && data.iv) {
 					var json = decrypt((data.msg), skey, data.iv).replace("aimi", aimi_name).replace("AIMI", aimi_name);
@@ -799,6 +818,7 @@ function setCookie(c_name, value, expiredays) {　　
 //var uri="http://172.16.3.148:8888"
 $('.artificial_service').click(function() {
 	var this_ = $(this);
+	clearInterval(intervalId);
 	//获取当前用户信息
 	if(this_.hasClass('active')) {
 		this_.removeClass('active')
@@ -1283,11 +1303,11 @@ function doUpload(url) {
 //单选
 $(document).on('click','.choice',function(){
 	var strTarget = event.target.innerHTML
-	$(this).hide();
-	$('.send').addClass('blue');
     if(strTarget.indexOf('li')!=-1){ 
 		return;
     }else{
+		$(this).hide();
+		$('.send').addClass('blue');
 		send(event.target.innerText);
     }
 })

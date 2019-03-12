@@ -499,3 +499,5 @@ String.prototype.endWith=function(endStr){
     return (d>=0&&this.lastIndexOf(endStr)==d);
 }
 
+
+

@@ -17,24 +17,6 @@ if(window.location.href.indexOf("test") > 0){
 	appkey = "8w7jv4qb829cy";
 }
 
-//定时轮循客户是否在线
-var maxTime = 300; // seconds
-var time = maxTime;
-$('body').on('keydown mousemove mousedown touchstart touchmove touchend', function(e) {
-	time = maxTime; // reset
-});
-var intervalId = setInterval(function() {
-	time--;
-	// console.log(time)
-	if (time <= 0) {
-		ShowInvalidLoginMessage();
-		clearInterval(intervalId);
-	}
-}, 3000)
-function ShowInvalidLoginMessage() {
-	alert("服务超时已结束");
-}
-
 function getCookie(objName){//获取指定名称的cookie的值 
     var arrStr = document.cookie.split("; "); 
     for (var i = 0; i < arrStr.length; i++) { 
@@ -443,3 +425,15 @@ function clearConversation() {
 function deleateconnect() {
     RongIMClient.getInstance().logout()
 }
+
+$(document).on("click",".s-button",function(event){
+	console.log(event)
+	$(".tableAnswer tr").removeAttr("style");
+	if(event.target.innerHTML == '展开'){
+		$(".tableAnswer tr").removeAttr("style");
+		event.target.innerHTML = '收起'
+	}else{
+	 event.target.innerHTML = '展开'
+	 $(".tableAnswer tr:gt(1)").css("display","none");
+	}
+})
