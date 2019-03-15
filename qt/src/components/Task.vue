@@ -22,7 +22,7 @@
                             <p class="detail-context" :title="item.task_name">{{item.task_name}}</p>
                             <p class="detail-context" :title="item.record_name">{{item.record_name.length>10 ? item.record_name.substring(0,10)+'...'  : item.record_name}}</p>
                             <p class="detail-context" :title="item.record_type">{{item.record_type}}</p>
-                            <p class="detail-context" :title="item.record_type">{{item.customer_name}}</p>
+                            <p class="detail-context" :title="item.record_type">{{item.customer_name==''?'---':item.customer_name}}</p>
                             <p class="detail-context" :title="item.record_time">{{item.record_time}}</p>
                             <p class="detail-context" :title="item.status_name">{{item.status_name}}</p>
                             <p class="detail-context" v-show="!item.record_status"><el-button type="danger" @click="Delete(item.id)">取消任务</el-button></p>

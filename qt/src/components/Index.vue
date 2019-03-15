@@ -13,7 +13,7 @@
           </div> -->
           <div class="task-concent">
             <p class="language">语音质检</p>
-            <div class="name"><span class="task-name">任务名称：</span> <el-input v-model="dataInfo.taskName" :maxlength="15" placeholder="请输入任务名称,长度不超过15个字" class="task-name-input"></el-input></div>
+            <div class="name"><span class="task-name">任务名称：</span> <el-input v-model="dataInfoTaskName" :maxlength="15" placeholder="请输入任务名称,长度不超过15个字" class="task-name-input"></el-input></div>
 
             <el-form>
             <span class="upload-task-name">上传音频：</span>
@@ -37,7 +37,7 @@
                   <el-button size="small" type="primary" class="task-button">选择文件</el-button>
                 </el-upload>-->
               </div> 
-                <!-- <div class="block" @click="uploadMusic()" v-show="!dataInfo.taskName||!dataInfo.sort"></div> -->
+                <!-- <div class="block" @click="uploadMusic()" v-show="!dataInfoTaskName||!dataInfoSort"></div> -->
                 <uploader :options="options" class="uploader" @file-success="onFileSuccess" @file-added="onFileAdded" @file-removed="onFileRemove" >
                   <uploader-unsupport></uploader-unsupport>
                   <uploader-drop>
@@ -58,8 +58,12 @@
             </div> -->
             <div class="language-sort">
               <div class="name"><span class="task-name">录音类型选择：</span> 
-                <el-radio v-model="dataInfo.sort" label="电销外呼" style="color:#666;">电销外呼</el-radio>
-                <el-radio v-model="dataInfo.sort" label="现场查勘" style="color:#666;">现场查勘</el-radio>
+                <el-radio v-model="dataInfoSort" label="电销外呼" style="color:#666;">电销外呼</el-radio>
+                <el-radio v-model="dataInfoSort" label="现场查勘" style="color:#666;">现场查勘</el-radio>
+              </div>
+              <div v-show="isSuccess" style="margin-left:130px;">
+                <el-radio v-model="dataInfoSort2" label="交易成功录音" style="color:#666;">交易成功录音</el-radio>
+                <el-radio v-model="dataInfoSort2" label="未交易成功录音" style="color:#666;">未交易成功录音</el-radio>
               </div>
             </div>
             <div class="upload-tips">
@@ -70,8 +74,8 @@
             <!-- <div class="sumit"><router-link to="/Task"><el-button>创建任务</el-button></router-link></div> -->
             <div class="sumit" @click="submitUpload()"><el-button type="primary" style="background-color: #524AE7;border-color:#524AE7;color: #fff;">创建任务</el-button></div>
           </div>
-          
-        <!-- <button @click="login()">登录</button> -->
+<!--           
+        <button @click="login()">登录</button> -->
         </div>
       </div>
   </div>
@@ -84,10 +88,6 @@ export default {
   name: 'Index',
   data () {
     return {
-      dataInfo:{
-        sort:'',
-        taskName:'',
-      },
       fileListNum:'',
       loading:'',
       options: {
@@ -95,15 +95,20 @@ export default {
         target: '/merchant/v2.0/inspection/audio_upload',
         testChunks: false,
         fileParameterName: 'audio_transfer',
+        chunkSize:1*1024*1024*1000
       },
       attrs: {
-        accept: '.mp3,.wav,.m4a,.opus,.flac',
+        accept: '.mp3,.wav,.m4a,.opus,.flac,.WAV,.MP3,.M4A,.OPUS,.FLAC',
       },
       arrUser:[],
       arrSongs:[],
       objArr:{},
       uploadNum:0,//上传的次数
-      successNum:0//成功的次数
+      successNum:0,//成功的次数
+      isSuccess:false,
+      dataInfoSort:'',
+      dataInfoSort2:'',
+      dataInfoTaskName:''
     }
   },
   filters: {
@@ -115,11 +120,26 @@ export default {
     let url = window.location.href;
     document.title = url;
   },
+  watch:{
+    dataInfoSort:function(){
+      if(this.dataInfoSort=='电销外呼'){
+        this.isSuccess = true
+      }else{
+        this.isSuccess = false
+      }
+    }
+  },
   methods:{
+    // phone(){
+    //   this.isSuccess = true
+    // },
+    // notPhone(){
+    //   this.isSuccess = false
+    // },
     uploadMusic(){
-      if(!this.dataInfo.taskName){
+      if(!this.dataInfoTaskName){
         this.$message('请输入任务名称');
-      }else if(!this.dataInfo.sort){
+      }else if(!this.dataInfoSort){
         this.$message('请选择录音类型');
       }
     },
@@ -142,10 +162,12 @@ export default {
         }) 
     },
     submitUpload() {
-      if(!this.dataInfo.taskName){
+      if(!this.dataInfoTaskName){
         this.$message('请输入任务名称');
-      }else if(!this.dataInfo.sort){
+      }else if(!this.dataInfoSort){
         this.$message('请选择录音类型');
+      }else if(this.dataInfoSort=='电销外呼' && !this.dataInfoSort2){
+        this.$message('请选择电销外呼类型');
       }else if(this.uploadNum!==this.successNum-1 && this.uploadNum!==this.successNum){
         this.$message('录音正在上传中，请稍等...');
       }else if(this.successNum>10){
@@ -158,14 +180,15 @@ export default {
       }
         this.axios.put('/merchant/v2.0/inspection/audio_upload',
           Qs.stringify({
-            task_name:this.dataInfo.taskName,
-            record_type:this.dataInfo.sort,
+            task_name:this.dataInfoTaskName,
+            company_label:this.dataInfoSort2,
+            record_type:this.dataInfoSort,
             all_transfer_number:JSON.stringify(this.arrSongs)
           })
         )
         .then(response => {  
           if(response.data.status == 200){
-              this.$router.push({ name: 'Task' })
+              this.$router.push({ name: 'Index' })
           }
         }) 
       }

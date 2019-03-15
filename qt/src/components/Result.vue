@@ -9,22 +9,25 @@
             <span class="new-task">查看结果</span>
           </div> -->
           <div class="task-concent">
-            <p class="language">质检结果</p>
+            <!-- <p class="language">质检结果</p> -->
             <div class="result">
                 <div class="head">
                     <span class="name">任务名称：{{task_name}}</span>
-                    <!-- <span class="name01">音频名称：{{record_name}}</span> -->
+                    <span class="name01" :title="record_name">音频名称：{{record_name.length>12 ? record_name.substring(0,12)+'...'  : record_name}}</span>
+                    <span class="name02" v-if="!customer_name">客户姓名: ---</span>
+                    <span class="name02" v-if="customer_name">客户姓名：{{customer_name}}</span>
                     <span class="time">录音时长：{{record_time}}</span>
                 </div>
                 <div class="talk">
-                    <ul>
-                        <li v-for="(item,index) in tra_res_list" :key="index">
+                    <ul class="talkul">
+                        <li v-for="(item,index) in tra_res_list" :key="index" class="talkUlLi" @click="clickText(item.start_time)">
                             <p :class="item.direction==2?'guesthead02':'guesthead01'">{{item.speaker | clearString}}</p>
-                            <span :class="{'guestcontext02':item.direction==2,'guestcontext01':item.direction!==2}" v-html="item.content"></span>
+                            <div :class="{'guestcontext02':item.direction==2,'guestcontext01':item.direction!==2}"><span :class="index==selectIndex?'select-li':''" v-html="item.content"></span></div>
                         </li>
                     </ul>
                 </div>
                 <div class="how">
+                    <p>语音特征</p>
                     <ul class="one">
                         <li v-if="customer_emotion>7">客户情绪：<span style="color:red">高涨</span></li>
                         <li v-if="customer_emotion<8">客户情绪：<span style="color:#8691a5">正常</span></li>
@@ -38,28 +41,55 @@
                         <li v-if="speed<120" style="color:#8691a5">语速：{{speed}}字/分</li>
                         <li v-if="silence_number==0" style="color:#8691a5">静默次数：无</li>
                         <li v-if="silence_number>0">静默次数：<span style="color:red">{{silence_number}}次</span></li>
-                        <li v-if="silence_duration==0" style="color:#8691a5">静默时长：无</li>
+                        <li v-if="silence_duration==''" style="color:#8691a5">静默时长：无</li>
                         <li v-if="silence_duration>0">静默时长：<span style="color:red">{{silence_duration}}秒</span></li>
-                        <li>敏感词：</li>
-                        <ul class="two" v-show="sensitive_word.length>0">
-                            <li v-for="(item,index) in sensitive_word" :key='index'>{{item}}</li>
-                        </ul>
                     </ul>
                 </div>
                 <div class="judge">
-                    <p>质检评分</p>
+                    <p>质检结果</p>
                     <ul class="one">
                         <li>评分结果：<span :class="score_result=='及格'?'judgeresult01':'judgeresult02'">{{score_result}}</span></li>
                         <li>违禁结果:</li>
-                        <ul class="two" v-show="violate_result.length>0">
+                        <!-- <ul class="two" v-show="violate_result.length>0">
                             <li v-for="(item,index) in violate_result" :key='index'>{{item}}</li>
+                        </ul> -->
+                        <table>
+                            <tr>
+                                <td>违禁词</td>
+                                <td>违禁结果</td>
+                            </tr>
+                            <tr v-for="(item,index) in violate_result" :key='index'>
+                                <td>{{index}}</td>
+                                <td v-if="item==''">无</td>
+                                <td v-else style="color:red;">有</td>
+                            </tr>
+                            <!-- <tr>
+                                <td>虚假成交</td>
+                                <td>{{this.violate_result.虚假成交==''?'无':'有'}}</td>
+                            </tr>
+                            <tr>
+                                <td>诋毁同行销售</td>
+                                <td>{{this.violate_result.诋毁同行销售==''?'无':'有'}}</td>
+                            </tr>
+                            <tr>
+                                <td>违规误导销售</td>
+                                <td>{{this.violate_result.违规误导销售==''?'无':'有'}}</td>
+                            </tr>
+                            <tr>
+                                <td>违规返佣销售</td>
+                                <td>{{this.violate_result.违规返佣销售==''?'无':'有'}}</td>
+                            </tr> -->
+                        </table>
+                        <li style="margin-top:-20px">敏感词：</li>
+                        <ul class="two2" v-show="sensitive_word.length>0">
+                            <li v-for="(item,index) in sensitive_word" :key='index'>{{item}}</li>
                         </ul>
                     </ul>
                 </div>
             </div>
             <div class="voice">
-                <span class="name01" :title="record_name">音频名称：{{record_name.length>10 ? record_name.substring(0,10)+'...'  : record_name}}</span>
-                <audio :src="record_url" controls="controls" loop="loop" class="voicecss" controlslist="nodownload"></audio>
+                <!-- <span class="name01" :title="record_name">音频名称：{{record_name.length>10 ? record_name.substring(0,10)+'...'  : record_name}}</span> -->
+                <audio :src="record_url" controls="controls" loop="loop" class="voicecss" controlslist="nodownload" @click="UpdateProgress()"></audio>
                 <a :href="record_url_download" download>下载</a>
                 <router-link to="/Task" class="return"><button style="font-size: 14px;">返回上一页</button></router-link>
                 <!-- <aplayer autoplay controls class="voicecss"
@@ -80,6 +110,7 @@
 <script>
 import Head from '@/components/Head'
 import Aplayer from 'vue-aplayer'
+// import { setInterval } from 'timers';
 export default {
     name: 'Index',
     data () {
@@ -102,7 +133,12 @@ export default {
         record_name:'',
         silence_number:'',
         silence_duration:'',
-        record_url_download:''
+        record_url_download:'',
+        customer_name:'',
+        audioMsg:'',
+        currentAudioTime:'',
+        selectIndex:'',
+        timeIndex:''
         }
     },
     filters: {
@@ -119,8 +155,41 @@ export default {
         document.title = url;
         this.ins_id = this.$route.params.id
         this.GetResult()
+        this.timeIndex = setInterval(() => this.UpdateProgress(),500)
+        if(screen.width>1500){
+            document.getElementsByClassName('head-content-center')[0].setAttribute('style','padding-top:100px;padding-bottom:100px')
+        }else{
+            console.log('ok')
+        }
+    },
+    beforeDestroy() {
+        clearInterval(this.timeIndex);        
+        this.timeIndex = null;
+    },
+    watch:{
+        currentAudioTime:function(){
+             let this_ = this
+             let audioTime =document.getElementsByTagName('audio')[0].currentTime*1000;
+             let audioDuration = document.getElementsByTagName('audio')[0].duration*1000;
+             let scrollTop =document.getElementsByClassName('talkUlLi');
+             this_.tra_res_list.map(
+                 function(key,value){
+                     if(key.start_time<audioTime&&key.end_time>audioTime){
+                        this_.selectIndex = value
+                        document.getElementsByClassName('talkul')[0].scrollTop = document.getElementsByClassName('talkul')[0].scrollHeight*(value-4)/this_.tra_res_list.length
+                     }
+                 }
+             )
+        }
     },
     methods:{
+        clickText(time){
+            let timer =parseInt(time/1000); //js获取的方式
+            document.getElementsByTagName('audio')[0].currentTime = timer
+        },
+        UpdateProgress() {
+            this.currentAudioTime = document.getElementsByTagName('audio')[0].currentTime
+        },
         GetResult(){
             this.axios.get('/merchant/v2.0/inspection/transfer_result?ins_id='+this.ins_id)
             .then(response => {  
@@ -137,10 +206,17 @@ export default {
                     this.task_name = response.data.data.int_ins_dict.task_name
                     this.record_url = response.data.data.int_ins_dict.xunfei_wav_url
                     this.record_url_download = response.data.data.int_ins_dict.record_url
+                    let head = this.record_url_download.substring(0,23)
+                    if(head == 'http://open.qb-tech.net'){
+                        this.record_url_download =  this.record_url_download.substring(23)
+                    }else{
+                        this.record_url_download =  this.record_url_download.substring(28)
+                    }
                     this.tra_res_list = response.data.data.tra_res_list
                     this.record_name = response.data.data.int_ins_dict.record_name
                     this.silence_duration = parseInt(response.data.data.ins_res_dict.silence_duration) 
                     this.silence_number = parseInt(response.data.data.ins_res_dict.silence_number)
+                    this.customer_name = response.data.data.int_ins_dict.customer_name
                     if(this.sensitive_word.length==1){
                         if(this.sensitive_word[0] ==''){
                             this.sensitive_word[0] = '无'
@@ -165,7 +241,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+
 .index{
+    .select-li{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #d4d3d6!important;
+        color: #000!important;
+        border-radius: 6px;
+    }
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -177,7 +262,7 @@ export default {
     background: #f8f8f8;
     .head-content-center{
       width: 1200px;
-      min-height: 870px;
+      min-height: 680px;
       position: relative;
       top: 4px;
       margin: 0 auto;
@@ -196,9 +281,9 @@ export default {
       }
       .task-concent{
         width: 1100px;
-        height: 780px;
+        height: 660px;
         position: relative;
-        top: 20px;
+        top: 7px;
         margin: 0 auto;
         border: 1px solid #d6d6d6;
         .language{
@@ -211,29 +296,48 @@ export default {
         }
         .result{
             width: 1099px;
-            height: 630px;
-            border-top: 1px solid #d6d6d6;
+            height: 590px;
             border-bottom: 1px solid #d6d6d6;
             position: absolute;
             .head{
                 width: 1099px;
-                height: 63px;
+                height: 53px;
                 background: #fff;
                 font-family: '微软雅黑';
                 .name{
-                    line-height: 65px;
+                    display: inline-block;
+                    width: 250px;
+                    line-height: 50px;
                     color: #666;
-                    font-size: 18px;
-                    position: absolute;
+                    font-size: 16px;
+                    position: relative;
                     left: 60px;
                     font-family: '微软雅黑';
                 }
-                .time{
-                    line-height: 65px;
+                .name01{
+                    display: inline-block;
                     color: #666;
-                    font-size: 18px;
-                    position: absolute;
-                    right: 60px;
+                    font-size: 16px;
+                    position: relative;
+                    width: 250px;
+                    left: 90px;
+                    font-family: '微软雅黑';
+                }
+                .name02{
+                    display: inline-block;
+                    color: #666;
+                    font-size: 16px;
+                    position: relative;
+                    width: 250px;
+                    left: 120px;
+                    font-family: '微软雅黑';
+                }
+                .time{
+                    width: 250px;
+                    color: #666;
+                    font-size: 16px;
+                    position: relative;
+                    left: 150px;
                     font-family: '微软雅黑';
                 }
             }
@@ -243,11 +347,11 @@ export default {
                 display: inline-block;
                 border-top: 1px solid #d6d6d6;
                 position: absolute;
-                top: 63px;
+                top: 53px;
                 left: 0px;
                 ul{
                     width: 678px;
-                    height: 526px; 
+                    height: 506px; 
                     background: #f5f5f5;
                     overflow: auto;
                     padding-top:40px;
@@ -322,7 +426,7 @@ export default {
                             height: 0;
                             border: 8px solid transparent;
                             position: absolute;
-                            top: 11px;
+                            top: 8px;
                         }
                         /*分别给左右两边的小三角形定位*/
                         .guestcontext01:before{    
@@ -338,22 +442,31 @@ export default {
             }
             .how{
                 width: 419px;
-                height: 345px;
+                height: 155px;
                 display: inline-block;
                 position: absolute;
-                top: 63px;
+                top: 53px;
                 right: -1px;
                 border: 1px solid #d6d6d6;
                 border-right:none;
                 background: #fff;
                 font-family: '微软雅黑';
+                p{
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                    padding-top: 20px;
+                    padding-bottom: 10px;
+                    font-weight: bold;
+                }
                 .one{
-                  width: 416px;
-                  height: 322px;
-                  padding-top:16px;
+                  width: 316px;
+                  height: 302px;
+                  padding-top:6px;
                   li{
+                      float: left;
                       font-size: 16px;
-                      padding: 10px;
+                      padding: 6px;
                       padding-left: 20px;
                       color: #8691a5;
                   }  
@@ -385,11 +498,11 @@ export default {
             }
             .judge{
                 width: 419px;
-                height: 220px;
+                height: 389px;
                 display: inline-block;
                 position: absolute;
                 right: -1px;
-                top: 410px;
+                top: 210px;
                 border-left: 1px solid #d6d6d6;
                 background: #fff;
                 p{
@@ -402,9 +515,28 @@ export default {
                 }
                 .one{
                   width: 416px;
-                  height: 134px;
+                  height: 326px;
                   position: relative;
                   top: -14px;
+                  border-bottom: 1px solid #d6d6d6;
+                  table{
+                    width: 216px;
+                    height: 106px;
+                    position: relative;
+                    left: 100px;
+                    top: -26px;
+                    tr{
+                        border: 1px solid #d6d6d6;
+                        td{
+                            border: 1px solid #d6d6d6;
+                            text-align: center;
+                            font-size: 16px!important;
+                            font-family: '微软雅黑';
+                            color: #8691a5;
+                            padding: 10px;
+                        }
+                    }
+                  }
                   li{
                       font-size: 16px;
                       padding: 10px;
@@ -421,6 +553,30 @@ export default {
                     }  
                 }
                 .two{
+                  width: 320px;
+                  height: 102px;
+                  font-size: 18px;
+                  position: relative;
+                  left: 96px;
+                  top: -32px;
+                  overflow: auto;
+                  li{
+                      float: left;
+                      margin: 4px;
+                      margin-right: 12px;
+                      padding-right: 20px;
+                      width: auto;
+                      height: auto;
+                      text-align: center;
+                      background:rgb(243, 55, 55);
+                      border-radius: 16px;
+                      color: #fff;
+                      padding: 4px;
+                      padding-left: 10px;
+                      padding-right: 10px;
+                  }
+                }
+                .two2{
                   width: 320px;
                   height: 102px;
                   font-size: 18px;
@@ -469,16 +625,17 @@ export default {
                 font-family: '微软雅黑';
             }
             .voicecss{
-                width: 736px;
+                width: 932px;
                 height: 52px;
                 position: absolute;
-                left: 220px;
-                top: 12px;
+                left: 10px;
+                top: 14px;
+                outline:none;
             }
             a{
                 position: relative;
-                left: 756px;
-                top: -12px;
+                left: 926px;
+                top: 14px;
                 width: 40px;
                 height: 52px;
                 font-size: 16px!important;
@@ -487,15 +644,19 @@ export default {
                 background: #f1f3f4;
                 display: inline-block;
                 line-height: 50px;
-                padding-left: 2px;
-                border-radius: 8px;
+                padding-left: 12px;
+                padding-right:10px;
+                border-radius: 0px 8px 8px 0px;
+            }
+            a:hover{
+                color: #000;
             }
             .return{
                 position: relative;
                 right: 14px;
-                top: -12px;
+                top:14px;
                 width: 80px;
-                height: 40px;
+                height: 52px;
                 cursor: pointer;
                 border-radius: 8px;
                 font-size: 16px!important;

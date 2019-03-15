@@ -409,105 +409,142 @@ function send(msg) {
 				//var data={"msg":{"data":["您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？","本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"],"whether":["是","否"]}}
 				//var data={"msg":{"data":["基金錶現情況？<br /><br />閣下可通過以下鏈接查看基金錶現情況<br />保證基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00020  <br />平衡基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00021    <br />增長基金：https://eservice.fss.gov.mo/main/Funds/Fund/F00022","您是否還需要瞭解以下問題"],"folds":[0],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
 				//var data={"msg":{"data":['登入指引？<div class="imgshow"><figure> <div class="img-dv"><a style="position: static;"  index="1" href="http://test.open.qb-tech.net/kg_img/tupiana.png" data-size="813x1527"><img  src="http://test.open.qb-tech.net/kg_img/tupiana.png"></a></div> </figure></div>',"您是否還需要瞭解以下問題"],"folds":[],"select":["本产品申请理赔需要哪些资料？","本产品的续保方式有哪些？","本产品有多少的免赔额\/率？"]}}
-
+				// var data={
+				// 	"result": {"无忧人生": [["险类险别", "重疾险"], ["投保年龄", "1岁--60岁"], ["保费", "0万元--1300.0万元"], ["性别", "不限"], ["保障人数", "3人"]], 
+				// 			"爱倍护": [["险类险别", "重疾险"], ["投保年龄", "18岁--65岁"], ["保费", "0万元--1200.0万元"], ["性别", "不限"], ["保障人数", "9人"], ]}, 
+				// 	"status": true, 
+				// 	"table": true
+				// };
 				if(data.hasOwnProperty("iv") && data.iv) {
 					var json = decrypt((data.msg), skey, data.iv).replace("aimi", aimi_name).replace("AIMI", aimi_name);
 					data.msg = $.parseJSON(json);
 				}
 				if(data.msg.data instanceof Array) {
 					if(data.msg.data.length > 0) {
-						var data_ = data.msg.data;
-						var folds = data.msg.folds;
-						var whether = data.msg.whether ?  data.msg.whether : "";
-						var last = "";
-						var choice = "";
-						for(var i = 0; i < data_.length; i++) {
-							(function(i) {
-								var temp = "";
-								temp += data_[i].replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
-								if(i == data_.length - 1) {
-									last = data_[i];
-									if(data.msg.select != undefined) {
-										temp += "</br>";
-										for(var m = 0; m < data.msg.select.length; m++) {
-											temp += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
-											last += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
+						var duolunArr = $.parseJSON(data.msg.data[0])
+						if(duolunArr){
+							var str = '<div class="left">';
+							str += '<div class="text1">';
+							str += '<div class="tableAnswer">';
+							str += '<table>';
+							for (var index in duolunArr){	
+								str += '<thead>';
+									str += '<tr>';
+										str += '<th>险种名称</th>';
+										str += '<th>'+index+'</th>';
+									str += '</tr>';
+								str += '</thead>';	
+								duolunArr[index].map(
+									function(key,value){
+										str += '<tbody>';
+											str += '<tr>';
+												str += '<td>'+key[0]+'</td>';
+												str += '<td>'+key[1]+'</td>';
+											str += '</tr>';
+										str += '</tbody>';
+									}
+								)
+							}
+							str += '</table>';
+							// str += '<button class="s-button">展开</button>';
+							str += '</div>';
+							str += '</div>';
+							str += '</div>';
+							$(".scroll").append(str);
+						}else{
+							var data_ = data.msg.data;
+							var folds = data.msg.folds;
+							var whether = data.msg.whether ?  data.msg.whether : "";
+							var last = "";
+							var choice = "";
+							for(var i = 0; i < data_.length; i++) {
+								(function(i) {
+									var temp = "";
+									temp += data_[i].replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
+									if(i == data_.msg.position) {
+										last = data_[i];
+										if(data.msg.select != undefined) {
+											temp += "</br>";
+											for(var m = 0; m < data.msg.select.length; m++) {
+												temp += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
+												last += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
+											}
+										}
+										if((!claims_consultation || !artificial_service)&& !whether) {
+											temp += zan('robot', data.target, true);
+										}
+										if(whether){
+											choice = '<ul class="choice">';
+											for(var m=0; m<whether.length; m++){
+												choice += '<li>'+whether[m]+'</li>';
+											}
+											choice += '</ul>'
+										}
+	
+									}
+									var hide = false
+									if(folds){
+										for(var j = 0; j < folds.length; j++) {
+											if(i == folds[j]) {
+												hide = true;
+											}
 										}
 									}
-									if((!claims_consultation || !artificial_service)&& !whether) {
-										temp += zan('robot', data.target, true);
-									}
-									if(whether){
-										choice = '<ul class="choice">';
-										for(var m=0; m<whether.length; m++){
-											choice += '<li>'+whether[m]+'</li>';
-										}
-										choice += '</ul>'
-									}
-
-								}
-								var hide = false
-								if(folds){
-									for(var j = 0; j < folds.length; j++) {
-										if(i == folds[j]) {
-											hide = true;
-										}
-									}
-								}
-								
-								var t = data_[i].replace(/<br \/>/g, "囖");
-								if(hide && t.length > 250) {
-									temp = temp.replace(/<br \/>/g, "囖");
-								}
-								var str = '<div class="left">';
-								str += '<div class="text1">';
-								str += '<div><img src="' + res_url + avatar_small + '"></div>';
-								str += '<div class="radius">';
-								str += '<div>'
-								str += temp;
-								str += '</div>'
-								str += '</div>';
-								str += choice;
-								str += '</div>';
-								str += '</div>';
-								setTimeout(function() {
-									if(i == 0 && msg != '系统自动结束本轮对话，请确认') {
-										$(".left .text1 .radius").eq(-1).html('<div>'+temp+'</div>');
-										if(whether&&i == data_.length - 1){
-											$(".left .text1").eq(-1).append(choice);
-										}
-										
-									} else {
-										$(".scroll").append(str);
-									}
-									try {
-										temp = temp.replace(/囖/g, "<br \/>");
-										updateDataByKey(myDB.db, 'data', robot_url, [temp, 'aimi']);
-									} catch(e) {
-
-									}
+									
+									var t = data_[i].replace(/<br \/>/g, "囖");
 									if(hide && t.length > 250) {
-										var string1 = t.substring(0, 250).replace(/囖/g, "<br \/>");
-										string1 = string1.replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
-										var string2 = t.substring(250, t.length).replace(/囖/g, "<br \/>");
-										string2 = string2.replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
-										if(string1.lastIndexOf('<a href=') > string1.lastIndexOf('</a>') || (string2.indexOf('<a href=') == -1 && string2.indexOf('</a>') != -1) || string2.indexOf('<a href=') > string2.indexOf('</a>')) { //判断是否拆分超链接
-											string1 = string1 + string2.substring(0, string2.indexOf('</a>') + 4);
-											string2 = string2.substring(string2.indexOf('</a>') + 4, string2.length);
+										temp = temp.replace(/<br \/>/g, "囖");
+									}
+									var str = '<div class="left">';
+									str += '<div class="text1">';
+									str += '<div><img src="' + res_url + avatar_small + '"></div>';
+									str += '<div class="radius">';
+									str += '<div>'
+									str += temp;
+									str += '</div>'
+									str += '</div>';
+									str += choice;
+									str += '</div>';
+									str += '</div>';
+									setTimeout(function() {
+										if(i == 0 && msg != '系统自动结束本轮对话，请确认') {
+											$(".left .text1 .radius").eq(-1).html('<div>'+temp+'</div>');
+											if(whether&&i == data_.length - 1){
+												$(".left .text1").eq(-1).append(choice);
+											}
+											
+										} else {
+											$(".scroll").append(str);
 										}
-										$('.left').eq(-1).find('.radius').html('<div>' + string1 + '</div><span class="detail">...<span>查看详情</span></span><span class="extra">' + string2 + '</span>' + zan('robot', data.target, true));
-										$('.left').eq(-1).show();
-
-									}
-									$('.wrapper').scrollTop($('.scroll')[0].scrollHeight);
-									if(t.indexOf('.bmp') != 0 || t.indexOf('.png') != 0 || t.indexOf('.gif') != 0 || t.indexOf('.jpg') != 0 || t.indexOf('.jpeg') != 0) {
-										query()
-										setTimeout(function() {
-											$('.wrapper').scrollTop($('.scroll')[0].scrollHeight);
-										}, 100)
-									}
-								}, 1000);
-							})(i)
+										try {
+											temp = temp.replace(/囖/g, "<br \/>");
+											updateDataByKey(myDB.db, 'data', robot_url, [temp, 'aimi']);
+										} catch(e) {
+	
+										}
+										if(hide && t.length > 250) {
+											var string1 = t.substring(0, 250).replace(/囖/g, "<br \/>");
+											string1 = string1.replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
+											var string2 = t.substring(250, t.length).replace(/囖/g, "<br \/>");
+											string2 = string2.replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
+											if(string1.lastIndexOf('<a href=') > string1.lastIndexOf('</a>') || (string2.indexOf('<a href=') == -1 && string2.indexOf('</a>') != -1) || string2.indexOf('<a href=') > string2.indexOf('</a>')) { //判断是否拆分超链接
+												string1 = string1 + string2.substring(0, string2.indexOf('</a>') + 4);
+												string2 = string2.substring(string2.indexOf('</a>') + 4, string2.length);
+											}
+											$('.left').eq(-1).find('.radius').html('<div>' + string1 + '</div><span class="detail">...<span>查看详情</span></span><span class="extra">' + string2 + '</span>' + zan('robot', data.target, true));
+											$('.left').eq(-1).show();
+	
+										}
+										$('.wrapper').scrollTop($('.scroll')[0].scrollHeight);
+										if(t.indexOf('.bmp') != 0 || t.indexOf('.png') != 0 || t.indexOf('.gif') != 0 || t.indexOf('.jpg') != 0 || t.indexOf('.jpeg') != 0) {
+											query()
+											setTimeout(function() {
+												$('.wrapper').scrollTop($('.scroll')[0].scrollHeight);
+											}, 100)
+										}
+									}, 1000);
+								})(i)
+							}
 						}
 					}
 				} else {
@@ -549,6 +586,9 @@ function send(msg) {
 
 							}
 						}
+					}
+					if(data.table){
+
 					}
 				}
 				if(data.msg.is_dialog == 1) {

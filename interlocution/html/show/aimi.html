@@ -191,5 +191,85 @@
 		        $("input:file").removeAttr("capture");
 		   };
 		</script>
+
+		<script>
+				var data={
+					"result": {"无忧人生": [["险类险别", "重疾险"], ["投保年龄", "1岁--60岁"], ["保费", "0万元--1300.0万元"], ["性别", "不限"], ["保障人数", "3人"]], 
+							"爱倍护": [["险类险别", "重疾险"], ["投保年龄", "18岁--65岁"], ["保费", "0万元--1200.0万元"], ["性别", "不限"], ["保障人数", "9人"], ]}, 
+					"status": true, 
+					"table": true
+				};
+				(function(){
+					var str = '<div class="left">';
+							str += '<div class="text1">';
+							str += '<div class="tableAnswer">';
+							str += '<table>';
+					for (var index in data.result){
+						str += '<thead>';
+							str += '<tr>';
+								str += '<th>险种名称</th>';
+								str += '<th>'+index+'</th>';
+							str += '</tr>';
+						str += '</thead>';	
+						data.result[index].map(
+							function(key,value){
+										str += '<tbody>';
+											str += '<tr style="display:none">';
+												str += '<td>'+key[0]+'</td>';
+												str += '<td>'+key[1]+'</td>';
+											str += '</tr>';
+									str += '</tbody>';
+							}
+						)
+					}
+					str += '</table>';
+					str += '<button class="s-button">展开</button>';
+					str += '</div>';
+					str += '</div>';
+					str += '</div>';
+					$(".scroll").append(str);
+				})()
+			</script>
+
+			<!-- <script>
+				var data={
+					"result": {"无忧人生": [["险类险别", "重疾险"], ["投保年龄", "1岁--60岁"], ["保费", "0万元--1300.0万元"], ["性别", "不限"], ["保障人数", "3人"]], 
+							"爱倍护": [["险类险别", "重疾险"], ["投保年龄", "18岁--65岁"], ["保费", "0万元--1200.0万元"], ["性别", "不限"], ["保障人数", "9人"], ]}, 
+					"status": true, 
+					"table": true
+				};
+				(function(){
+					var arr = [];
+					var str = '<div class="left">';
+					str += '<div class="text1">';
+					str += '<div class="tableAnswer">';
+					str += '<table>';
+					str += '<thead>';
+					str += '<tr>';
+					str += '<th> </th>';
+					for (var key in data.result){
+								str += '<th>'+key+'</th>';
+					}
+					data.result['无忧人生'].map(
+						function(i,value){
+									str += '<tbody>';
+										str += '<tr>';
+											str += '<td>111</td>';
+										str += '</tr>';
+								str += '</tbody>';
+						}
+					)
+					str += '</tr>';
+					str += '</thead>';	
+					str += '</table>';
+					// str += '<button class="s-button">展开</button>';
+					str += '</div>';
+					str += '</div>';
+					str += '</div>';
+					$(".scroll").append(str);
+				})()
+			</script> -->
+
+
 	</body>
 </html>

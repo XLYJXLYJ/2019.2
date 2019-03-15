@@ -428,12 +428,13 @@ function deleateconnect() {
 
 $(document).on("click",".s-button",function(event){
 	console.log(event)
-	$(".tableAnswer tr").removeAttr("style");
+	$(".tableAnswer tbody tr").removeAttr("style");
 	if(event.target.innerHTML == '展开'){
-		$(".tableAnswer tr").removeAttr("style");
+		$(".tableAnswer tbody tr").removeAttr("style");
 		event.target.innerHTML = '收起'
 	}else{
 	 event.target.innerHTML = '展开'
-	 $(".tableAnswer tr:gt(1)").css("display","none");
+	//  $(".tableAnswer tr:gt(1)").css("display","none");
+	 $(".tableAnswer tbody tr").css("display","none");
 	}
 })

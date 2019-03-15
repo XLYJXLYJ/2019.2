@@ -108,7 +108,7 @@
         showIcon:'',
         showIconOther:[],
         screen:'',
-        hoverAnswerNum:''
+        hoverAnswerNum:0
       }
     },
     computed: {
@@ -169,8 +169,16 @@
       }else{
         this.screen = false
       }
+      let ismac = this.isMac()
+      console.log(ismac)
+      if(ismac){
+         document.getElementsByClassName('answer')[0].setAttribute('style','padding-right 25px')
+      }
     },
     methods: {
+      isMac() { 
+        return /macintosh|mac os x/i.test(navigator.userAgent); 
+      },
       hoverAnswer(index){
         this.hoverAnswerNum = index
       },

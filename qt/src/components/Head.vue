@@ -7,7 +7,7 @@
             </div>
             <ul class="navigation">
                 <router-link to="/Qt"><li>首页</li></router-link>
-                <router-link to="/Task"><li>我的任务</li></router-link>
+                <router-link to="/Task"><li>创建任务</li></router-link>
             </ul>
             <ul class="user">
                 <li><img src="../assets/user.png"> {{cookie[0]}} {{this.cookie[1]}}</li>
@@ -49,7 +49,7 @@
 <style lang="less" scoped>
  .head{
      width: 100%;
-     height: 80px;
+     height: 60px;
      background: #8180f8;
      .head-content{
          width: 1200px;
@@ -58,7 +58,7 @@
          background: #8180f8;
         .logo{
             width: 150px;
-            height: 80px;
+            height: 70px;
             background-color: #8180f8;
             text-align: center;
             color: white;
@@ -66,7 +66,7 @@
                 font-size: 20px;
                 font-weight: 600;
                 margin: 0 20px;
-                padding: 16px 0px 5px 0px;
+                padding: 6px 0px 5px 0px;
                 border-bottom: 2px solid white;
             }
             .slogan{

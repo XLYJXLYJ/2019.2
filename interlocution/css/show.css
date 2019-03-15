@@ -319,7 +319,7 @@ ul {
 	border-radius: 1rem 1rem 1rem 0rem;
 	background-color: #F5F5F5;
 	overflow: auto;
-	max-width: 1rem;
+	max-width: 12rem;
 	padding: 0.7rem 1rem;
 	position: relative;
 	top: -.20rem;
@@ -716,13 +716,14 @@ figure {
 
 .choice {
 	margin-left: 3rem;
-	margin-top: -1.1rem;
+	margin-top: -2.7rem;
 	background-color: #F5F5F5;
 	padding: 1rem .6rem .5rem;
 	/* border-radius: 1rem 1rem 1rem 0.3rem; */
-	border-radius: 0rem 0rem 1rem 0.3rem;
-	min-width: 11.8rem;
-	max-width: 11.8rem;
+	border-radius: 1rem 1rem 1rem 0.3rem;
+	min-width: 12.8rem;
+	max-width: 12.8rem;
+	padding-top: 2.3rem;
 }
 
 /* .choice li {
@@ -804,7 +805,6 @@ figure {
 	font-size: .9rem;
 	word-break: break-all;
   	vertical-align: middle;
-	text-align: center;
 	width: 95%;
 	height:auto;
 	text-align: center;
@@ -815,6 +815,9 @@ figure {
 	text-align: center;
 	margin-top: 20px;
 }
+.tableAnswer table thead{
+	margin-top: 10px!important;
+}
 .tableAnswer tr th{
 	border:1px solid #cccccc;
 	width: 12rem;
@@ -824,24 +827,12 @@ figure {
 	color: #fff;
 	padding: 5px;
 }
-/* .tableAnswer tr th:first-child{
-    border-radius: 16px 0 0 0;
-}
-.tableAnswer tr th:last-child{
-    border-radius: 0px 16px 0 0;
-} */
 .tableAnswer tr td{
 	border:1px solid #cccccc;
 	width: 10rem;
 	font-family: "微软雅黑";
 	font-size: .9rem;
 	padding: 5px;
-}
-.tableAnswer tr:nth-child(even){
-	background: #ffffff;
-}
-.tableAnswer tr:nth-child(odd){
-	background: #ffffff;
 }
 .tableAnswer .s-button{
 	background: #468fd2;
