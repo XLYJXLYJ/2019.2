@@ -38,54 +38,38 @@
 								<div class="radius">
 									你好，我是Aimi，我是您的全天候保险助手。我擅长回答关于保险理赔方面的问题，比如您可以问我“***赔不赔”或者“***保不保。”
 								</div>
-								
-								<!-- <div class="tableAnswer">
-									<table>
-										<thead>
-											<tr>
-												<th> </th>
-												<th>车险</th>
-												<th>重疾险</th>
-												<th>昆仑健康乡宁定期重大疾病保险</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>保险标的</td>
-												<td>以寿命为标的01</td>
-												<td>以寿命为标的02</td>
-												<td>以寿命为标的03</td>
-											</tr>
-											<tr style="display:none;">
-												<td>适合对象</td>
-												<td>中高收入阶层，不适合工薪阶层01。</td>
-												<td>中高收入阶层，不适合工薪阶层02。</td>
-												<td>中高收入阶层，不适合工薪阶层03。</td>
-											</tr>
-											<tr style="display:none;">
-												<td>建议保额</td>
-												<td>与定期生存大致相同01。</td>
-												<td>与定期生存大致相同02。</td>
-												<td>与定期生存大致相同03。</td>
-											</tr>
-											<tr style="display:none;">
-												<td>定期年金</td>
-												<td>承担约定期限内的生存金连续等间隔给付责任01</td>
-												<td>承担约定期限内的生存金连续等间隔给付责任02</td>
-												<td>承担约定期限内的生存金连续等间隔给付责任03</td>
-											</tr>
-											<tr style="display:none;">
-												<td>产品简介</td>
-												<td>从计算公式可以得出结论，生活开支不高的工薪阶层和大部分中产阶层，基本不需要定期年金，完全依靠社保解决养老问题；中高收入者可以适当补充养老年金；富有者必须以商业养老保险为主解决养老问题。保典视频第5集《如何买养老保险？》详细解答了养老保险的建议套路</td>
-												<td>从计算公式可以得出结论，生活开支不高的工薪阶层和大部分中产阶层，基本不需要定期年金，完全依靠社保解决养老问题；中高收入者可以适当补充养老年金；富有者必须以商业养老保险为主解决养老问题。保典视频第5集《如何买养老保险？》详细解答了养老保险的建议套路</td>
-												<td>从计算公式可以得出结论，生活开支不高的工薪阶层和大部分中产阶层，基本不需要定期年金，完全依靠社保解决养老问题；中高收入者可以适当补充养老年金；富有者必须以商业养老保险为主解决养老问题。保典视频第5集《如何买养老保险？》详细解答了养老保险的建议套路</td>
-											</tr>
-										</tbody>
-									</table>
-									<button class="s-button">展开</button>
-								</div> -->
 							</div>
 						</div>
+						<!-- <div class="left">
+							<div class="text1">
+								<div>
+									<img src="/interlocution/img/aimi.png">
+								</div>
+								<div class="radius">
+									你好，我是人工客服jsc，请问有什么可以帮助您？
+								</div>
+							</div>
+						</div>
+						<div class="left">
+							<div class="text1">
+								<div>
+									<img src="/interlocution/img/aimi.png">
+								</div>
+								<div class="radius">
+									您与人工客服的聊天已结束
+								</div>
+							</div>
+						</div>
+						<div class="left">
+							<div class="text1">
+								<div>
+									<img src="/interlocution/img/aimi.png">
+								</div>
+								<div class="radius">
+									以上回答是否解决您的问题?
+								</div>
+							</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -158,7 +142,7 @@
 		      <div class="pswp__caption">
 		        <div class="pswp__caption__center"></div>
 		      </div>
-		    </div>
+			</div>
 		  </div>
 		</div>
 		<script src="../../js/jquery.js"></script>
@@ -171,7 +155,7 @@
 		<script src="../../js/photoswipe-ui-default.min.js"></script>
 		<script src="../../js/photo.js"></script>
 		<script src="../../js/test.js"></script>
-		<script src="../../js/vconsole.js"></script>
+		<!-- <script src="../../js/vconsole.js"></script> -->
 		<script src="../../js/exif.js"></script>
 		<script>
 			var mySwiper = new Swiper('.swiper-container', {
@@ -191,17 +175,39 @@
 		        $("input:file").removeAttr("capture");
 		   };
 		</script>
-
-		<script>
+		<!-- <script>
+			$(
+				function(){
+					// var helloSay = $(".left").eq(-3)[0].innerText
+					var allContent = $(".left").length
+					console.log(allContent)
+					// helloSay = helloSay.substring(helloSay.length-11)
+					for(let i=0;i<allContent;i++){
+						let content = $(".left")[i].innerText
+						// console.log(content)
+						// console.log(content.substring(content.length-11))
+						// console.log(content.substring(content.length-11))
+						if(content.substring(content.length-11)=='请问有什么可以帮助您？'){
+							// console.log(i)
+							$(".left").eq(i).remove()
+						}
+					}
+					// if(helloSay=='请问有什么可以帮助您？'){
+					// 	// $(".left").eq(-3).remove()
+					// }
+				}
+			)
+		</script> -->
+		<!-- <script>
 				var data={
-					"result": {"无忧人生": [["险类险别", "重疾险"], ["投保年龄", "1岁--60岁"], ["保费", "0万元--1300.0万元"], ["性别", "不限"], ["保障人数", "3人"]], 
-							"爱倍护": [["险类险别", "重疾险"], ["投保年龄", "18岁--65岁"], ["保费", "0万元--1200.0万元"], ["性别", "不限"], ["保障人数", "9人"], ]}, 
+					"result": {"无忧人生": [["<img style='width:.8rem;height:.8rem;position:relative' src='../../img/stat.png'> 险类险别", "重疾险"], ["投保年龄", "1岁--60岁"], ["保费", "0万元--1300.0万元"], ["性别", "不限"], ["保障人数", "3人"]], 
+							"爱倍护": [["<img style='width:.8rem;height:.8rem;position:relative' src='../../img/stat.png'> 险类险别", "重疾险"], ["投保年龄", "18岁--65岁"], ["保费", "0万元--1200.0万元"], ["性别", "不限"], ["保障人数", "9人"], ]}, 
 					"status": true, 
 					"table": true
 				};
 				(function(){
-					var str = '<div class="left">';
-							str += '<div class="text1">';
+					var str = '<div><img src="' + res_url + avatar_small + '"></div>';
+							str += '<div class="radius" style="width:100%;border-radius:1rem 2rem 2rem 1rem">';
 							str += '<div class="tableAnswer">';
 							str += '<table>';
 					for (var index in data.result){
@@ -213,7 +219,7 @@
 						str += '</thead>';	
 						data.result[index].map(
 							function(key,value){
-										str += '<tbody>';
+										str += '<tbody style="color:#6b64f9">';
 											str += '<tr style="display:none">';
 												str += '<td>'+key[0]+'</td>';
 												str += '<td>'+key[1]+'</td>';
@@ -225,11 +231,10 @@
 					str += '</table>';
 					str += '<button class="s-button">展开</button>';
 					str += '</div>';
-					str += '</div>';
-					str += '</div>';
-					$(".scroll").append(str);
+					// $(".scroll").append(str);
+					$(".left .text1").eq(-1).html('<div>'+str+'</div>');
 				})()
-			</script>
+			</script> -->
 
 			<!-- <script>
 				var data={

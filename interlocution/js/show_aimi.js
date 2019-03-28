@@ -1,12 +1,12 @@
-var res_url = '/insurebotaimi/';
-var send_url = '';
-var feedback_url = '';
-var greet_msg = '我是AImi';
-var wait_response = '稍等';
-var key = '';
-var skey = '';
-var avatar_small = '';
-var aimi_name = 'Jarvis';
+// var res_url = '/insurebotaimi/';
+// var send_url = '';
+// var feedback_url = '';
+// var greet_msg = '我是AImi';
+// var wait_response = '稍等';
+// var key = '';
+// var skey = '';
+// var avatar_small = '';
+// var aimi_name = 'Jarvis';
 
 var artificial_service = false;
 var is_robot_hosting = false;
@@ -25,22 +25,22 @@ var priority = 2;
 //}, 3000)
 
 //定时轮循客户是否在线
-var maxTime = 300; // seconds
-var time = maxTime;
-$('body').on('keydown mousemove mousedown touchstart touchmove touchend', function(e) {
-	time = maxTime; // reset
-});
-var intervalId = setInterval(function() {
-	time--;
-	// console.log(time)
-	if (time <= 0) {
-		ShowInvalidLoginMessage();
-		clearInterval(intervalId);
-	}
-}, 3000)
-function ShowInvalidLoginMessage() {
-	alert("服务超时已结束");
-}
+// var maxTime = 300; // seconds
+// var time = maxTime;
+// $('body').on('keydown mousemove mousedown touchstart touchmove touchend', function(e) {
+// 	time = maxTime; // reset
+// });
+// var intervalId = setInterval(function() {
+// 	time--;
+// 	// console.log(time)
+// 	if (time <= 0) {
+// 		ShowInvalidLoginMessage();
+// 		clearInterval(intervalId);
+// 	}
+// }, 3000)
+// function ShowInvalidLoginMessage() {
+// 	alert("服务超时已结束");
+// }
 
 var roy_domain = "http://chat.qb-tech.net";
 if(window.location.href.indexOf("test") > 0) {
@@ -99,6 +99,19 @@ function zan(type, target, isLine) {
 		temp += '<p><span class="flower"></span><span>感谢您的反馈,我们将继续努力</span></p>';
 		temp += '</div>';
 	}
+
+	// $(".left").eq(-3)
+	// var this_ = $(this);
+	// var helloSay = $(".left").eq(-3)[0].innerText
+	// helloSay = helloSay.substring(helloSay.length-11)
+	// if(helloSay=='请问有什么可以帮助您？'){
+	// 	// $(".left").eq(-3).remove()
+	// 	$(".left").eq(-1).after(
+	// 		$(".left").eq(-3)
+	// 	)
+	// 	connect(this_)
+	// }
+
 	return temp;
 }
 
@@ -421,10 +434,12 @@ function send(msg) {
 				}
 				if(data.msg.data instanceof Array) {
 					if(data.msg.data.length > 0) {
-						var duolunArr = $.parseJSON(data.msg.data[0])
-						if(duolunArr){
-							var str = '<div class="left">';
-							str += '<div class="text1">';
+						if(data.msg.table == true){
+							var duolunArr = $.parseJSON(data.msg.data[0])
+							// var str = '<div class="left">';
+							// str += '<div class="text1">';
+							var str = '<div><img src="' + res_url + avatar_small + '"></div>';
+							str += '<div class="radius" style="width:100%;border-radius:1rem 2rem 2rem 1rem">';
 							str += '<div class="tableAnswer">';
 							str += '<table>';
 							for (var index in duolunArr){	
@@ -437,7 +452,7 @@ function send(msg) {
 								duolunArr[index].map(
 									function(key,value){
 										str += '<tbody>';
-											str += '<tr>';
+											str += '<tr style="display:none">';
 												str += '<td>'+key[0]+'</td>';
 												str += '<td>'+key[1]+'</td>';
 											str += '</tr>';
@@ -446,11 +461,14 @@ function send(msg) {
 								)
 							}
 							str += '</table>';
-							// str += '<button class="s-button">展开</button>';
+							str += '<button class="s-button">展开</button>';
 							str += '</div>';
 							str += '</div>';
-							str += '</div>';
-							$(".scroll").append(str);
+							// str += '</div>';
+							// str += '</div>';
+							// $(".scroll").append(str);
+							// $(".left .text1 .radius").eq(-1).html('<div>'+temp+'</div>');
+							$(".left .text1").eq(-1).html('<div>'+str+'</div>');
 						}else{
 							var data_ = data.msg.data;
 							var folds = data.msg.folds;
@@ -461,7 +479,30 @@ function send(msg) {
 								(function(i) {
 									var temp = "";
 									temp += data_[i].replace(/^(?!.*<a href=.*)[0-9]{5,15}$/g, "<a href='tel:" + "$&" + "'>" + "$&" + "</a>").replace(/\<br \/\>/g, "\<br").replace(/(?!.*?(\"|\')+)(.+?)((https|ftp|http):\/\/[^\u4e00-\u9fa5\s]*)/g, "$2<a href='$3' target='_blank'>" + "$3" + "</a>").replace(/\<br/g, "\<br \/\>")
-									if(i == data_.msg.position) {
+									if(i == data.msg.position - 1) {
+										last = data_[i];
+										if(data.msg.select != undefined) {
+											temp += "</br>";
+											var HQurl=window.location.href;
+											var index = HQurl.lastIndexOf("\/");
+											var str = HQurl.substring(index + 1,HQurl.length);
+											if(str=='HQ001'){
+												for(var m = 0; m < data.msg.select.length; m++) {
+													temp += "<a class='option'><img style='width:.8rem;height:.8rem;position:relative' src='../../img/stat.png'>" + " " + data.msg.select[m] + "</a></br>";
+													last += "<a class='option'><img style='width:.8rem;height:.8rem;position:relative' src='../../img/stat.png'>"  + " " + data.msg.select[m] + "</a></br>";
+												}
+											}else{
+												for(var m = 0; m < data.msg.select.length; m++) {
+													temp += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
+													last += "<a class='option'>" + (m + 1) + "." + data.msg.select[m] + "</a></br>";
+												}
+											}
+										}
+										if((!claims_consultation || !artificial_service)&& !whether) {
+											temp += zan('robot', data.target, true);
+										}
+									}
+									if(i == data.msg.data.length - 1 && !data.msg.hasOwnProperty('position')) {
 										last = data_[i];
 										if(data.msg.select != undefined) {
 											temp += "</br>";
@@ -473,14 +514,22 @@ function send(msg) {
 										if((!claims_consultation || !artificial_service)&& !whether) {
 											temp += zan('robot', data.target, true);
 										}
-										if(whether){
+									}
+									if(whether && data.msg.hasOwnProperty('whetherposition')){
+										if (i == data.msg.whetherposition - 1){
 											choice = '<ul class="choice">';
 											for(var m=0; m<whether.length; m++){
 												choice += '<li>'+whether[m]+'</li>';
 											}
 											choice += '</ul>'
 										}
-	
+									}
+									if(whether && !data.msg.hasOwnProperty('whetherposition')){
+										choice = '<ul class="choice">';
+										for(var m=0; m<whether.length; m++){
+											choice += '<li>'+whether[m]+'</li>';
+										}
+										choice += '</ul>'
 									}
 									var hide = false
 									if(folds){
@@ -858,7 +907,7 @@ function setCookie(c_name, value, expiredays) {　　
 //var uri="http://172.16.3.148:8888"
 $('.artificial_service').click(function() {
 	var this_ = $(this);
-	clearInterval(intervalId);
+	// clearInterval(intervalId);
 	//获取当前用户信息
 	if(this_.hasClass('active')) {
 		this_.removeClass('active')
@@ -891,6 +940,7 @@ $('.artificial_service').click(function() {
 
 	}
 })
+
 
 function connect(this_) {
 	$.ajax({
@@ -1114,13 +1164,16 @@ window.onload = function() {
 								'name': name
 							},
 							success: function(data) {
+								startConnect();
 								if(priority == 1) {
-									if(data.msg == 'connect'){
+									if(data.msg == 'connect'){ //链接客服（人工客服优先）
 										is_connect = true;
+										artificial_service = true;
+										connect();
 									}
 									huize = true;
-//									connect();
-								} else if(data.msg == 'connect') {
+									// connect();
+								} else if(data.msg == 'connect') { //链接客服 （机器人优先）
 									localStorage.setItem('targetId', data.data.targetId);
 									localStorage.setItem('token', data.data.token);
 									localStorage.setItem('extra', data.data.extra);
@@ -1130,9 +1183,8 @@ window.onload = function() {
 									$('.artificial_service').text('结束人工');
 									$('.send-type').addClass('active')
 									artificial_service = true;
-									//startConnect();
+									// startConnect();
 								}
-
 							}
 						});
 					}

@@ -18,7 +18,7 @@
  */
 /* <button> css reset */
 figure{margin: 0;float: left;margin-right:.5rem;}
-.img-dv{width: 100%; overflow: hidden; height:2.5rem;}
+.img-dv{width: 12rem; overflow: hidden; min-height:7rem;}
 .aimi .text1 .imgshow,.aimi .text .imgshow{display: block;float: none;overflow: auto;}
 .pswp__button {
   width: 44px;

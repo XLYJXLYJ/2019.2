@@ -93,8 +93,10 @@ $(function () {
 					var msg=""
 					if(message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"){
 						if(priority==1){
+							console.log('222222222222')
 							msg='您与人工客服的聊天已结束'
 						}else{
+							console.log('333333333333')
 							msg='您与人工客服的聊天已结束，如果您还想要人工客服服务，请继续点击人工客服按钮';
 						}
 
@@ -130,7 +132,28 @@ $(function () {
 		                    updateDataByKey(myDB.db, 'data', robot_url, [zan1('custom_service',message.content.extra[5]), 'comment']);
 		                } catch (e) {
 		
-		                }
+						}
+						console.log(message.sentTime)
+						console.log(timestamp)
+						// if(timestamp>message.sentTime){
+						// 	var allContent = $(".left").length
+						// 	// console.log(allContent)
+						// 	// helloSay = helloSay.substring(helloSay.length-11)
+						// 	for(let i=allContent;i<allContent;i--){
+						// 		let content = $(".left")[i].innerText
+						// 		// console.log(content)
+						// 		// console.log(content.substring(content.length-11))
+						// 		// console.log(content.substring(content.length-11))
+						// 		if(content.substring(content.length-11)=='请问有什么可以帮助您？'){
+						// 			// console.log(i)
+						// 			$(".left").eq(i).remove()
+						// 			var this_ = $(this);
+						// 			connect(this_)
+						// 		}
+						// 	}
+
+						// }
+
 					}else{
 						msg=message.content.content
 						if(msg.indexOf(environment+"/chat_image/")==0){
@@ -322,8 +345,10 @@ function sendTextMessage(m) {
 				clearConversation();
 				var msg=''
 				if(priority==1){
+					console.log('444444444444')
 					msg='您与人工客服的聊天已结束'
 				}else{
+					console.log('55555555')
 					msg='您与人工客服的聊天已结束，如果您还想要人工客服服务，请继续点击人工客服按钮';
 				}
 				$('.aside-wrapper>span').text("");
@@ -413,7 +438,7 @@ function clearConversation() {
       	console.log('清除会话成功');
       	disconnect = true;
       	//if(msg=="关闭客户会话,RongIMClient.getInstance().logout()"){
-      	RongIMClient.getInstance().logout()
+      	// RongIMClient.getInstance().logout()
       	//}
         // 清除会话成功
       },
@@ -437,4 +462,39 @@ $(document).on("click",".s-button",function(event){
 	//  $(".tableAnswer tr:gt(1)").css("display","none");
 	 $(".tableAnswer tbody tr").css("display","none");
 	}
+})
+
+
+$(function(){
+    var vibibleState ='';
+    var visibleChange ='';
+    if (typeof document.visibilityState !='undefined') {
+        visibleChange ='visibilitychange';    
+        vibibleState ='visibilityState';
+    }else if (typeof document.webkitVisibilityState !='undefined') {
+        visibleChange ='webkitvisibilitychange';    vibibleState ='webkitVisibilityState';
+    }
+    if (visibleChange) {
+        document.addEventListener(visibleChange, function() {if (document[vibibleState] =='visible') {
+		var callback = {
+			onSuccess: function (userId) {
+				console.log("Reconnect successfully." + userId);
+			},
+			onTokenIncorrect: function () {
+				console.log('token无效');
+			},
+			onError: function (errorCode) {
+				console.log(errorcode);
+			}
+		};
+		var config = {
+			// 默认 false, true 启用自动重连，启用则为必选参数
+			auto: true,
+			// 重试频率 [100, 1000, 3000, 6000, 10000, 18000] 单位为毫秒，可选
+			url: 'http://cdn.ronghub.com/RongIMLib-2.2.6.min.js',
+			// 网络嗅探地址 [http(s)://]cdn.ronghub.com/RongIMLib-2.2.6.min.js 可选
+			rate: [100, 1000, 3000, 6000, 10000]
+		};
+		RongIMClient.reconnect(token, callback, config);       
+    }})}
 })
