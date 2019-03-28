@@ -185,7 +185,11 @@
 //        if(cval!=null)
 //          document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 //      }
-
+      if(screen.width<1500){
+        document.getElementsByClassName("vue-aside")[0].setAttribute('style','height:100%')
+      }else{
+        // document.getElementsByClassName("vue-head")[0].setAttribute('style','height:103.3%')
+      }
     },
     methods: {
       submit() {

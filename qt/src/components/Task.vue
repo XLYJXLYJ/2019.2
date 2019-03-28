@@ -73,9 +73,15 @@ import Qs from 'qs'
     mounted(){
         let url = window.location.href;
         document.title = url;
+        console.log(this.$store.state.routeNum)
+        if(this.$store.state.routeNum == 1){
+            this.currentPage = 1
+            localStorage.setItem('page',1)
+        }
     },
     destroyed () {
         clearInterval(this.intervalid)
+        this.$store.commit('GetRoute', 0)
     },
     methods:{
         GetTask(){

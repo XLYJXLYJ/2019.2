@@ -250,11 +250,11 @@
   .user {
     .content {
       position absolute
-      left 150px
+      left 132px
       top 60px
       background #eef3f6
-      width calc(100vw - 150px)
-      height calc(100vh - 80px)
+      width calc(100vw - 132px)
+      height calc(100vh - 60px)
       padding 20px
       box-sizing border-box
       .user_title {

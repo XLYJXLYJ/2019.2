@@ -4,10 +4,12 @@
     <sup v-show="lists.unreadMessageCount!=0"></sup>
     <!--<span class="time">06:35</span>-->
     <span class="content" v-if="lists.content&&lists.content.indexOf(environment)==-1"
-          v-text="lists.content.replace('/<br/>/g','')">{{}}</span>
+      v-text="lists.content.replace('<br/>',' ')">{{}}</span>
     <span class="content" v-else-if="lists.content">[图片]</span>
     <span class="close" @click.stop="closeWrapper"></span>
     <v_close v-show="closeStatus" v-on:isClose="listenClose">是否关闭?</v_close>
+    
+    <!-- <audio id="audio" src="/static/ding.wav" v-show="false" /> -->
   </div>
 </template>
 <script>
@@ -25,6 +27,36 @@
         type: Object
       }
     },
+    computed:{
+      newMessage(){
+        // console.log(this.lists)
+        return this.lists.unreadMessageCount
+      }
+    },
+    watch:{
+      newMessage:function(){
+        // if(this.newMessage>0){
+        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
+        //   if(this.unreadMessageCountTotal==0){
+        //     document.title = 'chat'
+        //   }else{
+        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
+        //   }
+        // }
+        // if(this.newMessage>0){
+        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
+        //   if(this.unreadMessageCountTotal==0){
+        //     document.title = 'chat'
+        //   }else{
+        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
+        //   }
+        // }
+        if(this.newMessage>0){
+          this.autoOpenMessage()
+        }
+        // this.aplayAudio()
+      }
+    },
     mounted() {
 //      this.environment="http://test.open.qb-tech.net/chat_image/"
       if (window.location.href.indexOf("test") > 0) {
@@ -33,15 +65,13 @@
         this.environment = "http://open.qb-tech.net/chat_image/";
       }
     },
-    created: function () {
-    },
     name: "chatList",
     data() {
       return {
-        newMessage: false,
         closeStatus: false,
         cct: this.closeConnection,
         environment: "",
+        unreadMessageCountTotal:0
 
       }
     },
@@ -49,6 +79,17 @@
       v_close
     },
     methods: {
+      // aplayAudio () {
+      //   const audio = document.getElementById('audio')
+      //   audio.play()
+      // },
+      autoOpenMessage(){
+        // this.$notify({
+        //   title: this.lists.extra[3],
+        //   message: this.lists.content,
+        //   position: 'bottom-right'
+        // });
+      },
       closeWrapper(e) {
         this.closeStatus = true;
       },

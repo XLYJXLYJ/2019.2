@@ -8,6 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import uploader from 'vue-simple-uploader'
+import store from '@/vuex/store'
+import '@/common/font.css'
 
 Vue.use(uploader)
 
@@ -47,6 +49,7 @@ Vue.prototype.delCookie = function (name){
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

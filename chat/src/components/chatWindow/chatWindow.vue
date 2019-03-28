@@ -28,63 +28,71 @@
               <!--<span class="avatar"></span>-->
               <!--<span class="box" >544444444444444444444442432kkrte大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发</span>-->
             <!--</div>-->
-            <div  v-if="targetIds.more" v-for="(m,index) in paging_record">
-              <div class="div_right" :style="{padding:padding}"  v-if="m.messageDirection==1">
-                <p>({{m.sentTime}}){{m.name}}</p>
-                <span class="service_avatar"></span>
-                <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
-                <span class="pic" v-else  v-html="m.content"></span>
-              </div>
-              <div class="div_right" :style="{padding:padding}"  v-else-if="m.messageDirection==3" >
-                <p>({{m.sentTime}})Aimi</p>
-                <span class="avatar"></span>
-                <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
-                <span class="pic" v-else  v-html="m.content"></span>
-              </div>
-              <div class="div_left" v-else-if="m.messageDirection==2" >
-                <p>{{targetIds.h5_record[3]}}({{m.sentTime}})</p>
-                <span class="avatar"></span>
-                <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
-                <span class="pic" v-else  v-html="m.content"></span>
+            <div v-if="targetIds.more">
+              <div v-for="(m,index) in paging_record" :key="index">
+                <div class="div_right" :style="{padding:padding}"  v-if="m.messageDirection==1">
+                  <p>({{m.sentTime}}){{m.name}}</p>
+                  <span class="service_avatar"></span>
+                  <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
+                  <span class="pic" v-else  v-html="m.content"></span>
+                </div>
+                <div class="div_right" :style="{padding:padding}"  v-else-if="m.messageDirection==3" >
+                  <p>({{m.sentTime}})Aimi</p>
+                  <span class="avatar"></span>
+                  <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
+                  <span class="pic" v-else  v-html="m.content"></span>
+                </div>
+                <div class="div_left" v-else-if="m.messageDirection==2" >
+                  <p>{{targetIds.h5_record[3]}}({{m.sentTime}})</p>
+                  <span class="avatar"></span>
+                  <span class="box" v-if="m.content.indexOf(environment)==-1"  v-html="m.content"></span>
+                  <span class="pic" v-else  v-html="m.content"></span>
+                </div>
               </div>
             </div>
           </div>
           <!--<div class="swiper-slide swiper-slide-active">-->
-          <div v-if="deal.length>0" v-for="(h,index) in deal">
-            <div class="div_right" :style="{padding:padding}"  v-if="h.messageDirection==1">
-              <p>({{h.sentTime}}){{h.name}}</p>
-              <span class="service_avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
-            </div>
-            <div class="div_right" :style="{padding:padding}"  v-else-if="h.messageDirection==3">
-              <p>({{h.sentTime}})Aimi</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
-            </div>
-            <div class="div_left" v-else-if="h.messageDirection==2" >
-              <p>{{targetIds.h5_record[3]}}({{h.sentTime}})</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
-              <span class="pic" v-else  v-html="h.content"></span>
+          <div v-if="deal.length>0">
+            <div v-for="(h,index) in deal" :key="index">
+              <div class="div_right" :style="{padding:padding}"  v-if="h.messageDirection==1">
+                <p>({{h.sentTime}}){{h.name}}</p>
+                <span class="service_avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
+              <div class="div_right" :style="{padding:padding}"  v-else-if="h.messageDirection==3">
+                <p>({{h.sentTime}})Aimi</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
+              <div class="div_left" v-else-if="h.messageDirection==2" >
+                <p>{{targetIds.h5_record[3]}}({{h.sentTime}})</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="h.content.indexOf(environment)==-1"  v-html="h.content"></span>
+                <span class="pic" v-else  v-html="h.content"></span>
+              </div>
             </div>
           </div>
           <!--<span v-show="targetIds.content.length>0">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&nbsp;历史记录&nbsp;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</span>-->
-          <div v-if="targetIds.content.length>0" v-for="(con,index) in targetIds.content" :key="index" >
-            <div class="div_left" v-if="con.type==1">
-              <p>{{targetIds.h5_record[3]}}({{con.sentTime}})</p>
-              <span class="avatar"></span>
-              <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
-              <span class="pic" v-else  v-html="con.content"></span>
-            </div>
-            <div class="div_right" :style="{padding:padding}"  v-else="con.type==2">
-              <p>({{con.sentTime}}){{s_name}}</p>
-              <span class="service_avatar"></span>
-              <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
-              <span class="pic" v-else  v-html="con.content"></span>
+          <div v-if="targetIds.content.length>0">
+            <div v-for="(con,index) in targetIds.content" :key="index">
+              <div class="div_left" v-if="con.type==1">
+                <p>{{targetIds.h5_record[3]}}({{con.sentTime}})</p>
+                <span class="avatar"></span>
+                <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
+                <span class="pic" v-else  v-html="con.content"></span>
+              </div>
+              <div class="div_right" :style="{padding:padding}" v-else>
+                <p>({{con.sentTime}}){{s_name}}</p>
+                <span class="service_avatar"></span>
+                <span class="box" v-if="con.content.indexOf(environment)==-1"  v-html="con.content"></span>
+                <span class="pic" v-else  v-html="con.content"></span>
+              </div>
             </div>
           </div>
+
+
           <div class="div_right" :style="{padding:padding}" style="display: none;">
             <p><!--({{m.sentTime}}){{s_name}}--></p>
             <span class="service_avatar"></span>
@@ -249,8 +257,6 @@
     },
     components:{
       v_close
-    },
-    created:function () {
     },
     computed:{
       deal() {
@@ -489,10 +495,32 @@
       },
       magnify_window(){
         this.lessen=!this.lessen
+        if(screen.width<1500){
+          console.log(this.lessen)
+          console.log(screen.width)
+          if(this.lessen == true){
+            document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
+            document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')
+          }else{
+            document.getElementsByTagName("body")[0].setAttribute('style','height:100%')
+            document.getElementsByTagName("html")[0].setAttribute('style','height:100%')
+          }
+        }
         Bus.$emit('magnify_window',{'magnify':true});
       },
       lessen_window(){
         this.lessen=!this.lessen
+        if(screen.width<1500){
+          console.log(this.lessen)
+          console.log(screen.width)
+          if(this.lessen == true){
+            document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
+            document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')
+          }else{
+            document.getElementsByTagName("body")[0].setAttribute('style','height:100%')
+            document.getElementsByTagName("html")[0].setAttribute('style','height:100%')
+          }
+        }
         Bus.$emit('lessen_window',{'lesson':true});
       },
       more(){

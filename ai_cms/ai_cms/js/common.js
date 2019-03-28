@@ -38,8 +38,11 @@ if(cookie=="not find"){
 	if(cookie[4]=="0"){//隐藏销售漏斗
 		$('.li_sub').eq(-3).hide();
 	}
-	if(cookie[5]==1){//显示质检模块
+	if(cookie[5]==1 | cookie[5]==29){//显示质检模块
 		$('.li_father').eq(5).show();
+		if(cookie[5]==29){
+			window.location = "http://merchant.qb-tech.net/qt.html#/" 
+		}
 	}
 }
 

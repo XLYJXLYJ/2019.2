@@ -40,9 +40,47 @@ export default {
 //      if(cval!=null)
 //        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 //    }
+    if(screen.width<1500){
+       document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
+       document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')
+       console.log(document.getElementById("app")[0])
+       console.log(document.getElementById("app"))
+       document.getElementById("app").setAttribute('style','min-height:98.6%;height:98.6%')
+    }
   },
+    computed:{
+      newMessage(){
+        console.log(this.$store.state.no_voice)
+        return this.$store.state.no_voice
+      }
+    },
+    watch:{
+      newMessage:function(){
+        // if(this.newMessage>0){
+        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
+        //   if(this.unreadMessageCountTotal==0){
+        //     document.title = 'chat'
+        //   }else{
+        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
+        //   }
+        // }
+        // if(this.newMessage>0){
+        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
+        //   if(this.unreadMessageCountTotal==0){
+        //     document.title = 'chat'
+        //   }else{
+        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
+        //   }
+        // }
+        console.log('有新消息了哈')
+        this.aplayAudio()
+      }
+    },
   methods:{
-
+      aplayAudio () {
+        const audio = document.getElementById('audio')
+        audio.play()
+      }
   }
 }
 </script>
@@ -60,7 +98,6 @@ body,html,#app{
   width: 100%;
   /*height: auto;*/
   min-height: 100%;
-
 }
 .footer{
   button{
@@ -100,5 +137,8 @@ body,html,#app{
   border-radius:0px 0px 4px 4px;
   margin-bottom:4px;
   padding-bottom:-10px!important;
+}
+.el-notification{
+  width 300px!important;
 }
 </style>

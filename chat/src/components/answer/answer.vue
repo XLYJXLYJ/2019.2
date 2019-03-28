@@ -9,17 +9,17 @@
             placement="left"
             width="400"
             trigger="hover">
-              <span style="font-size:15px;color:#000">问题{{index+1}}：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span><br/>
-              <span class="q_answer02">答案：<span>{{a.a}}</span></span>
+              <span style="font-size:15px;color:#000">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span><br/>
+              <span class="q_answer02">答案：<span v-html="a.a"></span></span>
           <div slot="reference">
             <!-- <span class="number">{{index+1}}、</span> -->
             <div v-show="hoverAnswerNum!==index"> 
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
-              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span>
+              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12).replace(/[\r\n]/g," ") + '...'  : a.a}}</span></span>
             </div>
             <div v-show="hoverAnswerNum==index"> 
-              <span class="edit" style="width:60px" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
-              <span class="sent_btn" style="width:60px;text-align:center" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
+              <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
+              <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
             </div>
           </div>
           </el-popover>
@@ -108,7 +108,7 @@
         showIcon:'',
         showIconOther:[],
         screen:'',
-        hoverAnswerNum:0
+        hoverAnswerNum:-1
       }
     },
     computed: {
@@ -170,7 +170,6 @@
         this.screen = false
       }
       let ismac = this.isMac()
-      console.log(ismac)
       if(ismac){
          document.getElementsByClassName('answer')[0].setAttribute('style','padding-right 25px')
       }
@@ -273,18 +272,27 @@
         font-family: MicrosoftYaHei;
         font-weight: bold;
         color: rgba(69, 69, 69, 1);
+        padding-bottom 8px
+        width 270px
+        display inline-block
+        margin-bottom -10px
+        border-bottom 1px solid #d6d6d6
       }
       .answer-view {
         margin 0px 0 0 0
         padding-left 18px
+        margin-left 20px;
+        box-shadow:0px 0px  10px 0px #cad7ea
+        // border-top 1px solid #cad7ea
         li {
           padding 7px 0px 7px 6px
           background: rgba(255, 255, 255, 1);
           box-shadow: 0px 0px 17px 0px #cad7ea
           border-radius: 5px;
           margin-bottom: 0px;
-          margin-top 8px;
+          margin-bottom 12px;
           cursor pointer
+          margin-left -20px;
           &:hover {
             // background: #d0e1ed
             box-shadow: 0px 0px 8px 0px rgba(61, 104, 169, 0.17);
@@ -321,7 +329,7 @@
             }
             .edit, .sent_btn {
               float right
-              margin-right 45px
+              margin-right 6px
               color rgba(49, 153, 224, 1)
               padding 3px 5px
               font-size 14px
@@ -330,6 +338,8 @@
               border 1px solid rgba(49, 153, 224, 1)
               cursor pointer
               border-radius: 5px;
+              width:43%;
+              text-align center
             }
           }
         }
@@ -341,17 +351,21 @@
     overflow-x: hidden;
     margin-top: -10px;
     margin-bottom: 20px;
-    width: calc(100% + 15px);
+    width: calc(100%);
     height 35%
     .one{
+      margin-left 20px;
+      margin-bottom:50px;
       .one-li{
-        margin-left 8px
+        margin-left -12px
         margin-right 8px
         position relative
         left 10px
         margin-bottom 4px;
         .two{
           margin-top:-2px
+          padding-left:6px;
+          padding-right:6px;
           li{
             padding 2px;
             border-radius:10px;
@@ -366,5 +380,19 @@
         }
       }
     }
+  }
+  .answer .gm-scroll-view::-webkit-scrollbar {
+    width: 10px;     
+    height: 271px;
+  }
+  .answer .gm-scroll-view::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 5px #eef3f6;
+      background: #eef3f6;
+  }
+  .answer .gm-scroll-view::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 5px #eef3f6;
+      border-radius: 10px;
+      background: #eef3f6;
   }
 </style>

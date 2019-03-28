@@ -87,10 +87,8 @@ IndexedDB.prototype.getDataByKey = function(key,length) {
     request.onsuccess = (e) => {
       const res = e.target.result
       if (!res) {
-        console.log('没有匹配的数据')
         resolve(res)
       } else {
-        console.log(res.value)
         resolve({value:res.value,length:length})
 
       }

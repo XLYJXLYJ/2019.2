@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'chat':screen,'chat-small':!screen}" @onkeydown="onkeydown"  @mousemove="mousemove"  @mousedown="mousedown">
+  <div :class="{'chat':screen01,'chat-small':screen02,'chat1920':screen03}" @onkeydown="onkeydown"  @mousemove="mousemove"  @mousedown="mousedown">
     <v_aside v-show="lessen"></v_aside>
     <v_head v-show="lessen" title="客服工作台"></v_head>
     <div class="content" id="content">
@@ -12,8 +12,24 @@
           <span class="status">
             <label>{{s_name}}</label>
             <br/>
-            <span :class="{'active':checkActive}"  @click="setActive($event)" class="online">在线</span>
-            <span :class="{'active':!checkActive}"  @click="setActive($event)" class="offline">离线</span>
+            <!-- <el-switch
+              v-model="onlineValue"
+              active-text="在线"
+              inactive-text="离线">
+            </el-switch> -->
+            <i class="el-icon-circle-check icon-position" style="color:#09f175" v-show="onlineValue=='在线'"></i>
+            <i class="el-icon-remove icon-position" v-show="onlineValue!=='在线'"></i>
+            <select v-model="onlineValue" placeholder="请选择" @change="setActive($event)">
+              <option>
+                <span value="在线">在线</span>
+              </option>
+              <option>
+                <span value="下线">离线</span>
+              </option>
+            </select>
+
+            <!-- <span :class="{'active':checkActive}"  @click="setActive($event)" class="online">在线</span>
+            <span :class="{'active':!checkActive}"  @click="setActive($event)" class="offline">下线</span> -->
           </span>
         </div>
         <chatList  :class="{'active':targetId==cl.targetId}"  v-for="(cl,index) in lists"  :id="index" :lists="lists[index]"  :key="index"   v-on:chat_List="remove(index)" v-on:s_l="addClass({id:cl.targetId,index:index})"></chatList>
@@ -83,8 +99,33 @@
         robot_answer_ :'',
         robot_uu_id_ :'',
         sentTime_:'',
-        screen:true
+        screen01:false,
+        screen02:false,
+        screen03:true,
+        screen04:false,
+        onlineValue:'',
+        unreadMessageCountTotal:0,
+        
       }
+    },
+    // beforeRouteEnter (to, from, next) {
+    //   console.log(to)
+    //   console.log(from)
+    //   console.log(from.path)
+    //   let this_ = this
+    //   console.log(this)
+    //   console.log(this_)
+    //   // if(from.path=='/login'||from.path=='/user'||from.path=='/record'||from.path=='/'){
+    //   //   // this_.$store.state.no_voice = 1
+    //   //   // this_.$store.commit('setVoice',1)
+    //   // }
+    //   // next(vm =>{
+    //   //     console.log( vm.$store.commit('setVoice',1) )
+    //   //     vm.$store.commit('setVoice',1)
+    //   // })
+    // },
+    destroyed() {
+        this.state = "下线"
     },
     created:function () {
       this.db=new IndexedDB(this.option);
@@ -104,6 +145,11 @@
       this.$ajax.get('/acs/v1.0/service_message').then(res=>{
         if(res.data.status=="200"){
           this.checkActive=res.data.data.state=="在线" ? true : false
+          if(res.data.data.state=="在线"){
+            this_.onlineValue='在线'
+          }else{
+            this_.onlineValue='离线'
+          }
         }else if(res.data.msg=="用户未登录"){
           this_.$router.push({'path': '/'});
         }
@@ -111,13 +157,15 @@
 //      this_.environment="http://test.open.qb-tech.net/chat_image/"
       if(window.location.href.indexOf("test") > 0) {
         this_.environment= "http://test.open.qb-tech.net/chat_image/";
+          this.appkey = "8w7jv4qb829cy";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
       }else{
         this_.environment= "http://open.qb-tech.net/chat_image/";
+          this.appkey = "82hegw5u8ytdx";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
       }
 //      setTimeout(function () {
 //        this_.$ajax.get('/acs/v1.0/service_message').then(res=>{})
 //      },4000)
-      this.appkey = "8w7jv4qb829cy";//82hegw5u8ytdx  8w7jv4qb829cy
+    
       RongIMLib.RongIMClient.init(this.appkey);
       this.token = getCookie('s_token');
       this.s_name = getCookie('s_name');
@@ -157,19 +205,20 @@
             case RongIMClient.MessageType.TextMessage:
               var  date=getCookie('date');
               if(date<message.sentTime&&message.targetId=="systemcustomerrepeatlogin"&&message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"&&message.content.extra!=date){
-                  this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
-                    this_.logout=true;
-                   /* console.log(res.data)*/
-                    if(res.data.errmsg=="OK"){
-                      this_.delCookie('s_token')
-                      this_.delCookie('service_id')
-                      this_.delCookie('company');
-                      this_.delCookie('s_name');
-                      this_.delCookie('date')
-                      this_.delCookie('targetId');
-                      return false;
-                    }
-                  })
+                  // this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
+                  //   this_.logout=true;
+                  //   console.log('3333')
+                  //  /* console.log(res.data)*/
+                  //   if(res.data.errmsg=="OK"){
+                  //     this_.delCookie('s_token')
+                  //     this_.delCookie('service_id')
+                  //     this_.delCookie('company');
+                  //     this_.delCookie('s_name');
+                  //     this_.delCookie('date')
+                  //     this_.delCookie('targetId');
+                  //     return false;
+                  //   }
+                  // })
               }
               if(this_.targetIds){
                 for(let i=0;i<this_.targetIds.length;i++) {
@@ -188,7 +237,7 @@
                         content: html,
                         sentTime: hour + ":" + minute + ":" + second
                       })
-                      this_.getAnswer(html, message.targetId, message.content.extra[4], i, message.sentTime).then(res => {
+                      this_.getAnswer(html, message.targetId, message.content.extra[4], i, message.sentTime,message.content.extra[3]).then(res => {
                       })
                     } else {
                       if(this_.lists.length<=1){
@@ -203,7 +252,6 @@
                   }
                 }
               }
-              console.log(message);
 
 //              $("ul").append("<li>" + message.senderUserId+':'+message.content.content+ "</li>");
 
@@ -311,26 +359,40 @@
                 data[i].content = "<div><img src='" + data[i].content + "' ></div>"
               }
             }
+            console.log(data)
             this_.targetIds[m].history=data;
             this_.$set(this_.targetIds[m],'history',data);
             this_.$ajax.get("/acs/v1.0/service_online_status",{params : {'targetId' :targetIds,'p':1,'customer_token':customer_token}}).then((res) => {
               if (res.data.errmsg == 'OK') {
                 this_.targetIds[m].total_page=res.data.data.total_page;
                 this_.$set(this_.targetIds[m],'total_page',res.data.data.total_page);
+                  this_.db.getDataByKey(targetIds,targetIds.length-1).then(data=> {
+                  console.log(data.value.length)
+                  if(data.value.length==1){
+                    this_.aplayAudio()
+                  }
+                  if (data.value.length>0) {
+                    this_.targetIds[m].qa_record =data.value;
+                    this_.$set(this_.targetIds[m], 'qa_record', data.value)
+                  }
+                })
               }
             })
             this_.listArray=[];
           }
         })
+
+
       }
       var listens=false;
       function sessionTextMessage() {
         RongIMLib.RongIMClient.getInstance().getConversationList({
           onSuccess: function (list) {
-           /* console.log(list);*/
+          //  console.log(list);
             var temp =[];
             var temp_target_id =[];
             var temp_content=[];
+            this_.unreadMessageCountTotal = 0
             for (let i=0;i<list.length;i++){
               if(!(list[i].latestMessage.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"||list[i].latestMessage.content.content=="关闭客户会话,RongIMClient.getInstance().logout()")) {
                 var obj = new Object();
@@ -345,6 +407,7 @@
                 temp_content.push(html);
                 obj.extra = list[i].latestMessage.content.extra;
                 obj.targetId = list[i].targetId;
+                
                 obj.unreadMessageCount = list[i].unreadMessageCount
                 if (this_.targetIds.length > 0) {
                   var array = [];
@@ -372,7 +435,7 @@
                     historyTextMessage(this_.targetIds.length,content_wrap.targetId,content_wrap.h5_record[5]);
                     this_.targetIds.push(content_wrap);
                     if(list[i].latestMessage.messageDirection==2) {
-                      this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime).then(res => {
+                      this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
                       })
                     }else{
                       this_.db.getDataByKey(list[i].targetId,this_.targetIds.length-1).then(data=> {
@@ -412,7 +475,7 @@
                   historyTextMessage(0,content_wrap.targetId,content_wrap.h5_record[5]);
                   this_.targetIds.push(content_wrap);
                   if(list[i].latestMessage.messageDirection==2) {
-                    this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime).then(res => {
+                    this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
                     })
                   }else{
                     this_.db.getDataByKey(list[i].targetId,this_.targetIds.length-1).then(data=> {
@@ -434,6 +497,7 @@
                 temp.push(obj)
               }
             }
+            // console.log(temp)
             this_.lists=temp;
             if(this_.getCookie('targetId').length>0){
               for(var n=0;n<this_.targetIds.length;n++){
@@ -458,7 +522,6 @@
       function deleateconnect() {
         RongIMClient.getInstance().logout()
       }
-
     },
     mounted:function() {
       if(screen.width>1500){
@@ -492,19 +555,20 @@
           document.getElementsByClassName('content')[0].className ="content";
         }
       })
-      this_.timer = setInterval(function () {
-          this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
-            this_.delCookie('s_token')
-            this_.delCookie('service_id')
-            this_.delCookie('company');
-            this_.delCookie('s_name');
-            this_.delCookie('date');
-            this_.delCookie('targetId');
-            clearInterval(this_.timer);
-            RongIMClient.getInstance().logout()
-            this_.$router.push({'path': '/'});
-          })
-      }, 7200000)
+      // this_.timer = setInterval(function () {
+      //     this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
+      //       console.log('22222')
+      //       this_.delCookie('s_token')
+      //       this_.delCookie('service_id')
+      //       this_.delCookie('company');
+      //       this_.delCookie('s_name');
+      //       this_.delCookie('date');
+      //       this_.delCookie('targetId');
+      //       clearInterval(this_.timer);
+      //       RongIMClient.getInstance().logout()
+      //       this_.$router.push({'path': '/'});
+      //     })
+      // }, 7200000)
       this.gallery = new Viewer(document.getElementsByClassName('chat')[0],{
         navbar:false,
         toolbar:false,
@@ -531,7 +595,12 @@
           this.remove_Conversation=false;
           this.removeConversation(this.message_targetId)
         }
-      }
+      },
+      // $route (to, from) {
+      //     // 执行ajax请求，但只希望在进入时请求，离开时不希望进行请求。
+      //     console.log(to)
+      //     console.log(from)
+      // }
     },
     methods:{
       delCookie(name){
@@ -551,21 +620,23 @@
         this.timer_();
       },
       timer_() {
-        var this_=this;
-        clearInterval(this_.timer);
-        this_.timer= setInterval(function () {
-          this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
-            this_.delCookie('s_token');
-            this_.delCookie('service_id');
-            this_.delCookie('company');
-            this_.delCookie('s_name');
-            this_.delCookie('date');
-            this_.delCookie('targetId');
-            clearInterval(this_.timer);
-            RongIMClient.getInstance().logout()
-            this_.$router.push({'path': '/'});
-          })
-        },7200000)
+        // var this_=this;
+        // clearInterval(this_.timer);
+        // this_.timer= setInterval(function () {
+        //   console.log('11111')
+        //   this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
+        //     this_.delCookie('s_token');
+        //     this_.delCookie('service_id');
+        //     this_.delCookie('company');
+        //     this_.delCookie('s_name');
+        //     this_.delCookie('date');
+        //     this_.delCookie('targetId');
+        //     clearInterval(this_.timer);
+        //     RongIMClient.getInstance().logout()
+        //     this_.$router.push({'path': '/'});
+        //   })
+        // },7200000)
+        // console.log('你想闪退，没门')
       },
       not_line(){
         this.logout=false;
@@ -594,7 +665,12 @@
         document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
       },
 
-      getAnswer(sentence,dialogId,productId,index,sentTime){
+      aplayAudio () {
+        const audio = document.getElementById('audio')
+        audio.play()
+      },
+
+      getAnswer(sentence,dialogId,productId,index,sentTime,customer){
         
         return new  Promise((resolve,reject)=> {
           var this_ = this
@@ -606,7 +682,7 @@
             },
             data: {
               'sentence': sentence,
-              'dialogId': dialogId ,
+              'dialogId': dialogId,
               'productId':productId
             },
             transformRequest: [function (data) {
@@ -620,9 +696,10 @@
               var lAnswer //接受异步数据
               var display_name 
 
+              // this_.aplayAudio()
+
               if(res.data.data.process_flag === 1){
                   // var insex_ = index
-                  console.log(res.data.data)
                   this_.dialogId_ = res.data.data.dialogId
                   this_.process_id_ = res.data.data.process_id
                   this_.robot_answer_ = res.data.data.robot_answer
@@ -651,38 +728,34 @@
                             resolve(res.data)
                             lAnswer = res.data.data
                             display_name = res.data.display_name
-                            
-                            console.log(lAnswer.data)
-                            console.log(index)
                             this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
-                            console.log(this_.targetIds[index].answers)
-                            console.log(0)
                             try{
                               this_.db.getDataByKey(this_.dialogId_,index).then(data=>{
-                                console.log(1)
                                 if(data){
-                                  console.log(2)
                                   if(data.value[data.value.length-1].sentTime==sentTime){
-                                    console.log(3)
                                     var array=[];
                                     var date = this_.getCookie('date');
-                                    console.log(date)
-                                    console.log(data)
                                     for(var j=0;j<data.value.length;j++){
                                       if(data.value[j].sentTime>date){
                                         array.push(data.value[j]);
                                       }
                                     }
                                     this_.targetIds[index].qa_record = array;
-                                    console.log(array)
                                     this_.$set(this_.targetIds[index], 'qa_record', array)
                                   }else{
-                                    console.log(4)
+                                    // this_.aplayAudio()
+                                    let numberRandom = Math.random()
+                                    this_.$store.commit('setVoice',numberRandom)
+                                              console.log(3434)
+                                    // this_.$notify({
+                                    //   title: customer,
+                                    //   message: sentence,
+                                    //   position: 'bottom-right'
+                                    // });
+
                                     this_.db.updateData(this_.dialogId_,{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
                                   }
                                 }else{
-                                  console.log(5)
-                                  console.log(lAnswer)
                                   this_.db.addData({'id':this_.dialogId_,'value':[{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name}]})
                                 }
                               })
@@ -699,49 +772,48 @@
                 sentence='[图片]';
               }
               if(res.data.data.process_flag !== 1){
-                console.log(6)
                 this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                 try{
                   this_.db.getDataByKey(dialogId,index).then(data=>{
-                    console.log(7)
                     if(data){
-                      console.log(8)
                       if(data.value[data.value.length-1].sentTime==sentTime){
                         var array=[];
                         var date = this_.getCookie('date');
-                        console.log(date)
-                        console.log(data)
                         for(var j=0;j<data.value.length;j++){
                           if(data.value[j].sentTime>date){
                             array.push(data.value[j]);
                           }
                         }
                         this_.targetIds[index].qa_record = array;
-                        console.log(array)
                         this_.$set(this_.targetIds[index], 'qa_record', array)
                       }else{
-                        console.log(9)
+                        // this_.aplayAudio()
+                        let numberRandom = Math.random()
+                        this_.$store.commit('setVoice',numberRandom)
+                        console.log(12121)
+                        // this_.$notify({
+                        //   title: customer,
+                        //   message: sentence,
+                        //   position: 'bottom-right'
+                        // });
+
                         this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                       }
                     }else{
-                      console.log(10)
-                      console.log(lAnswer)
                       this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
                     }
                   })
                 } catch(e) {
                 }
               }
-              console.log(this_.targetIds[index].answers)
               resolve(res.data.data.robot_answer)
             }
           })
         })
       },
-      listenClose(data){
-        if(data){
+      listenClose(){
 //          this.checkActive=!this.checkActive;
-          var state=this.state=="上线"? "在线":"不在线"
+          let state=this.state=="上线"? "在线":"不在线"
           this.$ajax({
             method:"post",
             url:"/acs/v1.0/change_service_state",
@@ -761,13 +833,16 @@
           }).then((res)=>{
             if(res.data.data=="客服状态变更成功"){
               this.checkActive=!this.checkActive;
+              // if(this.onlineValue=='在线'){
+              //   this.onlineValue='下线'
+              // }else{
+              //   this.onlineValue='在线'
+              // }
             }else if(res.data.msg=="用户未登录"){
               this_.$router.push({'path': '/'});
             }
           })
-        }
-        this.closeStatus=false;
-
+        // this.closeStatus=false;
       },
       updateRecord(data){
         var obj =new Object;
@@ -788,13 +863,13 @@
       },
       setActive(event){
 //        this.checkActive=!this.checkActive;
-       /* console.log(event);*/
         if(event.target.className=="active"){
           return false;
         }
-        this.state =event.target.innerText;
-        this.state=this.state=="在线"? "上线":"下线"
-        this.closeStatus=true;
+        this.state = this.onlineValue;
+        this.state = this.state=="在线"? "上线":"下线"
+        this.listenClose()
+        // this.closeStatus=true;
       },
       remove(data){
         if(data==this.temp){
@@ -809,7 +884,6 @@
           this.lessen=true;
           document.getElementsByClassName('content')[0].className ="content";
         }
-
         this.removeTextMessage(this.lists[data]);
 
       },
@@ -820,11 +894,9 @@
         this.targetId=index.id;
         this.temp=index.index
         this.showIndex=index.index
-        console.log("ii123",this.showIndex);
         for(var i=0;i<this.targetIds.length;i++){
           if(this.targetIds[i].targetId==index.id){
             this.extra=this.targetIds[i].h5_record
-          /*  console.log(this.extra);*/
           }
         }
         this.clearUnreadCount(this.targetId)
@@ -927,6 +999,7 @@
         });
       },
       removeTextMessage(data) {
+                console.log(data.extra)
         var this_=this;
         var msg = new RongIMLib.TextMessage({content: '592b71f0-b3f8-4f64-bd45-40b35c0191af',extra:data.extra});
         var conversationtype = RongIMLib.ConversationType.PRIVATE; // 单聊,其他会话选择相应的消息类型即可。
@@ -1082,7 +1155,7 @@
         border-radius:0px;
         .chat_content{
           width 180px;
-         /* height 40px*/
+          height 36px
           margin-bottom 10px
           color #454545
           padding 0px 5px
@@ -1111,7 +1184,25 @@
           }
           .status {
             display block
-            margin-top 10px
+            margin-top 16px
+            select{
+              width 50px
+              height 28px
+              outline:none
+              position relative
+              top -42px;
+              left 46px;
+              padding-left 0px
+              padding-right 0px
+              border none
+              font-size 14px
+              font-family:MicrosoftYaHei;
+            }
+            .icon-position{
+              position relative
+              top -42px;
+              left 46px;
+            }
             label{
               /*width 120px
               margin-left -100px*/
@@ -1183,7 +1274,7 @@
     .chat-small{
     width 99%
     height 102.8%
-    background-color #2b303e;
+    background-color #fff;
     >.content{
       &.active{
         left 0
@@ -1202,7 +1293,7 @@
       left 132px
       top 59px;
       background: #eef3f6;
-      width calc(100vw - 150px)
+      width calc(100vw - 132px)
      /* height calc(100vh - 61px)*/
       height:93.7%
       .chat-wrapper {
@@ -1218,7 +1309,7 @@
         border-radius:0px;
         .chat_content{
           width 180px;
-         /* height 40px*/
+          height 36px
           margin-bottom 10px
           color #454545
           padding 8px 5px
@@ -1247,7 +1338,180 @@
           }
           .status {
             display block
-            margin-top 10px
+            margin-top 16px
+            select{
+              width 50px
+              height 28px
+              outline:none
+              position relative
+              top -42px;
+              left 46px;
+              padding-left 0px
+              padding-right 0px
+              border none
+              font-size 14px
+              font-family:MicrosoftYaHei;
+            }
+            .icon-position{
+              position relative
+              top -42px;
+              left 46px;
+            }
+            label{
+              /*width 120px
+              margin-left -100px*/
+              display block
+              padding-left: 18px;
+              text-align left
+              font-size:20px;
+              font-family:MicrosoftYaHei;
+              font-weight:400;
+              color:rgba(43,48,62,1);
+            }
+            span {
+              position relative
+              display inline-block
+              margin-top: 10px
+              margin-bottom: 10px
+              cursor pointer
+              font-size:16px;
+              font-family:SourceHanSansCN-Regular;
+              font-weight:400;
+              color:rgba(153,153,153,1);
+              &:after {
+                display none
+                content ""
+                width 40px
+                height 2px
+                position: absolute
+                left:-4px
+                bottom: -6px
+                background:rgba(49,153,224,1);
+              }
+              &:last-child {
+                margin-left 5px
+              }
+              &:first-child {
+                margin-right 5px
+              }
+              &.active {
+                color:rgba(0,0,0,1);
+                &:after {
+                 /* background-color #524AE7*/
+                  display inline-block
+
+                }
+              }
+            }
+            .online{
+              margin-left:-35px;
+              margin-right:25px
+            }
+          }
+        }
+      }
+    }
+    .chatWindow.show,.answer.show{
+      display block
+    }
+    .chatList.hide {
+      display none
+    }
+    .chatList.active{
+      /*background:rgba(255,255,255,1);*/
+      background: #d0e1ed
+     /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
+     /* border-radius:5px;*/
+    }
+  }
+
+
+  .chat1920{
+    width 100%
+    height 100%
+    background: #eef3f6;
+    >.content{
+      &.active{
+        left 0
+        top 0
+        width 100%
+        height 100%
+        .chatWindow{
+          width calc(100vw - 497px)
+          .record{
+            height calc(100vh - 195px)
+          }
+        }
+      }
+      overflow: hidden;
+      position absolute
+      left 132px
+      top 59px;
+      background: #eef3f6;
+      width calc(100vw - 150px)
+     /* height calc(100vh - 61px)*/
+      height:93.7%
+      .chat-wrapper {
+        border 1px solid #d6d6d6
+        float left
+        height 100%
+        background: white
+        margin-left: 0px
+        border-radius:0px;
+        margin-top: 0px;
+        margin-right: 14px
+        box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
+        border-radius:0px;
+        .chat_content{
+          width 180px;
+          height 36px
+          margin-bottom 10px
+          color #454545
+          padding 0px 5px
+          text-align center
+          box-sizing border-box
+          font-size 14px
+          .chat_title {
+            float left
+            span {
+              position relative
+              font-size 15px
+              &:before {
+                position absolute
+                content ""
+                display inline-block
+                height 16px
+                width 3px;
+                background-color #524AE7
+                left -8px
+                margin-top 2px
+              }
+            }
+          }
+          img {
+            margin-top 50px
+          }
+          .status {
+            display block
+            margin-top 16px
+            select{
+              width 50px
+              height 28px
+              outline:none
+              position relative
+              top -42px;
+              left 46px;
+              padding-left 0px
+              padding-right 0px
+              border none
+              font-size 14px
+              font-family:MicrosoftYaHei;
+            }
+            .icon-position{
+              position relative
+              top -42px;
+              left 46px;
+            }
             label{
               /*width 120px
               margin-left -100px*/

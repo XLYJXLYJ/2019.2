@@ -6,6 +6,7 @@
       <router-link to="/user"><span class="user"></span><span class="username">{{s_name}}</span><span class="company">{{company}}</span></router-link>
       <span class="login_out" @click="logout">退出</span>
     </span>
+    <div class="white"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -47,6 +48,7 @@
       }else{
         this.screen = false
       }
+      console.log(this.$route)
     },
     methods:{
       getCookie(objName){//获取指定名称的cookie的值
@@ -63,9 +65,11 @@
         var this_=this;
         this.$ajax.delete("/acs/v1.0/service_login",).then((res) => {
           console.log(res.data)
+          console.log('00000')
           if(res.data.errmsg=="OK"||res.data.errmsg=="用户未登录"){
             this_.delCookie('s_token')
             this_.delCookie('service_id')
+            this_.delCookie('service_voice')
             this_.delCookie('company');
             this_.delCookie('s_name');
             this_.delCookie('date');
@@ -230,5 +234,14 @@
       }
     }
   }
-
+  .white{
+    width:40px!important;
+    height:59px!important;
+    background:#fff;
+    position fixed!important;
+    right:0px;
+    top:0px;
+    border-bottom 1px solid #d6d6d6;
+    z-index 1000
+  }
 </style>

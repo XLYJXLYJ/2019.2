@@ -6,7 +6,7 @@
                 <p class="slogan">科技连接保险未来</p>
             </div>
             <ul class="navigation">
-                <router-link to="/Qt"><li>首页</li></router-link>
+                <router-link to="/Qt"><li>我的任务</li></router-link>
                 <router-link to="/Task"><li>创建任务</li></router-link>
             </ul>
             <ul class="user">
@@ -49,7 +49,7 @@
 <style lang="less" scoped>
  .head{
      width: 100%;
-     height: 60px;
+     height: 80px;
      background: #8180f8;
      .head-content{
          width: 1200px;
@@ -66,7 +66,7 @@
                 font-size: 20px;
                 font-weight: 600;
                 margin: 0 20px;
-                padding: 6px 0px 5px 0px;
+                padding: 16px 0px 5px 0px;
                 border-bottom: 2px solid white;
             }
             .slogan{
@@ -78,15 +78,15 @@
         .navigation{
             position: relative;
             width: 400px;
-            height: 80px;
+            height: 130px;
             left: 150px;
             top: -81px;
             li{
                 float: left;
                 width: 160px;
-                height: 50px;
+                height: 120px;
                 text-align: center;
-                padding-top: 34px;
+                padding-top: 44px;
                 font-size: 18px;
                 font-family:'SimSun';
                 cursor: pointer;
@@ -102,7 +102,7 @@
             width: 350px;
             height: 80px;
             left: 850px;
-            top: -161px;
+            top: -201px;
             li{
                 float: right;
                 width: auto;

@@ -68,14 +68,14 @@
             </div>
             <div class="upload-tips">
               <p class="main">上传提示：</p>
-              <p class="small">每条音频不能超过500M(音频时长不能超过5小时),可同时支持10个音频文件上传。</p>
+              <p class="small">每条音频不能超过500M(音频时长不能超过5小时),可同时支5个音频文件上传。</p>
               <p class="small">目前支持wav、flac、opus、mp3、m4a的音频格式。</p>
             </div>
             <!-- <div class="sumit"><router-link to="/Task"><el-button>创建任务</el-button></router-link></div> -->
             <div class="sumit" @click="submitUpload()"><el-button type="primary" style="background-color: #524AE7;border-color:#524AE7;color: #fff;">创建任务</el-button></div>
           </div>
-<!--           
-        <button @click="login()">登录</button> -->
+          
+        <!-- <button @click="login()">登录</button> -->
         </div>
       </div>
   </div>
@@ -98,7 +98,7 @@ export default {
         chunkSize:1*1024*1024*1000
       },
       attrs: {
-        accept: '.mp3,.wav,.m4a,.opus,.flac,.WAV,.MP3,.M4A,.OPUS,.FLAC',
+        accept: '.mp3,.wav,.m4a,.opus,.flac,.amr,.WAV,.MP3,.M4A,.OPUS,.FLAC,.AMR',
       },
       arrUser:[],
       arrSongs:[],
@@ -170,10 +170,11 @@ export default {
         this.$message('请选择电销外呼类型');
       }else if(this.uploadNum!==this.successNum-1 && this.uploadNum!==this.successNum){
         this.$message('录音正在上传中，请稍等...');
-      }else if(this.successNum>10){
+      }else if(this.successNum>5){
         this.$message('上传次数超过限制，请删除超过项目');
       }
       else{
+      this.$store.commit('GetRoute', 1)
         // this.loading = true      
       for (var property in this.objArr){
         this.arrSongs.push(this.objArr[property]);
@@ -204,7 +205,7 @@ export default {
     },
     onFileAdded(files,fileList){
       this.uploadNum = this.uploadNum+1
-      if(this.successNum>10){
+      if(this.successNum>5){
         files.ignored = true
         this.$message('上传次数超过限制');
       }

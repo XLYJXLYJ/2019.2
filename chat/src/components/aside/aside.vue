@@ -38,8 +38,10 @@
 <script>
   export default {
     name: 'vue-aside',
-    created: function () {
-
+    mounted: function () {
+      if(screen.width<1500){
+        document.getElementsByClassName("vue-aside")[0].setAttribute('style','height:104.3%')
+      }
     }
   }
 </script>

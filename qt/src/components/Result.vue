@@ -3,86 +3,83 @@
       <Head></Head>
       <div class="head-content">
         <div class="head-content-center">
-          <!-- <div class="my-task">
-            <span>我的任务</span>
-            <span>></span>
-            <span class="new-task">查看结果</span>
-          </div> -->
+          <div class="my-task">
+              <router-link to="/Qt">
+                <img src="../assets/back.png">
+                <span class="new-task">返回上一层</span>
+            </router-link>
+          </div>
           <div class="task-concent">
             <!-- <p class="language">质检结果</p> -->
             <div class="result">
                 <div class="head">
                     <span class="name">任务名称：{{task_name}}</span>
-                    <span class="name01" :title="record_name">音频名称：{{record_name.length>12 ? record_name.substring(0,12)+'...'  : record_name}}</span>
-                    <span class="name02" v-if="!customer_name">客户姓名: ---</span>
+                    <span class="name01" :title="record_name">音频名称：{{record_name.length>6 ? record_name.substring(0,6)+'...'  : record_name}}</span>
+                    <span class="name02" v-if="!customer_name">客户姓名： - - -</span>
                     <span class="name02" v-if="customer_name">客户姓名：{{customer_name}}</span>
-                    <span class="time">录音时长：{{record_time}}</span>
+                    <span class="time">{{record_time}}</span>
                 </div>
                 <div class="talk">
                     <ul class="talkul">
                         <li v-for="(item,index) in tra_res_list" :key="index" class="talkUlLi" @click="clickText(item.start_time)">
                             <p :class="item.direction==2?'guesthead02':'guesthead01'">{{item.speaker | clearString}}</p>
-                            <div :class="{'guestcontext02':item.direction==2,'guestcontext01':item.direction!==2}"><span :class="index==selectIndex?'select-li':''" v-html="item.content"></span></div>
+                            <div :class="{'guestcontext02':item.direction==2,'guestcontext01':item.direction!==2}" :style="index==selectIndex?'background:#143352;color:#fff':''"><span v-html="item.content"></span></div>
+                            <span v-show="item.direction==2 && item.str_violate_word" class="stop">{{item.str_violate_word}}</span>
                         </li>
                     </ul>
                 </div>
                 <div class="how">
                     <p>语音特征</p>
                     <ul class="one">
-                        <li v-if="customer_emotion>7">客户情绪：<span style="color:red">高涨</span></li>
-                        <li v-if="customer_emotion<8">客户情绪：<span style="color:#8691a5">正常</span></li>
-                        <li v-if="service_emotion>7">客服情绪：<span style="color:red">高涨</span></li>
-                        <li v-if="service_emotion<8">客服情绪：<span style="color:#8691a5">正常</span></li>
-                        <!-- <li v-if="talk_number==0" style="color:#8691a5">抢话次数：无</li>
+                        <li v-if="customer_emotion>7">客户情绪：<span style="color:#FF5252">高涨</span></li>
+                        <li v-if="customer_emotion<8">客户情绪：<span style="color:#525252">正常</span></li>
+                        <li v-if="service_emotion>7">客服情绪：<span style="color:#FF5252">高涨</span></li>
+                        <li v-if="service_emotion<8">客服情绪：<span style="color:#525252">正常</span></li>
+                        <!-- <li v-if="talk_number==0" style="color:#525252">抢话次数：无</li>
                         <li v-if="talk_number>0">抢话次数：<span style="color:red">{{talk_number}}次</span></li>
-                        <li v-if="talk_time==0" style="color:#8691a5">抢话时长：无</li>
+                        <li v-if="talk_time==0" style="color:#525252">抢话时长：无</li>
                         <li v-if="talk_time>0">抢话时长：<span style="color:red">{{talk_time}}秒</span></li> -->
-                        <li v-if="speed>119">语速：<span style="color:red">{{speed}}字/分</span></li>
-                        <li v-if="speed<120" style="color:#8691a5">语速：{{speed}}字/分</li>
-                        <li v-if="silence_number==0" style="color:#8691a5">静默次数：无</li>
-                        <li v-if="silence_number>0">静默次数：<span style="color:red">{{silence_number}}次</span></li>
-                        <li v-if="silence_duration==''" style="color:#8691a5">静默时长：无</li>
-                        <li v-if="silence_duration>0">静默时长：<span style="color:red">{{silence_duration}}秒</span></li>
+                        <li v-if="silence_number==0" style="color:#525252">静默次数：无</li>
+                        <li v-if="silence_number>0">静默次数：<span style="color:#FF5252">{{silence_number}}次</span></li>
+                        <li v-if="silence_duration==''" style="color:#525252">静默时长：无</li>
+                        <li v-if="silence_duration>0">静默时长：<span style="color:#FF5252">{{silence_duration}}秒</span></li>
+                        <li v-if="speed>119">语速：<span style="color:#FF5252">{{speed}}字/分</span></li>
+                        <li v-if="speed<120" style="color:#525252">语速：{{speed}}字/分</li>
                     </ul>
                 </div>
                 <div class="judge">
                     <p>质检结果</p>
                     <ul class="one">
                         <li>评分结果：<span :class="score_result=='及格'?'judgeresult01':'judgeresult02'">{{score_result}}</span></li>
-                        <li>违禁结果:</li>
                         <!-- <ul class="two" v-show="violate_result.length>0">
                             <li v-for="(item,index) in violate_result" :key='index'>{{item}}</li>
                         </ul> -->
-                        <table>
+                        <!-- <table>
                             <tr>
                                 <td>违禁词</td>
-                                <td>违禁结果</td>
+                                <td>扣分结果</td>
                             </tr>
                             <tr v-for="(item,index) in violate_result" :key='index'>
                                 <td>{{index}}</td>
                                 <td v-if="item==''">无</td>
                                 <td v-else style="color:red;">有</td>
+                                
                             </tr>
-                            <!-- <tr>
-                                <td>虚假成交</td>
-                                <td>{{this.violate_result.虚假成交==''?'无':'有'}}</td>
-                            </tr>
-                            <tr>
-                                <td>诋毁同行销售</td>
-                                <td>{{this.violate_result.诋毁同行销售==''?'无':'有'}}</td>
-                            </tr>
-                            <tr>
-                                <td>违规误导销售</td>
-                                <td>{{this.violate_result.违规误导销售==''?'无':'有'}}</td>
-                            </tr>
-                            <tr>
-                                <td>违规返佣销售</td>
-                                <td>{{this.violate_result.违规返佣销售==''?'无':'有'}}</td>
-                            </tr> -->
-                        </table>
-                        <li style="margin-top:-20px">敏感词：</li>
+                        </table> -->
+                        <ul class="tableUl">
+                            <li><span class="tableone">扣分类型</span><span class="tabletwo" style="color:#525252">扣分结果</span></li>
+                            <li v-for="(item,index) in violate_result" :key='index'>
+                                <!-- <span class="tableone" :style="item==''?'background:#fff;color:#525252':'color:#ff5252'">{{index}}</span> -->
+                                <span class="tableone" v-if="item==''" style='background:#fff;color:#525252'>{{index}}</span>
+                                <span class="tableone" v-if="item!==''" style='background:#fff;color:#FF5252;'>{{index}}</span>
+                                <span class="tabletwo" v-if="item==''" style='background:#fff;color:#525252'>无</span>
+                                <span class="tabletwo" v-if="item!==''" style='background:#fff;color:#FF5252;'>{{item}}</span>
+                                <!-- <span class="tabletwo" :style="item==''?'background:#fff;color:#525252':''">{{item==''?'无':'有'}}</span> -->
+                            </li>
+                        </ul>
+                        <li style="margin-top:26px">敏感词：</li>
                         <ul class="two2" v-show="sensitive_word.length>0">
-                            <li v-for="(item,index) in sensitive_word" :key='index'>{{item}}</li>
+                            <li v-for="(item,index) in sensitive_word" :key='index' :style="item=='无'?'background:#fff;color:#525252':''">{{item}}</li>
                         </ul>
                     </ul>
                 </div>
@@ -90,8 +87,9 @@
             <div class="voice">
                 <!-- <span class="name01" :title="record_name">音频名称：{{record_name.length>10 ? record_name.substring(0,10)+'...'  : record_name}}</span> -->
                 <audio :src="record_url" controls="controls" loop="loop" class="voicecss" controlslist="nodownload" @click="UpdateProgress()"></audio>
-                <a :href="record_url_download" download>下载</a>
-                <router-link to="/Task" class="return"><button style="font-size: 14px;">返回上一页</button></router-link>
+                    
+                    <a :href="record_url_download" download><img src="../assets/download.png"></a>
+
                 <!-- <aplayer autoplay controls class="voicecss"
                 :music="{
                     title: record_name,
@@ -155,9 +153,9 @@ export default {
         document.title = url;
         this.ins_id = this.$route.params.id
         this.GetResult()
-        this.timeIndex = setInterval(() => this.UpdateProgress(),500)
+        this.timeIndex = setInterval(() => this.UpdateProgress(),100)
         if(screen.width>1500){
-            document.getElementsByClassName('head-content-center')[0].setAttribute('style','padding-top:100px;padding-bottom:100px')
+            // document.getElementsByClassName('head-content-center')[0].setAttribute('style','padding-top:100px;padding-bottom:100px')
         }else{
             console.log('ok')
         }
@@ -172,19 +170,54 @@ export default {
              let audioTime =document.getElementsByTagName('audio')[0].currentTime*1000;
              let audioDuration = document.getElementsByTagName('audio')[0].duration*1000;
              let scrollTop =document.getElementsByClassName('talkUlLi');
+            //  console.log(document.getElementsByClassName('talkUlLi'))
              this_.tra_res_list.map(
                  function(key,value){
                      if(key.start_time<audioTime&&key.end_time>audioTime){
                         this_.selectIndex = value
-                        document.getElementsByClassName('talkul')[0].scrollTop = document.getElementsByClassName('talkul')[0].scrollHeight*(value-4)/this_.tra_res_list.length
-                     }
+                        }
+                 }
+             )
+        },
+        selectIndex:function(){
+            let this_ = this
+            let audioTime =document.getElementsByTagName('audio')[0].currentTime*1000;
+            let audioDuration = document.getElementsByTagName('audio')[0].duration*1000;
+            let scrollTop =document.getElementsByClassName('talkUlLi');
+            this_.tra_res_list.map(
+                 function(key,value){
+                     if(key.start_time<audioTime&&key.end_time>audioTime){
+                        let maxHeight = document.getElementsByClassName('talkUlLi')[value-1].offsetTop
+                        let minHeight = document.getElementsByClassName('talkul')[0].scrollTop
+                        let middleHeight = maxHeight -minHeight
+                        var otherValue = value
+                        console.log(maxHeight)
+                        console.log(minHeight)
+                        // if(middleHeight>=700){
+                        //     otherValue = otherValue + 1
+                        // }else if(middleHeight<700 && middleHeight>=600){
+                        //     otherValue = otherValue + 1
+                        // }else if(middleHeight<600 && middleHeight>=560){
+                        //     otherValue = otherValue
+                        // }else if(middleHeight<560 && middleHeight>=270){
+                        //     otherValue = otherValue -1
+                        // }else if(middleHeight<270 && middleHeight>=110){
+                        //     otherValue = otherValue - 2
+                        // }else if(middleHeight<120 && middleHeight>=0){
+                        //     otherValue = otherValue - 3
+                        // }else{
+                        //     otherValue = otherValue - 3
+                        // }
+                        let howDouble = middleHeight/100
+                            document.getElementsByClassName('talkul')[0].scrollTop = maxHeight
+                        }
                  }
              )
         }
     },
     methods:{
         clickText(time){
-            let timer =parseInt(time/1000); //js获取的方式
+            let timer =parseInt(time/1000) + 1.5; //js获取的方式
             document.getElementsByTagName('audio')[0].currentTime = timer
         },
         UpdateProgress() {
@@ -202,16 +235,16 @@ export default {
                     this.sensitive_word = response.data.data.ins_res_dict.sensitive_word
                     this.score_result = response.data.data.ins_res_dict.score_result
                     this.violate_result = response.data.data.ins_res_dict.violate_result
-                    this.record_time = response.data.data.int_ins_dict.record_time
+                    this.record_time = '录音时长：' + response.data.data.int_ins_dict.record_time
                     this.task_name = response.data.data.int_ins_dict.task_name
                     this.record_url = response.data.data.int_ins_dict.xunfei_wav_url
                     this.record_url_download = response.data.data.int_ins_dict.record_url
                     let head = this.record_url_download.substring(0,23)
-                    if(head == 'http://open.qb-tech.net'){
-                        this.record_url_download =  this.record_url_download.substring(23)
-                    }else{
-                        this.record_url_download =  this.record_url_download.substring(28)
-                    }
+                    // if(head == 'http://open.qb-tech.net'){
+                    //     this.record_url_download =  this.record_url_download.substring(23)
+                    // }else{
+                    //     this.record_url_download =  this.record_url_download.substring(28)
+                    // }
                     this.tra_res_list = response.data.data.tra_res_list
                     this.record_name = response.data.data.int_ins_dict.record_name
                     this.silence_duration = parseInt(response.data.data.ins_res_dict.silence_duration) 
@@ -254,36 +287,47 @@ export default {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #F5F5F5;
+    background: #fff;
   .head-content{
     width: 100%;
-    height: 100%;
+    min-height: 920px;
     position: relative;
-    background: #f8f8f8;
+    margin-bottom: -50px;
+    background: #fff;
     .head-content-center{
       width: 1200px;
-      min-height: 680px;
+      min-height: 780px;
       position: relative;
-      top: 4px;
+      top: 0px;
       margin: 0 auto;
       background: #fff;
-      border: 1px solid #dddddd;
+    //   border: 1px solid #dddddd;
       .my-task{
-        width: 1100px;
+        width: 1200px;
         height: 15px;
         margin: 0 auto;
-        padding: 20px;
-        border-bottom: 1px solid #dddddd;
-        color: #989898;
+        padding: 0px;
+        // border-bottom: 1px solid #dddddd;
+        color: #868686;
+        position: relative;
+        top: 27px;
+        font-size:18px;
+        font-family:FZY4JW--GB1-0;
+        font-weight:550;
+        cursor: pointer;
         .new-task{
-          color: #362389;
+            position: relative;
+            top: 2px;
+            left: 9px;
+            font-size:18px;
+            color: #868686;
         }
       }
       .task-concent{
-        width: 1100px;
-        height: 660px;
+        width: 1200px;
+        height: 770px;
         position: relative;
-        top: 7px;
+        top: 65px;
         margin: 0 auto;
         border: 1px solid #d6d6d6;
         .language{
@@ -295,13 +339,13 @@ export default {
           background: #fff;
         }
         .result{
-            width: 1099px;
-            height: 590px;
+            width: 1200px;
+            height: 712px;
             border-bottom: 1px solid #d6d6d6;
             position: absolute;
             .head{
-                width: 1099px;
-                height: 53px;
+                width: 1200px;
+                height: 90px;
                 background: #fff;
                 font-family: '微软雅黑';
                 .name{
@@ -309,49 +353,58 @@ export default {
                     width: 250px;
                     line-height: 50px;
                     color: #666;
-                    font-size: 16px;
+                    font-size: 18px;
                     position: relative;
-                    left: 60px;
-                    font-family: '微软雅黑';
+                    left: 35px;
+                    top: 20px;
+                    font-family: 'PingFangRegular';
+                    font-weight:550;
+                
                 }
                 .name01{
                     display: inline-block;
                     color: #666;
-                    font-size: 16px;
+                    font-size: 18px;
                     position: relative;
                     width: 250px;
                     left: 90px;
-                    font-family: '微软雅黑';
+                    top: 20px;
+                    font-family: 'PingFangRegular';
+                    font-weight:550;
                 }
                 .name02{
                     display: inline-block;
                     color: #666;
-                    font-size: 16px;
+                    font-size: 18px;
                     position: relative;
                     width: 250px;
-                    left: 120px;
-                    font-family: '微软雅黑';
+                    left: 190px;
+                    top: 20px;
+                     font-family: 'PingFangRegular';
+                     font-weight:550;
                 }
                 .time{
                     width: 250px;
                     color: #666;
-                    font-size: 16px;
+                    font-size: 18px;
                     position: relative;
-                    left: 150px;
-                    font-family: '微软雅黑';
+                    left: 245px;
+                    top: 20px;
+                    font-family: 'PingFangRegular';
+                    font-weight:550;
                 }
             }
             .talk{
-                width: 680px;
-                height: 563px;
+                width: 683px;
+                height: 786px;
                 display: inline-block;
                 border-top: 1px solid #d6d6d6;
                 position: absolute;
-                top: 53px;
+                top: 90px;
                 left: 0px;
                 ul{
-                    width: 678px;
-                    height: 506px; 
+                    width: 689px;
+                    height: 581px; 
                     background: #f5f5f5;
                     overflow: auto;
                     padding-top:40px;
@@ -360,115 +413,159 @@ export default {
                         height: auto;
                         display:inline-block;
                         line-height:24px;
-                        font-family: '微软雅黑';
+                        .stop{
+                            width: auto;
+                            height:auto;
+                            background:#FF5252;
+                            padding-top:6px;
+                            padding-bottom:6px;
+                            padding-left:12px;
+                            padding-right:12px;
+                            border-radius: 10px;
+                            color: #fff;
+                            font-size: 16px;
+                            float: right;
+                            margin-right: 120px;
+                            margin-top: -72px;
+                            word-wrap: break-word;
+                            max-width: 160px;
+                        }
                         .guesthead01{
-                            width: 36px;
-                            height: 36px;
+                            width: 68px;
+                            height: 68px;
                             text-align: center;
                             line-height: 36px;
                             position: relative;
-                            left: 16px;
+                            left: 33px;
                             background: #fff;
                             background: url(../assets/customer.png);
-                            background-size:36px 36px;
+                            background-size:68px 68px;
                             border-radius: 20px;
                         }
                         .guestcontext01{
                             max-width: 300px;
-                            word-wrap: break-word;word-break: break-all;
+                            word-wrap: break-word;
                             height: auto;
                             position: relative;
-                            left: 60px;
-                            top: -34px;
+                            left: 130px;
+                            top: -68px;
                             background: #fff;
-                            border-radius: 6px;
+                            border-radius:0px 12px 12px 12px;
                             line-height: 24px;
-                            border: 1px solid #ededed;
                             float:left;
-                            padding: 6px;
+                            padding: 20px;
                             display: block;
-                            font-size: 16px;
-                            font-family: '微软雅黑';
+                            font-size: 20px;
+                            color: #2F2F2F;
+                            font-family: 'PingFangRegular';
+                            font-weight:550;
+                            box-shadow:0px 3px 9px 0px rgba(82, 82, 82, 0.35);
                         }
                         .guesthead02{
-                            width: 36px;
-                            height: 36px;
+                            width: 68px;
+                            height: 68px;
                             text-align: center;
                             line-height: 36px;
                             position: relative;
                             top: -10px;
-                            left: 623px;
+                            left: 573px;
                             background: url(../assets/aimi.png);
-                            background-size:36px 36px;
+                            background-size:68px 68px;
                             border-radius: 20px;
                         }
                         .guestcontext02{
                             max-width: 300px;
-                            word-wrap: break-word;word-break: break-all;
+                            word-wrap: break-word;
                             height: auto;
                             position: relative;
-                            right: 44px;
-                            top: -45px;
-                            background: #9eea6a;
-                            border-radius: 6px;
+                            right: 110px;
+                            top: -77px;
+                            background: #5795D2;
+                            border-radius:12px 0px 12px 12px;
                             line-height: 24px;
-                            border: 1px solid #ededed;
                             float:right;
-                            padding: 6px;
-                            font-size: 16px;
-                            font-family: '微软雅黑';  
+                            padding: 20px;
+                            font-size: 20px;
+                            color: #fff;
+                            font-family: 'PingFangRegular';
+                            font-weight:550;
+                            box-shadow:0px 3px 9px 0px rgba(82, 82, 82, 0.35);
+                            display: inline-block;
                         }
                         
-                        .guestcontext01:before,.guestcontext02:after{   /*用伪类写出小三角形*/
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            border: 8px solid transparent;
-                            position: absolute;
-                            top: 8px;
-                        }
-                        /*分别给左右两边的小三角形定位*/
-                        .guestcontext01:before{    
-                            border-right: 8px solid #fff;
-                            left: -16px;
-                        }
-                        .guestcontext02:after{    
-                            border-left: 8px solid #9EEA6A;
-                            right: -16px;
-                        }
+                        // .guestcontext01::before,.guestcontext02::after{   /*用伪类写出小三角形*/
+                        //     content: '';
+                        //     display: block;
+                        //     width: 0;
+                        //     height: 0;
+                        //     border: 8px solid transparent;
+                        //     position: absolute;
+                        //     top: 8px;
+                        // }
+                        // /*分别给左右两边的小三角形定位*/
+                        // .guestcontext01::before{    
+                        //     border-right: 8px solid #fff;
+                        //     left: -16px;
+                        // }
+                        // .guestcontext02::after{    
+                        //     border-left: 8px solid #9EEA6A;
+                        //     right: -16px;
+                        // }
                     }
+                }
+                ul::-webkit-scrollbar {/*滚动条整体样式*/
+                    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+                    height: 271px;
+                }
+                ul::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 5px #D5DCE4;
+                    background: #D5DCE4;
+                }
+                ul::-webkit-scrollbar-track {/*滚动条里面轨道*/
+                    -webkit-box-shadow: inset 0 0 5px #D5DCE4;
+                    border-radius: 10px;
+                    background: #EDEDED;
                 }
             }
             .how{
-                width: 419px;
-                height: 155px;
+                width: 510px;
+                height: 243px;
                 display: inline-block;
                 position: absolute;
-                top: 53px;
+                top: 90px;
                 right: -1px;
-                border: 1px solid #d6d6d6;
-                border-right:none;
+                border-top: 1px solid #d6d6d6;
+                border-right: 1px solid #d6d6d6;
                 background: #fff;
-                font-family: '微软雅黑';
+                font-family: 'PingFangRegular';
+                font-weight:550;
                 p{
                     width: 100%;
                     text-align: center;
-                    font-size: 18px;
-                    padding-top: 20px;
-                    padding-bottom: 10px;
+                    font-size: 26px;
+                    padding-top: 33px;
+                    padding-bottom: 29px;
                     font-weight: bold;
+                    color: #525252;
                 }
                 .one{
-                  width: 316px;
-                  height: 302px;
+                  width: 448px;
+                  height: 160px;
                   padding-top:6px;
+                  position: relative;
+                  top: -16px;
+                  left: 38px;
+                  border-bottom: 1px solid #d6d6d6;
                   li{
                       float: left;
-                      font-size: 16px;
-                      padding: 6px;
-                      padding-left: 20px;
-                      color: #8691a5;
+                      width: 210px;
+                      font-size: 20px;
+                      padding: 14px;
+                      padding-left: 0px;
+                      color: #525252;
+                      font-family: 'PingFangRegular';
+                      font-weight:550;
                   }  
                 }
                 .two{
@@ -497,60 +594,118 @@ export default {
                 }
             }
             .judge{
-                width: 419px;
-                height: 389px;
+                width: 510px;
+                height: 378px;
                 display: inline-block;
                 position: absolute;
                 right: -1px;
-                top: 210px;
-                border-left: 1px solid #d6d6d6;
+                top: 334px;
                 background: #fff;
+                border-right: 1px solid #d6d6d6;
+                font-family: 'PingFangRegular';
+                font-weight:550;
                 p{
                     width: 100%;
                     text-align: center;
-                    font-size: 18px;
-                    padding-top: 30px;
-                    padding-bottom: 30px;
+                    font-size: 26px;
+                    padding-top: 33px;
+                    padding-bottom: 29px;
                     font-weight: bold;
+                    color: #525252;
                 }
                 .one{
-                  width: 416px;
-                  height: 326px;
+                  width: 476px;
+                  height: 304px;
                   position: relative;
                   top: -14px;
+                  left: 34px;
                   border-bottom: 1px solid #d6d6d6;
+                  color: #525252;
+                  font-family: 'PingFangRegular';
+                  font-weight:550;
+                  overflow: auto;
                   table{
-                    width: 216px;
+                    width: 423px;
                     height: 106px;
                     position: relative;
-                    left: 100px;
-                    top: -26px;
+                    left: 0px;
+                    top: 12px;
                     tr{
                         border: 1px solid #d6d6d6;
                         td{
-                            border: 1px solid #d6d6d6;
+                            border-left: 1px solid #d6d6d6;
                             text-align: center;
-                            font-size: 16px!important;
-                            font-family: '微软雅黑';
-                            color: #8691a5;
+                            font-size: 20px!important;
+                            color: #525252;
+                            font-family: 'PingFangRegular';
+                            font-weight:550;
                             padding: 10px;
                         }
                     }
                   }
+                  .tableUl{
+                      width: 423px;
+                      height: auto;
+                      border:1px solid rgba(160,160,160,1);
+                      border-radius:10px;
+                      position: relative;
+                      left: 10px;
+                      top: 10px;
+                      li{
+                          height: 18px;
+                          text-align: center;
+                          margin-left: 20px;
+                          margin-right:20px;
+                          .tableone{
+                              width: 240px;
+                              display: inline-block;
+                              border-right: 1px solid rgba(160,160,160,1);
+                          }
+                          .tabletwo{
+                              padding-left: 10px;
+                              width: 100px;
+                              display: inline-block;
+                              color: #FF5252;
+                          }
+                      }
+                      li:first-child{
+                          border-bottom:1px solid rgba(160,160,160,1);
+                      }
+
+                  }
                   li{
-                      font-size: 16px;
+                      font-size: 20px;
                       padding: 10px;
-                      padding-left: 20px;
-                      color: #8691a5;
+                      color: #525252;
+                      font-family: 'PingFangRegular';
+                      font-weight:550;
                   }
                     .judgeresult01{
-                        color:#8691a5;
-                        font-weight: bold;
+                      font-size: 20px;
+                      color: #525252;
+                      font-family: 'PingFangRegular';
+                      font-weight:550;
                     }
                     .judgeresult02{
-                        color:red;
-                        font-weight: bold;
+                      font-size: 20px;
+                      color: #525252;
+                      font-family: 'PingFangRegular';
+                      font-weight:550;
                     }  
+                }
+                .one::-webkit-scrollbar {/*滚动条整体样式*/
+                    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+                    height: 271px;
+                }
+                .one::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 5px #fff;
+                    background: #fff;
+                }
+                .one::-webkit-scrollbar-track {/*滚动条里面轨道*/
+                    -webkit-box-shadow: inset 0 0 5px #fff;
+                    border-radius: 10px;
+                    background: #fff;
                 }
                 .two{
                   width: 320px;
@@ -581,8 +736,8 @@ export default {
                   height: 102px;
                   font-size: 18px;
                   position: relative;
-                  left: 96px;
-                  top: -32px;
+                  left: 76px;
+                  top: -38px;
                   overflow: auto;
                   li{
                       float: left;
@@ -595,23 +750,25 @@ export default {
                       background:rgb(243, 55, 55);
                       border-radius: 16px;
                       color: #fff;
-                      padding: 4px;
-                      padding-left: 10px;
-                      padding-right: 10px;
+                      padding: 6px;
+                      padding-left: 14px;
+                      padding-right: 18px;
+                      padding-bottom:6px;
+                      font-size: 18px;
                   }
                 }
             }
         }
 
         .voice{
-            width: 1100px;
-            height: 70px;
+            width: 1200px;
+            height: 50px;
             position: absolute;
             bottom: 0px;
             .name01{
                 display: inline-block;
                 line-height: 55px;
-                color: #8691a5;
+                color: #525252;
                 font-size: 16px;
                 position: relative;
                 width: 200px;
@@ -625,23 +782,27 @@ export default {
                 font-family: '微软雅黑';
             }
             .voicecss{
-                width: 932px;
+                width: 1115px;
                 height: 52px;
                 position: absolute;
-                left: 10px;
-                top: 14px;
+                top: -4px;
                 outline:none;
+            }
+            img{
+                position: relative;
+                left: 0px;
+                top: -3px;
             }
             a{
                 position: relative;
-                left: 926px;
-                top: 14px;
+                left: 1126px;
+                top: -3px;
                 width: 40px;
                 height: 52px;
-                font-size: 16px!important;
-                font-family: '微软雅黑';
-                color: #8691a5;
-                background: #f1f3f4;
+                font-size: 20px!important;
+                font-family: 'PingFangRegular';
+                font-weight:550;
+                color: #666;
                 display: inline-block;
                 line-height: 50px;
                 padding-left: 12px;
@@ -667,7 +828,7 @@ export default {
                     height: 52px;
                     cursor: pointer;
                     background: #f1f3f4;
-                    color: #8691a5;
+                    color: #525252;
                     border-radius: 8px;
                     font-family: '微软雅黑';
                     padding-left: 4px;
