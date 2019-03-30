@@ -155,7 +155,7 @@
         }
       })
 //      this_.environment="http://test.open.qb-tech.net/chat_image/"
-      if(window.location.href.indexOf("test") > 0) {
+      if(window.location.href.indexOf("test") > 0 || window.location.href.indexOf("127.0.0.1") > 0) {
         this_.environment= "http://test.open.qb-tech.net/chat_image/";
           this.appkey = "8w7jv4qb829cy";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
       }else{
@@ -435,8 +435,9 @@
                     historyTextMessage(this_.targetIds.length,content_wrap.targetId,content_wrap.h5_record[5]);
                     this_.targetIds.push(content_wrap);
                     if(list[i].latestMessage.messageDirection==2) {
-                      this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
-                      })
+                      console.log('000111222')
+                      // this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
+                      // })
                     }else{
                       this_.db.getDataByKey(list[i].targetId,this_.targetIds.length-1).then(data=> {
                         if (data&&data.value) {
@@ -475,6 +476,7 @@
                   historyTextMessage(0,content_wrap.targetId,content_wrap.h5_record[5]);
                   this_.targetIds.push(content_wrap);
                   if(list[i].latestMessage.messageDirection==2) {
+                    console.log('222333444')
                     this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
                     })
                   }else{
@@ -800,6 +802,8 @@
                         this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                       }
                     }else{
+                      let numberRandom = Math.random()
+                      this_.$store.commit('setVoice',numberRandom)
                       this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
                     }
                   })

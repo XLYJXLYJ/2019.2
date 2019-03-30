@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+        .robot_settings > div {
+            margin-bottom: 20px;
+        }
+
+        .robot_settings > div:first-child {
+            margin-bottom: 0px;
+        }
+
+        .robot_settings {
+            margin-top: 10px;
+        }
+
+        .robot_settings span[disabled] {
+            font-size: 15px;
+            margin-left: 15px;
+        }
+
+        .alert {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 3;
+            display: none;
+        }
+
+        .alert_div {
+            position: relative;
+            width: 400px;
+            height: 370px;
+            background-color: white;
+            left: 0;
+            right: 0;
+            top: 50%;
+            bottom: 0;
+            margin: auto;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        .reset_passwd {
+            width: 100%;
+            text-align: center;
+            color: #524AE7;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        form > div {
+            width: 80%;
+            height: 55px;
+            margin: auto;
+        }
+
+        input[disabled] {
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        form > div:first-child {
+            height: 35px;
+        }
+
+        form > div input {
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #999999;
+
+        }
+
+        form > div input.verify {
+            width: 130px;
+        }
+
+        form .get {
+            display: inline-block;
+            padding: 0 10px;
+            color: white;
+            background-color: #524AE7;
+            border-radius: 5px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        form .sure, form .cancel {
+            display: inline-block;
+            width: 90px;
+            color: white;
+            background-color: #524AE7;
+            border-radius: 5px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        form .sure {
+            float: left;
+            margin-left: 30px;
+        }
+
+        form .cancel {
+            float: right;
+            margin-right: 30px;
+        }
+
+        .Validform_checktip.Validform_wrong {
+            margin-left: 65px;
+        }
+
+        .myform label {
+            font-size: 14px;
+            width: 70px;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .robot_settings > div > span:first-child {
+            margin-left: 0px;
+        }
+
+        .dataList {
+            width: 1694px;
+            height: 930px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 0px 4px 0px rgba(32, 23, 195, 0.09);
+            margin-left: 31px;
+            position: relative;
+            /* background-color: pink;*/
+        }
+        .dataList .sum {
+            width: 300px;
+            height: 240px;
+            margin-left: 29px;
+            margin-top: 32px;
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            position: relative;
+            float: left;
+        }
+        .dataList .sum span{
+            display: block;
+        }
+        .dataList .sum span:nth-child(1){
+            width: 200px;
+            height: 30px;
+            background: red;
+        }
+        .dataList .sum span:nth-child(2){
+            width: 150px;
+            height: 30px;
+            background: yellow;
+        }
+        .dataList .sum span:nth-child(3){
+            width: 100px;
+            height: 30px;
+            background: pink;
+        }
+        .dataList .sum span:nth-child(4){
+            width: 70px;
+            height: 30px;
+            background:yellowgreen;
+        }
+        .dataList .sum span:nth-child(5){
+            width: 40px;
+            height: 30px;
+            background:gray;
+        }
+        .allUser {
+            width: 300px;
+            height: 246px;
+            margin-left: 29px;
+            margin-top: 32px;
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            position: relative;
+            float: left;
+        }
+
+        .fiveUser {
+            margin-left: 20px;
+        }
+
+        .allUser .number {
+            width: 85px;
+            height: 21px;
+            font-size: 28px;
+            font-family: MicrosoftYaHei-Bold;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 1);
+            line-height: 18px;
+            display: inline-block;
+            margin-top: 39px;
+            margin-left: 23px;
+        }
+
+        .allUser > img {
+            position: absolute;
+            top: 26px;
+            right: 54px;
+        }
+
+        .allUser > span {
+            width: 70px;
+            height: 14px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(69, 69, 69, 1);
+            line-height: 18px;
+            position: absolute;
+            right: 29px;
+            top: 60px;
+        }
+        .allUser .customer{
+            width: 60px;
+        }
+        .allUser .line {
+            width: 248px;
+            height: 5px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 3px;
+            position: absolute;
+            top: 137px;
+            left: 23px;
+        }
+
+        .line .ratio {
+            /*width: 182px;*/
+            height: 5px;
+            background: rgba(76, 132, 255, 1);
+            border-radius: 3px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .roundFigure {
+            width: 415px;
+            height: 243px;
+            margin-left: 20px;
+            margin-top: 32px;
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            float: left;
+            position: relative;
+        }
+
+        .roundFigure #chartmain {
+            margin-left: 117px;
+            margin-top: 43px;
+        }
+
+        .roundFigure .point {
+            width: 6px;
+            height: 6px;
+            background: rgba(76, 132, 255, 1);
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 207px;
+            left: 223px;
+        }
+
+        .roundFigure .rightWord {
+            /*   width:112px;
+               height:14px;*/
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(153, 153, 153, 1);
+            line-height: 18px;
+            position: absolute;
+            left: 238px;
+            top: 200px;
+        }
+
+        .sandglass {
+            width: 301px;
+            height: 286px;
+            margin-left: 29px;
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            position: absolute;
+            top: 303px;
+            z-index: 100;
+            /*margin-top: 276px;*/
+
+        }
+
+        .sandglass .mark {
+            position: relative;
+            top: 26px;
+            width: 54px;
+            height: 54px;
+
+        }
+
+        .sandglass .mark:hover + .prompt {
+            display: block;
+        }
+
+        .sandglass .prompt {
+            width: 242px;
+            height: 79px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 10px;
+            position: absolute;
+            margin-left: 30px;
+            pointer-events: none;
+            bottom: 251px;
+            display: none;
+        }
+
+        .sandglass .prompt > p {
+            display: block;
+            width: 217px;
+            height: 45px;
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            /*color: rgba(254, 254, 254, 1);*/
+            line-height: 22px;
+        }
+
+        .sandglass .triangle {
+            width: 218px;
+            height: 209px;
+            margin-left: 54px;
+            position: absolute;
+            top: 38px;
+            background: url("./img/triangle.png") no-repeat;
+        }
+
+        .sandglass .triangle > span {
+            height: 14px;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+            line-height: 14px;
+            position: absolute;
+            left: 96px;
+        }
+
+        .sandglass .triangle > span:nth-child(1) {
+            top: 5px;
+        }
+
+        .sandglass .triangle > span:nth-child(2) {
+            top: 43px;
+        }
+
+        .sandglass .triangle > span:nth-child(3) {
+            top: 81px;
+        }
+
+        .sandglass .triangle > span:nth-child(4) {
+            top: 117px;
+        }
+
+        .sandglass .triangle > span:nth-child(5) {
+            top: 155px;
+        }
+
+        .sandglass2 {
+            margin-left: 350px;
+            width: 358px;
+            height: 286px;
+        }
+
+        .sandglass2 .number {
+            font-size: 24px;
+            font-family: MicrosoftYaHei-Bold;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 1);
+            line-height: 18px;
+            position: absolute;
+            right: 44px;
+            bottom: 55px;
+            display: block;
+            width: 73px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(1) {
+            left: 17px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(2) {
+            left: 32px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(3) {
+            left: 51px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(4) {
+            left: 69px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(5) {
+            left: 74px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(6) {
+            top: 5px;
+            left: 142px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(7) {
+            top: 43px;
+            left: 122px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(8) {
+            top: 81px;
+            left: 111px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(9) {
+            top: 117px;
+            left: 103px;
+        }
+
+        .sandglass2 .triangle > span:nth-child(10) {
+            top: 155px;
+            left: 98px;
+        }
+
+        .sandglass2 .bottomWord {
+            width: 80px;
+            height: 14px;
+            line-height: 14px;
+            position: absolute;
+            right: 38px;
+            bottom: 24px;
+
+        }
+
+        .sandglass2 .bottomWord > span {
+            width: 6px;
+            height: 6px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 4px;
+        }
+
+        .sandglass2 .bottomWord > p {
+            width: 69px;
+            height: 14px;
+            font-size: 13px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 14px;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+
+        }
+
+        .sandglass3 {
+            margin-left: 727px;
+        }
+    </style>
+</head>
+<body>
+<div id="count">
+    <div class="top">
+        <span>当前位置:<span class="current">数据统计</span><span>></span><span class="active">客户数据分析</span></span>
+        <span>
+					<a href='user.html'><span class="user"></span><span class="username">147</span><span class="company">平安</span></a>
+					<span class="login_out">退出</span>
+				</span>
+    </div>
+    <div class="aside">
+        <div class="logo">
+            <div>
+                <div>企保科技</div>
+                <p>科技连接保险未来</p>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <li class="li_father">
+                    <a href="index.html">
+                        <span class="icon icon1"></span>
+                        <span>概况统计</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon2"></span>
+                        <span>管理中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="base.html">
+                                <span class="icon icon4"></span>
+                                <span>基本配置</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="robot_manage.html">
+                                <span class="icon icon3"></span>
+                                <span>机器人管理</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+               <!-- <li class="li_father">
+                    <a>
+                        <span class="icon icon11"></span>
+                        <span>训练中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="history.html">
+                                <span class="icon icon6"></span>
+                                <span>历史对话</span>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>-->
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon7"></span>
+                        <span>用户中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                        <li class="li_sub">
+                            <a href="user.html">
+                                <span class="icon icon8"></span>
+                                <span>基本设置</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="manage.html">
+                                <span class="icon icon9"></span>
+                                <span>套餐&余额管理</span>
+                                <sup></sup>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="order.html">
+                                <span class="icon icon10"></span>
+                                <span>流量订单管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="balance_order_management.html">
+                                <span class="icon icon15"></span>
+                                <span>余额订单管理</span>
+                            </a>
+                        </li>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon13"></span>
+                        <span>人工客服</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="customer_service_manage.html">
+                                <span class="icon icon12"></span>
+                                <span>客服管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="work_statistics.html">
+                                <span class="icon icon14"></span>
+                                <span>历史客服工作统计</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="the_day_work_statistics.html">
+                                <span class="icon icon16"></span>
+                                <span>当天客服工作统计</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a class="active">
+                        <span class="icon icon17"></span>
+                        <span>数据统计</span>
+                        <span class="left active"></span>
+                    </a>
+                    <ul class="show">
+                        <li class="li_sub active">
+                            <a href="data_statistics.html">
+                                <span class="icon icon18"></span>
+                                <span>客户数据分析</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="li_father show_none" style="margin-left:8px;">
+                    <a>
+                        <span><img src="./img/qt01.png"></span>
+                        <span>智能质检</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="qt.html" target="_blank">
+                                <span><img src="./img/qt02.png"></span>
+                                <span>语音质检</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a class="callBtn">
+                        <span class="icon icon19"></span>
+                        <span>智能呼叫中心</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="conent">
+        <p class="conent_title">
+            <span></span>
+            <span>客户数据分析</span>
+        </p>
+        <div class="dataList">
+            </div>
+            <div class="allUser">
+                <p class="number all_num"></p>
+                <img src="./img/small_user_img.png" alt="">
+                <span class="customer">客户数</span>
+                <div class="line"></div>
+            </div>
+            <div class="allUser fiveUser">
+                <p class="number all_five_num"></p>
+                <img src="./img/smallStar.png" alt="">
+                <span>五级客户数</span>
+                <div class="line">
+                    <span class="ratio"></span>
+                </div>
+            </div>
+            <div class="roundFigure floatLeft">
+                <div id="chartmain" style="height:133px;width:133px;"></div>
+                <span class="point"></span>
+                <p class="rightWord">购买意向客户比例</p>
+            </div>
+            <div class="sandglass">
+                <div class="mark">
+                    <img src="./img/mark.png" alt="">
+                </div>
+                <div class="prompt">
+                    <p>机器人会根据客户咨询内容进行分析，并对其评级，级别越高，购买意向越高。</p>
+                </div>
+                <div class="triangle">
+                    <span>1级</span>
+                    <span>2级</span>
+                    <span>3级</span>
+                    <span>4级</span>
+                    <span>5级</span>
+                </div>
+            </div>
+            <div class="sandglass sandglass2">
+                <div class="triangle">
+                    <span>1级</span>
+                    <span>2级</span>
+                    <span>3级</span>
+                    <span>4级</span>
+                    <span>5级</span>
+                    <span class="yesterday_num"></span>
+                    <span class="yesterday_two_num"></span>
+                    <span class="yesterday_three_num"></span>
+                    <span class="yesterday_four_num"></span>
+                    <span class="yesterday_five_num"></span>
+                </div>
+                <p class="number yesterday_sum"></p>
+                <div class="bottomWord">
+                    <span></span>
+                    <p>昨日总人数</p>
+                </div>
+            </div>
+            <div class="sandglass sandglass2 sandglass3">
+                <div class="triangle">
+                    <span>1级</span>
+                    <span>2级</span>
+                    <span>3级</span>
+                    <span>4级</span>
+                    <span>5级</span>
+                    <span class="month_num"></span>
+                    <span class="month_two_num"></span>
+                    <span class="month_three_num"></span>
+                    <span class="month_four_num"></span>
+                    <span class="month_five_num"></span>
+                </div>
+                <p class="number month_sum"></p>
+                <div class="bottomWord">
+                    <span></span>
+                    <p>本月总人数</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/laydate.js"></script>
+<script src="js/common.js"></script>
+<script src="js/echarts.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $.ajax({
+            type: "get",
+            url: "http://localhost:63342/static/ai_cms/data.json",
+            /*url:"/merchant/v2.0/robot/robot_level",*/
+            async: true,
+            success: function (data) {
+                if (data.msg == 'ok') {
+                    var msg = data.data;
+                    var value = parseInt(data.data.all_dir_num.purchase_custmer);
+                    var allNum = msg.all_dir_num.all_num;
+                    var fiveNum = msg.all_dir_num.all_five_num;
+                    var lineWidth = $(".line").width();
+                    var percentage = fiveNum / allNum;
+                    var ratioWidth = lineWidth * percentage;
+                    //图表部分
+                    var option = {
+                        title: {
+                            text: value + "%",
+                            x: 'center',
+                            y: 'center',
+                            textStyle: {
+                                fontWeight: 'normal',
+                                color: '#000',
+                                fontSize: '16',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        color: ['rgba(176, 212, 251, 1)'],
+                        series: [{
+                            name: 'Line 1',
+                            type: 'pie',
+                            clockWise: true,
+                            radius: ['50%', '66%'],
+                            hoverLink: false,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: false
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            hoverAnimation: false,
+                            clockwise: false,
+                            color: ['#4C84FF', '#CEDDFF'],
+                            data: [{
+                                value: value,
+                                name: '01',
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            show: false
+                                        },
+                                        labelLine: {
+                                            show: false
+                                        }
+                                    }
+                                }
+                            }, {
+                                name: '02',
+                                value: 100-value
+                            }]
+                        }]
+                    }
+                    //初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('chartmain'));
+                    //使用制定的配置项和数据显示图表
+                    myChart.setOption(option);
+                    myChart.on("mouseover", function (params) {
+                        myChart.dispatchAction({
+                            type: 'downplay'
+                        });
+                    });
+
+                    $(".ratio").width(ratioWidth);
+                    $('.all_num').text(msg.all_dir_num.all_num);
+                    $('.all_five_num').text(msg.all_dir_num.all_five_num);
+
+                    $(".yesterday_num").text(msg.yes_dir_num.yesterday_num + "人")
+                    $(".yesterday_two_num").text(msg.yes_dir_num.yesterday_two_num + "人")
+                    $(".yesterday_three_num").text(msg.yes_dir_num.yesterday_three_num + "人")
+                    $(".yesterday_four_num").text(msg.yes_dir_num.yesterday_four_num + "人")
+                    $(".yesterday_five_num").text(msg.yes_dir_num.yesterday_five_num + "人")
+                    $(".yesterday_sum").text(msg.yes_dir_num.yesterday_num)
+
+                    $(".month_num").text(msg.yes_dir_num.yesterday_num + "人")
+                    $(".month_two_num").text(msg.yes_dir_num.yesterday_two_num + "人")
+                    $(".month_three_num").text(msg.yes_dir_num.yesterday_three_num + "人")
+                    $(".month_four_num").text(msg.yes_dir_num.yesterday_four_num + "人")
+                    $(".month_five_num").text(msg.yes_dir_num.yesterday_five_num + "人")
+                    $(".month_sum").text(msg.yes_dir_num.yesterday_num)
+
+
+                } else if (data.errmsg == '用户未登录') {
+                    window.location.href = "login.html";
+                }
+
+            }
+        })
+    })
+
+
+
+
+    /*
+          var option = {
+              title: {
+                  text: value,
+                  x: 'center',
+                  y: 'center',
+                  textStyle: {
+                      fontWeight: 'normal',
+                      color: '#000',
+                      fontSize: '16',
+                      fontWeight: 'bold'
+                  }
+              },
+              color: ['rgba(176, 212, 251, 1)'],
+              series: [{
+                  name: 'Line 1',
+                  type: 'pie',
+                  clockWise: true,
+                  radius: ['50%', '66%'],
+                  hoverLink: false,
+                  itemStyle: {
+                      normal: {
+                          label: {
+                              show: false
+                          },
+                          labelLine: {
+                              show: false
+                          }
+                      }
+                  },
+                  hoverAnimation: false,
+                  clockwise: false,
+                  color: ['#4C84FF', '#CEDDFF'],
+                  data: [{
+                      value:value ,
+                      name: '01',
+                      itemStyle: {
+                          normal: {
+                              label: {
+                                  show: false
+                              },
+                              labelLine: {
+                                  show: false
+                              }
+                          }
+                      }
+                  }, {
+                      name: '02',
+                      value: 20
+                  }]
+              }]
+          }
+          //初始化echarts实例
+          var myChart = echarts.init(document.getElementById('chartmain'));
+          //使用制定的配置项和数据显示图表
+          myChart.setOption(option);
+          myChart.on("mouseover", function (params) {
+              myChart.dispatchAction({
+                  type: 'downplay'
+              });
+          });
+          /!* myChart.setOption({        //加载数据图表
+              title:{
+                /!*  text:"21"*!/
+              },
+               series:[{
+                   data:[{
+                       value:20
+                   }]
+               }]
+           });*!/
+      */
+
+</script>
+</body>
+</html>

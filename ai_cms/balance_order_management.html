@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+        .conent {
+            width: calc(100vw - 170px);
+            min-width: 1110px;
+        }
+
+        .conent .condition {
+            margin-left: 60px;
+            margin-top: 40px;
+        }
+
+        .conent .condition input {
+            text-align: center;
+        }
+
+        .search {
+            margin-left: 40px;
+        }
+
+        .conent .lists .list > div > .desc > span:first-child {
+            border-right: none;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+<div id="count">
+    <div class="top">
+        <span>当前位置:<span class="current">用户中心</span><span>></span><span class="active">余额订单管理</span></span>
+        <span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span
+                            class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>
+
+    </div>
+    <div class="aside">
+        <div class="logo">
+            <div>
+                <div>企保科技</div>
+                <p>科技连接保险未来</p>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <li class="li_father">
+                    <a href="index.html">
+                        <span class="icon icon1"></span>
+                        <span>概况统计</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon2"></span>
+                        <span>管理中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="robot_manage.html">
+                                <span class="icon icon3"></span>
+                                <span>机器人管理</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+              <!--  <li class="li_father">
+                    <a>
+                        <span class="icon icon11"></span>
+                        <span>训练中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="history.html">
+                                <span class="icon icon6"></span>
+                                <span>历史对话</span>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>-->
+                <li class="li_father">
+                    <a class="active">
+                        <span class="icon icon7"></span>
+                        <span>用户中心</span>
+                        <span class="left active"></span>
+                    </a>
+                    <ul class="show">
+                        <li class="li_sub">
+                            <a href="user.html">
+                                <span class="icon icon8"></span>
+                                <span>基本设置</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="manage.html">
+                                <span class="icon icon9"></span>
+                                <span>套餐&余额管理</span>
+                                <sup></sup>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="order.html">
+                                <span class="icon icon10"></span>
+                                <span>流量订单管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub active">
+                            <a href="balance_order_management.html">
+                                <span class="icon icon15"></span>
+                                <span>余额订单管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon13"></span>
+                        <span>人工客服</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="customer_service_manage.html">
+                                <span class="icon icon12"></span>
+                                <span>客服管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="work_statistics.html">
+                                <span class="icon icon14"></span>
+                                <span>历史客服工作统计</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="the_day_work_statistics.html">
+                                <span class="icon icon16"></span>
+                                <span>当天客服工作统计</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon17"></span>
+                        <span>数据分析</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="data_statistics.html">
+                                <span class="icon icon18"></span>
+                                <span>销售漏斗</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="robotData.html">
+                                <span class="icon icon6"></span>
+                                <span>机器人数据</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="serviceData.html">
+                                <span class="icon icon20"></span>
+                                <span>客服数据</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father show_none" style="margin-left:8px;">
+                    <a>
+                        <span><img src="./img/qt01.png"></span>
+                        <span>智能质检</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="qt.html" target="_blank">
+                                <span><img src="./img/qt02.png"></span>
+                                <span>语音质检</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a class="callBtn">
+                        <span class="icon icon19"></span>
+                        <span>智能呼叫中心</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="conent">
+        <p class="conent_title">
+            <span></span>
+            <span>余额订单管理</span>
+        </p>
+        <div class="select">
+            <div class="active">未完成订单</div>
+            <div>已完成订单</div>
+            <div>已取消订单</div>
+        </div>
+        <div class="condition">
+            <label>创建时间：</label>
+            <input name="start_date" id="dateStart" type="text" placeholder="开始时间" readonly="readonly">
+            <span>至</span>
+            <input name="end_date" id="dateEnd" type="text" placeholder="结束时间" readonly="readonly">
+            <span class="search">搜索</span>
+        </div>
+        <div class="lists">
+            <div class="list1 list">
+                <div>
+                    <div class="order">
+                        <span class="dateTime">2018-7-15 18:56:00</span>
+                        <span class="order_id">订单号：Q1234567809</span>
+                    </div>
+                    <div class="desc">
+                        <span>充值金额：3000CNY</span>
+                        <span>
+									<span class="pay">立即支付</span>
+									<span class="cancel">取消</span>
+								</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="order">
+                        <span class="dateTime">2018-7-15 18:56:00</span>
+                        <span class="order_id">订单号：Q1234567809</span>
+                    </div>
+                    <div class="desc">
+                        <span>充值金额：3000CNY</span>
+                        <span>
+									<span class="pay">立即支付</span>
+									<span class="cancel">取消</span>
+								</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="order">
+                        <span class="dateTime">2018-12-13 10:19:00</span>
+                        <span class="order_id">订单号：2018121310190641</span>
+                    </div>
+                    <div class="desc">
+                        <span>充值余额：￥0.1</span>
+                        <span>
+									<span class="pay" recharge_money="0.1">立即支付</span>
+									<span class="cancel">取消</span>
+								</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer">
+                        <span class="start">首页</span>
+                        <span class="pre"></span>
+                        <span class="active page">1</span>
+                        <span class="page">2</span>
+                        <span class="page">3</span>
+                        <span class="page">4</span>
+                        <span class="page">5</span>
+                        <span class="next"></span>
+                        <span class="end">末页</span>
+                        <span class="amount">共<span class="number">1</span>页</span>
+                        <input type="text"/>
+                        <span class="ship">跳转</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list2 list">
+                <div>
+                    <div class=footer>
+                        <span class="start">首页</span>
+                        <span class="pre"></span>
+                        <span class="active page">1</span>
+                        <span class="page">2</span>
+                        <span class="page">3</span>
+                        <span class="page">4</span>
+                        <span class="page">5</span>
+                        <span class="next"></span>
+                        <span class="end">末页</span>
+                        <span class="amount">共<span class="number">1</span>页</span>
+                        <input type="text"/>
+                        <span class="ship">跳转</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list3 list">
+                <div>
+                    <div class=footer>
+                        <span class="start">首页</span>
+                        <span class="pre"></span>
+                        <span class="active page">1</span>
+                        <span class="page">2</span>
+                        <span class="page">3</span>
+                        <span class="page">4</span>
+                        <span class="page">5</span>
+                        <span class="next"></span>
+                        <span class="end">末页</span>
+                        <span class="amount">共<span class="number">0</span>页</span>
+                        <input type="text"/>
+                        <span class="ship">跳转</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script src="js/laydate.js"></script>
+<script>
+    //			var UNFINSH="/merchant/v2.0/unfinish_order";
+    //			var FINISH="/merchant/v2.0/finish_order";
+    //			var CANCAL="/merchant/v2.0/cancell_order"
+    var start = laydate.render({
+        elem: '#dateStart', //指定元素
+        type: 'date',
+        done: function (value, date, endDate) {
+            end.config.min = {
+                year: date.year,
+                month: date.month - 1,
+                date: date.date
+            }
+        }
+
+    });
+    var end = laydate.render({
+        elem: '#dateEnd', //指定元素
+        type: 'date',
+        done: function (value, date, endDate) {
+            start.config.max = {
+                year: date.year,
+                month: date.month - 1,
+                date: date.date
+            }
+        }
+    })
+    //			$('#dateStart').trigger('change');
+    //			$('#dateStart').change(function(){
+    //				end.config.min=$('#dateStart').val();
+    //			})
+
+    $('.select>div').click(function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings('div').removeClass('active');
+        $('.list' + parseInt(index + 1)).show().siblings('div').hide();
+        $('.footer:eq(' + index + ') .start').click();
+    })
+    $(document).ready(function () {
+        var data = {'page': 1, 'recharge_pay_status': 0};
+        paging1(data).then(function (size) {
+            if (size == 0) {
+                $('.footer:eq(0) .page').hide();
+            } else if (size < 5) {
+                $('.footer:eq(0) .page:gt(' + parseInt(size - 1) + ')').hide();
+                $('.footer:eq(0) .end').hide();
+            }
+            $('.footer:eq(0) .start').hide();
+            $('.footer:eq(0) .number').text(size);
+        })
+
+
+    })
+    //首页
+    $('.start').click(function () {
+        var index = $('.list .start').index(this);
+        var start_date = $('#dateStart').val();
+        var end_date = $('#dateEnd').val();
+        var data = {'page': 1, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+        paging1(data).then(function (size) {
+            $('.footer:eq(' + index + ') .page').show();
+            if (size == 0) {
+                $('.footer:eq(' + index + ') .page').hide();
+            } else if (size <= 5) {
+                $('.footer:eq(' + index + ') .page:gt(' + parseInt(size - 1) + ')').hide();
+                $('.footer:eq(' + index + ') .end').hide();
+            } else {
+                $('.footer:eq(' + index + ') .end').show();
+            }
+            $('.footer:eq(' + index + ') .number').text(size);
+
+        })
+        $('.footer:eq(' + index + ') .page').show();
+        var number = $('.footer:eq(' + index + ') .number').text();
+        $.each($('.footer:eq(' + index + ') .page'), function (i) {
+            if (1 + i > number) {
+                $(this).hide();
+                $('.footer:eq(' + index + ') .end').hide();
+            } else {
+                $(this).text(1 + i);
+            }
+        });
+        $('.footer:eq(' + index + ') .start').hide();
+        $('.footer:eq(' + index + ') .page').eq(0).addClass('active').siblings('.page').removeClass('active');
+    })
+    //末页
+    $('.end').click(function () {
+        var index = $('.list .end').index(this);
+        var start_date = $('#dateStart').val();
+        var end_date = $('#dateEnd').val();
+        var p = $('.footer:eq(' + index + ') .number').text()
+        var data = {'page': p, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+        paging1(data).then(function (size) {
+            $('.footer:eq(' + index + ') .number').text(size);
+        })
+
+        $('.footer:eq(' + index + ') .end').hide();
+        //var number=Math.floor(p/5);
+        var number = Math.ceil(p / 5) - 1;
+        number = number * 5;
+        var page = $('.footer:eq(' + index + ') .number').text();
+        $.each($('.footer:eq(' + index + ') .page'), function (i) {
+            if (number + 1 + i > parseInt(page)) {
+                $(this).hide();
+                $('.footer:eq(' + index + ') .end').hide();
+            }
+            $(this).text(number + 1 + i);
+            if (number + 1 + i == p) {
+                $(this).addClass('active');
+                $('.footer:eq(' + index + ') .page').not(this).removeClass('active');
+                $('.footer:eq(' + index + ') .end').hide();
+            }
+
+        });
+        if (p > 5) {
+            $('.footer:eq(' + index + ') .start').show();
+        } else {
+            $('.footer:eq(' + index + ') .start').hide();
+        }
+
+    })
+    //分页
+    $('.page').click(function () {
+        var index = $('.list .footer').index($(this).parents('.footer'));
+        var this_ = $(this);
+        var p = $(this).text();
+        //var page = $('.footer:eq('+index+') .page').text();
+        var number = $('.footer:eq(' + index + ') .number').text();
+        var start_date = $('#dateStart').val();
+        var end_date = $('#dateEnd').val();
+        if (p == number) {//末页
+            $('.footer:eq(' + index + ') .end').click();
+        } else if (p == 1) {//首页
+            $('.footer:eq(' + index + ') .start').click();
+        } else {
+            var data = {'page': p, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+            paging1(data).then(function (size) {
+                $('.footer:eq(' + index + ') .number').text(size);
+            })
+
+            $(this_).addClass('active');
+            $('.footer:eq(' + index + ') .page').not(this_[0]).removeClass('active');
+        }
+    })
+    //上一页
+    $('.pre').click(function () {
+        var index = $('.list .pre').index(this);
+        var value = $('.footer:eq(' + index + ') .page').eq(0).text();
+        var start_date = $('#dateStart').val();
+        var end_date = $('#dateEnd').val();
+        value = parseInt(value);
+        if (value == 1) {
+            return false;
+        } else {
+            $('.footer:eq(' + index + ') .page').show();
+            $.each($('.footer:eq(' + index + ') .page'), function (i) {
+                $(this).text(value - 5 + i);
+            });
+            $('.footer:eq(' + index + ') .end').show();
+            var p = $('.footer:eq(' + index + ') .active').text();
+            if (p == 1) {
+                $('.footer:eq(' + index + ') .start').hide();
+            } else {
+                $('.footer:eq(' + index + ') .start').show();
+            }
+            var data = {'page': p, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+            paging1(data).then(function (size) {
+                $('.footer:eq(' + index + ') .number').text(size);
+            })
+        }
+    })
+    //下一页
+    $('.next').click(function () {
+        var index = $('.list .next').index(this);
+        var value = $('.footer:eq(' + index + ') .page:visible').eq(-1).text();
+        var number = $('.footer:eq(' + index + ') .number').text();
+        var start_date = $('#dateStart').val();
+        var end_date = $('#dateEnd').val();
+        value = parseInt(value);
+        number = parseInt(number);
+        if (value == number) {
+            return false;
+        } else {
+            $('.footer:eq(' + index + ') .page').show();
+            $('.footer:eq(' + index + ') .start').show();
+            $.each($('.footer:eq(' + index + ') .page'), function (i) {
+                if (value + 1 + i > number) {
+                    $(this).hide();
+                    $('.footer:eq(' + index + ') .end').hide();
+                } else {
+                    $(this).text(value + 1 + i);
+                }
+            });
+            var p = $('.footer:eq(' + index + ') .page.active').text();
+            $('.footer:eq(' + index + ') .page').eq(0).addClass('active').siblings('.page').removeClass('active');
+            var data = {'page': p, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+            paging1(data).then(function (size) {
+                $('.footer:eq(' + index + ') .number').text(size);
+
+            })
+        }
+    })
+    $('.ship').click(function () {
+        var index = $('.list .ship').index(this);
+        if ($(this).hasClass('active')) {
+            var start_date = $('#dateStart').val();
+            var end_date = $('#dateEnd').val();
+            var p = $('.footer:eq(' + index + ') input').val();
+            var page = $('.footer:eq(' + index + ') .number').text();
+            $('.footer:eq(' + index + ') input').val('');
+            $('.footer:eq(' + index + ') .page').show();
+            var number = Math.ceil(p / 5) - 1;
+            number = number * 5;
+
+            if (page > 5) {
+                $('.footer:eq(' + index + ') .end').show();
+            } else {
+                $('.footer:eq(' + index + ') .end').hide();
+            }
+            $.each($('.footer:eq(' + index + ') .page'), function (i) {
+                if (number + 1 + i > page) {
+                    $(this).hide();
+                    $('.footer:eq(' + number + ') .end').hide();
+                }
+                $(this).text(number + 1 + i);
+                if (number + 1 + i == p) {
+                    $(this).addClass('active');
+                    $('.footer:eq(' + index + ') .page').not(this).removeClass('active');
+                }
+
+            });
+            $('.footer:eq(' + index + ') .ship').removeClass('active');
+            if ($('.footer:eq(' + index + ') .page').eq(0).text() == 1 && $('.footer:eq(' + index + ') .page:visible').eq(-1).text() == page) {
+                $('.footer:eq(' + index + ') .start').hide();
+                $('.footer:eq(' + index + ') .end').hide();
+            } else if ($('.footer:eq(' + index + ') .page').eq(0).text() == 1) {
+                $('.footer:eq(' + index + ') .start').hide();
+                $('.footer:eq(' + index + ') .end').show();
+            } else if ($('.footer:eq(' + index + ') .page:visible').eq(-1).text() == page) {
+                $('.footer:eq(' + index + ') .start').show();
+                $('.footer:eq(' + index + ') .end').hide();
+            } else {
+                $('.footer:eq(' + index + ') .start').show();
+                $('.footer:eq(' + index + ') .end').show();
+            }
+            var data = {'page': p, 'start_date': start_date, 'end_date': end_date, 'recharge_pay_status': index};
+            paging1(data).then(function (size) {
+                $('.footer:eq(' + index + ') .number').text(size);
+
+            })
+
+
+        }
+    })
+    //搜索
+    $('.search').click(function () {
+        var index = $('.select div.active').index();
+        $('.footer:eq(' + index + ') .start').click();
+    })
+
+    function paging1(param) {
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                type: "get",
+                url: '/merchant/v2.0/balance_recharge',
+                async: false,
+                data: param,
+            }).done((data) => {
+                if (data.errmsg == '用户未登录') {
+                    window.location.href = "login.html";
+                }
+                var size = data.total_num % 10 == 0 ? data.total_num / 10 : parseInt(data.total_num / 10) + 1;
+                //var size=;
+                data = data.data;
+                var str = "";
+                $('.list' + parseInt(param.recharge_pay_status + 1)).children('div').not($('.list' + parseInt(param.recharge_pay_status + 1)).children('div').eq(-1)).remove();
+                if (data.length != 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (param.recharge_pay_status == 0) {
+                            str += '<div>';
+                            str += '<div class="order">';
+                            str += '<span class="dateTime">' + data[i].recharge_time + '</span>';
+                            str += '<span class="order_id" style="display:none">订单号：' + data[i].recharge_number + '</span>';
+                            str += '</div>';
+                            str += '<div class="desc">';
+                            str += '<span>充值余额：￥' + data[i].recharge_money + '</span>';
+                            str += '<span>'
+                            str += '<span class="pay" recharge_money="' + data[i].recharge_money + '" >立即支付</span>';
+                            str += '<span class="cancel">取消</span>';
+                            str += '</span>';
+                            str += '</div>';
+                            str += '</div>'
+                        } else if (param.recharge_pay_status == 1) {
+                            str += '<div>';
+                            str += '<div class="order">';
+                            str += '<span class="dateTime">' + data[i].recharge_time + '</span>';
+                            str += '<span class="order_id" style="display:none">订单号：' + data[i].recharge_number + '</span>';
+                            str += '</div>';
+                            str += '<div class="desc">';
+                            str += '<span>充值余额：￥' + data[i].recharge_money + '</span>';
+                            str += '<span>已完成</span>';
+                            str += '</div>';
+                            str += '</div>'
+                        } else if (param.recharge_pay_status == 2) {
+                            str += '<div>';
+                            str += '<div class="order">';
+                            str += '<span class="dateTime">' + data[i].recharge_time + '</span>';
+                            str += '<span class="order_id style="display:none"">订单号：' + data[i].recharge_number + '</span>';
+                            str += '<span class="delet"></span>';
+                            str += '</div>';
+                            str += '<div class="desc">';
+                            str += '<span>充值余额：￥' + data[i].recharge_money + '</span>';
+                            str += '<span>已取消</span>';
+                            str += '</div>';
+                            str += '</div>'
+                        }
+                    }
+                    $('.list' + parseInt(param.recharge_pay_status + 1) + ' .footer').parent('div').before(str);
+                    $('.footer').show();
+                } else {
+                    $('.footer').hide();
+                }
+                resolve(size);
+
+            })
+        })
+
+    }
+
+    //删除已取消订单
+    $(document).on('click', '.delet', function () {
+        if (confirm("是否确认删除？")) {
+            var recharge_number = $(this).siblings('.order_id').text();
+            recharge_number = recharge_number.substring(4, recharge_number.length);
+            $.ajax({
+                type: "put",
+                url: "/merchant/v2.0/recharge_status_change",
+                async: true,
+                data: {'recharge_number': recharge_number},
+                success: function (data) {
+                    if (data.msg == 'ok') {
+                        $('.footer:eq(2) .start').click();
+                    } else if (data.errmsg == '用户未登录') {
+                        window.location.href = "login.html";
+                    }
+
+                }
+            });
+        }
+
+    })
+    //取消未支付订单
+    $(document).on('click', '.cancel', function () {
+        if (confirm("是否确认取消？")) {
+            var recharge_number = $(this).parents('.desc').siblings('.order').find('.order_id').text();
+            recharge_number = recharge_number.substring(4, recharge_number.length);
+            var data = {'recharge_number': recharge_number};
+            $.ajax({
+                type: "post",
+                url: "/merchant/v2.0/recharge_status_change",
+                async: true,
+                data: data,
+                success: function (data) {
+                    if (data.msg == 'ok' && data.data == "未完成订单取消成功") {
+                        $('.footer:eq(0) .start').click();
+                    } else if (data.errmsg == '用户未登录') {
+                        window.location.href = "login.html";
+                    }
+                }
+            });
+        }
+
+
+    })
+    //立即支付
+    $(document).on('click', '.pay', function () {
+
+        var recharge_number = $(this).parents('.desc').siblings('.order').find('.order_id').text();
+        recharge_number = recharge_number.substring(4, recharge_number.length);
+        var recharge_money = $(this).attr('recharge_money');
+        localStorage.setItem('recharge_number', recharge_number);
+        localStorage.setItem('recharge', recharge_money);
+        window.location = "pay.html";
+//      		$.ajax({
+//					type:"put",
+//					url:"/merchant/v2.0/order_pay",
+//					data:{'order_number':order_number},
+//					async:true,
+//					success:function(data){
+//						if(data.status=='200'){
+//							data=data.data;
+//							localStorage.setItem('order_number',data[0].order_number);
+//							localStorage.setItem('order_time',data[0].order_time);
+//							localStorage.setItem('order_type',data[0].order_type);
+//							localStorage.setItem('price',data[0].price);
+//							localStorage.setItem('dialogue_number',data[0].dialogue_number);
+//							localStorage.setItem('order_validity_period',data[0].order_validity_period);
+//							localStorage.setItem('Preferential_information',data[0].Preferential_information);
+//							window.location="pay.html";
+//						}else if(data.errmsg=='用户未登录'){
+//							window.location.href="login.html";
+//						}
+//						
+//					}
+//				})	
+    })
+</script>
+</body>
+</html>

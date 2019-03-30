@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			input[type='file'],.submit,.product_id,.sub_btn{
+				display: none;
+			}
+			form{display: inline-block;}
+			.back{
+				height:35px;
+				display: inline-block;
+				padding: 0  20px;
+				text-align: center;
+				line-height:35px ;
+				background-color: #524AE7;
+				color: white;
+				border-radius: 5px;
+				margin-top: 20px;
+				margin-left: 40px;
+			}
+			.back a{
+				color: white;
+			}
+			.conent .result{
+				margin-left:40px;
+				margin-top: 10px;
+				font-size:14px ;
+			}
+			.download{
+				/*display: block;*/
+				color: #524AE7;
+				font-size: 14px;
+				margin-left: 40px;
+				margin-top: 30px;
+				cursor: pointer;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">管理中心</span><span>></span><span class="current">机器人管理</span><span>></span><span class="current">Q&A固定问答配置</span><span>></span><span class="active">批量导入结果</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+				<!---->
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				            <ul class="show">
+				                <li class="li_sub active">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  	
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				      <!--  <li class="li_father">
+				        	<a>
+				        		<span class="icon icon11"></span>
+				        	  	<span>训练中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="history.html">
+				                		<span class="icon icon6"></span>
+				        	  			<span>历史对话</span>
+				                	</a>
+				                	
+				                </li>
+				               
+				            </ul>
+				        </li>-->
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub">
+				                	<li class="li_sub">
+				                		<a href="user.html">
+					                		<span class="icon icon8"></span>
+					        	  			<span>基本设置</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="manage.html">
+					                		<span class="icon icon9"></span>
+					        	  			<span>套餐&余额管理</span>
+					        	  			<sup></sup>
+					                	</a>
+					                </li>
+				                	<li class="li_sub">
+					                	<a href="order.html">
+					                		<span class="icon icon10"></span>
+					        	  			<span>流量订单管理</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="balance_order_management.html">
+					                		<span class="icon icon15"></span>
+					        	  			<span>余额订单管理</span>
+					                	</a>
+					                </li>
+				                </li>
+				               
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father show_none" style="margin-left:8px;">
+							<a>
+								<span><img src="./img/qt01.png"></span>
+								<span>智能质检</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="qt.html" target="_blank">
+										<span><img src="./img/qt02.png"></span>
+										<span>语音质检</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>批量导入结果</span>
+				</p>
+				<p class="result">本次共上传问答对数据<span class="sum"></span>条,成功导入<span class="success"></span>条</p>
+				<span class="download">下载错误数据表格</span>
+				<form action="/merchant/v2.0/robot/volume_fail"  method="get" >
+					<span class="back"><a href="Q&A.html">返回列表</a></span>
+					<input type="submit" class="submit"/>
+				</form>	
+			</div>
+			
+			
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			(function(){
+				$('.sum').text(parseInt(localStorage.getItem("success"))+parseInt(localStorage.getItem("fail")));
+				$('.success').text(localStorage.getItem("success"));
+				if(localStorage.getItem("fail")>0){
+					$('.download').css('display','block');
+				}
+			})();
+			$('.download').click(function(){
+				$('.submit').click();
+			})
+			var url = location.search;
+			var temp=[];
+		    if(url.indexOf("?") != -1){    
+		      	var strs = url.substr(1); 
+		      	var str = strs.split("&");
+		      	for(var i=0;i<str.length;i++){
+		      		temp.push(str[i].split("="))
+		      	}
+		      	$('.back a').attr("href","Q&A.html?robot_code="+temp[0][1]+"&product_id="+temp[1][1]);
+		    }
+		      		 
+		      	
+		    
+		</script>	
+	</body>
+</html>

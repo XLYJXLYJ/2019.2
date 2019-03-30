@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			.conent{
+				width:calc(100vw - 170px);
+				min-width: 1110px;
+			}
+			.pay-way{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">用户中心</span><span>></span><span class="current">套餐&余额管理</span><span>></span><span class="active">余额充值</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+				
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  	
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				        	<ul class="show">
+				                <li class="li_sub">
+			                		<a href="user.html">
+				                		<span class="icon icon8"></span>
+				        	  			<span>基本设置</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub active">
+				                	<a href="manage.html">
+				                		<span class="icon icon9"></span>
+				        	  			<span>套餐&余额管理</span>
+				        	  			<sup></sup>
+				                	</a>
+				                </li>
+			                	<li class="li_sub">
+				                	<a href="order.html ">
+				                		<span class="icon icon10"></span>
+				        	  			<span>流量订单管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="balance_order_management.html">
+				                		<span class="icon icon15"></span>
+				        	  			<span>余额订单管理</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father show_none" style="margin-left:8px;">
+							<a>
+								<span><img src="./img/qt01.png"></span>
+								<span>智能质检</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="qt.html" target="_blank">
+										<span><img src="./img/qt02.png"></span>
+										<span>语音质检</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>余额充值</span>
+				</p>
+				<div class="pay-way">
+					<span>支付方式</span>
+				</div>
+				<div class="pay-ways">
+					<div class="weChat_pay active">
+						<img src="img/weChat.png">
+						<span>微信支付</span>
+					</div>
+					<div class="transfer_pay">
+						<img src="img/transfer.png">
+						<span>转账支付</span>
+					</div>
+				</div>
+				<span class="tips">温馨提示：微信支付每笔最高交易金额为5000元</span>
+				<div class="banks">
+					<span class="sub-title">企业银行支付</span>
+					<ul>
+						<li class="ICBC"  bank_code="ICBC-NET-B2B" >
+							<img src="img/ICBC.jpg" />
+						</li>
+						<li class="CMB"  bank_code="CMBCHINA-NET-B2B">
+							<img src="img/CMB.gif" />
+						</li>
+						<li class="ABC" bank_code=" ABC-NET-B2B">
+							<img src="img/ABC.png" />
+						</li>
+						<li class="CCB" bank_code="CCB-NET-B2B">
+							<img src="img/CCB.png" />
+						</li>
+						<li class="guangda" bank_code="CEB-NET-B2B">
+							<img src="img/guangda.jpg" />
+						</li>
+						<li class="BOC" bank_code="BOC-NET-B2B">
+							<img src="img/BOC.png" />
+						</li>
+						<li class="PAB" bank_code="SDB-NET-B2B">
+							<img src="img/PAB.png" />
+						</li>
+						<li class="SPDB" bank_code="SPDB-NET-B2B">
+							<img src="img/SPDB.png" />
+						</li>
+						<li class="CMHB" bank_code="CMBC-NET-B2B">
+							<img src="img/CMHB.png" />
+						</li>
+					</ul>
+					<span class="sub-title">个人网银支付</span>
+					<ul>
+						<li class="CMB" bank_code="CMBCHINA-NET-B2C">
+							<img src="img/CMB.gif" />
+						</li>
+						<li class="PAB" bank_code="PINGANBANK-NET-B2C">
+							<img src="img/PAB.png" />
+						</li>
+						<li class="CCB" bank_code="CCB-NET-B2C">
+							<img src="img/CCB.png" />
+						</li>
+						<li class="ABC" bank_code="ABC-NET-B2C">
+							<img src="img/ABC.png" />
+						</li>
+						<li class="ICBC" bank_code="ICBC-NET-B2C">
+							<img src="img/ICBC.jpg" />
+						</li>
+						<li class="BOC" bank_code="BOC-NET-B2C">
+							<img src="img/BOC.png" />
+						</li>
+						<li class="PSBOC" bank_code="POST-NET-B2C">
+							<img src="img/PSBOC.png" />
+						</li>
+						<li class="CMHB" bank_code="CMBC-NET-B2C">
+							<img src="img/CMHB.png" />
+						</li>
+					</ul>
+				</div>
+				<div class="pay">
+					<span class="go">支付</span>
+					<span class="sum">CNY<span class="active">2000.00</span></span>
+					<span class="money">总价：</span>
+				</div>
+			</div>
+		</div>
+		<div class="alert">
+			<div class="weChat_pay">
+				<span class="close">×</span>
+				<div class="weChat_way">微信支付</div>
+				<div class="ewm"><!---->
+					<span>微信支付扫码</span>
+					<div>
+						<img  src="img/load.gif" />
+					</div>
+					
+					<span style="color: #fb6f00;">（二维码半小时内有效，请尽快完成支付）</span>
+				</div>
+				<div class="success" style="display: none;">
+					<img src="img/success.png" />
+					<span>支付成功</span>
+				</div>
+			</div>
+			<div class="pay_fix">
+		        <div class="ok_fix_top">支付提示：</div>
+		        <div class="pay-fix-cont">
+		            <img src="//static.qibaozz.com/qbzz/img/gantan.png" alt="">
+		            <h3>请您在新打开的页面上完成付款</h3>
+		            <p>付款完成后请不要关闭此窗口。<br>
+		                完成支付后请根据您的情况点击下面：
+		            </p>
+		        </div>
+		        <div class="bottom_cont">
+		            <a href="manage.html">已支付成功</a>
+		            <span>取消支付</span>
+		        </div>
+		    </div>
+		</div>
+		<form action="http://pay.qibaozz.com/payment/yeepay/pay" method="post" target="_blank">
+			<input type="hidden" name="platform_id" class="platform_id"/>
+			<input type="hidden" name="type" class="type"/>
+			<input type="hidden" name="order_id" class="order_id"/>
+			<input type="hidden" name="amount" class="amount"/>
+			<input type="hidden" name="currency_id" class="currency_id"/>
+			<input type="hidden" name="product_name" class="product_name"/>
+			<input type="hidden" name="channel" class="channel"/>
+			<input type="hidden" name="channel_interface" class="channel_interface"/>
+			<input type="hidden" name="bank_code" class="bank_code"/>
+			<input type="hidden" name="created_id" class="created_id"/>
+			<input type="hidden" name="time" class="time"/>
+			<input type="hidden" name="sign" class="sign"/>
+			<button type="submit" class="submit" style="display: none;"></button>
+		</form>
+		<script src="js/jquery.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			var recharge=localStorage.getItem('recharge');
+			$(document).ready(function(){
+				$('.sum .active').text(localStorage.getItem('recharge'))
+			})
+			$(document).on('click','.pay-ways>div',function(){
+				$(this).addClass('active');
+				$(this).siblings('.pay-ways>div').removeClass('active');
+				if($('.transfer_pay').hasClass('active')){
+					$('.banks').show();
+				}else{
+					$('.banks').hide();
+				}
+				if($(".weChat_pay").hasClass('active')){
+					$('.tips').show();
+				}else{
+					$('.tips').hide();
+				}
+			})		
+			$('.close').click(function(){
+				$('.alert').hide();
+				clearInterval(timer);
+				preRequest.abort();
+				cancel=true;
+			})
+			$('.banks ul li').click(function(){
+				$(this).addClass('active');
+				$(this).siblings('li').removeClass('active');
+				$(this).parent('ul').siblings('ul').children().removeClass('active');
+				var bank_code=$('.banks ul li.active').attr('bank_code');
+				var number=localStorage.getItem('recharge_number');
+				$.ajax({
+					type:"post",
+					url:"/merchant/v2.0/balance_online_pay",
+					async:true,
+					data:{'recharge_number':number,'bank_code':bank_code},
+					success:function(data){
+						if(data.msg=="ok"){
+							$('form .platform_id').val(data.pay_request.platform_id);
+							$('form .type').val(data.pay_request.type);
+							$('form .order_id').val(data.pay_request.order_id);
+							$('form .amount').val(data.pay_request.amount);
+							$('form .currency_id').val(data.pay_request.currency_id);
+							$('form .product_name').val(data.pay_request.product_name);
+							$('form .channel').val(data.pay_request.channel);
+							$('form .channel_interface').val(data.pay_request.channel_interface);
+							$('form .bank_code').val(data.pay_request.bank_code);
+							$('form .created_id').val(data.pay_request.created_id);
+							$('form .time').val(data.pay_request.time);
+							$('form .sign').val(data.pay_request.sign);
+						}
+					}	
+				})
+			})
+			var timer
+			$('.go').click(function(){
+				if($(".weChat_pay").hasClass('active')){//微信支付
+					$('.alert').show();
+					$('.alert .weChat_pay').show();
+					$('.alert .pay_fix').hide();
+					cancel=false;
+					reload().then(()=>{
+						timer = setInterval(function () {
+		                   reload();
+		                }, 60000);
+					})
+				}else if($(".transfer_pay").hasClass('active')){//转账支付
+					$('form .submit').click();
+					$('.alert').show();
+					$('.alert .weChat_pay').hide();
+					$('.alert .pay_fix').show();
+				}
+			})
+//			$('.new_page_operation').click(function(){
+//				$('form .submit').click();
+//				$('.alert').hide();
+//				
+//			})
+			var recharge_number=""
+			function reload(){
+				return  new  Promise(function(resolve,reject){
+					var number=localStorage.getItem('recharge_number');
+					$.ajax({
+						type:"post",
+						url:"/merchant/v2.0/balance_recharge",
+						async:true,
+						data:{'recharge_number':number}
+					}).done((data)=>{
+						if(data.msg=='ok'){
+							$('.alert .weChat_pay .ewm img').prop('src',data.pay_request);
+							recharge_number=data.data[0].recharge_number;
+							success()
+							resolve();
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}	
+					})
+				})	
+			}
+			var cancel=false;
+			var preRequest;
+			//判断订单是否支付
+			function success(){
+				var order_number=localStorage.getItem('order_number');
+				preRequest=$.ajax({
+					type:"put",
+					url:"/merchant/v2.0/balance_recharge",
+					data:{'recharge_number':recharge_number},
+					async:true,
+					timeout:5000,
+					success:function(data){
+						if(data.msg=='订单已支付成功'){
+							$('.alert .weChat_pay .ewm').hide();
+							$('.alert .weChat_pay .success').show();
+							clearInterval(timer);
+							setTimeout(function(){
+								localStorage.setItem("pay","true");
+								location.href='manage.html';
+							},2000);
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}else{
+							if(!cancel){
+								setTimeout(function(){
+									success();
+								},3000)
+							}
+						}
+					}, 
+					 error:function(XMLHttpRequest, textStatus, errorThrown){
+			            if(textStatus == "timeout"){
+			                if(!cancel){
+								setTimeout(function(){
+									success();
+								},3000)
+							}
+							
+			            }else{
+			               if(!cancel){
+								setTimeout(function(){
+									success();
+								},3000)
+							}
+			            }
+				    }
+				});
+				
+			}
+			var status
+			
+		</script>
+	</body>
+</html>

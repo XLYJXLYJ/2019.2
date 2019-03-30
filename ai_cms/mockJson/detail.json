@@ -1,0 +1,111 @@
+{
+  "status": "200",
+  "msg": "ok",
+  "data": {
+    "log_dict_list": [
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 2
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 2
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      },
+      {
+        "id": "",
+        "create": "时间",
+        "role": "",
+        "name": "名字",
+        "content": "内容",
+        "is_solve": "",
+        "robot_code": "",
+        "customer_token": "",
+        "messageDirection": 1
+      }
+    ],
+    "robot_name": "机器人名称",
+    "start_time": "开始时间",
+    "time_length": "聊天时长",
+    "all_num": "会话总数量"
+  }
+}

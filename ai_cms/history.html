@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+	</head>
+	<style>
+		.submit{
+			display:none;
+		}
+		tr td:last-child{
+			max-width: 600px;
+		}
+		/*.end,.start{
+			font-size: 15px;
+			margin-top: 3px;
+			cursor: pointer;
+			margin-left: 20px;
+		}
+		.start{
+			margin-left: 10px;
+			margin-right: 20px;
+		}*/
+		.end:hover,.start:hover{
+			color: #524AE7;
+		}
+		.history_table tr td:nth-child(1){
+			width: 300px;
+		}
+		.history_tabletr td:nth-child(2){
+			width: 200px;
+		}
+		.history_table tr td:nth-child(3){
+			width: 80px;
+		}
+		.history_table tr td:nth-child(4){
+			width: 50px;
+		}
+		.id,.date{width:200px}
+		td img{width:200px;height:200px;}
+	</style>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">训练中心</span><span>></span><span class="active">对话历史</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+
+				                <li class="li_sub">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  	
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        		<span class="icon icon11"></span>
+				        	  	<span>训练中心</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				            <ul class="show">
+				                <li class="li_sub active">
+				                	<a href="history.html">
+				                		<span class="icon icon6"></span>
+				        	  			<span>历史对话</span>
+				                	</a>
+				                	
+				                </li>
+				               
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub">
+				                	<li class="li_sub">
+				                		<a href="user.html">
+					                		<span class="icon icon8"></span>
+					        	  			<span>基本设置</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="manage.html">
+					                		<span class="icon icon9"></span>
+					        	  			<span>套餐&余额管理</span>
+					        	  			<sup></sup>
+					                	</a>
+					                </li>
+				                	<li class="li_sub">
+					                	<a href="order.html">
+					                		<span class="icon icon10"></span>
+					        	  			<span>流量订单管理</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="balance_order_management.html">
+					                		<span class="icon icon15"></span>
+					        	  			<span>余额订单管理</span>
+					                	</a>
+					                </li>
+				                </li>
+				               
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li>
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+
+							</ul>
+						</li>
+						<li class="li_father show_none" style="margin-left:8px;">
+							<a>
+								<span><img src="./img/qt01.png"></span>
+								<span>智能质检</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="qt.html" target="_blank">
+										<span><img src="./img/qt02.png"></span>
+										<span>语音质检</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>对话历史</span>
+				</p>
+				<div class="condition">
+					<form method="get" action="/merchant/v1.0/record/csv">
+						<span>筛选：</span>
+						<select name="robot_code" class="robot_code">
+							<option value="">按机器人编号</option>
+						</select>
+						<select name="role" class="role">
+							<option value="">按角色</option>
+							<option value="robot">机器人</option>
+							<option value="customer">客户</option>
+							<option  class="special"  value="service">客服</option>
+						</select>
+						<input name="start_date"  id="datetimeStart" type="text" placeholder="开始时间" readonly="readonly">
+						<span>至</span>
+						<input  name="end_date" id="datetimeEnd" type="text" placeholder="结束时间" readonly="readonly">
+						<span class="search">搜索</span>
+						<input type="hidden" name="product_id" class='product_id'  value="" />
+						<input type="submit" class="submit"  value="提交">
+						<span class="export">导出当前列表</span>
+					</form>		
+				</div>
+				<div>
+					<table class="history_table" >
+						<thead>
+							<tr>
+								<th class="id">对话组ID</th>
+								<th>机器人编号</th>
+								<th class="date">时间</th>
+								<th>角色</th>
+								<th>名称</th>
+								<th>内容</th>
+								<th>用户反馈</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+						
+					</table>
+					<div class=footer>
+						<span class="start">首页</span>
+						<span class="pre"></span>
+						<span class="active page">1</span>
+						<span class="page">2</span>
+						<span class="page">3</span>
+						<span class="page">4</span>
+						<span class="page">5</span>
+						<span class="next"></span>
+						<span class="end">末页</span>
+						<span class="amount">共<span class="number">0</span>页</span>
+						<input type="text"/>
+						<span class="ship">跳转</span>
+					</div>
+				</div>	
+			</div>
+			
+			
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/laydate.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			var url_='http://test.merchant.qb-tech.net';
+			laydate.render({
+				elem: '#datetimeStart', //指定元素
+				type: 'datetime',
+				done: function(value, date, endDate){
+					end.config.min={
+						year:date.year,
+						month:date.month-1,
+						date:date.date,
+						hours:date.hours,
+						minutes:date.minutes,
+						seconds:date.seconds
+					}
+				}
+			});
+			var end=laydate.render({
+			  elem: '#datetimeEnd', //指定元素
+			  type: 'datetime'
+			});
+			//查询所有数据
+			$(function(){
+				paging("","","","","1");
+			})
+			$('.start').click(function(){
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				var number=$('.number').text();
+				paging(robot_code,role,start_date,end_date,"1");
+				$('.page').show();
+				$.each($('.page'), function(i) {
+					if(1+i>number){
+						$(this).hide();
+						$('.end').hide();
+					}else{
+						$(this).text(1+i);
+					}
+				});
+				$('.end').show();
+				$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+			})
+			$('.end').click(function(){
+				var p=$('.number').text();
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				paging(robot_code,role,start_date,end_date,p);
+				$('.page').show();
+				var index=Math.floor(p/5);
+				index=index*5;
+				var page= $('.number').text();
+				$.each($('.page'), function(i) {
+					if(index+1+i>page){
+						$(this).hide();
+						$('.end').hide();
+					}
+					$(this).text(index+1+i);
+					if(index+1+i==p){
+						$(this).addClass('active');
+						$('.page').not(this).removeClass('active');
+						$('.end').hide();
+					}
+					
+				});
+				$('.end').hide();
+				
+			})
+			//上一页
+			$('.pre').click(function(){
+				var value=$('.page').eq(0).text();
+				value=parseInt(value);
+				if(value==1){
+					return false;
+				}else{
+					$('.page').show();
+					$.each($('.page'), function(i) {
+						$(this).text(value-5+i);
+					});
+				}
+				var p=$('.page.active').text();
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				paging(robot_code,role,start_date,end_date,value-1);
+				$('.end').show();
+			})
+			//下一页
+			$('.next').click(function(){
+				var value=$('.page:visible').eq(-1).text();
+				value=parseInt(value);
+				var number=$('.number').text();
+				number=parseInt(number);
+				var p=$('.page.active').text();
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				if(value==number){
+					return false;
+				}else{
+					paging(robot_code,role,start_date,end_date,value+1);
+					$(".page").show();
+					$.each($('.page'),function(i) {
+						if(value+1+i>number){
+							$(this).hide();
+							$('.end').hide();
+						}else{
+							$(this).text(value+1+i);
+						}
+						
+					});
+					$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+				}
+			})
+			//分页
+			$('.page').click(function(){
+				var number=$('.number').text();
+				var this_=$(this);
+				var p=$(this).text();
+				var value=parseInt(this_.text());
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				paging(robot_code,role,start_date,end_date,p);
+				var temp=false;;
+				$.each($('.page'),function(i) {
+					if(temp){
+						$(this).hide();
+						$('.end').hide();
+					}
+					if(parseInt($(this).text())==parseInt(number)){
+						temp=true;
+					}
+				});
+				
+				$(this_).addClass('active');
+				$('.page').not(this_[0]).removeClass('active');
+			})
+			
+			//搜索
+			$('.search').click(function(){
+				var robot_code = $('.robot_code option:selected').val();
+				var role= $('.role option:selected').val();
+				var start_date=$('#datetimeStart').val();
+				var end_date=$('#datetimeEnd').val();
+				paging(robot_code,role,start_date,end_date,"");
+				var page=$('.number').text();
+				$('.number').text(page);
+				$(".page").show();
+				if(page<=5){
+					$.each($('.page'),function(i){
+						if($(this).text()==page){
+							$(this).nextAll('.page').hide();
+							return false;
+						}
+					})
+				}
+				$.each($('.page'), function(i) {
+					$(this).text(1+i);
+					if(i==0){
+						$(this).addClass('active');
+					}else{
+						$(this).removeClass('active')
+					}
+				});
+			})
+			
+			$('.ship').click(function(){
+				if($(this).hasClass('active')){
+					var p=$(".footer input").val();
+					$(".footer input").val('');
+					var robot_code = $('.robot_code option:selected').val();
+					var role= $('.role option:selected').val();
+					var start_date=$('#datetimeStart').val();
+					var end_date=$('#datetimeEnd').val();
+					paging(robot_code,role,start_date,end_date,p);
+					$('.page').show();
+					var index=Math.floor(p/5);
+					index=index*5;
+					var page= $('.number').text();
+					if(page>5){
+						$('.end').show();
+					}else{
+						$('.end').hide();
+					}
+					$.each($('.page'), function(i) {
+						if(index+1+i>page){
+							$(this).hide();
+							$('.end').hide();
+						}
+						$(this).text(index+1+i);
+						if(index+1+i==p){
+							$(this).addClass('active');
+							$('.page').not(this).removeClass('active');
+						}
+						
+					});
+					$('.ship').removeClass('active');
+				}
+			})
+			var cookie=getCookie('user');
+			if(cookie=="not find"){
+//				window.location.href="login.html";
+			}else{
+				cookie=cookie.split('&&');
+			}	
+			function paging(robot_code,role,start_date,end_date,p){
+				///merchant/v1.0/record/dialogs
+				$('tbody').empty();
+				$.ajax({
+					type:"get",
+					url:"/merchant/v1.0/record/dialogs",
+					async:false,
+					data:{'role':role,'start_date':start_date,'end_date':end_date,'p':p,'product_id':cookie[2],'robot_code':robot_code},
+					success:function(data){
+						if(data.errmsg=='OK'){
+							$('.footer').show()
+							var msg=data.data.log_dict_list;
+							if(msg.length>0){
+								var html="";
+								var str="";
+								var title="";
+								var str_id="";
+								var title_id="";
+								for(var i=0;i<msg.length;i++){
+									html +='<tr>';
+									if(msg[i].id.length>10){
+										str_id=msg[i].id.substring(0,10);
+//										title_id =msg[i].id.substring(10,msg[i].id.length);
+										html +='<td title="'+msg[i].id+'">'+str_id+'...</td>';
+									}else{
+										html +='<td>'+msg[i].id+'</td>';
+									}
+									
+									html +='<td>'+msg[i].robot_code+'</td>'
+									html +='<td>'+msg[i].create+'</td>';
+									html +='<td>'+msg[i].role+'</td>';
+									html +='<td>'+msg[i].name+'</td>';
+									if(msg[i].content.startWith('<div class="imgshow">')&&msg[i].content.endWith('</div>')){//纯图片
+										html +='<td class="text"><p><span>(图片)</p></span></td>';
+									}else if(msg[i].content.indexOf('<div class="imgshow">')!=-1){//有图片有文字.
+										var s=msg[i].content.indexOf('<div class="imgshow">');
+										var e=parseInt(msg[i].content.lastIndexOf('</div>'))+5;
+										var t=msg[i].content.substring(s,e);//字符串截取
+										msg[i].content=msg[i].content.replace(t,"(图片)");
+										msg[i].content=msg[i].content.replace('<br />','');
+										if(msg[i].content.length>15){
+											str=msg[i].content.substring(0,15);
+											html +='<td class="text" title="'+msg[i].content+'"><p><span>'+str+'...</p></span></td>';
+										}else{
+											html +='<td class="text"><p><span>'+msg[i].content+'</p></span></td>';
+										}
+									}else if(msg[i].content.length>15){//纯文字 文本内容大于15个字用...代替
+										msg[i].content=msg[i].content.replace('<br/>','');
+										str=msg[i].content.substring(0,15);
+//										title =msg[i].content.substring(15,msg[i].content.length);
+										html +='<td class="text" title="'+msg[i].content+'"><p><span>'+str+'...</p></span></td>';
+									}else{
+										html +='<td class="text"><p><span>'+msg[i].content+'</p></span></td>';
+									}
+									html +='<td>'+msg[i].is_solve+'</td>';
+									html +='</tr>';
+								}
+								$('tbody').empty();
+								$('tbody').append(html);
+								var page=data.data.total_page;
+								$('.number').text(page);
+								$('.page').show();
+								if(page<5){
+									$('.end').hide();
+									$.each($('.page'),function(){
+										if($(this).text()==page){
+											$(this).nextAll('.page').hide();
+											return false;
+										}
+									})
+									
+								}
+							}else{
+								$('.footer').hide()
+							}
+							
+							if($.trim(p).length==0||parseInt(p)<=5){
+								$('.start').hide();
+							}else{
+								$('.start').show();
+							}
+							
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}
+					}
+				});
+				
+				
+			}
+			//获取用户机器人列表
+			//merchant/v2.0/robot/robot_number
+			$.ajax({
+				type:"get",
+				url:'/merchant/v2.0/robot/robot_number',
+				data:{'product_id':cookie[2]},
+				async:true,
+				success:function(data){
+					if(data.status=='200'){
+						data=data.data;
+						var str="";
+						if(data.length>0){
+							for(var i=0;i<data.length;i++){
+								str +='<option value='+data[i]+'>'+data[i]+'</option>';
+							};
+							$('.robot_code').append(str);
+						}
+						
+					}else if(data.errmsg=='用户未登录'){
+						window.location.href="login.html";
+					}	
+				}
+			});
+			
+			$('.export').click(function(){
+				$('.product_id').val(cookie[2]);
+				$('.submit').click();
+			})
+			String.prototype.endWith=function(s){
+			  if(s==null||s==""||this.length==0||s.length>this.length)
+			     return false;
+			  if(this.substring(this.length-s.length)==s)
+			     return true;
+			  else
+			     return false;
+			  return true;
+			}
+			
+			 String.prototype.startWith=function(s){
+			  if(s==null||s==""||this.length==0||s.length>this.length)
+			   return false;
+			  if(this.substr(0,s.length)==s)
+			     return true;
+			  else
+			     return false;
+			  return true;
+			}
+			//
+		</script>	
+	</body>
+</html>

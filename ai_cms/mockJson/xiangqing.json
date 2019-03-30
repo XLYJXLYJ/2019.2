@@ -1,0 +1,22 @@
+{
+  "status": "200",
+  "msg": "ok",
+  "data": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 1,
+      "welcome_words": "你好，我是Aimi，我是您的全天候保险助手。",
+      "wait_words": "让我思考一下哦",
+      "timeout_words": "服务超时已结束",
+      "robot_name": "Aimi-002",
+      "robot_type": "销售咨询机器人",
+      "robot_code": "001",
+      "deployment_form": "H5",
+      "comment": "平安一年期综合意外险",
+      "uri": "http://open.qb-tech.net/insurebotaimi/002",
+      "avatar": "",
+      "user_id": 26
+    }
+  ]
+}

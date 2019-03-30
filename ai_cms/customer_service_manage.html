@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			.conent{
+				width:calc(100vw - 170px);
+				min-width: 1110px;
+			}
+			.alert ,.alert .reset,.alert .remove,.alert .add_customer_service{
+				display: none;
+			}
+			.alert{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width:100%;
+				height: 100%;
+				z-index: 3;
+				background-color:rgba(0,0,0,0.3);
+			}
+			.alert .reset,.alert .remove,.alert .add_customer_service{
+				position: absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				width:380px;
+				height: 280px;
+				background-color: #f3f3fb;
+				border-radius: 5px;
+				padding:0px 55px;
+				box-sizing: border-box;
+			}
+			.alert p{
+				text-align: center;
+				color: #454545;
+				font-size:17px ;
+				margin:20px  0  30px 0px;
+			}
+			.alert .add_customer_service p{
+				margin-bottom: 45px;
+			}
+			.alert .remove p{
+				margin-bottom: 30px;
+			}
+			.alert>div>span{
+				letter-spacing: 2px;
+				font-size:17px ;
+				margin-top: 20px;
+				line-height: 30px;
+			}
+			.alert label{
+				display: inline-block;
+				width:56px;
+				text-align: right;
+				margin-right:5px;
+			}
+			.alert form input{
+				height: 23px;
+				width: 198px;
+				border-radius: 3px;
+				border:1px solid #959597;
+			}
+			.alert form>div{
+				height:45px ;
+			}
+			.alert  .bar span{
+				padding:5px 10px ;
+				background-color: #524AE7;
+				color: white;
+				border-radius: 5px;
+				float: left;
+				margin-top: 15px;
+				cursor: pointer;
+			}
+			.alert .remove .bar span{
+				margin-top: 45px;
+			}
+			.alert  .bar span:last-child{
+				float: right;
+			}
+			.Validform_checktip.Validform_wrong{
+				margin-left: 60px;
+			}
+			.tips{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				background-color: #524ae7;
+				padding: 5px 10px;
+				border-radius: 5px;
+				color:white;
+				display: none;
+			}
+			.customer_service_manage .username,.robot{
+				width: 120px;
+			}
+			.customer_service_manage .service_name{
+				width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">人工客服</span><span>></span><span class="active">客服管理</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+				
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<!--<img src="img/logo.png" />-->
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+					
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				       <!-- <li class="li_father">
+				        	<a>
+				        		<span class="icon icon11"></span>
+				        	  	<span>训练中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="history.html">
+				                		<span class="icon icon6"></span>
+				        	  			<span>历史对话</span>
+				                	</a>
+				                	
+				                </li>
+				               
+				            </ul>
+				        </li>-->
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                
+				                <li class="li_sub">
+				                	<li class="li_sub">
+				                		<a href="user.html">
+					                		<span class="icon icon8"></span>
+					        	  			<span>基本设置</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="manage.html">
+					                		<span class="icon icon9"></span>
+					        	  			<span>套餐&余额管理</span>
+					        	  			<sup></sup>
+					                	</a>
+					                </li>
+				                	<li class="li_sub">
+					                	<a href="order.html">
+					                		<span class="icon icon10"></span>
+					        	  			<span>流量订单管理</span>
+					                	</a>
+					                </li>
+					                <li class="li_sub">
+					                	<a href="balance_order_management.html">
+					                		<span class="icon icon15"></span>
+					        	  			<span>余额订单管理</span>
+					                	</a>
+					                </li>
+				                </li>
+				               
+				            </ul>
+				            
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				        	<ul class="show">
+				                <li class="li_sub active" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				            
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father show_none" style="margin-left:8px;">
+							<a>
+								<span><img src="./img/qt01.png"></span>
+								<span>智能质检</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="qt.html" target="_blank">
+										<span><img src="./img/qt02.png"></span>
+										<span>语音质检</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>客服管理</span>
+				</p>
+				<div class="condition1">
+					<span class="add">新增</span>
+				</div>
+				<table class="customer_service_manage">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th class="service_name">客服名</th>
+							<th class="username">用户名</th>
+							<th class="robot">负责机器人</th>
+							<th>负责的产品</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--<tr>
+							<td>01</td>
+							<td>sarah</td>
+							<td>13148802549</td>
+							<td>001,002,003</td>
+							<td>平安E家保,尊享E生,平安E家保,尊享E生</td>
+							<td class="operation">
+								<span class="QA_edit" data-id="1" data-name="sarah"></span>
+								<span class="qa_delete" data-id="1"></span>
+							</td>
+						</tr>-->
+					</tbody>	
+				</table>
+				<div class="footer">
+					<span class="start">首页</span>
+					<span class="pre"></span>
+					<span class="active page">1</span>
+					<span class="page">2</span>
+					<span class="page">3</span>
+					<span class="page">4</span>
+					<span class="page">5</span>
+					<span class="next"></span>
+					<span class="end">末页</span>
+					<span class="amount">共<span class="number">0</span>页</span>
+					<input type="text" />
+					<span class="ship">跳转</span>
+				</div>
+			</div>
+		</div>
+		<div class="alert">
+			<div class="reset">
+				<form id="reset" method="put" action="/merchant/v2.0/service/service_manage" method="put">
+					<p>修改密码</p>
+					<input type="hidden" name="service_id" />
+					<div>
+						<label>客服名:</label>
+						<span class="service_name"></span>
+						<input type="hidden"  name="service_name"></span>
+						<input type="hidden"  name="service_mobile"></span>
+					</div>
+					<div>
+						<label>密码:</label>
+						<input type="text" name="service_password" nullmsg="请输入密码" datatype="*8-16" errormsg="密码长度在8-16位之间" autocomplete="off"/>
+					</div>
+					
+					<div class="bar">
+						<span class="sure_reset">确认修改</span>
+						<span class="cancel">取消</span>
+					</div>
+				</form>	
+			</div>
+			<div class="add_customer_service">
+				<form id="add_customer_service" method="post"  action="/merchant/v2.0/service/service_manage">
+					<p>新增客服</p>
+					<div>
+						<label>用户名:</label>
+						<input type="text" name="service_mobile" placeholder="请输入客服手机号码" nullmsg="请输入手机号码" datatype="phone" errormsg="格式错误(请输入正确的手机号码)" autocomplete="off"/>
+					</div>
+					<div>
+						<label>客服名:</label>
+						<input type="text" name="service_name" placeholder="请输入客服名称" nullmsg="请输入客服名" datatype="name" errormsg="长度在1-8位之间(只支持中文和字母)" autocomplete="off"/>
+					</div>
+					<div class="bar">
+						<span class="sure_add">确认新增</span>
+						<span class="cancel">取消</span>
+					</div>
+				</form>	
+			</div>
+			<div class="remove">
+				<p>删除客服</p>
+				<input type="hidden" name="service_id" />
+				<span>请再次确认是否需要将该客服进行删除?</span>
+				<div class="bar">
+					<span class="sure_delete">确认删除</span>
+					<span class="cancel">取消</span>
+				</div>
+			</div>
+		</div>
+		<div class="tips">修改成功</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/Validform_ncr_min.js"></script>
+		<script type="text/javascript">
+			var regex=/^[\u4e00-\u9fa5_a-zA-Z]{1,8}$/
+			$('.alert .cancel').click(function(){
+				$(".Validform_checktip").text("");
+				$('form input').val("");
+				$('.alert').hide();
+			})
+			$('.condition1 .add').click(function(){
+				$('.alert').show();
+				$('.alert .add_customer_service').show();
+				$('form input').val("");
+				$('.alert .reset').hide();
+				$('.alert .remove').hide();
+			})
+			$(document).on("click",".QA_edit",function(){
+				$('.alert').show();
+				$('.alert .reset').show();
+				$('form input').val("");
+				$('.alert .add_customer_service').hide();
+				$('.alert .remove').hide();
+				$('.alert .reset input[name="service_id"]').val($(this).data('id'));
+				$('.alert .reset input[name="service_mobile"]').val($(this).data('mobile'));
+				$('.alert .reset input[name="service_name"]').val($(this).data('name'));
+				$('.alert .reset .service_name').text($(this).data('name'));
+			})
+			$(document).on("click",".qa_delete",function(){
+				$('.alert').show();
+				$('.alert .remove').show();
+				$('.alert .add_customer_service').hide();
+				$('.alert .reset').hide();
+				$('.alert .remove input[name="service_id"]').val($(this).data('id'));
+			})
+			$(document).click(function(){
+				$('.tips').hide();
+			})
+			$('#reset').Validform({//修改
+				tiptype: 4,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".sure_reset",
+		        datatype:{
+		        	"name":regex,
+					"phone":/^1\d{10}$/,
+		        },
+		        beforeSubmit(){
+		        	$.ajax({
+		        		type:"put",
+						url:"/merchant/v2.0/service/service_manage",
+						async:true,
+						data:{
+							'service_id':$('.alert .reset input[name="service_id"]').val(),
+							'service_mobile':$('.alert .reset input[name="service_mobile"]').val(),
+							'service_password':$('.alert .reset input[name="service_password"]').val(),
+							'service_name':$('.alert .reset input[name="service_name"]').val(),
+						},
+						success:function(data){
+							if(data.msg=="ok"&&data.data=="客服信息修改成功"){
+				        		$('.alert .cancel').click();
+				        		$('.tips').text(data.data);
+				        		$('.tips').show();
+				        	}else if(data.errmsg=='用户未登录'){
+								window.location.href="login.html";
+							}else{
+				        		$('input[name="service_name"]').siblings('.Validform_checktip').text(data.data)
+				        	}
+			        	}
+		       		})
+		        	return false;
+		       },
+		        callback:function(data){
+//		        	if(data.msg=="ok"&&data.msg=="客服信息修改成功"){
+//		        		$('.alert .cancel').click();
+//		        		$('.tips').text(data.data);
+//		        		$('.tips').show();
+//		        		setTimeout(function(){
+//		        			$('.tips').hide();
+//		        		},400)
+//		        	}else{
+//		        		$('input[name="service_name"]').siblings('.Validform_checktip.Validform_wrong').text(data.data)
+//		        	}
+		        }
+			})
+			$('#add_customer_service').Validform({//新增
+				tiptype: 4,
+		        postonce: true,
+		        ajaxPost:true,
+		        btnSubmit:".sure_add",
+		        datatype:{
+		        	"name":regex,
+					"phone":/^1\d{10}$/,
+		        },
+		        callback:function(data){
+		        	if(data.msg=="ok"){
+		        		$('.alert .cancel').click();
+		        		$('.tips').text(data.data);
+		        		$('.tips').show();
+//		        		setTimeout(function(){
+//		        			$('.tips').hide();
+//		        		},700)
+						paging(1);
+						var number=$('.number').text();
+						number=parseInt(number)
+						$('.page').show();
+						$.each($('.page'), function(i) {
+							if(1+i>number){
+								$(this).hide();
+								$('.end').hide();
+							}else{
+								$(this).text(1+i);
+							}
+						});
+						$('.start').hide();
+						parseInt(number)>5 ? $('.end').show() : $('.end').hide();
+						$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+		        	}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+		        	}else{
+		        		$('input[name="service_name"]').siblings('.Validform_checktip').text(data.data)
+		        	}
+		        }
+			})
+			
+			$('.sure_delete').click(function(){
+				$.ajax({
+					type:"delete",
+					url:"/merchant/v2.0/service/service_manage",
+					async:true,
+					data:{'service_id':$('.alert .remove input[name="service_id"]').val()},
+					success:function(data){
+						if(data.msg=="ok"&&data.data=="客服信息删除成功"){
+							$('.alert .cancel').click();
+							$('.start').click();
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}
+					}
+				});
+			})
+			$(function(){
+				paging(1);
+				$('.start').hide();
+			})
+			$('.page').click(function(){
+				var number=$('.number').text();
+				var this_=$(this);
+				var p=$(this).text();
+				var value=parseInt(this_.text());
+				paging(p);
+				var temp=false;;
+				$.each($('.page'),function(i) {
+					if(temp){
+						$(this).hide();
+						$('.end').hide();
+					}
+					if(parseInt($(this).text())==parseInt(number)){
+						temp=true;
+					}
+				});
+				
+				$(this_).addClass('active');
+				$('.page').not(this_[0]).removeClass('active');
+				parseInt($('.page').eq(0).text())==1 ? $('.start').hide() : $('.start').show()
+				parseInt($('.page:visible').eq(-1).text())>=number ? $('.end').hide() : $('.end').show()
+			})
+			$('.start').click(function(){//首页
+				paging(1);
+				var number=$('.number').text();
+				$('.page').show();
+				$.each($('.page'), function(i) {
+					if(1+i>number){
+						$(this).hide();
+						$('.end').hide();
+					}else{
+						$(this).text(1+i);
+					}
+				});
+				$('.start').hide();
+				parseInt(number)>5 ? $('.end').show() : $('.end').hide();
+				$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+			})
+			$('.end').click(function(){
+				var p=$('.number').text();
+				paging(p);
+				$('.page').show();
+				var index=Math.floor(p/5);
+				index=index*5;
+				var page= $('.number').text();
+				$.each($('.page'), function(i) {
+					if(index+1+i>page){
+						$(this).hide();
+						$('.end').hide();
+					}
+					$(this).text(index+1+i);
+					if(index+1+i==p){
+						$(this).addClass('active');
+						$('.page').not(this).removeClass('active');
+						$('.end').hide();
+					}
+					
+				});
+				$('.end').hide();
+				parseInt($('.page:visible').eq(-1).text())>5 ? $('.start').show() : $('.start').hide()
+			})
+			$('.pre').click(function(){
+				var value=$('.page').eq(0).text();
+				value=parseInt(value);
+				if(value==1){
+					return false;
+				}else{
+					$('.page').show();
+					$.each($('.page'), function(i) {
+						$(this).text(value-5+i);
+					});
+				}
+				var p=$('.page.active').text();
+				paging(value-1);
+				parseInt($('.page').eq(0).text())==1 ? $('.start').hide() : $('.start').show()
+				parseInt($('.page:visible').eq(-1).text())>=number ? $('.end').hide() : $('.end').show()
+			})
+			$('.next').click(function(){
+				var value=$('.page:visible').eq(-1).text();
+				value=parseInt(value);
+				var number=$('.number').text();
+				number=parseInt(number);
+				var p=$('.page.active').text();
+				if(value==number){
+					return false;
+				}else{
+					paging(value+1);
+					$(".page").show();
+					$.each($('.page'),function(i) {
+						if(value+1+i>number){
+							$(this).hide();
+							$('.end').hide();
+						}else{
+							$(this).text(value+1+i);
+						}
+						
+					});
+					$('.page').eq(0).addClass('active').siblings('.page').removeClass('active');
+				}
+				parseInt($('.page').eq(0).text())==1 ? $('.start').hide() : $('.start').show()
+				parseInt($('.page:visible').eq(-1).text())>=number ? $('.end').hide() : $('.end').show()
+			})
+			$('.ship').click(function(){
+				if($(this).hasClass('active')){
+					var p=$(".footer input").val();
+					$(".footer input").val('');
+					paging(p);
+					$('.page').show();
+					var index=Math.floor(p/5);
+					index=index*5;
+					var page= $('.number').text();
+					if(page>5){
+						$('.end').show();
+					}else{
+						$('.end').hide();
+					}
+					$.each($('.page'), function(i) {
+						if(index+1+i>page){
+							$(this).hide();
+							$('.end').hide();
+						}
+						$(this).text(index+1+i);
+						if(index+1+i==p){
+							$(this).addClass('active');
+							$('.page').not(this).removeClass('active');
+						}
+					});
+					$('.ship').removeClass('active');
+					parseInt($('.page').eq(0).text())==1 ? $('.start').hide() : $('.start').show()
+					parseInt($('.page:visible').eq(-1).text())>=page ? $('.end').hide() : $('.end').show()
+				}
+				
+			})
+			function paging(pageSize){
+				$('tbody').empty();
+				$.ajax({
+					type:"get",
+					url:"/merchant/v2.0/service/service_manage",////merchant/v2.0/service/service_manage
+					data:{'pageSize':pageSize},
+					async:false,
+					success:function(data){
+						if(data.msg=='ok'){
+							$('.number').text(data.total_page);
+							var html="";
+							data=data.data;
+							$('.footer').show()
+							if(data.length>0){
+								for (var i = 0; i < data.length; i++) {
+									html+='<tr>';
+									html+='<td>'+((pageSize-1)*5+i+1)+'</td>';
+									html+='<td>'+data[i].s_name+'</td>';
+									html+='<td>'+data[i].mobile+'</td>';
+									var robot= "'"+data[i].robot+"'";
+									robot=robot.replace(/'/g,'');
+									html+='<td>'+robot+'</td>';
+									var product= "'"+data[i].product+"'";
+									product=product.replace(/'/g,'');
+									html+='<td>'+product+'</td>';
+									html+='<td class="operation">';
+									html+='<span class="QA_edit" data-id="'+data[i].id+'" data-name="'+data[i].s_name+'"data-mobile="'+data[i].mobile+'"></span>';
+									html+='<span class="qa_delete" data-id="'+data[i].id+'"></span>';
+									html+='</td>';
+									html+='</tr>';
+								}
+								$('tbody').empty();
+								$('tbody').append(html)
+								$('.page').show();
+								var page=parseInt($('.number').text());
+								if(page<5){
+									$('.end').hide();
+									$.each($('.page'),function(){
+										if($(this).text()==page){
+											$(this).nextAll('.page').hide();
+											return false;
+										}
+									})
+								}
+							}else{
+								$('.footer').hide();
+							}	
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}	
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "status": "200",
+  "msg": "ok",
+  "data": {
+    "all_dir_num": {
+      "all_num": 122,
+      "all_two_num": 110,
+      "all_three_num": 50,
+      "all_four_num": 10,
+      "all_five_num": 0
+    },
+    "yes_dir_num": {
+      "yesterday_num": 200,
+      "yesterday_two_num": 102,
+      "yesterday_three_num": 55,
+      "yesterday_four_num": 35,
+      "yesterday_five_num": 6
+    },
+    "month_dir_num": {
+      "month_num": 100,
+      "month_two_num": 100,
+      "month_three_num": 50,
+      "month_four_num": 9,
+      "month_five_num": 1
+    },
+    "all_level": {
+      "all_one_level": 111,
+      "all_two_level": 46,
+      "all_three_level":67,
+      "all_four_level":19,
+      "all_five_level": 6
+    }
+  }
+}

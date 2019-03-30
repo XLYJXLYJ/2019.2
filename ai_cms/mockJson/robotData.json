@@ -1,0 +1,149 @@
+{
+  "data": {
+    "current_page": 2,
+    "log_dict_list": [
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 1,
+        "customer_question":"核泄漏导致的车辆损失啊啊",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 1,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 2,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 2,
+        "role": "robot",
+        "user_solve": "2"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 3,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 3,
+        "role": "robot",
+        "user_solve": "1"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id":4,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "qq",
+        "robot_code": "004",
+        "robot_id": 4,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 5,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 5,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 6,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 6,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 7,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 7,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id":8,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id": 8,
+        "role": "robot",
+        "user_solve": "0"
+
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 9,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id":9,
+        "role": "robot",
+        "user_solve": "2"
+      },
+      {
+        "content": "经过Aimi的深刻思考，核事故在太平洋车险的保障范围内，具体理赔结果以保险公司核赔意见为准~",
+        "create": "2019-01-15 16:35:40",
+        "customer_id": 9,
+        "customer_question":"核泄漏导致的车辆损失",
+        "id": "267ed6038c18c5f5414b9ba3ea7524e3",
+        "is_solve": "无反馈",
+        "name": "DCP-太平洋车险服务",
+        "robot_code": "004",
+        "robot_id":9,
+        "role": "robot",
+        "user_solve": "2"
+      }
+
+    ],
+    "total_page": 180
+  },
+  "errcode": "0",
+  "errmsg": "OK"
+}

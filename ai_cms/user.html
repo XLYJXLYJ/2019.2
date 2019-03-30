@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			.robot_settings>div{
+				margin-bottom: 20px;
+			}
+			.robot_settings>div:first-child{
+				margin-bottom: 0px;
+			}
+			.robot_settings{
+				margin-top: 10px;
+			}
+			.robot_settings span[disabled]{
+				font-size: 15px;
+				margin-left: 15px;
+			}
+			.alert{
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba(0,0,0,.5);
+				z-index: 3;
+				display: none;
+			}
+			.alert_div{
+				position: relative;
+				width: 400px;
+				height: 370px;
+				background-color: white;
+				left:0;
+				right: 0;
+				top:  50%;
+				bottom: 0;
+				margin: auto;
+				transform:translateY(-50%) ;
+				border-radius:5px ;
+				box-sizing: border-box;
+				padding-top: 20px;
+			}
+			.reset_passwd{
+				width: 100%;
+				text-align: center;
+				color: #524AE7;
+				font-size: 20px;
+				margin-top: 0;
+				margin-bottom: 20px;
+			}
+			form>div{
+				width: 80%;
+				height: 55px;
+				margin: auto;
+			}
+			input[disabled]{
+				border: none;
+				background-color: rgba(0,0,0,0);
+			}
+			form>div:first-child{
+				height: 35px;
+			}
+			form>div input{
+				height: 30px;
+				width: 200px;
+				border-radius: 5px;
+				border: 1px solid #999999;
+
+			}
+			form>div input.verify{
+				width: 130px;
+			}
+			form .get{
+				display: inline-block;
+				padding: 0 10px;
+				color: white;
+				background-color: #524AE7;
+				border-radius: 5px;
+				height: 34px;
+				line-height: 34px ;
+				text-align: center;
+				margin-left: 5px;
+				font-size: 14px;
+			}
+			form .sure,form .cancel{
+				display: inline-block;
+				width: 90px;
+				color: white;
+				background-color: #524AE7;
+				border-radius: 5px;
+				height: 34px;
+				line-height: 34px ;
+				text-align: center;
+				margin-top: 20px;
+				cursor: pointer;
+				font-size: 14px;
+			}
+			form .sure{
+				float: left;
+				margin-left: 30px;
+			}
+			form .cancel{
+				float: right;
+				margin-right: 30px;
+			}
+			.Validform_checktip.Validform_wrong{
+				margin-left: 65px;
+			}
+			.myform label{
+				font-size: 14px;
+				width:70px;
+				display: inline-block;
+				text-align: right;
+			}
+			.robot_settings>div>span:first-child{
+				margin-left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="count">
+			<div class="top">
+				<span>当前位置:<span class="current">用户中心</span><span>></span><span class="active">基本设置</span></span>
+				<span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>	
+				
+			</div>
+			<div class="aside">
+				<div class="logo">
+					<div>
+						<div>企保科技</div>
+						<p>科技连接保险未来</p>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+				        <li class="li_father">
+				        	<a href="index.html">
+				        	  	<span class="icon icon1"></span>
+				        	  	<span>概况统计</span>
+				        	  	<!--<span class="left active"></span>-->
+				        	</a>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        		<span class="icon icon2"></span>
+				        	  	<span>管理中心</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				            <ul>
+				                <li class="li_sub">
+				                	<a href="robot_manage.html">
+				                		<span class="icon icon3"></span>
+						        	  	<span>机器人管理</span>
+						        	  	
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a class="active">
+				        		<span class="icon icon7"></span>
+				        	  	<span>用户中心</span>
+				        	  	<span class="left active"></span>
+				        	</a>
+				        	<ul class="show">
+				                <li class="li_sub active">
+			                		<a href="user.html">
+				                		<span class="icon icon8"></span>
+				        	  			<span>基本设置</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="manage.html">
+				                		<span class="icon icon9"></span>
+				        	  			<span>套餐&余额管理</span>
+				        	  			<sup></sup>
+				                	</a>
+				                </li>
+			                	<li class="li_sub">
+				                	<a href="order.html ">
+				                		<span class="icon icon10"></span>
+				        	  			<span>流量订单管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="balance_order_management.html">
+				                		<span class="icon icon15"></span>
+				        	  			<span>余额订单管理</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+				        <li class="li_father">
+				        	<a>
+				        	  	<span class="icon icon13"></span>
+				        	  	<span>人工客服</span>
+				        	  	<span class="left"></span>
+				        	</a>
+				        	<ul>
+				                <li class="li_sub" >
+				                	<a href="customer_service_manage.html">
+				                		<span class="icon icon12"></span>
+				        	  			<span>客服管理</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="work_statistics.html">
+				                		<span class="icon icon14"></span>
+				        	  			<span>历史客服工作统计</span>
+				                	</a>
+				                </li>
+				                <li class="li_sub">
+				                	<a href="the_day_work_statistics.html">
+				                		<span class="icon icon16"></span>
+				        	  			<span>当天客服工作统计</span>
+				                	</a>
+				                </li>
+				            </ul>
+				        </li>
+						<li class="li_father">
+							<a>
+								<span class="icon icon17"></span>
+								<span>数据分析</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="data_statistics.html">
+										<span class="icon icon18"></span>
+										<span>销售漏斗</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="robotData.html">
+										<span class="icon icon6"></span>
+										<span>机器人数据</span>
+									</a>
+								</li>
+								<li class="li_sub">
+									<a href="serviceData.html">
+										<span class="icon icon20"></span>
+										<span>客服数据</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father show_none" style="margin-left:8px;">
+							<a>
+								<span><img src="./img/qt01.png"></span>
+								<span>智能质检</span>
+								<span class="left"></span>
+							</a>
+							<ul>
+								<li class="li_sub">
+									<a href="qt.html" target="_blank">
+										<span><img src="./img/qt02.png"></span>
+										<span>语音质检</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="li_father">
+							<a class="callBtn">
+								<span class="icon icon19"></span>
+								<span>智能呼叫中心</span>
+								<!--<span class="left active"></span>-->
+							</a>
+						</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="conent">
+				<p class="conent_title">
+					<span></span>
+					<span>用户中心</span>
+				</p>
+				<div class="robot_settings">
+					<div></div>
+					<div>
+						<span>用户名:</span>
+						<span class="username" disabled="disabled"></span>
+					</div>
+					<div>
+						<span>公司:</span>
+						<span  class="company" disabled="disabled"></span>
+					</div>
+					<div>
+						<span>身份:</span>
+						<span class="identity"  disabled="disabled"></span>
+					</div>
+					<div>
+						<span>手机号:</span>
+						<span class="phone_number mobile"  disabled="disabled"></span>
+						<span class="reset">重置登录密码</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="alert">
+			<div class="alert_div">
+				<p class="reset_passwd">重置密码</p>
+				<form class="myform"  method="put">
+					<div>
+						<label>用户名：</label>
+						<input type="text" name="name" class="phone" disabled="disabled" />
+					</div>
+					<div>
+						<label>新密码：</label>
+						<input type="password" name="passwd" class="passwd"  value="" datatype="*8-15" errormsg="请输入8-15位密码,支持数字以及大小写字母" nullmsg="请输入密码"/>
+						<span class="Validform_checktip Validform_wrong"></span>
+					</div>
+					<div>
+						<label>确认密码：</label>
+						<input type="password" name="passwd2" class="passwd2"  value="" datatype="*8-15" errormsg="请输入8-15位密码,支持数字以及大小写字母" nullmsg="请输入密码"/>
+						<span class="Validform_checktip Validform_wrong"></span>
+					</div>
+					<div>
+						<label>验证码：</label>
+						<input type="type" name="verify" class="verify" value="" datatype="*4-6" errormsg="请输入4-6位数字" nullmsg="请输入验证码"/>
+						<span class="get code">获取验证码</span>
+						<span class="Validform_checktip Validform_wrong"></span>
+					</div>
+					<div>
+						<span class="sure">确认重置</span>
+						<span class="cancel">取消</span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/laydate.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/Validform_ncr_min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var cookie=getCookie('user');
+				cookie=cookie.split("&&");
+				$.ajax({
+					type:"get",
+					url:"/merchant/v1.0/user/info",
+					async:true,
+					success:function(data){
+						if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}
+						$('.username').text(data.data.name);
+						$('.company').text(data.data.company);
+						$('.mobile').text(data.data.mobile);
+						$(".identity").text(data.data.identity);
+					}
+				});
+			})
+			
+			$('.sure').click(function(){
+				var mobile=$('.phone').val();
+				var password =$('.passwd').val();
+				var sms_code=$('.verify').val();
+				var password2=$('.passwd2').val();
+				if($.trim(password ).length==0){
+					$('.passwd').siblings('.Validform_checktip.Validform_wrong').text('请输入新密码');
+					$('.passwd').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else if(password.length>15||password.length <8){
+					$('.passwd').siblings('.Validform_checktip.Validform_wrong').text('请输入8-15位密码,支持数字以及大小写字母');
+					$('.passwd').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else{
+					$('.passwd').siblings('.Validform_checktip.Validform_wrong').hide();
+					
+				}
+				if($.trim(password2 ).length==0){
+					$('.passwd2').siblings('.Validform_checktip.Validform_wrong').text('请输入确认密码');
+					$('.passwd2').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else if(password!=password2){
+					$('.passwd2').siblings('.Validform_checktip.Validform_wrong').text('两次密码输入不一致');
+					$('.passwd2').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else{
+					$('.passwd2').siblings('.Validform_checktip.Validform_wrong').hide();
+					
+				}
+				if($.trim(sms_code).length==0){
+					$('.verify').siblings('.Validform_checktip.Validform_wrong').text('请输入验证码');
+					$('.verify').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else if(sms_code.length>6||sms_code.length<4){
+					$('.verify').siblings('.Validform_checktip.Validform_wrong').text('请输入4-6位数字');
+					$('.verify').siblings('.Validform_checktip.Validform_wrong').show();
+					return false;
+				}else{
+					$('.verify').siblings('.Validform_checktip.Validform_wrong').hide();
+					
+				}
+				var datas={'mobile':mobile,'password':password,'password2':password2,'sms_code':sms_code};
+				$.ajax({
+					type:"post",
+					url:"/merchant/v1.0/reset_password",
+					async:true,
+					contentType:'application/json',
+					data:JSON.stringify(datas),
+					success:function(data){
+						if(data.errmsg=="修改密码成功"){
+							alert(data.errmsg);
+							$('.alert').hide();
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}else{
+							alert(data.errmsg);
+						}
+					}
+					
+				});
+			})
+		    $('.get').click(function(){
+		    	var phone=$(".phone").val();
+				var n=60;
+				$.ajax({
+					type:"get",
+					url:"/merchant/v1.0/sms_codes/"+$('.phone').val(),
+					async:true,
+					success:function(data){
+						if(data.errmsg=="发送成功"){
+							$(".get").removeClass("code").html(n+"s");
+							timeer=setInterval(function(){
+								n--;
+								if(n>0){
+									$(".get").html(n+"s");
+								}else{
+									$(".get").addClass("code").html("获取验证码");
+									clearInterval(timeer);
+								}
+							},1000);
+						}else if(data.errmsg=='用户未登录'){
+							window.location.href="login.html";
+						}
+					}
+				});
+		    })
+		    $('.reset').click(function(){
+		    	$('.alert').show();
+		    	$('.phone').val($(".phone_number ").text());
+		    	
+		    })
+		    $('.cancel').click(function(){
+		    	$('.alert').hide();
+		    	$('.passwd').val("");
+		    	$('.passwd2').val("");
+		    	$('.verify').val("");
+		    	$(".get").addClass("code").html("获取验证码");
+		    	clearInterval(timeer);
+		    	$(".Validform_checktip.Validform_wrong").text("");
+		    })
+		    $(document).on('click','.alert',function(e){
+		    	var div=$('.alert_div')[0];
+		    	if (e.target != div && !$.contains(div, e.target)){
+		    		$('.alert').hide();
+			    	$('.passwd').val("");
+			    	$('.passwd2').val("");
+			    	$('.verify').val("");
+			    	$(".get").addClass("code").html("获取验证码");
+			    	clearInterval(timeer);
+			    	$(".Validform_checktip.Validform_wrong").text("");
+		    	}
+		    })
+		     
+		</script>	
+	</body>
+</html>

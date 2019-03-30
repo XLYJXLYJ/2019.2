@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+        .dataList {
+            width: 100%;
+            height: 930px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 0px 4px 0px rgba(32, 23, 195, 0.09);
+            margin-left: 31px;
+            position: relative;
+            /* background-color: pink;*/
+        }
+
+        .oneWrap .one {
+            width: 260px;
+        }
+
+        .dataList .sum {
+            width: 446px;
+            height: 286px;
+            margin-left: 29px;
+            margin-top: 32px;
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            position: relative;
+            float: left;
+        }
+
+        .sum .wrap {
+            width: 100%;
+            height: 30px;
+            position: relative;
+        }
+
+        .sum .oneWrap {
+            margin-top: 39px;
+        }
+
+        .sum .otherWrap {
+            margin-top: 0px;
+        }
+
+        .wrap p {
+            display: block;
+            position: absolute;
+            left: 19px;
+            line-height: 30px;
+        }
+
+        .wrap p:nth-child(1) {
+            height: 14px;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+        }
+
+        .oneWrap p:nth-child(1) {
+            color: rgba(251,83,96,1);
+        }
+
+        .twoWrap p:nth-child(1) {
+            color: rgba(254,188,4,1);
+        }
+
+        .threeWrap p:nth-child(1) {
+            color: rgba(59,198,101,1);
+        }
+
+        .fourWrap p:nth-child(1) {
+            color: rgba(94,205,222,1);
+        }
+
+        .fiveWrap p:nth-child(1) {
+            color: rgba(129,228,228,1);
+        }
+
+        .wrap p:nth-child(2) {
+            left: 370px;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .wrap span {
+            display: block;
+            height: 30px;
+            position: absolute;
+            left: 51px;
+        }
+
+        .oneWrap span {
+            /*width: 310px;*/
+            background: rgba(251,83,96,1);
+        }
+
+        .twoWrap span {
+            /* width: 279px;*/
+            background: rgba(254,188,4,1);
+        }
+
+        .threeWrap span {
+            /* width: 242px;*/
+            background: rgba(59,198,101,1);
+        }
+
+        .fourWrap span {
+            /*width: 211px;*/
+            background: rgba(94,205,222,1);
+        }
+
+        .fiveWrap span {
+            /* width: 180px;*/
+            background: rgba(129,228,228,1);
+        }
+
+        .sum .promptImg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .sum .promptWord {
+            width: 242px;
+            height: 68px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 10px;
+            position: absolute;
+            margin-left: 34px;
+            pointer-events: none;
+            bottom: 50px;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            /*color: rgba(254, 254, 254, 1);*/
+            line-height: 22px;
+            padding-left: 10px;
+            display: none;
+        }
+
+        .promptImg:hover + .promptWord {
+            display: block;
+        }
+
+        .sum .point {
+            width: 6px;
+            height: 6px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            left: 245px;
+            bottom: 36px;
+        }
+
+        .sum .bottomWord {
+            width: 69px;
+            height: 14px;
+            font-size: 13px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 14px;
+            position: absolute;
+            bottom: 32px;
+            left: 263px;
+        }
+
+        .sum .number {
+            font-size: 24px;
+            font-family: MicrosoftYaHei-Bold;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 1);
+            line-height: 18px;
+            position: absolute;
+            right: 32px;
+            bottom: 31px;
+            display: block;
+            width: 73px;
+        }
+
+        .roundFigure {
+            width: 415px;
+            height: 265px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 0px 25px 0px rgba(32, 23, 195, 0.19);
+            border-radius: 10px;
+            margin-left: 27px;
+            margin-top: 20px;
+            float: left;
+        }
+
+        .roundFigure #chartmain {
+            /* margin-left: 15px;*/
+            width: 340px;
+            height: 218px;
+            margin-top: 20px;
+        }
+
+        .roundFigure .point {
+            width: 6px;
+            height: 6px;
+            background: rgba(206, 221, 255, 1);
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            left: 301px;
+            bottom: 359px;
+        }
+
+        .roundFigure > p {
+            width: 84px;
+            height: 14px;
+            line-height: 14px;
+            display: inline-block;
+            font-size: 14px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(153, 153, 153, 1);
+            position: absolute;
+            left: 320px;
+            top: 561px;
+        }
+
+        .wrap .one {
+            width: 0;
+            transition: width 1s;
+        }
+        .wrap .two {
+            width: 0;
+            transition: width 1s;
+        }
+        .wrap .three {
+            width: 0;
+            transition: width 1s;
+        }
+        .wrap .four {
+            width: 0;
+            transition: width 1s;
+        }
+        .wrap .five {
+            width: 0;
+            transition: width 1s;
+        }
+        @media only screen and (max-width: 1600px) {
+            .dataList .sum {
+                width: 350px;
+            }
+
+            .sum .wrap p:nth-child(2) {
+                left: 295px;
+            }
+
+            .sum .point {
+                left: 155px;
+                bottom: 36px;
+            }
+
+            .sum .bottomWord {
+                left: 180px;
+            }
+
+            .sum .number {
+                right: 15px;
+            }
+
+            .roundFigure {
+                width: 350px;
+                position: absolute;
+                top: 326px;
+            }
+
+            .roundFigure #chartmain {
+                width: 310px;
+                height: 210px;
+            }
+
+            .roundFigure .point {
+                left: 235px;
+                bottom: 40px;
+                /* margin-left: 20px;
+                 margin-top: 300px;*/
+            }
+
+            .roundFigure > p {
+                position: relative;
+                left: 249px;
+                top: -20px;
+            }
+
+            .oneWrap .one {
+                width: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 1300px) {
+            .allNumber {
+                position: absolute;
+                top: -4px;
+            }
+
+            .roundFigure {
+                width: 350px;
+                position: absolute;
+                top: 326px;
+                left: 381px;
+                height: 286px;
+            }
+
+            .roundFigure .point {
+                position: relative;
+                left: 235px;
+                bottom: 4px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="count">
+    <div class="top">
+        <span>当前位置:<span class="current">数据分析</span><span>></span><span class="active">销售漏斗</span></span>
+        <span>
+					<a href='user.html'><span class="user"></span><span class="username"></span><span
+                            class="company"></span></a>
+					<span class="login_out">退出</span>
+				</span>
+    </div>
+    <div class="aside">
+        <div class="logo">
+            <div>
+                <div>企保科技</div>
+                <p>科技连接保险未来</p>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <li class="li_father">
+                    <a href="index.html">
+                        <span class="icon icon1"></span>
+                        <span>概况统计</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon2"></span>
+                        <span>管理中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="robot_manage.html">
+                                <span class="icon icon3"></span>
+                                <span>机器人管理</span>
+
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            <!--    <li class="li_father">
+                    <a>
+                        <span class="icon icon11"></span>
+                        <span>训练中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="history.html">
+                                <span class="icon icon6"></span>
+                                <span>历史对话</span>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>-->
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon7"></span>
+                        <span>用户中心</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                        <li class="li_sub">
+                            <a href="user.html">
+                                <span class="icon icon8"></span>
+                                <span>基本设置</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="manage.html">
+                                <span class="icon icon9"></span>
+                                <span>套餐&余额管理</span>
+                                <sup></sup>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="order.html">
+                                <span class="icon icon10"></span>
+                                <span>流量订单管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="balance_order_management.html">
+                                <span class="icon icon15"></span>
+                                <span>余额订单管理</span>
+                            </a>
+                        </li>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a>
+                        <span class="icon icon13"></span>
+                        <span>人工客服</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="customer_service_manage.html">
+                                <span class="icon icon12"></span>
+                                <span>客服管理</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="work_statistics.html">
+                                <span class="icon icon14"></span>
+                                <span>历史客服工作统计</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="the_day_work_statistics.html">
+                                <span class="icon icon16"></span>
+                                <span>当天客服工作统计</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a class="active">
+                        <span class="icon icon17"></span>
+                        <span>数据分析</span>
+                        <span class="left active"></span>
+                    </a>
+                    <ul class="show">
+                        <li class="li_sub active">
+                            <a href="data_statistics.html">
+                                <span class="icon icon18"></span>
+                                <span>销售漏斗</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="robotData.html">
+                                <span class="icon icon6"></span>
+                                <span>机器人数据</span>
+                            </a>
+                        </li>
+                        <li class="li_sub">
+                            <a href="serviceData.html">
+                                <span class="icon icon20"></span>
+                                <span>客服数据</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father show_none" style="margin-left:8px;">
+                    <a>
+                        <span><img src="./img/qt01.png"></span>
+                        <span>智能质检</span>
+                        <span class="left"></span>
+                    </a>
+                    <ul>
+                        <li class="li_sub">
+                            <a href="qt.html" target="_blank">
+                                <span><img src="./img/qt02.png"></span>
+                                <span>语音质检</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_father">
+                    <a class="callBtn">
+                        <span class="icon icon19"></span>
+                        <span>智能呼叫中心</span>
+                        <!--<span class="left active"></span>-->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="conent">
+        <p class="conent_title">
+            <span></span>
+            <span>销售漏斗</span>
+        </p>
+        <div class="dataList">
+            <div class="sum yesNumber">
+                <div class="oneWrap wrap">
+                    <p>1级</p>
+                    <p class="yesterday_one_num"></p>
+                    <span class="one"></span>
+                </div>
+                <div class="twoWrap wrap otherWrap">
+                    <p>2级</p>
+                    <p class="yesterday_two_num"></p>
+                    <span class="two"></span>
+                </div>
+                <div class="threeWrap wrap otherWrap">
+                    <p>3级</p>
+                    <p class="yesterday_three_num"></p>
+                    <span class="three"></span>
+                </div>
+                <div class="fourWrap wrap otherWrap">
+                    <p>4级</p>
+                    <p class="yesterday_four_num"></p>
+                    <span class="four"></span>
+                </div>
+                <div class="fiveWrap wrap otherWrap">
+                    <p>5级</p>
+                    <p class="yesterday_five_num"></p>
+                    <span class="five"></span>
+                </div>
+                <div class="promptImg">
+                    <img src="./img/mark.png" alt="">
+                </div>
+                <div class="promptWord">
+                    机器人会根据客户咨询内容进行分析，并对其评级，级别越高，购买意向越高。
+                </div>
+                <span class="point"></span>
+                <p class="bottomWord">昨日总人数</p>
+                <p class="number yesAllNum"></p>
+            </div>
+            <div class="sum monNumber">
+                <div class="oneWrap wrap">
+                    <p>1级</p>
+                    <p class="month_one_num"></p>
+                    <span class="one"></span>
+                </div>
+                <div class="twoWrap wrap otherWrap">
+                    <p>2级</p>
+                    <p class="month_two_num"></p>
+                    <span class="two"></span>
+                </div>
+                <div class="threeWrap wrap otherWrap">
+                    <p>3级</p>
+                    <p class="month_three_num"></p>
+                    <span class="three"></span>
+                </div>
+                <div class="fourWrap wrap otherWrap">
+                    <p>4级</p>
+                    <p class="month_four_num"></p>
+                    <span class="four"></span>
+                </div>
+                <div class="fiveWrap wrap otherWrap">
+                    <p>5级</p>
+                    <p class="month_five_num"></p>
+                    <span class="five"></span>
+                </div>
+                <span class="point"></span>
+                <p class="bottomWord">本月总人数</p>
+                <p class="number monAllNum"></p>
+            </div>
+            <div class="sum allNumber">
+                <div class="oneWrap wrap">
+                    <p>1级</p>
+                    <p class="all_one_num"></p>
+                    <span class="one"></span>
+                </div>
+                <div class="twoWrap wrap otherWrap">
+                    <p>2级</p>
+                    <p class="all_two_num"></p>
+                    <span class="two"></span>
+                </div>
+                <div class="threeWrap wrap otherWrap">
+                    <p>3级</p>
+                    <p class="all_three_num"></p>
+                    <span class="three"></span>
+                </div>
+                <div class="fourWrap wrap otherWrap">
+                    <p>4级</p>
+                    <p class="all_four_num"></p>
+                    <span class="four"></span>
+                </div>
+                <div class="fiveWrap wrap otherWrap">
+                    <p>5级</p>
+                    <p class="all_five_num"></p>
+                    <span class="five"></span>
+                </div>
+                <span class="point"></span>
+                <p class="bottomWord">所有总人数</p>
+                <p class="number all"></p>
+            </div>
+            <div class="roundFigure">
+                <div id="chartmain"></div>
+                <span class="point"></span>
+                <p>所有客户比例</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/laydate.js"></script>
+<script src="js/common.js"></script>
+<script src="js/echarts.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            type: "get",
+           /* url: "mockJson/data.json",*/
+             url:"/merchant/v2.0/robot/robot_level",
+            async: true,
+            success: function (data) {
+                if (data.msg == 'ok') {
+                    var msg = data.data;
+                    //yes人数
+                    $(".yesterday_one_num").text(msg.yes_dir_num.yesterday_num + "人")
+                    $(".yesterday_two_num").text(msg.yes_dir_num.yesterday_two_num + "人")
+                    $(".yesterday_three_num").text(msg.yes_dir_num.yesterday_three_num + "人")
+                    $(".yesterday_four_num").text(msg.yes_dir_num.yesterday_four_num + "人")
+                    $(".yesterday_five_num").text(msg.yes_dir_num.yesterday_five_num + "人")
+                    $(".yesAllNum").text(msg.yes_dir_num.yesterday_num)
+                    //mon人数
+                    $(".month_one_num").text(msg.month_dir_num.month_num + "人")
+                    $(".month_two_num").text(msg.month_dir_num.month_two_num + "人")
+                    $(".month_three_num").text(msg.month_dir_num.month_three_num + "人")
+                    $(".month_four_num").text(msg.month_dir_num.month_four_num + "人")
+                    $(".month_five_num").text(msg.month_dir_num.month_five_num + "人")
+                    $(".monAllNum").text(msg.month_dir_num.month_num)
+                    //all人数
+                    $(".all_one_num").text(msg.all_dir_num.all_num + "人")
+                    $(".all_two_num").text(msg.all_dir_num.all_two_num + "人")
+                    $(".all_three_num").text(msg.all_dir_num.all_three_num + "人")
+                    $(".all_four_num").text(msg.all_dir_num.all_four_num + "人")
+                    $(".all_five_num").text(msg.all_dir_num.all_five_num + "人")
+                    $(".all").text(msg.all_dir_num.all_num)
+
+
+                    if ($(window).width() >= 1600) {
+                        long = 260;
+                        console.log("111");
+                    } else {
+                        long = 200;
+                    }
+                    /*  console.log($(window).width());
+                      $(window).resize(function(){
+                          /!*location.reload()*!/
+                          $(".wrap .one").width(long)
+                      });*/
+
+                    /* var long=$(".oneWrap .one").width()*/
+                    //yes1级长度
+                    if (msg.yes_dir_num.yesterday_num == 0) {
+                        $(".yesNumber .one").width(0)
+                    } else {
+                        $(".yesNumber .one").width(long)
+                    }
+
+                    //yes2级长度
+                    var yesTwoWidth = msg.yes_dir_num.yesterday_two_num / msg.yes_dir_num.yesterday_num * long;
+                    $(".yesNumber .two").width(yesTwoWidth)
+
+                    //yes3级长度
+                    var yesThreeWidth = msg.yes_dir_num.yesterday_three_num / msg.yes_dir_num.yesterday_num * long;
+                    $(".yesNumber .three").width(yesThreeWidth)
+
+                    //yes4级长度
+                    var yesFourWidth = msg.yes_dir_num.yesterday_four_num / msg.yes_dir_num.yesterday_num * long;
+                    $(".yesNumber .four").width(yesFourWidth)
+
+                    //yes5级长度
+                    var yesFiveWidth = msg.yes_dir_num.yesterday_five_num / msg.yes_dir_num.yesterday_num * long;
+                    $(".yesNumber .five").width(yesFiveWidth)
+
+
+                    //mon1级长度
+                    if (msg.month_dir_num.month_num == 0) {
+                        $(".monNumber .one").width(0)
+                    } else {
+                        $(".monNumber .one").width(long)
+                    }
+                    //mon2级长度
+                    var monTwoWidth = msg.month_dir_num.month_two_num / msg.month_dir_num.month_num * long;
+                    $(".monNumber .two").width(monTwoWidth)
+
+
+                    //mon3级长度
+                    var monThreeWidth = msg.month_dir_num.month_three_num / msg.month_dir_num.month_num * long;
+                    $(".monNumber .three").width(monThreeWidth)
+
+                    //mon4级长度
+                    var monFourWidth = msg.month_dir_num.month_four_num / msg.month_dir_num.month_num * long;
+                    $(".monNumber .four").width(monFourWidth)
+
+                    //mon5级长度
+                    var monFiveWidth = msg.month_dir_num.month_five_num / msg.month_dir_num.month_num * long;
+                    $(".monNumber .five").width(monFiveWidth)
+
+                    //all 1级长度
+                    if (msg.all_dir_num.all_num == 0) {
+                        $(".allNumber .one").width(0)
+                    } else {
+                        $(".allNumber .one").width(long)
+                    }
+                    //all2级长度
+                    var allTwoWidth = msg.all_dir_num.all_two_num / msg.all_dir_num.all_num * long;
+                    $(".allNumber .two").width(allTwoWidth)
+
+                    //all3级长度
+                    var allThreeWidth = msg.all_dir_num.all_three_num / msg.all_dir_num.all_num * long;
+                    $(".allNumber .three").width(allThreeWidth)
+
+                    //all4级长度
+                    var allFourWidth = msg.all_dir_num.all_four_num / msg.all_dir_num.all_num * long;
+                    $(".allNumber .four").width(allFourWidth)
+
+                    //all5级长度
+                    var allFiveWidth = msg.all_dir_num.all_five_num / msg.all_dir_num.all_num * long;
+                    $(".allNumber .five").width(allFiveWidth)
+                    /* if (msg.all_dir_num.all_five_num == 0) {
+                         $(".allNumber .five").width(0)
+                     } else {
+                         if (allFourWidth >= 180) {
+                             $(".allNumber .five").width(allFiveWidth)
+                         } else {
+                             $(".allNumber .five").width(180)
+                         }
+                     }*/
+                    var val1 = msg.all_level.all_one_level
+                    var val2 = msg.all_level.all_two_level
+                    var val3 = msg.all_level.all_three_level
+                    var val4 = msg.all_level.all_four_level
+                    var val5 = msg.all_level.all_five_level
+                    createChart(val1, val2, val3, val4, val5);
+                } else if (data.errmsg == '用户未登录') {
+                    window.location.href = "login.html";
+                }
+
+            }
+        })
+    })
+
+    function createChart(val1, val2, val3, val4, val5) {
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                /* formatter: "{a} <br/>{b}: {c} ({d}%)",*/
+                formatter: "{b}:<br/> {c} ({d}%)"
+            },
+        /*    color: ['rgba(251,83,96,1)', 'rgba(254,188,4,1)', "rgba(59,198,101,1)", "rgba(94,205,222,1)", "rgba(129,228,228,1)"],*/
+            color: ['rgba(129,228,228,1)', 'rgba(94,205,222,1)', "rgba(59,198,101,1)", "rgba(254,188,4,1)", "rgba(251,83,96,1)"],
+            legend: {
+                x: 'center',
+                bottom: "0px",
+                left: "22px",
+                padding: 0,
+                icon: "circle",
+                itemWidth: 6,
+                itemHeight: 6,
+                borderRadius: 0,
+                selectedMode: false,
+                orient: 'horizontal',
+                data: ['1级', '2级', '3级', '4级', "5级"]
+            },
+            series: [
+                {
+                    name: '',
+                    type: 'pie',
+                    radius: ['65%', '35%'],
+                    legendHoverLink: false,
+                    hoverAnimation: false,
+                    center: ['50%', '45%'],
+                    label: {
+                        normal: {
+                            formatter: '{per|{d}%}  ',
+                            position: "outside",
+                            borderColor: '#aaa',
+                            rich: {
+                                per: {
+                                    color: 'black',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        },
+
+                    },
+                    labelLine: {
+                        normal: {
+                            show: true,
+                            length: 50,
+                        }
+                    },
+                    data: [
+                        {value: val5, name: '5级'},
+                        {value: val4, name: '4级'},
+                        {value: val3, name: '3级'},
+                        {value: val2, name: '2级'},
+                        {value: val1, name: '1级'}
+                    ]
+                }
+            ]
+        };
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chartmain'));
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(option);
+        myChart.on("mouseover", function (params) {
+            myChart.dispatchAction({
+                type: 'downplay'
+            });
+        });
+    }
+
+
+</script>
+</body>
+</html>
