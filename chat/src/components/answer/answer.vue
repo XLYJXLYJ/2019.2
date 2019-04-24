@@ -46,7 +46,6 @@
 </template>
 <script>
   import Bus from '../../bus.js';
-
   export default {
     name: 'answer',
     props: {
@@ -154,13 +153,13 @@
         Bus.$emit('sent', {data_text: target.getAttribute("data-text"), 'index': this_.index,'a':a})
         this.$ajax({
             method: "put",
-            url: "/acs/v1.0/robot_robot",
+            url: "/acs/v1.0/robot_answer",
             headers: {
             'Content-type': 'application/x-www-form-urlencoded'
           },
           data: {
               'robot_uu_id': a.robot_uu_id,
-              'modify_content': a.sentence,
+              'modify_content': a.a,
               'service_send_status':1
           },
           transformRequest: [function (data) {
@@ -171,7 +170,6 @@
             return ret
           }],
         }).then(res => {
-
         })
       },
       sentProcess(event) {
@@ -181,7 +179,6 @@
         // Bus.$emit('sentProcess', {data_text: target.title, 'index': this_.index})
          Bus.$emit('look', {data_text: target.title, 'index': this_.index})
       },
-
       robot_balance(robot_uu_id, dialogId) {
         this.$ajax({
           method: "post",
@@ -201,7 +198,6 @@
             return ret
           }],
         }).then(res => {
-
         })
       },
       Spread(index) {

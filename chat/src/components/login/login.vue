@@ -106,12 +106,8 @@
             }
           })
         }
-
-
 //        this_.$router.push({'path':'/chat','params':{'state':state}});
-
       }
-
     }
   }
 </script>
@@ -149,7 +145,6 @@
             letter-spacing 1.5px
           }
         }
-
       }
       .login_form {
         position absolute
@@ -228,5 +223,4 @@
       }
     }
   }
-
 </style>

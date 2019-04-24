@@ -12,9 +12,9 @@
     </div>
     <div class="record images"  ref="recordWrapper"  id="">
       <!--<ul >-->
-        <!--&lt;!&ndash;<li><img src="../../../static/tibet-1.jpg" alt="Picture 1"></li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li><img src="../../../static/tibet-2.jpg" alt="Picture 2"></li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<li><img src="../../../static/tibet-3.jpg" alt="Picture 3"></li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<li><img src="../../../static/tibet-1.jpg" alt="Picture 1"></li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<li><img src="../../../static/tibet-2.jpg" alt="Picture 2"></li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<li><img src="../../../static/tibet-3.jpg" alt="Picture 3"></li>&ndash;&gt;-->
       <!--</ul>-->
       <div  ref="texts" class="g-scroll-view scroll"  :style="{width:width}">
         <div ref="text">
@@ -24,9 +24,9 @@
           </div>
           <div class="paging_record">
             <!--<div class="div_left" >-->
-              <!--<p>2131353(450654经纪(⊙o⊙)…)</p>-->
-              <!--<span class="avatar"></span>-->
-              <!--<span class="box" >544444444444444444444442432kkrte大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发</span>-->
+            <!--<p>2131353(450654经纪(⊙o⊙)…)</p>-->
+            <!--<span class="avatar"></span>-->
+            <!--<span class="box" >544444444444444444444442432kkrte大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发</span>-->
             <!--</div>-->
             <div v-if="targetIds.more">
               <div v-for="(m,index) in paging_record" :key="index">
@@ -101,22 +101,22 @@
             </span>
           </div>
           <!--<div class="div_right" :style="{padding:padding}">-->
-            <!--<p>&lt;!&ndash;({{m.sentTime}}){{s_name}}&ndash;&gt;</p>-->
-            <!--<span class="service_avatar"></span>-->
-            <!--<span class="box" >-->
-              <!--<img  style="width: 100%;" src="../../../static/algorithm2.png"/>-->
-            <!--</span>-->
+          <!--<p>&lt;!&ndash;({{m.sentTime}}){{s_name}}&ndash;&gt;</p>-->
+          <!--<span class="service_avatar"></span>-->
+          <!--<span class="box" >-->
+          <!--<img  style="width: 100%;" src="../../../static/algorithm2.png"/>-->
+          <!--</span>-->
           <!--</div>-->
         </div>
       </div>
     </div>
     <div class="input">
-    <!--  <div class="bg">-->
-        <span class="picture">
+      <!--  <div class="bg">-->
+      <span class="picture">
           <input type="file"  name="service_image" ref="referenceUpload"   @change="updateFile">
         </span>
-        <textarea v-model="text" id="textarea"  ref=""    @keyup="keyDown($event)"></textarea>
-        <span class="send" @click="sent($event)">发送</span>
+      <textarea v-model="text" id="textarea"  ref=""    @keyup="keyDown($event)"></textarea>
+      <span class="send" @click="sent($event)">发送</span>
       <!--</div>-->
     </div>
     <v_close v-show="closeStatus" v-on:isClose="listenClose" >是否关闭?</v_close>
@@ -232,29 +232,28 @@
       }
       var inputs = document.getElementsByClassName('input');
       /*this_.$jquery('.input').resizable({*/
-     /* this_.$jquery('.input').resizable({
-        handles: 'n', //'e'是east，允许拖动右侧边框的意思
-        maxHeight: 260,
-        minHeight: 135,
-        //resize方法在#left大小改变后被执行
-        resize: function(event, ui) { //由于我们调整的是#left的大小，当#left改变时，要同时改变#middle的大小
-          clearTimeout(this_.timer);
-          this_.$jquery('.record').height(this_.$jquery('.chatWindow').height() - ui.size.height - this_.$jquery('.head').height());
-          this_.timer=setTimeout(function(){
-            var div = document.getElementsByClassName('scroll');
-            for(let i=0;i<=this_.index;i++){
-            /!*  div[this_.index].scrollTop = div[this_.index].scrollHeight;*!/
-              console.log(i,"iaa");
-              div[i].scrollTop = div[i].scrollHeight;
-            }
-            /!*div[this_.showIndex].scrollTop = div[this_.showIndex].scrollHeight;*!/
-            console.log(this_.showIndex, " div[this.showIndex]");
-            /!*   console.log("div[this_.index].scrollTop", div[this_.index]);*!/
-            this_.$jquery('.chatWindow .input textarea').height(ui.size.height - 60)
-
-          },0);
-        }
-      })*/
+      /* this_.$jquery('.input').resizable({
+         handles: 'n', //'e'是east，允许拖动右侧边框的意思
+         maxHeight: 260,
+         minHeight: 135,
+         //resize方法在#left大小改变后被执行
+         resize: function(event, ui) { //由于我们调整的是#left的大小，当#left改变时，要同时改变#middle的大小
+           clearTimeout(this_.timer);
+           this_.$jquery('.record').height(this_.$jquery('.chatWindow').height() - ui.size.height - this_.$jquery('.head').height());
+           this_.timer=setTimeout(function(){
+             var div = document.getElementsByClassName('scroll');
+             for(let i=0;i<=this_.index;i++){
+             /!*  div[this_.index].scrollTop = div[this_.index].scrollHeight;*!/
+               console.log(i,"iaa");
+               div[i].scrollTop = div[i].scrollHeight;
+             }
+             /!*div[this_.showIndex].scrollTop = div[this_.showIndex].scrollHeight;*!/
+             console.log(this_.showIndex, " div[this.showIndex]");
+             /!*   console.log("div[this_.index].scrollTop", div[this_.index]);*!/
+             this_.$jquery('.chatWindow .input textarea').height(ui.size.height - 60)
+           },0);
+         }
+       })*/
       this_.$jquery(window).resize(function () {
         var t = null;
         clearTimeout(t);
@@ -268,18 +267,18 @@
     },
     computed:{
       deal() {
-          if(this.targetIds.total_page==0){
-            this.get_record=false;
-          }else{
-            this.get_record=true;
-          }
-          var history = this.targetIds.history;
-          var length = this.targetIds.history.length;
-          for (var i = 0; i < length; i++) {
-            var split=history[i].create.split(" ");
-            history[i].sentTime = split[1];
-          }
-          return history;
+        if(this.targetIds.total_page==0){
+          this.get_record=false;
+        }else{
+          this.get_record=true;
+        }
+        var history = this.targetIds.history;
+        var length = this.targetIds.history.length;
+        for (var i = 0; i < length; i++) {
+          var split=history[i].create.split(" ");
+          history[i].sentTime = split[1];
+        }
+        return history;
       },
       content() {
         return this.targetIds.content
@@ -373,23 +372,21 @@
             }, 100)
           })
           setTimeout(function () {
-             this_.gallery.destroy();
-             var child=document.getElementsByClassName("viewer-container");
-             if(child.length>0){
-               var parent=document.getElementsByTagName("body")[0];
-               for(var j=0;j<child.length;j++){
-                 parent.removeChild(child[j]);
-               }
-             }
-             this_.gallery=new Viewer(document.getElementById('content'),{
-                navbar:false,
-                toolbar:false,
-                title:false
-             })
-
+            this_.gallery.destroy();
+            var child=document.getElementsByClassName("viewer-container");
+            if(child.length>0){
+              var parent=document.getElementsByTagName("body")[0];
+              for(var j=0;j<child.length;j++){
+                parent.removeChild(child[j]);
+              }
+            }
+            this_.gallery=new Viewer(document.getElementById('content'),{
+              navbar:false,
+              toolbar:false,
+              title:false
+            })
           },100)
         },
-
         deep:true,
         immediate:true,
       },
@@ -408,8 +405,6 @@
           },100)
         })
       }
-
-
     },
     methods:{
       photoCompress(file,w,objDiv){
@@ -475,13 +470,13 @@
           this_.photoCompress(files,{
             quality:0.9
           },function (base64Codes) {
-          var bl = this_.convertBase64UrlToBlob(base64Codes);
-          form.append("service_image", bl, "file_"+Date.parse(new Date())+".jpg"); // 文件对象
-          xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
-          xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
-          xhr.onload = this_.uploadComplete; //请求完成
-          xhr.onerror =  this_.uploadFailed; //请求失败
-          xhr.send(form); //开始上传，发送form数据
+            var bl = this_.convertBase64UrlToBlob(base64Codes);
+            form.append("service_image", bl, "file_"+Date.parse(new Date())+".jpg"); // 文件对象
+            xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+            xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+            xhr.onload = this_.uploadComplete; //请求完成
+            xhr.onerror =  this_.uploadFailed; //请求失败
+            xhr.send(form); //开始上传，发送form数据
           })
         }else{
           form.append("service_image", files); // 文件对象
@@ -599,22 +594,22 @@
           html=this.text.replace(/\n/g,'<br/>')
           this.text="";
         }
+        if(html=='<br/>') return false;
         if(html.trim().length<1) return false;
         if(this.is_edit){
           this.is_edit = false ;
-        /*  console.log('编辑前')
-          console.log('编辑后'+html)*/
+          /*  console.log('编辑前')
+            console.log('编辑后'+html)*/
         }
-
         if(localStorage.getItem('selectEdit') == 1) {
           this.$ajax({
             method: "put",
-            url: "/acs/v1.0/robot_robot",
+            url: "/acs/v1.0/robot_answer",
             headers: {
               'Content-type': 'application/x-www-form-urlencoded'
             },
             data: {
-              'robot_uu_id':  this_.robot_uu_id,
+              'robot_uu_id':  this.robot_uu_id,
               'modify_content': html,
               'service_send_status':2
             },
@@ -638,30 +633,30 @@
       },
       keyDown(event){
         event.preventDefault()
-       var this_=this;
-       if (event.ctrlKey && event.keyCode == 13)  {
-         var $input = document.getElementById("textarea");
-         var cursurPosition=0;
-         if($input.selectionStart){//非IE
-           cursurPosition= $input.selectionStart;
-         }else{//IE
-           try{
-             var range = document.selection.createRange();
-             range.moveStart("character",-$input.value.length);
-             cursurPosition=range.text.length;
-           }catch(e){
-             cursurPosition = 0;
-           }
-         }
-         //var value=$input[this_.index].value;
-         document.getElementById("textarea").value=document.getElementById("textarea").value.slice(0, cursurPosition) + '\n' + document.getElementById("textarea").value.slice(cursurPosition);
-         this.setCaretPosition( document.getElementById("textarea"),cursurPosition+1);
-         //document.getElementById("textarea").value+= '\n'
-       }else if(event.keyCode == 13){
-         event.preventDefault();
-         event.returnValue = false;
-         this.sent({});
-       }
+        var this_=this;
+        if (event.ctrlKey && event.keyCode == 13)  {
+          var $input = document.getElementById("textarea");
+          var cursurPosition=0;
+          if($input.selectionStart){//非IE
+            cursurPosition= $input.selectionStart;
+          }else{//IE
+            try{
+              var range = document.selection.createRange();
+              range.moveStart("character",-$input.value.length);
+              cursurPosition=range.text.length;
+            }catch(e){
+              cursurPosition = 0;
+            }
+          }
+          //var value=$input[this_.index].value;
+          document.getElementById("textarea").value=document.getElementById("textarea").value.slice(0, cursurPosition) + '\n' + document.getElementById("textarea").value.slice(cursurPosition);
+          this.setCaretPosition( document.getElementById("textarea"),cursurPosition+1);
+          //document.getElementById("textarea").value+= '\n'
+        }else if(event.keyCode == 13){
+          event.preventDefault();
+          event.returnValue = false;
+          this.sent({});
+        }
       },
     }
   }
@@ -671,7 +666,7 @@
     text-align center
     font-size 13px
     cursor pointer
-   /* color #524ae7*/
+    /* color #524ae7*/
     color rgba(49,153,224,1)
     margin-top 10px
     .text {
@@ -694,7 +689,6 @@
       background-size cover
       width 20px
       height 20px
-
     }
   }
   .chatWindow{
@@ -730,7 +724,6 @@
           }
           &.lessen {
             background-position-x -102px
-
           }
           &.closeWindow {
             background-position-x -88px
@@ -744,14 +737,14 @@
       height 135px
       width 100%
       background:rgba(253,253,253,1)
-    /*  .bg{
-        width 90%
-        !*height 150px*!
-        background:rgba(253,253,253,1);
-        margin: 0 auto
-        position: absolute
-        bottom: 0
-      }*/
+      /*  .bg{
+          width 90%
+          !*height 150px*!
+          background:rgba(253,253,253,1);
+          margin: 0 auto
+          position: absolute
+          bottom: 0
+        }*/
       .picture{
         position absolute
         left 10px
@@ -772,7 +765,7 @@
       }
       textarea{
         height 100px
-       /* height 52px*/
+        /* height 52px*/
         width 100%
         resize none
         outline none
@@ -787,12 +780,12 @@
       }
       .send{
         position absolute
-       /* font-size 14px*/
+        /* font-size 14px*/
         display block
         width 32px
         height 15px
-       /* padding 3px 15px
-        border 1px solid #e5e5e5*/
+        /* padding 3px 15px
+         border 1px solid #e5e5e5*/
         font-size: 14px;
         padding: 3px 15px;
         border: 1px solid #e5e5e5;
@@ -801,7 +794,7 @@
         line-height:15px
         right: 30px
         top 4px
-       /* background:url("./send.png") no-repeat*/
+        /* background:url("./send.png") no-repeat*/
       }
     }
     .record{
@@ -816,7 +809,6 @@
         p{
           margin 0
           font-size  14px
-
         }
         .avatar{
           display inline-block
@@ -850,7 +842,7 @@
           max-width 80%
           padding 6px 7px
           background white
-         /* border-radius  3px*/
+          /* border-radius  3px*/
           margin-left 20px
           background:rgba(255,255,255,1);
           box-shadow:0px 0px 16px 0px rgba(61,104,169,0.17);
@@ -863,15 +855,15 @@
             width 100px;
             height auto;
           }
-        /*  &:before{
-            position absolute
-            content ""
-            background  url("../../../static/triangle_left.png") no-repeat
-            left -9px
-            top 7px
-            width 9px
-            height 19.5px
-          }*/
+          /*  &:before{
+              position absolute
+              content ""
+              background  url("../../../static/triangle_left.png") no-repeat
+              left -9px
+              top 7px
+              width 9px
+              height 19.5px
+            }*/
           &:after{
             position absolute
             content: ""
@@ -932,7 +924,7 @@
           max-width 80%
           padding 8px 10px
           background rgba(169,165,253,.35)
-         /* border-radius  3px*/
+          /* border-radius  3px*/
           margin-right 20px
           border 1px solid #e2e2ec
           float right
@@ -953,16 +945,15 @@
             border-bottom 8px solid transparent
             background-color transparent
           }*/
-         /* &:after{
-            position absolute
-            content: ""
-            background  url("../../../static/triangle_right.png") no-repeat
-            width 9px
-            height 19px
-            right -8.5px
-            top 7px
-
-          }*/
+          /* &:after{
+             position absolute
+             content: ""
+             background  url("../../../static/triangle_right.png") no-repeat
+             width 9px
+             height 19px
+             right -8.5px
+             top 7px
+           }*/
           div{
             width 100%
             img{
@@ -987,8 +978,6 @@
   .record  .g-scroll-view{
     overflow-x hidden
     height 100%!important
-
-
   }
   .record  .g-scroll-view>div{
     width 100%

@@ -19,28 +19,26 @@ const actions = {
 }
 
 const mutations = {
-    setHeight (state, index) {
+    setHeight (state,index) {
       state.chatHeight = index
     },
-    setVoice (state, index) {
+    setVoice (state,index) {
       state.no_voice = index
     },
-    setInitVoice (state, index) {
+    setInitVoice (state,index) {
       state.initVoice = index
     },
-    setCustomer (state, index) {
+    setCustomer (state,index){
       state.customer = index
     },
-    setSentence (state, index) {
+    setSentence (state,index){
       state.sentence = index
     },
-    triSentence (state, objj) {  // 同时设置声音和弹框参数
-      let obj = {}
-      obj = objj
-      // state.no_voice = obj.no_voice
-      // state.customer = obj.customer
-      // state.sentence = obj.sentence
-      [state.no_voice,state.customer,state.sentence] = [obj.no_voice,obj.customer,obj.sentence]
+    triSentence (state,objj){ //同时设置声音和弹框参数
+      let obj = objj
+      state.no_voice = obj.no_voice
+      state.customer = obj.customer
+      state.sentence = obj.sentence
     }
 }
 export default new Vuex.Store({

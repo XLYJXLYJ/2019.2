@@ -46,7 +46,6 @@
     methods:{
       setInitVoice(){
         console.log('hahahah')
-
         this.$store.commit('setInitVoice',1)
         console.log(this.$store.state.initVoice)
       }
@@ -57,28 +56,23 @@
   body {
     margin 0
   }
-
   ul {
     padding-left 0
   }
-
   ul li {
     list-style-type none
   }
-
   a {
     text-decoration none
   }
-
   .vue-aside {
     position absolute;
     top 0;
     left 0;
     width 132px
-   /* height 100vh*/
+    /* height 100vh*/
     height:100%
     background: rgba(43, 48, 62, 1);
-
     .logo {
       width: 100%;
       height: 60px;
@@ -88,14 +82,12 @@
       text-align: center;
       margin-bottom: 20px;
       color: white;
-
       .company {
         font-size: 20px;
         font-weight: 600;
         /* margin-top: 18px*/
         padding: 18px 0px 5px 0px;
         /* border-bottom: 2px solid white;*/
-
         ~ p {
           margin-top: 5px;
           margin-bottom: 0px;
@@ -103,7 +95,6 @@
         }
       }
     }
-
     .list {
       .li_father {
         line-height 40px;
@@ -113,7 +104,6 @@
           color: rgba(135, 144, 160, 1)
           margin-left 0
           /*font-size 0*/
-
           .icon {
             background url(sprite1.png);
             width 20px;
@@ -123,37 +113,33 @@
             &.icon1 {
               background-position-y -12px;
             }
-
             &.icon2 {
               background-position-y -46px;
             }
-
             &.icon3 {
               background-position-y -77px;
             }
           }
-
           span {
             font-size 14px
           }
-
-            &.active{
-              .icon{
-                background-position-x -36px;
-              }
-              span{
-                color white
-              }
+          &.active{
+            .icon{
+              background-position-x -36px;
             }
-            &:hover{
-              .icon{
-               /* background-position-x -93px;*/
-                background-position-x -36px;
-              }
-              span{
-                color:rgba(255,255,255,1);
-              }
+            span{
+              color white
             }
+          }
+          &:hover{
+            .icon{
+              /* background-position-x -93px;*/
+              background-position-x -36px;
+            }
+            span{
+              color:rgba(255,255,255,1);
+            }
+          }
         }
       }
     }

@@ -40,7 +40,7 @@
       this.compan = this.company = getCookie('company')
       this.s_name = getCookie('s_name');
       if (!(this.company && this.s_name)) {
-       this.$router.push({'path': '/'})
+        this.$router.push({'path': '/'})
       }
     },
     mounted(){
@@ -88,7 +88,6 @@
           document.cookie= name + "="+cval+";expires="+exp.toGMTString();
       }
     }
-
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -103,7 +102,7 @@
     padding-bottom: 40px
     font-size 14px
     background:rgba(255,255,255,1);
-   /* border-bottom 1px solid #cac8f9*/
+    /* border-bottom 1px solid #cac8f9*/
     .location{
       width: 16px
       height: 16px
@@ -121,7 +120,7 @@
       color:rgba(69,69,69,1);
       .current{
         margin-left 5px
-       /* color #524AE7*/
+        /* color #524AE7*/
         font-size:16px;
         font-family:PingFang-SC-Bold;
         font-weight:bold;
@@ -150,7 +149,7 @@
       }
       .login_out{
         margin-left 30px
-      /*  color #524AE7*/
+        /*  color #524AE7*/
         cursor: pointer
         font-size:16px;
         font-family:PingFang-SC-Medium;
@@ -163,7 +162,6 @@
       }
     }
   }
-
   .vue-head-big{
     position absolute
     left 132px;
@@ -175,7 +173,7 @@
     padding-bottom: 40px
     font-size 14px
     background:rgba(255,255,255,1);
-   /* border-bottom 1px solid #cac8f9*/
+    /* border-bottom 1px solid #cac8f9*/
     .location{
       width: 16px
       height: 16px
@@ -193,7 +191,7 @@
       color:rgba(69,69,69,1);
       .current{
         margin-left 5px
-       /* color #524AE7*/
+        /* color #524AE7*/
         font-size:16px;
         font-family:PingFang-SC-Bold;
         font-weight:bold;
@@ -222,7 +220,7 @@
       }
       .login_out{
         margin-left 30px
-      /*  color #524AE7*/
+        /*  color #524AE7*/
         cursor: pointer
         font-size:16px;
         font-family:PingFang-SC-Medium;

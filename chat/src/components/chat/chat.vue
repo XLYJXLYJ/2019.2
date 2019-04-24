@@ -6,7 +6,7 @@
       <div class="chat-wrapper">
         <div class="chat_content">
           <!--<span class="chat_title">-->
-            <!--<span>客服工作台</span>-->
+          <!--<span>客服工作台</span>-->
           <!--</span>-->
           <!--<img src="../../assets/aimi.png">-->
           <span class="status">
@@ -58,7 +58,7 @@
   import {IndexedDB} from "../../store"
   import Viewer from 'viewerjs'
   import 'viewerjs/dist/viewer.css'
-import { setInterval } from 'timers';
+  import { setInterval } from 'timers';
   export default {
     name:'chat',
     data(){
@@ -108,7 +108,6 @@ import { setInterval } from 'timers';
         unreadMessageCountTotal:0,
         isShine:false,
         initVoice:''
-
       }
     },
     // beforeRouteEnter (to, from, next) {
@@ -128,7 +127,7 @@ import { setInterval } from 'timers';
     //   // })
     // },
     destroyed() {
-        this.state = "下线"
+      this.state = "下线"
     },
     created:function () {
       this.initVoice = 0
@@ -161,15 +160,14 @@ import { setInterval } from 'timers';
 //      this_.environment="http://test.open.qb-tech.net/chat_image/"
       if(window.location.href.indexOf("test") > 0 || window.location.href.indexOf("127.0.0.1") > 0) {
         this_.environment= "http://test.open.qb-tech.net/chat_image/";
-          this.appkey = "8w7jv4qb829cy";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
+        this.appkey = "8w7jv4qb829cy";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
       }else{
         this_.environment= "http://open.qb-tech.net/chat_image/";
-          this.appkey = "82hegw5u8ytdx";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
+        this.appkey = "82hegw5u8ytdx";//82hegw5u8ytdx正式  8w7jv4qb829cy测试
       }
 //      setTimeout(function () {
 //        this_.$ajax.get('/acs/v1.0/service_message').then(res=>{})
 //      },4000)
-
       RongIMLib.RongIMClient.init(this.appkey);
       this.token = getCookie('s_token');
       this.s_name = getCookie('s_name');
@@ -181,19 +179,19 @@ import { setInterval } from 'timers';
               /*console.log('链接成功');*/
               this_.date=(new Date()).valueOf();
             case RongIMLib.ConnectionStatus.CONNECTING:
-             /* console.log('正在链接');*/
+              /* console.log('正在链接');*/
               break;
             case RongIMLib.ConnectionStatus.DISCONNECTED:
-             /* console.log('断开连接');*/
+              /* console.log('断开连接');*/
               break;
             case RongIMLib.ConnectionStatus.KICKED_OFFLINE_BY_OTHER_CLIENT:
-             /* console.log('其他设备登录');*/
+              /* console.log('其他设备登录');*/
               break;
             case RongIMLib.ConnectionStatus.DOMAIN_INCORRECT:
               /*console.log('域名不正确');*/
               break;
             case RongIMLib.ConnectionStatus.NETWORK_UNAVAILABLE:
-             /* console.log('网络不可用');*/
+              /* console.log('网络不可用');*/
               break;
           }
         }
@@ -204,25 +202,24 @@ import { setInterval } from 'timers';
         onReceived: function (message) {
           // 判断消息类型
           var flag=true;
-
           switch (message.messageType) {
             case RongIMClient.MessageType.TextMessage:
               var  date=getCookie('date');
               if(date<message.sentTime&&message.targetId=="systemcustomerrepeatlogin"&&message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"&&message.content.extra!=date){
-                  this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
-                    this_.logout=true;
-                    console.log('3333')
-                   /* console.log(res.data)*/
-                    if(res.data.errmsg=="OK"){
-                      this_.delCookie('s_token')
-                      this_.delCookie('service_id')
-                      this_.delCookie('company');
-                      this_.delCookie('s_name');
-                      this_.delCookie('date')
-                      this_.delCookie('targetId');
-                      return false;
-                    }
-                  })
+                this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
+                  this_.logout=true;
+                  console.log('3333')
+                  /* console.log(res.data)*/
+                  if(res.data.errmsg=="OK"){
+                    this_.delCookie('s_token')
+                    this_.delCookie('service_id')
+                    this_.delCookie('company');
+                    this_.delCookie('s_name');
+                    this_.delCookie('date')
+                    this_.delCookie('targetId');
+                    return false;
+                  }
+                })
               }
               if(this_.targetIds){
                 for(let i=0;i<this_.targetIds.length;i++) {
@@ -256,9 +253,7 @@ import { setInterval } from 'timers';
                   }
                 }
               }
-
 //              $("ul").append("<li>" + message.senderUserId+':'+message.content.content+ "</li>");
-
               break;
             case RongIMClient.MessageType.VoiceMessage:
               // message.content.content                        // 对声音进行预加载为 AMR 格式的 base64 码
@@ -310,7 +305,7 @@ import { setInterval } from 'timers';
           setInterval( sessionTextMessage, 800 );
         },
         onTokenIncorrect: function () {
-         /* console.log('token无效');*/
+          /* console.log('token无效');*/
         },
         onError: function (errorCode) {
           var info = '';
@@ -328,19 +323,18 @@ import { setInterval } from 'timers';
               info = '服务器不可用';
               break;
           }
-       /*   console.log(errorCode);*/
+          /*   console.log(errorCode);*/
         }
       });
-
       var callback = {
         onSuccess: function (userId) {
-        /*  console.log("Reconnect successfully." + userId);*/
+          /*  console.log("Reconnect successfully." + userId);*/
         },
         onTokenIncorrect: function () {
-        /*  console.log('token无效');*/
+          /*  console.log('token无效');*/
         },
         onError: function (errorCode) {
-         /* console.log(errorcode);*/
+          /* console.log(errorcode);*/
         }
       };
       var config = {
@@ -352,7 +346,6 @@ import { setInterval } from 'timers';
         rate: [100, 1000, 3000, 6000, 10000]
       };
       RongIMLib.RongIMClient.reconnect(this.token, callback, config);
-
       // $("#submit_id").click(sendTextMessage());
       function historyTextMessage(m,targetIds,customer_token) {
         this_.$ajax.get("/acs/v1.0/current_session",{params : {'targetId' : targetIds,'customer_token':customer_token}}).then((res) => {
@@ -369,7 +362,7 @@ import { setInterval } from 'timers';
               if (res.data.errmsg == 'OK') {
                 this_.targetIds[m].total_page=res.data.data.total_page;
                 this_.$set(this_.targetIds[m],'total_page',res.data.data.total_page);
-                  this_.db.getDataByKey(targetIds,targetIds.length-1).then(data=> {
+                this_.db.getDataByKey(targetIds,targetIds.length-1).then(data=> {
                   if(data.value.length==1){
                     // this_.aplayAudio()
                   }
@@ -383,14 +376,12 @@ import { setInterval } from 'timers';
             this_.listArray=[];
           }
         })
-
-
       }
       var listens=false;
       function sessionTextMessage() {
         RongIMLib.RongIMClient.getInstance().getConversationList({
           onSuccess: function (list) {
-          //  console.log(list);
+            //  console.log(list);
             var temp =[];
             var temp_target_id =[];
             var temp_content=[];
@@ -409,7 +400,6 @@ import { setInterval } from 'timers';
                 temp_content.push(html);
                 obj.extra = list[i].latestMessage.content.extra;
                 obj.targetId = list[i].targetId;
-
                 obj.unreadMessageCount = list[i].unreadMessageCount
                 if (this_.targetIds.length > 0) {
                   var array = [];
@@ -445,7 +435,6 @@ import { setInterval } from 'timers';
                         // //显示桌面通知
                         // this_.$store.commit('setCustomer',obj.extra[3])
                         // this_.$store.commit('setSentence',obj.content)
-
                         console.log('人工客服返回声音1')
                         let numberRandom = Math.random()
                         let obj1 = {
@@ -457,7 +446,6 @@ import { setInterval } from 'timers';
                         // this_.store.state.customer =
                         // this_.store.state.sentence =
                       }
-
                       this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
                       })
                     }else{
@@ -484,7 +472,6 @@ import { setInterval } from 'timers';
                   var hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
                   var minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
                   var second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-
                   if( list[i].latestMessage.content.content.indexOf(this_.environment)==0){
                     list[i].latestMessage.content.content = "<div><img src='" + list[i].latestMessage.content.content + "'></div>"
                   }
@@ -540,7 +527,6 @@ import { setInterval } from 'timers';
             // do something...
           }
         }, null);
-
       }
       function deleateconnect() {
         RongIMClient.getInstance().logout()
@@ -573,7 +559,6 @@ import { setInterval } from 'timers';
         if(screen.width<1500){
           this_.screen = false
         }
-
         if(document.getElementsByClassName('content')[0].className.indexOf('active')!=-1){
           document.getElementsByClassName('content')[0].className ="content";
         }
@@ -603,9 +588,8 @@ import { setInterval } from 'timers';
     watch:{
       targetIds: {
         handler: function (newVal, oldVal) {
-        /*  console.log('newVal', newVal)
-          console.log('oldVal', oldVal)*/
-
+          /*  console.log('newVal', newVal)
+            console.log('oldVal', oldVal)*/
         },
         immediate:true,
         deep: true,
@@ -688,14 +672,11 @@ import { setInterval } from 'timers';
         exdate.setDate(exdate.getDate() + expiredays);
         document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
       },
-
       aplayAudio () {
         const audio = document.getElementById('audio')
         audio.play()
       },
-
       getAnswer(sentence,dialogId,productId,index,sentTime,customer){
-
         return new  Promise((resolve,reject)=> {
           var this_ = this
           this_.$ajax({
@@ -717,82 +698,79 @@ import { setInterval } from 'timers';
               return ret
             }],
           }).then((res) => {
-              var lAnswer //接受异步数据
-              var display_name
-
-              // this_.aplayAudio()
-
-              if(res.data.data.process_flag === 1){
-                  // var insex_ = index
-                  this_.dialogId_ = res.data.data.dialogId
-                  this_.process_id_ = res.data.data.process_id
-                  this_.robot_answer_ = res.data.data.robot_answer
-                  this_.robot_uu_id_ = res.data.data.robot_uu_id
-                  this_.sentTime_ = sentTime
-                  function getFlowAnswer(robot_answer_,dialogId_,robot_uu_id_){
-                          new Promise((resolve,reject)=> {
-                          this_.$ajax({
-                            method: "post",
-                            url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
-                            headers: {
-                              'Content-type': 'application/x-www-form-urlencoded'
-                            },
-                            data: {
-                              'dialogId': this_.dialogId_ ,
-                              'process_id':this_.process_id_
-                            },
-                            transformRequest: [function (data) {
-                              let ret = ''
-                              for (let it in data) {
-                                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-                              }
-                              return ret
-                            }],
-                          }).then((res) => {
-                            resolve(res.data)
-                            lAnswer = res.data.data
-                            display_name = res.data.display_name
-                            this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
-                            try{
-                              this_.db.getDataByKey(this_.dialogId_,index).then(data=>{
-                                if(data){
-                                  if(data.value[data.value.length-1].sentTime==sentTime){
-                                    var array=[];
-                                    var date = this_.getCookie('date');
-                                    for(var j=0;j<data.value.length;j++){
-                                      if(data.value[j].sentTime>date){
-                                        array.push(data.value[j]);
-                                      }
-                                    }
-                                    this_.targetIds[index].qa_record = array;
-                                    this_.$set(this_.targetIds[index], 'qa_record', array)
-                                  }else{
-                                    // this_.aplayAudio()
-                                    console.log('机器人流程答案返回声音1')
-                                    // this_.$store.commit('setVoice',numberRandom)
-                                    // this_.store.state.customer = customer
-                                    // this_.store.state.sentence = sentence
-                                    let numberRandom = Math.random()
-                                    let obj1 = {
-                                      no_voice:numberRandom,
-                                      sentence:sentence,
-                                      customer:customer
-                                    }
-                                    this_.$store.commit('triSentence',obj1)
-                                    this_.db.updateData(this_.dialogId_,{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
-                                  }
-                                }else{
-                                  this_.db.addData({'id':this_.dialogId_,'value':[{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name}]})
-                                }
-                              })
-                            } catch(e) {
-                            }
-
-                          })
-                        })
+            var lAnswer //接受异步数据
+            var display_name
+            // this_.aplayAudio()
+            if(res.data.data.process_flag === 1){
+              // var insex_ = index
+              this_.dialogId_ = res.data.data.dialogId
+              this_.process_id_ = res.data.data.process_id
+              this_.robot_answer_ = res.data.data.robot_answer
+              this_.robot_uu_id_ = res.data.data.robot_uu_id
+              this_.sentTime_ = sentTime
+              function getFlowAnswer(robot_answer_,dialogId_,robot_uu_id_){
+                new Promise((resolve,reject)=> {
+                  this_.$ajax({
+                    method: "post",
+                    url: "/acs/v1.0/process_guidance",///acs http://127.0.0.1:80
+                    headers: {
+                      'Content-type': 'application/x-www-form-urlencoded'
+                    },
+                    data: {
+                      'dialogId': this_.dialogId_ ,
+                      'process_id':this_.process_id_
+                    },
+                    transformRequest: [function (data) {
+                      let ret = ''
+                      for (let it in data) {
+                        ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
                       }
-                  getFlowAnswer()
+                      return ret
+                    }],
+                  }).then((res) => {
+                    resolve(res.data)
+                    lAnswer = res.data.data
+                    display_name = res.data.display_name
+                    this_.targetIds[index].answers.push({q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
+                    try{
+                      this_.db.getDataByKey(this_.dialogId_,index).then(data=>{
+                        if(data){
+                          if(data.value[data.value.length-1].sentTime==sentTime){
+                            var array=[];
+                            var date = this_.getCookie('date');
+                            for(var j=0;j<data.value.length;j++){
+                              if(data.value[j].sentTime>date){
+                                array.push(data.value[j]);
+                              }
+                            }
+                            this_.targetIds[index].qa_record = array;
+                            this_.$set(this_.targetIds[index], 'qa_record', array)
+                          }else{
+                            // this_.aplayAudio()
+                            console.log('机器人流程答案返回声音1')
+                            // this_.$store.commit('setVoice',numberRandom)
+                            // this_.store.state.customer = customer
+                            // this_.store.state.sentence = sentence
+                            let numberRandom = Math.random()
+                            let obj1 = {
+                              no_voice:numberRandom,
+                              sentence:sentence,
+                              customer:customer
+                            }
+                            this_.$store.commit('triSentence',obj1)
+                            this_.db.updateData(this_.dialogId_,{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
+                          }
+                        }else{
+                          this_.db.addData({'id':this_.dialogId_,'value':[{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name}]})
+                        }
+                      })
+                    } catch(e) {
+                    }
+                  })
+                })
               }
+              getFlowAnswer()
+            }
             if (res.data.msg == '机器人返回信息') {
               if(sentence.indexOf("<div><img src='"+this_.environment)==0){
                 sentence='[图片]';
@@ -815,11 +793,9 @@ import { setInterval } from 'timers';
                       }else{
                         // this_.aplayAudio()
                         console.log('机器人返回声音1')
-
                         // this_.$store.commit('setVoice',numberRandom)
                         // this_.$store.commit('setCustomer',customer)
                         // this_.$store.commit('setSentence',sentence)
-
                         let numberRandom = Math.random()
                         let obj1 = {
                           no_voice:numberRandom,
@@ -827,7 +803,6 @@ import { setInterval } from 'timers';
                           customer:customer
                         }
                         this_.$store.commit('triSentence',obj1)
-
                         this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,select:res.data.data.robot_select,robot_answer_data:res.data.data.robot_answer_data,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                       }
                     }else{
@@ -843,7 +818,6 @@ import { setInterval } from 'timers';
                         customer:customer
                       }
                       this_.$store.commit('triSentence',obj1)
-
                       this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,select:res.data.data.robot_select,robot_answer_data:res.data.data.robot_answer_data,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
                     }
                   })
@@ -856,31 +830,31 @@ import { setInterval } from 'timers';
         })
       },
       listenClose(){
-          // this.checkActive=!this.checkActive;
-          let state=this.state=="上线"? "在线":"不在线"
-          this.$ajax({
-            method:"post",
-            url:"/acs/v1.0/change_service_state",
-            headers:{
-              'Content-type': 'application/x-www-form-urlencoded'
-            },
-            data:{
-              'state':state,
-            },
-            transformRequest: [function (data) {
-              let ret = ''
-              for (let it in data) {
-                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-              }
-              return ret
-            }],
-          }).then((res)=>{
-            if(res.data.data=="客服状态变更成功"){
-              this.checkActive=!this.checkActive;
-            }else if(res.data.msg=="用户未登录"){
-              this_.$router.push({'path': '/'});
+        // this.checkActive=!this.checkActive;
+        let state=this.state=="上线"? "在线":"不在线"
+        this.$ajax({
+          method:"post",
+          url:"/acs/v1.0/change_service_state",
+          headers:{
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          data:{
+            'state':state,
+          },
+          transformRequest: [function (data) {
+            let ret = ''
+            for (let it in data) {
+              ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
             }
-          })
+            return ret
+          }],
+        }).then((res)=>{
+          if(res.data.data=="客服状态变更成功"){
+            this.checkActive=!this.checkActive;
+          }else if(res.data.msg=="用户未登录"){
+            this_.$router.push({'path': '/'});
+          }
+        })
         // this.closeStatus=false;
       },
       updateRecord(data){
@@ -893,7 +867,7 @@ import { setInterval } from 'timers';
         this.extra=data.extra;
         this.sendTextMessage(data.content,this.targetId);
         if(data.content.indexOf(this.environment)==0){
-            data.content="<div><img src='"+data.content+"'></div>"
+          data.content="<div><img src='"+data.content+"'></div>"
         }
         obj={type:data.type,content:data.content,sentTime:hour+":"+minute+":"+second}
         this.targetIds[data.index].content.push(obj);
@@ -924,7 +898,6 @@ import { setInterval } from 'timers';
           document.getElementsByClassName('content')[0].className ="content";
         }
         this.removeTextMessage(this.lists[data]);
-
       },
       closeList(data){
         this.lists.splice(data,1);
@@ -951,7 +924,6 @@ import { setInterval } from 'timers';
             div[j].scrollTop = div[j].scrollHeight;
           }
         },100)
-
       },
       sendTextMessage(m,id) {
         var this_=this;
@@ -991,7 +963,7 @@ import { setInterval } from 'timers';
                   info = x;
                   break;
               }
-            /*  console.log('发送失败:' + info);*/
+              /*  console.log('发送失败:' + info);*/
             }
           }
         );
@@ -1005,7 +977,6 @@ import { setInterval } from 'timers';
               this_.lists.forEach(function(v){ array.push(v.targetId);})
               var sign=-1;
               for(var i=0;i<this_.targetIds.length;i++){
-
                 if(array.indexOf(this_.targetIds[i].targetId)!=0){
                   this_.targetIds.splice(i,1);
                   i = i-1
@@ -1017,11 +988,11 @@ import { setInterval } from 'timers';
               }
             },1000)
             // 删除会话成功。
-          /*  console.log(bool)*/
+            /*  console.log(bool)*/
           },
           onError: function (error) {
             // error => 删除会话的错误码
-           /* console.log(error)*/
+            /* console.log(error)*/
           }
         })
       },
@@ -1076,14 +1047,14 @@ import { setInterval } from 'timers';
         var targetId = targetId;
         RongIMClient.getInstance().clearUnreadCount(conversationType,targetId,{
           onSuccess:function(){
-           /* console.log('清除未读消息成功');*/
-           // 清除未读消息成功。
+            /* console.log('清除未读消息成功');*/
+            // 清除未读消息成功。
           },
           onError:function(error){
-           // error => 清除未读消息数错误码。
+            // error => 清除未读消息数错误码。
           }
         });
-     }
+      }
     },
     components:{
       chatWindow,
@@ -1149,9 +1120,7 @@ import { setInterval } from 'timers';
         background-color white
       }*/
     }
-
   }
-
   .chat{
     width 100%
     height 100%
@@ -1175,7 +1144,7 @@ import { setInterval } from 'timers';
       top 59px;
       background: #eef3f6;
       width calc(100vw - 150px)
-     /* height calc(100vh - 61px)*/
+      /* height calc(100vh - 61px)*/
       height:93.7%
       .chat-wrapper {
         border 1px solid #d6d6d6
@@ -1278,9 +1247,8 @@ import { setInterval } from 'timers';
               &.active {
                 color:rgba(0,0,0,1);
                 &:after {
-                 /* background-color #524AE7*/
+                  /* background-color #524AE7*/
                   display inline-block
-
                 }
               }
             }
@@ -1301,12 +1269,11 @@ import { setInterval } from 'timers';
     .chatList.active{
       /*background:rgba(255,255,255,1);*/
       background: #d0e1ed
-     /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
-     /* border-radius:5px;*/
+      /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
+      /* border-radius:5px;*/
     }
   }
-
-    .chat-small{
+  .chat-small{
     width 99%
     height 102.8%
     background-color #fff;
@@ -1329,7 +1296,7 @@ import { setInterval } from 'timers';
       top 59px;
       background: #eef3f6;
       width calc(100vw - 132px)
-     /* height calc(100vh - 61px)*/
+      /* height calc(100vh - 61px)*/
       height:93.7%
       .chat-wrapper {
         border 1px solid #d6d6d6
@@ -1432,9 +1399,8 @@ import { setInterval } from 'timers';
               &.active {
                 color:rgba(0,0,0,1);
                 &:after {
-                 /* background-color #524AE7*/
+                  /* background-color #524AE7*/
                   display inline-block
-
                 }
               }
             }
@@ -1455,12 +1421,10 @@ import { setInterval } from 'timers';
     .chatList.active{
       /*background:rgba(255,255,255,1);*/
       background: #d0e1ed
-     /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
-     /* border-radius:5px;*/
+      /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
+      /* border-radius:5px;*/
     }
   }
-
-
   .chat1920{
     width 100%
     height 100%
@@ -1484,7 +1448,7 @@ import { setInterval } from 'timers';
       top 59px;
       background: #eef3f6;
       width calc(100vw - 150px)
-     /* height calc(100vh - 61px)*/
+      /* height calc(100vh - 61px)*/
       height:93.7%
       .chat-wrapper {
         border 1px solid #d6d6d6
@@ -1587,9 +1551,8 @@ import { setInterval } from 'timers';
               &.active {
                 color:rgba(0,0,0,1);
                 &:after {
-                 /* background-color #524AE7*/
+                  /* background-color #524AE7*/
                   display inline-block
-
                 }
               }
             }
@@ -1610,9 +1573,8 @@ import { setInterval } from 'timers';
     .chatList.active{
       /*background:rgba(255,255,255,1);*/
       background: #d0e1ed
-     /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
-     /* border-radius:5px;*/
+      /* box-shadow:0px 0px 14px 0px rgba(61,104,169,0.17);*/
+      /* border-radius:5px;*/
     }
   }
-
 </style>
