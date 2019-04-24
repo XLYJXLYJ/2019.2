@@ -8,72 +8,32 @@
 export default {
   name: 'App',
   mounted:function () {
-//    var this_=this;
-//    var timer= setInterval(function () {
-//      this_.delCookie('s_token')
-//      this_.delCookie('service_id')
-//      this_.delCookie('company');
-//      this_.delCookie('s_name');
-//      this_.delCookie('date');
-//      this_.delCookie('targetId');
-//      this_.$router.push({'path': '/'});
-//      this_.$router.push({'path': '/'});
-//    },15000)
-//    document.onkeydown=function(e){
-//      timer_()
-//    };
-//    document.mousemove=function(e){
-//      timer_()
-//    };
-//    document.mousedown=function(e){
-//      timer_()
-//    };
-//    function  timer_() {
-//      clearInterval(timer);
-//      timer= setInterval(function () {
-//      },15000)
-//    }
-//    function delCookie(name){
-//      var exp = new Date();
-//      exp.setTime(exp.getTime() - 1);
-//      var cval=this.getCookie(name);
-//      if(cval!=null)
-//        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-//    }
     if(screen.width<1500){
        document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
        document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')
-       console.log(document.getElementById("app")[0])
-       console.log(document.getElementById("app"))
        document.getElementById("app").setAttribute('style','min-height:98.6%;height:98.6%')
     }
   },
     computed:{
       newMessage(){
-        console.log(this.$store.state.no_voice)
         return this.$store.state.no_voice
       }
     },
     watch:{
       newMessage:function(){
-        // if(this.newMessage>0){
-        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
-        //   if(this.unreadMessageCountTotal==0){
-        //     document.title = 'chat'
-        //   }else{
-        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
-        //   }
-        // }
-        // if(this.newMessage>0){
-        //   this.unreadMessageCountTotal = parseInt(this.unreadMessageCountTotal) + parseInt(this.newMessage)
-        //   if(this.unreadMessageCountTotal==0){
-        //     document.title = 'chat'
-        //   }else{
-        //     document.title = 'chat(' + this.unreadMessageCountTotal +')'
-        //   }
-        // }
-        console.log('有新消息了哈')
-        this.aplayAudio()
+        let this_ = this
+        this_.aplayAudio()
+        Notification.requestPermission(function (perm) {  
+          if (perm == "granted") {  
+              var notification = new Notification(this_.$store.state.customer, {  
+                  icon: 'http://open.qb-tech.net/img/aimi-big.png',  
+                  body: this_.$store.state.sentence
+              });  
+              // setTimeout(function(){
+              //     notification.close()
+              // },3000)
+          }  
+        })
       }
     },
   methods:{

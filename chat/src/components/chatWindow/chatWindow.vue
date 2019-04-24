@@ -177,14 +177,21 @@
         reader:"",
         is_edit:false,
         old_sentence:"",
-        timer:null
+        timer:null,
+        select:'',
+        robot_answer_data:'',
+        robot_uu_id:''
       }
     },
     mounted(){
       var  this_=this;
       Bus.$on('sent',function (msg) {
+        console.log(this.text);
+        console.log(msg);
         if(msg.index==this_.index){
           this_.temp=msg.data_text;
+          this_.select = msg.a.select
+          this_.robot_answer_data = msg.a.robot_answer_data
           this_.sent('false');
         }
       });
@@ -200,6 +207,7 @@
         if(msg.index==this_.index){
           this_.temp=msg.data_text;
           this_.text = msg.data_text;
+          this_.robot_uu_id = msg.a.robot_uu_id
           // this_.sent('false');
         }
       })
@@ -375,8 +383,8 @@
              }
              this_.gallery=new Viewer(document.getElementById('content'),{
                 navbar:false,
-                  toolbar:false,
-                  title:false
+                toolbar:false,
+                title:false
              })
 
           },100)
@@ -579,8 +587,7 @@
           range.select();
         }
       },
-      sent(data){
-       /* console.log(this.text);*/
+      sent(data,a){
         var html =""
         if(data=='false'){
           html=this.temp;
@@ -598,6 +605,35 @@
         /*  console.log('编辑前')
           console.log('编辑后'+html)*/
         }
+
+        if(localStorage.getItem('selectEdit') == 1) {
+          this.$ajax({
+            method: "put",
+            url: "/acs/v1.0/robot_robot",
+            headers: {
+              'Content-type': 'application/x-www-form-urlencoded'
+            },
+            data: {
+              'robot_uu_id':  this_.robot_uu_id,
+              'modify_content': html,
+              'service_send_status':2
+            },
+            transformRequest: [function (data) {
+              let ret = ''
+              for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+              }
+              return ret
+            }],
+          }).then(res => {
+            localStorage.setItem('selectEdit',0)
+          })
+        }
+        // if(this.targetIds.answer[0].select){
+        //     this.targetIds.h5_record.push(this.targetIds.answer[0].select)
+        // }
+        this.targetIds.h5_record[8] = this.select
+        this.targetIds.h5_record[9] = this.robot_answer_data
         this.$emit("updateRecord",{index:this.index,content:html,type:2,extra:this.targetIds.h5_record});
       },
       keyDown(event){
@@ -823,6 +859,10 @@
           float left
           word-break:break-all
           text-align left
+          img{
+            width 100px;
+            height auto;
+          }
         /*  &:before{
             position absolute
             content ""
@@ -926,7 +966,8 @@
           div{
             width 100%
             img{
-              width 100%
+              width 100px;
+              height auto;
             }
           }
         }

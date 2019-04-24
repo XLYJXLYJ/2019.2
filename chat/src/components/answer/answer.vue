@@ -12,68 +12,24 @@
               <span style="font-size:15px;color:#000">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span><br/>
               <span class="q_answer02">答案：<span v-html="a.a"></span></span>
           <div slot="reference">
-            <!-- <span class="number">{{index+1}}、</span> -->
-            <div v-show="hoverAnswerNum!==index"> 
+            <div v-show="hoverAnswerNum!==index">
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
-              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12).replace(/[\r\n]/g," ") + '...'  : a.a}}</span></span>
+              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span v-html="a.a.length>12 ? a.a.substring(0,12).replace(/[\r\n]/g,'') + '...'  : a.a"></span></span>
             </div>
-            <div v-show="hoverAnswerNum==index"> 
-              <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
-              <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
+            <div v-show="hoverAnswerNum==index">
+              <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event,a)">查看编辑</span>
+              <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event,a)">发送</span>
             </div>
           </div>
           </el-popover>
           <div>
-            <!-- <span class="number">{{index+1}}、</span> -->
-            <!-- <div> -->
-              <!-- <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
-              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span>{{a.a.length>12 ? a.a.substring(0,12)+'...'  : a.a}}</span></span> -->
-            <!-- </div> -->
           </div>
-          <!-- <div>
-            <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event)">查看编辑</span>
-            <span class="sent_btn" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="sent($event)">发送</span>
-          </div> -->
         </li>
       </ul>
     </div>
     <span class="title">流程指引</span>
     <div style="height:25px"></div>
     <div class="gm-scroll-view" style="height:50%;">
-      <!-- <ul class="one">
-        <li v-for="(a,index) in newArray" :key='index' class="one-li">
-           <ul class="two">
-             <li v-for="(b,index_) in a.pAnswer" :key='index_'>
-                <div class="recommended">
-                  <div class="productBtn" @click="showHide(index_,index)" v-show="a.display_name">{{a.display_name}}
-                    <span v-if="index==indexNum">
-                      <img v-show="!showIcon" src="../../assets/down.png">
-                      <img v-show="showIcon" src="../../assets/up.png">
-                    </span>
-                    <span v-else>
-                      <span v-if="showIconOther[index] !==''"><img  src="../../assets/up.png" alt=""></span>
-                      <span v-else><img  src="../../assets/down.png" alt=""></span>
-                    </span>
-                  </div>
-                </div>
-               <ul class="three" :ref="index_" v-show="showIcon">
-                 <li v-for="(c,index__) in b" :key='index__' @click="sentProcess($event)" :title='c.content'>
-                    流程{{index__+1}}：{{c.content.length>12 ? c.content.substring(0,12)+'...'  : c.content}}
-                 </li>
-               </ul>
-             </li>
-           </ul>
-        </li>
-      </ul> -->
-
-<!--
-    <el-collapse v-model="activeNames" @change="handleChange">
-      <el-collapse-item title="一致性 Consistency" name="1">
-        <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-        <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
-      </el-collapse-item>
-    </el-collapse> -->
-
       <el-collapse class="one">
         <el-collapse-item class="one-li" v-for="(a,index) in newArray" :key='index' :title="a.display_name" v-show="a.display_name">
             <ul class="two">
@@ -175,8 +131,8 @@
       }
     },
     methods: {
-      isMac() { 
-        return /macintosh|mac os x/i.test(navigator.userAgent); 
+      isMac() {
+        return /macintosh|mac os x/i.test(navigator.userAgent);
       },
       hoverAnswer(index){
         this.hoverAnswerNum = index
@@ -184,17 +140,39 @@
       leaveAnswer(index){
         this.hoverAnswerNum = -1
       },
-      edit(event) {
+      edit(event,a) {
         var this_ = this;
         var target = event.target
+        localStorage.setItem('selectEdit',1)
         this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('look', {data_text: target.getAttribute("data-text").replace(/<br\/>/g, '\n'), 'index': this_.index})
+        Bus.$emit('look', {data_text: target.getAttribute("data-text").replace(/<br\/>/g, '\n'), 'index': this_.index,'a':a})
       },
-      sent(event) {
+      sent(event,a) {
         var this_ = this;
         var target = event.target
         this.robot_balance(target.getAttribute("robot_uu_id"), target.getAttribute("dialogId"));
-        Bus.$emit('sent', {data_text: target.getAttribute("data-text"), 'index': this_.index})
+        Bus.$emit('sent', {data_text: target.getAttribute("data-text"), 'index': this_.index,'a':a})
+        this.$ajax({
+            method: "put",
+            url: "/acs/v1.0/robot_robot",
+            headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+              'robot_uu_id': a.robot_uu_id,
+              'modify_content': a.sentence,
+              'service_send_status':1
+          },
+          transformRequest: [function (data) {
+            let ret = ''
+            for (let it in data) {
+              ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+          }],
+        }).then(res => {
+
+        })
       },
       sentProcess(event) {
         var this_ = this;
@@ -382,7 +360,7 @@
     }
   }
   .answer .gm-scroll-view::-webkit-scrollbar {
-    width: 10px;     
+    width: 10px;
     height: 271px;
   }
   .answer .gm-scroll-view::-webkit-scrollbar-thumb {

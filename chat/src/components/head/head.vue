@@ -6,7 +6,7 @@
       <router-link to="/user"><span class="user"></span><span class="username">{{s_name}}</span><span class="company">{{company}}</span></router-link>
       <span class="login_out" @click="logout">退出</span>
     </span>
-    <div class="white"></div>
+    <div :class="{white:isWhite}"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -22,7 +22,8 @@
       return {
         company:'',
         s_name:'',
-        screen:true
+        screen:true,
+        isWhite:true
       }
     },
     created:function () {
@@ -43,12 +44,14 @@
       }
     },
     mounted(){
+      if(this.$route.path=='/record'){
+        this.isWhite = false
+      }
       if(screen.width<1500){
         this.screen = true
       }else{
         this.screen = false
       }
-      console.log(this.$route)
     },
     methods:{
       getCookie(objName){//获取指定名称的cookie的值
@@ -64,8 +67,6 @@
       logout(){
         var this_=this;
         this.$ajax.delete("/acs/v1.0/service_login",).then((res) => {
-          console.log(res.data)
-          console.log('00000')
           if(res.data.errmsg=="OK"||res.data.errmsg=="用户未登录"){
             this_.delCookie('s_token')
             this_.delCookie('service_id')

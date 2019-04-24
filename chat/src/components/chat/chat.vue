@@ -58,6 +58,7 @@
   import {IndexedDB} from "../../store"
   import Viewer from 'viewerjs'
   import 'viewerjs/dist/viewer.css'
+import { setInterval } from 'timers';
   export default {
     name:'chat',
     data(){
@@ -105,7 +106,9 @@
         screen04:false,
         onlineValue:'',
         unreadMessageCountTotal:0,
-        
+        isShine:false,
+        initVoice:''
+
       }
     },
     // beforeRouteEnter (to, from, next) {
@@ -128,6 +131,7 @@
         this.state = "下线"
     },
     created:function () {
+      this.initVoice = 0
       this.db=new IndexedDB(this.option);
       this.db.open();
       function getCookie(objName){//获取指定名称的cookie的值
@@ -165,7 +169,7 @@
 //      setTimeout(function () {
 //        this_.$ajax.get('/acs/v1.0/service_message').then(res=>{})
 //      },4000)
-    
+
       RongIMLib.RongIMClient.init(this.appkey);
       this.token = getCookie('s_token');
       this.s_name = getCookie('s_name');
@@ -205,20 +209,20 @@
             case RongIMClient.MessageType.TextMessage:
               var  date=getCookie('date');
               if(date<message.sentTime&&message.targetId=="systemcustomerrepeatlogin"&&message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"&&message.content.extra!=date){
-                  // this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
-                  //   this_.logout=true;
-                  //   console.log('3333')
-                  //  /* console.log(res.data)*/
-                  //   if(res.data.errmsg=="OK"){
-                  //     this_.delCookie('s_token')
-                  //     this_.delCookie('service_id')
-                  //     this_.delCookie('company');
-                  //     this_.delCookie('s_name');
-                  //     this_.delCookie('date')
-                  //     this_.delCookie('targetId');
-                  //     return false;
-                  //   }
-                  // })
+                  this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
+                    this_.logout=true;
+                    console.log('3333')
+                   /* console.log(res.data)*/
+                    if(res.data.errmsg=="OK"){
+                      this_.delCookie('s_token')
+                      this_.delCookie('service_id')
+                      this_.delCookie('company');
+                      this_.delCookie('s_name');
+                      this_.delCookie('date')
+                      this_.delCookie('targetId');
+                      return false;
+                    }
+                  })
               }
               if(this_.targetIds){
                 for(let i=0;i<this_.targetIds.length;i++) {
@@ -359,7 +363,6 @@
                 data[i].content = "<div><img src='" + data[i].content + "' ></div>"
               }
             }
-            console.log(data)
             this_.targetIds[m].history=data;
             this_.$set(this_.targetIds[m],'history',data);
             this_.$ajax.get("/acs/v1.0/service_online_status",{params : {'targetId' :targetIds,'p':1,'customer_token':customer_token}}).then((res) => {
@@ -367,9 +370,8 @@
                 this_.targetIds[m].total_page=res.data.data.total_page;
                 this_.$set(this_.targetIds[m],'total_page',res.data.data.total_page);
                   this_.db.getDataByKey(targetIds,targetIds.length-1).then(data=> {
-                  console.log(data.value.length)
                   if(data.value.length==1){
-                    this_.aplayAudio()
+                    // this_.aplayAudio()
                   }
                   if (data.value.length>0) {
                     this_.targetIds[m].qa_record =data.value;
@@ -407,7 +409,7 @@
                 temp_content.push(html);
                 obj.extra = list[i].latestMessage.content.extra;
                 obj.targetId = list[i].targetId;
-                
+
                 obj.unreadMessageCount = list[i].unreadMessageCount
                 if (this_.targetIds.length > 0) {
                   var array = [];
@@ -435,9 +437,29 @@
                     historyTextMessage(this_.targetIds.length,content_wrap.targetId,content_wrap.h5_record[5]);
                     this_.targetIds.push(content_wrap);
                     if(list[i].latestMessage.messageDirection==2) {
-                      console.log('000111222')
-                      // this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
-                      // })
+                      if(this_.$store.state.initVoice==1){
+                        console.log(this_.$store.state.initVoice)
+                      }else{
+                        // this_.$store.commit('setVoice',numberRandom)
+                        // // this_.$store.commit('setInitVoice',0)
+                        // //显示桌面通知
+                        // this_.$store.commit('setCustomer',obj.extra[3])
+                        // this_.$store.commit('setSentence',obj.content)
+
+                        console.log('人工客服返回声音1')
+                        let numberRandom = Math.random()
+                        let obj1 = {
+                          no_voice:numberRandom,
+                          sentence:obj.content,
+                          customer:obj.extra[3]
+                        }
+                        this_.$store.commit('triSentence',obj1)
+                        // this_.store.state.customer =
+                        // this_.store.state.sentence =
+                      }
+
+                      this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
+                      })
                     }else{
                       this_.db.getDataByKey(list[i].targetId,this_.targetIds.length-1).then(data=> {
                         if (data&&data.value) {
@@ -476,7 +498,6 @@
                   historyTextMessage(0,content_wrap.targetId,content_wrap.h5_record[5]);
                   this_.targetIds.push(content_wrap);
                   if(list[i].latestMessage.messageDirection==2) {
-                    console.log('222333444')
                     this_.getAnswer(list[i].latestMessage.content.content, list[i].targetId, content_wrap.h5_record[4], this_.targetIds.length - 1, list[i].sentTime,'Guest').then(res => {
                     })
                   }else{
@@ -613,13 +634,13 @@
           document.cookie= name + "="+cval+";expires="+exp.toGMTString();
       },
       onkeydown(){
-        this.timer_();
+        // this.timer_();
       },
       mousemove(){
-        this.timer_();
+        // this.timer_();
       },
       mousedown(){
-        this.timer_();
+        // this.timer_();
       },
       timer_() {
         // var this_=this;
@@ -642,6 +663,7 @@
       },
       not_line(){
         this.logout=false;
+        RongIMClient.getInstance().logout()
         this.$router.push({'path': '/'});
       },
       delCookie(name){
@@ -673,7 +695,7 @@
       },
 
       getAnswer(sentence,dialogId,productId,index,sentTime,customer){
-        
+
         return new  Promise((resolve,reject)=> {
           var this_ = this
           this_.$ajax({
@@ -696,7 +718,7 @@
             }],
           }).then((res) => {
               var lAnswer //接受异步数据
-              var display_name 
+              var display_name
 
               // this_.aplayAudio()
 
@@ -746,15 +768,17 @@
                                     this_.$set(this_.targetIds[index], 'qa_record', array)
                                   }else{
                                     // this_.aplayAudio()
+                                    console.log('机器人流程答案返回声音1')
+                                    // this_.$store.commit('setVoice',numberRandom)
+                                    // this_.store.state.customer = customer
+                                    // this_.store.state.sentence = sentence
                                     let numberRandom = Math.random()
-                                    this_.$store.commit('setVoice',numberRandom)
-                                              console.log(3434)
-                                    // this_.$notify({
-                                    //   title: customer,
-                                    //   message: sentence,
-                                    //   position: 'bottom-right'
-                                    // });
-
+                                    let obj1 = {
+                                      no_voice:numberRandom,
+                                      sentence:sentence,
+                                      customer:customer
+                                    }
+                                    this_.$store.commit('triSentence',obj1)
                                     this_.db.updateData(this_.dialogId_,{q:sentence,a:this_.robot_answer_,sentTime:this_.sentTime_,robot_uu_id:this_.robot_uu_id_,dialogId:this_.dialogId_,pAnswer:{lAnswer},display_name:display_name})
                                   }
                                 }else{
@@ -774,7 +798,7 @@
                 sentence='[图片]';
               }
               if(res.data.data.process_flag !== 1){
-                this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
+                this_.targetIds[index].answers.push({q:sentence,a:res.data.data.robot_answer,select:res.data.data.robot_select,robot_answer_data:res.data.data.robot_answer_data,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                 try{
                   this_.db.getDataByKey(dialogId,index).then(data=>{
                     if(data){
@@ -790,21 +814,37 @@
                         this_.$set(this_.targetIds[index], 'qa_record', array)
                       }else{
                         // this_.aplayAudio()
-                        let numberRandom = Math.random()
-                        this_.$store.commit('setVoice',numberRandom)
-                        console.log(12121)
-                        // this_.$notify({
-                        //   title: customer,
-                        //   message: sentence,
-                        //   position: 'bottom-right'
-                        // });
+                        console.log('机器人返回声音1')
 
-                        this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
+                        // this_.$store.commit('setVoice',numberRandom)
+                        // this_.$store.commit('setCustomer',customer)
+                        // this_.$store.commit('setSentence',sentence)
+
+                        let numberRandom = Math.random()
+                        let obj1 = {
+                          no_voice:numberRandom,
+                          sentence:sentence,
+                          customer:customer
+                        }
+                        this_.$store.commit('triSentence',obj1)
+
+                        this_.db.updateData(dialogId,{q:sentence,a:res.data.data.robot_answer,select:res.data.data.robot_select,robot_answer_data:res.data.data.robot_answer_data,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}})
                       }
                     }else{
+                      // let numberRandom = Math.random()
+                      // this_.$store.commit('setVoice',numberRandom)
+                      // this_.$store.commit('setCustomer',customer)
+                      // this_.$store.commit('setSentence',sentence)
+                      console.log('机器人返回声音2')
                       let numberRandom = Math.random()
-                      this_.$store.commit('setVoice',numberRandom)
-                      this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
+                      let obj1 = {
+                        no_voice:numberRandom,
+                        sentence:sentence,
+                        customer:customer
+                      }
+                      this_.$store.commit('triSentence',obj1)
+
+                      this_.db.addData({'id':dialogId,'value':[{q:sentence,a:res.data.data.robot_answer,select:res.data.data.robot_select,robot_answer_data:res.data.data.robot_answer_data,sentTime:sentTime,robot_uu_id:res.data.data.robot_uu_id,dialogId:res.data.data.dialogId,pAnswer:{lAnswer}}]})
                     }
                   })
                 } catch(e) {
@@ -816,7 +856,7 @@
         })
       },
       listenClose(){
-//          this.checkActive=!this.checkActive;
+          // this.checkActive=!this.checkActive;
           let state=this.state=="上线"? "在线":"不在线"
           this.$ajax({
             method:"post",
@@ -837,11 +877,6 @@
           }).then((res)=>{
             if(res.data.data=="客服状态变更成功"){
               this.checkActive=!this.checkActive;
-              // if(this.onlineValue=='在线'){
-              //   this.onlineValue='下线'
-              // }else{
-              //   this.onlineValue='在线'
-              // }
             }else if(res.data.msg=="用户未登录"){
               this_.$router.push({'path': '/'});
             }
@@ -925,9 +960,8 @@
         RongIMClient.getInstance().sendMessage(conversationtype,  this.targetId, msg, {
             onSuccess: function (message) {
               //message 为发送的消息对象并且包含服务器返回的消息唯一Id和发送消息时间戳
-
-//              $("ul").append("<li>" + 'userid3:' + $('#message').val() + "</li>");
-             /* console.log("Send successfully");*/
+              // $("ul").append("<li>" + 'userid3:' + $('#message').val() + "</li>");
+              /* console.log("Send successfully");*/
               if(m=="592b71f0-b3f8-4f64-bd45-40b35c0191af"){
                 this_.removeConversation(id);//关闭会话
               }
@@ -982,7 +1016,6 @@
                 this_.setCookie('targetId',this_.targetId,1);
               }
             },1000)
-
             // 删除会话成功。
           /*  console.log(bool)*/
           },
@@ -1003,7 +1036,7 @@
         });
       },
       removeTextMessage(data) {
-                console.log(data.extra)
+        console.log(data.extra)
         var this_=this;
         var msg = new RongIMLib.TextMessage({content: '592b71f0-b3f8-4f64-bd45-40b35c0191af',extra:data.extra});
         var conversationtype = RongIMLib.ConversationType.PRIVATE; // 单聊,其他会话选择相应的消息类型即可。
@@ -1011,7 +1044,7 @@
         RongIMClient.getInstance().sendMessage(conversationtype, targetId, msg, {
             onSuccess: function (message) {
               //message 为发送的消息对象并且包含服务器返回的消息唯一Id和发送消息时间戳
-            /*  console.log(message);*/
+              /*  console.log(message);*/
               this_.$ajax({
                 method:"post",
                 url:"/acs/v1.0/customer_logout",
@@ -1033,10 +1066,8 @@
                   return ret
                 }],
               }).then((res)=>{
-
-              })
-              this_.removeConversation(targetId);
-            }
+                this_.removeConversation(targetId);
+              })            }
           }
         );
       },

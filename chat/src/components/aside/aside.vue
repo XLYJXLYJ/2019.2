@@ -12,7 +12,7 @@
         <li class="li_father">
           <router-link to="/chat">
             <span class="icon icon1"></span>
-            <span>客服工作台</span>
+            <span @click="setInitVoice()">客服工作台</span>
             <!--<span class="left active"></span>-->
           </router-link>
         </li>
@@ -41,6 +41,14 @@
     mounted: function () {
       if(screen.width<1500){
         document.getElementsByClassName("vue-aside")[0].setAttribute('style','height:104.3%')
+      }
+    },
+    methods:{
+      setInitVoice(){
+        console.log('hahahah')
+
+        this.$store.commit('setInitVoice',1)
+        console.log(this.$store.state.initVoice)
       }
     }
   }
