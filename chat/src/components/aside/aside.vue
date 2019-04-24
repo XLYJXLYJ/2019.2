@@ -45,9 +45,7 @@
     },
     methods:{
       setInitVoice(){
-        console.log('hahahah')
         this.$store.commit('setInitVoice',1)
-        console.log(this.$store.state.initVoice)
       }
     }
   }

@@ -11,11 +11,6 @@
       </div>
     </div>
     <div class="record images"  ref="recordWrapper"  id="">
-      <!--<ul >-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-1.jpg" alt="Picture 1"></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-2.jpg" alt="Picture 2"></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li><img src="../../../static/tibet-3.jpg" alt="Picture 3"></li>&ndash;&gt;-->
-      <!--</ul>-->
       <div  ref="texts" class="g-scroll-view scroll"  :style="{width:width}">
         <div ref="text">
           <div class="more" @click="more">
@@ -23,11 +18,6 @@
             <span class="load" v-show="finish"></span>
           </div>
           <div class="paging_record">
-            <!--<div class="div_left" >-->
-            <!--<p>2131353(450654经纪(⊙o⊙)…)</p>-->
-            <!--<span class="avatar"></span>-->
-            <!--<span class="box" >544444444444444444444442432kkrte大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发大家都在发</span>-->
-            <!--</div>-->
             <div v-if="targetIds.more">
               <div v-for="(m,index) in paging_record" :key="index">
                 <div class="div_right" :style="{padding:padding}"  v-if="m.messageDirection==1">
@@ -100,13 +90,6 @@
               <img  style="width: 100%;" src="../../../static/tibet-1.jpg">
             </span>
           </div>
-          <!--<div class="div_right" :style="{padding:padding}">-->
-          <!--<p>&lt;!&ndash;({{m.sentTime}}){{s_name}}&ndash;&gt;</p>-->
-          <!--<span class="service_avatar"></span>-->
-          <!--<span class="box" >-->
-          <!--<img  style="width: 100%;" src="../../../static/algorithm2.png"/>-->
-          <!--</span>-->
-          <!--</div>-->
         </div>
       </div>
     </div>
@@ -186,8 +169,6 @@
     mounted(){
       var  this_=this;
       Bus.$on('sent',function (msg) {
-        console.log(this.text);
-        console.log(msg);
         if(msg.index==this_.index){
           this_.temp=msg.data_text;
           this_.select = msg.a.select
@@ -196,7 +177,6 @@
         }
       });
       Bus.$on('sentProcess',function (msg) {
-        console.log(msg)
         if(msg.index==this_.index){
           this_.temp=msg.data_text;
           this_.sent('false');
@@ -231,29 +211,6 @@
         this_.environment= "http://open.qb-tech.net/chat_image/";
       }
       var inputs = document.getElementsByClassName('input');
-      /*this_.$jquery('.input').resizable({*/
-      /* this_.$jquery('.input').resizable({
-         handles: 'n', //'e'是east，允许拖动右侧边框的意思
-         maxHeight: 260,
-         minHeight: 135,
-         //resize方法在#left大小改变后被执行
-         resize: function(event, ui) { //由于我们调整的是#left的大小，当#left改变时，要同时改变#middle的大小
-           clearTimeout(this_.timer);
-           this_.$jquery('.record').height(this_.$jquery('.chatWindow').height() - ui.size.height - this_.$jquery('.head').height());
-           this_.timer=setTimeout(function(){
-             var div = document.getElementsByClassName('scroll');
-             for(let i=0;i<=this_.index;i++){
-             /!*  div[this_.index].scrollTop = div[this_.index].scrollHeight;*!/
-               console.log(i,"iaa");
-               div[i].scrollTop = div[i].scrollHeight;
-             }
-             /!*div[this_.showIndex].scrollTop = div[this_.showIndex].scrollHeight;*!/
-             console.log(this_.showIndex, " div[this.showIndex]");
-             /!*   console.log("div[this_.index].scrollTop", div[this_.index]);*!/
-             this_.$jquery('.chatWindow .input textarea').height(ui.size.height - 60)
-           },0);
-         }
-       })*/
       this_.$jquery(window).resize(function () {
         var t = null;
         clearTimeout(t);
@@ -499,8 +456,6 @@
       magnify_window(){
         this.lessen=!this.lessen
         if(screen.width<1500){
-          console.log(this.lessen)
-          console.log(screen.width)
           if(this.lessen == true){
             document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
             document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')
@@ -514,8 +469,6 @@
       lessen_window(){
         this.lessen=!this.lessen
         if(screen.width<1500){
-          console.log(this.lessen)
-          console.log(screen.width)
           if(this.lessen == true){
             document.getElementsByTagName("body")[0].setAttribute('style','height:98.6%')
             document.getElementsByTagName("html")[0].setAttribute('style','height:98.6%')

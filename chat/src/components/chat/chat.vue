@@ -208,7 +208,6 @@
               if(date<message.sentTime&&message.targetId=="systemcustomerrepeatlogin"&&message.content.content=="592b71f0-b3f8-4f64-bd45-40b35c0191af"&&message.content.extra!=date){
                 this_.$ajax.put("/acs/v1.0/service_login",).then((res) => {
                   this_.logout=true;
-                  console.log('3333')
                   /* console.log(res.data)*/
                   if(res.data.errmsg=="OK"){
                     this_.delCookie('s_token')
@@ -428,14 +427,12 @@
                     this_.targetIds.push(content_wrap);
                     if(list[i].latestMessage.messageDirection==2) {
                       if(this_.$store.state.initVoice==1){
-                        console.log(this_.$store.state.initVoice)
                       }else{
                         // this_.$store.commit('setVoice',numberRandom)
                         // // this_.$store.commit('setInitVoice',0)
                         // //显示桌面通知
                         // this_.$store.commit('setCustomer',obj.extra[3])
                         // this_.$store.commit('setSentence',obj.content)
-                        console.log('人工客服返回声音1')
                         let numberRandom = Math.random()
                         let obj1 = {
                           no_voice:numberRandom,
@@ -577,11 +574,11 @@
       //       this_.$router.push({'path': '/'});
       //     })
       // }, 7200000)
-      this.gallery = new Viewer(document.getElementsByClassName('chat')[0],{
-        navbar:false,
-        toolbar:false,
-        title:false
-      });
+      // this.gallery = new Viewer(document.getElementsByClassName('chat')[0],{
+      //   navbar:false,
+      //   toolbar:false,
+      //   title:false
+      // });
     },
     computer:{
     },
@@ -792,7 +789,6 @@
                         this_.$set(this_.targetIds[index], 'qa_record', array)
                       }else{
                         // this_.aplayAudio()
-                        console.log('机器人返回声音1')
                         // this_.$store.commit('setVoice',numberRandom)
                         // this_.$store.commit('setCustomer',customer)
                         // this_.$store.commit('setSentence',sentence)
@@ -810,7 +806,6 @@
                       // this_.$store.commit('setVoice',numberRandom)
                       // this_.$store.commit('setCustomer',customer)
                       // this_.$store.commit('setSentence',sentence)
-                      console.log('机器人返回声音2')
                       let numberRandom = Math.random()
                       let obj1 = {
                         no_voice:numberRandom,
@@ -1007,7 +1002,6 @@
         });
       },
       removeTextMessage(data) {
-        console.log(data.extra)
         var this_=this;
         var msg = new RongIMLib.TextMessage({content: '592b71f0-b3f8-4f64-bd45-40b35c0191af',extra:data.extra});
         var conversationtype = RongIMLib.ConversationType.PRIVATE; // 单聊,其他会话选择相应的消息类型即可。

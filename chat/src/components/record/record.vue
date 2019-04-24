@@ -53,22 +53,6 @@
           </tr>
           </thead>
         </table>
-       <!-- <div class="footer" v-show="totalPages>0">
-          <span class="start" @click="firstPage">首页</span>
-          <span class="pre" @click="prePage"></span>
-          <span class="pages" :style="{width:pages_width+'px'}">
-            <span class="pages_li"
-                  :style="{width:pages_li_width+'px',transition:'all 600ms ease 0s', transform: 'translateX('+ translateX_width +'px)'}">
-              <span class="page" :class="{active:index+1==initPageNo}" v-for="(totalPage,index) in totalPages"
-                    @click="choose(index+1)">{{index+1}}</span>
-            </span>
-          </span>
-          <span class="next" @click="nextPage"></span>
-          <span class="end" @click="lastPage">末页</span>
-          <span class="amount">共<span class="number">{{totalPages}}</span>页</span>
-          <input type="text" v-model="ship_number"/>
-          <span class="ship" @click="ship">跳转</span>
-        </div>-->
       </div>
        <div class="footer" v-show="totalPages>0">
         <span class="start" @click="firstPage">首页</span>
@@ -154,37 +138,6 @@
         this.pages_width = this.totalPages > 5 ? 175 : this.totalPages * 35;
         this.pages_li_width = this.totalPages * 35
       })
-//      var this_=this;
-//      var timer= setInterval(function () {
-//        this_.delCookie('s_token')
-//        this_.delCookie('service_id')
-//        this_.delCookie('company');
-//        this_.delCookie('s_name');
-//        this_.delCookie('date');
-//        this_.delCookie('targetId');
-//        this_.$router.push({'path': '/'});
-//      },15000)
-//      document.onkeydown=function(e){
-//        timer_()
-//      };
-//      document.mousemove=function(e){
-//        timer_()
-//      };
-//      document.mousedown=function(e){
-//        timer_()
-//      };
-//      function  timer_() {
-//        clearInterval(timer);
-//        timer= setInterval(function () {
-//        },15000)
-//      }
-//      function delCookie(name){
-//        var exp = new Date();
-//        exp.setTime(exp.getTime() - 1);
-//        var cval=this.getCookie(name);
-//        if(cval!=null)
-//          document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-//      }
       if(screen.width<1500){
         document.getElementsByClassName("vue-aside")[0].setAttribute('style','height:100%')
       }else{
@@ -196,7 +149,7 @@
         $('.submit').click();
       },
       submit_() {
-        console.log('1234');
+
       },
       ship() {
         if (this.ship_number && this.ship_number > 0 && this.ship_number <= this.totalPages) {
@@ -230,20 +183,12 @@
           //if()
           this.translateX_width = this.translateX_width > 0 ? 0 : this.translateX_width;
         }
-
-
-//        if(flag){
-//          this.translateX_width =0;
-//        }
-
         this.paging();
       },
       listen_robot(ele) {
-        console.log(ele.target.value)
         this.robot_code = ele.target.value;
       },
       listen_role(ele) {
-        console.log(ele.target.value);
         this.role = ele.target.value
       },
       search_record() {
@@ -255,32 +200,10 @@
       nextPage() {
         var number = this.initPageNo + 1 > this.totalPages ? this.totalPages : this.initPageNo + 1
         this.choose(number);
-//        if(this.translateX_width+this.pages_li_width <=175){
-//          if(!(this.initPageNo+1>this.totalPages)){
-//            this.initPageNo +=1;
-//          }
-//        }else{
-//          this.initPageNo +=1;
-//          if(!(this.translateX_width==0&&this.initPageNo<=3)){
-//            this.translateX_width -=35;
-//          }
-//        }
-//        this.paging()
       },
       prePage() {
         var number = this.initPageNo > 2 ? this.initPageNo - 1 : 1
         this.choose(number);
-//        if(this.translateX_width>=0){
-//          if(this.initPageNo-1!=0){
-//            this.initPageNo -=1;
-//          }
-//        }else{
-//          if(this.initPageNo-1<this.totalPages&&this.initPageNo-1>=this.totalPages-2){
-//            this.translateX_width +=35;
-//          }
-//          this.initPageNo -=1;
-//        }
-//        this.paging()
       },
       paging() {
         this.$ajax.get('/acs/v1.0/record_dialogs', {

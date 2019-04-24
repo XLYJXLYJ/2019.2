@@ -95,37 +95,6 @@
       })
     },
     mounted:function () {
-//      var this_=this;
-//      var timer= setInterval(function () {
-//        this_.delCookie('s_token')
-//        this_.delCookie('service_id')
-//        this_.delCookie('company');
-//        this_.delCookie('s_name');
-//        this_.delCookie('date');
-//        this_.delCookie('targetId');
-//        this_.$router.push({'path': '/'});
-//      },15000)
-//      document.onkeydown=function(e){
-//        timer_()
-//      };
-//      document.mousemove=function(e){
-//        timer_()
-//      };
-//      document.mousedown=function(e){
-//        timer_()
-//      };
-//      function  timer_() {
-//        clearInterval(timer);
-//        timer= setInterval(function () {
-//        },15000)
-//      }
-//      function delCookie(name){
-//        var exp = new Date();
-//        exp.setTime(exp.getTime() - 1);
-//        var cval=this.getCookie(name);
-//        if(cval!=null)
-//          document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-//      }
     },
     components:{
       v_aside,

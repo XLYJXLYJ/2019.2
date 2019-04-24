@@ -14,7 +14,7 @@
           <div slot="reference">
             <div v-show="hoverAnswerNum!==index">
               <span class="question" :title="a.q.length>12 ?  a.q:'' ">问题：{{a.q.length>12 ? a.q.substring(0,12)+'...'  : a.q}}</span>
-              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span v-html="a.a.length>12 ? a.a.substring(0,12).replace(/[\r\n]/g,'') + '...'  : a.a"></span></span>
+              <span class="q_answer" :title="a.a.replace('<br/>','').length>12 ?  a.a.replace('<br/>',''):''">答案：<span v-html="a.a.length>12 ? a.a.substring(0,11).replace(/[\r\n]/g,'') + '...'  : a.a"></span></span>
             </div>
             <div v-show="hoverAnswerNum==index">
               <span class="edit" :data-text="a.a" :robot_uu_id="a.robot_uu_id" :dialogId=" a.dialogId" @click="edit($event,a)">查看编辑</span>
